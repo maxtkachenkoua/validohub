@@ -6,6 +6,8 @@ Do not rely on prior chat history. Treat repository documentation as the source 
 
 If you arrived here from the repository root, keep `AGENTS.md` in mind as the canonical short entrypoint. If you did not read it yet, read `AGENTS.md` now.
 
+Highest priority country-tool rule: every country-scoped tool must aim to become a Pix/CURP-level best-in-world page to the maximum extent its format allows. This overrides older assumptions that a generated country route, generic factory page, or shared overlay is sufficient. If a local format supports richer browser-checkable behavior, implement the richer page: bespoke UI/JS/CSS as needed, parsing/anatomy, generation, checksum/control/CRC replay, safe fixtures, batch/debug flows, developer copy/export, official source links, concrete integration traps, and explicit local-vs-official boundaries.
+
 ## Mandatory Reading Order
 
 Read in this order before implementation:

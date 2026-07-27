@@ -229,17 +229,42 @@ const COUNTRY_SEARCH_HINTS = [
   { label: 'MRZ', pattern: /\bmrz\b/ }
 ];
 
+const COUNTRY_SEARCH_HINT_ROUTE_ALIASES = {
+  afm: /\bvat\b|\btax\b|vies|gr prefix/,
+  aade: /\btax\b|e-invoicing|invoice|vat|authority/,
+  mydata: /e-invoicing|invoice|tax/
+};
+
 function deriveCountrySearchHints(model, routeRegistry) {
-  if (Array.isArray(model.searchHints) && model.searchHints.length > 0) {
-    return model.searchHints
-      .map(hint => String(hint || '').trim())
-      .filter(Boolean)
-      .slice(0, 6);
-  }
   const routes = getCountryValidatorRoutes(model, routeRegistry);
   const routeText = routes
-    .map(route => `${String(route.title || '').toLowerCase()} ${String(route.path || '').toLowerCase()}`)
+    .map(route => [
+      route.title,
+      route.path,
+      route.href,
+      route.text,
+      route.description
+    ].map(value => String(value || '').toLowerCase()).join(' '))
     .join(' ');
+
+  const routedModelHints = Array.isArray(model.searchHints)
+    ? model.searchHints
+      .map(hint => String(hint || '').trim())
+      .filter(Boolean)
+      .filter(hint => {
+        const normalized = hint.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+        if (!normalized) return false;
+        return normalized.split(/\s+/).some(part => {
+          const aliasPattern = COUNTRY_SEARCH_HINT_ROUTE_ALIASES[part];
+          return routeText.includes(part) || Boolean(aliasPattern && aliasPattern.test(routeText));
+        });
+      })
+      .slice(0, 6)
+    : [];
+
+  if (routedModelHints.length > 0) {
+    return routedModelHints;
+  }
 
   const hints = COUNTRY_SEARCH_HINTS
     .filter(item => item.pattern.test(routeText))

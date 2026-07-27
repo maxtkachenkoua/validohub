@@ -15,10 +15,18 @@ const FACTORY_COUNTRIES = new Set([
   'saint-lucia', 'saint-vincent-and-the-grenadines', 'grenada', 'barbados',
   'trinidad-and-tobago'
 ]);
+const BESPOKE_GOLD_RUNTIME_FILES = new Set([
+  'pix.js',
+  'pesel.js',
+  'mexico-suite.js',
+  'spain-id.js'
+]);
 const RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.brazil-pix', 'pix.js'],
   ['validohub.brazil-suite', 'brazil-suite.js'],
   ['validohub.iban', 'generic-suite.js'],
+  ['validohub.iban-generator', 'generic-suite.js'],
+  ['validohub.pesel', 'pesel.js'],
   ['validohub.poland-suite', 'poland-suite.js'],
   ['validohub.poland-expansion', 'poland-expansion.js'],
   ['validohub.poland-baseline', 'poland-baseline.js'],
@@ -274,6 +282,8 @@ function parseToolYaml(text, file) {
   };
   const localizedName = text.match(/^name:\s*\n\s+en:\s*['"]?([^'"\n]+)/m)?.[1] ?? '';
   const listBlock = (key) => {
+    const inline = text.match(new RegExp('^' + escapeRegExp(key) + ':\\s*\\[([^\\]]*)\\]', 'm'));
+    if (inline) return inline[1].split(',').map(stripQuotes).filter(Boolean);
     const re = new RegExp('^' + escapeRegExp(key) + ':\\s*\\n([\\s\\S]*?)(?:\\n\\S|$)', 'm');
     const match = text.match(re);
     if (!match) return [];
@@ -414,9 +424,10 @@ function scanRuntime(slug, tools, result) {
     const rel = path.join('assets/js/tools', runtimeFile);
     if (!fileExists(rel)) { result.blockers.push(`${slug}: runtime file missing: ${rel}`); continue; }
     const source = readFile(rel);
-    const isFactory = source.includes('ValidoHubCountrySuiteFactory') || FACTORY_COUNTRIES.has(slug);
+    const isBespokeGoldRuntime = BESPOKE_GOLD_RUNTIME_FILES.has(runtimeFile);
+    const isFactory = !isBespokeGoldRuntime && (source.includes('ValidoHubCountrySuiteFactory') || FACTORY_COUNTRIES.has(slug));
     if (isFactory) result.factoryRuntime = true;
-    if (!/breakdownTitle|field breakdown|Field breakdown|fields\s*:|fieldBreakdown|localStructuralSlices|result\.breakdown/i.test(source)) result.blockers.push(`${slug}: ${runtimeFile} lacks explicit field breakdown source tokens`);
+    if (!/breakdownTitle|field breakdown|Field breakdown|fields\s*:|fieldBreakdown|localStructuralSlices|result\.breakdown|pesel-breakdown|checksum debugger|anatomy|Identifier anatomy|TLV explorer|checksum replay/i.test(source)) result.blockers.push(`${slug}: ${runtimeFile} lacks explicit field breakdown source tokens`);
     if (!/qualityNotes|Quality notes|privacy boundary|official lookup|official boundary|boundary|runs locally|generated locally|locally in your browser/i.test(source)) result.blockers.push(`${slug}: ${runtimeFile} lacks quality-note or boundary source tokens`);
     if (isFactory) {
       for (const token of ['createSuite', 'breakdownTitle', 'breakdownSummary', 'result.breakdown']) if (!source.includes(token)) result.blockers.push(`${slug}: ${runtimeFile} factory runtime missing ${token}`);

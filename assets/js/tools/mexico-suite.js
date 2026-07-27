@@ -3845,7 +3845,297 @@
     result.developerJson.breakdown = result.breakdown;
     return result;
   }
+
+  const CURP_STATE_CODES = {
+    AS: 'Aguascalientes', BC: 'Baja California', BS: 'Baja California Sur', CC: 'Campeche',
+    CL: 'Coahuila', CM: 'Colima', CS: 'Chiapas', CH: 'Chihuahua', DF: 'Ciudad de Mexico / former Distrito Federal',
+    DG: 'Durango', GT: 'Guanajuato', GR: 'Guerrero', HG: 'Hidalgo', JC: 'Jalisco',
+    MC: 'Mexico state', MN: 'Michoacan', MS: 'Morelos', NT: 'Nayarit', NL: 'Nuevo Leon',
+    OC: 'Oaxaca', PL: 'Puebla', QT: 'Queretaro', QR: 'Quintana Roo', SP: 'San Luis Potosi',
+    SL: 'Sinaloa', SR: 'Sonora', TC: 'Tabasco', TS: 'Tamaulipas', TL: 'Tlaxcala',
+    VZ: 'Veracruz', YN: 'Yucatan', ZS: 'Zacatecas', NE: 'Born abroad / foreign'
+  };
+  const CURP_ALPHABET = '0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+  const CURP_FIXTURES = {
+    valid: 'GODE561231HDFRRN00',
+    grouped: 'GODE 561231 HDF RRN 00',
+    invalid: 'GODE561231HDFRRN09',
+    short: 'GODE561231HDF',
+    badState: 'GODE561231HXXRRN09',
+    future: 'GODE991332HDFRRN09'
+  };
+
+  function curpNormalize(value) {
+    return text(value).toUpperCase().replace(/\s+/g, '').replace(/-/g, '').replace(/[^A-ZÑ0-9]/g, '');
+  }
+
+  function curpCharValue(char) {
+    return CURP_ALPHABET.indexOf(char);
+  }
+
+  function curpExpectedCheck(first17) {
+    const body = curpNormalize(first17).slice(0, 17);
+    let sum = 0;
+    for (let index = 0; index < 17; index += 1) {
+      const value = curpCharValue(body[index]);
+      if (value < 0) return null;
+      sum += value * (18 - index);
+    }
+    return String((10 - (sum % 10)) % 10);
+  }
+
+  function curpCentury(homoclave) {
+    return /[A-Z]/.test(homoclave) ? 2000 : 1900;
+  }
+
+  function curpDateParts(value, homoclave) {
+    const year2 = Number(value.slice(4, 6));
+    const month = Number(value.slice(6, 8));
+    const day = Number(value.slice(8, 10));
+    const year = curpCentury(homoclave) + year2;
+    const date = new Date(Date.UTC(year, month - 1, day));
+    const valid = month >= 1 && month <= 12 && day >= 1 && day <= 31 &&
+      date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+    return { year2, year, month, day, valid, iso: valid ? `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}` : 'invalid date' };
+  }
+
+  function curpAge(dateInfo) {
+    if (!dateInfo.valid) return null;
+    const now = new Date();
+    let age = now.getUTCFullYear() - dateInfo.year;
+    const monthNow = now.getUTCMonth() + 1;
+    const dayNow = now.getUTCDate();
+    if (monthNow < dateInfo.month || (monthNow === dateInfo.month && dayNow < dateInfo.day)) age -= 1;
+    return age;
+  }
+
+  function analyzeCurp(value) {
+    const normalized = curpNormalize(value);
+    const chars = normalized.split('');
+    const shapeOk = /^[A-ZÑ]{4}\d{6}[HM][A-Z]{2}[A-ZÑ]{3}[A-Z0-9]\d$/.test(normalized);
+    const homoclave = chars[16] || '';
+    const check = chars[17] || '';
+    const dateInfo = normalized.length >= 17 ? curpDateParts(normalized, homoclave) : { valid: false, iso: 'missing date' };
+    const state = normalized.slice(11, 13);
+    const expected = normalized.length >= 17 ? curpExpectedCheck(normalized.slice(0, 17)) : null;
+    const checksumOk = expected != null && check === expected;
+    const stateOk = Object.prototype.hasOwnProperty.call(CURP_STATE_CODES, state);
+    const sex = chars[10] === 'H' ? 'Male marker (H)' : chars[10] === 'M' ? 'Female marker (M)' : 'Unknown';
+    const diagnostics = [];
+    if (!normalized) diagnostics.push('Paste a CURP or load a safe fixture.');
+    if (normalized && normalized.length !== 18) diagnostics.push('CURP must be exactly 18 alphanumeric characters after removing display spaces.');
+    if (normalized && !shapeOk) diagnostics.push('CURP shape should be LLLL YYMMDD H/M state internal-consonants homoclave digit.');
+    if (normalized.length >= 13 && !stateOk) diagnostics.push('State code is not one of the recognized CURP entidad codes.');
+    if (normalized.length >= 10 && !dateInfo.valid) diagnostics.push('Birth date segment is not a valid calendar date.');
+    if (normalized.length >= 18 && !checksumOk) diagnostics.push(`Check digit mismatch: expected ${expected == null ? 'n/a' : expected}, got ${check || 'missing'}.`);
+    const valid = normalized.length === 18 && shapeOk && dateInfo.valid && stateOk && checksumOk;
+    const fields = [
+      ['Initial block', normalized.slice(0, 4) || 'missing', 'First surname letter/vowel, second surname letter, given-name letter.'],
+      ['Birth date', dateInfo.iso, 'YYMMDD with century inferred from homoclave character.'],
+      ['Age estimate', dateInfo.valid ? String(curpAge(dateInfo)) : 'n/a', 'Calendar estimate from decoded birth date; not identity proof.'],
+      ['Sex marker', chars[10] || 'missing', sex],
+      ['Birth entity', state || 'missing', stateOk ? CURP_STATE_CODES[state] : 'Unknown CURP state code.'],
+      ['Internal consonants', normalized.slice(13, 16) || 'missing', 'First internal consonants from surname/name components.'],
+      ['Homoclave', homoclave || 'missing', /[A-Z]/.test(homoclave) ? 'Usually indicates 2000+ century collision/deduplication space.' : 'Usually numeric for 1900s registrations.'],
+      ['Check digit', check || 'missing', expected == null ? 'Expected digit unavailable.' : `Expected ${expected} from RENAPO-style weighted replay.`]
+    ];
+    const checks = [
+      ['Input present', normalized.length > 0, normalized ? 'Input normalized locally.' : 'No CURP input yet.'],
+      ['Length', normalized.length === 18, `${normalized.length}/18 characters.`],
+      ['Shape', shapeOk, 'Four letters, six date digits, sex, state, consonants, homoclave, digit.'],
+      ['Calendar date', dateInfo.valid, dateInfo.iso],
+      ['State code', stateOk, stateOk ? `${state} - ${CURP_STATE_CODES[state]}` : `${state || 'missing'} is not recognized.`],
+      ['Check digit', checksumOk, expected == null ? 'No replay yet.' : `Expected ${expected}; provided ${check || 'missing'}.`],
+      ['Official boundary', true, 'Local pass does not prove RENAPO assignment, active status, identity, or ownership.']
+    ];
+    return { normalized, valid, shapeOk, dateInfo, state, stateOk, sex, homoclave, check, expected, fields, checks, diagnostics };
+  }
+
+  function curpDeveloperJson(report) {
+    return {
+      tool: 'mexico-curp-validator',
+      goldProfile: 'Mexico CURP',
+      version: '2026-07-26-curp-gold-v1',
+      status: report.valid ? 'pass' : 'review',
+      normalized: report.normalized,
+      masked: mask(report.normalized),
+      date: report.dateInfo.iso,
+      sex: report.sex,
+      stateCode: report.state,
+      stateName: report.stateOk ? CURP_STATE_CODES[report.state] : null,
+      homoclave: report.homoclave || null,
+      checkDigit: { provided: report.check || null, expected: report.expected, valid: report.expected != null && report.check === report.expected },
+      diagnostics: report.diagnostics,
+      localBoundary: 'Browser-only CURP structure, date, state-code, and check-digit evidence. RENAPO assignment/status and identity proof require official systems.'
+    };
+  }
+
+  function curpGenerate(options) {
+    const initials = curpNormalize(options.initials || 'GODE').padEnd(4, 'X').slice(0, 4).replace(/[0-9]/g, 'X');
+    const date = String(options.date || '1956-12-31').replace(/-/g, '');
+    const year = Number(date.slice(0, 4));
+    const bodyDate = `${String(year).slice(-2)}${date.slice(4, 8)}`;
+    const sex = /M/i.test(options.sex || '') ? 'M' : 'H';
+    const state = CURP_STATE_CODES[curpNormalize(options.state || 'DF').slice(0, 2)] ? curpNormalize(options.state || 'DF').slice(0, 2) : 'DF';
+    const consonants = curpNormalize(options.consonants || 'RRN').padEnd(3, 'X').slice(0, 3).replace(/[0-9]/g, 'X');
+    const homoclave = year >= 2000 ? 'A' : '0';
+    const first17 = `${initials}${bodyDate}${sex}${state}${consonants}${homoclave}`;
+    return first17 + curpExpectedCheck(first17);
+  }
+
+  function curpEsc(value) {
+    return text(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function mountCurpGold(root) {
+    const slug = location.pathname.split('/').filter(Boolean).pop();
+    if (slug !== 'mexico-curp-validator' || !root || root.dataset.curpGoldMounted === 'true') return false;
+    root.dataset.curpGoldMounted = 'true';
+    root.classList.add('mx-curp-host');
+    root.innerHTML = `
+      <section class="mx-curp-lab" data-gold-lab data-curp-gold>
+        <div class="mx-curp-head">
+          <div>
+            <span class="mx-curp-kicker">Gold Browser Lab</span>
+            <h2>Mexico CURP Workbench</h2>
+            <p>Validate, decode, generate safe fixtures, replay the check digit, inspect date/state anatomy, and export developer evidence without calling RENAPO.</p>
+          </div>
+          <div class="mx-curp-badges"><span>Browser-only</span><span>RENAPO boundary</span><span>Fixture-safe</span></div>
+        </div>
+        <div class="mx-curp-source-row">
+          <a href="https://www.gob.mx/segob/renapo/articulos/sabes-como-se-conforma-tu-curp?idiom=es" target="_blank" rel="noopener">RENAPO CURP composition</a>
+          <a href="https://www.gob.mx/tramites/ficha/asignacion-de-curp/RENAPO8836" target="_blank" rel="noopener">gob.mx CURP assignment</a>
+          <a href="https://www.gob.mx/segob/acciones-y-programas/clave-unica-de-registro-de-poblacion-curp" target="_blank" rel="noopener">SEGOB CURP boundary</a>
+        </div>
+        <div class="mx-curp-grid">
+          <div class="mx-curp-input">
+            <div class="mx-curp-samples">
+              <button type="button" data-curp-sample="valid">Valid fixture</button>
+              <button type="button" data-curp-sample="grouped">Grouped fixture</button>
+              <button type="button" data-curp-sample="invalid">Bad digit</button>
+              <button type="button" data-curp-sample="short">Short</button>
+              <button type="button" data-curp-sample="badState">Bad state</button>
+              <button type="button" data-curp-action="batch">Batch replay</button>
+            </div>
+            <label class="mx-curp-field"><span>CURP input</span><input data-curp-input value="${CURP_FIXTURES.valid}" spellcheck="false"></label>
+            <section class="mx-curp-generator">
+              <div><span class="mx-curp-mini">Safe fixture generator</span><strong>Build a structural CURP</strong></div>
+              <div class="mx-curp-generator-grid">
+                <label><span>Initial block</span><input data-curp-gen="initials" value="GODE" maxlength="4"></label>
+                <label><span>Date</span><input data-curp-gen="date" type="date" value="1956-12-31" placeholder="YYYY-MM-DD"></label>
+                <label><span>Sex</span><input type="hidden" data-curp-gen="sex" value="H"><div class="mx-curp-sex-toggle" role="group" aria-label="CURP sex marker"><button type="button" class="is-active" data-curp-sex="H">H</button><button type="button" data-curp-sex="M">M</button></div></label>
+                <label><span>State</span><select data-curp-gen="state">${Object.keys(CURP_STATE_CODES).map((code) => `<option value="${code}"${code === 'DF' ? ' selected' : ''}>${code} - ${CURP_STATE_CODES[code]}</option>`).join('')}</select></label>
+                <label><span>Consonants</span><input data-curp-gen="consonants" value="RRN" maxlength="3"></label>
+              </div>
+            </section>
+            <div class="mx-curp-actions">
+              <button type="button" class="mx-curp-primary" data-curp-action="generate">Generate safe CURP</button>
+              <button type="button" data-curp-action="validate">Validate</button>
+              <button type="button" data-curp-action="copy">Copy developer JSON</button>
+              <button type="button" data-curp-action="clear">Clear</button>
+            </div>
+          </div>
+          <div class="mx-curp-output" data-curp-output></div>
+        </div>
+      </section>`;
+    injectCurpGoldStyles();
+    const input = root.querySelector('[data-curp-input]');
+    const output = root.querySelector('[data-curp-output]');
+    let lastReport = null;
+    function renderCurrent(batch) {
+      lastReport = analyzeCurp(input.value);
+      output.innerHTML = renderCurpOutput(lastReport, batch);
+    }
+    function copyDeveloperJson(action) {
+      const json = JSON.stringify(curpDeveloperJson(lastReport || analyzeCurp(input.value)), null, 2);
+      const fallback = () => {
+        const field = document.createElement('textarea');
+        field.value = json;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.left = '-9999px';
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand('copy');
+        field.remove();
+      };
+      const markCopied = () => {
+        action.textContent = 'Copied JSON';
+        setTimeout(() => { action.textContent = 'Copy developer JSON'; }, 1200);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(json).then(markCopied).catch(() => {
+          fallback();
+          markCopied();
+        });
+      } else {
+        fallback();
+        markCopied();
+      }
+    }
+    root.addEventListener('click', function (event) {
+      const sample = event.target.closest('[data-curp-sample]');
+      const action = event.target.closest('[data-curp-action]');
+      const sex = event.target.closest('[data-curp-sex]');
+      if (sample) {
+        input.value = CURP_FIXTURES[sample.dataset.curpSample] || CURP_FIXTURES.valid;
+        renderCurrent();
+        return;
+      }
+      if (sex) {
+        const sexField = root.querySelector('[data-curp-gen="sex"]');
+        if (sexField) sexField.value = sex.dataset.curpSex;
+        root.querySelectorAll('[data-curp-sex]').forEach((button) => button.classList.toggle('is-active', button === sex));
+        return;
+      }
+      if (!action) return;
+      if (action.dataset.curpAction === 'generate') {
+        const values = {};
+        root.querySelectorAll('[data-curp-gen]').forEach((field) => { values[field.dataset.curpGen] = field.value; });
+        input.value = curpGenerate(values);
+        renderCurrent();
+      } else if (action.dataset.curpAction === 'validate') {
+        renderCurrent();
+      } else if (action.dataset.curpAction === 'clear') {
+        input.value = '';
+        renderCurrent();
+      } else if (action.dataset.curpAction === 'batch') {
+        const batch = Object.entries(CURP_FIXTURES).map(([label, value]) => ({ label, report: analyzeCurp(value) }));
+        input.value = CURP_FIXTURES.valid;
+        renderCurrent(batch);
+      } else if (action.dataset.curpAction === 'copy') {
+        copyDeveloperJson(action);
+      }
+    });
+    input.addEventListener('input', () => renderCurrent());
+    renderCurrent();
+    return true;
+  }
+
+  function renderCurpOutput(report, batch) {
+    const json = curpDeveloperJson(report);
+    return `
+      <div class="mx-curp-status ${report.valid ? 'is-ok' : 'is-review'}"><span>${report.valid ? 'Local checks passed' : 'Review needed'}</span><strong>${curpEsc(report.normalized || 'empty')}</strong><p>${report.valid ? 'CURP structure, date, state code, and check digit agree locally.' : curpEsc(report.diagnostics[0] || 'Fix the CURP before using it as a fixture.')}</p></div>
+      <div class="mx-curp-cards">${report.checks.map((item) => `<article class="${item[1] ? 'ok' : 'review'}"><span>${curpEsc(item[0])}</span><strong>${item[1] ? 'PASS' : 'REVIEW'}</strong><p>${curpEsc(item[2])}</p></article>`).join('')}</div>
+      <section class="mx-curp-section"><div class="mx-curp-title">CURP Anatomy</div><div class="mx-curp-fields">${report.fields.map((item) => `<div><span>${curpEsc(item[0])}</span><strong>${curpEsc(item[1])}</strong><p>${curpEsc(item[2])}</p></div>`).join('')}</div></section>
+      <section class="mx-curp-section"><div class="mx-curp-title">Check Digit Replay</div><div class="mx-curp-replay"><div><span>First 17 chars</span><code>${curpEsc(report.normalized.slice(0, 17) || 'n/a')}</code></div><div><span>Expected digit</span><strong>${curpEsc(report.expected == null ? 'n/a' : report.expected)}</strong></div><div><span>Provided digit</span><strong>${curpEsc(report.check || 'missing')}</strong></div><div><span>Status</span><strong class="${report.expected != null && report.check === report.expected ? 'ok' : 'review'}">${report.expected != null && report.check === report.expected ? 'Match' : 'Mismatch'}</strong></div></div></section>
+      ${batch ? `<section class="mx-curp-section"><div class="mx-curp-title">Batch Replay</div><div class="mx-curp-batch">${batch.map((item) => `<span class="${item.report.valid ? 'ok' : 'review'}">${curpEsc(item.label)}: ${item.report.valid ? 'PASS' : 'REVIEW'}</span>`).join('')}</div></section>` : ''}
+      <section class="mx-curp-section mx-curp-traps"><div class="mx-curp-title">Integration Traps</div><ul><li>Do not treat a local CURP pass as proof that RENAPO assigned the key, that the person exists, or that identity was verified.</li><li>Keep display grouping separate from the stored normalized 18-character value; spaces and hyphens are UI-only.</li><li>Validate the decoded date and state code before accepting a checksum pass, because checksum alone can still preserve bad semantics.</li><li>Keep bad-digit, short, bad-state, and invalid-date fixtures in automated tests.</li><li>Mask CURP values in logs, analytics, crash reports, screenshots, and support tickets.</li></ul></section>
+      <section class="mx-curp-section mx-curp-sources"><div class="mx-curp-title">Official Sources And Boundary</div><p>This browser lab follows the public CURP composition model: four-letter name block, YYMMDD birth date, sex marker, two-letter birth entity, internal consonants, homoclave/control position, and final check digit. It is intentionally limited to local evidence that helps developers build fixtures, normalize form input, debug bad digits, and explain why a value is rejected.</p><p>RENAPO assignment, correction, official status, identity proof, and person existence remain outside this page and require Mexican government systems. A local pass is useful test evidence, not an official registry result.</p></section>
+      <section class="mx-curp-section"><div class="mx-curp-title mx-curp-title-row"><span>Developer Snapshot</span><button type="button" data-curp-action="copy">Copy developer JSON</button></div><pre><code>${curpEsc(JSON.stringify(json, null, 2))}</code></pre></section>`;
+  }
+
+  function injectCurpGoldStyles() {
+    if (document.getElementById('mx-curp-gold-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'mx-curp-gold-styles';
+    style.textContent = `.mx-curp-host{max-width:100%;overflow:hidden}.mx-curp-lab,.mx-curp-lab *{box-sizing:border-box}.mx-curp-lab{--mx-green:#006341;--mx-red:#ce1126;--mx-soft:#f8fafc;display:flex;flex-direction:column;gap:18px;max-width:100%;overflow:hidden;color:#111827;padding:18px}.mx-curp-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;border:1px solid #dbe7df;border-radius:16px;padding:20px;background:linear-gradient(135deg,#fff,#f8fffb 60%,#fff5f5);box-shadow:0 18px 48px rgba(15,23,42,.07)}.mx-curp-kicker,.mx-curp-mini{display:block;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mx-green)}.mx-curp-head h2{font-size:1.35rem;margin:.25rem 0}.mx-curp-head p{margin:0;color:#64748b;max-width:780px}.mx-curp-badges,.mx-curp-source-row,.mx-curp-samples,.mx-curp-actions,.mx-curp-batch{display:flex;flex-wrap:wrap;gap:8px}.mx-curp-actions{margin-top:18px;align-items:center}.mx-curp-badges span,.mx-curp-source-row a,.mx-curp-samples button,.mx-curp-actions button,.mx-curp-title-row button{border:1px solid #dbe7df;border-radius:999px;background:#fff;padding:8px 11px;font-weight:850;color:#334155;text-decoration:none;transition:box-shadow .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease}.mx-curp-source-row a{color:#0f766e}.mx-curp-source-row a:hover,.mx-curp-samples button:hover,.mx-curp-actions button:hover,.mx-curp-title-row button:hover{border-color:#94d3bd;background:#f8fffb;color:var(--mx-green);box-shadow:inset 0 0 0 1px rgba(0,99,65,.18),0 4px 14px rgba(15,23,42,.08)}.mx-curp-source-row a:focus-visible,.mx-curp-samples button:focus-visible,.mx-curp-actions button:focus-visible,.mx-curp-title-row button:focus-visible,.mx-curp-sex-toggle button:focus-visible{outline:0;box-shadow:inset 0 0 0 3px rgba(37,99,235,.24)}.mx-curp-grid{display:flex;flex-direction:column;gap:18px;max-width:100%;min-width:0}.mx-curp-input,.mx-curp-output{width:100%;min-width:0;max-width:100%;overflow:hidden}.mx-curp-output{display:flex;flex-direction:column;gap:18px}.mx-curp-field{display:flex;flex-direction:column;gap:6px;margin:14px 0}.mx-curp-field span,.mx-curp-generator label span{font-size:.72rem;font-weight:850;color:#64748b}.mx-curp-field input,.mx-curp-generator input,.mx-curp-generator select{width:100%;min-width:0;border:1px solid #dbe3ef;border-radius:12px;padding:13px 14px;color:#0f172a;background:#fff;font:750 .92rem ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase}.mx-curp-generator{border:1px solid #e2e8f0;border-radius:14px;padding:16px;background:linear-gradient(180deg,#fff,#f8fafc)}.mx-curp-generator strong{display:block;margin-top:3px}.mx-curp-generator-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:12px}.mx-curp-generator label{grid-column:span 2;min-width:0;display:flex;flex-direction:column;gap:5px}.mx-curp-generator label:nth-child(4),.mx-curp-generator label:nth-child(5){grid-column:span 3}.mx-curp-sex-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;border:1px solid #dbe3ef;border-radius:12px;background:#f8fafc;padding:4px;min-height:54px}.mx-curp-sex-toggle button{border:0;border-radius:9px;background:transparent;color:#64748b;font:900 .95rem ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer;transition:box-shadow .16s ease,background-color .16s ease,color .16s ease}.mx-curp-sex-toggle button:hover{background:#eef7f2;color:var(--mx-green);box-shadow:inset 0 0 0 1px rgba(0,99,65,.12)}.mx-curp-sex-toggle button.is-active{background:#0f172a;color:#fff;box-shadow:0 8px 18px rgba(15,23,42,.16)}.mx-curp-sex-toggle button.is-active:hover{background:#111827;color:#fff}.mx-curp-primary{background:#0f172a!important;color:#fff!important;border-color:#0f172a!important}.mx-curp-primary:hover{background:#111827!important;color:#fff!important;border-color:#111827!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 6px 18px rgba(15,23,42,.14)!important}.mx-curp-status{border:1px solid #dbe3ef;border-radius:16px;padding:16px;background:#fff;margin:0}.mx-curp-status span,.mx-curp-cards span,.mx-curp-fields span,.mx-curp-replay span{display:block;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#64748b}.mx-curp-status strong{display:block;margin-top:5px;font-size:1.2rem;overflow-wrap:anywhere}.mx-curp-status p{margin:.4rem 0 0;color:#64748b}.mx-curp-status.is-ok strong,.mx-curp-cards .ok strong,.mx-curp-replay .ok{color:#047857}.mx-curp-status.is-review strong,.mx-curp-cards .review strong,.mx-curp-replay .review{color:#b45309}.mx-curp-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mx-curp-cards article,.mx-curp-section{border:1px solid #e2e8f0;border-radius:14px;background:#fff;padding:13px;min-width:0;max-width:100%;overflow:hidden}.mx-curp-cards article.ok{background:rgba(0,99,65,.035);border-color:rgba(0,99,65,.18)}.mx-curp-cards article.review{background:rgba(180,83,9,.045);border-color:rgba(180,83,9,.18)}.mx-curp-cards p,.mx-curp-fields p,.mx-curp-sources p{margin:.25rem 0 0;color:#64748b;font-size:.82rem;line-height:1.4}.mx-curp-sources p+p{margin-top:.65rem}.mx-curp-title{font-size:.78rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase;color:#0f172a;border-bottom:1px solid #e2e8f0;padding-bottom:9px;margin-bottom:12px}.mx-curp-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.mx-curp-title-row button{font-size:.74rem;letter-spacing:0;text-transform:none;padding:7px 10px}.mx-curp-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}.mx-curp-fields div{border:1px solid #edf2f7;border-radius:12px;padding:11px;min-width:0}.mx-curp-fields strong{display:block;overflow-wrap:anywhere;color:#0f172a}.mx-curp-replay{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px}.mx-curp-replay div{border:1px solid #edf2f7;border-radius:12px;padding:11px;min-width:0}.mx-curp-replay code{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.mx-curp-batch span{border:1px solid #e2e8f0;border-radius:999px;padding:6px 9px;font-weight:850;background:#f8fafc}.mx-curp-batch .ok{color:#047857}.mx-curp-batch .review{color:#b45309}.mx-curp-traps ul{margin:0;padding-left:18px;color:#64748b;font-size:.84rem;line-height:1.48}.mx-curp-traps li{margin:0 0 5px}.mx-curp-section pre{margin:0;max-width:100%;overflow:auto;border-radius:12px;background:#0f172a;color:#dbeafe;padding:14px;font-size:.78rem}@media(max-width:760px){.mx-curp-head{display:block}.mx-curp-badges{margin-top:14px}.mx-curp-cards,.mx-curp-fields,.mx-curp-replay,.mx-curp-generator-grid{grid-template-columns:1fr}.mx-curp-generator label,.mx-curp-generator label:nth-child(4),.mx-curp-generator label:nth-child(5){grid-column:auto}}`;
+    document.head.appendChild(style);
+  }
+
   function mount() {
+    const host = document.querySelector('[data-algorithm-id="' + ALGORITHM_ID + '"]') || document.querySelector('.browser-workbench');
+    if (mountCurpGold(host)) return true;
     const factory = window.ValidoHubCountrySuiteFactory;
     if (!factory) return false;
     const suite = factory.createSuite({
@@ -3855,7 +4145,7 @@
       tools: RAW_TOOLS,
       analyze
     });
-    suite.mount(document.querySelector('[data-algorithm-id="' + ALGORITHM_ID + '"]') || document.querySelector('.browser-workbench'));
+    suite.mount(host);
     window['ValidoHub' + COUNTRY.name.replace(/\W/g, '') + 'Suite'] = suite;
     return true;
   }

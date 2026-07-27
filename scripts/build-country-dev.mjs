@@ -174,6 +174,94 @@ const COUNTRY_RUNTIME_BY_SLUG = {
 
 const LEGACY_RICH_LAYER = 'country-legacy-rich-layer.js';
 const LEGACY_RICH_COUNTRIES = new Set(['brazil', 'poland', 'france', 'netherlands']);
+const GOLD_LAB_RUNTIME = 'gold-tools-lab.js';
+const GOLD_LAB_COUNTRIES = new Set([
+  'argentina',
+  'australia',
+  'austria',
+  'belgium',
+  'brazil',
+  'canada',
+  'chile',
+  'china',
+  'colombia',
+  'costa-rica',
+  'croatia',
+  'cyprus',
+  'czechia',
+  'denmark',
+  'dominican-republic',
+  'ecuador',
+  'egypt',
+  'estonia',
+  'finland',
+  'france',
+  'germany',
+  'ghana',
+  'greece',
+  'hungary',
+  'iceland',
+  'india',
+  'indonesia',
+  'ireland',
+  'israel',
+  'italy',
+  'japan',
+  'kenya',
+  'latvia',
+  'lithuania',
+  'luxembourg',
+  'malaysia',
+  'malta',
+  'mexico',
+  'morocco',
+  'netherlands',
+  'new-zealand',
+  'nigeria',
+  'norway',
+  'panama',
+  'paraguay',
+  'peru',
+  'philippines',
+  'poland',
+  'portugal',
+  'romania',
+  'saudi-arabia',
+  'singapore',
+  'slovakia',
+  'slovenia',
+  'south-africa',
+  'south-korea',
+  'spain',
+  'sweden',
+  'switzerland',
+  'thailand',
+  'turkey',
+  'united-arab-emirates',
+  'united-kingdom',
+  'united-states',
+  'uruguay',
+  'vietnam'
+]);
+const GOLD_LAB_ALGORITHMS = new Set([
+  'validohub.pesel'
+]);
+const GOLD_STANDALONE_RUNTIMES_BY_COUNTRY = {
+  brazil: ['pix.js'],
+  poland: ['pesel.js'],
+  spain: ['spain-id.js']
+};
+const STANDALONE_RUNTIME_BY_ALGORITHM = new Map([
+  ['validohub.brazil-pix', ['pix.js']],
+  ['validohub.spain-id', ['spain-id.js']]
+]);
+const GOLD_LAB_ROUTE_OVERRIDES = new Set([
+  '/en/poland/poland-invoice-number-helper/index.html',
+  '/en/poland/poland-mrz-passport-id-parser/index.html',
+  '/en/poland/poland-passport-number-inspector/index.html',
+  '/en/poland/poland-swift-bic-inspector/index.html',
+  '/en/brazil/brazil-iban-validator/index.html'
+]);
 
 const COUNTRY_ALGORITHM_BY_SLUG = {
   albania: 'validohub.albania-suite',
@@ -830,9 +918,13 @@ async function rewriteHtmlTreeAssetLinks(dir, assetsManifest) {
 
 function runtimeScriptsForCountry(country) {
   const runtime = COUNTRY_RUNTIME_BY_SLUG[country] || `${country}-suite.js`;
-  if (LEGACY_RICH_COUNTRIES.has(country)) return [LEGACY_RICH_LAYER, runtime];
-  if (FACTORY_COUNTRY_SLUGS.has(country)) return ['country-suite-factory.js', runtime];
-  return [runtime];
+  const scripts = LEGACY_RICH_COUNTRIES.has(country)
+    ? [LEGACY_RICH_LAYER, runtime]
+    : FACTORY_COUNTRY_SLUGS.has(country)
+      ? ['country-suite-factory.js', runtime]
+      : [runtime];
+  if (GOLD_LAB_COUNTRIES.has(country)) scripts.push(GOLD_LAB_RUNTIME);
+  return scripts;
 }
 
 function ensureOrderedToolScripts(content, scripts) {
@@ -847,6 +939,33 @@ function ensureOrderedToolScripts(content, scripts) {
   return next.replace('</body>', tags.join('') + '\n</body>');
 }
 
+function ensureAdditionalToolScript(content, script) {
+  const src = `/assets/js/tools/${script}`;
+  if (content.includes(src)) return content;
+  return content.replace('</body>', `<script src="${src}?v=country-premium-20260719"></script>\n</body>`);
+}
+
+function removeToolScript(content, script) {
+  const src = `/assets/js/tools/${script}`;
+  const oldTag = new RegExp(`<script src="${escapeRegExp(src)}(?:\\?[^\"]*)?"></script>\\s*`, 'g');
+  return content.replace(oldTag, '');
+}
+
+function applyRouteSpecificRuntimeOverrides(content, filePath) {
+  const normalizedFilePath = filePath.replace(/\\/g, '/');
+  if (normalizedFilePath.endsWith('/en/spain/spain-id-validator/index.html')) {
+    let next = removeToolScript(content, GOLD_LAB_RUNTIME);
+    next = ensureAdditionalToolScript(next, 'spain-id.js');
+    return next;
+  }
+  for (const routePath of GOLD_LAB_ROUTE_OVERRIDES) {
+    if (normalizedFilePath.endsWith(routePath)) {
+      return ensureAdditionalToolScript(content, GOLD_LAB_RUNTIME);
+    }
+  }
+  return content;
+}
+
 async function refreshEnglishCountryRuntimeScripts(country) {
   const algorithmId = COUNTRY_ALGORITHM_BY_SLUG[country];
   if (!algorithmId) return 0;
@@ -856,8 +975,24 @@ async function refreshEnglishCountryRuntimeScripts(country) {
   let updated = 0;
   for (const filePath of htmlFiles) {
     const content = await readFile(filePath, 'utf8');
-    if (!content.includes(`data-algorithm-id="${algorithmId}"`)) continue;
-    const next = ensureOrderedToolScripts(content, runtimeScriptsForCountry(country));
+    let next = content;
+    if (content.includes(`data-algorithm-id="${algorithmId}"`)) {
+      next = ensureOrderedToolScripts(content, runtimeScriptsForCountry(country));
+    }
+    for (const [standaloneAlgorithmId, scripts] of STANDALONE_RUNTIME_BY_ALGORITHM) {
+      if (next.includes(`data-algorithm-id="${standaloneAlgorithmId}"`)) {
+        next = removeToolScript(next, GOLD_LAB_RUNTIME);
+        next = ensureOrderedToolScripts(next, scripts);
+        break;
+      }
+    }
+    for (const goldAlgorithmId of GOLD_LAB_ALGORITHMS) {
+      if (next.includes(`data-algorithm-id="${goldAlgorithmId}"`)) {
+        next = ensureAdditionalToolScript(next, GOLD_LAB_RUNTIME);
+        break;
+      }
+    }
+    next = applyRouteSpecificRuntimeOverrides(next, filePath);
     if (next !== content) {
       await writeFile(filePath, next, 'utf8');
       updated += 1;
@@ -874,7 +1009,9 @@ async function syncRuntimeAssets(country) {
   await cp(resolve(projectRoot, 'assets', 'js', 'workbench'), destWorkbench, { recursive: true });
 
   const runtime = COUNTRY_RUNTIME_BY_SLUG[country] || `${country}-suite.js`;
-  const scripts = LEGACY_RICH_COUNTRIES.has(country) ? [LEGACY_RICH_LAYER, runtime] : [runtime];
+  const scripts = Array.from(new Set(runtimeScriptsForCountry(country)
+    .concat(GOLD_STANDALONE_RUNTIMES_BY_COUNTRY[country] || [])))
+    .filter((script) => script !== 'country-suite-factory.js');
   for (const script of scripts) {
     const sourceRuntime = resolve(projectRoot, 'assets', 'js', 'tools', script);
     if (await pathExists(sourceRuntime)) {

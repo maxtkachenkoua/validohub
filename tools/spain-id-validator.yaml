@@ -16,7 +16,7 @@ capabilities:
   - explain
   - calculate
 algorithm:
-  algorithmId: validohub.spain-suite
+  algorithmId: validohub.spain-id
 forms:
   validate:
     inputs:

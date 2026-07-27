@@ -37,6 +37,15 @@ Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT
 - Switzerland Premium Workbench Suite: `assets/js/tools/switzerland-suite.js`
 - Germany Premium Workbench Suite: `assets/js/tools/germany-suite.js`
 - Future Country Suite Factory: `assets/js/tools/country-suite-factory.js`
+- Gold Tools Lab overlay: `assets/js/tools/gold-tools-lab.js`
+
+## Gold Tools Lab V1
+
+ValidoHub now has an additive Gold browser-lab overlay for flagship local-market tools, currently represented by 64 route profiles where one Gold target naturally spans multiple local routes. The overlay is ValidoHub-owned, mounted only on approved country tool slugs, and adds source links, valid/invalid fixtures, safe generation, local analysis, field/anatomy evidence, batch replay, integration traps, official-boundary notes, and developer JSON without changing Valido Engine.
+
+The overlay is a baseline, not a claim that every target has exhausted its public specification. Several formats already have concrete local checksum replay in `overlay-v1`; others intentionally remain conservative until exact official-source deepening is completed. Brazil Pix is intentionally not mounted through the shared overlay because its bespoke runtime owns the full page. The AI implementation index and progress log live in `docs/ai/gold-tools/`.
+
+Brazil Pix has been promoted beyond the shared overlay into the first bespoke Gold V2 payment/QR/payload lab. It now exposes BR Code formatting, deliberate bad-CRC fixtures, safe-fixture diff, nested TLV paths, offsets, raw TLV segments, CRC replay input, implementation lint, official BCB/source links, Pix-specific traps, local QR SVG generation, and explicit DICT/payment/settlement boundaries in `assets/js/tools/pix.js`. Pix must keep visible Gold identity inside the main runtime (`Brazil PIX Gold Workbench`, `Gold Browser Lab`, connected evidence strip); do not re-add the shared overlay or remove the Gold presentation when fixing duplicates.
 
 
 ## Countries Platform
@@ -384,3 +393,11 @@ As of 2026-07-26, the current revision is the user-approved premium baseline and
 The accepted Countries Portal map standard is a neutral atlas at rest with no square, diamond, or circular flag fallback markers. Hover/focus should keep the active SVG country shape subtle and show a premium mini-card that uses the saved country outline raster asset. Do not regress to bright full-map flag fills or flat SVG flag-painting as the primary hover effect.
 
 Known remaining map limitation: the base atlas geometry is simplified. Improving country contour fidelity requires a dedicated high-detail atlas asset pipeline rather than CSS-only tuning or ad hoc path edits.
+
+## Gold Tools Flagship Matrix
+
+The broad shared Gold overlay at `assets/js/tools/gold-tools-lab.js` now covers 281 route-bound local-market profiles. This layer is ValidoHub-owned, additive, browser-only, and intended for high-value triage across many existing country routes.
+
+The overlay includes source links, valid/invalid fixtures, safe fixture generation, local analysis, anatomy/replay fields, batch replay, integration traps, official-boundary notes, and developer JSON. It now contains real local replay handlers for selected high-demand formats including South Africa ID, Turkey TCKN, Israel Teudat Zehut, Portugal NIF, Croatia OIB, Czech ICO, Greece AFM, Ecuador cedula, Uruguay cedula, and Kenya KRA PIN, plus strong shared analyzers for BIC/SWIFT, phone/E.164, postal codes, passport-like document numbers, vehicle plates, invoices, payment references, bank/account references, postal tracking, customs references, and procurement identifiers.
+
+Pix, Mexico CURP, and Spain ID remain the bespoke Gold references. Do not treat the shared overlay as the endpoint for a truly flagship format; promote the tool to a dedicated runtime/spec/log when the page deserves Pix/CURP/Spain-level interaction.

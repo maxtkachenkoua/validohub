@@ -210,6 +210,12 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Explain PIX GUI, key, merchant, city, amount, TXID, currency, country, and CRC fields.
   - Generate static PIX BR Code payloads locally.
   - Generate QR SVG locally in the browser.
+  - Format pasted BR Code payloads without removing valid value spaces.
+  - Generate a deliberate bad-CRC fixture.
+  - Diff the current payload against a safe generated fixture.
+  - Show nested TLV paths, offsets, declared lengths, raw TLV segments, and parsed values.
+  - Show implementation lint for payload format, PIX GUI, BRL currency, country, merchant, city, TXID, and CRC.
+  - Show official BCB/source links and browser-only DICT/payment/settlement boundary.
   - Copy payload and result JSON.
   - Download result JSON and generated QR SVG.
   - Show validation timeline, result cards, TLV table, CRC debugger, and developer JSON snapshot.
@@ -221,6 +227,25 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Batch QR generation.
   - Browser-only QR image import if a decoder is approved.
 - Current quality status: Production-quality V1 workbench modeled after the PESEL gold standard.
+
+## Mexico CURP Workbench
+
+- Source JS: `assets/js/tools/mexico-suite.js`
+- Related country route:
+  - `mexico-curp-validator`
+- Product spec:
+  - `docs/product/MEXICO_CURP_WORKBENCH_SPEC.md`
+- AI implementation log:
+  - `docs/ai/gold-tools/MEXICO_CURP_GOLD_LOG.md`
+- Current capabilities:
+  - Browser-only CURP normalization, validation, and safe fixture generation.
+  - Public anatomy parsing for initial block, birth date, age estimate, sex marker, entidad code, internal consonants, homoclave/control position, and check digit.
+  - Calendar-date validation and official CURP state/entity code mapping, including `NE`.
+  - Weighted check-digit replay with expected/provided values.
+  - Valid, grouped, bad-digit, short, bad-state, and invalid-date samples.
+  - Batch replay, result cards, CURP anatomy cards, check-digit replay panel, integration traps, official source/boundary panel, and Developer Snapshot JSON.
+  - Generic Gold overlay suppression through the primary bespoke lab so the page has one connected workbench.
+- Current quality status: Bespoke Gold V1 country workbench; scoped build/browser/audit QA required before final sign-off.
 
 ## France Premium Workbench Suite
 
@@ -360,15 +385,14 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Explain legal-entity CIF/NIF weighted control digit or letter calculation.
   - Detect entity-family context from legal-entity prefix.
   - Generate fictional DNI, NIE, and CIF/NIF test fixtures locally.
-  - Show validation timeline, result cards, token breakdown, checksum debugger, and developer JSON snapshot.
+  - Show validation timeline, result cards, token/anatomy breakdown, checksum replay, batch replay, official-source/boundary notes, Integration traps, and developer JSON snapshot.
   - Provide presets and local-only input history.
-  - Copy normalized identifier and download result JSON through the shared framework.
+  - Copy normalized identifier, copy Developer Snapshot JSON, and download result JSON through the shared framework.
 - Known future ideas:
   - Dedicated VAT / VIES Workbench with explicit network policy.
-  - Batch CSV validation.
   - Mask/anonymize helper for logs.
   - Spain phone, postal code, IBAN, and Bizum-specific tools.
-- Current quality status: Production-quality V1 workbench modeled after PESEL and PIX.
+- Current quality status: Bespoke Gold V1 workbench modeled after PESEL, Pix, and CURP. The standalone page owns its Gold runtime and must not receive a duplicate shared Gold overlay.
 
 ## Poland Premium Workbench Suite
 
@@ -694,6 +718,18 @@ Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factor
 Countries: Algeria (algeria), Angola (angola), Benin (benin), Botswana (botswana), Burkina Faso (burkina-faso), Burundi (burundi), Cabo Verde (cabo-verde), Cameroon (cameroon), Central African Republic (central-african-republic), Chad (chad), Comoros (comoros), Republic of the Congo (congo), Cote dIvoire (cote-d-ivoire), Democratic Republic of the Congo (democratic-republic-of-the-congo), Djibouti (djibouti), Egypt (egypt), Equatorial Guinea (equatorial-guinea), Eritrea (eritrea), Eswatini (eswatini), Ethiopia (ethiopia), Gabon (gabon), Gambia (gambia), Ghana (ghana), Guinea (guinea), Guinea-Bissau (guinea-bissau), Kenya (kenya), Lesotho (lesotho), Liberia (liberia), Libya (libya), Madagascar (madagascar), Malawi (malawi), Mali (mali), Mauritania (mauritania), Mauritius (mauritius), Morocco (morocco), Mozambique (mozambique), Namibia (namibia), Niger (niger), Nigeria (nigeria), Rwanda (rwanda), Sao Tome and Principe (sao-tome-and-principe), Senegal (senegal), Seychelles (seychelles), Sierra Leone (sierra-leone), Somalia (somalia), South Africa (south-africa), South Sudan (south-sudan), Sudan (sudan), Tanzania (tanzania), Togo (togo), Tunisia (tunisia), Uganda (uganda), Zambia (zambia), Zimbabwe (zimbabwe).
 
 Each country registers quality-driven active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown, tool-context explanation, valid/invalid fixtures, fresh generator output, copy feedback, and official boundary copy are mandatory for every route.
+
+
+## Shared Gold Tools Lab Overlay
+
+- Source JS: `assets/js/tools/gold-tools-lab.js`
+- Build wiring: `scripts/build-country-dev.mjs` and `scripts/build-all.mjs`
+- Current profile count: 281 route-bound profiles.
+- Role: broad flagship triage layer for existing country-suite and selected standalone routes. It adds source-linked browser labs, safe samples, local analysis, anatomy/replay fields, integration traps, batch replay, and developer JSON without changing Valido Engine.
+- Deep replay families currently include CPF, CNPJ, Chile RUT/RUN, CLABE, ABA routing, ABN, China USCC, Thai ID, IBAN, Luhn-family numbers, Argentina CUIT/CUIL, Netherlands BSN, South Africa ID, Turkey TCKN, Israel Teudat Zehut, Portugal NIF, Croatia OIB, Czech ICO, Greece AFM, Ecuador cedula, Uruguay cedula, and Kenya KRA PIN. Strong shared analyzers also cover BIC/SWIFT, phone/E.164, postal, passport-like document numbers, vehicle plates, invoice/payment references, bank/account references, postal tracking, customs references, and procurement identifiers.
+- Route-specific overlay injection exists for selected older Poland/Brazil standalone routes whose algorithm IDs are not country-suite IDs; keep those overrides narrow unless a wider legacy class is audited.
+- Pix, Mexico CURP, and Spain ID are not modeled as ordinary overlay endpoints when their bespoke runtimes own the page. Use them as the higher bar for future dedicated Gold promotions.
+- Current quality status: broad Gold overlay V2. It is not a claim that every profile is bespoke; boundary-only profiles must stay honest and should be deepened or downgraded based on real local developer value.
 
 
 ## Oceania Baseline Batch V1

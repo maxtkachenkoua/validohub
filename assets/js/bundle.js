@@ -195,23 +195,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderSuggestions(rawQuery) {
       const query = canonicalizeQuery(rawQuery);
       if (!query) {
-        suggestions.hidden = true;
-        suggestions.innerHTML = '';
-        activeSuggestionIndex = -1;
+        closeSuggestions();
         return;
       }
 
       visibleMatches = rows.filter(row => !row.hidden);
       const topMatches = visibleMatches.slice(0, 8);
       if (!topMatches.length) {
-        suggestions.hidden = true;
-        suggestions.innerHTML = '';
-        activeSuggestionIndex = -1;
+        closeSuggestions();
         return;
       }
 
       suggestions.innerHTML = topMatches.map((row, index) => buildSuggestionItem(row, index, query)).join('');
       suggestions.hidden = false;
+      activeSuggestionIndex = -1;
+    }
+
+    function closeSuggestions() {
+      suggestions.hidden = true;
+      suggestions.innerHTML = '';
       activeSuggestionIndex = -1;
     }
 
@@ -260,13 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         openActiveSuggestion();
       } else if (event.key === 'Escape') {
-        suggestions.hidden = true;
-        activeSuggestionIndex = -1;
+        closeSuggestions();
       }
     });
     input.addEventListener('blur', () => {
       window.setTimeout(() => {
-        suggestions.hidden = true;
+        if (!searchForm.matches(':focus-within')) closeSuggestions();
       }, 120);
     });
     input.addEventListener('focus', () => {
@@ -308,9 +309,14 @@ document.addEventListener('DOMContentLoaded', () => {
     clearButton?.addEventListener('click', () => {
       input.value = '';
       updateCountryToolSearch('');
-      suggestions.hidden = true;
-      activeSuggestionIndex = -1;
+      closeSuggestions();
       input.focus();
+    });
+
+    document.addEventListener('pointerdown', event => {
+      if (suggestions.hidden) return;
+      if (searchForm.contains(event.target)) return;
+      closeSuggestions();
     });
 
     document.addEventListener('keydown', event => {

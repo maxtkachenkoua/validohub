@@ -21,8 +21,11 @@
     function onMount(workbench) {
       injectStyles();
       workbench.form.classList.add('pix-workbench');
+      const card = workbench.form.closest('.workbench-card');
+      if (card) card.classList.add('pix-workbench-card');
       workbench.form._workbench = workbench;
       enhanceIntro();
+      enhanceReferenceNotes();
       normalizeNativeControls(workbench);
       addPixControls(workbench);
       addCustomPanels(workbench);
@@ -33,6 +36,24 @@
     }
 
     function normalizeNativeControls(workbench) {
+      const cardHeading = workbench.form.closest('.workbench-card')?.querySelector('.workbench-heading');
+      if (cardHeading) {
+        const eyebrow = cardHeading.querySelector('.eyebrow');
+        const title = cardHeading.querySelector('h2');
+        const summary = cardHeading.querySelector('p');
+        if (eyebrow) eyebrow.textContent = 'Gold Browser Lab';
+        if (title) title.textContent = 'Brazil Pix Gold Workbench';
+        if (summary) summary.textContent = 'One connected PIX lab for keys, BR Code QR payloads, TLV anatomy, CRC replay, fixtures, sources, and integration traps.';
+        if (!cardHeading.querySelector('.pix-gold-heading-row')) {
+          cardHeading.insertAdjacentHTML('beforeend', `
+            <div class="pix-gold-heading-row">
+              <span class="pix-gold-chip strong">Gold connected to input</span>
+              <span class="pix-gold-chip">No duplicate sandbox</span>
+              <span class="pix-gold-chip">Official boundary visible</span>
+            </div>
+          `);
+        }
+      }
       const heading = workbench.form.querySelector('.workbench-form-heading h3');
       if (heading) heading.textContent = 'PIX Workbench';
       const input = workbench.primaryInput();
@@ -49,7 +70,7 @@
       const buttonRow = workbench.form.querySelector('.button-row');
       if (buttonRow && !buttonRow.querySelector('[data-pix-action="generate"]')) {
         buttonRow.insertAdjacentHTML('afterbegin', '<button type="button" class="button button-primary" data-pix-action="generate">Generate PIX QR</button>');
-        buttonRow.insertAdjacentHTML('beforeend', '<button type="button" class="button button-secondary" data-pix-copy="payload">Copy payload</button><button type="button" class="button button-secondary" data-pix-download="qr">Download QR SVG</button>');
+        buttonRow.insertAdjacentHTML('beforeend', '<button type="button" class="button button-secondary" data-pix-action="format">Format payload</button><button type="button" class="button button-secondary" data-pix-action="break-crc">Break CRC</button><button type="button" class="button button-secondary" data-pix-action="diff">Diff sample</button><button type="button" class="button button-secondary" data-pix-copy="payload">Copy payload</button><button type="button" class="button button-secondary" data-pix-download="qr">Download QR SVG</button>');
       }
     }
 
@@ -58,11 +79,12 @@
       if (!intro) return;
       const title = intro.querySelector('h1');
       const summary = intro.querySelector('p');
-      if (title) title.textContent = 'Brazil PIX Workbench';
-      if (summary) summary.textContent = 'Validate PIX keys, parse BR Code payloads, generate static PIX QR codes, inspect EMV fields, and debug CRC locally in your browser.';
+      if (title) title.textContent = 'Brazil PIX Gold Workbench';
+      if (summary) summary.textContent = 'Validate PIX keys, parse BR Code payloads, generate static PIX QR codes, inspect EMV fields, replay CRC, and export developer evidence locally in your browser.';
       if (!intro.querySelector('.pix-badge-row')) {
         intro.insertAdjacentHTML('beforeend', `
           <div class="pix-badge-row">
+            <span class="pix-pill gold active">Gold Browser Lab</span>
             <span class="pix-pill active">Local Sandbox</span>
             <span class="pix-pill">Brazil PIX</span>
             <span class="pix-pill">BR Code EMV</span>
@@ -71,6 +93,41 @@
           </div>
         `);
       }
+    }
+
+    function enhanceReferenceNotes() {
+      const card = Array.from(document.querySelectorAll('.content-card')).find(function (item) {
+        return /Reference notes/i.test(item.textContent || '') && /Pix/i.test(item.textContent || '');
+      });
+      if (!card || card.dataset.pixEnhanced === 'true') return;
+      card.dataset.pixEnhanced = 'true';
+      card.classList.add('pix-reference-card');
+      const sections = {
+        'How Pix validation works': [
+          '<p>Pix copy-and-paste QR payloads are BR Code strings built from EMV TLV fields: every field has a tag, a length, and a value. The Pix-specific merchant account template lives under tag <code>26</code>; tag <code>26.00</code> identifies <code>br.gov.bcb.pix</code>, while tag <code>26.01</code> usually carries the static Pix key.</p>',
+          '<p>This workbench validates key shape, parses nested TLV branches, renders QR SVG, replays CRC16-CCITT-FALSE, compares against a safe fixture, and exports developer evidence without leaving the browser.</p>',
+          '<p>A local pass is implementation evidence only. DICT existence, ownership, PSP account status, payment initiation, and settlement still belong to official connected systems.</p>'
+        ],
+        'Pix examples': [
+          '<ul><li>Validate CPF, CNPJ, email, phone, and EVP keys before putting them into a QR payload.</li><li>Generate a static BR Code with merchant, city, amount, TXID, and optional description, then inspect tags 54, 59, 60, 62.05, and 63.</li><li>Use Break CRC for negative scanner fixtures and Diff sample to see exactly which TLV branches changed.</li><li>Keep valid, bad CRC, malformed TLV, missing Pix GUI, and wrong-currency payloads in automated tests.</li></ul>'
+        ],
+        'Pix FAQ': [
+          '<p><strong>Can this prove a Pix key exists?</strong> No. It proves browser-local structure and checksum evidence only.</p>',
+          '<p><strong>Why use dot decimals?</strong> EMV tag <code>54</code> should carry decimal BRL text such as <code>34.00</code>; locale comma formatting belongs in display, not payload assembly.</p>',
+          '<p><strong>Should real keys be pasted here?</strong> Prefer fixture-safe keys. Mask real Pix keys in screenshots, logs, analytics, crash reports, and support tickets.</p>'
+        ],
+        'Pix references': [
+          '<ul><li>Banco Central do Brasil Pix portal for official scheme context.</li><li>BCB manuals and API documents for DICT, SPI, Pix API, QR, and communication-document references.</li><li>Pix regulation and normative updates for production constraints and participant obligations.</li><li>EMV QR / BR Code conventions for TLV field layout, merchant account templates, amount, country, additional data, and CRC behavior.</li></ul>'
+        ],
+        'Pix developer examples': [
+          '<ul><li>Compute CRC over the compact payload ending in <code>6304</code>, then append the four uppercase hex digits.</li><li>Persist raw payload, parsed field paths, offsets, lengths, raw TLV, values, expected CRC, calculated CRC, and warnings in developer fixtures.</li><li>Separate static Pix key QR flows from dynamic location URL flows; dynamic flows require PSP/network behavior outside this browser-only lab.</li><li>Use the Developer Snapshot near the bottom of the workbench as the copyable bug-report or fixture-review artifact.</li></ul>'
+        ]
+      };
+      card.querySelectorAll('.doc-accordion').forEach(function (details) {
+        const summary = (details.querySelector('summary')?.textContent || '').trim();
+        const body = details.querySelector('.rich-text');
+        if (body && sections[summary]) body.innerHTML = sections[summary].join('');
+      });
     }
 
     function addPixControls(workbench) {
@@ -135,12 +192,13 @@
               <p>Everything runs locally. Use the generator to create a static PIX QR payload with CRC and downloadable SVG.</p>
             </div>
           </div>
+          <div class="pix-gold-strip" data-pix-gold-strip></div>
           <div class="pix-timeline" data-pix-timeline aria-label="PIX validation pipeline"></div>
           <div class="pix-summary-grid" data-pix-summary></div>
           <div class="pix-qr-layout" data-pix-qr></div>
           <div class="pix-breakdown" data-pix-breakdown></div>
           <div class="pix-debugger" data-pix-debugger></div>
-          <div class="pix-dev-panel" data-pix-dev></div>
+          <div class="pix-dev pix-dev-panel" data-pix-dev></div>
         </section>
       `);
     }
@@ -218,6 +276,9 @@
       const raw = input ? input.value.trim() : '';
       const mode = action || 'validate';
       if (mode === 'generate') return generateFromFields(workbench);
+      if (mode === 'format') return formatPayload(workbench, raw);
+      if (mode === 'break-crc') return breakPayloadCrc(workbench, raw);
+      if (mode === 'diff') return diffCurrentAgainstSample(workbench, raw);
       if (!raw) {
         renderEmpty(workbench);
         workbench.setOutput('');
@@ -289,6 +350,35 @@
       analyzePayload(workbench, payload, 'generate');
     }
 
+    function formatPayload(workbench, raw) {
+      if (!raw) {
+        workbench.setMessage('Paste a BR Code payload before formatting.', 'error');
+        return;
+      }
+      if (!detectBrCode(raw)) {
+        workbench.setMessage('Format payload is for BR Code payloads, not standalone Pix keys.', 'error');
+        return;
+      }
+      const compact = compactPayload(raw);
+      setInput(workbench, compact);
+      analyzePayload(workbench, compact, 'format');
+      workbench.setMessage('Payload compacted to scanner-safe copy-and-paste form.', 'success');
+    }
+
+    function breakPayloadCrc(workbench, raw) {
+      const source = detectBrCode(raw) ? compactPayload(raw) : samplePayload();
+      const broken = source.replace(/6304[0-9A-Fa-f]{4}$/, '63040000');
+      setInput(workbench, broken);
+      analyzePayload(workbench, broken, 'break-crc');
+      workbench.setMessage('Loaded a deliberately broken CRC fixture.', 'error');
+    }
+
+    function diffCurrentAgainstSample(workbench, raw) {
+      const current = detectBrCode(raw) ? compactPayload(raw) : samplePayload().replace(/6304[0-9A-Fa-f]{4}$/, '63040000');
+      setInput(workbench, current);
+      analyzePayload(workbench, current, 'diff');
+    }
+
     function generatorValues(workbench) {
       const values = {};
       workbench.form.querySelectorAll('[data-pix-gen]').forEach(function (field) { values[field.dataset.pixGen] = field.value.trim(); });
@@ -299,11 +389,16 @@
       clearCustom(workbench);
       const empty = workbench.form.querySelector('[data-pix-empty]');
       if (empty) empty.style.display = 'flex';
+      renderGoldStrip(workbench, [
+        goldItem('Gold scope', 'Ready', 'warn', 'Paste a key or BR Code to activate connected checks.'),
+        goldItem('Input binding', 'Shared', 'pass', 'One input drives validation, QR generation, TLV, CRC, JSON, sources, and traps.'),
+        goldItem('Network boundary', 'Local only', 'pass', 'No DICT lookup, account check, payment call, or upload is attempted.')
+      ]);
       renderTimeline(workbench, [stage('Input', 'idle', 'Waiting'), stage('Type', 'idle', 'Detect'), stage('Syntax', 'idle', 'Validate'), stage('EMV/QR', 'idle', 'Parse'), stage('CRC', 'idle', 'Check'), stage('Result', 'idle', 'Ready')]);
     }
 
     function clearCustom(workbench) {
-      ['[data-pix-summary]', '[data-pix-qr]', '[data-pix-breakdown]', '[data-pix-debugger]', '[data-pix-dev]'].forEach(function (selector) {
+      ['[data-pix-gold-strip]', '[data-pix-summary]', '[data-pix-qr]', '[data-pix-breakdown]', '[data-pix-debugger]', '[data-pix-dev]'].forEach(function (selector) {
         const el = workbench.form.querySelector(selector);
         if (el) el.innerHTML = '';
       });
@@ -317,13 +412,19 @@
       const empty = workbench.form.querySelector('[data-pix-empty]');
       if (empty) empty.style.display = 'none';
       renderTimeline(workbench, [stage('Input', 'pass', 'Received'), stage('Type', analysis.type === 'Unknown' ? 'fail' : 'pass', analysis.type), stage('Syntax', analysis.valid ? 'pass' : 'fail', analysis.valid ? 'Valid' : 'Issue'), stage('EMV/QR', 'idle', 'Optional'), stage('CRC', 'idle', 'N/A'), stage('Result', analysis.valid ? 'pass' : 'fail', analysis.valid ? 'Ready' : 'Fix')]);
+      renderGoldStrip(workbench, [
+        goldItem('PIX key type', analysis.type, analysis.type === 'Unknown' ? 'fail' : 'pass', 'Detects CPF, CNPJ, email, Brazilian phone, or EVP UUID.'),
+        goldItem('Local format evidence', analysis.valid ? 'Pass' : 'Needs repair', analysis.valid ? 'pass' : 'fail', analysis.valid ? 'Shape/checksum can be used as local fixture evidence.' : 'Fix syntax or checksum before using in QR generation.'),
+        goldItem('Official boundary', 'Not verified in DICT', 'warn', 'A browser-local pass never proves key existence, ownership, tax status, or settlement readiness.'),
+        goldItem('Next action', analysis.valid ? 'Generate QR' : 'Repair input', analysis.valid ? 'pass' : 'fail', analysis.valid ? 'Use this normalized key in the static BR Code builder.' : 'Use the suggestions and invalid fixtures below.')
+      ]);
       workbench.setStats([
         ['Input characters', String(Array.from(analysis.raw || analysis.normalized || '').length)], ['Normalized characters', String(Array.from(analysis.normalized || '').length)], ['Detected type', analysis.type], ['PIX key valid', analysis.valid ? 'Yes' : 'No'], ['Generator ready', analysis.valid ? 'Yes' : 'No']
       ], analysis.diagnostics.concat(analysis.suggestions || []), analysis.valid ? 'success' : 'error');
       renderSummary(workbench, [card('Detected type', analysis.type, analysis.valid ? 'success' : 'error'), card('Normalized key', analysis.normalized || 'n/a', 'mono'), card('Validation', analysis.valid ? 'Pass' : 'Needs repair', analysis.valid ? 'success' : 'error'), card('Use case', 'Key validation and QR generator input', '')]);
       renderBreakdown(workbench, keyBreakdownHtml(analysis));
       renderDebugger(workbench, diagnosticsHtml(analysis.diagnostics, analysis.suggestions));
-      renderDevPanel(workbench, devPanelHtml(analysis, null));
+      renderDevPanel(workbench, officialSourcesHtml() + integrationTrapsHtml() + devPanelHtml(analysis, null));
     }
 
     function renderPayloadResult(workbench, report) {
@@ -331,14 +432,20 @@
       const empty = workbench.form.querySelector('[data-pix-empty]');
       if (empty) empty.style.display = 'none';
       renderTimeline(workbench, [stage('Input', 'pass', 'Payload'), stage('Type', 'pass', report.kind), stage('Syntax', report.syntaxValid ? 'pass' : 'fail', report.syntaxValid ? 'TLV ok' : 'TLV issue'), stage('EMV/QR', report.hasPixGui ? 'pass' : 'fail', report.hasPixGui ? 'PIX GUI' : 'Missing'), stage('CRC', report.crc.valid ? 'pass' : 'fail', report.crc.label), stage('Result', report.valid ? 'pass' : 'fail', report.valid ? 'Ready' : 'Fix')]);
+      renderGoldStrip(workbench, [
+        goldItem('BR Code anatomy', report.syntaxValid ? 'TLV parsed' : 'TLV issue', report.syntaxValid ? 'pass' : 'fail', String(report.flatFields.length) + ' EMV nodes inspected with offsets and paths.'),
+        goldItem('Pix rail evidence', report.hasPixGui ? 'br.gov.bcb.pix' : 'Missing GUI', report.hasPixGui ? 'pass' : 'fail', 'Checks the Merchant Account Information template and Pix key/url branch.'),
+        goldItem('CRC replay', report.crc.valid ? 'Pass' : 'Mismatch', report.crc.valid ? 'pass' : 'fail', report.crc.valid ? 'Canonical CRC matches tag 63.' : 'Replay the CRC input shown below before shipping fixtures.'),
+        goldItem('QR readiness', report.valid ? 'Ready' : 'Blocked', report.valid ? 'pass' : 'fail', report.valid ? 'Static QR SVG and developer JSON are generated from the same payload.' : 'Fix blocking diagnostics before trusting scanner behavior.')
+      ]);
       workbench.setStats([
         ['Payload characters', String(report.payload.length)], ['Estimated QR bytes', util.formatBytes(util.utf8Bytes(report.payload).length)], ['Initiation method', report.initiationMethod || 'Unknown'], ['Amount', report.amount ? 'BRL ' + report.amount : 'Not fixed'], ['Currency', report.currency || 'Unknown'], ['Country', report.country || 'Unknown'], ['TXID', report.txid || 'Not provided'], ['Canonical CRC', report.crc.calculated || 'n/a']
       ], report.diagnostics.concat(report.warnings), report.valid ? 'success' : 'error');
       renderSummary(workbench, [card('Merchant', report.merchantName || 'Unknown', ''), card('PIX key', report.pixKey || 'Missing', 'mono'), card('Amount', report.amount ? 'BRL ' + report.amount : 'Open amount', ''), card('CRC', report.crc.valid ? 'Valid' : 'Mismatch', report.crc.valid ? 'success' : 'error')]);
       renderQr(workbench, report);
       renderBreakdown(workbench, tlvTableHtml(report));
-      renderDebugger(workbench, crcDebuggerHtml(report));
-      renderDevPanel(workbench, devPanelHtml(null, report));
+      renderDebugger(workbench, crcDebuggerHtml(report) + payloadDiffHtml(report) + lintHtml(report));
+      renderDevPanel(workbench, officialSourcesHtml() + integrationTrapsHtml() + devPanelHtml(null, report));
     }
 
     function renderTimeline(workbench, stages) {
@@ -353,6 +460,35 @@
       const target = workbench.form.querySelector('[data-pix-summary]');
       if (!target) return;
       target.innerHTML = cards.map(function (item) { return `<article class="pix-summary-card ${item.state || ''}"><span>${util.escapeHtml(item.label)}</span><strong>${util.escapeHtml(item.value)}</strong></article>`; }).join('');
+    }
+
+    function renderGoldStrip(workbench, items) {
+      const target = workbench.form.querySelector('[data-pix-gold-strip]');
+      if (!target) return;
+      target.innerHTML = `
+        <section class="pix-gold-status">
+          <div class="pix-gold-status-head">
+            <div>
+              <span class="pix-mini-eyebrow">Gold Browser Lab</span>
+              <h3>Connected PIX evidence</h3>
+            </div>
+            <span class="pix-generator-note">Driven by the current input</span>
+          </div>
+          <div class="pix-gold-grid">
+            ${items.map(function (item) {
+              return `<article class="pix-gold-tile ${item.state}">
+                <span>${util.escapeHtml(item.label)}</span>
+                <strong>${util.escapeHtml(item.value)}</strong>
+                <p>${util.escapeHtml(item.note)}</p>
+              </article>`;
+            }).join('')}
+          </div>
+        </section>
+      `;
+    }
+
+    function goldItem(label, value, state, note) {
+      return { label: label, value: value, state: state || 'pass', note: note || '' };
     }
 
     function renderQr(workbench, report) {
@@ -453,11 +589,11 @@
     function parseBrCode(payload) {
       const clean = (payload || '').trim();
       const result = { payload: clean, fields: [], errors: [] };
-      result.fields = parseTlv(clean, 0, clean.length, result.errors, 'root');
+      result.fields = parseTlv(clean, 0, clean.length, result.errors, 'root', 0, '');
       return result;
     }
 
-    function parseTlv(text, start, end, errors, scope) {
+    function parseTlv(text, start, end, errors, scope, baseOffset, parentPath) {
       const fields = [];
       let cursor = start;
       while (cursor < end) {
@@ -470,8 +606,10 @@
         const valueEnd = valueStart + length;
         if (valueEnd > end) { errors.push('Tag ' + id + ' declares length ' + length + ' but payload ends early.'); break; }
         const value = text.slice(valueStart, valueEnd);
-        const field = { id: id, name: tagName(id, scope), length: length, value: value, offset: cursor };
-        if ((id === '26' || id === '62') && length >= 4) field.children = parseTlv(value, 0, value.length, errors, id);
+        const absoluteOffset = (baseOffset || 0) + cursor;
+        const path = parentPath ? parentPath + '.' + id : id;
+        const field = { id: id, path: path, name: tagName(id, scope), length: length, value: value, offset: absoluteOffset, valueOffset: absoluteOffset + 4, raw: text.slice(cursor, valueEnd) };
+        if ((id === '26' || id === '62') && length >= 4) field.children = parseTlv(value, 0, value.length, errors, id, absoluteOffset + 4, path);
         fields.push(field);
         cursor = valueEnd;
       }
@@ -495,25 +633,48 @@
       const amount = fieldValue(fields, '54');
       const crcExpected = crcField ? crcField.value.toUpperCase() : '';
       const crcActual = computePayloadCrc(payload);
+      const crcInput = crcReplayInput(payload);
       const diagnostics = parsed.errors.slice();
       const warnings = [];
+      const flatFields = flattenFields(fields);
       if (!mai) diagnostics.push('Missing Merchant Account Information template tag 26.');
       if (gui !== 'br.gov.bcb.pix') diagnostics.push('Merchant Account GUI should be br.gov.bcb.pix.');
       if (!key) diagnostics.push('PIX key tag 26.01 is missing.');
+      if (childValue(mai, '25') && key) warnings.push('Merchant template contains both static key tag 26.01 and payment URL tag 26.25. Confirm this is intentional for your PSP flow.');
+      if (childValue(mai, '25') && !/^https?:\/\//i.test(childValue(mai, '25'))) warnings.push('Dynamic/payment URL tag 26.25 should be an HTTP(S) URL when used.');
       if (currency && currency !== '986') diagnostics.push('Currency tag 53 should be 986 for BRL.');
       if (country && country !== 'BR') diagnostics.push('Country tag 58 should be BR.');
       if (!crcField) diagnostics.push('CRC tag 63 is missing.');
+      if (fieldValue(fields, '00') !== '01') diagnostics.push('Payload format indicator tag 00 should be 01.');
+      if (!fieldValue(fields, '52')) warnings.push('Merchant category code tag 52 is absent; static Pix examples normally carry 0000 when no MCC is available.');
+      if (!fieldValue(fields, '59')) diagnostics.push('Merchant name tag 59 is missing.');
+      if (!fieldValue(fields, '60')) diagnostics.push('Merchant city tag 60 is missing.');
       if (amount && !/^\d{1,10}(\.\d{2})?$/.test(amount)) diagnostics.push('Amount tag 54 should use decimal BRL format such as 49.90.');
+      if (fieldValue(fields, '59') && fieldValue(fields, '59').length > 25) warnings.push('Merchant name is longer than 25 characters and may be rejected or truncated by QR consumers.');
+      if (fieldValue(fields, '60') && fieldValue(fields, '60').length > 15) warnings.push('Merchant city is longer than 15 characters and may be rejected or truncated by QR consumers.');
       if (description && description.length > 72) warnings.push('Description is longer than common PIX QR recommendations.');
       const keyAnalysis = key ? analyzeKey(key) : null;
       if (keyAnalysis && !keyAnalysis.valid) warnings.push('Embedded PIX key shape needs manual review: ' + keyAnalysis.diagnostics.join(' '));
       const crcValid = Boolean(crcField && crcActual === crcExpected);
       const syntaxValid = parsed.errors.length === 0;
-      const publicJson = { kind: 'pix-brcode', valid: syntaxValid && diagnostics.length === 0 && crcValid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', amount: amount || null, currency: currency || null, country: country || null, merchantName: fieldValue(fields, '59') || null, merchantCity: fieldValue(fields, '60') || null, txid: childValue(add, '05') || null, description: description || null, crc: { expected: crcExpected || null, calculated: crcActual || null, valid: crcValid }, diagnostics: diagnostics, warnings: warnings };
-      return { kind: 'BR Code', payload: payload.trim(), fields: fields, syntaxValid: syntaxValid, hasPixGui: gui === 'br.gov.bcb.pix', valid: publicJson.valid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', initiationMethod: fieldValue(fields, '01') === '12' ? 'Dynamic' : fieldValue(fields, '01') === '11' ? 'Static' : 'Unspecified', amount: amount, currency: currency === '986' ? 'BRL (986)' : currency, country: country, merchantName: fieldValue(fields, '59'), merchantCity: fieldValue(fields, '60'), txid: childValue(add, '05'), crc: { expected: crcExpected, calculated: crcActual, valid: crcValid, label: crcField ? (crcValid ? 'Valid' : 'Mismatch') : 'Missing' }, diagnostics: diagnostics, warnings: warnings, publicJson: publicJson };
+      const publicJson = { kind: 'pix-brcode', valid: syntaxValid && diagnostics.length === 0 && crcValid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', amount: amount || null, currency: currency || null, country: country || null, merchantName: fieldValue(fields, '59') || null, merchantCity: fieldValue(fields, '60') || null, txid: childValue(add, '05') || null, description: description || null, initiationMethod: initiationMethodLabel(fieldValue(fields, '01')), crc: { expected: crcExpected || null, calculated: crcActual || null, valid: crcValid, input: crcInput }, fields: flatFields.map(function (field) { return { path: field.path, name: field.name, length: field.length, value: field.value, offset: field.offset }; }), diagnostics: diagnostics, warnings: warnings, localBoundary: 'ValidoHub verifies local structure, key shape, TLV syntax, and CRC only. It does not verify DICT ownership, account status, settlement, PSP enrollment, or payment success.' };
+      return { kind: 'BR Code', payload: payload.trim(), fields: fields, flatFields: flatFields, syntaxValid: syntaxValid, hasPixGui: gui === 'br.gov.bcb.pix', valid: publicJson.valid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', initiationMethod: initiationMethodLabel(fieldValue(fields, '01')), amount: amount, currency: currency === '986' ? 'BRL (986)' : currency, country: country, merchantName: fieldValue(fields, '59'), merchantCity: fieldValue(fields, '60'), txid: childValue(add, '05'), crc: { expected: crcExpected, calculated: crcActual, input: crcInput, valid: crcValid, label: crcField ? (crcValid ? 'Valid' : 'Mismatch') : 'Missing' }, diagnostics: diagnostics, warnings: warnings, publicJson: publicJson };
     }
 
     function computePayloadCrc(payload) { return crc16Ccitt((payload || '').trim().replace(/6304[0-9A-Fa-f]{4}$/, '6304')); }
+    function crcReplayInput(payload) { return (payload || '').trim().replace(/6304[0-9A-Fa-f]{4}$/, '6304'); }
+    function compactPayload(value) { return String(value || '').replace(/[\r\n\t]+/g, '').trim(); }
+    function initiationMethodLabel(value) { return value === '12' ? 'Dynamic' : value === '11' ? 'Static' : value ? 'Unknown (' + value + ')' : 'Unspecified'; }
+
+    function flattenFields(fields) {
+      const rows = [];
+      function visit(field, depth) {
+        rows.push(Object.assign({ depth: depth || 0 }, field));
+        (field.children || []).forEach(function (child) { visit(child, (depth || 0) + 1); });
+      }
+      (fields || []).forEach(function (field) { visit(field, 0); });
+      return rows;
+    }
 
     function buildPixPayload(options) {
       const mai = tlv('00', 'br.gov.bcb.pix') + tlv('01', options.key) + (options.description ? tlv('02', options.description) : '');
@@ -564,19 +725,66 @@
     }
 
     function tlvTableHtml(report) {
-      const rows = [];
-      function push(field, depth) { rows.push({ field: field, depth: depth || 0 }); (field.children || []).forEach(function (child) { push(child, (depth || 0) + 1); }); }
-      report.fields.forEach(function (field) { push(field, 0); });
-      return `<section class="pix-section-card"><div class="pix-section-title">BR Code EMV Breakdown</div><div class="pix-table-wrap"><table class="pix-table"><thead><tr><th>Tag</th><th>Name</th><th>Length</th><th>Value</th></tr></thead><tbody>${rows.map(function (row) { return `<tr><td><code>${row.field.id}</code></td><td style="padding-left:${12 + row.depth * 18}px">${util.escapeHtml(row.field.name)}</td><td>${row.field.length}</td><td><code>${util.escapeHtml(row.field.value).slice(0, 120)}</code></td></tr>`; }).join('')}</tbody></table></div></section>`;
+      const rows = report.flatFields || flattenFields(report.fields);
+      const tree = rows.map(function (row) {
+        return `<div class="pix-tree-row depth-${row.depth}"><code>${util.escapeHtml(row.path)}</code><span>${util.escapeHtml(row.name)}</span><strong>${row.length}</strong><em>${util.escapeHtml(row.value).slice(0, 90)}</em></div>`;
+      }).join('');
+      return `<section class="pix-section-card"><div class="pix-section-title">BR Code EMV TLV Explorer</div><div class="pix-tree">${tree}</div><div class="pix-table-wrap"><table class="pix-table"><thead><tr><th>Path</th><th>Tag</th><th>Name</th><th>Offset</th><th>Length</th><th>Raw TLV</th><th>Value</th></tr></thead><tbody>${rows.map(function (row) { return `<tr><td><code>${util.escapeHtml(row.path)}</code></td><td><code>${row.id}</code></td><td style="padding-left:${12 + row.depth * 18}px">${util.escapeHtml(row.name)}</td><td>${row.offset}</td><td>${row.length}</td><td><code>${util.escapeHtml(row.raw || '').slice(0, 80)}</code></td><td><code>${util.escapeHtml(row.value).slice(0, 120)}</code></td></tr>`; }).join('')}</tbody></table></div></section>`;
     }
 
     function crcDebuggerHtml(report) {
-      return `<section class="pix-section-card"><div class="pix-section-title">CRC16-CCITT Debugger</div><div class="pix-detail-grid"><div><span>Expected</span><strong>${util.escapeHtml(report.crc.expected || 'missing')}</strong></div><div><span>Calculated</span><strong>${util.escapeHtml(report.crc.calculated || 'n/a')}</strong></div><div><span>Status</span><strong class="${report.crc.valid ? 'pix-ok' : 'pix-bad'}">${report.crc.valid ? 'Match' : 'Mismatch'}</strong></div><div><span>Algorithm</span><strong>CRC16-CCITT-FALSE</strong></div></div>${diagnosticsHtml(report.diagnostics, report.warnings)}</section>`;
+      return `<section class="pix-section-card"><div class="pix-section-title">CRC16-CCITT-FALSE Replay</div><div class="pix-detail-grid"><div><span>Provided tag 63</span><strong>${util.escapeHtml(report.crc.expected || 'missing')}</strong></div><div><span>Calculated locally</span><strong>${util.escapeHtml(report.crc.calculated || 'n/a')}</strong></div><div><span>Status</span><strong class="${report.crc.valid ? 'pix-ok' : 'pix-bad'}">${report.crc.valid ? 'Match' : 'Mismatch'}</strong></div><div><span>Polynomial / init</span><strong>0x1021 / 0xFFFF</strong></div></div><div class="pix-crc-input"><span>Replay input</span><code>${util.escapeHtml(report.crc.input || '').slice(0, 280)}</code></div>${diagnosticsHtml(report.diagnostics, report.warnings)}</section>`;
     }
 
     function devPanelHtml(keyAnalysis, report) {
       const json = report ? report.publicJson : keyAnalysis;
       return `<section class="pix-section-card"><div class="pix-section-title">Developer Snapshot</div><pre class="pix-code"><code>${syntaxHighlightJson(json)}</code></pre></section>`;
+    }
+
+    function payloadDiffHtml(report) {
+      const sample = samplePayload();
+      const current = report.payload;
+      const sampleRows = flattenFields(parseBrCode(sample).fields);
+      const currentRows = report.flatFields || [];
+      const labels = Array.from(new Set(sampleRows.concat(currentRows).map(function (row) { return row.path; }))).sort();
+      const rows = labels.map(function (path) {
+        const expected = sampleRows.find(function (row) { return row.path === path; });
+        const actual = currentRows.find(function (row) { return row.path === path; });
+        const same = (expected ? expected.value : '') === (actual ? actual.value : '');
+        return `<tr class="${same ? 'same' : 'diff'}"><td><code>${util.escapeHtml(path)}</code></td><td>${util.escapeHtml(expected ? expected.value : 'missing').slice(0, 80)}</td><td>${util.escapeHtml(actual ? actual.value : 'missing').slice(0, 80)}</td><td>${same ? 'same' : 'changed'}</td></tr>`;
+      }).join('');
+      return `<section class="pix-section-card pix-diff-section"><div class="pix-section-title">Payload Diff Against Safe Fixture</div><div class="pix-table-wrap"><table class="pix-table pix-diff-table"><thead><tr><th>Path</th><th>Safe fixture</th><th>Current payload</th><th>Signal</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
+    }
+
+    function lintHtml(report) {
+      const checks = [
+        ['Payload format', fieldValue(report.fields, '00') === '01', 'Tag 00 should be 01.'],
+        ['Pix GUI', report.hasPixGui, 'Tag 26.00 should be br.gov.bcb.pix.'],
+        ['Currency', fieldValue(report.fields, '53') === '986', 'Tag 53 should be BRL numeric code 986.'],
+        ['Country', report.country === 'BR', 'Tag 58 should be BR.'],
+        ['Merchant', Boolean(report.merchantName), 'Tag 59 is required for common BR Code flows.'],
+        ['City', Boolean(report.merchantCity), 'Tag 60 is required for common BR Code flows.'],
+        ['TXID', Boolean(report.txid), 'Tag 62.05 identifies reconciliation context.'],
+        ['CRC', report.crc.valid, 'Tag 63 must match local CRC replay.']
+      ];
+      return `<section class="pix-section-card"><div class="pix-section-title">Implementation Lint</div><div class="pix-lint-grid">${checks.map(function (item) { return `<article class="${item[1] ? 'ok' : 'bad'}"><span>${item[1] ? 'PASS' : 'REVIEW'}</span><strong>${util.escapeHtml(item[0])}</strong><p>${util.escapeHtml(item[2])}</p></article>`; }).join('')}</div></section>`;
+    }
+
+    function officialSourcesHtml() {
+      return `<section class="pix-section-card pix-sources-section"><div class="pix-section-title">Official Sources And Boundary</div><div class="pix-source-grid"><a class="pix-source-card" href="https://www.bcb.gov.br/estabilidadefinanceira/pix" target="_blank" rel="noopener"><span>Official scheme owner</span><strong>Banco Central do Brasil Pix portal</strong><em>Pix rules, participant context, user-facing scheme material, and official public entry point.</em></a><a class="pix-source-card" href="https://www.bcb.gov.br/estabilidadefinanceira/comunicacaodados" target="_blank" rel="noopener"><span>Technical manuals</span><strong>BCB manuals and API documents</strong><em>DICT, SPI, Pix API, QR payload guidance, and implementation-facing documentation.</em></a><a class="pix-source-card" href="https://www.bcb.gov.br/estabilidadefinanceira/pix?modalAberto=regulamentacao_pix" target="_blank" rel="noopener"><span>Regulatory boundary</span><strong>Pix regulation and normative updates</strong><em>Normative updates and official constraints to re-check before production payment flows.</em></a></div><p class="pix-source-boundary"><strong>Browser boundary:</strong> ValidoHub verifies local key shape, static BR Code TLV structure, QR rendering, and CRC replay. It does not call DICT, confirm key ownership, initiate payment, prove settlement, or verify PSP account status.</p></section>`;
+    }
+
+    function integrationTrapsHtml() {
+      const traps = [
+        'Do not treat a locally valid CPF/CNPJ/email/phone/EVP shape as proof that the Pix key exists in DICT.',
+        'Keep BR Code payloads compact for copy-and-paste and scanner input; display grouping is a UI concern, not storage.',
+        'Always replay CRC over the payload ending in 6304 before appending the four CRC hex digits.',
+        'Store amount as decimal BRL text for QR payload assembly; do not leak locale comma formatting into tag 54.',
+        'Respect merchant name and city limits before CRC generation, otherwise downstream QR consumers may truncate differently.',
+        'Separate static Pix key payloads from dynamic location URL flows; dynamic URLs require PSP/network behavior outside this browser-only lab.',
+        'Mask or avoid logging real Pix keys in analytics, crash reports, screenshots, and support tickets.'
+      ];
+      return `<section class="pix-section-card pix-traps-section"><div class="pix-section-title">Integration Traps</div><ul class="pix-diagnostic-list">${traps.map(function (trap) { return '<li>' + util.escapeHtml(trap) + '</li>'; }).join('')}</ul></section>`;
     }
 
     function syntaxHighlightJson(obj) {
@@ -647,8 +855,8 @@
       const blocks = [];
       let offset = 0;
       for (let i = 0; i < blockSpec.length; i += 3) {
-        const count = blockSpec[i], total = blockSpec[i + 1], dataCount = blockSpec[i + 2], eccCount = total - dataCount, generator = rsGenerator(eccCount);
-        for (let block = 0; block < count; block++) { const dat = data.slice(offset, offset + dataCount); offset += dataCount; blocks.push({ data: dat, ecc: rsRemainder(dat, generator) }); }
+        const count = blockSpec[i], total = blockSpec[i + 1], dataCount = blockSpec[i + 2], eccCount = total - dataCount, divisor = rsDivisor(eccCount);
+        for (let block = 0; block < count; block++) { const dat = data.slice(offset, offset + dataCount); offset += dataCount; blocks.push({ data: dat, ecc: rsRemainder(dat, divisor) }); }
       }
       const result = [];
       const maxData = Math.max.apply(null, blocks.map(function (b) { return b.data.length; }));
@@ -661,13 +869,33 @@
     const GF_EXP = (function () { const exp = Array(512).fill(0); let x = 1; for (let i = 0; i < 255; i++) { exp[i] = x; x <<= 1; if (x & 0x100) x ^= 0x11D; } for (let i = 255; i < 512; i++) exp[i] = exp[i - 255]; return exp; })();
     const GF_LOG = (function () { const log = Array(256).fill(0); for (let i = 0; i < 255; i++) log[GF_EXP[i]] = i; return log; })();
     function gfMul(a, b) { return a && b ? GF_EXP[GF_LOG[a] + GF_LOG[b]] : 0; }
-    function rsGenerator(degree) { let poly = [1]; for (let i = 0; i < degree; i++) { const next = Array(poly.length + 1).fill(0); for (let j = 0; j < poly.length; j++) { next[j] ^= gfMul(poly[j], GF_EXP[i]); next[j + 1] ^= poly[j]; } poly = next; } return poly; }
-    function rsRemainder(data, generator) { const degree = generator.length - 1; const result = Array(degree).fill(0); data.forEach(function (byte) { const factor = byte ^ result.shift(); result.push(0); for (let i = 0; i < degree; i++) result[i] ^= gfMul(generator[i], factor); }); return result; }
+    function rsDivisor(degree) {
+      const result = Array(degree).fill(0);
+      result[degree - 1] = 1;
+      let root = 1;
+      for (let i = 0; i < degree; i++) {
+        for (let j = 0; j < degree; j++) {
+          result[j] = gfMul(result[j], root);
+          if (j + 1 < degree) result[j] ^= result[j + 1];
+        }
+        root = gfMul(root, 2);
+      }
+      return result;
+    }
+    function rsRemainder(data, divisor) {
+      const result = Array(divisor.length).fill(0);
+      data.forEach(function (byte) {
+        const factor = byte ^ result.shift();
+        result.push(0);
+        for (let i = 0; i < result.length; i++) result[i] ^= gfMul(divisor[i], factor);
+      });
+      return result;
+    }
 
     function drawFunctionPatterns(modules, reserved, version) {
       const size = modules.length;
       drawFinder(modules, reserved, 0, 0); drawFinder(modules, reserved, size - 7, 0); drawFinder(modules, reserved, 0, size - 7);
-      for (let i = 0; i < size; i++) { setFunction(modules, reserved, 6, i, i % 2 === 0); setFunction(modules, reserved, i, 6, i % 2 === 0); }
+      for (let i = 8; i < size - 8; i++) { setFunction(modules, reserved, 6, i, i % 2 === 0); setFunction(modules, reserved, i, 6, i % 2 === 0); }
       const positions = alignmentPositions(version);
       positions.forEach(function (y) { positions.forEach(function (x) { if ((x === 6 && y === 6) || (x === 6 && y === size - 7) || (x === size - 7 && y === 6)) return; drawAlignment(modules, reserved, x, y); }); });
       setFunction(modules, reserved, 8, size - 8, true);
@@ -688,9 +916,9 @@
 
     function injectStyles() {
       if (document.getElementById('pix-workbench-styles')) return;
-      const style = document.createElement('style');
-      style.id = 'pix-workbench-styles';
-      style.textContent = `.pix-workbench{--pix-green:#16a34a;--pix-blue:#2563eb;--pix-red:#dc2626;--pix-amber:#b45309;--pix-soft:#f8fafc}.pix-badge-row,.pix-generator-head,.pix-detail-grid,.pix-summary-grid{display:flex;flex-wrap:wrap;gap:8px}.pix-pill{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface-soft);color:var(--muted)}.pix-pill.active{color:var(--pix-blue);border-color:rgba(37,99,235,.28);background:rgba(37,99,235,.08)}.pix-select-field{min-width:220px}.pix-generator{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;padding:16px;background:linear-gradient(180deg,#fff,var(--surface-soft))}.pix-generator-head{align-items:flex-start;justify-content:space-between;margin-bottom:12px}.pix-generator-head h3{margin:2px 0 0;font-size:1rem}.pix-mini-eyebrow{color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.pix-generator-note{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px}.pix-generator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.pix-generator-grid label{display:flex;flex-direction:column;gap:5px;font-size:.75rem;font-weight:700;color:var(--muted)}.pix-generator-grid input{border:1px solid var(--line);border-radius:8px;padding:10px 11px;color:var(--text);background:#fff;font:inherit}.pix-panel{margin-top:22px;display:flex;flex-direction:column;gap:18px}.pix-empty-state{border:1px dashed var(--line);border-radius:10px;padding:24px;background:var(--surface-soft);align-items:center;gap:14px;color:var(--muted)}.pix-empty-icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#16a34a,#06b6d4);font-weight:900}.pix-empty-state strong{color:var(--text);display:block;margin-bottom:4px}.pix-empty-state p{margin:0;max-width:560px}.pix-timeline{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff;overflow:hidden}.pix-timeline-track{height:3px;background:#e5e7eb;margin:16px 28px 0;position:relative}.pix-timeline-track span{display:block;height:100%;max-width:100%;background:var(--pix-green);transition:width .2s ease}.pix-timeline-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:-13px}.pix-step{min-width:0;text-align:center;color:var(--muted)}.pix-step span{width:24px;height:24px;border-radius:999px;display:block;margin:0 auto 9px;background:#d1d5db;border:4px solid #fff;box-shadow:0 0 0 1px var(--line)}.pix-step.pass span{background:var(--pix-green);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.pix-step.fail span{background:var(--pix-red);box-shadow:0 0 0 5px rgba(220,38,38,.11)}.pix-step strong{display:block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pix-step em{display:block;font-size:.68rem;font-style:normal;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pix-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.pix-summary-card{border:1px solid var(--line);border-radius:10px;background:#fff;padding:14px;min-width:0}.pix-summary-card span,.pix-detail-grid span{display:block;color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}.pix-summary-card strong,.pix-detail-grid strong{color:var(--text);font-size:.92rem;overflow-wrap:anywhere}.pix-summary-card.success strong,.pix-ok{color:var(--pix-green)}.pix-summary-card.error strong,.pix-bad{color:var(--pix-red)}.pix-summary-card.mono strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}.pix-qr-card{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:18px;border:1px solid var(--line);border-radius:12px;padding:18px;background:linear-gradient(180deg,#fff,#f8fafc)}.pix-qr-visual{display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-height:220px}.pix-qr-visual svg{width:min(100%,220px);height:auto;display:block}.pix-qr-copy textarea{width:100%;min-height:150px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem}.pix-qr-copy h3{margin:.2rem 0 .4rem}.pix-qr-copy p{color:var(--muted);margin:.2rem 0 .8rem}.pix-section-card{border:1px solid var(--line);border-radius:10px;background:#fff;padding:16px}.pix-section-title{font-size:.82rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}.pix-token-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}.pix-token-row span{border:1px solid var(--line);border-radius:6px;min-width:24px;padding:5px 6px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface-soft)}.pix-detail-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.pix-detail-grid>div{border:1px solid var(--line);border-radius:8px;padding:12px;min-width:0}.pix-table-wrap{overflow-x:auto}.pix-table{width:100%;border-collapse:collapse;font-size:.78rem}.pix-table th,.pix-table td{border-bottom:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}.pix-table code,.pix-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.pix-diagnostic-list{margin:0;padding-left:18px;color:var(--muted)}.pix-muted{color:var(--muted);margin:0}.pix-code{margin:0;overflow:auto;padding:14px;border-radius:8px;background:#0f172a;color:#dbeafe;font-size:.78rem}.pix-json-key{color:#93c5fd}.pix-json-string{color:#86efac}.pix-json-number{color:#fbbf24}.pix-json-bool{color:#f0abfc}.pix-json-null{color:#cbd5e1}.pix-qr-error{color:var(--pix-red);font-weight:700;text-align:center}@media (max-width:800px){.pix-generator-grid,.pix-summary-grid,.pix-detail-grid,.pix-qr-card{grid-template-columns:1fr}.pix-timeline{padding:14px 10px}.pix-timeline-track{display:none}.pix-timeline-steps{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0;row-gap:14px}.pix-step strong,.pix-step em{white-space:normal}.pix-qr-visual{min-height:180px}}`;
+      const style = document.createElement("style");
+      style.id = "pix-workbench-styles";
+      style.textContent = `.pix-workbench-card{max-width:100%;overflow:hidden}.pix-workbench-card .workbench-body,.pix-workbench-card .workbench-form,.pix-workbench-card .field-grid,.pix-workbench-card [data-tool-feedback]{max-width:100%;min-width:0;overflow:hidden}.pix-workbench-card .field-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pix-workbench{--pix-green:#16a34a;--pix-blue:#2563eb;--pix-red:#dc2626;--pix-amber:#b45309;--pix-soft:#f8fafc;width:100%;max-width:100%;min-width:0;overflow:hidden}.pix-workbench,.pix-workbench *{box-sizing:border-box}.pix-workbench .field,.pix-workbench label,.pix-workbench input,.pix-workbench select,.pix-workbench textarea,.pix-workbench button{min-width:0;max-width:100%}.pix-workbench .field{overflow:hidden}.pix-workbench input,.pix-workbench select{width:100%;text-overflow:ellipsis}.pix-workbench .pix-main-input{display:block;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pix-workbench .button-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;overflow:hidden}.pix-workbench .button-row .button{white-space:normal;overflow-wrap:anywhere}.pix-badge-row,.pix-generator-head,.pix-detail-grid,.pix-summary-grid{display:flex;flex-wrap:wrap;gap:8px}.pix-pill{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface-soft);color:var(--muted)}.pix-pill.active{color:var(--pix-blue);border-color:rgba(37,99,235,.28);background:rgba(37,99,235,.08)}.pix-pill.gold{color:#92400e;border-color:rgba(217,119,6,.35);background:linear-gradient(180deg,#fff7ed,#fffbeb)}.pix-select-field{min-width:min(220px,100%)}.pix-generator{grid-column:1/-1;min-width:0;max-width:100%;overflow:hidden;border:1px solid var(--line);border-radius:10px;padding:16px;background:linear-gradient(180deg,#fff,var(--surface-soft))}.pix-generator-head{align-items:flex-start;justify-content:space-between;margin-bottom:12px}.pix-generator-head h3{margin:2px 0 0;font-size:1rem}.pix-mini-eyebrow{color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.pix-generator-note{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px}.pix-generator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:100%;overflow:hidden}.pix-generator-grid label{min-width:0;display:flex;flex-direction:column;gap:5px;font-size:.75rem;font-weight:700;color:var(--muted)}.pix-generator-grid input{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 11px;color:var(--text);background:#fff;font:inherit}.pix-gold-heading-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pix-gold-chip{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border:1px solid #dbeafe;border-radius:999px;padding:5px 10px;color:#475569;background:#f8fbff}.pix-gold-chip.strong{color:#92400e;border-color:rgba(217,119,6,.38);background:linear-gradient(180deg,#fff7ed,#fffbeb)}.pix-panel{margin-top:22px;display:flex;flex-direction:column;gap:18px;max-width:100%;min-width:0;overflow:hidden}.pix-breakdown,.pix-debugger,.pix-dev{display:flex;flex-direction:column;gap:18px;max-width:100%;min-width:0;overflow:hidden}.pix-empty-state{border:1px dashed var(--line);border-radius:10px;padding:24px;background:var(--surface-soft);align-items:center;gap:14px;color:var(--muted)}.pix-empty-icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#16a34a,#06b6d4);font-weight:900}.pix-empty-state strong{color:var(--text);display:block;margin-bottom:4px}.pix-empty-state p{margin:0;max-width:560px}.pix-gold-status{max-width:100%;min-width:0;overflow:hidden;border:1px solid #dbeafe;border-radius:12px;padding:16px;background:linear-gradient(135deg,#fff,#f8fbff 58%,#fff7ed);box-shadow:0 12px 34px rgba(15,23,42,.06)}.pix-gold-status-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}.pix-gold-status-head h3{margin:2px 0 0;font-size:1rem}.pix-gold-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:10px}.pix-gold-tile{border:1px solid #e5edf7;border-radius:10px;background:rgba(255,255,255,.88);padding:12px;min-width:0}.pix-gold-tile span{display:block;color:var(--muted);font-size:.65rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.pix-gold-tile strong{display:block;margin:4px 0;color:var(--text);overflow-wrap:anywhere}.pix-gold-tile p{margin:0;color:var(--muted);font-size:.76rem;line-height:1.35}.pix-gold-tile.pass{border-color:rgba(22,163,74,.25)}.pix-gold-tile.pass strong{color:var(--pix-green)}.pix-gold-tile.fail{border-color:rgba(220,38,38,.25)}.pix-gold-tile.fail strong{color:var(--pix-red)}.pix-gold-tile.warn{border-color:rgba(217,119,6,.3)}.pix-gold-tile.warn strong{color:#b45309}.pix-timeline{max-width:100%;min-width:0;border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff;overflow:hidden}.pix-timeline-track{height:3px;background:#e5e7eb;margin:16px 28px 0;position:relative}.pix-timeline-track span{display:block;height:100%;max-width:100%;background:var(--pix-green);transition:width .2s ease}.pix-timeline-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:-13px}.pix-step{min-width:0;text-align:center;color:var(--muted)}.pix-step span{width:24px;height:24px;border-radius:999px;display:block;margin:0 auto 9px;background:#d1d5db;border:4px solid #fff;box-shadow:0 0 0 1px var(--line)}.pix-step.pass span{background:var(--pix-green);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.pix-step.fail span{background:var(--pix-red);box-shadow:0 0 0 5px rgba(220,38,38,.11)}.pix-step strong{display:block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pix-step em{display:block;font-size:.68rem;font-style:normal;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pix-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr))}.pix-summary-card{overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff;padding:14px;min-width:0}.pix-summary-card span,.pix-detail-grid span{display:block;color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}.pix-summary-card strong,.pix-detail-grid strong{color:var(--text);font-size:.92rem;overflow-wrap:anywhere}.pix-summary-card.success strong,.pix-ok{color:var(--pix-green)}.pix-summary-card.error strong,.pix-bad{color:var(--pix-red)}.pix-summary-card.mono strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}.pix-qr-card{max-width:100%;min-width:0;overflow:hidden;display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:18px;border:1px solid var(--line);border-radius:12px;padding:18px;background:linear-gradient(180deg,#fff,#f8fafc)}.pix-qr-visual{display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-height:220px}.pix-qr-visual svg{width:min(100%,220px);height:auto;display:block}.pix-qr-copy{min-width:0;overflow:hidden}.pix-qr-copy textarea{width:100%;max-width:100%;overflow:auto;min-height:150px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem}.pix-qr-copy h3{margin:.2rem 0 .4rem}.pix-qr-copy p{color:var(--muted);margin:.2rem 0 .8rem}.pix-section-card{max-width:100%;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff;padding:16px}.pix-diff-section{margin-top:12px}.pix-section-title{font-size:.82rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}.pix-token-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}.pix-token-row span{border:1px solid var(--line);border-radius:6px;min-width:24px;padding:5px 6px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface-soft)}.pix-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr))}.pix-detail-grid>div{border:1px solid var(--line);border-radius:8px;padding:12px;min-width:0}.pix-table-wrap{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}.pix-table{width:100%;max-width:100%;border-collapse:collapse;font-size:.74rem;table-layout:auto}.pix-table th,.pix-table td{border-bottom:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top;min-width:0}.pix-table td code{display:block;max-width:34ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pix-table code,.pix-code,.pix-crc-input code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.pix-diff-table{width:100%;table-layout:fixed}.pix-diff-table th:nth-child(1),.pix-diff-table td:nth-child(1){width:7ch}.pix-diff-table th:nth-child(4),.pix-diff-table td:nth-child(4){width:9ch}.pix-diff-table td{overflow-wrap:anywhere}.pix-diff-table td:nth-child(2),.pix-diff-table td:nth-child(3){font-size:.72rem}.pix-tree{display:grid;gap:6px;margin-bottom:14px}.pix-tree-row{display:grid;grid-template-columns:68px minmax(120px,1fr) 48px minmax(0,1.05fr);gap:8px;align-items:center;border:1px solid #e5edf7;border-radius:8px;padding:7px 10px;background:#fbfdff}.pix-tree-row.depth-1{margin-left:18px}.pix-tree-row code{font-weight:900;color:#0f766e;font-size:.8rem}.pix-tree-row span,.pix-tree-row em{color:var(--muted);font-style:normal;overflow-wrap:anywhere;font-size:.84rem;line-height:1.25}.pix-tree-row strong{color:var(--text);font-size:.84rem}.pix-crc-input{margin-top:12px;border:1px solid #e5edf7;border-radius:9px;padding:11px;background:#f8fafc}.pix-crc-input span{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.pix-crc-input code{display:block;max-width:100%;overflow:auto;color:#0f172a}.pix-lint-grid,.pix-source-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:10px}.pix-lint-grid article{border:1px solid #e5edf7;border-radius:10px;padding:11px;background:#fff}.pix-lint-grid article.ok{border-color:rgba(22,163,74,.26);background:rgba(22,163,74,.045)}.pix-lint-grid article.bad{border-color:rgba(220,38,38,.24);background:rgba(220,38,38,.045)}.pix-lint-grid span{font-size:.65rem;font-weight:900;letter-spacing:.08em;color:var(--muted)}.pix-lint-grid strong{display:block;color:var(--text);margin:3px 0}.pix-lint-grid p{margin:0;color:var(--muted);font-size:.8rem}.pix-source-grid a,.pix-source-card{border:1px solid #dbeafe;border-radius:10px;padding:12px;text-decoration:none;color:#1d4ed8;background:#f8fbff}.pix-source-card span{display:block;color:#64748b;font-size:.62rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}.pix-source-card strong{display:block;color:#1e3a8a;font-size:.9rem;line-height:1.2;margin-bottom:6px}.pix-source-card em{display:block;color:#64748b;font-size:.76rem;line-height:1.35;font-style:normal}.pix-source-boundary{margin:12px 0 0;color:#64748b;font-size:.82rem;line-height:1.45}.pix-source-boundary strong{color:#0f172a}.pix-diff-table tr.diff td{background:rgba(180,83,9,.06)}.pix-diff-table tr.same td{color:#64748b}.pix-diagnostic-list{margin:0;padding-left:18px;color:var(--muted)}.pix-muted{color:var(--muted);margin:0}.pix-code{margin:0;max-width:100%;overflow:auto;padding:14px;border-radius:8px;background:#0f172a;color:#dbeafe;font-size:.78rem}.pix-json-key{color:#93c5fd}.pix-json-string{color:#86efac}.pix-json-number{color:#fbbf24}.pix-json-bool{color:#f0abfc}.pix-json-null{color:#cbd5e1}.pix-qr-error{color:var(--pix-red);font-weight:700;text-align:center}.pix-reference-card .rich-text{color:#475569;font-size:.92rem;line-height:1.62}.pix-reference-card .rich-text p{margin:0 0 12px}.pix-reference-card .rich-text ul{margin:0;padding-left:20px;display:grid;gap:8px}.pix-reference-card .rich-text li{padding-left:4px}.pix-reference-card .rich-text code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:5px;padding:1px 4px;color:#0f766e}.pix-reference-card .doc-accordion{border-color:#dbeafe}.pix-reference-card .doc-accordion[open]{background:linear-gradient(180deg,#fff,#f8fbff)}.pix-table-wrap{display:block;width:100%;max-width:100%;min-width:0}.pix-section-card .pix-table{width:100%;min-width:100%;max-width:none}.pix-table th,.pix-table td{overflow-wrap:anywhere}.pix-table td code{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pix-diff-section .pix-table-wrap{overflow-x:hidden}.pix-diff-table{width:100%;min-width:100%;table-layout:fixed}.pix-diff-table th:nth-child(1),.pix-diff-table td:nth-child(1){width:7ch}.pix-diff-table th:nth-child(4),.pix-diff-table td:nth-child(4){width:9ch}.pix-diff-table th:nth-child(2),.pix-diff-table td:nth-child(2),.pix-diff-table th:nth-child(3),.pix-diff-table td:nth-child(3){width:calc((100% - 16ch)/2)}.pix-traps-section .pix-diagnostic-list{font-size:.84rem;line-height:1.48;color:#64748b}.pix-traps-section .pix-diagnostic-list li{margin:0 0 5px}.pix-traps-section .pix-diagnostic-list li::marker{color:#94a3b8}@media (max-width:1100px){.pix-generator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:800px){.pix-workbench-card .field-grid,.pix-generator-grid,.pix-summary-grid,.pix-detail-grid,.pix-qr-card,.pix-lint-grid,.pix-source-grid,.pix-tree-row,.pix-gold-grid{grid-template-columns:1fr}.pix-tree-row.depth-1{margin-left:0}.pix-timeline{padding:14px 10px}.pix-timeline-track{display:none}.pix-timeline-steps{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0;row-gap:14px}.pix-step strong,.pix-step em{white-space:normal}.pix-qr-visual{min-height:180px}}`;
       document.head.appendChild(style);
     }
 

@@ -1,3 +1,36 @@
+## 2026-07-27 - Gold Tools Round 3 Strong Expansion
+
+- Added a shared Developer Snapshot copy control to the route-bound rich country lab runtime so every generated rich tool exposes `Copy developer JSON` directly next to the JSON payload, not only near the input controls.
+- Fixed country-page tool search suggestions so the dropdown closes on outside pointer click, Escape, Clear, or focus leaving the search form; scoped United States build refreshed the generated bundle/runtime assets.
+- Added the highest-priority country-tool override: every country-scoped tool must aim for Pix/CURP-level best-in-world quality to the maximum extent its format allows. Generated routes, generic factory pages, and shared overlays are not sufficient when richer browser-checkable behavior is possible.
+- Promoted the 281 route-bound country tool profiles from a bottom-of-page overlay to a primary rich workbench runtime in `assets/js/tools/gold-tools-lab.js` (`2026-07-27-country-rich-lab-v3`): the route host now opens directly with source links, samples, input, local evidence, anatomy tables, replay checks, implementation lint, official boundary, integration traps, and developer snapshot.
+- Added family-specific rich workbench behavior/copy for IBAN, BIC/SWIFT, phone, postal, passport-like document numbers, vehicle plates, invoice references, payment references, and bank/account references, plus corrected tax/business vs identity classification for AFM/NIF/PIN-style identifiers.
+- Expanded the shared `assets/js/tools/gold-tools-lab.js` overlay from 110 to 281 route-bound profiles.
+- Recorded the corrected Gold definition after user review: Gold must mean bespoke maximum-quality on the actual page, not a staged overlay label. Shared overlays are now documented as migration/triage scaffolding only; finished Gold pages must hit the Pix/CURP/Spain ID bar before being presented as Gold.
+- Added strong shared analyzers for BIC/SWIFT, phone/E.164, postal codes, passport-like document numbers, vehicle plates, invoice references, payment references, bank/account references, postal tracking, customs references, and procurement identifiers.
+- Added 171 additional strong Gold profiles across existing generated country routes without creating new YAML routes or running a full build.
+- Added route-specific overlay injection for selected older Poland/Brazil standalone routes whose algorithm IDs are not country-suite IDs.
+- Ran scoped sequential `build:country -- --country poland --locales en` and `build:country -- --country brazil --locales en`; no full build was run.
+- Verified syntax, VM sample replay, invalid-fixture behavior, generated route resolution, script injection, and generated runtime asset sync.
+- Added `docs/ai/gold-tools/ROUND3_STRONG_GOLD_EXPANSION_LOG.md`.
+
+## 2026-07-26 - Brazil Pix bespoke Gold V2
+
+- Deepened `assets/js/tools/pix.js` from production V1 into the first bespoke Gold payment/QR/payload lab.
+- Added BR Code formatting, deliberate bad-CRC fixture generation, safe-fixture diff, nested TLV paths, offsets, raw TLV segments, CRC replay input, implementation lint, official BCB/source links, and Pix-specific integration traps.
+- Fixed scoped `build:country` runtime syncing so Brazil copies standalone `pix.js` and Poland copies standalone `pesel.js` into generated assets instead of leaving stale standalone runtimes.
+- Updated `docs/product/PIX_WORKBENCH_SPEC.md`, `docs/product/WORKBENCH_REGISTRY.md`, and `docs/ai/gold-tools/BRAZIL_PIX_GOLD_LOG.md`.
+- Verified with `node --check`, scoped Brazil build, Brazil premium audit, and browser smoke for valid BR Code plus bad-CRC flows. Full build was not run.
+
+## 2026-07-26 - Gold Tools Lab V1 first 50 flagship overlay
+
+- Added ValidoHub-owned `assets/js/tools/gold-tools-lab.js`, an additive browser-lab overlay for flagship local-market tools; it currently covers 64 generated route profiles after Pix was promoted out of the overlay.
+- The overlay adds source links, valid/invalid fixtures, safe generation, local analysis, anatomy/evidence cards, batch replay, integration traps, official-boundary notes, and developer JSON while preserving existing PESEL, Spain ID, legacy-rich, and Country Suite Factory behavior. Pix now uses its bespoke full-page runtime instead.
+- Wired the overlay into `scripts/build-all.mjs` and scoped `scripts/build-country-dev.mjs`; standalone PESEL receives Gold Lab injection without replacing `pesel.js`. Standalone Pix is intentionally excluded from the overlay.
+- Added AI-facing implementation logs under `docs/ai/gold-tools/` so future sessions can see the target list, route status, verification commands, limitations, and next deepening queue.
+- Aligned `audit:country-premium` with existing runtime mappings for PESEL and IBAN generator and fixed inline YAML capability parsing.
+- Verified without full build: syntax checks, sequential scoped country builds, representative script injection checks, browser smoke for Brazil Pix / Poland PESEL / India PAN, and premium audits for Brazil, Poland, India, and United States.
+
 ## 2026-07-25 - All-country premium visual and coverage baseline checkpoint
 
 - Regenerated Africa country shape and location PNGs to the Ghana/Kenya-approved premium 3D raster style, including tactile raised outline assets and neutral-gray relief location maps with only the target country highlighted.
@@ -1054,3 +1087,38 @@ Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Back
 - Preserved the all-country source/data/image baseline, premium 3D raster country visuals, Africa/Oceania/USA visual pass, and Countries Portal interactive neutral world map with raster country-shape hover cards.
 - Documented that the accepted Countries Portal map uses a calm neutral atlas, no fallback square/diamond/flag markers, restrained active geography outline/glow, and `assets/images/countries/*-outline.png` mini-card previews instead of flat SVG flag painting.
 - Noted the remaining atlas limitation: current world-map geometry is simplified; true higher-detail country contours require a deliberate high-detail atlas asset pipeline.
+
+## 2026-07-26 Gold Tool Specification Lab Standard
+
+- Recorded the new non-negotiable Gold/local flagship tool expectation: a premium structured-format tool must be a best-in-world interactive specification laboratory, not a prettier validator.
+- Added rules requiring every public/spec-supported local check to be implemented where applicable: validation, parsing, checksum/control/CRC replay, field anatomy, normalization, masking, safe fixture generation, batch/debug workflows, copy-ready JSON/API/payload output, and workflow-specific integration traps.
+- Clarified that every tool should share the same recognizable ValidoHub foundation for consistency, but that foundation is not a functional limit: flagship tools may and should add custom ValidoHub JavaScript, CSS, parser logic, QR/payload generation, fixture generation, anatomy explorers, repair/lint actions, registry/source panels, downloads, mode-specific UX, and bespoke components of any complexity whenever the format requires it.
+- Added the value-driven country tool inventory rule: one country may have 200 visible tools and another may have 2, but only genuinely useful public/spec-backed developer workflows should be promoted; generated filler, fake validators, and weak placeholders should be downgraded or hidden.
+- Added the country search term rule: placeholders, chips, and suggestions must use only real, commonly used local market terms for that country, never invented acronyms or generated SEO filler.
+- Clarified that PESEL is the identifier reference, Brazil Pix is the payment/QR/payload reference, and IBAN is the banking/spec-registry reference.
+- Reaffirmed that local validation must never pretend to prove official existence, ownership, registry status, or payment settlement; those boundaries must be visible in the tool.
+- Added the one-stop Gold tool rule: flagship tools must let developers validate, generate, parse, debug, learn, copy/export, and reach official source links without needing weaker competitor tools for the same workflow.
+- Added the internal AI log requirement for Gold/local flagship tools: `docs/ai/gold-tools/` logs must capture sources, competitor notes, capabilities, boundaries, samples, QA, browser observations, and open risks, and a Gold tool is not done when that log is missing or stale.
+- Corrected Brazil Pix Gold presentation after user feedback: the duplicate shared overlay stays removed, but Pix keeps visible Gold identity inside the main workbench with an input-driven connected evidence strip.
+- Locked the accepted Pix polish baseline into product docs: bespoke Gold tools must use one connected lab, keep full-width analysis tables, contain long payloads locally, avoid page-level horizontal overflow, place Developer Snapshot after human-readable diagnostics, and render Integration traps as compact workflow-specific guidance rather than oversized generic copy.
+- Promoted Mexico CURP as the next bespoke Gold tool after Pix: added a connected browser lab with CURP normalization, anatomy parsing, date/state semantics, check-digit replay, safe fixture generator, sample batch replay, source/boundary copy, and Developer Snapshot JSON.
+- Added `docs/product/MEXICO_CURP_WORKBENCH_SPEC.md` and `docs/ai/gold-tools/MEXICO_CURP_GOLD_LOG.md`; updated the Gold index and Workbench Registry so future sessions treat CURP as an intentional Pix-derived Gold implementation rather than a generic overlay.
+
+## 2026-07-27 Spain ID Bespoke Gold Lab
+
+- Promoted Spain DNI/NIE/NIF/CIF from legacy rich / shared-overlay candidate into a bespoke Gold V1 workbench.
+- Added connected Spanish ID evidence: sample chips, DNI/NIE modulo-23 replay, NIE prefix mapping, legal-entity NIF / legacy CIF weighted control replay, entity-family context, anatomy table, batch replay, official-source/boundary panel, workflow-specific Integration traps, and Developer Snapshot JSON copy.
+- Marked the Spain ID lab with `data-gold-lab` so the shared Gold overlay does not duplicate the workbench.
+- Documented the Pix/CURP-derived layout fixes for future Gold tools: no hover layout jumps, balanced generator grids, date pickers for date fixtures, contained focus rings, spaced action rows, local overflow containment, and copy JSON near Developer Snapshot.
+- Hardened scoped/full build behavior for suite-hosted bespoke Gold routes: Spain ID is materialized by the Spain suite, so builders now remove the shared overlay and inject `spain-id.js` on the specific Spain ID route.
+- Added `docs/ai/gold-tools/SPAIN_ID_GOLD_LOG.md` and updated `SPAIN_ID_WORKBENCH_SPEC.md`, `WORKBENCH_REGISTRY.md`, Gold index, and the AI handoff.
+
+## 2026-07-27 Gold Tools Round 2 Flagship Expansion
+
+- Expanded the shared `gold-tools-lab.js` profile matrix to 110 route-bound flagship local-market profiles.
+- Added real browser-side replay/anatomy handlers for South Africa ID, Turkey TCKN, Israel Teudat Zehut, Portugal NIF, Croatia OIB, Czech ICO, Greece AFM, Ecuador cedula, Uruguay cedula, and Kenya KRA PIN.
+- Split PAN, GSTIN, Aadhaar, payment aliases, date-coded national IDs, and structured tax/registry identifiers into family-specific evidence/boundary handlers so the overlay is no longer just generic normalized text.
+- Synchronized scoped and full build wiring for the expanded flagship country set in `scripts/build-country-dev.mjs` and `scripts/build-all.mjs`.
+- Verified all 110 valid fixtures pass, all 110 invalid fixtures review/fail, all profile slugs resolve to generated English routes, and all non-bespoke profiles have `gold-tools-lab.js` in generated HTML after scoped sequential country builds with `--locales en`.
+- Added `docs/ai/gold-tools/ROUND2_FLAGSHIP_EXPANSION_LOG.md` as the AI-facing implementation trace.
+- Tightened country hub search hints so placeholders and chips are route-bound: generated/local metadata terms are shown only when the country has a matching tool route or a documented alias to one. Rebuilt Greece with English-only scoped country build to verify the search UI now reflects actual available workbenches instead of stale filler hints.

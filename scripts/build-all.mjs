@@ -127,19 +127,19 @@ async function compileAssets() {
 
 
 const TOOL_SCRIPT_BY_ALGORITHM = {
-  'validohub.pesel': 'pesel.js',
-  'validohub.brazil-pix': 'pix.js',
-  'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js'],
-  'validohub.spain-id': 'spain-id.js',
-  'validohub.spain-suite': ['country-suite-factory.js', 'spain-suite.js'],
+  'validohub.pesel': ['pesel.js', 'gold-tools-lab.js'],
+  'validohub.brazil-pix': ['pix.js'],
+  'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js', 'gold-tools-lab.js'],
+  'validohub.spain-id': ['spain-id.js'],
+  'validohub.spain-suite': ['country-suite-factory.js', 'spain-suite.js', 'gold-tools-lab.js'],
   'validohub.poland-suite': ['country-legacy-rich-layer.js', 'poland-suite.js'],
   'validohub.poland-expansion': 'poland-expansion.js',
   'validohub.poland-baseline': 'poland-baseline.js',
-  'validohub.france-suite': ['country-legacy-rich-layer.js', 'france-suite.js'],
-  'validohub.netherlands-suite': ['country-legacy-rich-layer.js', 'netherlands-suite.js'],
-  'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
-  'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js'],
-  'validohub.italy-suite': ['country-suite-factory.js', 'italy-suite.js'],
+  'validohub.france-suite': ['country-legacy-rich-layer.js', 'france-suite.js', 'gold-tools-lab.js'],
+  'validohub.netherlands-suite': ['country-legacy-rich-layer.js', 'netherlands-suite.js', 'gold-tools-lab.js'],
+  'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js', 'gold-tools-lab.js'],
+  'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js', 'gold-tools-lab.js'],
+  'validohub.italy-suite': ['country-suite-factory.js', 'italy-suite.js', 'gold-tools-lab.js'],
   'validohub.vanuatu-suite': ['country-suite-factory.js', 'vanuatu-suite.js'],
   'validohub.tuvalu-suite': ['country-suite-factory.js', 'tuvalu-suite.js'],
   'validohub.tonga-suite': ['country-suite-factory.js', 'tonga-suite.js'],
@@ -147,13 +147,13 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.samoa-suite': ['country-suite-factory.js', 'samoa-suite.js'],
   'validohub.papua-new-guinea-suite': ['country-suite-factory.js', 'papua-new-guinea-suite.js'],
   'validohub.palau-suite': ['country-suite-factory.js', 'palau-suite.js'],
-  'validohub.new-zealand-suite': ['country-suite-factory.js', 'new-zealand-suite.js'],
+  'validohub.new-zealand-suite': ['country-suite-factory.js', 'new-zealand-suite.js', 'gold-tools-lab.js'],
   'validohub.nauru-suite': ['country-suite-factory.js', 'nauru-suite.js'],
   'validohub.micronesia-suite': ['country-suite-factory.js', 'micronesia-suite.js'],
   'validohub.marshall-islands-suite': ['country-suite-factory.js', 'marshall-islands-suite.js'],
   'validohub.kiribati-suite': ['country-suite-factory.js', 'kiribati-suite.js'],
   'validohub.fiji-suite': ['country-suite-factory.js', 'fiji-suite.js'],
-  'validohub.australia-suite': ['country-suite-factory.js', 'australia-suite.js'],
+  'validohub.australia-suite': ['country-suite-factory.js', 'australia-suite.js', 'gold-tools-lab.js'],
   'validohub.zimbabwe-suite': ['country-suite-factory.js', 'zimbabwe-suite.js'],
   'validohub.zambia-suite': ['country-suite-factory.js', 'zambia-suite.js'],
   'validohub.uganda-suite': ['country-suite-factory.js', 'uganda-suite.js'],
@@ -162,18 +162,18 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.tanzania-suite': ['country-suite-factory.js', 'tanzania-suite.js'],
   'validohub.sudan-suite': ['country-suite-factory.js', 'sudan-suite.js'],
   'validohub.south-sudan-suite': ['country-suite-factory.js', 'south-sudan-suite.js'],
-  'validohub.south-africa-suite': ['country-suite-factory.js', 'south-africa-suite.js'],
+  'validohub.south-africa-suite': ['country-suite-factory.js', 'south-africa-suite.js', 'gold-tools-lab.js'],
   'validohub.somalia-suite': ['country-suite-factory.js', 'somalia-suite.js'],
   'validohub.sierra-leone-suite': ['country-suite-factory.js', 'sierra-leone-suite.js'],
   'validohub.seychelles-suite': ['country-suite-factory.js', 'seychelles-suite.js'],
   'validohub.senegal-suite': ['country-suite-factory.js', 'senegal-suite.js'],
   'validohub.sao-tome-and-principe-suite': ['country-suite-factory.js', 'sao-tome-and-principe-suite.js'],
   'validohub.rwanda-suite': ['country-suite-factory.js', 'rwanda-suite.js'],
-  'validohub.nigeria-suite': ['country-suite-factory.js', 'nigeria-suite.js'],
+  'validohub.nigeria-suite': ['country-suite-factory.js', 'nigeria-suite.js', 'gold-tools-lab.js'],
   'validohub.niger-suite': ['country-suite-factory.js', 'niger-suite.js'],
   'validohub.namibia-suite': ['country-suite-factory.js', 'namibia-suite.js'],
   'validohub.mozambique-suite': ['country-suite-factory.js', 'mozambique-suite.js'],
-  'validohub.morocco-suite': ['country-suite-factory.js', 'morocco-suite.js'],
+  'validohub.morocco-suite': ['country-suite-factory.js', 'morocco-suite.js', 'gold-tools-lab.js'],
   'validohub.mauritius-suite': ['country-suite-factory.js', 'mauritius-suite.js'],
   'validohub.mauritania-suite': ['country-suite-factory.js', 'mauritania-suite.js'],
   'validohub.mali-suite': ['country-suite-factory.js', 'mali-suite.js'],
@@ -182,17 +182,17 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.libya-suite': ['country-suite-factory.js', 'libya-suite.js'],
   'validohub.liberia-suite': ['country-suite-factory.js', 'liberia-suite.js'],
   'validohub.lesotho-suite': ['country-suite-factory.js', 'lesotho-suite.js'],
-  'validohub.kenya-suite': ['country-suite-factory.js', 'kenya-suite.js'],
+  'validohub.kenya-suite': ['country-suite-factory.js', 'kenya-suite.js', 'gold-tools-lab.js'],
   'validohub.guinea-bissau-suite': ['country-suite-factory.js', 'guinea-bissau-suite.js'],
   'validohub.guinea-suite': ['country-suite-factory.js', 'guinea-suite.js'],
-  'validohub.ghana-suite': ['country-suite-factory.js', 'ghana-suite.js'],
+  'validohub.ghana-suite': ['country-suite-factory.js', 'ghana-suite.js', 'gold-tools-lab.js'],
   'validohub.gambia-suite': ['country-suite-factory.js', 'gambia-suite.js'],
   'validohub.gabon-suite': ['country-suite-factory.js', 'gabon-suite.js'],
   'validohub.ethiopia-suite': ['country-suite-factory.js', 'ethiopia-suite.js'],
   'validohub.eswatini-suite': ['country-suite-factory.js', 'eswatini-suite.js'],
   'validohub.eritrea-suite': ['country-suite-factory.js', 'eritrea-suite.js'],
   'validohub.equatorial-guinea-suite': ['country-suite-factory.js', 'equatorial-guinea-suite.js'],
-  'validohub.egypt-suite': ['country-suite-factory.js', 'egypt-suite.js'],
+  'validohub.egypt-suite': ['country-suite-factory.js', 'egypt-suite.js', 'gold-tools-lab.js'],
   'validohub.djibouti-suite': ['country-suite-factory.js', 'djibouti-suite.js'],
   'validohub.democratic-republic-of-the-congo-suite': ['country-suite-factory.js', 'democratic-republic-of-the-congo-suite.js'],
   'validohub.cote-d-ivoire-suite': ['country-suite-factory.js', 'cote-d-ivoire-suite.js'],
@@ -209,7 +209,7 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.angola-suite': ['country-suite-factory.js', 'angola-suite.js'],
   'validohub.algeria-suite': ['country-suite-factory.js', 'algeria-suite.js'],
   'validohub.yemen-suite': ['country-suite-factory.js', 'yemen-suite.js'],
-  'validohub.turkey-suite': ['country-suite-factory.js', 'turkey-suite.js'],
+  'validohub.turkey-suite': ['country-suite-factory.js', 'turkey-suite.js', 'gold-tools-lab.js'],
   'validohub.timor-leste-suite': ['country-suite-factory.js', 'timor-leste-suite.js'],
   'validohub.taiwan-suite': ['country-suite-factory.js', 'taiwan-suite.js'],
   'validohub.syria-suite': ['country-suite-factory.js', 'syria-suite.js'],
@@ -241,83 +241,83 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.myanmar-suite': ['country-suite-factory.js', 'myanmar-suite.js'],
   'validohub.sri-lanka-suite': ['country-suite-factory.js', 'sri-lanka-suite.js'],
   'validohub.nepal-suite': ['country-suite-factory.js', 'nepal-suite.js'],
-  'validohub.israel-suite': ['country-suite-factory.js', 'israel-suite.js'],
-  'validohub.saudi-arabia-suite': ['country-suite-factory.js', 'saudi-arabia-suite.js'],
+  'validohub.israel-suite': ['country-suite-factory.js', 'israel-suite.js', 'gold-tools-lab.js'],
+  'validohub.saudi-arabia-suite': ['country-suite-factory.js', 'saudi-arabia-suite.js', 'gold-tools-lab.js'],
   'validohub.bangladesh-suite': ['country-suite-factory.js', 'bangladesh-suite.js'],
   'validohub.pakistan-suite': ['country-suite-factory.js', 'pakistan-suite.js'],
-  'validohub.philippines-suite': ['country-suite-factory.js', 'philippines-suite.js'],
-  'validohub.vietnam-suite': ['country-suite-factory.js', 'vietnam-suite.js'],
-  'validohub.thailand-suite': ['country-suite-factory.js', 'thailand-suite.js'],
-  'validohub.malaysia-suite': ['country-suite-factory.js', 'malaysia-suite.js'],
-  'validohub.indonesia-suite': ['country-suite-factory.js', 'indonesia-suite.js'],
-  'validohub.china-suite': ['country-suite-factory.js', 'china-suite.js'],
-  'validohub.united-arab-emirates-suite': ['country-suite-factory.js', 'united-arab-emirates-suite.js'],
-  'validohub.south-korea-suite': ['country-suite-factory.js', 'south-korea-suite.js'],
-  'validohub.singapore-suite': ['country-suite-factory.js', 'singapore-suite.js'],
-  'validohub.india-suite': ['country-suite-factory.js', 'india-suite.js'],
-  'validohub.japan-suite': ['country-suite-factory.js', 'japan-suite.js'],
+  'validohub.philippines-suite': ['country-suite-factory.js', 'philippines-suite.js', 'gold-tools-lab.js'],
+  'validohub.vietnam-suite': ['country-suite-factory.js', 'vietnam-suite.js', 'gold-tools-lab.js'],
+  'validohub.thailand-suite': ['country-suite-factory.js', 'thailand-suite.js', 'gold-tools-lab.js'],
+  'validohub.malaysia-suite': ['country-suite-factory.js', 'malaysia-suite.js', 'gold-tools-lab.js'],
+  'validohub.indonesia-suite': ['country-suite-factory.js', 'indonesia-suite.js', 'gold-tools-lab.js'],
+  'validohub.china-suite': ['country-suite-factory.js', 'china-suite.js', 'gold-tools-lab.js'],
+  'validohub.united-arab-emirates-suite': ['country-suite-factory.js', 'united-arab-emirates-suite.js', 'gold-tools-lab.js'],
+  'validohub.south-korea-suite': ['country-suite-factory.js', 'south-korea-suite.js', 'gold-tools-lab.js'],
+  'validohub.singapore-suite': ['country-suite-factory.js', 'singapore-suite.js', 'gold-tools-lab.js'],
+  'validohub.india-suite': ['country-suite-factory.js', 'india-suite.js', 'gold-tools-lab.js'],
+  'validohub.japan-suite': ['country-suite-factory.js', 'japan-suite.js', 'gold-tools-lab.js'],
   'validohub.vatican-city-suite': ['country-suite-factory.js', 'vatican-city-suite.js'],
-  'validohub.united-kingdom-suite': ['country-suite-factory.js', 'united-kingdom-suite.js'],
+  'validohub.united-kingdom-suite': ['country-suite-factory.js', 'united-kingdom-suite.js', 'gold-tools-lab.js'],
   'validohub.ukraine-suite': ['country-suite-factory.js', 'ukraine-suite.js'],
-  'validohub.slovenia-suite': ['country-suite-factory.js', 'slovenia-suite.js'],
-  'validohub.slovakia-suite': ['country-suite-factory.js', 'slovakia-suite.js'],
+  'validohub.slovenia-suite': ['country-suite-factory.js', 'slovenia-suite.js', 'gold-tools-lab.js'],
+  'validohub.slovakia-suite': ['country-suite-factory.js', 'slovakia-suite.js', 'gold-tools-lab.js'],
   'validohub.serbia-suite': ['country-suite-factory.js', 'serbia-suite.js'],
   'validohub.san-marino-suite': ['country-suite-factory.js', 'san-marino-suite.js'],
   'validohub.north-macedonia-suite': ['country-suite-factory.js', 'north-macedonia-suite.js'],
   'validohub.montenegro-suite': ['country-suite-factory.js', 'montenegro-suite.js'],
   'validohub.monaco-suite': ['country-suite-factory.js', 'monaco-suite.js'],
   'validohub.moldova-suite': ['country-suite-factory.js', 'moldova-suite.js'],
-  'validohub.malta-suite': ['country-suite-factory.js', 'malta-suite.js'],
-  'validohub.luxembourg-suite': ['country-suite-factory.js', 'luxembourg-suite.js'],
-  'validohub.lithuania-suite': ['country-suite-factory.js', 'lithuania-suite.js'],
+  'validohub.malta-suite': ['country-suite-factory.js', 'malta-suite.js', 'gold-tools-lab.js'],
+  'validohub.luxembourg-suite': ['country-suite-factory.js', 'luxembourg-suite.js', 'gold-tools-lab.js'],
+  'validohub.lithuania-suite': ['country-suite-factory.js', 'lithuania-suite.js', 'gold-tools-lab.js'],
   'validohub.liechtenstein-suite': ['country-suite-factory.js', 'liechtenstein-suite.js'],
-  'validohub.latvia-suite': ['country-suite-factory.js', 'latvia-suite.js'],
-  'validohub.iceland-suite': ['country-suite-factory.js', 'iceland-suite.js'],
-  'validohub.hungary-suite': ['country-suite-factory.js', 'hungary-suite.js'],
-  'validohub.greece-suite': ['country-suite-factory.js', 'greece-suite.js'],
-  'validohub.estonia-suite': ['country-suite-factory.js', 'estonia-suite.js'],
-  'validohub.cyprus-suite': ['country-suite-factory.js', 'cyprus-suite.js'],
-  'validohub.croatia-suite': ['country-suite-factory.js', 'croatia-suite.js'],
+  'validohub.latvia-suite': ['country-suite-factory.js', 'latvia-suite.js', 'gold-tools-lab.js'],
+  'validohub.iceland-suite': ['country-suite-factory.js', 'iceland-suite.js', 'gold-tools-lab.js'],
+  'validohub.hungary-suite': ['country-suite-factory.js', 'hungary-suite.js', 'gold-tools-lab.js'],
+  'validohub.greece-suite': ['country-suite-factory.js', 'greece-suite.js', 'gold-tools-lab.js'],
+  'validohub.estonia-suite': ['country-suite-factory.js', 'estonia-suite.js', 'gold-tools-lab.js'],
+  'validohub.cyprus-suite': ['country-suite-factory.js', 'cyprus-suite.js', 'gold-tools-lab.js'],
+  'validohub.croatia-suite': ['country-suite-factory.js', 'croatia-suite.js', 'gold-tools-lab.js'],
   'validohub.bulgaria-suite': ['country-suite-factory.js', 'bulgaria-suite.js'],
   'validohub.bosnia-and-herzegovina-suite': ['country-suite-factory.js', 'bosnia-and-herzegovina-suite.js'],
   'validohub.andorra-suite': ['country-suite-factory.js', 'andorra-suite.js'],
   'validohub.albania-suite': ['country-suite-factory.js', 'albania-suite.js'],
-  'validohub.portugal-suite': ['country-suite-factory.js', 'portugal-suite.js'],
-  'validohub.austria-suite': ['country-suite-factory.js', 'austria-suite.js'],
-  'validohub.belgium-suite': ['country-suite-factory.js', 'belgium-suite.js'],
-  'validohub.ireland-suite': ['country-suite-factory.js', 'ireland-suite.js'],
-  'validohub.czechia-suite': ['country-suite-factory.js', 'czechia-suite.js'],
-  'validohub.sweden-suite': ['country-suite-factory.js', 'sweden-suite.js'],
-  'validohub.norway-suite': ['country-suite-factory.js', 'norway-suite.js'],
-  'validohub.denmark-suite': ['country-suite-factory.js', 'denmark-suite.js'],
-  'validohub.finland-suite': ['country-suite-factory.js', 'finland-suite.js'],
-  'validohub.romania-suite': ['country-suite-factory.js', 'romania-suite.js'],
+  'validohub.portugal-suite': ['country-suite-factory.js', 'portugal-suite.js', 'gold-tools-lab.js'],
+  'validohub.austria-suite': ['country-suite-factory.js', 'austria-suite.js', 'gold-tools-lab.js'],
+  'validohub.belgium-suite': ['country-suite-factory.js', 'belgium-suite.js', 'gold-tools-lab.js'],
+  'validohub.ireland-suite': ['country-suite-factory.js', 'ireland-suite.js', 'gold-tools-lab.js'],
+  'validohub.czechia-suite': ['country-suite-factory.js', 'czechia-suite.js', 'gold-tools-lab.js'],
+  'validohub.sweden-suite': ['country-suite-factory.js', 'sweden-suite.js', 'gold-tools-lab.js'],
+  'validohub.norway-suite': ['country-suite-factory.js', 'norway-suite.js', 'gold-tools-lab.js'],
+  'validohub.denmark-suite': ['country-suite-factory.js', 'denmark-suite.js', 'gold-tools-lab.js'],
+  'validohub.finland-suite': ['country-suite-factory.js', 'finland-suite.js', 'gold-tools-lab.js'],
+  'validohub.romania-suite': ['country-suite-factory.js', 'romania-suite.js', 'gold-tools-lab.js'],
   'validohub.venezuela-suite': ['country-suite-factory.js', 'venezuela-suite.js'],
-  'validohub.uruguay-suite': ['country-suite-factory.js', 'uruguay-suite.js'],
+  'validohub.uruguay-suite': ['country-suite-factory.js', 'uruguay-suite.js', 'gold-tools-lab.js'],
   'validohub.suriname-suite': ['country-suite-factory.js', 'suriname-suite.js'],
-  'validohub.peru-suite': ['country-suite-factory.js', 'peru-suite.js'],
-  'validohub.paraguay-suite': ['country-suite-factory.js', 'paraguay-suite.js'],
+  'validohub.peru-suite': ['country-suite-factory.js', 'peru-suite.js', 'gold-tools-lab.js'],
+  'validohub.paraguay-suite': ['country-suite-factory.js', 'paraguay-suite.js', 'gold-tools-lab.js'],
   'validohub.guyana-suite': ['country-suite-factory.js', 'guyana-suite.js'],
-  'validohub.ecuador-suite': ['country-suite-factory.js', 'ecuador-suite.js'],
-  'validohub.colombia-suite': ['country-suite-factory.js', 'colombia-suite.js'],
-  'validohub.chile-suite': ['country-suite-factory.js', 'chile-suite.js'],
+  'validohub.ecuador-suite': ['country-suite-factory.js', 'ecuador-suite.js', 'gold-tools-lab.js'],
+  'validohub.colombia-suite': ['country-suite-factory.js', 'colombia-suite.js', 'gold-tools-lab.js'],
+  'validohub.chile-suite': ['country-suite-factory.js', 'chile-suite.js', 'gold-tools-lab.js'],
   'validohub.bolivia-suite': ['country-suite-factory.js', 'bolivia-suite.js'],
-  'validohub.argentina-suite': ['country-suite-factory.js', 'argentina-suite.js'],
-  'validohub.united-states-suite': ['country-suite-factory.js', 'united-states-suite.js'],
-  'validohub.canada-suite': ['country-suite-factory.js', 'canada-suite.js'],
-  'validohub.mexico-suite': ['country-suite-factory.js', 'mexico-suite.js'],
+  'validohub.argentina-suite': ['country-suite-factory.js', 'argentina-suite.js', 'gold-tools-lab.js'],
+  'validohub.united-states-suite': ['country-suite-factory.js', 'united-states-suite.js', 'gold-tools-lab.js'],
+  'validohub.canada-suite': ['country-suite-factory.js', 'canada-suite.js', 'gold-tools-lab.js'],
+  'validohub.mexico-suite': ['country-suite-factory.js', 'mexico-suite.js', 'gold-tools-lab.js'],
   'validohub.belize-suite': ['country-suite-factory.js', 'belize-suite.js'],
   'validohub.guatemala-suite': ['country-suite-factory.js', 'guatemala-suite.js'],
   'validohub.el-salvador-suite': ['country-suite-factory.js', 'el-salvador-suite.js'],
   'validohub.honduras-suite': ['country-suite-factory.js', 'honduras-suite.js'],
   'validohub.nicaragua-suite': ['country-suite-factory.js', 'nicaragua-suite.js'],
-  'validohub.costa-rica-suite': ['country-suite-factory.js', 'costa-rica-suite.js'],
-  'validohub.panama-suite': ['country-suite-factory.js', 'panama-suite.js'],
+  'validohub.costa-rica-suite': ['country-suite-factory.js', 'costa-rica-suite.js', 'gold-tools-lab.js'],
+  'validohub.panama-suite': ['country-suite-factory.js', 'panama-suite.js', 'gold-tools-lab.js'],
   'validohub.bahamas-suite': ['country-suite-factory.js', 'bahamas-suite.js'],
   'validohub.cuba-suite': ['country-suite-factory.js', 'cuba-suite.js'],
   'validohub.jamaica-suite': ['country-suite-factory.js', 'jamaica-suite.js'],
   'validohub.haiti-suite': ['country-suite-factory.js', 'haiti-suite.js'],
-  'validohub.dominican-republic-suite': ['country-suite-factory.js', 'dominican-republic-suite.js'],
+  'validohub.dominican-republic-suite': ['country-suite-factory.js', 'dominican-republic-suite.js', 'gold-tools-lab.js'],
   'validohub.antigua-and-barbuda-suite': ['country-suite-factory.js', 'antigua-and-barbuda-suite.js'],
   'validohub.dominica-suite': ['country-suite-factory.js', 'dominica-suite.js'],
   'validohub.saint-kitts-and-nevis-suite': ['country-suite-factory.js', 'saint-kitts-and-nevis-suite.js'],
@@ -598,13 +598,16 @@ const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
 
 function ensureToolScript(content) {
   const match = content.match(/data-algorithm-id="([^"]+)"/);
-  if (!match) return content;
+  if (!match) return applyRouteSpecificWorkbenchOverrides(content);
   const mapped = TOOL_SCRIPT_BY_ALGORITHM[match[1]];
-  if (!mapped) return content;
+  if (!mapped) return applyRouteSpecificWorkbenchOverrides(content);
+  let next;
   if (Array.isArray(mapped)) {
-    return ensureOrderedWorkbenchScripts(content, mapped);
+    next = ensureOrderedWorkbenchScripts(content, mapped);
+  } else {
+    next = ensureWorkbenchScripts(content, mapped);
   }
-  return ensureWorkbenchScripts(content, mapped);
+  return applyRouteSpecificWorkbenchOverrides(next);
 }
 
 function ensureOrderedWorkbenchScripts(content, mappedScripts) {
@@ -617,6 +620,38 @@ function ensureOrderedWorkbenchScripts(content, mappedScripts) {
     tags.push('<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>');
   }
   return next.replace('</body>', tags.join('') + '\n</body>');
+}
+
+function removeWorkbenchScript(content, script) {
+  const src = '/assets/js/tools/' + script;
+  const oldTag = new RegExp('<script src="' + src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:\\?[^"]*)?"></script>\\s*', 'g');
+  return content.replace(oldTag, '');
+}
+
+function ensureAdditionalWorkbenchScript(content, script) {
+  const src = '/assets/js/tools/' + script;
+  if (content.includes(src)) return content;
+  return content.replace('</body>', '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>\n</body>');
+}
+
+const GOLD_LAB_ROUTE_OVERRIDE_PATTERNS = [
+  /\/en\/poland\/poland-invoice-number-helper\/?/,
+  /\/en\/poland\/poland-mrz-passport-id-parser\/?/,
+  /\/en\/poland\/poland-passport-number-inspector\/?/,
+  /\/en\/poland\/poland-swift-bic-inspector\/?/,
+  /\/en\/brazil\/brazil-iban-validator\/?/
+];
+
+function applyRouteSpecificWorkbenchOverrides(content) {
+  if (/\/en\/spain\/spain-id-validator\/?/.test(content)) {
+    let next = removeWorkbenchScript(content, 'gold-tools-lab.js');
+    next = ensureAdditionalWorkbenchScript(next, 'spain-id.js');
+    return next;
+  }
+  if (GOLD_LAB_ROUTE_OVERRIDE_PATTERNS.some((pattern) => pattern.test(content))) {
+    return ensureAdditionalWorkbenchScript(content, 'gold-tools-lab.js');
+  }
+  return content;
 }
 
 function ensureWorkbenchScripts(content, mapped) {
