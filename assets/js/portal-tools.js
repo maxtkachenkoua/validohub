@@ -4,6 +4,7 @@
 
   const input = root.querySelector('[data-tools-search-input]');
   const cards = Array.from(root.querySelectorAll('[data-tool-card]'));
+  const groups = Array.from(root.querySelectorAll('[data-tools-group]'));
   const count = root.querySelector('[data-tools-count]');
   const empty = root.querySelector('[data-tools-empty]');
   const chips = Array.from(root.querySelectorAll('[data-tools-query]'));
@@ -23,6 +24,10 @@
     }
     if (count) count.textContent = String(visible);
     if (empty) empty.hidden = visible !== 0;
+    for (const group of groups) {
+      const visibleCards = Array.from(group.querySelectorAll('[data-tool-card]')).some((card) => !card.hidden);
+      group.hidden = !visibleCards;
+    }
   }
 
   if (input) {

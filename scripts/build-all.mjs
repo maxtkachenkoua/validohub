@@ -129,6 +129,7 @@ async function compileAssets() {
 const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.pesel': ['pesel.js', 'gold-tools-lab.js'],
   'validohub.brazil-pix': ['pix.js'],
+  'validohub.brazil-tax-id': ['brazil-tax-id.js'],
   'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js', 'gold-tools-lab.js'],
   'validohub.spain-id': ['spain-id.js'],
   'validohub.spain-suite': ['country-suite-factory.js', 'spain-suite.js', 'gold-tools-lab.js'],
@@ -595,6 +596,17 @@ const FACTORY_TOOL_ALGORITHMS = new Set([
 ]);
 
 const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
+const GOLD_LAB_SCRIPT_VERSION = 'gold-tools-lab-v4-20260727';
+const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-global-gold-v2-20260727';
+const COUNTRY_SUITE_FACTORY_SCRIPT_VERSION = 'country-suite-factory-rail-preview-fix-20260727';
+
+function versionForWorkbenchScript(srcOrScript) {
+  const value = String(srcOrScript || '');
+  if (value.endsWith('gold-tools-lab.js')) return GOLD_LAB_SCRIPT_VERSION;
+  if (value.endsWith('generic-suite.js')) return GENERIC_SUITE_SCRIPT_VERSION;
+  if (value.endsWith('country-suite-factory.js')) return COUNTRY_SUITE_FACTORY_SCRIPT_VERSION;
+  return WORKBENCH_SCRIPT_VERSION;
+}
 
 function ensureToolScript(content) {
   const match = content.match(/data-algorithm-id="([^"]+)"/);
@@ -617,7 +629,7 @@ function ensureOrderedWorkbenchScripts(content, mappedScripts) {
     const src = '/assets/js/tools/' + script;
     const oldTag = new RegExp('<script src="' + src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:\\?[^"]*)?"></script>', 'g');
     next = next.replace(oldTag, '');
-    tags.push('<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>');
+    tags.push('<script src="' + src + '?v=' + versionForWorkbenchScript(script) + '"></script>');
   }
   return next.replace('</body>', tags.join('') + '\n</body>');
 }
@@ -631,7 +643,7 @@ function removeWorkbenchScript(content, script) {
 function ensureAdditionalWorkbenchScript(content, script) {
   const src = '/assets/js/tools/' + script;
   if (content.includes(src)) return content;
-  return content.replace('</body>', '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>\n</body>');
+  return content.replace('</body>', '<script src="' + src + '?v=' + versionForWorkbenchScript(script) + '"></script>\n</body>');
 }
 
 const GOLD_LAB_ROUTE_OVERRIDE_PATTERNS = [
@@ -643,6 +655,15 @@ const GOLD_LAB_ROUTE_OVERRIDE_PATTERNS = [
 ];
 
 function applyRouteSpecificWorkbenchOverrides(content) {
+  if (/\/en\/brazil\/brazil-cpf-validator\/?/.test(content) || /\/en\/brazil\/brazil-cnpj-validator\/?/.test(content)) {
+    let next = removeWorkbenchScript(content, 'gold-tools-lab.js');
+    next = removeWorkbenchScript(next, 'country-legacy-rich-layer.js');
+    next = removeWorkbenchScript(next, 'brazil-suite.js');
+    next = ensureAdditionalWorkbenchScript(next, 'brazil-tax-id.js');
+    next = next.replace(/\/assets\/js\/tools\/brazil-tax-id\.js\?v=[^"]+/g, '/assets/js/tools/brazil-tax-id.js?v=brazil-tax-id-gold-20260727');
+    next = next.replace(/data-algorithm-id="validohub\.brazil-suite"/g, 'data-algorithm-id="validohub.brazil-tax-id"');
+    return next;
+  }
   if (/\/en\/spain\/spain-id-validator\/?/.test(content)) {
     let next = removeWorkbenchScript(content, 'gold-tools-lab.js');
     next = ensureAdditionalWorkbenchScript(next, 'spain-id.js');
@@ -655,7 +676,7 @@ function applyRouteSpecificWorkbenchOverrides(content) {
 }
 
 function ensureWorkbenchScripts(content, mapped) {
-  const scriptTag = (src) => '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>';
+  const scriptTag = (src) => '<script src="' + src + '?v=' + versionForWorkbenchScript(src) + '"></script>';
   const helperSrcs = [
     '/assets/js/workbench/clipboard.js',
     '/assets/js/workbench/download.js',
@@ -1840,7 +1861,7 @@ async function normalizeWorkbenchScriptVersions() {
   for (const filePath of htmlFiles) {
     const content = await readFile(filePath, 'utf8');
     const next = content.replace(scriptRegex, (match, src) => {
-      return `<script src="${src}?v=${WORKBENCH_SCRIPT_VERSION}"></script>`;
+      return `<script src="${src}?v=${versionForWorkbenchScript(src)}"></script>`;
     });
     if (next !== content) {
       await writeFile(filePath, next, 'utf8');
@@ -2177,6 +2198,8 @@ async function main() {
     console.log('\n[Step 5/5] Re-compiling Template Archetypes...');
     const homeRoute = routeRegistry.get('/en/');
     if (homeRoute) homeRoute.sourceOwner = 'node';
+    const toolsPortalRoute = routeRegistry.get('/en/tools/');
+    if (toolsPortalRoute) toolsPortalRoute.sourceOwner = 'node';
     await compileHomePortal(routeRegistry, assetsManifest);
     await compileToolsPortal(routeRegistry, assetsManifest);
     await compileCountriesPortal(routeRegistry, assetsManifest);

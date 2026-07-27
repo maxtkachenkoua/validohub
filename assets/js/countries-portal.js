@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressEl = card.querySelector('progress');
     const percent = progressEl ? progressEl.value : 0;
 
+    previewPanel.classList.remove('is-empty');
+    previewFlag.classList.remove('is-empty');
     previewFlag.textContent = flag;
     previewName.textContent = name;
     previewSummary.textContent = summary;
@@ -136,11 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
       previewLink.href = card.getAttribute('href');
       previewLink.classList.remove('is-muted');
       previewLink.removeAttribute('tabindex');
+      previewLink.removeAttribute('aria-disabled');
     } else {
       previewLink.textContent = `${name} Portal (Roadmap)`;
       previewLink.href = '#';
       previewLink.classList.add('is-muted');
       previewLink.setAttribute('tabindex', '-1');
+      previewLink.setAttribute('aria-disabled', 'true');
     }
 
     // Highlight active map marker
@@ -243,9 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize preview panel to the default active hub (e.g. Brazil or Poland)
-  const defaultCard = portal.querySelector('.vh-countries-card[data-country-id="brazil"]');
-  if (defaultCard) {
-    updatePreview(defaultCard);
-  }
+  cards.forEach(c => c.classList.remove('is-country-active'));
+  markers.forEach(m => m.classList.remove('is-country-active'));
 });

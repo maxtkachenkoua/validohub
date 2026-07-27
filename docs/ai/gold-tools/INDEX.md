@@ -24,7 +24,7 @@ Status values:
 |---:|---|---|---|---|
 | 1 | Poland | PESEL | `pesel-validator` | legacy-rich, overlay-v1 |
 | 2 | Brazil | Pix BR Code / QR / payment payload | `brazil-pix-validator` | bespoke-gold-v2 |
-| 3 | Brazil | CPF / CNPJ | `brazil-cpf-validator`, `brazil-cnpj-validator` | overlay-v1 |
+| 3 | Brazil | CPF / CNPJ | `brazil-cpf-validator`, `brazil-cnpj-validator` | bespoke-gold-v1 |
 | 4 | India | UPI ID / UPI QR | `india-payment-reference-helper` | overlay-v1, nearest route |
 | 5 | India | GSTIN | `india-tax-id-validator` | overlay-v1, nearest route |
 | 6 | India | PAN | `india-pan-validator` | overlay-v1 |
@@ -80,8 +80,64 @@ Status values:
 - The overlay is additive. Existing PESEL, Pix, Spain ID, Brazil/France/Netherlands legacy rich layers, and factory shell behavior remain in place.
 - Deeper per-format algorithms should be promoted from `overlay-v1` to bespoke profile handlers as official-source QA proceeds.
 - Brazil Pix has been promoted to `bespoke-gold-v2`; see `docs/ai/gold-tools/BRAZIL_PIX_GOLD_LOG.md`.
+- Brazil CPF/CNPJ has been promoted to `bespoke-gold-v1`; see `docs/ai/gold-tools/BRAZIL_TAX_ID_GOLD_LOG.md`.
 - Mexico CURP has been promoted to `bespoke-gold-v1`; see `docs/ai/gold-tools/MEXICO_CURP_GOLD_LOG.md`.
 - Spain DNI/NIE/NIF/CIF has been promoted to `bespoke-gold-v1`; see `docs/ai/gold-tools/SPAIN_ID_GOLD_LOG.md`.
+
+## 2026-07-27 Factory IBAN Generator Gold Pass
+
+- Country Suite Factory IBAN generator coverage now has 44 route-locked IBAN profiles with expected length and local BBAN field slices.
+- `Generate` creates a fresh structural IBAN for the route country and preserves invalid/short/wrong-prefix samples as review cases.
+- This is the banking/spec-registry factory floor below fully bespoke country banking labs. Details: `docs/ai/gold-tools/IBAN_GENERATOR_FACTORY_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Tax Business Identifier Gold Pass
+
+- Country Suite Factory now has a targeted tax/business identifier analyzer for 629 VAT/EORI/company/register tools across 190 generated country suites.
+- It adds route-prefix inference, local marker/body/check-hint slicing, placeholder rejection, masked developer JSON, official-boundary copy, and a compact route-context rail while avoiding non-identifier tax workflows.
+- This is the tax/business identifier factory floor below bespoke local tax labs. Details: `docs/ai/gold-tools/FACTORY_TAX_BUSINESS_IDENTIFIER_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Contact Address Gold Floor
+
+- Country Suite Factory now has a targeted contact/address analyzer for 834 phone/postal/address tools across 190 generated country suites.
+- It adds calling-code/postal-shape route inference, phone national-number and E.164-style previews, postal/address token anatomy, sample-shape replay, masked developer JSON, official carrier/postal/geocode boundary copy, and a compact route-context rail.
+- This is the contact/address factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_CONTACT_ADDRESS_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Document Vehicle Reference Gold Floor
+
+- Country Suite Factory now has a targeted document/vehicle/reference analyzer for 2,090 generated document/passport/MRZ, vehicle/plate/VIN, customs, and tracking tools across 191 country suites.
+- It adds token extraction, route shape replay, VIN anatomy, MRZ line/check-slot evidence, customs importer/HS/amount hints, tracking prefix/body slices, masked developer JSON, and official authority/registry/carrier/customs boundaries.
+- This is the document/vehicle/reference factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_DOCUMENT_VEHICLE_REFERENCE_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Payment Invoice Workflow Gold Floor
+
+- Country Suite Factory now has a targeted payment/invoice workflow analyzer for 1,161 generated payment reference, payment, remittance, invoice, e-invoice, and procurement tools across 191 country suites.
+- It adds reference extraction, payload classification, amount/currency/date/party hints, route shape replay, masked developer JSON, and explicit settlement/fiscal/e-invoice/procurement boundaries.
+- This is the payment/commercial workflow factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_PAYMENT_INVOICE_WORKFLOW_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Bank Account Workflow Gold Floor
+
+- Country Suite Factory now has a targeted non-IBAN banking analyzer for 806 id-matched bank/account/BIC/routing/direct-debit/statement route candidates across 192 suites.
+- It adds BIC anatomy and route-country inference, domestic routing/account slices, ABA replay when visible, mandate/scheme hints, statement line/date/amount/reference hints, masked previews, developer JSON, and explicit bank/provider boundaries.
+- This is the bank/account factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_BANK_ACCOUNT_WORKFLOW_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Locale Date Currency Gold Floor
+
+- Country Suite Factory now has a targeted locale/date/currency analyzer for 234 generated locale-number, currency/decimal, date-locale, calendar-week, timezone/business-hours, and holiday-calendar route candidates across 188 suites.
+- It adds localized number extraction, decimal/group separator detection, canonical number export, currency markers, date order parsing, ISO week replay, timezone/business-hour hints, ambiguity flags, masked developer JSON, and explicit exchange-rate/holiday/DST/source boundaries.
+- This is the locale/date/currency factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_LOCALE_DATE_CURRENCY_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Developer Data Workflow Gold Floor
+
+- Country Suite Factory now has a targeted developer-data analyzer for 2,742 generated CSV/JSON/API/form/privacy/OCR/fixture/data-quality tools across 187 parsed mounted country-suite files.
+- It adds JSON and CSV structure profiling, field/key extraction, safe fixture generation, privacy-signal masking, OCR/form/accessibility evidence, developer JSON, and explicit source-truth/privacy/compliance boundaries.
+- This is the developer-data factory floor below dedicated Gold Labs. Details: `docs/ai/gold-tools/FACTORY_DEVELOPER_DATA_WORKFLOW_GOLD_LOG.md`.
+
+## 2026-07-27 Round 4 Shared Interaction Uplift
+
+- Shared route-bound lab runtime is now `2026-07-27-country-rich-lab-v4`.
+- The 281 shared profiles now get a richer interactive floor: fixture deck, batch replay, current-result JSON/value copy, JSON download, recent local input history, anchored copy popovers, tighter typography, better spacing, and mobile overflow hardening.
+- Scoped builds refreshed Greece, Germany, and United States generated pages; browser smoke confirmed mounted labs, `gold-tools-lab.js?v=gold-tools-lab-v4-20260727`, batch replay, copy popover, and zero desktop/mobile horizontal overflow on representative tax, IBAN, and phone routes.
+- This remains the broad floor below bespoke flagships, not a finished-Gold claim for all profiles. Details: `docs/ai/gold-tools/ROUND4_SHARED_GOLD_UX_UPLIFT_LOG.md`.
 
 ## 2026-07-27 Round 2 Expansion
 

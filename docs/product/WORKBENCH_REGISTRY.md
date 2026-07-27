@@ -13,6 +13,15 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
 
 Current global expansion adds these first-class workbenches: Phone E.164 Validator & Generator, Postal Code Validator & Generator, SWIFT/BIC Workbench, MRZ Passport Workbench, CSV Locale Normalizer, EU VAT Number Workbench, ISO 20022 / SEPA Inspector, Secret + PII Redactor, Locale Test Data Generator, and Webhook Signature Verifier.
 
+## Global Tools Gold Interaction Floor
+
+- Source JS: `assets/js/tools/generic-suite.js`
+- Source CSS: `assets/css/workbench.css`
+- Build wiring: `scripts/build-tools-dev.mjs`, `scripts/build-country-dev.mjs`, and `scripts/build-all.mjs` inject `generic-suite.js?v=generic-suite-global-gold-v2-20260727`.
+- Current coverage: 72 `/en/tools/*` routes use the shared Generic Utility Workbench Suite; 7 global routes use dedicated Base64, URL, JSON, and JWT runtimes.
+- Current capabilities: current-result evidence strip, premium sample/batch replay matrix, official/source-system boundary panel, domain-specific Integration traps, Developer API preview, Developer Snapshot JSON, in-block `Copy developer JSON`, `Copy result`, and `Download JSON` actions, plus expanded anti-overflow CSS for long payloads and tables.
+- Current quality status: shared Gold interaction floor for global tools, not a claim that every route is a bespoke Pix/PESEL/CURP-level flagship. High-value structured formats should still graduate to dedicated bespoke runtimes when public specs support deeper behavior.
+
 ## Global Premium Tools Batch V2
 
 - Source JS: `assets/js/tools/generic-suite.js`
@@ -55,6 +64,18 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Per-country generator that emits factory configs from a researched country tool matrix.
   - Optional screenshot comparison against Brazil CPF/CNPJ once a browser visual-diff workflow is approved.
 - Current quality status: Additive V1 template for future countries; not connected to existing accepted country suites.
+
+## Shared Country Gold Tools Lab
+
+- Source JS: `assets/js/tools/gold-tools-lab.js`
+- AI logs:
+  - `docs/ai/gold-tools/INDEX.md`
+  - `docs/ai/gold-tools/ROUND4_SHARED_GOLD_UX_UPLIFT_LOG.md`
+- Current capabilities:
+  - 281 route-bound country-tool profiles below the bespoke Pix/CURP/Spain ID/PESEL/CPF-CNPJ tier.
+  - Browser-only local analysis, source links, field/anatomy cards, replay checks, implementation lint, official-boundary notes, integration traps, and Developer Snapshot JSON.
+  - V4 interaction floor: valid/bad/short/wrong-context/generated fixture deck, batch replay, route-local history, current-result copy/export, JSON download, copy confirmation popovers, compact premium typography, and desktop/mobile overflow hardening.
+- Current quality status: Strong shared floor and migration scaffold; promote high-value formats to bespoke runtimes when public rules support deeper behavior.
 
 ## Base64 Workbench
 
@@ -227,6 +248,26 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Batch QR generation.
   - Browser-only QR image import if a decoder is approved.
 - Current quality status: Production-quality V1 workbench modeled after the PESEL gold standard.
+
+## Brazil CPF/CNPJ Gold Workbench
+
+- Source JS: `assets/js/tools/brazil-tax-id.js`
+- Related country routes:
+  - `brazil-cpf-validator`
+  - `brazil-cnpj-validator`
+- Product spec:
+  - `docs/product/BRAZIL_TAX_ID_WORKBENCH_SPEC.md`
+- AI implementation log:
+  - `docs/ai/gold-tools/BRAZIL_TAX_ID_GOLD_LOG.md`
+- Current capabilities:
+  - Browser-only CPF and CNPJ normalization, display formatting, and masked logging form.
+  - CPF two-digit modulo-11 replay with per-position weight/product evidence.
+  - CNPJ two-digit modulo-11 replay with root, establishment order, branch-style anatomy, and weight/product evidence.
+  - Safe fictional CPF/CNPJ fixture generation.
+  - Valid, bad-check-digit, short, repeated, and branch fixture samples.
+  - Validation pipeline, field breakdown, replay table, official-source/boundary panel, Integration traps, and Developer Snapshot JSON copy.
+  - Shared Gold overlay suppression on the CPF/CNPJ routes so the page has one connected workbench.
+- Current quality status: Bespoke Gold V1 country workbench; scoped build/browser/audit QA required before final sign-off.
 
 ## Mexico CURP Workbench
 

@@ -107,6 +107,8 @@ async function main() {
   const routeRegistry = await buildRouteRegistry();
   const homeRoute = routeRegistry.get('/en/');
   if (homeRoute) homeRoute.sourceOwner = 'node';
+  const toolsPortalRoute = routeRegistry.get('/en/tools/');
+  if (toolsPortalRoute) toolsPortalRoute.sourceOwner = 'node';
 
   await compileHomePortal(routeRegistry, assetsManifest);
   await compileToolsPortal(routeRegistry, assetsManifest);

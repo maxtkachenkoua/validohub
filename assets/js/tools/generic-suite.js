@@ -9,6 +9,71 @@
     return util.escapeHtml(String(value == null ? "" : value));
   }
 
+  function currentLocale() {
+    return (location.pathname.split('/').filter(Boolean)[0] || document.documentElement.lang || 'en');
+  }
+
+  const UI = {
+    es: {
+      Samples: 'Ejemplos', Calculate: 'Calcular', Convert: 'Convertir', Explain: 'Explicar', Format: 'Formatear', Generate: 'Generar', Parse: 'Parsear', Validate: 'Validar',
+      'Privacy boundary': 'Límite de privacidad', 'Correctness boundary': 'Límite de corrección', 'Developer handling': 'Handoff para desarrolladores', 'Fixture safety': 'Seguridad de fixtures', 'Quality note': 'Nota de calidad',
+      'Integration traps': 'Trampas de integración', 'Save implementation time': 'Ahorra tiempo de implementación', 'Common failure points to catch before wiring this into production.': 'Puntos de fallo comunes antes de conectarlo a producción.',
+      'Quality notes': 'Notas de calidad', 'Developer API preview': 'Vista API para desarrolladores', 'Developer snapshot JSON': 'Snapshot JSON para desarrolladores', 'Sample and batch replay': 'Replay de muestras y lote', 'Official boundary': 'Límite oficial',
+      'Validation pipeline': 'Pipeline de validación', 'Field breakdown': 'Desglose de campos', 'Review': 'Revisar', 'Pass': 'Pass', 'Copy developer JSON': 'Copiar JSON para desarrolladores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Descargar JSON',
+      'Current result snapshot': 'Snapshot del resultado actual', 'Waiting for input': 'Esperando entrada', 'Input ready': 'Entrada lista', 'Needs input': 'Falta entrada', 'Needs review': 'Revisión necesaria', 'Ready locally': 'Listo localmente',
+      'Running locally in this browser...': 'Ejecutando localmente en este navegador...', 'Run the tool before copying this value.': 'Ejecuta la herramienta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Ejecuta la herramienta antes de descargar el JSON.', 'Copied developer JSON.': 'JSON para desarrolladores copiado.', 'Copied current result.': 'Resultado actual copiado.', 'Downloaded developer JSON.': 'JSON para desarrolladores descargado.'
+    },
+    'pt-BR': {
+      Samples: 'Exemplos', Calculate: 'Calcular', Convert: 'Converter', Explain: 'Explicar', Format: 'Formatar', Generate: 'Gerar', Parse: 'Parsear', Validate: 'Validar',
+      'Privacy boundary': 'Limite de privacidade', 'Correctness boundary': 'Limite de correção', 'Developer handling': 'Handoff para desenvolvedores', 'Fixture safety': 'Segurança dos fixtures', 'Quality note': 'Nota de qualidade',
+      'Integration traps': 'Armadilhas de integração', 'Save implementation time': 'Economize tempo de implementação', 'Common failure points to catch before wiring this into production.': 'Pontos comuns de falha antes de ligar isso em produção.',
+      'Quality notes': 'Notas de qualidade', 'Developer API preview': 'Prévia de API para desenvolvedores', 'Developer snapshot JSON': 'Snapshot JSON para desenvolvedores', 'Sample and batch replay': 'Replay de exemplos e lote', 'Official boundary': 'Limite oficial',
+      'Validation pipeline': 'Pipeline de validação', 'Field breakdown': 'Detalhamento de campos', 'Review': 'Revisar', 'Pass': 'Pass', 'Copy developer JSON': 'Copiar JSON para desenvolvedores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Baixar JSON',
+      'Current result snapshot': 'Snapshot do resultado atual', 'Waiting for input': 'Aguardando entrada', 'Input ready': 'Entrada pronta', 'Needs input': 'Falta entrada', 'Needs review': 'Revisão necessária', 'Ready locally': 'Pronto localmente',
+      'Running locally in this browser...': 'Executando localmente neste navegador...', 'Run the tool before copying this value.': 'Execute a ferramenta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Execute a ferramenta antes de baixar o JSON.', 'Copied developer JSON.': 'JSON para desenvolvedores copiado.', 'Copied current result.': 'Resultado atual copiado.', 'Downloaded developer JSON.': 'JSON para desenvolvedores baixado.'
+    },
+    de: {
+      Samples: 'Beispiele', Calculate: 'Berechnen', Convert: 'Konvertieren', Explain: 'Erklaeren', Format: 'Formatieren', Generate: 'Generieren', Parse: 'Parsen', Validate: 'Pruefen',
+      'Privacy boundary': 'Datenschutzgrenze', 'Correctness boundary': 'Korrektheitsgrenze', 'Developer handling': 'Entwickler-Handoff', 'Fixture safety': 'Fixture-Sicherheit', 'Quality note': 'Qualitaetsnotiz',
+      'Integration traps': 'Integrationsfallen', 'Save implementation time': 'Implementierungszeit sparen', 'Common failure points to catch before wiring this into production.': 'Haeufige Fehlerpunkte vor der Produktion abfangen.',
+      'Quality notes': 'Qualitaetsnotizen', 'Developer API preview': 'Entwickler-API-Vorschau', 'Developer snapshot JSON': 'Entwickler-Snapshot JSON', 'Sample and batch replay': 'Beispiel- und Batch-Replay', 'Official boundary': 'Offizielle Grenze',
+      'Validation pipeline': 'Validierungspipeline', 'Field breakdown': 'Feldaufschluesselung', 'Review': 'Pruefen', 'Pass': 'Pass', 'Copy developer JSON': 'Entwickler-JSON kopieren', 'Copy result': 'Ergebnis kopieren', 'Download JSON': 'JSON herunterladen',
+      'Current result snapshot': 'Snapshot des aktuellen Ergebnisses', 'Waiting for input': 'Warte auf Eingabe', 'Input ready': 'Eingabe bereit', 'Needs input': 'Eingabe fehlt', 'Needs review': 'Pruefung erforderlich', 'Ready locally': 'Lokal bereit',
+      'Running locally in this browser...': 'Laeuft lokal in diesem Browser...', 'Run the tool before copying this value.': 'Fuehre das Tool aus, bevor du diesen Wert kopierst.', 'Run the tool before downloading developer JSON.': 'Fuehre das Tool aus, bevor du JSON herunterlaedst.', 'Copied developer JSON.': 'Entwickler-JSON kopiert.', 'Copied current result.': 'Aktuelles Ergebnis kopiert.', 'Downloaded developer JSON.': 'Entwickler-JSON heruntergeladen.'
+    },
+    fr: {
+      Samples: 'Exemples', Calculate: 'Calculer', Convert: 'Convertir', Explain: 'Expliquer', Format: 'Formater', Generate: 'Générer', Parse: 'Parser', Validate: 'Valider',
+      'Privacy boundary': 'Limite de confidentialité', 'Correctness boundary': 'Limite de correction', 'Developer handling': 'Handoff développeur', 'Fixture safety': 'Sécurité des fixtures', 'Quality note': 'Note de qualité',
+      'Integration traps': 'Pièges d’intégration', 'Save implementation time': 'Gagner du temps d’implémentation', 'Common failure points to catch before wiring this into production.': 'Points de rupture courants à vérifier avant la production.',
+      'Quality notes': 'Notes de qualité', 'Developer API preview': 'Aperçu API développeur', 'Developer snapshot JSON': 'Snapshot JSON développeur', 'Sample and batch replay': 'Replay des exemples et du lot', 'Official boundary': 'Limite officielle',
+      'Validation pipeline': 'Pipeline de validation', 'Field breakdown': 'Détail des champs', 'Review': 'À vérifier', 'Pass': 'Pass', 'Copy developer JSON': 'Copier le JSON développeur', 'Copy result': 'Copier le résultat', 'Download JSON': 'Télécharger le JSON',
+      'Current result snapshot': 'Snapshot du résultat actuel', 'Waiting for input': 'En attente d’entrée', 'Input ready': 'Entrée prête', 'Needs input': 'Entrée requise', 'Needs review': 'Vérification requise', 'Ready locally': 'Prêt localement',
+      'Running locally in this browser...': 'Exécution locale dans ce navigateur...', 'Run the tool before copying this value.': 'Lancez l’outil avant de copier cette valeur.', 'Run the tool before downloading developer JSON.': 'Lancez l’outil avant de télécharger le JSON.', 'Copied developer JSON.': 'JSON développeur copié.', 'Copied current result.': 'Résultat actuel copié.', 'Downloaded developer JSON.': 'JSON développeur téléchargé.'
+    },
+    pl: {
+      Samples: 'Przykłady', Calculate: 'Oblicz', Convert: 'Konwertuj', Explain: 'Wyjaśnij', Format: 'Formatuj', Generate: 'Generuj', Parse: 'Parsuj', Validate: 'Sprawdź',
+      'Privacy boundary': 'Granica prywatności', 'Correctness boundary': 'Granica poprawności', 'Developer handling': 'Handoff deweloperski', 'Fixture safety': 'Bezpieczeństwo fixture’ów', 'Quality note': 'Notatka jakości',
+      'Integration traps': 'Pułapki integracyjne', 'Save implementation time': 'Oszczędzaj czas implementacji', 'Common failure points to catch before wiring this into production.': 'Typowe punkty awarii do sprawdzenia przed produkcją.',
+      'Quality notes': 'Notatki jakości', 'Developer API preview': 'Podgląd API dla deweloperów', 'Developer snapshot JSON': 'Snapshot JSON deweloperski', 'Sample and batch replay': 'Replay próbek i batcha', 'Official boundary': 'Granica oficjalna',
+      'Validation pipeline': 'Pipeline walidacji', 'Field breakdown': 'Podział pól', 'Review': 'Sprawdź', 'Pass': 'Pass', 'Copy developer JSON': 'Kopiuj JSON deweloperski', 'Copy result': 'Kopiuj wynik', 'Download JSON': 'Pobierz JSON',
+      'Current result snapshot': 'Snapshot bieżącego wyniku', 'Waiting for input': 'Oczekiwanie na dane', 'Input ready': 'Dane gotowe', 'Needs input': 'Brak danych', 'Needs review': 'Wymaga sprawdzenia', 'Ready locally': 'Gotowe lokalnie',
+      'Running locally in this browser...': 'Działa lokalnie w tej przeglądarce...', 'Run the tool before copying this value.': 'Uruchom narzędzie przed skopiowaniem tej wartości.', 'Run the tool before downloading developer JSON.': 'Uruchom narzędzie przed pobraniem JSON.', 'Copied developer JSON.': 'Skopiowano JSON deweloperski.', 'Copied current result.': 'Skopiowano bieżący wynik.', 'Downloaded developer JSON.': 'Pobrano JSON deweloperski.'
+    },
+    uk: {
+      Samples: 'Приклади', Calculate: 'Обчислити', Convert: 'Конвертувати', Explain: 'Пояснити', Format: 'Форматувати', Generate: 'Згенерувати', Parse: 'Розпарсити', Validate: 'Перевірити',
+      'Privacy boundary': 'Межа приватності', 'Correctness boundary': 'Межа коректності', 'Developer handling': 'Передача розробнику', 'Fixture safety': 'Безпека фікстур', 'Quality note': 'Нотатка якості',
+      'Integration traps': 'Інтеграційні пастки', 'Save implementation time': 'Економія часу імплементації', 'Common failure points to catch before wiring this into production.': 'Типові точки збоїв перед підключенням до продакшну.',
+      'Quality notes': 'Нотатки якості', 'Developer API preview': 'API-превʼю для розробника', 'Developer snapshot JSON': 'JSON-знімок для розробника', 'Sample and batch replay': 'Replay прикладів і пакета', 'Official boundary': 'Офіційна межа',
+      'Validation pipeline': 'Пайплайн перевірки', 'Field breakdown': 'Розбір полів', 'Review': 'Перевірити', 'Pass': 'Pass', 'Copy developer JSON': 'Скопіювати JSON для розробника', 'Copy result': 'Скопіювати результат', 'Download JSON': 'Завантажити JSON',
+      'Current result snapshot': 'Знімок поточного результату', 'Waiting for input': 'Очікування введення', 'Input ready': 'Дані готові', 'Needs input': 'Потрібні дані', 'Needs review': 'Потрібна перевірка', 'Ready locally': 'Готово локально',
+      'Running locally in this browser...': 'Виконується локально в цьому браузері...', 'Run the tool before copying this value.': 'Запустіть інструмент перед копіюванням цього значення.', 'Run the tool before downloading developer JSON.': 'Запустіть інструмент перед завантаженням JSON.', 'Copied developer JSON.': 'JSON для розробника скопійовано.', 'Copied current result.': 'Поточний результат скопійовано.', 'Downloaded developer JSON.': 'JSON для розробника завантажено.'
+    }
+  };
+
+  function tr(key) {
+    return (UI[currentLocale()] && UI[currentLocale()][key]) || key;
+  }
+
   function bytes(value) {
     return encoder.encode(String(value || ""));
   }
@@ -60,7 +125,7 @@
 
   function sampleRow(samples) {
     if (!samples || !samples.length) return "";
-    return '<div class="generic-sample-row" aria-label="Samples"><span>Samples</span>' +
+    return '<div class="generic-sample-row" aria-label="' + escape(tr('Samples')) + '"><span>' + escape(tr('Samples')) + '</span>' +
       samples.map((sample) => '<button type="button" class="button button-secondary" data-sample="' + escape(sample.id) + '">' + escape(sample.label) + '</button>').join("") +
       '</div>';
   }
@@ -70,6 +135,76 @@
     const actions = workbench.form.querySelector('.button-row');
     if (!actions) return;
     actions.insertAdjacentHTML('beforebegin', sampleRow(config.samples));
+  }
+
+  const actionLabels = {
+    calculate: tr('Calculate'),
+    convert: tr('Convert'),
+    explain: tr('Explain'),
+    format: tr('Format'),
+    generate: tr('Generate'),
+    parse: tr('Parse'),
+    validate: tr('Validate')
+  };
+
+  function ensureActionButtons(workbench, config) {
+    const row = workbench.form.querySelector('.button-row');
+    if (!row || !config.actions || !config.actions.length) return;
+    const anchor = row.querySelector('[data-tool-copy], [data-tool-download], [data-clear]');
+    config.actions.forEach((action) => {
+      let button = row.querySelector('[data-action="' + action + '"]');
+      if (!button) {
+        button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.action = action;
+        button.textContent = actionLabels[action] || (action.charAt(0).toUpperCase() + action.slice(1));
+      }
+      button.classList.remove('button-primary', 'button-secondary');
+      button.classList.add('button', action === config.actions[0] ? 'button-primary' : 'button-secondary');
+      row.insertBefore(button, anchor || null);
+    });
+    Array.from(row.querySelectorAll('[data-action]')).forEach((button) => {
+      if (!config.actions.includes(button.dataset.action)) {
+        button.classList.remove('button-primary');
+        button.classList.add('button-secondary');
+      }
+    });
+    workbench.form.dataset.activeAction = config.actions[0];
+    workbench.markActiveAction(config.actions[0]);
+  }
+
+  function prefillDefaultFields(workbench, config) {
+    if (Array.isArray(config.lockFields)) {
+      config.lockFields.forEach((name) => {
+        const field = workbench.form.querySelector('[name="' + name + '"]');
+        if (!field) return;
+        field.readOnly = true;
+        field.setAttribute('aria-readonly', 'true');
+      });
+    }
+    if (!config.defaultValues) return false;
+    let changed = false;
+    Object.keys(config.defaultValues).forEach((name) => {
+      const field = workbench.form.querySelector('[name="' + name + '"]');
+      if (!field || field.value) return;
+      const next = config.defaultValues[name];
+      field.value = next == null ? '' : String(next);
+      changed = true;
+    });
+    if (changed) {
+      workbench.setBadge({ label: config.readyBadge || 'Ready to generate', state: 'valid' });
+    }
+    return changed;
+  }
+
+  function refineWorkbenchHeading(workbench, config) {
+    if (!config.workbenchTitle && !config.workbenchIntro) return;
+    const card = workbench.form.closest('.workbench-card');
+    if (!card) return;
+    const heading = card.querySelector('.workbench-heading h2, .section-heading h3, .section-heading h2');
+    const intro = card.querySelector('.workbench-heading p, .section-heading p');
+    if (heading && config.workbenchTitle) heading.textContent = config.workbenchTitle;
+    if (intro && config.workbenchIntro) intro.textContent = config.workbenchIntro;
   }
 
   function advancedSection(title, body) {
@@ -93,7 +228,7 @@
   }
 
   function qualityGrid(items) {
-    const labels = ['Privacy boundary', 'Correctness boundary', 'Developer handling', 'Fixture safety'];
+    const labels = ['Privacy boundary', 'Correctness boundary', 'Developer handling', 'Fixture safety'].map(tr);
     const padded = (items || []).slice();
     const fallback = [
       'Input is processed locally in this browser and is not uploaded by ValidoHub.',
@@ -105,12 +240,36 @@
       padded.push(fallback[padded.length]);
     }
     return '<div class="generic-quality-grid">' + padded.map((item, index) =>
-      '<article class="generic-quality-card"><strong>' + escape(labels[index] || 'Quality note') + '</strong><p>' + escape(item) + '</p></article>'
+      '<article class="generic-quality-card"><strong>' + escape(labels[index] || tr('Quality note')) + '</strong><p>' + escape(item) + '</p></article>'
     ).join('') + '</div>';
   }
 
   function codeBlock(value, language) {
     return '<pre class="generic-code" data-language="' + escape(language || 'text') + '"><code>' + escape(value) + '</code></pre>';
+  }
+
+  function copyText(value, fallback) {
+    const helper = window.ValidoWorkbenchHelpers && window.ValidoWorkbenchHelpers.copyText;
+    if (helper) return helper(String(value || ''), fallback || function () {});
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(String(value || '')).catch(function () {
+        if (fallback) fallback();
+      });
+    }
+    if (fallback) fallback();
+    return Promise.resolve();
+  }
+
+  function downloadText(filename, text, mime) {
+    const blob = new Blob([String(text || '')], { type: mime || 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 250);
   }
 
   function apiPreview(config, result) {
@@ -160,6 +319,7 @@
       .join('');
     const hero = [
       '<section class="generic-premium-hero" aria-label="' + escape(config.title) + ' workbench overview">',
+      '  <div class="generic-premium-mark" aria-hidden="true">' + escape(config.mark || 'VH') + '</div>',
       '  <div class="generic-premium-copy">',
       '    <p class="generic-premium-kicker">' + escape(config.kicker || 'Browser workbench') + '</p>',
       '    <h3>' + escape(config.title) + '</h3>',
@@ -183,6 +343,33 @@
     }
     const title = String(config.title || 'this tool').toLowerCase();
     const kind = String(config.kind || config.theme || '').toLowerCase();
+    const domain = title + ' ' + kind + ' ' + String(config.group || '').toLowerCase();
+    const domainTraps = [];
+    if (/iban|bic|swift|vat|phone|postal|mrz|uuid/.test(domain)) {
+      domainTraps.push(
+        'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.',
+        'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.',
+        'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.'
+      );
+    } else if (/json|schema|openapi|graphql|xml|yaml|toml|csv|avro|protobuf|ndjson|log|dataset|rag|vector/.test(domain)) {
+      domainTraps.push(
+        'Do not infer compatibility from one happy-path payload; preserve representative nulls, missing fields, ragged rows, and malformed examples.',
+        'Keep parser diagnostics, normalized output, source text, and generated fixtures separate in API contracts and test snapshots.',
+        'Run target-runtime validation in CI for dialect-specific schema, YAML, regex, XML, CSV, GraphQL, or JSONPath behavior.'
+      );
+    } else if (/security|jwt|oauth|cookie|tls|dns|spf|dmarc|secret|cors|header|csp|webhook|sri/.test(domain)) {
+      domainTraps.push(
+        'Treat local findings as static evidence; re-check deployed headers, DNS records, certificates, signatures, cookies, and keys in production.',
+        'Never paste live secrets into issue trackers or screenshots; use the masked output and rotate anything that reached logs.',
+        'Keep expired, weak, unsigned, wildcard, missing-flag, and bad-signature fixtures in CI because security regressions often look syntactically valid.'
+      );
+    } else if (/docker|kubernetes|terraform|github actions|config|stack|browser storage|accessibility|design token/.test(domain)) {
+      domainTraps.push(
+        'Static analysis does not execute CI, cloud, browser, cluster, or accessibility tooling; use it to create review gates before runtime checks.',
+        'Keep environment-specific secrets, release IDs, source-map hints, and browser storage dumps masked before handoff.',
+        'Store generated review JSON with the artifact so future diffs preserve the same safety signals and evidence fields.'
+      );
+    }
     const items = [
       'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.',
       'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.',
@@ -198,13 +385,13 @@
     } else {
       items.push('Copy the developer JSON into tests so future changes preserve the same local evidence fields.');
     }
-    return items.slice(0, 6);
+    return unique(domainTraps.concat(items)).slice(0, 6);
   }
 
   function integrationTraps(config) {
     const items = integrationTrapItems(config);
-    return '<section class="generic-integration-traps" aria-label="Integration traps">' +
-      '<div><p class="generic-premium-kicker">Integration traps</p><h4>Save implementation time</h4><span>Common failure points to catch before wiring this into production.</span></div>' +
+    return '<section class="generic-integration-traps" aria-label="' + escape(tr('Integration traps')) + '">' +
+      '<div><p class="generic-premium-kicker">' + escape(tr('Integration traps')) + '</p><h4>' + escape(tr('Save implementation time')) + '</h4><span>' + escape(tr('Common failure points to catch before wiring this into production.')) + '</span></div>' +
       '<ul>' + items.map((item) => '<li>' + escape(item) + '</li>').join('') + '</ul>' +
       '</section>';
   }
@@ -222,6 +409,7 @@
     const output = String(result.output || '');
     const clipped = output.length > 420 ? output.slice(0, 420) + '...' : output;
     const profile = charProfile(output);
+    const hasDeveloperJson = Boolean(result.developerJson);
     const rows = result.resultCards || [
       { label: 'Mode', value: result.mode || config.title },
       { label: 'Characters', value: String(profile.characters), note: profile.ascii ? 'ASCII-safe' : 'Unicode present' },
@@ -231,6 +419,12 @@
     return [
       '<div class="generic-result-preview">',
       result.ok === false ? '  <div class="generic-status generic-status-error"><strong>Needs review</strong><span>The result below explains what failed without sending input to a server.</span></div>' : '  <div class="generic-status generic-status-success"><strong>Completed locally</strong><span>The result is available immediately below the input area.</span></div>',
+      '  <div class="generic-evidence-strip" aria-label="Current result evidence">',
+      '    <span><b>' + escape(result.badge || (result.ok === false ? 'Review' : 'Pass')) + '</b>local result</span>',
+      '    <span><b>' + escape(String((config.samples || []).length || 0)) + '</b>sample fixtures</span>',
+      '    <span><b>' + escape(hasDeveloperJson ? 'ready' : 'basic') + '</b>developer JSON</span>',
+      '    <span><b>0</b>network calls</span>',
+      '  </div>',
       resultCards(rows),
       '  <pre class="generic-result-preview__code">' + escape(clipped) + '</pre>',
       '</div>'
@@ -247,8 +441,14 @@
       extension: result.extension || 'txt',
       mime: result.mime || 'text/plain;charset=utf-8'
     };
+    workbench.genericSuiteLastResult = {
+      output,
+      developerJson: result.developerJson || null,
+      configSlug: config.slug || 'generic-tool',
+      action: result.mode || workbench.form.dataset.activeAction || config.defaultAction || 'run'
+    };
     workbench.setMessage(result.message || (ok ? config.title + ' completed locally.' : 'Review the highlighted diagnostics.'), ok ? 'success' : 'error');
-    workbench.setBadge({ label: result.badge || (ok ? 'Ready locally' : 'Needs review'), state: ok ? 'valid' : 'invalid' });
+    workbench.setBadge({ label: result.badge || (ok ? tr('Ready locally') : tr('Needs review')), state: ok ? 'valid' : 'invalid' });
     workbench.setStats(result.stats || [], result.notes || [], ok ? 'success' : 'error');
     workbench.setPreview(result.previewTitle || '', result.previewHtml || '');
     workbench.setAdvanced(result.advancedHtml || defaultAdvanced(config, result));
@@ -257,28 +457,94 @@
   function defaultAdvanced(config, result) {
     const sections = [];
     if (result.pipeline) {
-      sections.push(advancedSection('Validation pipeline', '<div class="generic-pipeline">' + result.pipeline.map((step) =>
-        '<div class="generic-pipeline-step is-' + (step.ok === false ? 'warn' : 'pass') + '"><em>' + escape(step.ok === false ? 'Review' : 'Pass') + '</em><b>' + escape(step.name) + '</b><span>' + escape(step.detail || (step.ok === false ? 'Review' : 'Pass')) + '</span></div>'
+      sections.push(advancedSection(tr('Validation pipeline'), '<div class="generic-pipeline">' + result.pipeline.map((step) =>
+        '<div class="generic-pipeline-step is-' + (step.ok === false ? 'warn' : 'pass') + '"><em>' + escape(step.ok === false ? tr('Review') : tr('Pass')) + '</em><b>' + escape(step.name) + '</b><span>' + escape(step.detail || (step.ok === false ? tr('Review') : tr('Pass'))) + '</span></div>'
       ).join('') + '</div>'));
     }
     if (result.breakdown) {
-      sections.push(advancedSection(result.breakdownTitle || 'Field breakdown', keyValueGrid(result.breakdown)));
+      sections.push(advancedSection(result.breakdownTitle || tr('Field breakdown'), keyValueGrid(result.breakdown)));
     }
     if (result.qualityNotes) {
-      sections.push(advancedSection('Quality notes', qualityGrid(result.qualityNotes)));
+      sections.push(advancedSection(tr('Quality notes'), qualityGrid(result.qualityNotes)));
     }
+    sections.push(advancedSection(tr('Sample and batch replay'), sampleReplayMatrix(config)));
+    sections.push(advancedSection(tr('Official boundary'), officialBoundary(config, result)));
     if (result.developerJson) {
-      sections.push(advancedSection('Developer API preview', apiPreview(config, result)));
-      sections.push(advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify(result.developerJson, null, 2), 'json')));
+      sections.push(advancedSection(tr('Developer API preview'), apiPreview(config, result)));
+      sections.push(advancedSection(tr('Developer snapshot JSON'), developerSnapshot(config, result)));
     }
     return sections.join('');
+  }
+
+  function sampleReplayMatrix(config) {
+    const samples = (config.samples || []).slice(0, 10);
+    if (!samples.length) {
+      return '<div class="generic-batch-replay"><p>No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.</p></div>';
+    }
+    const rows = samples.map((sample) => {
+      const values = sample.values || {};
+      const preview = sample.value != null ? sample.value : (values.input || values.payload || values.iban || values.uuid || values.pattern || values.country || values.title || values.query || values.schema || values.changed || '');
+      const intent = /invalid|bad|wrong|short|expired|weak|missing|malformed|risk|unsafe/i.test(sample.id + ' ' + sample.label) ? 'review fixture' : 'success/edge fixture';
+      return '<tr><td><button type="button" class="generic-mini-action" data-sample="' + escape(sample.id) + '">' + escape(sample.label) + '</button></td><td>' + escape(sample.action || config.defaultAction || 'run') + '</td><td>' + escape(intent) + '</td><td><code>' + escape(String(preview || 'generated fixture').slice(0, 96)) + '</code></td></tr>';
+    }).join('');
+    return [
+      '<div class="generic-batch-replay">',
+      '  <p>Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.</p>',
+      '  <div class="generic-table-scroll"><table><thead><tr><th>Fixture</th><th>Action</th><th>Intent</th><th>Input preview</th></tr></thead><tbody>',
+      rows,
+      '  </tbody></table></div>',
+      '</div>'
+    ].join('');
+  }
+
+  function officialBoundary(config, result) {
+    const domain = String(config.title + ' ' + (config.kind || '') + ' ' + (config.group || '')).toLowerCase();
+    let owner = 'Target runtime or source system';
+    let notProved = 'runtime acceptance, deployment state, external API response, or ownership';
+    if (/iban|bic|swift|sepa|payment|bank/.test(domain)) {
+      owner = 'Banking rails, bank directories, or payment networks';
+      notProved = 'account existence, beneficiary ownership, settlement, bank acceptance, or directory freshness';
+    } else if (/vat|tax|mrz|passport|postal|phone|email|domain/.test(domain)) {
+      owner = 'Official registry, identity authority, carrier, postal, VIES, DNS, or mail systems';
+      notProved = 'existence, ownership, status, deliverability, identity proof, or live authority response';
+    } else if (/security|jwt|oauth|cookie|tls|dns|spf|dmarc|secret|cors|header|csp|webhook|sri/.test(domain)) {
+      owner = 'Deployed infrastructure, trusted keys, DNS, browser runtime, CDN, or security scanners';
+      notProved = 'live deployment behavior, trust chain, key ownership, exploitability, or runtime enforcement';
+    } else if (/json|schema|openapi|graphql|xml|yaml|toml|csv|sql|regex|cron/.test(domain)) {
+      owner = 'Production parser, validator, scheduler, database, API gateway, or CI contract tests';
+      notProved = 'dialect-perfect compatibility, execution safety, scheduler truth, database behavior, or endpoint response';
+    }
+    const proved = result.ok === false ? 'local diagnostics, parse failures, and review evidence' : 'local syntax, structure, generated fixtures, and developer handoff evidence';
+    return [
+      '<div class="generic-boundary-grid">',
+      '  <article><span>' + escape(tr('Official boundary')) + '</span><strong>' + escape(proved) + '</strong><p>All analysis runs in this browser and uses the current input/result only.</p></article>',
+      '  <article><span>' + escape(tr('Review')) + '</span><strong>' + escape(owner) + '</strong><p>ValidoHub does not prove ' + escape(notProved) + '.</p></article>',
+      '</div>'
+    ].join('');
+  }
+
+  function developerSnapshot(config, result) {
+    const json = JSON.stringify(result.developerJson, null, 2);
+    return [
+      '<div class="generic-dev-snapshot">',
+      '  <div class="generic-dev-snapshot__bar">',
+      '    <span>' + escape(tr('Current result snapshot')) + '</span>',
+      '    <div>',
+      '      <button type="button" class="generic-mini-action" data-generic-copy="json">' + escape(tr('Copy developer JSON')) + '</button>',
+      '      <button type="button" class="generic-mini-action" data-generic-copy="output">' + escape(tr('Copy result')) + '</button>',
+      '      <button type="button" class="generic-mini-action" data-generic-download="json">' + escape(tr('Download JSON')) + '</button>',
+      '    </div>',
+      '  </div>',
+      codeBlock(json, 'json'),
+      '</div>'
+    ].join('');
   }
 
   function runSafely(workbench, config, action, handler) {
     try {
       const output = handler(workbench, action, config);
       if (output && typeof output.then === 'function') {
-        workbench.setMessage('Running locally in this browser...', '');
+        workbench.setMessage(tr('Running locally in this browser...'), '');
         output.then((result) => render(workbench, config, result)).catch((error) => render(workbench, config, failure(config, error.message)));
         return;
       }
@@ -292,9 +558,9 @@
     return {
       ok: false,
       output: '',
-      badge: 'Needs input',
+      badge: tr('Needs input'),
       message: message || 'Input could not be processed.',
-      stats: [['Tool', config.title], ['Status', 'Needs review']],
+      stats: [['Tool', config.title], ['Status', tr('Needs review')]],
       notes: [message || 'Check the input and run again.'],
       pipeline: [
         { name: 'Input', ok: false, detail: 'Missing or malformed input' },
@@ -314,15 +580,60 @@
     return {
       filePrefix: config.slug,
       detectInputMode(value) {
-        return value && String(value).trim() ? { label: config.detectLabel || 'Input ready', state: 'valid' } : { label: 'Waiting for input', state: '' };
+        return value && String(value).trim() ? { label: config.detectLabel || tr('Input ready'), state: 'valid' } : { label: tr('Waiting for input'), state: '' };
       },
       onMount(workbench) {
         const currentConfig = activeConfig(workbench);
         workbench.form.classList.add('generic-suite-workbench');
         workbench.form.dataset.genericSuite = currentConfig.slug;
         workbench.form.dataset.genericTheme = currentConfig.theme || 'utility';
+        refineWorkbenchHeading(workbench, currentConfig);
         ensurePremiumChrome(workbench, currentConfig);
+        ensureActionButtons(workbench, currentConfig);
         ensureSamples(workbench, currentConfig);
+        prefillDefaultFields(workbench, currentConfig);
+        if (!workbench.form.dataset.genericSuiteActionsBound) {
+          workbench.form.dataset.genericSuiteActionsBound = 'true';
+          workbench.form.addEventListener('click', function (event) {
+            const copyButton = event.target.closest('[data-generic-copy]');
+            const downloadButton = event.target.closest('[data-generic-download]');
+            if (!copyButton && !downloadButton) return;
+            const last = workbench.genericSuiteLastResult || {};
+            const jsonText = last.developerJson ? JSON.stringify(last.developerJson, null, 2) : '';
+            const outputText = last.output || '';
+            if (copyButton) {
+              const kind = copyButton.dataset.genericCopy;
+              const value = kind === 'json' ? jsonText : outputText;
+              if (!value) {
+                workbench.setMessage(tr('Run the tool before copying this value.'), 'error');
+                return;
+              }
+              copyText(value, function () {
+                const scratch = document.createElement('textarea');
+                scratch.value = value;
+                scratch.setAttribute('readonly', '');
+                scratch.style.position = 'fixed';
+                scratch.style.opacity = '0';
+                document.body.appendChild(scratch);
+                scratch.select();
+                document.execCommand('copy');
+                scratch.remove();
+              }).then(function () {
+                workbench.setMessage(kind === 'json' ? tr('Copied developer JSON.') : tr('Copied current result.'), 'success');
+              });
+            } else if (downloadButton) {
+              if (!jsonText) {
+                workbench.setMessage(tr('Run the tool before downloading developer JSON.'), 'error');
+                return;
+              }
+              downloadText((last.configSlug || currentConfig.slug || 'global-tool') + '-' + (last.action || 'result') + '-developer.json', jsonText, 'application/json;charset=utf-8');
+              workbench.setMessage(tr('Downloaded developer JSON.'), 'success');
+            }
+          });
+        }
+        if (currentConfig.autoRun) {
+          window.setTimeout(() => workbench.run(currentConfig.defaultAction || (currentConfig.actions && currentConfig.actions[0]) || 'validate'), 0);
+        }
       },
       applySample(workbench, id) {
         const currentConfig = activeConfig(workbench);
@@ -908,6 +1219,53 @@
     return Object.keys(ibanCountryProfiles).find((code) => ibanCountryProfiles[code] === profile) || '';
   }
 
+  function countrySlugForProfile(profile) {
+    return profile.countrySlug || profile.slug.replace(/-iban.*$/, '');
+  }
+
+  function countryGeneratorSlug(profile) {
+    return countrySlugForProfile(profile) + '-iban-generator';
+  }
+
+  function ibanGeneratorConfigForProfile(profile) {
+    const code = countryCodeForProfile(profile);
+    const bban = String(profile.sample || '').slice(4);
+    const repair = code + '00' + bban;
+    const wrong = code === 'DE' ? 'PL' : 'DE';
+    return {
+      slug: countryGeneratorSlug(profile),
+      title: profile.countryName + ' IBAN Generator',
+      workbenchTitle: 'Generate ' + profile.countryName + ' IBAN fixtures',
+      workbenchIntro: 'Create a fresh route-locked IBAN, repair check digits, inspect an existing value, and copy developer-ready evidence locally.',
+      defaultAction: 'generate',
+      actions: ['generate', 'validate', 'explain'],
+      autoRun: true,
+      readyBadge: code + ' fixture ready',
+      theme: profile.theme || 'finance',
+      mark: code || profile.mark || 'IBG',
+      kicker: profile.countryName + ' banking fixtures',
+      summary: 'Generate fresh ' + profile.countryName + ' IBAN fixtures from the local BBAN/account body, replay MOD-97, inspect BBAN slices, and keep bank existence checks outside the browser.',
+      chips: [code + ' route locked', 'Fresh Generate', 'MOD-97 replay', 'BBAN anatomy'],
+      defaultValues: { country: code, bban, iban: '' },
+      lockFields: ['country'],
+      generatorProfile: profile,
+      samples: [
+        { id: 'fresh-local', label: profile.countryName + ' fresh IBAN', values: { country: code, bban, iban: '' }, action: 'generate' },
+        { id: 'known-local', label: 'Inspect valid fixture', values: { country: '', bban: '', iban: profile.sample }, action: 'validate' },
+        { id: 'repair-existing', label: 'Repair check digits', values: { country: '', bban: '', iban: repair }, action: 'generate' },
+        { id: 'wrong-country', label: 'Wrong country prefix', values: { country: wrong, bban, iban: '' }, action: 'validate' },
+        { id: 'short-bban', label: 'Short BBAN', values: { country: code, bban: bban.slice(0, 6), iban: '' }, action: 'validate' },
+        { id: 'bad-checksum', label: 'Bad checksum', values: { country: '', bban: '', iban: profile.sample.slice(0, 2) + '00' + profile.sample.slice(4) }, action: 'validate' }
+      ],
+      integrationTraps: [
+        'Generate fresh fixtures for tests, but do not treat a generated IBAN as proof that a bank account exists.',
+        'Keep route country and pasted country separate; wrong-country prefixes should fail loudly on country pages.',
+        'Store grouped, compact, masked, BBAN, and check-digit values as separate fields in parser tests.',
+        'Use invalid checksum, short BBAN, and wrong-country samples as regression fixtures.'
+      ]
+    };
+  }
+
   function ibanCountryLink(country) {
     const profile = ibanCountryProfiles[country];
     if (!profile) return '';
@@ -979,28 +1337,49 @@
     return { country, bban, existing };
   }
 
-  function ibanGeneratorHandler(workbench, action) {
+  function ibanGeneratorHandler(workbench, action, config) {
     const values = formValues(workbench);
-    const profile = countryProfileForPath();
-    if (profile && !values.country) values.country = countryCodeForProfile(profile);
-    if (profile && !values.bban && !values.iban) values.bban = profile.sample.slice(4);
+    const profile = (config && config.generatorProfile) || countryProfileForPath();
+    const expectedCountry = profile ? countryCodeForProfile(profile) : '';
+    if (profile && !values.country) {
+      values.country = expectedCountry;
+      setField(workbench, 'country', expectedCountry);
+    }
+    if (profile && !values.bban && !values.iban) {
+      values.bban = profile.sample.slice(4);
+      setField(workbench, 'bban', values.bban);
+    }
     const parsed = parseIbanGeneratorInput(values);
     if (!parsed.country || !parsed.bban) throw new Error('Enter a two-letter country code and BBAN/account body.');
     if (action === 'generate') {
+      if (expectedCountry) parsed.country = expectedCountry;
       parsed.bban = randomizeBbanBody(parsed.bban);
       setField(workbench, 'country', parsed.country);
       setField(workbench, 'bban', parsed.bban);
       setField(workbench, 'iban', '');
     }
     const generated = generateIbanValue(parsed.country, parsed.bban);
+    const existingRemainder = parsed.existing ? ibanMod97(parsed.existing) : null;
+    const routeCountryOk = expectedCountry ? generated.country === expectedCountry : /^[A-Z]{2}$/.test(generated.country);
+    const profileLengthOk = profile ? generated.iban.length === profile.length : generated.iban.length >= 15 && generated.iban.length <= 34;
     const grouped = generated.iban.replace(/(.{4})/g, '$1 ').trim();
     const masked = generated.iban.length > 8 ? generated.iban.slice(0, 4) + ' ' + '•••• '.repeat(Math.max(1, Math.ceil((generated.iban.length - 8) / 4))).trim() + ' ' + generated.iban.slice(-4) : generated.iban;
-    const valid = /^[A-Z]{2}$/.test(generated.country) && generated.bban.length >= 4 && generated.remainder === 1;
+    const valid = /^[A-Z]{2}$/.test(generated.country) && routeCountryOk && profileLengthOk && generated.bban.length >= 4 && generated.remainder === 1 && (!parsed.existing || action === 'generate' || existingRemainder === 1);
+    const pipeline = [
+      { name: 'Route country', ok: routeCountryOk, detail: expectedCountry ? generated.country + ' / expected ' + expectedCountry : generated.country || 'missing' },
+      { name: 'BBAN present', ok: generated.bban.length >= 4, detail: generated.bban.length + ' characters' },
+      { name: 'Country length', ok: profileLengthOk, detail: profile ? generated.iban.length + '/' + profile.length : generated.iban.length + ' characters' },
+      { name: 'Check digits', ok: true, detail: generated.checkDigits },
+      { name: 'MOD-97 verify', ok: generated.remainder === 1, detail: String(generated.remainder) }
+    ];
+    if (parsed.existing) {
+      pipeline.push({ name: 'Existing IBAN replay', ok: existingRemainder === 1, detail: String(existingRemainder) });
+    }
     return {
       ok: valid,
       output: grouped,
-      message: valid ? 'IBAN check digits generated locally.' : 'IBAN generator input needs review.',
-      badge: valid ? 'IBAN generated' : 'Review input',
+      message: valid ? (action === 'generate' ? 'Fresh IBAN fixture generated locally.' : 'IBAN generator inputs replay cleanly.') : 'IBAN generator input needs review.',
+      badge: valid ? (action === 'generate' ? 'IBAN generated' : 'IBAN inspected') : 'Review input',
       stats: [['Country', generated.country], ['BBAN characters', generated.bban.length], ['Check digits', generated.checkDigits], ['MOD-97', generated.remainder], ['Masked IBAN', masked]],
       resultCards: [
         { label: 'Generated IBAN', value: grouped, note: 'copy-ready grouped display' },
@@ -1008,26 +1387,22 @@
         { label: 'BBAN body', value: generated.bban, note: generated.bban.length + ' characters' },
         { label: 'Masked display', value: masked, note: 'logs and support screenshots' }
       ],
-      pipeline: [
-        { name: 'Country code', ok: /^[A-Z]{2}$/.test(generated.country), detail: generated.country || 'missing' },
-        { name: 'BBAN present', ok: generated.bban.length >= 4, detail: generated.bban.length + ' characters' },
-        { name: 'Check digits', ok: true, detail: generated.checkDigits },
-        { name: 'MOD-97 verify', ok: generated.remainder === 1, detail: String(generated.remainder) }
-      ],
+      pipeline,
       breakdown: [
         ['Country prefix', generated.country, 'two-letter ISO code'],
         ['Generated check digits', generated.checkDigits, '98 - MOD-97(BBAN + country + 00)'],
         ['BBAN/account body', generated.bban, 'local account body supplied by user'],
         ['MOD-97 remainder', String(generated.remainder), 'valid generated value is 1'],
         ['Masked display', masked, 'safe preview']
-      ],
+      ].concat(ibanSlices(generated.iban, profile)),
+      breakdownTitle: profile ? profile.countryName + ' IBAN / BBAN anatomy' : 'IBAN field breakdown',
       qualityNotes: [
-        'Generated IBANs are structural fixtures unless your application binds them to real account data.',
+        profile ? (profile.countryName + ' IBAN generation proves route country, local BBAN length, check digits, and MOD-97 replay only.') : 'Generated IBANs are structural fixtures unless your application binds them to real account data.',
         'Bank existence, account ownership, and payment acceptance require official banking rails.',
         'Use the generator for parser tests, fixtures, and MOD-97 debugging.',
         'Prefer masked generated values in logs and screenshots.'
       ],
-      developerJson: { country: generated.country, bban: generated.bban, checkDigits: generated.checkDigits, iban: generated.iban, grouped, masked, mod97: generated.remainder, generatedLocally: true }
+      developerJson: { country: generated.country, expectedCountry: expectedCountry || null, bban: generated.bban, checkDigits: generated.checkDigits, iban: generated.iban, grouped, masked, mod97: generated.remainder, existing: parsed.existing || null, existingMod97: existingRemainder, generatedLocally: true }
     };
   }
 
@@ -2401,6 +2776,7 @@
       slug: 'iban-generator', title: 'IBAN Generator', defaultAction: 'generate', theme: 'finance', mark: 'IBG', kicker: 'Banking fixtures',
       summary: 'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.',
       chips: ['Generate check digits', 'MOD-97 replay', 'BBAN body', 'Fixture-safe'],
+      actions: ['generate', 'validate', 'explain'],
       samples: [
         { id: 'germany-bban', label: 'Germany BBAN', values: { country: 'DE', bban: '370400440532013000' }, action: 'generate' },
         { id: 'czechia-bban', label: 'Czechia BBAN', values: { country: 'CZ', bban: '08000000192000145399' }, action: 'generate' },
@@ -2409,7 +2785,11 @@
         { id: 'italy-abi-cab', label: 'Italy ABI/CAB', values: { country: 'IT', bban: 'X0542811101000000123456' }, action: 'generate' },
         { id: 'bad-country', label: 'Bad country prefix', values: { country: '1X', bban: '370400440532013000' }, action: 'validate' },
         { id: 'repair-existing', label: 'Repair existing', values: { country: '', bban: '', iban: 'DE00370400440532013000' }, action: 'generate' }
-      ]
+      ],
+      resolve() {
+        const profile = countryProfileForPath();
+        return profile ? ibanGeneratorConfigForProfile(profile) : null;
+      }
     }, ibanGeneratorHandler],
     ['validohub.regex-tester', {
       slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'validate', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',

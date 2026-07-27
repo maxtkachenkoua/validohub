@@ -43,6 +43,7 @@
     reviewNeeded: 'Review needed',
     copyResult: 'Copy result',
     downloadResult: 'Download result',
+    copyDeveloperJson: 'Copy developer JSON',
     clear: 'Clear',
     copyNormalized: 'Copy normalized',
     validationPipeline: 'Validation pipeline',
@@ -112,36 +113,320 @@
 
   const DEFAULT_LOCALE_LABELS = {
     de: {
-      toolContextTitle: 'Wofuer dieses Tool ist',
+      validate: 'Pruefen',
+      generate: 'Generieren',
+      waiting: 'Warte auf lokale Daten',
+      offlinePassed: 'Offline-Checks bestanden',
+      reviewNeeded: 'Pruefung erforderlich',
+      copyResult: 'Ergebnis kopieren',
+      downloadResult: 'Ergebnis herunterladen',
+      copyDeveloperJson: 'Entwickler-JSON kopieren',
+      clear: 'Leeren',
+      copyNormalized: 'Normalisierte Ausgabe kopieren',
+      fieldBreakdown: 'Feldaufschluesselung',
+      qualityNotes: 'Qualitaetsnotizen',
+      samplesAndRelated: 'Beispiele',
+      relatedTools: 'Aehnliche Tools',
+      validationPipeline: 'Validierungspipeline',
+      localChecksCompleted: 'Lokale Checks wurden in diesem Browser abgeschlossen.',
+      pass: 'BESTANDEN',
+      review: 'PRUEFEN',
+      privacyBoundary: 'Datenschutzgrenze',
+      officialLookupBoundary: 'Offizielle Grenze',
+      fixtureSafety: 'Fixture-Sicherheit',
+      developerHandling: 'Entwickler-Handoff',
+      qualityNote: 'Qualitaetsnotiz',
+      qualityNotesSummary: 'Was dieses Tool lokal beweist und was ausserhalb des Browsers bleiben muss.',
+      integrationTraps: 'Integrationsfallen',
+      integrationTrapsSummary: 'Checks, die haeufige Implementierungsfehler frueh abfangen.',
+      advancedAnalysis: 'Erweiterte Analyse',
+      presets: 'Beispiele',
+      validSample: 'Gueltiges Beispiel',
+      groupedValidSample: 'Gruppiertes gueltiges Beispiel',
+      invalidSample: 'Ungueltiges Beispiel',
+      shortSample: 'Kurzes Beispiel',
+      badCountrySample: 'Falsches Laenderpraefix',
+      recentValidations: 'Letzte Validierungen',
+      noHistory: 'Noch keine Validierungen',
+      batchValidation: 'Batch-Validierung',
+      batchSummary: 'Bis zu 100 lokale Checks, ein Wert pro Zeile.',
+      runBatch: 'Batch ausfuehren',
+      copyBatchJson: 'Batch-JSON kopieren',
+      clearBatch: 'Batch leeren',
+      identifierBreakdown: 'Kennungsaufschluesselung',
+      browserBoundary: 'Browser-only-Grenze',
+      premiumDebugLayer: 'Premium-Debug-Layer',
+      developerApiPreview: 'Entwickler-API-Vorschau',
+      rawJsonOutput: 'Rohe JSON-Ausgabe',
+      advancedTools: 'Erweiterte Tools',
+      relatedLocalTools: 'Aehnliche lokale Tools',
       usedFor: 'Einsatz',
       checksLocally: 'Lokale Checks',
       officialBoundaryShort: 'Grenze'
     },
     es: {
+      validate: 'Validar',
+      generate: 'Generar',
+      waiting: 'Esperando datos locales',
+      offlinePassed: 'Comprobaciones offline superadas',
+      reviewNeeded: 'Revisión necesaria',
+      copyResult: 'Copiar resultado',
+      downloadResult: 'Descargar resultado',
+      copyDeveloperJson: 'Copiar JSON para desarrolladores',
+      clear: 'Limpiar',
+      copyNormalized: 'Copiar normalizado',
+      fieldBreakdown: 'Desglose de campos',
+      qualityNotes: 'Notas de calidad',
+      samplesAndRelated: 'Ejemplos',
+      relatedTools: 'Herramientas relacionadas',
+      validationPipeline: 'Pipeline de validación',
+      localChecksCompleted: 'Las comprobaciones locales se completaron en este navegador.',
+      pass: 'APROBADO',
+      review: 'REVISAR',
+      privacyBoundary: 'Límite de privacidad',
+      officialLookupBoundary: 'Límite oficial',
+      fixtureSafety: 'Seguridad de fixtures',
+      developerHandling: 'Handoff para desarrolladores',
+      qualityNote: 'Nota de calidad',
+      qualityNotesSummary: 'Qué prueba esta herramienta localmente y qué debe quedar fuera del navegador.',
+      integrationTraps: 'Trampas de integración',
+      integrationTrapsSummary: 'Checks que evitan errores comunes de implementación.',
+      advancedAnalysis: 'Análisis avanzado',
+      presets: 'Ejemplos',
+      validSample: 'Muestra válida',
+      groupedValidSample: 'Muestra válida agrupada',
+      invalidSample: 'Muestra inválida',
+      shortSample: 'Muestra corta',
+      badCountrySample: 'Prefijo de país incorrecto',
+      recentValidations: 'Validaciones recientes',
+      noHistory: 'Aún no hay validaciones recientes',
+      batchValidation: 'Validación por lote',
+      batchSummary: 'Ejecuta hasta 100 comprobaciones locales, un valor por línea.',
+      runBatch: 'Ejecutar lote',
+      copyBatchJson: 'Copiar JSON del lote',
+      clearBatch: 'Limpiar lote',
+      identifierBreakdown: 'Desglose del identificador',
+      browserBoundary: 'Límite solo navegador',
+      premiumDebugLayer: 'Capa premium de depuración',
+      developerApiPreview: 'Vista previa de API para desarrolladores',
+      rawJsonOutput: 'Salida JSON bruta',
+      advancedTools: 'Herramientas avanzadas',
+      relatedLocalTools: 'Herramientas locales relacionadas',
       toolContextTitle: 'Para que sirve',
       usedFor: 'Uso',
       checksLocally: 'Comprueba localmente',
       officialBoundaryShort: 'Limite'
     },
     fr: {
+      validate: 'Valider',
+      generate: 'Générer',
+      waiting: 'En attente de données locales',
+      offlinePassed: 'Contrôles hors ligne réussis',
+      reviewNeeded: 'Vérification requise',
+      copyResult: 'Copier le résultat',
+      downloadResult: 'Télécharger le résultat',
+      copyDeveloperJson: 'Copier le JSON développeur',
+      clear: 'Effacer',
+      copyNormalized: 'Copier la valeur normalisée',
+      fieldBreakdown: 'Détail des champs',
+      qualityNotes: 'Notes de qualité',
+      samplesAndRelated: 'Exemples',
+      relatedTools: 'Outils liés',
+      calculationDebugger: 'Débogueur de calcul',
+      replayCalculation: 'Rejouer le calcul',
+      validationLog: 'Logs du pipeline de validation',
+      validationPipeline: 'Pipeline de validation',
+      localChecksCompleted: 'Les contrôles locaux ont été effectués dans ce navigateur.',
+      pass: 'RÉUSSI',
+      review: 'À VÉRIFIER',
+      privacyBoundary: 'Limite de confidentialité',
+      officialLookupBoundary: 'Limite officielle',
+      fixtureSafety: 'Sécurité des fixtures',
+      developerHandling: 'Handoff développeur',
+      qualityNote: 'Note de qualité',
+      qualityNotesSummary: 'Ce que cet outil prouve localement et ce qui doit rester hors du navigateur.',
+      integrationTraps: 'Pièges d’intégration',
+      integrationTrapsSummary: 'Contrôles qui évitent les erreurs d’implémentation fréquentes.',
+      advancedAnalysis: 'Analyse avancée',
+      presets: 'Exemples',
+      validSample: 'Exemple valide',
+      groupedValidSample: 'Exemple valide groupé',
+      invalidSample: 'Exemple invalide',
+      shortSample: 'Exemple court',
+      badCountrySample: 'Préfixe pays incorrect',
+      recentValidations: 'Validations récentes',
+      noHistory: 'Aucune validation récente',
+      batchValidation: 'Validation par lot',
+      batchSummary: 'Lancez jusqu’à 100 contrôles locaux, une valeur par ligne.',
+      runBatch: 'Lancer le lot',
+      copyBatchJson: 'Copier le JSON du lot',
+      clearBatch: 'Effacer le lot',
+      identifierBreakdown: 'Détail de l’identifiant',
+      browserBoundary: 'Limite navigateur uniquement',
+      premiumDebugLayer: 'Couche de débogage premium',
+      developerApiPreview: 'Aperçu API développeur',
+      rawJsonOutput: 'Sortie JSON brute',
+      advancedTools: 'Outils avancés',
+      relatedLocalTools: 'Outils locaux liés',
       toolContextTitle: 'A quoi sert cet outil',
       usedFor: 'Utilisation',
       checksLocally: 'Verifie localement',
       officialBoundaryShort: 'Limite'
     },
     pl: {
+      validate: 'Sprawdź',
+      generate: 'Generuj',
+      waiting: 'Oczekiwanie na lokalne dane',
+      offlinePassed: 'Kontrole offline zakończone powodzeniem',
+      reviewNeeded: 'Wymaga sprawdzenia',
+      copyResult: 'Kopiuj wynik',
+      downloadResult: 'Pobierz wynik',
+      copyDeveloperJson: 'Kopiuj JSON deweloperski',
+      clear: 'Wyczyść',
+      copyNormalized: 'Kopiuj znormalizowane',
+      fieldBreakdown: 'Podział pól',
+      qualityNotes: 'Notatki jakości',
+      samplesAndRelated: 'Przykłady',
+      relatedTools: 'Powiązane narzędzia',
+      validationPipeline: 'Pipeline walidacji',
+      localChecksCompleted: 'Lokalne kontrole zakończone w tej przeglądarce.',
+      pass: 'ZALICZONE',
+      review: 'SPRAWDŹ',
+      privacyBoundary: 'Granica prywatności',
+      officialLookupBoundary: 'Granica oficjalna',
+      fixtureSafety: 'Bezpieczeństwo fixture’ów',
+      developerHandling: 'Handoff deweloperski',
+      qualityNote: 'Notatka jakości',
+      qualityNotesSummary: 'Co narzędzie potwierdza lokalnie i co musi pozostać poza przeglądarką.',
+      integrationTraps: 'Pułapki integracyjne',
+      integrationTrapsSummary: 'Kontrole, które wyłapują częste błędy implementacyjne.',
+      advancedAnalysis: 'Analiza zaawansowana',
+      presets: 'Przykłady',
+      validSample: 'Poprawna próbka',
+      groupedValidSample: 'Poprawna próbka grupowana',
+      invalidSample: 'Niepoprawna próbka',
+      shortSample: 'Krótka próbka',
+      badCountrySample: 'Błędny prefiks kraju',
+      recentValidations: 'Ostatnie walidacje',
+      noHistory: 'Brak ostatnich walidacji',
+      batchValidation: 'Walidacja batch',
+      batchSummary: 'Uruchom do 100 lokalnych kontroli, jedna wartość na linię.',
+      runBatch: 'Uruchom batch',
+      copyBatchJson: 'Kopiuj JSON batcha',
+      clearBatch: 'Wyczyść batch',
+      identifierBreakdown: 'Podział identyfikatora',
+      browserBoundary: 'Granica przeglądarkowa',
+      premiumDebugLayer: 'Premium warstwa debugowania',
+      developerApiPreview: 'Podgląd API deweloperskiego',
+      rawJsonOutput: 'Surowe wyjście JSON',
+      advancedTools: 'Narzędzia zaawansowane',
+      relatedLocalTools: 'Powiązane narzędzia lokalne',
       toolContextTitle: 'Do czego sluzy to narzedzie',
       usedFor: 'Uzycie',
       checksLocally: 'Sprawdza lokalnie',
       officialBoundaryShort: 'Granica'
     },
     'pt-BR': {
+      validate: 'Validar',
+      generate: 'Gerar',
+      waiting: 'Aguardando dados locais',
+      offlinePassed: 'Verificações offline aprovadas',
+      reviewNeeded: 'Revisão necessária',
+      copyResult: 'Copiar resultado',
+      downloadResult: 'Baixar resultado',
+      copyDeveloperJson: 'Copiar JSON para desenvolvedores',
+      clear: 'Limpar',
+      copyNormalized: 'Copiar normalizado',
+      fieldBreakdown: 'Detalhamento de campos',
+      qualityNotes: 'Notas de qualidade',
+      samplesAndRelated: 'Exemplos',
+      relatedTools: 'Ferramentas relacionadas',
+      validationPipeline: 'Pipeline de validação',
+      localChecksCompleted: 'As verificações locais foram concluídas neste navegador.',
+      pass: 'APROVADO',
+      review: 'REVISAR',
+      privacyBoundary: 'Limite de privacidade',
+      officialLookupBoundary: 'Limite oficial',
+      fixtureSafety: 'Segurança dos fixtures',
+      developerHandling: 'Handoff para desenvolvedores',
+      qualityNote: 'Nota de qualidade',
+      qualityNotesSummary: 'O que esta ferramenta prova localmente e o que deve ficar fora do navegador.',
+      integrationTraps: 'Armadilhas de integração',
+      integrationTrapsSummary: 'Verificações que evitam erros comuns de implementação.',
+      advancedAnalysis: 'Análise avançada',
+      presets: 'Exemplos',
+      validSample: 'Exemplo válido',
+      groupedValidSample: 'Exemplo válido agrupado',
+      invalidSample: 'Exemplo inválido',
+      shortSample: 'Exemplo curto',
+      badCountrySample: 'Prefixo de país incorreto',
+      recentValidations: 'Validações recentes',
+      noHistory: 'Ainda não há validações recentes',
+      batchValidation: 'Validação em lote',
+      batchSummary: 'Execute até 100 verificações locais, um valor por linha.',
+      runBatch: 'Executar lote',
+      copyBatchJson: 'Copiar JSON do lote',
+      clearBatch: 'Limpar lote',
+      identifierBreakdown: 'Detalhamento do identificador',
+      browserBoundary: 'Limite só no navegador',
+      premiumDebugLayer: 'Camada premium de depuração',
+      developerApiPreview: 'Prévia da API para desenvolvedores',
+      rawJsonOutput: 'Saída JSON bruta',
+      advancedTools: 'Ferramentas avançadas',
+      relatedLocalTools: 'Ferramentas locais relacionadas',
       toolContextTitle: 'Para que serve',
       usedFor: 'Uso',
       checksLocally: 'Verifica localmente',
       officialBoundaryShort: 'Limite'
     },
     uk: {
+      validate: 'Перевірити',
+      generate: 'Згенерувати',
+      waiting: 'Очікування локальних даних',
+      offlinePassed: 'Офлайн-перевірки пройдено',
+      reviewNeeded: 'Потрібна перевірка',
+      copyResult: 'Скопіювати результат',
+      downloadResult: 'Завантажити результат',
+      copyDeveloperJson: 'Скопіювати JSON для розробника',
+      clear: 'Очистити',
+      copyNormalized: 'Скопіювати нормалізоване',
+      fieldBreakdown: 'Розбір полів',
+      qualityNotes: 'Нотатки якості',
+      samplesAndRelated: 'Приклади',
+      relatedTools: 'Пов’язані інструменти',
+      validationPipeline: 'Пайплайн перевірки',
+      localChecksCompleted: 'Локальні перевірки виконано в цьому браузері.',
+      pass: 'ПРОЙДЕНО',
+      review: 'ПЕРЕВІРИТИ',
+      privacyBoundary: 'Межа приватності',
+      officialLookupBoundary: 'Офіційна межа',
+      fixtureSafety: 'Безпека фікстур',
+      developerHandling: 'Передача розробнику',
+      qualityNote: 'Нотатка якості',
+      qualityNotesSummary: 'Що інструмент доводить локально і що має лишатися поза браузером.',
+      integrationTraps: 'Інтеграційні пастки',
+      integrationTrapsSummary: 'Перевірки, що ловлять типові помилки імплементації.',
+      advancedAnalysis: 'Розширений аналіз',
+      presets: 'Приклади',
+      validSample: 'Валідний приклад',
+      groupedValidSample: 'Згрупований валідний приклад',
+      invalidSample: 'Невалідний приклад',
+      shortSample: 'Короткий приклад',
+      badCountrySample: 'Неправильний префікс країни',
+      recentValidations: 'Останні перевірки',
+      noHistory: 'Останніх перевірок ще немає',
+      batchValidation: 'Пакетна перевірка',
+      batchSummary: 'До 100 локальних перевірок, одне значення на рядок.',
+      runBatch: 'Запустити пакет',
+      copyBatchJson: 'Скопіювати JSON пакета',
+      clearBatch: 'Очистити пакет',
+      identifierBreakdown: 'Розбір ідентифікатора',
+      browserBoundary: 'Межа лише браузера',
+      premiumDebugLayer: 'Преміум шар дебагу',
+      developerApiPreview: 'Попередній перегляд API для розробника',
+      rawJsonOutput: 'Сирий JSON-вивід',
+      advancedTools: 'Розширені інструменти',
+      relatedLocalTools: 'Пов’язані локальні інструменти',
       toolContextTitle: 'Для чого цей інструмент',
       usedFor: 'Використання',
       checksLocally: 'Локальні перевірки',
@@ -150,12 +435,570 @@
   };
 
   function formatLabel(template, suite) {
-    return text(template).replace(/\{country\}/g, suite.country.name);
+    return text(template).replace(/\{country\}/g, localizedCountryDisplayName(suite, currentLocale()));
   }
 
   function labelsFor(suite) {
     const locale = currentLocale();
-    return Object.assign({}, DEFAULT_LABELS, DEFAULT_LOCALE_LABELS[locale] || {}, (suite.i18n && (suite.i18n[locale] || suite.i18n.en)) || {});
+    return Object.assign({}, DEFAULT_LABELS, (suite.i18n && (suite.i18n[locale] || suite.i18n.en)) || {}, DEFAULT_LOCALE_LABELS[locale] || {});
+  }
+
+  function localizedActionLabel(value, labels) {
+    const normalized = text(value).trim().toLowerCase();
+    if (normalized === 'generate') return labels.generate || value;
+    if (normalized === 'validate') return labels.validate || value;
+    return value || labels.validate;
+  }
+
+  const RUNTIME_TITLE_PHRASES = {
+    fr: {
+      'COP Decimal Currency Formatter': 'Formateur de montants COP',
+      'Cedula de ciudadania Validator': 'Validateur de cédula de ciudadanía',
+      'NIT Validator': 'Validateur NIT',
+      'IVA / NIT Tax ID Validator': 'Validateur d’identifiant fiscal IVA / NIT',
+      'Customs / Tax Identifier Helper': 'Assistant identifiant douane / fiscal',
+      'Cedula Helper': 'Assistant cédula',
+      'Company Onboarding Auditor': 'Auditeur d’onboarding entreprise',
+      'RUES / Camara de Comercio Readiness Helper': 'Assistant de préparation RUES / Cámara de Comercio',
+      'ID Card Format Helper': 'Assistant format carte d’identité',
+      'Passport Number Helper': 'Assistant numéro de passeport',
+      'MRZ / Passport Parser': 'Parseur MRZ / passeport',
+      'Domestic Bank Account Validator': 'Validateur de compte bancaire local',
+      'Domestic Account Fixture Generator': 'Générateur de fixtures de compte local',
+      'Locale Number Parser': 'Parseur de nombres locaux',
+      'Postal Tracking Helper': 'Assistant de suivi postal',
+      'Domestic Transfer Helper': 'Assistant de virement local',
+      'Region / Province Code Mapper': 'Mappeur de codes région / province',
+      'Company Suffix Normalizer': 'Normalisateur de suffixes d’entreprise',
+      'Date Locale Formatter': 'Formateur de dates locales',
+      'Form Field Auditor': 'Auditeur de champs de formulaire',
+      'Masked Bank Account Formatter': 'Formateur de compte bancaire masqué',
+      'Phone Number Validator': 'Validateur de numéro de téléphone',
+      'Address Normalizer': 'Normalisateur d’adresse',
+      'VIN Validator': 'Validateur VIN'
+    }
+  };
+
+  const RUNTIME_SUMMARY_PATTERNS = {
+    fr: [
+      [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normalise les montants $1, séparateurs décimaux, groupements et aperçus numériques sûrs pour API.'],
+      [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Valide la forme $1, sépare l’évidence $2 et prépare une sortie de debug respectueuse de la confidentialité.'],
+      [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspecte la structure $1, les préfixes de type registre, les chiffres de contrôle et les limites des consultations officielles.'],
+      [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normalise les identifiants $1, inspecte l’évidence fiscale locale et prépare les diagnostics pour l’autorité fiscale.'],
+      [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Valide la forme de compte bancaire local, les segments banque/compte, l’évidence de rail de paiement et les limites de propriété officielle.'],
+      [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Génère des références de compte local sûres pour fixtures, sépare l’évidence banque/compte et prépare des payloads de test de paiement.'],
+      [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parse les fragments MRZ de passeport et sépare document, nationalité, dates et checksum sans preuve d’identité.'],
+      [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normalise les dates locales, aperçus ISO, indices de période fiscale et diagnostics de parsing locale.'],
+      [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Valide la forme du téléphone local, le préfixe pays, les blocs nationaux et les notes de sécurité des formulaires de contact.'],
+      [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normalise rue, code postal, localité, région et pays pour les formulaires d’adresse locaux.'],
+      [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Valide la forme VIN, sépare l’évidence WMI/VDS/VIS et prépare les diagnostics d’entrée véhicule.']
+    ]
+  };
+
+  const RUNTIME_EXACT_PHRASES = {
+    fr: {
+      'Valid sample': 'Exemple valide',
+      'Invalid sample': 'Exemple invalide',
+      'Short sample': 'Exemple court',
+      'Wrong prefix sample': 'Exemple avec mauvais préfixe',
+      'Edge sample': 'Cas limite',
+      'Official boundary': 'Limite officielle',
+      'Fixture safety': 'Sécurité des fixtures',
+      'Developer handling': 'Manipulation développeur',
+      'No official lookup is made.': 'Aucune consultation officielle n’est effectuée.',
+      'Official Colombia identity, registry, tax, banking, vehicle, postal, filing, carrier, and legal status require the responsible local authority or provider.': 'L’identité, le registre, la fiscalité, la banque, les véhicules, le postal, les dépôts, le transport et le statut juridique en Colombie exigent l’autorité ou le fournisseur local responsable.',
+      'Offline Colombian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status.': 'L’évidence de parsing colombienne hors ligne ne prouve pas le statut registre, fiscal, bancaire, déclaratif, véhicule ou juridique.',
+      'Valid and invalid CUR examples are safe structural fixtures for tests and demos.': 'Les exemples CUR valides et invalides sont des fixtures structurelles sûres pour tests et démos.',
+      'Use normalized CUR values for forms, masked previews for logs, and field slices for parser/debug handoff.': 'Utilisez les valeurs CUR normalisées pour les formulaires, les aperçus masqués pour les logs et les segments de champs pour le handoff parser/debug.',
+      'locale-format normalization evidence': 'évidence de normalisation de formats locaux',
+      'CSV imports, exports, data cleanup': 'imports CSV, exports et nettoyage de données',
+      'dates, decimals, separators, local display': 'dates, décimales, séparateurs et affichage local',
+      'business meaning of the source data': 'sens métier des données source',
+      'Keep raw input, normalized value, display value, and masked preview as separate fields in forms, exports, and logs.': 'Gardez l’entrée brute, la valeur normalisée, l’affichage et l’aperçu masqué dans des champs séparés pour formulaires, exports et logs.',
+      'Do not treat local browser analysis as live official status, ownership, eligibility, or legal acceptance.': 'Ne traitez pas l’analyse locale du navigateur comme un statut officiel, une propriété, une éligibilité ou une acceptation juridique en direct.',
+      'Exercise valid, invalid, short, wrong-context, pasted, and generated samples before wiring the workflow into production forms.': 'Testez les exemples valides, invalides, courts, mauvais contexte, collés et générés avant de connecter le workflow à des formulaires de production.',
+      'Record country, locale, currency, and data-source assumptions with every exported payload.': 'Enregistrez les hypothèses de pays, locale, devise et source de données avec chaque payload exporté.',
+      'Mask personal or commercially sensitive values before sharing debugger output outside the local browser.': 'Masquez les valeurs personnelles ou commercialement sensibles avant de partager une sortie de debug hors du navigateur.'
+    }
+  };
+
+  const RUNTIME_EXACT_SHARED_PHRASES = {
+    fr: {
+      'Family': 'Famille',
+      'Route country': 'Pays de la route',
+      'Expected length': 'Longueur attendue',
+      'IBAN characters': 'Caractères IBAN',
+      'Generate mode': 'Mode de génération',
+      'Fresh fixture': 'Fixture fraîche',
+      'New local value every click': 'Nouvelle valeur locale à chaque clic',
+      'Route prefix': 'Préfixe de route',
+      'Local label': 'Libellé local',
+      'Replay': 'Rejeu',
+      'Shape + checksum': 'Forme + checksum',
+      'When local parser exists': 'Quand le parseur local existe',
+      'Boundary': 'Limite',
+      'No registry status claim': 'Aucune affirmation de statut registre',
+      'Calling code': 'Indicatif',
+      'Postal shape': 'Forme postale',
+      'Address sample': 'Exemple d’adresse',
+      'Local sample': 'Exemple local',
+      'Shape source': 'Source de forme',
+      'Format + mask': 'Format + masque',
+      'Browser-local only': 'Local au navigateur uniquement',
+      'No live proof': 'Aucune preuve en direct',
+      'Carrier/postal/geocode external': 'Transporteur/postal/géocodage externe',
+      'Route shape': 'Forme de route',
+      'Token + anatomy': 'Jeton + anatomie',
+      'VIN/MRZ when available': 'VIN/MRZ si disponible',
+      'Registry/carrier/authority external': 'Registre/transporteur/autorité externe',
+      'Routing + account': 'Routage + compte',
+      'BIC/ABA when visible': 'BIC/ABA si visible',
+      'Ownership/settlement external': 'Propriété/règlement externe',
+      'Date + number': 'Date + nombre',
+      'Week/decimal when visible': 'Semaine/décimale si visible',
+      'No live source': 'Aucune source en direct',
+      'Rates/holidays/DST external': 'Taux/fériés/DST externes',
+      'Fixture fields': 'Champs de fixture',
+      'Keys + payload': 'Clés + payload',
+      'JSON/CSV when visible': 'JSON/CSV si visible',
+      'No source truth': 'Aucune vérité source',
+      'Privacy/compliance external': 'Confidentialité/conformité externe',
+      'Reference + amount': 'Référence + montant',
+      'Payload anatomy when available': 'Anatomie payload si disponible',
+      'Settlement/fiscal/award external': 'Règlement/fiscal/attribution externe',
+      'Currency / decimal': 'Devise / décimales',
+      'local currency': 'devise locale',
+      'local decimal': 'décimale locale',
+      'local grouping': 'groupement local',
+      'not detected': 'non détecté',
+      'masqué preview': 'aperçu masqué',
+      'finance': 'finance',
+      'Input present': 'Entrée présente',
+      'Input is available locally.': 'L’entrée est disponible localement.',
+      'Currency / decimal evidence': 'Évidence devise / décimales',
+      'Currency / decimal browser-checkable evidence detected.': 'Évidence devise / décimales vérifiable dans le navigateur détectée.',
+      'Placeholder guard': 'Garde placeholder',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Anatomie locale devise / décimales et détail des évidences',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for uniquement navigateur debugging.': 'Anatomie par segment, évidence du parseur local et notes de limite officielle pour le débogage navigateur.',
+      'amount text': 'texte du montant',
+      'currency': 'devise',
+      'decimal convention': 'convention décimale',
+      'grouping convention': 'convention de groupement',
+      'amount token': 'jeton montant',
+      'currency marker': 'marqueur devise',
+      'decimal separator': 'séparateur décimal',
+      'canonical number': 'nombre canonique',
+      'route sample shape': 'forme de l’exemple route',
+      'locale vocabulary': 'vocabulaire locale',
+      'masked preview': 'aperçu masqué',
+      'Browser-local amount/currency display.': 'Affichage montant/devise local au navigateur.',
+      'Route currency context.': 'Contexte devise de la route.',
+      'Locale decimal separator expectation.': 'Séparateur décimal attendu pour la locale.',
+      'Locale thousands/grouping separator expectation.': 'Séparateur de milliers/groupement attendu pour la locale.',
+      'Numeric amount extracted from the current input.': 'Montant numérique extrait de l’entrée actuelle.',
+      'Local date, calendar, number, currency, or timezone vocabulary.': 'Vocabulaire local de date, calendrier, nombre, devise ou fuseau horaire.',
+      'Log-safe locale payload preview.': 'Aperçu payload locale sûr pour logs.',
+      'Legal tender status, exchange rates, holidays, DST policy, and business opening state require current source/provider data.': 'Cours légal, taux de change, jours fériés, règles DST et état d’ouverture exigent une source ou un fournisseur à jour.',
+      'Calculation debugger': 'Débogueur de calcul',
+      'Replay calculation': 'Rejouer le calcul',
+      'Validation pipeline logs': 'Logs du pipeline de validation',
+      'Step': 'Étape',
+      'Evidence': 'Évidence',
+      'Detail': 'Détail'
+    }
+  };
+
+  Object.assign(RUNTIME_EXACT_SHARED_PHRASES, {
+    de: {
+      'Family': 'Familie',
+      'Route shape': 'Routenform',
+      'Replay': 'Prueflauf',
+      'Boundary': 'Grenze',
+      'No live source': 'Keine Echtzeitquelle',
+      'Rates/holidays/DST external': 'Kurse/Feiertage/DST extern',
+      'Date + number': 'Datum + Zahl',
+      'Week/decimal when visible': 'Woche/Dezimal wenn sichtbar',
+      'Input present': 'Eingabe vorhanden',
+      'Input is available locally.': 'Eingabe ist lokal verfügbar.',
+      'Currency / decimal': 'Währung / Dezimal',
+      'Currency / decimal evidence': 'Währungs-/Dezimal-Evidenz',
+      'Currency / decimal browser-checkable evidence detected.': 'Browser-prüfbare Währungs-/Dezimal-Evidenz erkannt.',
+      'Placeholder guard': 'Placeholder-Schutz',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Locale-Anatomie für Währung/Dezimal und Evidenzaufschlüsselung',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.': 'Segment-Anatomie, lokale Parser-Evidenz und offizielle Grenzen für Browser-Debugging.',
+      'amount text': 'Betragstext',
+      'currency': 'Währung',
+      'decimal convention': 'Dezimalkonvention',
+      'grouping convention': 'Gruppierungskonvention',
+      'amount token': 'Betrags-Token',
+      'currency marker': 'Währungsmarker',
+      'decimal separator': 'Dezimaltrenner',
+      'canonical number': 'kanonische Zahl',
+      'route sample shape': 'Routen-Beispielform',
+      'locale vocabulary': 'Locale-Vokabular',
+      'masked preview': 'maskierte Vorschau',
+      'local currency': 'lokale Währung',
+      'local decimal': 'lokales Dezimalformat',
+      'local grouping': 'lokale Gruppierung',
+      'not detected': 'nicht erkannt',
+      'Offline only': 'Nur offline',
+      'Browser-local amount/currency display.': 'Browser-lokale Betrags-/Währungsanzeige.',
+      'Route currency context.': 'Währungskontext der Route.',
+      'Locale decimal separator expectation.': 'Erwarteter Dezimaltrenner der Locale.',
+      'Locale thousands/grouping separator expectation.': 'Erwarteter Tausender-/Gruppierungstrenner der Locale.',
+      'Numeric amount extracted from the current input.': 'Numerischer Betrag aus der aktuellen Eingabe.',
+      'Log-safe locale payload preview.': 'Log-sichere Locale-Payload-Vorschau.',
+      'Calculation debugger': 'Berechnungsdebugger',
+      'Replay calculation': 'Berechnung wiederholen',
+      'Validation pipeline logs': 'Logs der Validierungspipeline',
+      'Step': 'Schritt',
+      'Evidence': 'Evidenz',
+      'Detail': 'Detail',
+      'Pass': 'Bestanden',
+      'Review': 'Prüfen'
+    },
+    es: {
+      'Family': 'Familia',
+      'Route shape': 'Forma de ruta',
+      'Replay': 'Reproducción',
+      'Boundary': 'Límite',
+      'No live source': 'Sin fuente en vivo',
+      'Rates/holidays/DST external': 'Tasas/feriados/DST externos',
+      'Date + number': 'Fecha + número',
+      'Week/decimal when visible': 'Semana/decimal si visible',
+      'Input present': 'Entrada presente',
+      'Input is available locally.': 'La entrada está disponible localmente.',
+      'Currency / decimal': 'Moneda / decimal',
+      'Currency / decimal evidence': 'Evidencia de moneda / decimal',
+      'Currency / decimal browser-checkable evidence detected.': 'Evidencia de moneda / decimal comprobable en navegador detectada.',
+      'Placeholder guard': 'Protección contra placeholder',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Anatomía local de moneda / decimal y desglose de evidencias',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.': 'Anatomía por segmento, evidencia del parser local y límites oficiales para depuración en navegador.',
+      'amount text': 'texto del importe',
+      'currency': 'moneda',
+      'decimal convention': 'convención decimal',
+      'grouping convention': 'convención de agrupación',
+      'amount token': 'token de importe',
+      'currency marker': 'marcador de moneda',
+      'decimal separator': 'separador decimal',
+      'canonical number': 'número canónico',
+      'route sample shape': 'forma del ejemplo de ruta',
+      'locale vocabulary': 'vocabulario local',
+      'masked preview': 'vista previa enmascarada',
+      'local currency': 'moneda local',
+      'local decimal': 'decimal local',
+      'local grouping': 'agrupación local',
+      'not detected': 'no detectado',
+      'Offline only': 'Solo offline',
+      'Browser-local amount/currency display.': 'Visualización de importe/moneda local al navegador.',
+      'Route currency context.': 'Contexto de moneda de la ruta.',
+      'Locale decimal separator expectation.': 'Separador decimal esperado para la locale.',
+      'Locale thousands/grouping separator expectation.': 'Separador de miles/agrupación esperado para la locale.',
+      'Numeric amount extracted from the current input.': 'Importe numérico extraído de la entrada actual.',
+      'Log-safe locale payload preview.': 'Vista previa del payload local segura para logs.',
+      'Calculation debugger': 'Depurador de cálculo',
+      'Replay calculation': 'Reproducir cálculo',
+      'Validation pipeline logs': 'Logs del pipeline de validación',
+      'Step': 'Paso',
+      'Evidence': 'Evidencia',
+      'Detail': 'Detalle',
+      'Pass': 'Aprobado',
+      'Review': 'Revisar'
+    },
+    pl: {
+      'Family': 'Rodzina',
+      'Route shape': 'Format trasy',
+      'Replay': 'Odtworzenie',
+      'Boundary': 'Granica',
+      'No live source': 'Brak źródła na żywo',
+      'Rates/holidays/DST external': 'Kursy/święta/DST zewnętrzne',
+      'Date + number': 'Data + liczba',
+      'Week/decimal when visible': 'Tydzień/dziesiętne gdy widoczne',
+      'Input present': 'Dane wejściowe obecne',
+      'Input is available locally.': 'Dane wejściowe są dostępne lokalnie.',
+      'Currency / decimal': 'Waluta / dziesiętne',
+      'Currency / decimal evidence': 'Ewidencja waluty / dziesiętna',
+      'Currency / decimal browser-checkable evidence detected.': 'Wykryto możliwą do sprawdzenia w przeglądarce ewidencję waluty / dziesiętną.',
+      'Placeholder guard': 'Ochrona placeholdera',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Lokalna anatomia waluty / dziesiętna i podział ewidencji',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.': 'Anatomia segmentów, lokalna ewidencja parsera i granice oficjalne dla debugowania w przeglądarce.',
+      'amount text': 'tekst kwoty',
+      'currency': 'waluta',
+      'decimal convention': 'konwencja dziesiętna',
+      'grouping convention': 'konwencja grupowania',
+      'amount token': 'token kwoty',
+      'currency marker': 'marker waluty',
+      'decimal separator': 'separator dziesiętny',
+      'canonical number': 'liczba kanoniczna',
+      'route sample shape': 'format przykładu trasy',
+      'locale vocabulary': 'słownictwo locale',
+      'masked preview': 'zamaskowany podgląd',
+      'local currency': 'lokalna waluta',
+      'local decimal': 'lokalny separator dziesiętny',
+      'local grouping': 'lokalne grupowanie',
+      'not detected': 'nie wykryto',
+      'Offline only': 'Tylko offline',
+      'Browser-local amount/currency display.': 'Lokalny w przeglądarce widok kwoty/waluty.',
+      'Route currency context.': 'Kontekst waluty trasy.',
+      'Locale decimal separator expectation.': 'Oczekiwany separator dziesiętny locale.',
+      'Locale thousands/grouping separator expectation.': 'Oczekiwany separator tysięcy/grupowania locale.',
+      'Numeric amount extracted from the current input.': 'Kwota numeryczna wyodrębniona z bieżących danych wejściowych.',
+      'Log-safe locale payload preview.': 'Bezpieczny dla logów podgląd payloadu locale.',
+      'Calculation debugger': 'Debugger obliczeń',
+      'Replay calculation': 'Odtwórz obliczenie',
+      'Validation pipeline logs': 'Logi pipeline walidacji',
+      'Step': 'Krok',
+      'Evidence': 'Ewidencja',
+      'Detail': 'Szczegół',
+      'Pass': 'Zaliczone',
+      'Review': 'Sprawdź'
+    },
+    'pt-BR': {
+      'Family': 'Família',
+      'Route shape': 'Formato da rota',
+      'Replay': 'Reexecução',
+      'Boundary': 'Limite',
+      'No live source': 'Sem fonte em tempo real',
+      'Rates/holidays/DST external': 'Taxas/feriados/DST externos',
+      'Date + number': 'Data + número',
+      'Week/decimal when visible': 'Semana/decimal quando visível',
+      'Input present': 'Entrada presente',
+      'Input is available locally.': 'A entrada está disponível localmente.',
+      'Currency / decimal': 'Moeda / decimal',
+      'Currency / decimal evidence': 'Evidência de moeda / decimal',
+      'Currency / decimal browser-checkable evidence detected.': 'Evidência de moeda / decimal verificável no navegador detectada.',
+      'Placeholder guard': 'Proteção contra placeholder',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Anatomia local de moeda / decimal e detalhamento de evidências',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.': 'Anatomia por segmento, evidência do parser local e limites oficiais para depuração no navegador.',
+      'amount text': 'texto do valor',
+      'currency': 'moeda',
+      'decimal convention': 'convenção decimal',
+      'grouping convention': 'convenção de agrupamento',
+      'amount token': 'token do valor',
+      'currency marker': 'marcador de moeda',
+      'decimal separator': 'separador decimal',
+      'canonical number': 'número canônico',
+      'route sample shape': 'formato do exemplo da rota',
+      'locale vocabulary': 'vocabulário local',
+      'masked preview': 'prévia mascarada',
+      'local currency': 'moeda local',
+      'local decimal': 'decimal local',
+      'local grouping': 'agrupamento local',
+      'not detected': 'não detectado',
+      'Offline only': 'Somente offline',
+      'Browser-local amount/currency display.': 'Exibição de valor/moeda local no navegador.',
+      'Route currency context.': 'Contexto de moeda da rota.',
+      'Locale decimal separator expectation.': 'Separador decimal esperado da locale.',
+      'Locale thousands/grouping separator expectation.': 'Separador de milhares/agrupamento esperado da locale.',
+      'Numeric amount extracted from the current input.': 'Valor numérico extraído da entrada atual.',
+      'Log-safe locale payload preview.': 'Prévia de payload locale segura para logs.',
+      'Calculation debugger': 'Depurador de cálculo',
+      'Replay calculation': 'Reexecutar cálculo',
+      'Validation pipeline logs': 'Logs do pipeline de validação',
+      'Step': 'Etapa',
+      'Evidence': 'Evidência',
+      'Detail': 'Detalhe',
+      'Pass': 'Aprovado',
+      'Review': 'Revisar'
+    },
+    uk: {
+      'Family': 'Сімейство',
+      'Route shape': 'Форма маршруту',
+      'Replay': 'Повтор',
+      'Boundary': 'Межа',
+      'No live source': 'Без джерела в реальному часі',
+      'Rates/holidays/DST external': 'Курси/свята/DST зовнішні',
+      'Date + number': 'Дата + число',
+      'Week/decimal when visible': 'Тиждень/десяткові якщо видно',
+      'Input present': 'Вхідні дані є',
+      'Input is available locally.': 'Вхідні дані доступні локально.',
+      'Currency / decimal': 'Валюта / десяткові',
+      'Currency / decimal evidence': 'Доказ валюти / десяткових',
+      'Currency / decimal browser-checkable evidence detected.': 'Виявлено доказ валюти / десяткових, що перевіряється в браузері.',
+      'Placeholder guard': 'Захист від placeholder',
+      'Currency / decimal locale anatomy & anatomy & evidence breakdown': 'Локальна анатомія валюти / десяткових і розбір доказів',
+      'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.': 'Сегментна анатомія, докази локального парсера і офіційні межі для браузерного дебагу.',
+      'amount text': 'текст суми',
+      'currency': 'валюта',
+      'decimal convention': 'десяткова конвенція',
+      'grouping convention': 'конвенція групування',
+      'amount token': 'токен суми',
+      'currency marker': 'маркер валюти',
+      'decimal separator': 'десятковий розділювач',
+      'canonical number': 'канонічне число',
+      'route sample shape': 'форма прикладу маршруту',
+      'locale vocabulary': 'словник locale',
+      'masked preview': 'маскований перегляд',
+      'local currency': 'локальна валюта',
+      'local decimal': 'локальний десятковий формат',
+      'local grouping': 'локальне групування',
+      'not detected': 'не виявлено',
+      'Offline only': 'Лише офлайн',
+      'Browser-local amount/currency display.': 'Локальне в браузері відображення суми/валюти.',
+      'Route currency context.': 'Контекст валюти маршруту.',
+      'Locale decimal separator expectation.': 'Очікуваний десятковий розділювач locale.',
+      'Locale thousands/grouping separator expectation.': 'Очікуваний розділювач тисяч/групування locale.',
+      'Numeric amount extracted from the current input.': 'Числова сума, витягнута з поточного вводу.',
+      'Log-safe locale payload preview.': 'Безпечний для логів перегляд locale payload.',
+      'Calculation debugger': 'Дебагер обчислень',
+      'Replay calculation': 'Повторити обчислення',
+      'Validation pipeline logs': 'Логи пайплайна перевірки',
+      'Step': 'Крок',
+      'Evidence': 'Доказ',
+      'Detail': 'Деталь',
+      'Pass': 'Пройдено',
+      'Review': 'Перевірити'
+    }
+  });
+
+  const RUNTIME_COUNTRY_NAME_OVERRIDES = {
+    fr: {
+      colombia: 'Colombie'
+    }
+  };
+
+  function localizedCountryDisplayName(suite, locale) {
+    if (locale === 'en') return suite.country.name;
+    const slug = text(suite.country && suite.country.slug).toLowerCase();
+    const override = RUNTIME_COUNTRY_NAME_OVERRIDES[locale] && RUNTIME_COUNTRY_NAME_OVERRIDES[locale][slug];
+    if (override) return override;
+    try {
+      const iso = text(suite.country && (suite.country.iso2 || suite.country.iso || suite.country.countryCode)).toUpperCase();
+      const display = iso ? new Intl.DisplayNames([locale], { type: 'region' }).of(iso) : '';
+      if (display && display !== iso) return display;
+    } catch (error) {
+      // Keep the configured English name as a safe fallback.
+    }
+    return suite.country.name;
+  }
+
+  function stripCountryAdjective(value, suite) {
+    let next = text(value).trim();
+    const countryName = text(suite.country && suite.country.name).trim();
+    if (countryName && next.toLowerCase().startsWith(countryName.toLowerCase() + ' ')) {
+      return next.slice(countryName.length).trim();
+    }
+    const words = next.split(/\s+/);
+    if (words.length > 1 && /(?:ian|ish|ese|ic|ch|ss)$/i.test(words[0])) {
+      next = words.slice(1).join(' ');
+    }
+    return next;
+  }
+
+  function localizeRuntimePhrase(value, locale) {
+    let next = text(value);
+    const exact = Object.assign({}, RUNTIME_EXACT_SHARED_PHRASES[locale] || {}, RUNTIME_EXACT_PHRASES[locale] || {});
+    if (exact[next]) return exact[next];
+    for (const [pattern, replacement] of RUNTIME_SUMMARY_PATTERNS[locale] || []) {
+      next = next.replace(pattern, replacement);
+    }
+    if (locale === 'fr') {
+      next = next
+        .replace(/\bColombia\b/g, 'Colombie')
+        .replace(/\bColombian\b/g, 'colombien')
+        .replace(/\bbrowser-only\b/gi, 'uniquement navigateur')
+        .replace(/\boffline only\b/gi, 'hors ligne uniquement')
+        .replace(/\boffline\b/gi, 'hors ligne')
+        .replace(/\blocal evidence\b/gi, 'évidence locale')
+        .replace(/\blocal structure\b/gi, 'structure locale')
+        .replace(/\bstructure in this browser\b/gi, 'structure dans ce navigateur')
+        .replace(/\braw input local\b/gi, 'entrée brute locale')
+        .replace(/\bOfficial boundary\b/g, 'Limite officielle')
+        .replace(/\bBrowser-only replay\b/g, 'Replay uniquement navigateur')
+        .replace(/\bFixture safety\b/g, 'Sécurité des fixtures')
+        .replace(/\bDeveloper handling\b/g, 'Manipulation développeur')
+        .replace(/\bLocale anatomy\b/g, 'Anatomie locale')
+        .replace(/\bnormalized\b/gi, 'normalisé')
+        .replace(/\bmasked\b/gi, 'masqué')
+        .replace(/\bmachine number\b/gi, 'nombre machine')
+        .replace(/\bISO DATE\/WEEK\b/g, 'DATE/SEMAINE ISO')
+        .replace(/\bofficial boundary\b/gi, 'limite officielle')
+        .replace(/\bPass\b/g, 'Réussi')
+        .replace(/\bReview\b/g, 'À vérifier')
+        .replace(/\bStep\b/g, 'Étape')
+        .replace(/\bEvidence\b/g, 'Évidence')
+        .replace(/\bDetail\b/g, 'Détail');
+    }
+    next = next.replace(/^Colombian COP Decimal Currency Formatter$/g, 'Colombie: Formateur de montants COP');
+    next = next.replace(/^colombien COP Decimal Currency Formatter$/g, 'Colombie: Formateur de montants COP');
+    next = next.replace(/^([A-Z]{2,5}): Currency \/ decimal évidence locale verified$/g, '$1 : évidence locale de devise/décimales vérifiée');
+    next = next.replace(/^Colombie currency \/ decimal evidence was parsed locally with separator\/date anatomy, machine-safe exports, ambiguity hints, and official-boundary output\.$/g, 'L’évidence devise/décimales de Colombie a été analysée localement avec anatomie des séparateurs et dates, exports sûrs pour machine, indices d’ambiguïté et limite officielle.');
+    next = next.replace(/^Colombie currency \/ decimal evidence was parsed locally with separator\/date anatomy, machine-safe exports, ambiguity hints, and limite officielle output\.$/g, 'L’évidence devise/décimales de Colombie a été analysée localement avec anatomie des séparateurs et dates, exports sûrs pour machine, indices d’ambiguïté et limite officielle.');
+    next = next.replace(/^Parser-normalisé locale value for forms, imports, and fixtures\.$/g, 'Valeur locale normalisée par le parseur pour formulaires, imports et fixtures.');
+    next = next.replace(/^Canonical number when the input exposes one\.$/g, 'Nombre canonique lorsque l’entrée en expose un.');
+    next = next.replace(/^Machine-safe date\/week hint when visible\.$/g, 'Indice date/semaine sûr pour machine lorsqu’il est visible.');
+    next = next.replace(/^ISO currency code or visible currency symbol\.$/g, 'Code devise ISO ou symbole de devise visible.');
+    next = next.replace(/^Detected decimal separator for parser\/export fixtures\.$/g, 'Séparateur décimal détecté pour fixtures de parsing/export.');
+    next = next.replace(/^Machine-safe decimal form using dot as decimal separator\.$/g, 'Forme décimale sûre pour machine avec point comme séparateur décimal.');
+    next = next.replace(/^Letter\/digit\/separator shape inferred from the route success sample\.$/g, 'Forme lettres/chiffres/séparateurs déduite de l’exemple de réussite de la route.');
+    next = next.replace(/^Local decimal\/grouping evidence from the route country profile\.$/g, 'Évidence décimale/groupement issue du profil pays de la route.');
+    next = next.replace(/^No exchange-rate, holiday, legal-tender, DST-policy, or opening-hours lookup is made\.$/g, 'Aucune consultation de taux de change, jours fériés, cours légal, règles DST ou horaires d’ouverture n’est effectuée.');
+    next = next.replace(/^Repeated-placeholder numeric value rejected\.$/g, 'Valeur numérique répétée de placeholder rejetée.');
+    next = next.replace(/^Exchange rates, legal tender status, holidays, DST policy, and opening state require current source\/provider data\.$/g, 'Taux de change, cours légal, jours fériés, règles DST et état d’ouverture exigent une source ou un fournisseur à jour.');
+    next = next.replace(/^log-safe preview$/g, 'aperçu sûr pour logs');
+    next = next.replace(/^not available$/g, 'non disponible');
+    next = next.replace(/Colombian ([A-Z]{3}) Decimal Currency Formatter analyzes Colombia-specific finance evidence locally in this browser\./g, 'Le formateur de montants $1 analyse localement dans ce navigateur l’évidence financière propre à la Colombie.');
+    next = next.replace(/colombien ([A-Z]{3}) Decimal Currency Formatter analyzes Colombie-specific structure in this browser and keeps raw input local\./g, 'Le formateur de montants $1 analyse localement la structure propre à la Colombie et garde l’entrée brute dans le navigateur.');
+    next = next.replace(/Colombian ([A-Z]{3}) Decimal Currency Formatter analyzes Colombia-specific structure in this browser and keeps raw input local\./g, 'Le formateur de montants $1 analyse localement la structure propre à la Colombie et garde l’entrée brute dans le navigateur.');
+    next = next.replace(/colombien ([A-Z]{3}) Decimal Currency Formatter analyzes Colombie-specific structure dans ce navigateur and keeps entrée brute locale\./g, 'Le formateur de montants $1 analyse localement la structure propre à la Colombie et garde l’entrée brute dans le navigateur.');
+    next = next.replace(/^Colombie registry, tax, identity, banking, vehicle, postal, or filing status still requires the responsible official system\.$/g, 'Le statut registre, fiscal, identité, banque, véhicule, postal ou déclaratif de Colombie exige toujours le système officiel responsable.');
+    next = next.replace(/^Use valid and invalid examples as structural test fixtures; a passing hors ligne result is not a live-state proof\.$/g, 'Utilisez les exemples valides et invalides comme fixtures de test structurelles ; un résultat hors ligne réussi ne prouve pas un état live.');
+    next = next.replace(/^Copy normalisé CUR values for forms, masqué previews for logs, and field slices for parser tests\.$/g, 'Copiez les valeurs CUR normalisées pour les formulaires, les aperçus masqués pour les logs et les segments de champs pour les tests de parseur.');
+    return exact[next] || next;
+  }
+
+  function localizeResult(suite, result) {
+    const locale = currentLocale();
+    if (locale === 'en' || !result) return result;
+    const localize = (value) => localizeRuntimePhrase(value, locale);
+    const localizeItem = (item) => item && typeof item === 'object'
+      ? Object.assign({}, item, {
+          label: localize(item.label),
+          value: localize(item.value),
+          note: localize(item.note),
+          text: localize(item.text),
+          detail: localize(item.detail),
+          message: localize(item.message)
+        })
+      : item;
+    return Object.assign({}, result, {
+      headline: localize(result.headline),
+      detail: localize(result.detail),
+      breakdownTitle: localize(result.breakdownTitle),
+      breakdownSummary: localize(result.breakdownSummary),
+      fields: asArray(result.fields).map(localizeItem),
+      breakdown: asArray(result.breakdown).map(localizeItem),
+      checks: asArray(result.checks).map(localizeItem),
+      qualityNotes: asArray(result.qualityNotes).map((note) => note && typeof note === 'object'
+        ? Object.assign({}, note, { title: localize(note.title), text: localize(note.text) })
+        : localize(note)),
+      suggestions: asArray(result.suggestions).map((item) => item && typeof item === 'object'
+        ? Object.assign({}, item, { label: localize(item.label), detail: localize(item.detail), action: item.action })
+        : localize(item)),
+      developerJson: localizeDeveloperJsonValues(result.developerJson, locale)
+    });
+  }
+
+  function localizeDeveloperJsonValues(value, locale) {
+    if (locale === 'en' || value == null) return value;
+    if (typeof value === 'string') return localizeRuntimePhrase(value, locale);
+    if (Array.isArray(value)) return value.map((item) => localizeDeveloperJsonValues(item, locale));
+    if (typeof value === 'object') {
+      const next = {};
+      for (const [key, item] of Object.entries(value)) {
+        next[key] = localizeDeveloperJsonValues(item, locale);
+      }
+      return next;
+    }
+    return value;
+  }
+
+  function localizeRuntimeToolName(value, suite, locale) {
+    if (locale === 'en') return value;
+    const countryName = localizedCountryDisplayName(suite, locale);
+    const body = stripCountryAdjective(value, suite);
+    const translated = (RUNTIME_TITLE_PHRASES[locale] && RUNTIME_TITLE_PHRASES[locale][body]) || body;
+    return `${countryName}: ${translated}`;
   }
 
   function localizeTool(suite, tool) {
@@ -167,7 +1010,23 @@
     const translatedSamples = Array.isArray(toolStrings.samples)
       ? tool.samples.map((sample, index) => Object.assign({}, sample, { label: toolStrings.samples[index] || sample.label }))
       : tool.samples;
-    const localized = Object.assign({}, tool, toolStrings, { samples: translatedSamples });
+    let localized = Object.assign({}, tool, toolStrings, { samples: translatedSamples });
+    if (locale !== 'en') {
+      localized = Object.assign({}, localized, {
+        name: localizeRuntimeToolName(localized.name, suite, locale),
+        summary: localizeRuntimePhrase(localized.summary, locale),
+        chips: asArray(localized.chips).map((chip) => localizeRuntimePhrase(chip, locale)),
+        boundaries: asArray(localized.boundaries).map((item) => localizeRuntimePhrase(item, locale)),
+        integrationTraps: asArray(localized.integrationTraps).map((item) => localizeRuntimePhrase(item, locale)),
+        qualityNotes: asArray(localized.qualityNotes).map((note) => Object.assign({}, note, {
+          title: localizeRuntimePhrase(note && note.title, locale),
+          text: localizeRuntimePhrase(note && note.text, locale)
+        })),
+        samples: translatedSamples.map((sample) => Object.assign({}, sample, {
+          label: localizeRuntimePhrase(sample.label, locale)
+        }))
+      });
+    }
     return Object.assign({}, localized, { samples: normalizeSamples(suite, localized) });
   }
 
@@ -470,6 +1329,23 @@
     return { country, bban, checkDigits, iban, remainder: ibanRemainder(iban) };
   }
 
+  function groupIban(value) {
+    return alnumOnly(value).replace(/(.{4})/g, '$1 ').trim();
+  }
+
+  function maskIban(value) {
+    const compact = alnumOnly(value);
+    return compact.length > 8
+      ? `${compact.slice(0, 4)} ${'•••• '.repeat(Math.max(1, Math.ceil((compact.length - 8) / 4))).trim()} ${compact.slice(-4)}`
+      : compact;
+  }
+
+  function maskCompact(value) {
+    const compact = alnumOnly(value) || text(value).replace(/\s+/g, '');
+    if (compact.length <= 6) return compact ? `${compact.slice(0, 1)}...` : '';
+    return `${compact.slice(0, 3)}...${compact.slice(-3)}`;
+  }
+
   function randomDigit() {
     if (root.crypto && root.crypto.getRandomValues) {
       const bytes = new Uint8Array(1);
@@ -479,9 +1355,12 @@
     return String(Math.floor(Math.random() * 10));
   }
 
-  function freshBbanBody(seed) {
+  function freshBbanBody(seed, targetLength) {
     const raw = alnumOnly(seed);
-    const source = raw.length >= 4 ? raw : '00000000000000000000';
+    const requestedLength = Number(targetLength) > 0 ? Number(targetLength) : raw.length;
+    const source = (raw.length >= 4 ? raw : '00000000000000000000')
+      .padEnd(requestedLength || 20, '0')
+      .slice(0, requestedLength || undefined);
     return source.split('').map((char, index) => {
       if (!/[0-9]/.test(char)) return char;
       if (index < 2) return char;
@@ -496,58 +1375,84 @@
     if (country && body.startsWith(country)) {
       body = /^\d{2}/.test(body.slice(2, 4)) ? body.slice(4) : body.slice(2);
     }
-    return `${country}${freshBbanBody(body)}`;
+    const profile = ibanProfileForSuite(suite);
+    const targetBbanLength = profile ? Math.max(4, profile.length - 4) : body.length;
+    return freshBbanBody(body, targetBbanLength);
   }
 
-  const FACTORY_IBAN_COUNTRIES = {
-    albania: 'AL',
-    andorra: 'AD',
-    austria: 'AT',
-    belgium: 'BE',
-    'bosnia-and-herzegovina': 'BA',
-    bulgaria: 'BG',
-    croatia: 'HR',
-    cyprus: 'CY',
-    czechia: 'CZ',
-    denmark: 'DK',
-    estonia: 'EE',
-    finland: 'FI',
-    france: 'FR',
-    germany: 'DE',
-    greece: 'GR',
-    hungary: 'HU',
-    iceland: 'IS',
-    ireland: 'IE',
-    italy: 'IT',
-    latvia: 'LV',
-    liechtenstein: 'LI',
-    lithuania: 'LT',
-    luxembourg: 'LU',
-    malta: 'MT',
-    moldova: 'MD',
-    monaco: 'MC',
-    montenegro: 'ME',
-    netherlands: 'NL',
-    'north-macedonia': 'MK',
-    norway: 'NO',
-    poland: 'PL',
-    portugal: 'PT',
-    romania: 'RO',
-    'san-marino': 'SM',
-    serbia: 'RS',
-    slovakia: 'SK',
-    slovenia: 'SI',
-    spain: 'ES',
-    sweden: 'SE',
-    switzerland: 'CH',
-    ukraine: 'UA',
-    'united-kingdom': 'GB',
-    'vatican-city': 'VA'
+  const FACTORY_IBAN_PROFILES = {
+    albania: { code: 'AL', length: 28, slices: [['bank code', 4, 7, '3 digits'], ['branch/control area', 7, 12, 'local routing block'], ['account number', 12, 28, '16 characters']] },
+    andorra: { code: 'AD', length: 24, slices: [['bank code', 4, 8, '4 digits'], ['branch code', 8, 12, '4 digits'], ['account number', 12, 24, '12 characters']] },
+    austria: { code: 'AT', length: 20, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 20, '11 digits']] },
+    belgium: { code: 'BE', length: 16, slices: [['bank/account body', 4, 14, '10 digits'], ['national check', 14, 16, '2 digits']] },
+    'bosnia-and-herzegovina': { code: 'BA', length: 20, slices: [['bank code', 4, 7, '3 digits'], ['branch code', 7, 10, '3 digits'], ['account number', 10, 18, '8 digits'], ['control digits', 18, 20, '2 digits']] },
+    bulgaria: { code: 'BG', length: 22, slices: [['bank identifier', 4, 8, '4 letters'], ['branch code', 8, 12, '4 digits'], ['account type', 12, 14, '2 digits'], ['account number', 14, 22, '8 digits']] },
+    croatia: { code: 'HR', length: 21, slices: [['bank code', 4, 11, '7 digits'], ['account number', 11, 21, '10 digits']] },
+    cyprus: { code: 'CY', length: 28, slices: [['bank code', 4, 7, '3 digits'], ['branch code', 7, 12, '5 digits'], ['account number', 12, 28, '16 characters']] },
+    czechia: { code: 'CZ', length: 24, slices: [['bank code', 4, 8, '4 digits'], ['account prefix', 8, 14, '6 digits'], ['account number', 14, 24, '10 digits']] },
+    denmark: { code: 'DK', length: 18, slices: [['registration number', 4, 8, '4 digits'], ['account number', 8, 18, '10 digits']] },
+    estonia: { code: 'EE', length: 20, slices: [['bank/branch code', 4, 6, '2 digits'], ['account number', 6, 19, '13 digits'], ['national check', 19, 20, '1 digit']] },
+    finland: { code: 'FI', length: 18, slices: [['bank/account body', 4, 18, '14 digits']] },
+    france: { code: 'FR', length: 27, slices: [['bank code', 4, 9, '5 characters'], ['branch code', 9, 14, '5 characters'], ['account number', 14, 25, '11 characters'], ['RIB key', 25, 27, '2 digits']] },
+    germany: { code: 'DE', length: 22, slices: [['BLZ bank code', 4, 12, '8 digits'], ['account number', 12, 22, '10 digits']] },
+    greece: { code: 'GR', length: 27, slices: [['bank code', 4, 7, '3 digits'], ['branch code', 7, 11, '4 digits'], ['account number', 11, 27, '16 digits']] },
+    hungary: { code: 'HU', length: 28, slices: [['bank/branch code', 4, 12, '8 digits'], ['account number', 12, 28, '16 digits']] },
+    iceland: { code: 'IS', length: 26, slices: [['bank code', 4, 8, '4 digits'], ['account type', 8, 10, '2 digits'], ['account number', 10, 16, '6 digits'], ['identity/control body', 16, 26, '10 digits']] },
+    ireland: { code: 'IE', length: 22, slices: [['bank identifier', 4, 8, '4 letters'], ['sort code', 8, 14, '6 digits'], ['account number', 14, 22, '8 digits']] },
+    italy: { code: 'IT', length: 27, slices: [['CIN', 4, 5, '1 character'], ['ABI bank code', 5, 10, '5 digits'], ['CAB branch code', 10, 15, '5 digits'], ['account number', 15, 27, '12 characters']] },
+    latvia: { code: 'LV', length: 21, slices: [['bank identifier', 4, 8, '4 letters'], ['account number', 8, 21, '13 characters']] },
+    liechtenstein: { code: 'LI', length: 21, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 21, '12 characters']] },
+    lithuania: { code: 'LT', length: 20, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 20, '11 digits']] },
+    luxembourg: { code: 'LU', length: 20, slices: [['bank code', 4, 7, '3 digits'], ['account number', 7, 20, '13 characters']] },
+    malta: { code: 'MT', length: 31, slices: [['bank identifier', 4, 8, '4 letters'], ['branch code', 8, 13, '5 digits'], ['account number', 13, 31, '18 characters']] },
+    moldova: { code: 'MD', length: 24, slices: [['bank/account body', 4, 24, '20 characters']] },
+    monaco: { code: 'MC', length: 27, slices: [['bank code', 4, 9, '5 digits'], ['branch code', 9, 14, '5 digits'], ['account number', 14, 25, '11 characters'], ['RIB key', 25, 27, '2 digits']] },
+    montenegro: { code: 'ME', length: 22, slices: [['bank code', 4, 7, '3 digits'], ['account number', 7, 20, '13 digits'], ['control digits', 20, 22, '2 digits']] },
+    netherlands: { code: 'NL', length: 18, slices: [['bank identifier', 4, 8, '4 letters'], ['account number', 8, 18, '10 digits']] },
+    'north-macedonia': { code: 'MK', length: 19, slices: [['bank code', 4, 7, '3 digits'], ['account number', 7, 17, '10 characters'], ['control digits', 17, 19, '2 digits']] },
+    norway: { code: 'NO', length: 15, slices: [['bank/account body', 4, 15, '11 digits']] },
+    poland: { code: 'PL', length: 28, slices: [['bank + branch code', 4, 12, '8 digits'], ['account number', 12, 28, '16 digits']] },
+    portugal: { code: 'PT', length: 25, slices: [['bank code', 4, 8, '4 digits'], ['branch code', 8, 12, '4 digits'], ['account number', 12, 23, '11 digits'], ['control digits', 23, 25, '2 digits']] },
+    romania: { code: 'RO', length: 24, slices: [['bank identifier', 4, 8, '4 letters'], ['account body', 8, 24, '16 characters']] },
+    'san-marino': { code: 'SM', length: 27, slices: [['CIN', 4, 5, '1 character'], ['bank code', 5, 10, '5 digits'], ['branch code', 10, 15, '5 digits'], ['account number', 15, 27, '12 characters']] },
+    serbia: { code: 'RS', length: 22, slices: [['bank code', 4, 7, '3 digits'], ['account number', 7, 20, '13 digits'], ['control digits', 20, 22, '2 digits']] },
+    slovakia: { code: 'SK', length: 24, slices: [['bank code', 4, 8, '4 digits'], ['account prefix', 8, 14, '6 digits'], ['account number', 14, 24, '10 digits']] },
+    slovenia: { code: 'SI', length: 19, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 17, '8 digits'], ['control digits', 17, 19, '2 digits']] },
+    spain: { code: 'ES', length: 24, slices: [['bank code', 4, 8, '4 digits'], ['branch office', 8, 12, '4 digits'], ['CCC check digits', 12, 14, '2 digits'], ['account number', 14, 24, '10 digits']] },
+    sweden: { code: 'SE', length: 24, slices: [['clearing/account body', 4, 24, '20 digits']] },
+    switzerland: { code: 'CH', length: 21, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 21, '12 characters']] },
+    ukraine: { code: 'UA', length: 29, slices: [['MFO bank code', 4, 10, '6 digits'], ['account body', 10, 29, '19 digits']] },
+    'united-kingdom': { code: 'GB', length: 22, slices: [['bank identifier', 4, 8, '4 letters'], ['sort code', 8, 14, '6 digits'], ['account number', 14, 22, '8 digits']] },
+    'vatican-city': { code: 'VA', length: 22, slices: [['bank code', 4, 9, '5 digits'], ['account number', 9, 22, '13 characters']] }
   };
+
+  const FACTORY_IBAN_COUNTRIES = Object.fromEntries(Object.entries(FACTORY_IBAN_PROFILES).map(([slug, profile]) => [slug, profile.code]));
+
+  function ibanProfileForSuite(suite) {
+    return FACTORY_IBAN_PROFILES[suite.country.slug] || null;
+  }
+
+  function ibanProfileSlices(iban, profile) {
+    const compact = alnumOnly(iban);
+    return asArray(profile && profile.slices).map((slice) => fieldSlice(slice[0], compact.slice(slice[1], slice[2]) || 'not detected', slice[3]));
+  }
+
+  function routeIso2(suite) {
+    return text(suite && suite.country && suite.country.iso2).slice(0, 2).toUpperCase();
+  }
+
+  function sampleCountryPrefix(tool) {
+    const sample = asArray(tool && tool.samples).find((item) => sampleIntent(item) !== 'review') || asArray(tool && tool.samples)[0];
+    const compact = alnumOnly(sample && sample.value);
+    const match = compact.match(/^[A-Z]{2}/);
+    return match ? match[0] : '';
+  }
 
   function countryCodeForSuite(suite, tool, input) {
     const explicit = alnumOnly(tool.countryCode || '');
     if (explicit.length === 2) return explicit;
+    const profile = ibanProfileForSuite(suite);
+    if (profile && profile.code) return profile.code;
     const fromInput = alnumOnly(input).match(/^[A-Z]{2}/);
     if (fromInput) return fromInput[0];
     return FACTORY_IBAN_COUNTRIES[suite.country.slug] || alnumOnly(suite.country.name).slice(0, 2);
@@ -1419,6 +2324,1389 @@
     return COUNTRY_INTELLIGENCE_PROFILES[suite && suite.country && suite.country.slug] || null;
   }
 
+  function isTaxBusinessTool(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    if (kind === 'vat' || kind === 'eori' || kind === 'company' || kind === 'register') return true;
+    const topic = [tool && tool.id, tool && tool.name, tool && tool.code, kind].map((item) => text(item).toLowerCase()).join(' ');
+    if (/invoice|taxrate|tax-rate|taxreturn|tax-return|handoff|audit|onboarding|suffix|payroll|document|amount|date|remittance|e-?invoic/.test(topic)) return false;
+    return /vat|eori|tax id|tax-id|tax number|tax-number|company number|company-number|registry id|registry-id|register number|business number|business-number|cui|cif|tin|nif|uid|ust|iva|btw|moms|mva|gst|ein|ruc|rut|nit/.test(topic);
+  }
+
+  const TAX_COMPANY_CHECK_REUSE = new Set(['belgium', 'czechia', 'denmark', 'finland', 'italy', 'norway', 'portugal', 'romania', 'spain', 'sweden', 'switzerland']);
+
+  function taxInputParts(suite, tool, input) {
+    const raw = text(input).trim();
+    const wrongPrefix = raw.match(/^wrong\s+prefix\s+([A-Z]{2})(.*)$/i);
+    const compact = wrongPrefix ? `${wrongPrefix[1]}${alnumOnly(wrongPrefix[2])}` : alnumOnly(raw);
+    const expectedPrefix = routeIso2(suite) || sampleCountryPrefix(tool);
+    const detectedPrefix = compact.match(/^[A-Z]{2}/) ? compact.slice(0, 2) : '';
+    let body = compact;
+    if (detectedPrefix) body = compact.slice(2);
+    const markerMatch = body.match(/^([A-Z]{1,4})(?=\d)/);
+    const marker = markerMatch ? markerMatch[1] : '';
+    const bodyWithoutMarker = marker ? body.slice(marker.length) : body;
+    const digits = digitsOnly(bodyWithoutMarker || body || compact);
+    const separators = raw.replace(/[A-Z0-9]/gi, '').replace(/\s+/g, ' ').trim();
+    const kind = text(tool && tool.kind).toLowerCase();
+    return {
+      raw,
+      compact,
+      expectedPrefix,
+      detectedPrefix,
+      body,
+      marker,
+      bodyWithoutMarker,
+      digits,
+      separators,
+      prefixRequired: kind === 'vat' || kind === 'eori',
+      kind
+    };
+  }
+
+  function buildGenericTaxBusinessParsed(suite, tool, input, profile) {
+    const parts = taxInputParts(suite, tool, input);
+    const label = parts.kind === 'eori'
+      ? 'EORI / customs'
+      : parts.kind === 'company' || parts.kind === 'register'
+        ? (profile && profile.companyLabel) || 'company registry'
+        : (profile && profile.taxLabel) || tool.code || 'tax identifier';
+    const prefixOk = !parts.prefixRequired || (parts.detectedPrefix && parts.detectedPrefix === parts.expectedPrefix);
+    const bodyValue = parts.bodyWithoutMarker || parts.body || parts.compact;
+    const bodyOk = /^[A-Z0-9]{6,18}$/.test(bodyValue) || (parts.kind !== 'vat' && /^[A-Z0-9]{4,24}$/.test(bodyValue));
+    const repeatedPlaceholder = /^(\d)\1{5,}$/.test(parts.digits) || /^(?:0+|1+|9+)$/.test(parts.digits);
+    const formatOk = parts.raw.length > 0 && prefixOk && bodyOk && !repeatedPlaceholder;
+    const blockA = parts.digits.slice(0, Math.min(4, Math.max(2, parts.digits.length - 5)));
+    const blockB = parts.digits.slice(blockA.length, -1) || parts.bodyWithoutMarker.slice(0, Math.max(0, parts.bodyWithoutMarker.length - 1));
+    const blockC = parts.digits.slice(-1) || parts.bodyWithoutMarker.slice(-1);
+    return {
+      normalized: parts.compact || parts.raw,
+      ok: formatOk,
+      slices: [
+        fieldSlice(parts.kind === 'eori' ? 'customs country prefix' : 'route country prefix', parts.detectedPrefix || 'not detected', `Expected ${parts.expectedPrefix || suite.country.name} for this ${suite.country.name} route.`, prefixOk ? 'green' : 'red'),
+        fieldSlice('local type marker', parts.marker || 'none', 'VAT/EORI markers such as U, MVA, RT, or branch/type letters are preserved.'),
+        fieldSlice(parts.kind === 'eori' ? 'customs body' : 'tax/business body', bodyValue || 'not detected', `${label} body retained as the official-system handoff key.`, bodyOk ? 'green' : 'red'),
+        fieldSlice('registry/root block', blockA || 'not detected', 'Leading assignment, registry, taxpayer, or company-root evidence.'),
+        fieldSlice('entity/body block', blockB || 'not detected', 'Main local identifier body used by downstream parsers.'),
+        fieldSlice('control/check hint', blockC || 'not detected', 'Trailing digit/character where the local format exposes one.'),
+        fieldSlice('display separators', parts.separators || 'none', 'Separators are display hints; normalized export keeps the compact key.'),
+        fieldSlice('official boundary', 'offline only', 'Registration, VAT validity, customs authorization, filing status, and company existence remain official-system checks.', 'red')
+      ],
+      checks: [
+        statusCheck('Input present', parts.raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(parts.prefixRequired ? 'Route prefix' : 'Route context', prefixOk, parts.detectedPrefix ? `${parts.detectedPrefix} matches ${parts.expectedPrefix}.` : `${suite.country.name} route context is attached.`, parts.detectedPrefix ? `Expected ${parts.expectedPrefix}; got ${parts.detectedPrefix}.` : `Expected ${parts.expectedPrefix} prefix for this route.`),
+        statusCheck('Body envelope', bodyOk, `${bodyValue.length} compact body characters detected.`, 'Identifier body length/characters need review.'),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder digit body rejected.', 'Repeated placeholder digits should not pass.')
+      ],
+      taxParts: parts
+    };
+  }
+
+  function buildTaxBusinessParsed(suite, tool, input, profile) {
+    const generic = buildGenericTaxBusinessParsed(suite, tool, input, profile);
+    const canReuseCompanyParser = profile && profile.parseCompany && TAX_COMPANY_CHECK_REUSE.has(suite.country.slug);
+    if (!canReuseCompanyParser || (generic.taxParts.kind !== 'vat' && generic.taxParts.kind !== 'eori')) return generic;
+    const companyParsed = profile.parseCompany.call(profile, input);
+    if (!companyParsed) return generic;
+    const mergedChecks = asArray(companyParsed.checks).length
+      ? asArray(companyParsed.checks)
+      : [statusCheck('Local checksum/shape replay', !!companyParsed.ok, 'Country company/tax parser accepted the body.', 'Country company/tax parser needs review.')];
+    return Object.assign({}, generic, {
+      ok: generic.ok && !!companyParsed.ok,
+      normalized: companyParsed.normalized || generic.normalized,
+      slices: [
+        fieldSlice('route tax display', generic.normalized, `${suite.country.name} route prefix/body evidence before local parser replay.`, generic.ok ? 'green' : 'red')
+      ].concat(asArray(companyParsed.slices), generic.slices.filter((slice) => !/registry\/root block|entity\/body block|control\/check hint/.test(text(slice.label))).slice(0, 5)),
+      checks: generic.checks.concat(mergedChecks)
+    });
+  }
+
+  function buildTaxBusinessResult(suite, tool, input, baseResult, profile) {
+    if (!isTaxBusinessTool(tool)) return null;
+    const parsed = buildTaxBusinessParsed(suite, tool, input, profile);
+    const label = parsed.taxParts.kind === 'eori'
+      ? 'EORI / customs identifier'
+      : parsed.taxParts.kind === 'company' || parsed.taxParts.kind === 'register'
+        ? (profile && profile.companyLabel) || 'company registry identifier'
+        : (profile && profile.taxLabel) || 'tax/VAT identifier';
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? 'local tax/business structure verified' : 'tax/business structure needs review'}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${label} evidence was parsed locally with route prefix, body, masking, and official-boundary output.`
+        : `${suite.country.name} ${label} needs review; compare prefix, body length, placeholder guard, and any local checksum evidence.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${label} anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded route prefix, local body evidence, control hints, parser replay, and official-boundary notes for ${suite.country.name}.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks.concat([
+        statusCheck('Official boundary', true, 'No registry, VIES, customs, tax, filing, or company-status lookup is made.', 'No official lookup is made.')
+      ]),
+      fields: [
+        fieldSlice('normalized', normalized, 'Compact parser-normalized value for forms and fixtures.'),
+        fieldSlice('masked', maskCompact(normalized), 'Log-safe preview.'),
+        fieldSlice('route prefix', parsed.taxParts.expectedPrefix || suite.country.name, 'Expected country context for this route.'),
+        fieldSlice('official boundary', 'offline only', 'Live status requires the responsible authority.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Route-locked evidence', text: `${suite.country.name} prefix/body evidence is checked against the current country route.` },
+        { title: 'Parser replay', text: 'Where a local public checksum/shape parser exists in the suite, it is replayed before reporting success.' },
+        { title: 'Fixture safety', text: 'Valid/review samples are structural developer fixtures, not live companies or taxpayers.' },
+        { title: 'Official boundary', text: 'VAT validity, EORI authorization, company existence, filing status, and ownership remain official-system checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized tax/business evidence for fixtures.', 'Keep masked previews in support logs.', 'Use official systems for live status.']
+        : ['Compare against the valid sample.', 'Check route prefix, local marker, body length, and repeated placeholders.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      expectedPrefix: parsed.taxParts.expectedPrefix,
+      detectedPrefix: parsed.taxParts.detectedPrefix,
+      kind: parsed.taxParts.kind,
+      normalized,
+      masked: maskCompact(normalized),
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isContactAddressTool(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    return kind === 'phone' || kind === 'postal' || kind === 'address';
+  }
+
+  function validSampleValue(tool) {
+    const sample = asArray(tool && tool.samples).find((item) => sampleIntent(item) !== 'review') || asArray(tool && tool.samples)[0];
+    return text(sample && sample.value).trim();
+  }
+
+  function sampleCallingCode(tool) {
+    const sample = validSampleValue(tool);
+    const match = sample.match(/\+(\d{1,4})\b/);
+    return match ? match[1] : '';
+  }
+
+  function postalToken(value) {
+    const raw = text(value).replace(/^wrong\s+prefix\s+[A-Z]{2}\s+/i, '').trim();
+    const tokens = raw.match(/[A-Z0-9][A-Z0-9 -]{1,12}[A-Z0-9]/gi) || [];
+    for (let index = 0; index < Math.min(tokens.length, 3); index += 1) {
+      const token = text(tokens[index]).trim();
+      const compact = alnumOnly(token);
+      if (compact.length >= 3 && compact.length <= 10 && /\d/.test(compact)) return token;
+      const next = text(tokens[index + 1]).trim();
+      const combined = `${token} ${next}`.trim();
+      const combinedCompact = alnumOnly(combined);
+      if (combinedCompact.length >= 5 && combinedCompact.length <= 8 && /\d/.test(combinedCompact) && /[A-Z]/i.test(combinedCompact)) return combined;
+    }
+    const digitFallback = raw.match(/\b\d{3,8}\b/);
+    return digitFallback ? digitFallback[0] : '';
+  }
+
+  function postalShape(value) {
+    return text(value).toUpperCase().replace(/[A-Z]/g, 'A').replace(/\d/g, '9').replace(/\s+/g, ' ').trim();
+  }
+
+  function buildPhoneParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const digits = digitsOnly(raw);
+    const expectedCallingCode = sampleCallingCode(tool);
+    const hasPlus = /\+/.test(raw);
+    const startsWithCallingCode = expectedCallingCode ? digits.startsWith(expectedCallingCode) : digits.length >= 7;
+    const national = expectedCallingCode && startsWithCallingCode ? digits.slice(expectedCallingCode.length) : digits;
+    const nationalOk = national.length >= 5 && national.length <= 14;
+    const repeatedPlaceholder = /^(\d)\1{5,}$/.test(national);
+    const ok = raw.length > 0 && (!hasPlus || startsWithCallingCode) && nationalOk && !repeatedPlaceholder;
+    const e164 = startsWithCallingCode && expectedCallingCode ? `+${digits}` : digits ? `+${digits}` : '';
+    return {
+      normalized: e164 || raw,
+      ok,
+      parts: { raw, digits, expectedCallingCode, hasPlus, national, startsWithCallingCode, repeatedPlaceholder, kind: 'phone' },
+      slices: [
+        fieldSlice('calling code', expectedCallingCode ? `+${expectedCallingCode}` : 'not detected', `Expected calling prefix inferred from the ${suite.country.name} valid sample.`, startsWithCallingCode || !hasPlus ? 'green' : 'red'),
+        fieldSlice('national number', national || 'not detected', 'Subscriber/area evidence after the calling prefix.'),
+        fieldSlice('area/mobile hint', national.slice(0, Math.min(3, national.length)) || 'not detected', 'Leading national digits retained for parser and routing tests.'),
+        fieldSlice('E.164 preview', e164 || 'not detected', 'Copy-ready international display when enough digits are present.', ok ? 'green' : 'red'),
+        fieldSlice('masked phone', national.length > 4 ? `+${expectedCallingCode || ''} ${national.slice(0, 2)}...${national.slice(-2)}` : maskCompact(e164 || raw), 'Log-safe phone preview.'),
+        fieldSlice('official boundary', 'offline only', 'Line activity, ownership, portability, and carrier reachability require provider lookup.', 'red')
+      ],
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck('Calling code', !hasPlus || startsWithCallingCode, expectedCallingCode ? `Calling code matches +${expectedCallingCode}.` : 'No route calling code fixture was detected.', expectedCallingCode ? `Expected +${expectedCallingCode}.` : 'Route calling code needs a valid sample.'),
+        statusCheck('National length', nationalOk, `${national.length} national digits detected.`, 'National phone body length needs review.'),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder phone body rejected.', 'Repeated phone placeholders should not pass.')
+      ]
+    };
+  }
+
+  function buildPostalAddressParsed(suite, tool, input) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const raw = text(input).replace(/\s+/g, ' ').trim();
+    const sampleCode = postalToken(validSampleValue(tool));
+    const candidate = postalToken(raw);
+    const compact = alnumOnly(candidate);
+    const expectedShape = postalShape(sampleCode);
+    const actualShape = postalShape(candidate);
+    const locality = raw.replace(candidate, '').replace(/[,\s]+/g, ' ').trim();
+    const hasText = /[A-Z]/i.test(raw);
+    const hasNumber = /\d/.test(raw);
+    const candidateOk = kind === 'address'
+      ? raw.length >= 8 && (hasText || hasNumber)
+      : compact.length >= 3 && compact.length <= 10 && (!expectedShape || actualShape.length === expectedShape.length || compact.length === alnumOnly(sampleCode).length);
+    const ok = raw.length > 0 && candidateOk;
+    return {
+      normalized: raw,
+      ok,
+      parts: { raw, sampleCode, candidate, expectedShape, actualShape, locality, kind },
+      slices: [
+        fieldSlice(kind === 'postal' ? 'postal code' : 'postal/address token', candidate || 'not detected', `Postal evidence inferred for the ${suite.country.name} route.`, candidateOk ? 'green' : 'red'),
+        fieldSlice('expected sample shape', expectedShape || 'not detected', 'Letter/digit pattern from the valid sample.'),
+        fieldSlice('actual shape', actualShape || 'not detected', 'Letter/digit pattern from the current input.', candidateOk ? 'green' : 'red'),
+        fieldSlice('area/local block', compact.slice(0, Math.min(3, compact.length)) || 'not detected', 'Leading postal area or routing evidence.'),
+        fieldSlice('locality/street evidence', locality || raw, 'Remaining locality, street, or delivery text retained for handoff.'),
+        fieldSlice('official boundary', 'offline only', 'Address existence, deliverability, geocoding, and postal authority status require official/provider lookup.', 'red')
+      ],
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(kind === 'postal' ? 'Postal token' : 'Address text', candidateOk, kind === 'postal' ? `${compact.length} compact postal characters detected.` : 'Address text has enough local evidence.', 'Postal/address evidence needs review.'),
+        statusCheck('Sample shape comparison', kind === 'address' || !expectedShape || actualShape.length === expectedShape.length || compact.length === alnumOnly(sampleCode).length, expectedShape ? `Compared against ${expectedShape}.` : 'No exact sample shape available.', expectedShape ? `Expected shape near ${expectedShape}; got ${actualShape || 'none'}.` : 'Load a route sample to compare shape.'),
+        statusCheck('Official boundary', true, 'No postal, carrier, address, or geocoding lookup is made.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildContactAddressResult(suite, tool, input, baseResult) {
+    if (!isContactAddressTool(tool)) return null;
+    const kind = text(tool.kind).toLowerCase();
+    const parsed = kind === 'phone' ? buildPhoneParsed(suite, tool, input) : buildPostalAddressParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const label = kind === 'phone' ? 'phone number' : kind === 'postal' ? 'postal code' : 'address';
+    const normalized = parsed.normalized || text(input).trim();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? 'local contact/address structure verified' : 'contact/address structure needs review'}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${label} evidence was parsed locally with route samples, masking, field slices, and official-boundary output.`
+        : `${suite.country.name} ${label} needs review; compare sample shape, local body, and placeholder/length checks.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${label} anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} contact/address evidence, sample-shape comparison, masking, and official-boundary notes.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Parser-normalized display value for forms and fixtures.'),
+        fieldSlice('masked', maskCompact(normalized), 'Log-safe preview.'),
+        fieldSlice('route sample', validSampleValue(tool), 'Valid fixture used for local shape expectations.'),
+        fieldSlice('official boundary', 'offline only', 'Live deliverability, ownership, carrier, or geocoding status requires official/provider lookup.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Route-sample evidence', text: `${suite.country.name} shape expectations are inferred from the local valid sample carried by this route.` },
+        { title: 'Browser-only parser', text: 'Formatting, splitting, masking, and sample comparison run locally without carrier, postal, or geocoder calls.' },
+        { title: 'Fixture safety', text: 'Use valid/review samples for UI, import, CRM, and address-form tests, not as real contact proof.' },
+        { title: 'Official boundary', text: 'Number ownership, deliverability, address existence, postal routing status, and geocoding remain provider or authority checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized contact/address evidence for fixtures.', 'Use the breakdown to preserve country and sample-shape assumptions.', 'Mask values in logs and screenshots.']
+        : ['Compare against the valid sample.', 'Check length, local body, separators, and placeholder digits.', 'Use official/provider systems for live reachability.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isDocumentVehicleReferenceTool(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const haystack = `${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (['document', 'passport', 'plate', 'vin', 'vehicle', 'vehiclemask', 'customs', 'tracking'].includes(kind)) return true;
+    return /\b(passport|mrz|visa|document|driving[- ]?licen[cs]e|vehicle|plate|vin|tracking|customs)\b/.test(haystack);
+  }
+
+  function documentVehicleReferenceKind(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const haystack = `${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (kind === 'vin' || /\bvin\b/.test(haystack)) return 'VIN';
+    if (kind === 'plate' || /plate|registration/.test(haystack)) return 'Plate';
+    if (kind === 'vehicle' || kind === 'vehiclemask' || /vehicle/.test(haystack)) return 'Vehicle';
+    if (kind === 'customs' || /customs|declaration|importer|hs-code|hs code/.test(haystack)) return 'Customs';
+    if (kind === 'tracking' || /tracking|carrier|parcel|shipment/.test(haystack)) return 'Tracking';
+    if (/mrz/.test(haystack)) return 'MRZ';
+    if (/passport/.test(haystack)) return 'Passport';
+    return 'Document';
+  }
+
+  function compactShape(value) {
+    return text(value).toUpperCase().replace(/[A-Z]/g, 'A').replace(/\d/g, '9').replace(/[^A9<]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function displayShapePreview(value, fallback) {
+    const raw = text(value).replace(/\s+/g, ' ').trim();
+    const fallbackText = text(fallback).replace(/\s+/g, ' ').trim();
+    const shape = compactShape(raw);
+    const compact = shape.replace(/\s+/g, '');
+    const alphaOnlyPlaceholder = /^[A]+$/.test(compact) && compact.length >= 5;
+    if (!shape || alphaOnlyPlaceholder) return shortValue(fallbackText || raw || 'sample', 28);
+    return shortValue(shape, 28);
+  }
+
+  function structuredShapePreview(value, fallback, textFallback) {
+    const preview = displayShapePreview(value, fallback);
+    if (!/[0-9<]/.test(preview) && /^[A-Za-z ,./-]+$/.test(preview) && preview.length >= 5) {
+      return text(textFallback) || preview;
+    }
+    return preview;
+  }
+
+  function mrzCharValue(char) {
+    const c = text(char).toUpperCase();
+    if (/^\d$/.test(c)) return Number(c);
+    if (/^[A-Z]$/.test(c)) return c.charCodeAt(0) - 55;
+    return 0;
+  }
+
+  function mrzCheckDigit(value) {
+    const weights = [7, 3, 1];
+    const sum = text(value).toUpperCase().split('').reduce((total, char, index) => total + mrzCharValue(char) * weights[index % 3], 0);
+    return String(sum % 10);
+  }
+
+  function mrzLines(raw) {
+    return text(raw).replace(/\\n/g, '\n').split(/\r?\n/).map((line) => line.trim().toUpperCase()).filter((line) => line.includes('<') || /^[A-Z0-9<]{20,}$/.test(line));
+  }
+
+  function mrzChecks(lines) {
+    const line = lines.length >= 2 ? lines[1] : '';
+    if (line.length < 30) return [];
+    const checks = [];
+    [
+      ['document number check', line.slice(0, 9), line[9]],
+      ['birth date check', line.slice(13, 19), line[19]],
+      ['expiry date check', line.slice(21, 27), line[27]]
+    ].forEach(([label, source, provided]) => {
+      if (/^\d$/.test(text(provided))) {
+        const expected = mrzCheckDigit(source);
+        checks.push({ label, source, expected, provided, ok: expected === provided });
+      }
+    });
+    return checks;
+  }
+
+  function routeShapeSample(tool) {
+    return compactShape(validSampleValue(tool)).replace(/\s+/g, ' ');
+  }
+
+  function extractPrimaryToken(raw, kindLabel) {
+    const source = text(raw).replace(/^wrong\s+prefix\s+[A-Z]{2}\s+/i, '').trim();
+    if (kindLabel === 'MRZ' || /</.test(source)) return mrzLines(source).join('\n') || source;
+    if (kindLabel === 'VIN') {
+      const match = source.toUpperCase().match(/\b[A-HJ-NPR-Z0-9]{11,17}\b/);
+      return match ? match[0] : alnumOnly(source).slice(0, 17);
+    }
+    if (kindLabel === 'Plate') {
+      const match = source.toUpperCase().match(/\b[A-Z0-9][A-Z0-9 -]{1,12}[A-Z0-9]\b/);
+      return match ? match[0].trim() : alnumOnly(source).slice(0, 12);
+    }
+    if (kindLabel === 'Tracking') {
+      const match = source.toUpperCase().match(/\b[A-Z]{1,4}[A-Z0-9 -]{6,24}\b/);
+      return match ? match[0].trim() : shortValue(source, 32);
+    }
+    if (kindLabel === 'Customs') {
+      const hs = source.match(/\bHS\s*\d{4,10}\b/i);
+      const importer = source.toUpperCase().match(/\b[A-Z]{2}[A-Z0-9]{6,14}\b/);
+      return [importer && importer[0], hs && hs[0].toUpperCase()].filter(Boolean).join(' / ') || shortValue(source, 36);
+    }
+    const match = source.toUpperCase().match(/\b[A-Z]{1,4}[- ]?[A-Z0-9][A-Z0-9 -]{3,24}\b/);
+    return match ? match[0].trim() : shortValue(source, 36);
+  }
+
+  function buildDocumentVehicleReferenceParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const kindLabel = documentVehicleReferenceKind(tool);
+    const normalized = kindLabel === 'MRZ' ? mrzLines(raw).join('\n') : raw.replace(/\s+/g, ' ').trim();
+    const compact = alnumOnly(normalized || raw);
+    const token = extractPrimaryToken(raw, kindLabel);
+    const tokenCompact = alnumOnly(token);
+    const lines = mrzLines(raw);
+    const checks = mrzChecks(lines);
+    const repeatedPlaceholder = /^([A-Z0-9])\1{5,}$/i.test(tokenCompact);
+    const vinForbidden = /[IOQ]/i.test(tokenCompact);
+    const vinOk = kindLabel !== 'VIN' || (tokenCompact.length === 17 && !vinForbidden);
+    const plateOk = kindLabel !== 'Plate' || (tokenCompact.length >= 3 && tokenCompact.length <= 12 && /[A-Z]/i.test(tokenCompact) && /\d/.test(tokenCompact));
+    const mrzOk = kindLabel !== 'MRZ' || (lines.length >= 2 && lines.every((line) => line.length >= 20));
+    const customsOk = kindLabel !== 'Customs' || (raw.length >= 8 && (/\bHS\s*\d{4,10}\b/i.test(raw) || /\d{6,}/.test(raw)));
+    const trackingOk = kindLabel !== 'Tracking' || (raw.length >= 8 && /[A-Z]/i.test(raw) && /\d/.test(raw));
+    const genericOk = tokenCompact.length >= 5 || lines.length >= 1;
+    const ok = raw.length > 0 && genericOk && !repeatedPlaceholder && vinOk && plateOk && mrzOk && customsOk && trackingOk;
+    const routeShape = routeShapeSample(tool);
+    const currentShape = compactShape(token || normalized || raw);
+    const baseSlices = [
+      fieldSlice('primary token', token || 'not detected', `${kindLabel} evidence extracted from the current ${suite.country.name} route input.`, genericOk ? 'green' : 'red'),
+      fieldSlice('route sample shape', routeShape || 'not detected', 'Letter/digit/MRZ shape inferred from the success sample.'),
+      fieldSlice('current shape', currentShape || 'not detected', 'Letter/digit/MRZ shape for the current input.', genericOk ? 'green' : 'red'),
+      fieldSlice('masked preview', maskCompact(normalized || token || raw), 'Log-safe value for tickets, imports, and support screenshots.'),
+      fieldSlice('official boundary', 'offline only', 'Document authenticity, vehicle ownership, customs filing, and shipment status require official/provider lookup.', 'red')
+    ];
+    const domainSlices = [];
+    if (kindLabel === 'VIN') {
+      domainSlices.push(
+        fieldSlice('WMI', tokenCompact.slice(0, 3) || 'not detected', 'World manufacturer identifier block.'),
+        fieldSlice('VDS', tokenCompact.slice(3, 9) || 'not detected', 'Vehicle descriptor section.'),
+        fieldSlice('VIS', tokenCompact.slice(9, 17) || 'not detected', 'Vehicle identifier section.'),
+        fieldSlice('VIN charset', vinForbidden ? 'I/O/Q present' : 'I/O/Q absent', 'VINs exclude I, O, and Q in standard local intake checks.', vinForbidden ? 'red' : 'green')
+      );
+    } else if (kindLabel === 'MRZ') {
+      domainSlices.push(
+        fieldSlice('MRZ lines', String(lines.length), 'Detected machine-readable-zone lines.'),
+        fieldSlice('document type', lines[0] ? lines[0].slice(0, 1) : 'not detected', 'Leading ICAO-style document type character.'),
+        fieldSlice('issuing country hint', lines[0] ? lines[0].slice(2, 5).replace(/</g, '') : 'not detected', 'Country/authority code carried in the MRZ line.'),
+        fieldSlice('MRZ check replay', checks.length ? checks.map((item) => `${item.label}: ${item.expected}/${item.provided}`).join(' | ') : 'not enough check slots', 'Checksum slots are replayed when numeric check digits are present; fixture status is shape-first unless the page has a verified official MRZ sample.', checks.every((item) => item.ok) ? 'green' : 'red')
+      );
+    } else if (kindLabel === 'Customs') {
+      domainSlices.push(
+        fieldSlice('importer/reference', token.split('/')[0] || token || 'not detected', 'Importer, declaration, or customs handoff token.'),
+        fieldSlice('HS evidence', (raw.match(/\bHS\s*\d{4,10}\b/i) || ['not detected'])[0], 'Harmonized-system code evidence when present.'),
+        fieldSlice('amount/currency hint', (raw.match(/\b\d[\d,. ]+\s*[A-Z]{3}\b/i) || ['not detected'])[0], 'Invoice or declaration amount evidence for handoff.')
+      );
+    } else if (kindLabel === 'Tracking') {
+      domainSlices.push(
+        fieldSlice('tracking prefix', tokenCompact.slice(0, Math.min(4, tokenCompact.length)) || 'not detected', 'Carrier/service prefix hint.'),
+        fieldSlice('tracking body', tokenCompact.slice(Math.min(4, tokenCompact.length)) || 'not detected', 'Shipment or postal reference body.'),
+        fieldSlice('status boundary', 'not checked', 'Carrier scans, delivery state, and package existence are live-provider checks.', 'red')
+      );
+    } else if (kindLabel === 'Plate' || kindLabel === 'Vehicle') {
+      domainSlices.push(
+        fieldSlice('registration prefix', tokenCompact.slice(0, Math.min(3, tokenCompact.length)) || 'not detected', 'Region/series prefix when the local format supports it.'),
+        fieldSlice('registration body', tokenCompact.slice(Math.min(3, tokenCompact.length)) || 'not detected', 'Vehicle registration serial/body.'),
+        fieldSlice('ownership boundary', 'not checked', 'Owner, inspection, insurance, and registration status require authority/provider lookup.', 'red')
+      );
+    } else {
+      domainSlices.push(
+        fieldSlice('document prefix', tokenCompact.slice(0, Math.min(4, tokenCompact.length)) || 'not detected', 'Visible type/authority prefix evidence.'),
+        fieldSlice('document body', tokenCompact.slice(Math.min(4, tokenCompact.length)) || 'not detected', 'Main document/reference body.'),
+        fieldSlice('authenticity boundary', 'not checked', 'Identity, document authenticity, and issuance remain official authority checks.', 'red')
+      );
+    }
+    return {
+      ok,
+      normalized: normalized || raw,
+      kindLabel,
+      parts: { raw, normalized: normalized || raw, token, compact: tokenCompact || compact, routeShape, currentShape, mrzLines: lines, mrzChecks: checks, repeatedPlaceholder, vinForbidden },
+      slices: domainSlices.concat(baseSlices),
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(`${kindLabel} token`, genericOk, `${tokenCompact.length || compact.length} compact characters detected.`, `${kindLabel} evidence needs more local structure.`),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder value rejected.', 'Repeated placeholder values should not pass.'),
+        statusCheck('Domain replay', vinOk && plateOk && mrzOk && customsOk && trackingOk, `${kindLabel} browser-checkable shape replay passed.`, `${kindLabel} shape or replay evidence needs review.`),
+        statusCheck('Official boundary', true, 'No official authority, registry, carrier, customs, or vehicle lookup is made.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildDocumentVehicleReferenceResult(suite, tool, input, baseResult) {
+    if (!isDocumentVehicleReferenceTool(tool)) return null;
+    const parsed = buildDocumentVehicleReferenceParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const family = parsed.kindLabel.toLowerCase();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? `${parsed.kindLabel} local evidence verified` : `${parsed.kindLabel} evidence needs review`}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${family} evidence was parsed locally with token anatomy, masking, fixture shape, and official-boundary output.`
+        : `${suite.country.name} ${family} evidence needs review; compare token shape, placeholder guard, and domain replay checks.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${parsed.kindLabel} anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} token anatomy, sample-shape replay, masking, and official-boundary notes.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Parser-normalized value for fixtures and intake forms.'),
+        fieldSlice('masked', maskCompact(normalized), 'Log-safe preview.'),
+        fieldSlice('route sample', validSampleValue(tool), 'Success fixture used for shape expectations.'),
+        fieldSlice('official boundary', 'offline only', 'Live status, authenticity, ownership, filing, or carrier state requires official/provider lookup.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Token anatomy', text: `${suite.country.name} ${family} inputs are split into visible local evidence blocks where the public shape allows it.` },
+        { title: 'Browser-only replay', text: 'Shape, token extraction, VIN/MRZ-style replay, masking, and sample comparison run locally in the browser.' },
+        { title: 'Fixture safety', text: 'Use these samples for UI, import, KYC, logistics, and transport fixtures; they are not live records.' },
+        { title: 'Official boundary', text: 'Document authenticity, identity, vehicle ownership, customs filing, shipment state, and registry status remain official/provider checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized evidence for fixtures.', 'Use masked previews in tickets and logs.', 'Keep live status checks in official/provider systems.']
+        : ['Compare against the valid sample.', 'Check prefix, token length, separators, and repeated placeholders.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind: parsed.kindLabel,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isBankAccountWorkflowTool(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const id = text(tool && tool.id).toLowerCase();
+    const name = text(tool && tool.name).toLowerCase();
+    const topic = `${id} ${name} ${kind}`;
+    if (/iban[- ]?(generator|validator)|pix|invoice|e[- ]?invoice|tax[- ]?authority|tax[- ]?rate|tax[- ]?return|passport|mrz|vehicle|customs|postal|phone/.test(topic)) return false;
+    if (['bankcode', 'bankmask', 'bic', 'blz', 'sepa', 'statement'].includes(kind)) return true;
+    if (kind === 'reconciliation' && /payment-reconciliation|bank[- ]?statement|statement/.test(id)) return true;
+    if (kind === 'paymentref' && /domestic-transfer|direct-debit|sepa-transfer|mandate|bank-transfer/.test(id)) return true;
+    return /bank-account|domestic-account|bank-routing|bic-swift|bank-code|masked-bank-account|domestic-transfer|sepa-transfer|direct-debit|payment-reconciliation|bank-statement|sort-code|routing-number|blz|bpay|payid/.test(id);
+  }
+
+  function bankAccountWorkflowKind(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const topic = `${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (kind === 'bic' || /bic|swift/.test(topic)) return 'BIC / SWIFT';
+    if (kind === 'blz' || /blz|bank[- ]?code|routing[- ]?number|sort[- ]?code/.test(topic)) return 'Bank code';
+    if (kind === 'sepa' || /sepa|direct[- ]?debit|mandate/.test(topic)) return 'Direct debit mandate';
+    if (kind === 'statement' || kind === 'reconciliation' || /statement|reconciliation/.test(topic)) return 'Bank statement';
+    if (kind === 'bankmask' || /masked[- ]?bank/.test(topic)) return 'Masked account';
+    if (/domestic[- ]?transfer|bank[- ]?transfer/.test(topic)) return 'Domestic transfer';
+    return 'Domestic bank account';
+  }
+
+  function extractBankingToken(raw, kindLabel) {
+    const source = text(raw).replace(/^wrong\s+prefix\s+[A-Z]{2}\s+/i, '').replace(/\s+/g, ' ').trim();
+    if (kindLabel === 'BIC / SWIFT') {
+      const match = source.toUpperCase().match(/\b[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}(?:[A-Z0-9]{3})?\b/);
+      return match ? match[0] : alnumOnly(source).slice(0, 11);
+    }
+    const labelled = source.match(/\b(?:account|acct|routing|sort|bank|branch|bsb|aba|blz|mandate|reference|statement)\s*[:#-]?\s*([A-Z0-9][A-Z0-9 -]{3,34})/i);
+    if (labelled) return labelled[1].trim();
+    const longAlnum = source.match(/\b[A-Z]{0,4}\d[A-Z0-9 -]{5,34}\b/i);
+    if (longAlnum) return longAlnum[0].trim();
+    return shortValue(source, 42);
+  }
+
+  function bankingDigitTokens(raw) {
+    return text(raw).match(/\d[\d -]{2,24}\d/g) || [];
+  }
+
+  function abaRoutingCheck(digits) {
+    const ds = digitsOnly(digits);
+    if (ds.length !== 9) return null;
+    const n = ds.split('').map(Number);
+    const sum = 3 * (n[0] + n[3] + n[6]) + 7 * (n[1] + n[4] + n[7]) + (n[2] + n[5] + n[8]);
+    return { sum, ok: sum % 10 === 0 };
+  }
+
+  function bankRoutePrefix(suite, tool, kindLabel) {
+    const route = routeIso2(suite);
+    if (kindLabel === 'BIC / SWIFT') {
+      const sampleToken = extractBankingToken(validSampleValue(tool), kindLabel);
+      const sampleBic = alnumOnly(sampleToken).match(/^[A-Z]{4}([A-Z]{2})[A-Z0-9]{2}(?:[A-Z0-9]{3})?$/);
+      if (sampleBic) return sampleBic[1];
+    }
+    return route || sampleCountryPrefix(tool);
+  }
+
+  function buildBankAccountWorkflowParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const normalized = raw.replace(/\s+/g, ' ').trim();
+    const kindLabel = bankAccountWorkflowKind(tool);
+    const routePrefix = bankRoutePrefix(suite, tool, kindLabel);
+    const token = extractBankingToken(raw, kindLabel);
+    const tokenCompact = alnumOnly(token);
+    const digitTokens = bankingDigitTokens(raw).map((item) => digitsOnly(item));
+    const primaryDigits = digitTokens.find((item) => item.length >= 6) || digitsOnly(token);
+    const bicMatch = tokenCompact.match(/^([A-Z]{4})([A-Z]{2})([A-Z0-9]{2})([A-Z0-9]{3})?$/);
+    const bicCountryOk = kindLabel !== 'BIC / SWIFT' || !routePrefix || !bicMatch || bicMatch[2] === routePrefix;
+    const aba = abaRoutingCheck(primaryDigits.slice(0, 9));
+    const repeatedPlaceholder = /^([A-Z0-9])\1{5,}$/i.test(tokenCompact) || /^(\d)\1{5,}$/.test(primaryDigits);
+    const routeShape = compactShape(validSampleValue(tool));
+    const currentShape = compactShape(token || normalized || raw);
+    const hasBankWord = /\b(bank|account|routing|sort|branch|swift|bic|sepa|mandate|statement|reconciliation|transfer|debit|bpay|payid|aba|bsb|blz)\b/i.test(raw);
+    const accountEnvelopeOk = tokenCompact.length >= 6 || primaryDigits.length >= 6 || hasBankWord;
+    const bicOk = kindLabel !== 'BIC / SWIFT' || (!!bicMatch && (tokenCompact.length === 8 || tokenCompact.length === 11) && bicCountryOk);
+    const statementOk = kindLabel !== 'Bank statement' || (raw.length >= 10 && (raw.split(/\r?\n/).length > 1 || /\d[\d,. ]+\s*[A-Z]{3}\b/i.test(raw) || hasBankWord));
+    const mandateOk = kindLabel !== 'Direct debit mandate' || (accountEnvelopeOk && /mandate|debit|sepa|reference|transfer/i.test(raw));
+    const ok = raw.length > 0 && accountEnvelopeOk && bicOk && statementOk && mandateOk && !repeatedPlaceholder;
+    const baseSlices = [
+      fieldSlice('route sample shape', routeShape || 'not detected', 'Letter/digit shape inferred from the route success sample.'),
+      fieldSlice('current shape', currentShape || 'not detected', 'Letter/digit shape for the current banking token.', accountEnvelopeOk ? 'green' : 'red'),
+      fieldSlice('masked preview', maskCompact(normalized || token || raw), 'Log-safe banking preview for tickets and screenshots.'),
+      fieldSlice('official boundary', 'offline only', 'Bank existence, account ownership, beneficiary identity, balance, sanctions, and settlement require bank/provider systems.', 'red')
+    ];
+    const domainSlices = [];
+    if (kindLabel === 'BIC / SWIFT') {
+      domainSlices.push(
+        fieldSlice('institution code', bicMatch ? bicMatch[1] : 'not detected', 'Four-letter institution code.'),
+        fieldSlice('country code', bicMatch ? `${bicMatch[2]} / route ${routePrefix || 'unknown'}` : 'not detected', 'BIC country code compared with the current country route.', bicCountryOk && bicMatch ? 'green' : 'red'),
+        fieldSlice('location code', bicMatch ? bicMatch[3] : 'not detected', 'Location/test/passive code block.'),
+        fieldSlice('branch code', bicMatch && bicMatch[4] ? bicMatch[4] : 'primary office', 'Optional three-character branch code.')
+      );
+    } else if (kindLabel === 'Bank code') {
+      domainSlices.push(
+        fieldSlice('routing/bank code', primaryDigits.slice(0, Math.min(9, primaryDigits.length)) || token || 'not detected', 'Bank, branch, ABA, BLZ, BSB, sort-code, or local routing evidence.'),
+        fieldSlice('routing checksum', aba ? `${aba.sum} / ${aba.ok ? 'ABA pass' : 'ABA review'}` : 'not available', 'ABA modulo-10 replay when a nine-digit US routing candidate is visible.', !aba || aba.ok ? 'green' : 'red'),
+        fieldSlice('account/body hint', primaryDigits.length > 9 ? primaryDigits.slice(9) : 'not detected', 'Remaining domestic account body when visible.')
+      );
+    } else if (kindLabel === 'Direct debit mandate' || kindLabel === 'Domestic transfer') {
+      domainSlices.push(
+        fieldSlice('mandate/reference', token || 'not detected', 'Mandate, direct-debit, transfer, or banking reference token.'),
+        fieldSlice('account/routing hint', primaryDigits || 'not detected', 'Account or routing digits retained for fixture handoff.'),
+        fieldSlice('scheme hint', (/B2B/i.test(raw) ? 'B2B' : /CORE/i.test(raw) ? 'CORE' : /SEPA/i.test(raw) ? 'SEPA' : 'local scheme'), 'Visible direct-debit or domestic transfer scheme vocabulary.'),
+        fieldSlice('settlement boundary', 'not checked', 'Mandate validity, beneficiary ownership, bank acceptance, and settlement state remain external.', 'red')
+      );
+    } else if (kindLabel === 'Bank statement') {
+      domainSlices.push(
+        fieldSlice('statement lines', String(raw ? raw.split(/\r?\n/).length : 0), 'Line count for statement/import fixtures.'),
+        fieldSlice('date hint', workflowDateHint(raw) || 'not detected', 'Transaction date evidence when present.'),
+        fieldSlice('amount/currency', workflowAmountCurrency(raw) || 'not detected', 'Statement amount or currency evidence.'),
+        fieldSlice('reference hint', token || 'not detected', 'Narrative, reconciliation, or transaction reference.')
+      );
+    } else if (kindLabel === 'Masked account') {
+      domainSlices.push(
+        fieldSlice('visible prefix', tokenCompact.slice(0, Math.min(4, tokenCompact.length)) || 'not detected', 'Leading visible account/routing evidence.'),
+        fieldSlice('visible suffix', tokenCompact.slice(-4) || 'not detected', 'Trailing visible account evidence for support workflows.'),
+        fieldSlice('masked account', maskCompact(tokenCompact || normalized), 'Copy-safe display value for logs and screenshots.'),
+        fieldSlice('privacy boundary', 'masked only', 'Masking does not validate account ownership or payment reachability.', 'red')
+      );
+    } else {
+      domainSlices.push(
+        fieldSlice('bank/routing block', primaryDigits.slice(0, Math.min(6, primaryDigits.length)) || tokenCompact.slice(0, 6) || 'not detected', 'Leading bank, branch, sort-code, BSB, routing, or local account block.'),
+        fieldSlice('account body', primaryDigits.slice(Math.min(6, primaryDigits.length)) || tokenCompact.slice(6) || 'not detected', 'Domestic account body retained for fixtures.'),
+        fieldSlice('display token', token || 'not detected', 'User-visible banking token with separators preserved.'),
+        fieldSlice('ownership boundary', 'not checked', 'Account existence, ownership, beneficiary name, and funds availability require provider lookup.', 'red')
+      );
+    }
+    return {
+      ok,
+      normalized,
+      kindLabel,
+      parts: { raw, normalized, token, compact: tokenCompact, routePrefix, digitTokens, primaryDigits, routeShape, currentShape, bic: bicMatch ? { institution: bicMatch[1], country: bicMatch[2], location: bicMatch[3], branch: bicMatch[4] || '' } : null, aba, repeatedPlaceholder },
+      slices: domainSlices.concat(baseSlices),
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(`${kindLabel} evidence`, accountEnvelopeOk, 'Banking token, account digits, or banking vocabulary detected.', 'Bank/account evidence needs more local structure.'),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder banking value rejected.', 'Repeated placeholders should not pass.'),
+        statusCheck('Domain replay', bicOk && statementOk && mandateOk, `${kindLabel} browser-checkable banking replay passed.`, `${kindLabel} shape or workflow evidence needs review.`),
+        statusCheck('Official boundary', true, 'No bank, account, ownership, beneficiary, balance, sanctions, or settlement lookup is made.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildBankAccountWorkflowResult(suite, tool, input, baseResult) {
+    if (!isBankAccountWorkflowTool(tool)) return null;
+    const parsed = buildBankAccountWorkflowParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const family = parsed.kindLabel.toLowerCase();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? `${parsed.kindLabel} local banking evidence verified` : `${parsed.kindLabel} banking evidence needs review`}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${family} evidence was parsed locally with routing/account anatomy, masking, fixture shape, and bank/provider boundary output.`
+        : `${suite.country.name} ${family} needs review; compare routing/account evidence, placeholder guard, and domain replay checks.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${parsed.kindLabel} banking anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for bank-account fixtures, routing/debug handoff, masking, and reconciliation tests.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Parser-normalized banking value for forms, imports, and fixtures.'),
+        fieldSlice('banking token', parsed.parts.token || 'not detected', 'Extracted account, routing, BIC, mandate, or statement token.'),
+        fieldSlice('masked', maskCompact(normalized), 'Log-safe banking preview.'),
+        fieldSlice('official boundary', 'offline only', 'Bank existence, account ownership, beneficiary identity, balance, sanctions, and settlement require bank/provider systems.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Banking anatomy', text: `${suite.country.name} ${family} inputs are split into routing, branch, account, BIC, mandate, statement, and masking evidence where visible.` },
+        { title: 'Browser-only replay', text: 'Shape checks, BIC country comparison, ABA checksum replay when visible, masking, sample comparison, and JSON export run locally.' },
+        { title: 'Fixture safety', text: 'Use these values for UI, import, reconciliation, bank-file, and payment fixtures; they are not live bank records.' },
+        { title: 'Official boundary', text: 'Account ownership, bank participation, beneficiary match, balance, sanctions screening, and settlement state remain provider/bank checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized banking evidence for fixtures.', 'Use masked previews in tickets and logs.', 'Keep live ownership and settlement checks in bank/provider systems.']
+        : ['Compare against the valid sample.', 'Check routing/account length, BIC country, visible separators, and repeated placeholders.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind: parsed.kindLabel,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isLocaleDateCurrencyTool(tool) {
+    const id = text(tool && tool.id).toLowerCase();
+    const kind = text(tool && tool.kind).toLowerCase();
+    const topic = `${id} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (/iban|bank-account|payment|invoice|tax|passport|mrz|vehicle|customs|postal|phone|document|address/.test(id)) return false;
+    if (/locale-number|currency-decimal|date-locale|calendar-week|timezone-business-hours|holiday-calendar|number-parser|decimal-formatter|currency-formatter|date-formatter/.test(id)) return true;
+    return (kind === 'date' || kind === 'amount' || kind === 'currency') && /locale|currency|decimal|date|calendar|timezone|week|business[- ]?hours/.test(topic);
+  }
+
+  function localeDateCurrencyKind(tool) {
+    const id = text(tool && tool.id).toLowerCase();
+    const topic = `${id} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (/currency|decimal|amount/.test(topic)) return 'Currency / decimal';
+    if (/locale-number|number-parser/.test(topic)) return 'Locale number';
+    if (/calendar-week|week/.test(topic)) return 'Calendar week';
+    if (/timezone|business[- ]?hours|holiday/.test(topic)) return 'Business time';
+    return 'Date / locale';
+  }
+
+  function extractLocaleNumber(raw) {
+    const source = text(raw).replace(/\u00a0/g, ' ');
+    const match = source.match(/[+-]?\d[\d .,'\u202f\u00a0]*(?:[,.]\d+)?/);
+    return match ? match[0].replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function parseLocaleNumber(raw) {
+    const token = extractLocaleNumber(raw);
+    const cleaned = token.replace(/[\s'\u202f\u00a0]/g, '');
+    const lastComma = cleaned.lastIndexOf(',');
+    const lastDot = cleaned.lastIndexOf('.');
+    let decimal = '';
+    if (lastComma > -1 || lastDot > -1) decimal = lastComma > lastDot ? ',' : '.';
+    const group = decimal === ',' ? (cleaned.includes('.') ? '.' : '') : decimal === '.' ? (cleaned.includes(',') ? ',' : '') : '';
+    let normalized = cleaned;
+    if (decimal) {
+      if (group) normalized = normalized.replace(new RegExp(`\\${group}`, 'g'), '');
+      normalized = normalized.replace(decimal, '.');
+    } else {
+      normalized = normalized.replace(/[,.]/g, '');
+    }
+    const numeric = /^[-+]?\d+(?:\.\d+)?$/.test(normalized) ? Number(normalized) : NaN;
+    return { token, cleaned, decimal, group, normalized, numeric, ok: token.length > 0 && Number.isFinite(numeric) };
+  }
+
+  function extractCurrencyCode(raw) {
+    const source = text(raw).toUpperCase();
+    const code = source.match(/\b[A-Z]{3}\b/);
+    if (code) return code[0];
+    const symbol = source.match(/[€$£¥₩₹₽₺₴₦₫₱₪₡₲₵₭₮₸₼]/);
+    return symbol ? symbol[0] : '';
+  }
+
+  function extractDateParts(raw) {
+    const source = text(raw);
+    const iso = source.match(/\b(20\d{2}|19\d{2})[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12]\d|3[01])\b/);
+    if (iso) return { token: iso[0], year: Number(iso[1]), month: Number(iso[2]), day: Number(iso[3]), order: 'YMD' };
+    const local = source.match(/\b(0?[1-9]|[12]\d|3[01])[-/.](0?[1-9]|1[0-2])[-/.](20\d{2}|19\d{2})\b/);
+    if (local) return { token: local[0], year: Number(local[3]), month: Number(local[2]), day: Number(local[1]), order: 'DMY' };
+    const us = source.match(/\b(0?[1-9]|1[0-2])[-/.](0?[1-9]|[12]\d|3[01])[-/.](20\d{2}|19\d{2})\b/);
+    if (us) return { token: us[0], year: Number(us[3]), month: Number(us[1]), day: Number(us[2]), order: 'MDY' };
+    return { token: '', year: 0, month: 0, day: 0, order: '' };
+  }
+
+  function isoWeekNumber(date) {
+    const target = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+    const day = target.getUTCDay() || 7;
+    target.setUTCDate(target.getUTCDate() + 4 - day);
+    const yearStart = new Date(Date.UTC(target.getUTCFullYear(), 0, 1));
+    const week = Math.ceil((((target - yearStart) / 86400000) + 1) / 7);
+    return { year: target.getUTCFullYear(), week };
+  }
+
+  function buildLocaleDateCurrencyParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const normalized = raw.replace(/\s+/g, ' ').trim();
+    const kindLabel = localeDateCurrencyKind(tool);
+    const number = parseLocaleNumber(raw);
+    const currency = extractCurrencyCode(raw);
+    const dateParts = extractDateParts(raw);
+    const dateOk = dateParts.token ? isValidDateParts(dateParts.year, dateParts.month, dateParts.day) : false;
+    const dateObj = dateOk ? new Date(Date.UTC(dateParts.year, dateParts.month - 1, dateParts.day)) : null;
+    const week = dateObj ? isoWeekNumber(dateObj) : null;
+    const hasTimezone = /\b(?:UTC|GMT|[A-Z][A-Za-z_]+\/[A-Z][A-Za-z_]+|[+-]\d{2}:?\d{2})\b/.test(raw);
+    const hasLocaleWord = /\b(locale|decimal|currency|date|calendar|week|timezone|business|hours|holiday|format|number)\b/i.test(raw);
+    const routeShape = compactShape(validSampleValue(tool));
+    const repeatedPlaceholder = /^(\d)\1{5,}$/.test(digitsOnly(raw));
+    const kindOk = kindLabel === 'Currency / decimal'
+      ? number.ok && !!currency
+      : kindLabel === 'Locale number'
+        ? number.ok
+        : kindLabel === 'Calendar week'
+          ? dateOk || /\bW(?:0?[1-9]|[1-4]\d|5[0-3])\b/i.test(raw)
+          : kindLabel === 'Business time'
+            ? dateOk || hasTimezone || /\b(?:09|9|17|5)\b/.test(raw)
+            : dateOk;
+    const ok = raw.length > 0 && kindOk && !repeatedPlaceholder;
+    const domainSlices = [];
+    if (kindLabel === 'Currency / decimal') {
+      domainSlices.push(
+        fieldSlice('amount token', number.token || 'not detected', 'Numeric amount extracted from the current input.', number.ok ? 'green' : 'red'),
+        fieldSlice('currency marker', currency || 'not detected', 'ISO currency code or visible currency symbol.'),
+        fieldSlice('decimal separator', number.decimal || 'none', 'Detected decimal separator for parser/export fixtures.'),
+        fieldSlice('canonical number', number.ok ? number.normalized : 'not detected', 'Machine-safe decimal form using dot as decimal separator.', number.ok ? 'green' : 'red')
+      );
+    } else if (kindLabel === 'Locale number') {
+      domainSlices.push(
+        fieldSlice('number token', number.token || 'not detected', 'Localized numeric token extracted from the input.', number.ok ? 'green' : 'red'),
+        fieldSlice('group separator', number.group || 'none', 'Detected thousands/grouping separator.'),
+        fieldSlice('decimal separator', number.decimal || 'none', 'Detected decimal separator.'),
+        fieldSlice('canonical number', number.ok ? number.normalized : 'not detected', 'Machine-safe numeric form for JSON/API handoff.', number.ok ? 'green' : 'red')
+      );
+    } else if (kindLabel === 'Calendar week') {
+      domainSlices.push(
+        fieldSlice('date token', dateParts.token || 'not detected', 'Date used for local calendar-week replay.', dateOk ? 'green' : 'red'),
+        fieldSlice('parsed order', dateParts.order || 'not detected', 'Detected date component order.'),
+        fieldSlice('ISO week replay', week ? `${week.year}-W${String(week.week).padStart(2, '0')}` : 'not available', 'Browser-local ISO week computation when a valid date is visible.', week ? 'green' : 'red'),
+        fieldSlice('calendar boundary', 'local only', 'Public holidays and official business calendars require local source/provider data.', 'red')
+      );
+    } else if (kindLabel === 'Business time') {
+      domainSlices.push(
+        fieldSlice('date/time token', dateParts.token || (hasTimezone ? 'timezone evidence detected' : 'not detected'), 'Date or timezone evidence for business-hours fixtures.', (dateOk || hasTimezone) ? 'green' : 'red'),
+        fieldSlice('timezone evidence', hasTimezone ? 'detected' : 'not detected', 'Timezone offset/name evidence retained for API handoff.'),
+        fieldSlice('business-hour hint', (raw.match(/\b\d{1,2}(?::\d{2})?\s*(?:AM|PM)?\b/i) || ['not detected'])[0], 'Visible local time or hour hint.'),
+        fieldSlice('holiday boundary', 'not checked', 'Official holidays, DST policy updates, and business closures require source data.', 'red')
+      );
+    } else {
+      domainSlices.push(
+        fieldSlice('date token', dateParts.token || 'not detected', 'Date extracted from the current input.', dateOk ? 'green' : 'red'),
+        fieldSlice('component order', dateParts.order || 'not detected', 'Detected date component order for parser fixtures.'),
+        fieldSlice('ISO date', dateOk ? `${dateParts.year}-${String(dateParts.month).padStart(2, '0')}-${String(dateParts.day).padStart(2, '0')}` : 'not available', 'Machine-safe ISO date export.', dateOk ? 'green' : 'red'),
+        fieldSlice('ambiguity note', dateParts.day <= 12 && dateParts.month <= 12 && dateParts.order !== 'YMD' ? 'ambiguous day/month' : 'no obvious day/month ambiguity', 'Flags values that can flip between DMY and MDY.')
+      );
+    }
+    return {
+      ok,
+      normalized,
+      kindLabel,
+      parts: { raw, normalized, number, currency, dateParts, week, hasTimezone, routeShape, repeatedPlaceholder },
+      slices: domainSlices.concat([
+        fieldSlice('route sample shape', routeShape || 'not detected', 'Letter/digit/separator shape inferred from the route success sample.'),
+        fieldSlice('locale vocabulary', hasLocaleWord ? 'detected' : 'not detected', 'Local date, calendar, number, currency, or timezone vocabulary.'),
+        fieldSlice('masked preview', maskCompact(normalized || raw), 'Log-safe locale payload preview.'),
+        fieldSlice('official boundary', 'offline only', 'Legal tender status, exchange rates, holidays, DST policy, and business opening state require current source/provider data.', 'red')
+      ]),
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(`${kindLabel} evidence`, kindOk, `${kindLabel} browser-checkable evidence detected.`, `${kindLabel} evidence needs a valid date, number, currency, week, or timezone hint.`),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder numeric value rejected.', 'Repeated numeric placeholders should not pass.'),
+        statusCheck('Official boundary', true, 'No exchange-rate, holiday, legal-tender, DST-policy, or opening-hours lookup is made.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildLocaleDateCurrencyResult(suite, tool, input, baseResult) {
+    if (!isLocaleDateCurrencyTool(tool)) return null;
+    const parsed = buildLocaleDateCurrencyParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const family = parsed.kindLabel.toLowerCase();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? `${parsed.kindLabel} local evidence verified` : `${parsed.kindLabel} evidence needs review`}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${family} evidence was parsed locally with separator/date anatomy, machine-safe exports, ambiguity hints, and official-boundary output.`
+        : `${suite.country.name} ${family} needs review; compare date/number/currency tokens, ambiguity, and placeholder guard.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${parsed.kindLabel} locale anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for parser tests, localized forms, import/export fixtures, and API handoff.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Parser-normalized locale value for forms, imports, and fixtures.'),
+        fieldSlice('machine number', parsed.parts.number && parsed.parts.number.ok ? parsed.parts.number.normalized : 'not available', 'Canonical number when the input exposes one.'),
+        fieldSlice('ISO date/week', parsed.parts.week ? `${parsed.parts.week.year}-W${String(parsed.parts.week.week).padStart(2, '0')}` : parsed.parts.dateParts && parsed.parts.dateParts.token ? parsed.parts.dateParts.token : 'not available', 'Machine-safe date/week hint when visible.'),
+        fieldSlice('official boundary', 'offline only', 'Exchange rates, legal tender status, holidays, DST policy, and opening state require current source/provider data.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Locale anatomy', text: `${suite.country.name} ${family} inputs are split into date, number, separator, currency, week, and timezone evidence where visible.` },
+        { title: 'Browser-only replay', text: 'Separator detection, canonical number export, date parsing, ISO week replay, ambiguity flags, masking, and JSON export run locally.' },
+        { title: 'Fixture safety', text: 'Use these values for UI, import, CSV, API, accounting, and localization fixtures; they are not live exchange-rate or holiday records.' },
+        { title: 'Official boundary', text: 'Exchange rates, legal tender status, holidays, DST policy updates, and live business openings remain source/provider checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized locale evidence for fixtures.', 'Use canonical number/date fields in API tests.', 'Keep source-backed exchange-rate and holiday checks outside this browser parser.']
+        : ['Compare against the valid sample.', 'Check separators, date order, currency marker, and repeated placeholders.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind: parsed.kindLabel,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isDeveloperDataWorkflowTool(tool) {
+    const id = text(tool && tool.id).toLowerCase();
+    const kind = text(tool && tool.kind).toLowerCase();
+    if (/iban|bank-account|payment|invoice-number|e-invoic|tax-id|tax-rate|tax-return|vat|eori|passport-mrz|mrz-passport|vehicle|vin|phone|postal|address-normalizer|currency|date-locale|calendar|locale-number/.test(id)) return false;
+    if (/csv-locale|json-fixture|api-payload|data-quality|form-field|integration-smoke|regex-pack|personal-data-fixture|accessibility-locale-copy|support-ticket-scrubber|pii-masker|privacy-redaction|document-ocr|slug-normalizer|form-autofill|webhook-local-payload|json-schema|openapi-country|graphql-input|sql-seed|test-case-matrix|data-retention|ecommerce-checkout|shipping-label/.test(id)) return true;
+    return ['csv', 'fixture', 'payload', 'dataquality', 'form', 'regex', 'privacy', 'ocr', 'slug', 'accessibility', 'developer'].includes(kind);
+  }
+
+  function developerDataWorkflowKind(tool) {
+    const id = text(tool && tool.id).toLowerCase();
+    const topic = `${id} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (/csv|delimiter|row|header/.test(topic)) return 'CSV / import';
+    if (/json-fixture|json-schema|webhook|payload|api|openapi|graphql/.test(topic)) return 'API / JSON payload';
+    if (/regex|slug/.test(topic)) return 'Pattern / slug';
+    if (/privacy|pii|redaction|scrubber|personal-data|data-retention/.test(topic)) return 'Privacy / redaction';
+    if (/ocr|document-ocr/.test(topic)) return 'OCR cleanup';
+    if (/form|autofill|accessibility|label/.test(topic)) return 'Form / accessibility';
+    if (/sql|seed|test-case|matrix|fixture/.test(topic)) return 'Fixture / test data';
+    return 'Data quality';
+  }
+
+  function parseJsonLike(raw) {
+    const source = text(raw).trim();
+    if (!source || !/^[\[{]/.test(source)) return { present: false, ok: false, type: 'text', keys: [], error: '' };
+    try {
+      const parsed = JSON.parse(source);
+      const keys = Array.isArray(parsed)
+        ? Object.keys(parsed[0] || {})
+        : parsed && typeof parsed === 'object'
+          ? Object.keys(parsed)
+          : [];
+      return { present: true, ok: true, type: Array.isArray(parsed) ? 'array' : typeof parsed, keys: keys.slice(0, 12), error: '', size: source.length };
+    } catch (error) {
+      const keyMatches = [...source.matchAll(/"([^"]+)"\s*:/g)].map((match) => match[1]);
+      return { present: true, ok: false, type: 'invalid json', keys: keyMatches.slice(0, 12), error: shortValue(error && error.message, 80), size: source.length };
+    }
+  }
+
+  function parseCsvLike(raw) {
+    const source = text(raw).trim();
+    const lines = source.split(/\r?\n/).filter((line) => line.trim().length);
+    const candidates = [',', ';', '\t', '|'];
+    let delimiter = '';
+    let bestScore = 0;
+    candidates.forEach((candidate) => {
+      const score = lines.slice(0, 5).reduce((total, line) => total + line.split(candidate).length - 1, 0);
+      if (score > bestScore) {
+        bestScore = score;
+        delimiter = candidate;
+      }
+    });
+    const delimiterLabel = delimiter === '\t' ? 'tab' : delimiter || 'not detected';
+    const headers = delimiter && lines[0] ? lines[0].split(delimiter).map((item) => item.trim()).filter(Boolean).slice(0, 12) : [];
+    const width = delimiter && lines[0] ? lines[0].split(delimiter).length : 0;
+    const rowsOk = !delimiter || lines.slice(1, 12).every((line) => line.split(delimiter).length === width);
+    return { present: lines.length > 0, delimiter, delimiterLabel, rows: lines.length, headers, width, rowsOk, sampleLine: lines[0] || '' };
+  }
+
+  function extractFieldKeys(raw) {
+    const source = text(raw);
+    const json = parseJsonLike(source);
+    const csv = parseCsvLike(source);
+    const labelled = [...source.matchAll(/\b([A-Za-z][A-Za-z0-9_-]{2,32})\s*[:=]/g)].map((match) => match[1]);
+    const words = [...source.matchAll(/\b(?:field|key|column|header|label|name)\s+([A-Za-z][A-Za-z0-9_-]{2,32})\b/gi)].map((match) => match[1]);
+    return Array.from(new Set([].concat(json.keys || [], csv.headers || [], labelled, words))).slice(0, 12);
+  }
+
+  function safeFixtureFor(suite, tool, keys) {
+    const base = keys.length ? keys : ['country', 'locale', 'value', 'reference'];
+    const fixture = {};
+    base.slice(0, 8).forEach((key, index) => {
+      const clean = text(key).replace(/[^A-Za-z0-9_]/g, '_') || `field_${index + 1}`;
+      fixture[clean] = index === 0 ? suite.country.slug : index === 1 ? currentLocale() : `${tool.code || 'VAL'}_${String(index + 1).padStart(2, '0')}`;
+    });
+    fixture._fixture = true;
+    fixture._officialBoundary = 'offline only';
+    return fixture;
+  }
+
+  function buildDeveloperDataWorkflowParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const normalized = raw.replace(/\s+/g, ' ').trim();
+    const kindLabel = developerDataWorkflowKind(tool);
+    const json = parseJsonLike(raw);
+    const csv = parseCsvLike(raw);
+    const keys = extractFieldKeys(raw);
+    const lineCount = raw ? raw.split(/\r?\n/).length : 0;
+    const routeShape = compactShape(validSampleValue(tool));
+    const hasDevWord = /\b(csv|json|api|payload|schema|field|form|regex|slug|fixture|test|matrix|privacy|pii|redact|scrub|ocr|label|accessibility|webhook|graphql|openapi|sql)\b/i.test(raw);
+    const privacySignals = raw.match(/\b(?:email|phone|name|address|dob|birth|passport|account|token|secret|ssn|id)\b/gi) || [];
+    const hasStructure = json.present || csv.delimiter || keys.length > 0 || lineCount > 1 || hasDevWord;
+    const repeatedPlaceholder = /^([A-Z0-9])\1{5,}$/i.test(alnumOnly(raw));
+    const jsonOk = !json.present || json.ok;
+    const csvOk = !csv.delimiter || (csv.headers.length > 0 && csv.rowsOk);
+    const regexOk = kindLabel !== 'Pattern / slug' || /[A-Za-z0-9]/.test(raw);
+    const privacyOk = kindLabel !== 'Privacy / redaction' || raw.length >= 4;
+    const ok = raw.length > 0 && hasStructure && jsonOk && csvOk && regexOk && privacyOk && !repeatedPlaceholder;
+    const fixture = safeFixtureFor(suite, tool, keys);
+    const domainSlices = [];
+    if (kindLabel === 'CSV / import') {
+      domainSlices.push(
+        fieldSlice('delimiter', csv.delimiterLabel, 'Detected CSV delimiter for import fixtures.', csv.delimiter ? 'green' : 'red'),
+        fieldSlice('headers', csv.headers.length ? csv.headers.join(', ') : 'not detected', 'Header columns extracted from the first row.'),
+        fieldSlice('row count', String(csv.rows), 'Non-empty CSV-like rows detected.'),
+        fieldSlice('row width', csv.width ? `${csv.width} columns / ${csv.rowsOk ? 'consistent' : 'review'}` : 'not available', 'Checks whether sample rows keep the same column count.', csv.rowsOk ? 'green' : 'red')
+      );
+    } else if (kindLabel === 'API / JSON payload') {
+      domainSlices.push(
+        fieldSlice('payload type', json.present ? json.type : 'text payload', 'JSON validity/type when the payload is JSON-like.', !json.present || json.ok ? 'green' : 'red'),
+        fieldSlice('keys', keys.length ? keys.join(', ') : 'not detected', 'Top-level keys, headers, or labelled fields extracted locally.'),
+        fieldSlice('payload size', String(raw.length), 'Character count for fixture/import tests.'),
+        fieldSlice('JSON error', json.error || 'none', 'Parser error if JSON-like input is malformed.', json.error ? 'red' : 'green')
+      );
+    } else if (kindLabel === 'Privacy / redaction') {
+      domainSlices.push(
+        fieldSlice('sensitive hints', privacySignals.length ? Array.from(new Set(privacySignals.map((item) => item.toLowerCase()))).join(', ') : 'not detected', 'PII/secret-like vocabulary detected for scrubber tests.'),
+        fieldSlice('masked preview', maskCompact(normalized), 'Support-safe preview for tickets and logs.'),
+        fieldSlice('field keys', keys.length ? keys.join(', ') : 'not detected', 'Fields to include in privacy review fixtures.'),
+        fieldSlice('privacy boundary', 'local only', 'Legal basis, retention policy, and production data classification remain governance checks.', 'red')
+      );
+    } else if (kindLabel === 'Pattern / slug') {
+      const slug = normalized.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      domainSlices.push(
+        fieldSlice('slug preview', slug || 'not detected', 'ASCII slug generated from the local input.'),
+        fieldSlice('pattern tokens', keys.length ? keys.join(', ') : alnumOnly(raw).slice(0, 24) || 'not detected', 'Tokens useful for regex/slug fixtures.'),
+        fieldSlice('regex boundary', 'browser syntax only', 'Business acceptance and localization policy are product/source checks.', 'red')
+      );
+    } else if (kindLabel === 'OCR cleanup') {
+      domainSlices.push(
+        fieldSlice('line count', String(lineCount), 'OCR/source text line count.'),
+        fieldSlice('field candidates', keys.length ? keys.join(', ') : 'not detected', 'Label-like fields detected in OCR text.'),
+        fieldSlice('cleanup preview', shortValue(normalized, 90) || 'not detected', 'Whitespace-normalized OCR text.'),
+        fieldSlice('authenticity boundary', 'not checked', 'Document authenticity and source image quality require separate review.', 'red')
+      );
+    } else if (kindLabel === 'Form / accessibility') {
+      domainSlices.push(
+        fieldSlice('field keys', keys.length ? keys.join(', ') : 'not detected', 'Detected form fields, labels, or keys.'),
+        fieldSlice('label evidence', /\blabel|aria|placeholder|required|autocomplete\b/i.test(raw) ? 'detected' : 'not detected', 'Accessibility/form vocabulary detected.'),
+        fieldSlice('fixture JSON', JSON.stringify(fixture), 'Safe local field fixture for UI tests.'),
+        fieldSlice('accessibility boundary', 'local lint only', 'Assistive-tech behavior still needs browser/device testing.', 'red')
+      );
+    } else {
+      domainSlices.push(
+        fieldSlice('field keys', keys.length ? keys.join(', ') : 'not detected', 'Detected local data-quality fields.'),
+        fieldSlice('record shape', json.present ? json.type : csv.delimiter ? `CSV ${csv.width || '?'} columns` : `${lineCount} lines`, 'Payload/import shape summary.'),
+        fieldSlice('fixture JSON', JSON.stringify(fixture), 'Safe generated fixture for parser/import tests.'),
+        fieldSlice('quality boundary', 'local only', 'Completeness, source freshness, and production truth require source systems.', 'red')
+      );
+    }
+    return {
+      ok,
+      normalized,
+      kindLabel,
+      parts: { raw, normalized, json, csv, keys, lineCount, routeShape, privacySignals: Array.from(new Set(privacySignals)), fixture, repeatedPlaceholder },
+      slices: domainSlices.concat([
+        fieldSlice('route sample shape', routeShape || 'not detected', 'Letter/digit/separator shape inferred from the route success sample.'),
+        fieldSlice('developer handoff', keys.length ? `${keys.length} keys` : `${lineCount} lines`, 'Compact handoff summary for fixtures and test data.'),
+        fieldSlice('masked preview', maskCompact(normalized || raw), 'Log-safe developer payload preview.'),
+        fieldSlice('official boundary', 'offline only', 'Source truth, production data classification, legal acceptance, and accessibility conformance need source/provider review.', 'red')
+      ]),
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a payload, CSV, field list, or fixture sample.'),
+        statusCheck(`${kindLabel} evidence`, hasStructure, 'Developer data structure, keys, rows, payload, or workflow vocabulary detected.', 'Developer data evidence needs keys, rows, JSON, CSV, or workflow vocabulary.'),
+        statusCheck('JSON/CSV replay', jsonOk && csvOk, 'JSON/CSV browser replay passed or was not required.', 'JSON parse or CSV row-width evidence needs review.'),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder developer payload rejected.', 'Repeated placeholders should not pass.'),
+        statusCheck('Official boundary', true, 'No source truth, legal classification, production retention, or full accessibility audit is claimed.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildDeveloperDataWorkflowResult(suite, tool, input, baseResult) {
+    if (!isDeveloperDataWorkflowTool(tool)) return null;
+    const parsed = buildDeveloperDataWorkflowParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const family = parsed.kindLabel.toLowerCase();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? `${parsed.kindLabel} local developer evidence verified` : `${parsed.kindLabel} developer evidence needs review`}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${family} evidence was parsed locally with keys, rows, payload shape, safe fixture output, masking, and source-boundary notes.`
+        : `${suite.country.name} ${family} needs review; compare keys, JSON/CSV shape, placeholder guard, and privacy/source boundaries.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${parsed.kindLabel} developer anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for imports, fixtures, payload QA, privacy scrubbing, form tests, and developer handoff.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Whitespace-normalized developer payload for fixtures and handoff.'),
+        fieldSlice('keys', parsed.parts.keys.length ? parsed.parts.keys.join(', ') : 'not available', 'Extracted fields/headers/keys.'),
+        fieldSlice('safe fixture', JSON.stringify(parsed.parts.fixture), 'Generated local fixture with no live identity/status claim.'),
+        fieldSlice('official boundary', 'offline only', 'Source truth, data classification, legal acceptance, and full accessibility conformance require source/provider review.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Developer anatomy', text: `${suite.country.name} ${family} inputs are split into keys, headers, rows, payload type, privacy hints, fixture output, and source-boundary evidence where visible.` },
+        { title: 'Browser-only replay', text: 'JSON parsing, CSV delimiter/row checks, key extraction, slug/pattern previews, masking, and fixture JSON generation run locally.' },
+        { title: 'Fixture safety', text: 'Generated fixtures are structural developer samples, not real people, companies, addresses, government forms, or production records.' },
+        { title: 'Official boundary', text: 'Production source truth, legal classification, retention policy, regulatory acceptance, and accessibility conformance remain source/provider checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy the safe fixture JSON for tests.', 'Use extracted keys to wire import/API assertions.', 'Keep production truth and compliance decisions in source systems.']
+        : ['Compare against the valid sample.', 'Fix JSON/CSV shape, add field keys, or use clear fixture vocabulary.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind: parsed.kindLabel,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
+  function isPaymentInvoiceWorkflowTool(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    if (['paymentref', 'payment', 'remittance', 'invoice', 'einvoice', 'procurement'].includes(kind)) return true;
+    const haystack = `${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (/iban[- ]?generator|iban[- ]?validator|tax[- ]?rate|tax[- ]?return/.test(haystack)) return false;
+    return /\b(payment[- ]?reference|payment[- ]?ref|remittance|invoice|e[- ]?invoice|procurement|purchase[- ]?order|po[- ]?number|tender|rfp|rfq)\b/.test(haystack);
+  }
+
+  function paymentInvoiceWorkflowKind(tool) {
+    const kind = text(tool && tool.kind).toLowerCase();
+    const haystack = `${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.summary || ''}`.toLowerCase();
+    if (kind === 'einvoice' || /e[- ]?invoice|peppol|ubl/.test(haystack)) return 'E-invoice';
+    if (kind === 'invoice' || /invoice/.test(haystack)) return 'Invoice';
+    if (kind === 'remittance' || /remittance/.test(haystack)) return 'Remittance';
+    if (kind === 'procurement' || /procurement|purchase[- ]?order|\bpo[- ]?number\b|tender|rfp|rfq/.test(haystack)) return 'Procurement';
+    if (kind === 'payment' || kind === 'paymentref' || /payment/.test(haystack)) return 'Payment reference';
+    return 'Workflow reference';
+  }
+
+  function workflowPayloadType(raw) {
+    const source = text(raw).trim();
+    if (/^\s*[\[{]/.test(source) || /"[^"]+"\s*:/.test(source)) return 'JSON-like payload';
+    if (/<[A-Z][A-Z0-9:_-]*(?:\s|>)/i.test(source)) return 'XML-like payload';
+    if (/PEPPOL|UBL|INVOICE/i.test(source)) return 'E-invoice text';
+    if (source.includes('\n')) return 'Multi-line text';
+    return 'Single-line text';
+  }
+
+  function workflowAmountCurrency(raw) {
+    const source = text(raw).toUpperCase();
+    const match = source.match(/\b(?:[A-Z]{3}\s*)?\d[\d,. ]{1,15}(?:\s*[A-Z]{3})?\b/);
+    if (!match) return '';
+    const token = match[0].replace(/\s+/g, ' ').trim();
+    return /\d/.test(token) ? token : '';
+  }
+
+  function workflowDateHint(raw) {
+    const source = text(raw);
+    const match = source.match(/\b(?:20\d{2}|19\d{2})[-/.](?:0?[1-9]|1[0-2])[-/.](?:0?[1-9]|[12]\d|3[01])\b|\b(?:0?[1-9]|[12]\d|3[01])[-/.](?:0?[1-9]|1[0-2])[-/.](?:20\d{2}|19\d{2})\b/);
+    return match ? match[0] : '';
+  }
+
+  function workflowPartyHint(raw) {
+    const source = text(raw).replace(/\s+/g, ' ').trim();
+    const labelled = source.match(/\b(?:buyer|seller|supplier|payer|payee|vendor|customer|beneficiary|account)\s*[:#-]?\s*([A-Z0-9][A-Z0-9 .,&/-]{2,40})/i);
+    if (labelled) return labelled[1].trim();
+    const iban = source.match(/\b[A-Z]{2}\d{2}[A-Z0-9]{8,30}\b/i);
+    if (iban) return iban[0].toUpperCase();
+    return '';
+  }
+
+  function extractWorkflowReference(raw, kindLabel) {
+    const source = text(raw).replace(/^wrong\s+prefix\s+[A-Z]{2}\s+/i, '').replace(/\s+/g, ' ').trim();
+    const jsonId = source.match(/["'](?:invoiceNumber|invoiceNo|invoiceId|id|reference|paymentReference|poNumber)["']\s*:\s*["']([^"']{3,40})["']/i);
+    if (jsonId) return jsonId[1].trim();
+    const xmlId = source.match(/<(?:cbc:)?(?:ID|InvoiceNumber|PaymentID|BuyerReference|OrderReference)[^>]*>([^<]{3,60})</i);
+    if (xmlId) return xmlId[1].trim();
+    const labelled = source.match(/\b(?:INV|INVOICE|FACT|FAC|RF|PAY|PMT|REM|PO|RFP|RFQ|TENDER|ORDER)\s*[:#-]?\s*([A-Z0-9][A-Z0-9/-]{2,30})\b/i);
+    if (labelled) return `${labelled[0]}`.trim();
+    const structured = source.match(/\b(?:RF\d{2}[A-Z0-9]{4,25}|INV[- ]?[A-Z0-9]{4,24}|PO[- ]?[A-Z0-9]{4,24}|RFP[- ]?[A-Z0-9]{3,22}|RFQ[- ]?[A-Z0-9]{3,22})\b/i);
+    if (structured) return structured[0].toUpperCase();
+    const token = source.match(/\b[A-Z]{1,6}[-/]?\d[A-Z0-9/-]{3,28}\b/i);
+    if (token) return token[0].toUpperCase();
+    const digitToken = source.match(/\b\d{5,24}\b/);
+    if (digitToken && kindLabel !== 'E-invoice') return digitToken[0];
+    return shortValue(source, 42);
+  }
+
+  function buildPaymentInvoiceWorkflowParsed(suite, tool, input) {
+    const raw = text(input).trim();
+    const normalized = raw.replace(/\s+/g, ' ').trim();
+    const kindLabel = paymentInvoiceWorkflowKind(tool);
+    const reference = extractWorkflowReference(raw, kindLabel);
+    const referenceCompact = alnumOnly(reference);
+    const amountCurrency = workflowAmountCurrency(raw);
+    const dateHint = workflowDateHint(raw);
+    const partyHint = workflowPartyHint(raw);
+    const payloadType = workflowPayloadType(raw);
+    const lineCount = raw ? raw.split(/\r?\n/).length : 0;
+    const routeSample = validSampleValue(tool);
+    const routeShape = compactShape(routeSample);
+    const currentShape = compactShape(reference || normalized || raw);
+    const hasWorkflowWord = /\b(payment|reference|remittance|invoice|factura|rechnung|fatura|po|order|rfp|rfq|tender|supplier|buyer|payee|payer|amount|total|currency|peppol|ubl)\b/i.test(raw);
+    const hasPayloadEvidence = /JSON-like|XML-like|E-invoice/.test(payloadType);
+    const hasAmountEvidence = !!amountCurrency && /\d/.test(amountCurrency);
+    const repeatedPlaceholder = /^([A-Z0-9])\1{5,}$/i.test(referenceCompact);
+    const referenceOk = referenceCompact.length >= 4 && referenceCompact.length <= 36 && !repeatedPlaceholder;
+    const invoiceOk = !/Invoice|E-invoice/.test(kindLabel) || referenceOk || hasPayloadEvidence || (hasAmountEvidence && hasWorkflowWord);
+    const paymentOk = !/Payment|Remittance/.test(kindLabel) || referenceOk || hasAmountEvidence || hasWorkflowWord;
+    const procurementOk = kindLabel !== 'Procurement' || /\b(PO|ORDER|RFP|RFQ|TENDER|PROCUREMENT|SUPPLIER|BUYER)\b/i.test(raw) || referenceOk;
+    const ok = raw.length > 0 && (referenceOk || hasPayloadEvidence || hasAmountEvidence || hasWorkflowWord) && invoiceOk && paymentOk && procurementOk && !repeatedPlaceholder;
+    const domainSlices = [];
+    if (kindLabel === 'E-invoice') {
+      domainSlices.push(
+        fieldSlice('payload type', payloadType, 'Browser-local payload classification for XML/JSON/text e-invoice fixtures.', hasPayloadEvidence || raw.length > 0 ? 'green' : 'red'),
+        fieldSlice('invoice/reference id', reference || 'not detected', 'Invoice, buyer reference, order reference, or payment reference extracted from the payload.', referenceOk ? 'green' : 'red'),
+        fieldSlice('tax/currency evidence', amountCurrency || 'not detected', 'Amount/currency evidence useful for e-invoice parser fixtures.'),
+        fieldSlice('schema boundary', 'not certified', 'Network delivery, Peppol access point, signature, tax clearance, and schema certification remain external.', 'red')
+      );
+    } else if (kindLabel === 'Invoice') {
+      domainSlices.push(
+        fieldSlice('invoice reference', reference || 'not detected', 'Invoice number or commercial reference token.'),
+        fieldSlice('amount/currency', amountCurrency || 'not detected', 'Total, amount, or currency evidence when visible.'),
+        fieldSlice('date hint', dateHint || 'not detected', 'Issue/due date evidence when present.'),
+        fieldSlice('fiscal boundary', 'not checked', 'Tax clearance, fiscal validity, buyer/supplier existence, and filing state require official systems.', 'red')
+      );
+    } else if (kindLabel === 'Remittance') {
+      domainSlices.push(
+        fieldSlice('remittance reference', reference || 'not detected', 'Reference or purpose token that can travel with the payment.'),
+        fieldSlice('purpose text', shortValue(normalized, 80) || 'not detected', 'Human-readable remittance/purpose line retained for handoff.'),
+        fieldSlice('amount/currency', amountCurrency || 'not detected', 'Payment amount evidence when visible.'),
+        fieldSlice('settlement boundary', 'not checked', 'Bank acceptance, settlement, beneficiary ownership, and sanction screening remain external.', 'red')
+      );
+    } else if (kindLabel === 'Procurement') {
+      domainSlices.push(
+        fieldSlice('procurement reference', reference || 'not detected', 'PO, tender, RFP/RFQ, or order reference extracted locally.'),
+        fieldSlice('buyer/supplier hint', partyHint || 'not detected', 'Counterparty evidence retained for procurement fixtures.'),
+        fieldSlice('amount/currency', amountCurrency || 'not detected', 'Budget, award, or order amount evidence when visible.'),
+        fieldSlice('award boundary', 'not checked', 'Tender award, supplier eligibility, and official procurement status remain authority checks.', 'red')
+      );
+    } else {
+      domainSlices.push(
+        fieldSlice('payment reference', reference || 'not detected', 'Payment reference token extracted for copy/paste fixtures.'),
+        fieldSlice('amount/currency', amountCurrency || 'not detected', 'Amount or ISO-currency evidence when visible.'),
+        fieldSlice('party/account hint', partyHint || 'not detected', 'Beneficiary, payer, or account hint kept as handoff context.'),
+        fieldSlice('settlement boundary', 'not checked', 'Payment acceptance, account ownership, clearing, and fraud status remain external.', 'red')
+      );
+    }
+    return {
+      ok,
+      normalized,
+      kindLabel,
+      parts: {
+        raw,
+        normalized,
+        reference,
+        amountCurrency,
+        dateHint,
+        partyHint,
+        payloadType,
+        lineCount,
+        routeShape,
+        currentShape,
+        repeatedPlaceholder,
+        hasPayloadEvidence,
+        hasAmountEvidence
+      },
+      slices: domainSlices.concat([
+        fieldSlice('route sample shape', routeShape || 'not detected', 'Letter/digit shape inferred from the route success sample.'),
+        fieldSlice('current shape', currentShape || 'not detected', 'Letter/digit shape for the extracted reference or payload.', referenceOk || hasPayloadEvidence ? 'green' : 'red'),
+        fieldSlice('line count', String(lineCount), 'Payload/message line count for import and QA fixtures.'),
+        fieldSlice('masked preview', maskCompact(normalized || reference || raw), 'Log-safe workflow preview for tickets and screenshots.'),
+        fieldSlice('official boundary', 'offline only', 'Live settlement, invoice clearance, procurement award, and registry status require official/provider systems.', 'red')
+      ]),
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck(`${kindLabel} evidence`, referenceOk || hasPayloadEvidence || hasAmountEvidence || hasWorkflowWord, 'Reference, payload, amount, or workflow vocabulary detected.', 'Workflow evidence needs a reference, payload, amount, or clear business vocabulary.'),
+        statusCheck('Placeholder guard', !repeatedPlaceholder, 'Repeated-placeholder reference rejected.', 'Repeated placeholders should not pass.'),
+        statusCheck('Domain replay', invoiceOk && paymentOk && procurementOk, `${kindLabel} browser-checkable workflow replay passed.`, `${kindLabel} workflow evidence needs review.`),
+        statusCheck('Official boundary', true, 'No settlement, fiscal clearance, e-invoice delivery, or procurement authority lookup is made.', 'No official lookup is made.')
+      ]
+    };
+  }
+
+  function buildPaymentInvoiceWorkflowResult(suite, tool, input, baseResult) {
+    if (!isPaymentInvoiceWorkflowTool(tool)) return null;
+    const parsed = buildPaymentInvoiceWorkflowParsed(suite, tool, input);
+    const status = parsed.ok ? 'success' : 'review';
+    const normalized = parsed.normalized || text(input).trim();
+    const family = parsed.kindLabel.toLowerCase();
+    const result = Object.assign({}, baseResult, {
+      status,
+      headline: `${tool.code}: ${parsed.ok ? `${parsed.kindLabel} workflow evidence verified` : `${parsed.kindLabel} workflow evidence needs review`}`,
+      detail: parsed.ok
+        ? `${suite.country.name} ${family} evidence was parsed locally with reference extraction, amount/currency hints, masking, and official-boundary output.`
+        : `${suite.country.name} ${family} needs review; compare reference, payload, amount/currency evidence, and placeholder guard.`,
+      primary: normalized,
+      normalized,
+      breakdownTitle: `${parsed.kindLabel} workflow anatomy & evidence breakdown`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for payment, invoicing, e-invoice, remittance, and procurement fixtures.`,
+      breakdown: parsed.slices,
+      checks: parsed.checks,
+      fields: [
+        fieldSlice('normalized', normalized, 'Parser-normalized workflow text for forms, imports, and fixtures.'),
+        fieldSlice('reference', parsed.parts.reference || 'not detected', 'Extracted copy/paste reference token.'),
+        fieldSlice('masked', maskCompact(normalized), 'Log-safe preview.'),
+        fieldSlice('official boundary', 'offline only', 'Live settlement, tax clearance, e-invoice delivery, and award status require official/provider systems.', 'red')
+      ],
+      qualityNotes: [
+        { title: 'Workflow anatomy', text: `${suite.country.name} ${family} inputs are split into reference, amount/currency, date, party/account, payload, and route-shape evidence when present.` },
+        { title: 'Browser-only replay', text: 'Reference extraction, payload classification, masking, sample comparison, and JSON export run locally without bank, tax, or procurement calls.' },
+        { title: 'Fixture safety', text: 'Use these values for UI, import, ERP, accounting, payment, and procurement fixtures; they are not live commercial records.' },
+        { title: 'Official boundary', text: 'Settlement, account ownership, tax clearance, e-invoice delivery, supplier status, and procurement award state remain official/provider checks.' }
+      ],
+      suggestions: parsed.ok
+        ? ['Copy normalized workflow evidence for fixtures.', 'Use the extracted reference in parser and import tests.', 'Keep masked previews in tickets, logs, and screenshots.']
+        : ['Compare against the valid sample.', 'Add a clear reference, amount/currency, payload, or workflow label.', 'Keep this as a negative fixture if the failure is intentional.']
+    });
+    result.developerJson = Object.assign({}, baseResult && baseResult.developerJson, {
+      suite: suite.suiteId,
+      tool: tool.id,
+      country: suite.country.slug,
+      kind: parsed.kindLabel,
+      normalized,
+      masked: maskCompact(normalized),
+      routeSample: validSampleValue(tool),
+      parts: parsed.parts,
+      status: result.status,
+      checks: result.checks,
+      breakdown: result.breakdown,
+      officialBoundary: 'offline only'
+    });
+    return result;
+  }
+
   function buildProfileResult(suite, tool, input, baseResult) {
     const profile = profileFor(suite);
     if (!profile) return null;
@@ -1436,25 +3724,7 @@
       parsed = profile.parseCompany.call(profile, input);
       label = profile.companyLabel || label;
     } else if (kind === 'vat' || kind === 'eori') {
-      const normalizedTax = alnumOnly(input);
-      const detectedPrefix = (normalizedTax.match(/^[A-Z]{2}/) || [''])[0];
-      const body = normalizedTax.replace(/^[A-Z]{2}U?/, '');
-      const prefixOk = /^[A-Z]{2}/.test(normalizedTax);
-      const bodyOk = /^[A-Z0-9]{6,16}$/.test(body);
-      parsed = {
-        normalized: normalizedTax || text(input).trim(),
-        ok: prefixOk && bodyOk,
-        slices: [
-          fieldSlice(kind === 'eori' ? 'EORI country prefix' : 'VAT country prefix', detectedPrefix || 'not detected', 'Country prefix / VIES or customs handoff evidence.', prefixOk ? 'green' : 'red'),
-          fieldSlice(kind === 'eori' ? 'customs body' : 'tax body', body, 'Local tax/customs identifier body retained for official handoff.'),
-          fieldSlice('local tax vocabulary', profile.taxLabel || tool.code, 'Country-local tax label used by this suite.'),
-          fieldSlice('official boundary', 'offline only', 'Tax, customs, and VIES status remain outside browser-only checks.', 'red')
-        ],
-        checks: [
-          statusCheck('Country prefix', prefixOk, 'Country prefix detected.', 'Expected country prefix.'),
-          statusCheck('Body envelope', bodyOk, 'Identifier body has a plausible local handoff shape.', 'Identifier body needs review.')
-        ]
-      };
+      parsed = buildTaxBusinessParsed(suite, tool, input, profile);
       label = profile.taxLabel || label;
     }
     if (!parsed) return null;
@@ -1494,37 +3764,50 @@
       checks: result.checks,
       breakdown: result.breakdown
     });
+    if (parsed.taxParts) {
+      result.developerJson.expectedPrefix = parsed.taxParts.expectedPrefix;
+      result.developerJson.detectedPrefix = parsed.taxParts.detectedPrefix;
+      result.developerJson.kind = parsed.taxParts.kind;
+      result.developerJson.masked = maskCompact(result.normalized);
+      result.developerJson.officialBoundary = 'offline only';
+    }
     return result;
   }
 
   function buildIbanGeneratorResult(suite, tool, input, intent) {
     const labels = labelsFor(suite);
     const raw = text(input || (tool.samples && tool.samples[0] && tool.samples[0].value) || '').trim();
-    if (intent === 'review' || intentionalReviewFixture(raw)) {
-      return forceIntentionalReview(suite, tool, raw, defaultAnalyze(tool, raw), 'review');
-    }
-    const compact = alnumOnly(raw);
+    const intentionalReview = intent === 'review' || intentionalReviewFixture(raw);
+    const wrongPrefixMatch = raw.match(/^wrong\s+prefix\s+([A-Z]{2})\s+(.+)$/i);
+    const compact = wrongPrefixMatch ? `ZZ${alnumOnly(wrongPrefixMatch[2])}` : alnumOnly(raw);
+    const profile = ibanProfileForSuite(suite);
     const country = countryCodeForSuite(suite, tool, compact);
+    const pastedCountry = compact.match(/^[A-Z]{2}/) ? compact.slice(0, 2) : '';
+    const routeCountryOk = !profile || !pastedCountry || pastedCountry === country;
     let bban = compact;
     if (country && bban.startsWith(country)) {
       bban = /^\d{2}/.test(bban.slice(2, 4)) ? bban.slice(4) : bban.slice(2);
     }
     const generated = generateIban(country, bban);
     const present = bban.length >= 4 && /^[A-Z]{2}$/.test(country);
-    const valid = present && generated.remainder === 1;
-    const grouped = generated.iban.replace(/(.{4})/g, '$1 ').trim();
-    const masked = generated.iban.length > 8 ? `${generated.iban.slice(0, 4)} ${'•••• '.repeat(Math.max(1, Math.ceil((generated.iban.length - 8) / 4))).trim()} ${generated.iban.slice(-4)}` : generated.iban;
+    const lengthOk = profile ? generated.iban.length === profile.length : generated.iban.length >= 15 && generated.iban.length <= 34;
+    const valid = present && routeCountryOk && lengthOk && generated.remainder === 1 && !intentionalReview;
+    const grouped = groupIban(generated.iban);
+    const masked = maskIban(generated.iban);
+    const profileSlices = ibanProfileSlices(generated.iban, profile);
     return {
       status: valid ? 'success' : 'review',
       headline: valid ? `${labels.ibanGenerator}: ${labels.offlinePassed}` : `${labels.ibanGenerator}: ${labels.reviewNeeded}`,
-      detail: valid ? `${suite.country.name} IBAN check digits were generated locally from BBAN/account body evidence.` : 'Enter a country code and BBAN/account body, or load a sample.',
+      detail: valid ? `${suite.country.name} IBAN check digits were generated locally from route-locked BBAN/account evidence.` : 'Review the route country, expected length, BBAN body, or selected sample intent.',
       primary: grouped,
       normalized: generated.iban,
       checks: [
-        statusCheck('Country code', /^[A-Z]{2}$/.test(country), `${country} country prefix ready.`, 'Expected a two-letter ISO country code.'),
+        statusCheck('Route country', /^[A-Z]{2}$/.test(country) && routeCountryOk, profile ? `${country} route country locked to ${suite.country.name}.` : `${country} country prefix ready.`, pastedCountry ? `${pastedCountry} does not match expected ${country}.` : 'Expected a two-letter ISO country code.'),
         statusCheck('BBAN/account body', bban.length >= 4, `${bban.length} BBAN characters detected.`, 'Provide the local account body after the country/check digits.'),
+        statusCheck('Country IBAN length', lengthOk, profile ? `${generated.iban.length}/${profile.length} characters for ${country}.` : `${generated.iban.length} characters.`, profile ? `Expected ${profile.length} characters for ${country}; got ${generated.iban.length}.` : 'Expected a normal IBAN length.'),
         statusCheck('Check digits', generated.checkDigits.length === 2, `Generated ${generated.checkDigits}.`, 'Could not generate check digits.'),
-        statusCheck('MOD-97 verification', generated.remainder === 1, 'Generated IBAN verifies to remainder 1.', `Generated remainder is ${generated.remainder}.`)
+        statusCheck('MOD-97 verification', generated.remainder === 1, 'Generated IBAN verifies to remainder 1.', `Generated remainder is ${generated.remainder}.`),
+        statusCheck('Sample intent', !intentionalReview, 'Normal generate/inspect path.', 'Intentional review fixture preserved for debugging.')
       ],
       fields: [
         fieldSlice(labels.generatedIban, grouped, 'Copy-ready grouped display.', valid ? 'green' : 'red'),
@@ -1533,14 +3816,15 @@
         fieldSlice('Masked display', masked, 'Log-safe generated preview.')
       ],
       breakdownTitle: `${tool.name} field breakdown`,
-      breakdownSummary: 'Generated IBAN slices for payment fixtures, parser tests, and MOD-97 debugging.',
+      breakdownSummary: profile ? `Generated ${suite.country.name} IBAN slices for payment fixtures, parser tests, and MOD-97 debugging.` : 'Generated IBAN slices for payment fixtures, parser tests, and MOD-97 debugging.',
       breakdown: [
         fieldSlice('country prefix', generated.country, 'Two-letter ISO country prefix.'),
         fieldSlice('generated check digits', generated.checkDigits, '98 - MOD-97(BBAN + country + 00).', valid ? 'green' : 'red'),
         fieldSlice('BBAN/account body', generated.bban, 'Country-specific account body supplied by the user.'),
+        fieldSlice('expected route length', profile ? String(profile.length) : '15-34', profile ? `${suite.country.name} IBAN profile length.` : 'Generic IBAN length range.', lengthOk ? 'green' : 'red'),
         fieldSlice('MOD-97 remainder', String(generated.remainder), 'A valid generated IBAN has remainder 1.', generated.remainder === 1 ? 'green' : 'red'),
         fieldSlice('official boundary', 'offline only', 'Generated values are structural fixtures, not live account ownership proof.', 'red')
-      ],
+      ].concat(profileSlices),
       qualityNotes: asArray(tool.qualityNotes).length ? tool.qualityNotes : [
         { title: 'Fixture only', text: 'Generated IBANs are structural fixtures unless your app binds them to real account data.' },
         { title: 'No lookup', text: 'Bank existence, account ownership, and payment acceptance are never proven in this browser.' },
@@ -1552,12 +3836,17 @@
         suite: suite.suiteId,
         tool: tool.id,
         country,
+        expectedCountry: profile ? profile.code : null,
+        expectedLength: profile ? profile.length : null,
         bban,
         checkDigits: generated.checkDigits,
         iban: generated.iban,
         grouped,
         masked,
         mod97: generated.remainder,
+        routeCountryOk,
+        lengthOk,
+        fieldSlices: profileSlices,
         generatedLocally: true,
         officialBoundary: 'offline only'
       }
@@ -1579,6 +3868,20 @@
     }
     const profileResult = buildProfileResult(suite, tool, input, result);
     if (profileResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, profileResult), intent);
+    const bankAccountWorkflowResult = buildBankAccountWorkflowResult(suite, tool, input, result);
+    if (bankAccountWorkflowResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, bankAccountWorkflowResult), intent);
+    const localeDateCurrencyResult = buildLocaleDateCurrencyResult(suite, tool, input, result);
+    if (localeDateCurrencyResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, localeDateCurrencyResult), intent);
+    const developerDataWorkflowResult = buildDeveloperDataWorkflowResult(suite, tool, input, result);
+    if (developerDataWorkflowResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, developerDataWorkflowResult), intent);
+    const documentVehicleReferenceResult = buildDocumentVehicleReferenceResult(suite, tool, input, result);
+    if (documentVehicleReferenceResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, documentVehicleReferenceResult), intent);
+    const paymentInvoiceWorkflowResult = buildPaymentInvoiceWorkflowResult(suite, tool, input, result);
+    if (paymentInvoiceWorkflowResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, paymentInvoiceWorkflowResult), intent);
+    const taxBusinessResult = buildTaxBusinessResult(suite, tool, input, result, profileFor(suite));
+    if (taxBusinessResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, taxBusinessResult), intent);
+    const contactAddressResult = buildContactAddressResult(suite, tool, input, result);
+    if (contactAddressResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, contactAddressResult), intent);
     if (!isWeakFactoryResult(result)) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, result), intent);
     const raw = text(input).trim();
     const normalized = raw.replace(/\s+/g, ' ');
@@ -1654,6 +3957,7 @@
       }
       .workbench-card.csf-shell {
         padding: clamp(1rem, 2vw, 1.35rem);
+        width: 100%;
       }
       .csf-shell * { box-sizing: border-box; }
       .csf-hero,
@@ -1667,6 +3971,15 @@
       .csf-segment,
       .csf-primary,
       .csf-samples,
+      .csf-input,
+      .csf-iban-fixture-bar,
+      .csf-tax-business-bar,
+      .csf-contact-address-bar,
+      .csf-document-reference-bar,
+      .csf-bank-account-bar,
+      .csf-locale-format-bar,
+      .csf-developer-data-bar,
+      .csf-payment-workflow-bar,
       .csf-textarea {
         min-width: 0;
         max-width: 100%;
@@ -1828,16 +4141,15 @@
       .csf-button,
       .csf-rich-tab,
       .csf-suggestion {
-        transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease, color .16s ease;
+        transition: box-shadow .16s ease, border-color .16s ease, background-color .16s ease, color .16s ease;
       }
       .csf-related-links a:hover,
       .csf-sample-button:hover,
       .csf-button:hover,
       .csf-rich-tab:hover,
       .csf-suggestion:hover {
-        transform: translateY(-1px);
         border-color: color-mix(in srgb, var(--csf-accent) 46%, var(--csf-line));
-        box-shadow: 0 10px 22px rgba(15, 23, 42, .10);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--csf-accent) 22%, transparent), 0 9px 20px rgba(15, 23, 42, .08);
       }
       .csf-related-links a:focus-visible,
       .csf-sample-button:focus-visible,
@@ -1851,7 +4163,126 @@
       .csf-button:active,
       .csf-rich-tab:active,
       .csf-suggestion:active {
-        transform: translateY(0);
+        box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--csf-accent) 28%, transparent);
+      }
+      .csf-iban-fixture-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-tax-business-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-contact-address-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-document-reference-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-payment-workflow-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-bank-account-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-locale-format-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-developer-data-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+        gap: .62rem;
+        margin: .18rem 0 .9rem;
+        width: 100%;
+      }
+      .csf-iban-fixture-bar article,
+      .csf-tax-business-bar article,
+      .csf-contact-address-bar article,
+      .csf-document-reference-bar article,
+      .csf-bank-account-bar article,
+      .csf-locale-format-bar article,
+      .csf-developer-data-bar article,
+      .csf-payment-workflow-bar article {
+        min-width: 0;
+        max-width: 100%;
+        border: 1px solid color-mix(in srgb, var(--csf-accent) 22%, var(--csf-line));
+        border-radius: .78rem;
+        background: linear-gradient(180deg, #fff, color-mix(in srgb, var(--csf-accent) 6%, #fff));
+        padding: .72rem .82rem;
+        overflow-wrap: anywhere;
+      }
+      .csf-iban-fixture-bar span,
+      .csf-tax-business-bar span,
+      .csf-contact-address-bar span,
+      .csf-document-reference-bar span,
+      .csf-bank-account-bar span,
+      .csf-locale-format-bar span,
+      .csf-developer-data-bar span,
+      .csf-payment-workflow-bar span {
+        display: block;
+        color: var(--csf-muted);
+        font-size: .66rem;
+        font-weight: 900;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .csf-iban-fixture-bar strong,
+      .csf-tax-business-bar strong,
+      .csf-contact-address-bar strong,
+      .csf-document-reference-bar strong,
+      .csf-bank-account-bar strong,
+      .csf-locale-format-bar strong,
+      .csf-developer-data-bar strong,
+      .csf-payment-workflow-bar strong {
+        display: block;
+        margin-top: .26rem;
+        color: var(--csf-ink);
+        font-size: .98rem;
+        line-height: 1.22;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+      .csf-iban-fixture-bar small,
+      .csf-tax-business-bar small,
+      .csf-contact-address-bar small,
+      .csf-document-reference-bar small,
+      .csf-bank-account-bar small,
+      .csf-locale-format-bar small,
+      .csf-developer-data-bar small,
+      .csf-payment-workflow-bar small {
+        display: block;
+        margin-top: .2rem;
+        color: var(--csf-muted);
+        font-size: .76rem;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+        word-break: normal;
       }
       .csf-presets-grid {
         display: grid;
@@ -1913,7 +4344,17 @@
         background: #fffbeb;
         color: #92400e;
       }
-      .csf-input { padding: 1.05rem 0; }
+      .csf-input {
+        width: 100%;
+        padding: 1.05rem 0;
+      }
+      .csf-input-iban-generator .csf-textarea {
+        min-height: 6.25rem;
+        font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+        font-size: .98rem;
+        line-height: 1.55;
+        letter-spacing: 0;
+      }
       .csf-batch {
         margin-top: .9rem;
         border: 1px solid var(--csf-line);
@@ -2326,6 +4767,43 @@
         background: color-mix(in srgb, var(--csf-review) 9%, #fff);
         color: var(--csf-review);
       }
+      .csf-traps {
+        padding: .95rem 1rem;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, .045);
+      }
+      .csf-traps .csf-section-head {
+        gap: .68rem;
+        margin-bottom: .64rem;
+      }
+      .csf-traps .csf-icon {
+        min-width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .68rem;
+        font-size: .9rem;
+      }
+      .csf-traps .csf-section-head h3 {
+        font-size: .82rem;
+        letter-spacing: .09em;
+      }
+      .csf-traps .csf-section-head p {
+        margin-top: .12rem;
+        font-size: .8rem;
+        line-height: 1.35;
+        font-weight: 680;
+      }
+      .csf-trap-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .38rem .9rem;
+        margin: 0;
+        padding-left: 1.05rem;
+        color: var(--csf-muted);
+        font-size: .8rem;
+        line-height: 1.42;
+      }
+      .csf-trap-list li {
+        padding-left: .1rem;
+      }
       .csf-breakdown {
         background: linear-gradient(120deg, #fff, #f8fafc 55%, color-mix(in srgb, var(--csf-accent-2) 6%, #fff));
       }
@@ -2530,10 +5008,32 @@
         background: color-mix(in srgb, var(--csf-accent) 10%, #fff);
         color: var(--csf-accent);
       }
+      .csf-json-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin: .2rem 0 .7rem;
+      }
+      .csf-json-head span {
+        color: var(--csf-muted);
+        font-size: .7rem;
+        font-weight: 900;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
       @media (max-width: 760px) {
         .csf-hero-grid,
         .csf-context-grid { grid-template-columns: 1fr; }
         .csf-context-cards { grid-template-columns: 1fr; }
+        .csf-iban-fixture-bar { grid-template-columns: 1fr; }
+        .csf-tax-business-bar { grid-template-columns: 1fr; }
+        .csf-contact-address-bar { grid-template-columns: 1fr; }
+        .csf-document-reference-bar { grid-template-columns: 1fr; }
+        .csf-bank-account-bar { grid-template-columns: 1fr; }
+        .csf-locale-format-bar { grid-template-columns: 1fr; }
+        .csf-developer-data-bar { grid-template-columns: 1fr; }
+        .csf-payment-workflow-bar { grid-template-columns: 1fr; }
         .csf-trap-list { grid-template-columns: 1fr; }
         .csf-presets-grid { grid-template-columns: 1fr; }
         .csf-rich-grid { grid-template-columns: 1fr; }
@@ -2545,6 +5045,7 @@
         .csf-panel,
         .csf-result-card,
         .csf-quality { padding: .95rem; }
+        .csf-json-head { align-items: stretch; flex-direction: column; }
         .csf-segments { justify-content: stretch; }
         .csf-segment { width: 100%; }
       }
@@ -2701,10 +5202,21 @@
 
   function renderToolContext(suite, tool) {
     const labels = labelsFor(suite);
-    const profile = tool.contextProfile || toolContextProfile(tool);
-    const countryName = suite.country.name;
-    const firstSentence = `${tool.name} helps ${countryName} teams inspect ${profile.subject} before it moves into forms, imports, or compliance workflows.`;
-    const secondSentence = `${tool.summary} The browser-only result is useful for normalization and debugging, while ${profile.boundary} still belongs to the responsible official or source system.`;
+    const locale = currentLocale();
+    const rawProfile = tool.contextProfile || toolContextProfile(tool);
+    const profile = locale === 'en' ? rawProfile : {
+      subject: localizeRuntimePhrase(rawProfile.subject, locale),
+      usedFor: localizeRuntimePhrase(rawProfile.usedFor, locale),
+      checks: localizeRuntimePhrase(rawProfile.checks, locale),
+      boundary: localizeRuntimePhrase(rawProfile.boundary, locale)
+    };
+    const countryName = localizedCountryDisplayName(suite, locale);
+    const firstSentence = locale === 'fr'
+      ? `${tool.name} aide les équipes ${countryName} à inspecter ${profile.subject} avant l’entrée dans les formulaires, imports ou workflows de conformité.`
+      : `${tool.name} helps ${countryName} teams inspect ${profile.subject} before it moves into forms, imports, or compliance workflows.`;
+    const secondSentence = locale === 'fr'
+      ? `${tool.summary} Le résultat uniquement navigateur sert à normaliser et déboguer, tandis que ${profile.boundary} reste du ressort du système officiel ou fournisseur responsable.`
+      : `${tool.summary} The browser-only result is useful for normalization and debugging, while ${profile.boundary} still belongs to the responsible official or source system.`;
     return `
       <section class="csf-context" aria-label="${esc(labels.toolContextTitle)}">
         <div class="csf-context-grid">
@@ -2847,7 +5359,8 @@
 
   function renderIntegrationTraps(suite, tool) {
     const labels = labelsFor(suite);
-    const items = integrationTrapItems(suite, tool);
+    const locale = currentLocale();
+    const items = integrationTrapItems(suite, tool).map((item) => localizeRuntimePhrase(item, locale));
     return `
       <section class="csf-panel csf-traps" aria-label="${esc(labels.integrationTraps)}">
         <div class="csf-section-head">
@@ -2860,12 +5373,127 @@
   }
   function renderInput(suite, tool) {
     const labels = labelsFor(suite);
+    const isIbanGen = isIbanGeneratorTool(tool);
+    const isBankAccount = !isIbanGen && isBankAccountWorkflowTool(tool);
+    const isLocaleFormat = !isIbanGen && !isBankAccount && isLocaleDateCurrencyTool(tool);
+    const isDeveloperData = !isIbanGen && !isBankAccount && !isLocaleFormat && isDeveloperDataWorkflowTool(tool);
+    const isDocumentReference = !isIbanGen && !isBankAccount && !isLocaleFormat && !isDeveloperData && isDocumentVehicleReferenceTool(tool);
+    const isPaymentWorkflow = !isIbanGen && !isBankAccount && !isLocaleFormat && !isDeveloperData && !isDocumentReference && isPaymentInvoiceWorkflowTool(tool);
+    const isTaxBiz = !isIbanGen && !isBankAccount && !isLocaleFormat && !isDeveloperData && !isDocumentReference && !isPaymentWorkflow && isTaxBusinessTool(tool);
+    const isContactAddress = !isIbanGen && !isLocaleFormat && !isTaxBiz && isContactAddressTool(tool);
+    const profile = isIbanGen ? ibanProfileForSuite(suite) : null;
+    const routeCountry = isIbanGen ? countryCodeForSuite(suite, tool, '') : '';
+    const routePrefix = routeIso2(suite) || sampleCountryPrefix(tool);
+    const taxProfile = isTaxBiz ? profileFor(suite) : null;
+    const taxLabel = isTaxBiz
+      ? (text(tool.kind).toLowerCase() === 'eori'
+        ? 'EORI / customs'
+        : (text(tool.kind).toLowerCase() === 'company' || text(tool.kind).toLowerCase() === 'register')
+          ? (taxProfile && taxProfile.companyLabel) || 'company registry'
+          : (taxProfile && taxProfile.taxLabel) || tool.code || 'tax/VAT')
+      : '';
+    const contactKind = text(tool.kind).toLowerCase();
+    const contactSample = isContactAddress ? validSampleValue(tool) : '';
+    const contactMain = contactKind === 'phone'
+      ? (sampleCallingCode(tool) ? `+${sampleCallingCode(tool)}` : 'sample')
+      : (postalShape(postalToken(contactSample)) || 'sample');
+    const contactLabel = contactKind === 'phone' ? 'Calling code' : contactKind === 'postal' ? 'Postal shape' : 'Address sample';
+    const documentKind = isDocumentReference ? documentVehicleReferenceKind(tool) : '';
+    const documentSample = isDocumentReference ? validSampleValue(tool) : '';
+    const documentToken = isDocumentReference ? extractPrimaryToken(documentSample, documentKind) : '';
+    const documentShape = isDocumentReference ? routeShapeSample(tool) : '';
+    const bankKind = isBankAccount ? bankAccountWorkflowKind(tool) : '';
+    const bankSample = isBankAccount ? validSampleValue(tool) : '';
+    const bankToken = isBankAccount ? extractBankingToken(bankSample, bankKind) : '';
+    const bankShape = isBankAccount ? structuredShapePreview(bankToken || bankSample, bankToken || bankSample, 'account text') : '';
+    const localeKind = isLocaleFormat ? localeDateCurrencyKind(tool) : '';
+    const localeSample = isLocaleFormat ? validSampleValue(tool) : '';
+    const localeNumber = isLocaleFormat ? parseLocaleNumber(localeSample) : null;
+    const localeDate = isLocaleFormat ? extractDateParts(localeSample) : null;
+    const localePrimary = isLocaleFormat
+      ? (localeNumber && localeNumber.token) || (localeDate && localeDate.token) || shortValue(localeSample, 24)
+      : '';
+    const localeShape = isLocaleFormat ? structuredShapePreview(localePrimary || localeSample, localePrimary || localeSample, 'locale sample') : '';
+    const developerKind = isDeveloperData ? developerDataWorkflowKind(tool) : '';
+    const developerSample = isDeveloperData ? validSampleValue(tool) : '';
+    const developerKeys = isDeveloperData ? extractFieldKeys(developerSample) : [];
+    const developerShape = isDeveloperData ? shortValue(developerKeys.join(', ') || developerSample, 28) : '';
+    const paymentKind = isPaymentWorkflow ? paymentInvoiceWorkflowKind(tool) : '';
+    const paymentSample = isPaymentWorkflow ? validSampleValue(tool) : '';
+    const paymentReference = isPaymentWorkflow ? extractWorkflowReference(paymentSample, paymentKind) : '';
+    const paymentShape = isPaymentWorkflow ? structuredShapePreview(paymentReference || paymentSample, paymentReference || paymentSample, 'reference text') : '';
+    const locale = currentLocale();
+    const L = (value) => localizeRuntimePhrase(value, locale);
+    const countryName = localizedCountryDisplayName(suite, locale);
     return `
-      <section class="csf-input">
+      <section class="csf-input ${isIbanGen ? 'csf-input-iban-generator' : ''} ${isTaxBiz ? 'csf-input-tax-business' : ''} ${isContactAddress ? 'csf-input-contact-address' : ''} ${isDocumentReference ? 'csf-input-document-reference' : ''} ${isBankAccount ? 'csf-input-bank-account' : ''} ${isLocaleFormat ? 'csf-input-locale-format' : ''} ${isDeveloperData ? 'csf-input-developer-data' : ''} ${isPaymentWorkflow ? 'csf-input-payment-workflow' : ''}">
         <div class="csf-row">
-          <h2>${esc(tool.actionLabel || labels.validate)}</h2>
+          <h2>${esc(localizedActionLabel(tool.actionLabel, labels))}</h2>
           <span class="csf-pill" data-state="waiting" data-csf-state>${esc(labels.waiting)}</span>
         </div>
+        ${isIbanGen ? `
+          <div class="csf-iban-fixture-bar" aria-label="${esc(labels.ibanGenerator)} route context">
+            <article><span>${esc(L('Route country'))}</span><strong>${esc(routeCountry || countryName)}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Expected length'))}</span><strong>${esc(profile ? profile.length : '15-34')}</strong><small>${esc(L('IBAN characters'))}</small></article>
+            <article><span>${esc(L('Generate mode'))}</span><strong>${esc(L('Fresh fixture'))}</strong><small>${esc(L('New local value every click'))}</small></article>
+          </div>
+        ` : ''}
+        ${isTaxBiz ? `
+          <div class="csf-tax-business-bar" aria-label="${esc(tool.code || 'Tax')} route context">
+            <article><span>${esc(L('Route prefix'))}</span><strong>${esc(routePrefix || countryName)}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Local label'))}</span><strong>${esc(L(taxLabel))}</strong><small>${esc(L(tool.kind || tool.category || 'tax'))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Shape + checksum'))}</strong><small>${esc(L('When local parser exists'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('Offline only'))}</strong><small>${esc(L('No registry status claim'))}</small></article>
+          </div>
+        ` : ''}
+        ${isContactAddress ? `
+          <div class="csf-contact-address-bar" aria-label="${esc(tool.code || 'Contact')} route context">
+            <article><span>${esc(L(contactLabel))}</span><strong>${esc(contactMain)}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Local sample'))}</span><strong>${esc(shortValue(contactSample, 24))}</strong><small>${esc(L('Shape source'))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Format + mask'))}</strong><small>${esc(L('Browser-local only'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No live proof'))}</strong><small>${esc(L('Carrier/postal/geocode external'))}</small></article>
+          </div>
+        ` : ''}
+        ${isDocumentReference ? `
+          <div class="csf-document-reference-bar" aria-label="${esc(tool.code || 'Document')} route context">
+            <article><span>${esc(L('Family'))}</span><strong>${esc(L(documentKind))}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Route shape'))}</span><strong>${esc(structuredShapePreview(documentShape || documentToken || documentSample, documentToken || documentSample, 'document token'))}</strong><small>${esc(shortValue(documentToken || documentSample, 24))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Token + anatomy'))}</strong><small>${esc(L('VIN/MRZ when available'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No live proof'))}</strong><small>${esc(L('Registry/carrier/authority external'))}</small></article>
+          </div>
+        ` : ''}
+        ${isBankAccount ? `
+          <div class="csf-bank-account-bar" aria-label="${esc(tool.code || 'Bank')} route context">
+            <article><span>${esc(L('Family'))}</span><strong>${esc(L(bankKind))}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Route shape'))}</span><strong>${esc(bankShape || L('sample'))}</strong><small>${esc(shortValue(bankToken || bankSample, 24))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Routing + account'))}</strong><small>${esc(L('BIC/ABA when visible'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No live proof'))}</strong><small>${esc(L('Ownership/settlement external'))}</small></article>
+          </div>
+        ` : ''}
+        ${isLocaleFormat ? `
+          <div class="csf-locale-format-bar" aria-label="${esc(tool.code || 'Locale')} route context">
+            <article><span>${esc(L('Family'))}</span><strong>${esc(L(localeKind))}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Route shape'))}</span><strong>${esc(localeShape || L('sample'))}</strong><small>${esc(shortValue(localePrimary || localeSample, 24))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Date + number'))}</strong><small>${esc(L('Week/decimal when visible'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No live source'))}</strong><small>${esc(L('Rates/holidays/DST external'))}</small></article>
+          </div>
+        ` : ''}
+        ${isDeveloperData ? `
+          <div class="csf-developer-data-bar" aria-label="${esc(tool.code || 'Data')} route context">
+            <article><span>${esc(L('Family'))}</span><strong>${esc(L(developerKind))}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Fixture fields'))}</span><strong>${esc(developerShape || L('sample'))}</strong><small>${esc(shortValue(developerKeys.join(', ') || developerSample, 24))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Keys + payload'))}</strong><small>${esc(L('JSON/CSV when visible'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No source truth'))}</strong><small>${esc(L('Privacy/compliance external'))}</small></article>
+          </div>
+        ` : ''}
+        ${isPaymentWorkflow ? `
+          <div class="csf-payment-workflow-bar" aria-label="${esc(tool.code || 'Payment')} route context">
+            <article><span>${esc(L('Family'))}</span><strong>${esc(L(paymentKind))}</strong><small>${esc(countryName)}</small></article>
+            <article><span>${esc(L('Route shape'))}</span><strong>${esc(paymentShape || L('sample'))}</strong><small>${esc(shortValue(paymentReference || paymentSample, 24))}</small></article>
+            <article><span>${esc(L('Replay'))}</span><strong>${esc(L('Reference + amount'))}</strong><small>${esc(L('Payload anatomy when available'))}</small></article>
+            <article><span>${esc(L('Boundary'))}</span><strong>${esc(L('No live proof'))}</strong><small>${esc(L('Settlement/fiscal/award external'))}</small></article>
+          </div>
+        ` : ''}
         <div class="csf-presets-grid">
           <label>
             <span>${esc(labels.presets)}</span>
@@ -2874,9 +5502,9 @@
             </div>
           </label>
         </div>
-        <textarea class="csf-textarea" spellcheck="false" data-csf-input>${esc(tool.samples[0].value)}</textarea>
+        <textarea class="csf-textarea" spellcheck="false" data-csf-input aria-label="${esc(isIbanGen ? `${suite.country.name} BBAN or IBAN to repair` : tool.name)}">${esc(tool.samples[0].value)}</textarea>
         <div class="csf-actions">
-          <button class="csf-button csf-button-primary" type="button" data-csf-run>${esc(tool.buttonLabel || tool.actionLabel || labels.validate)}</button>
+          <button class="csf-button csf-button-primary" type="button" data-csf-run>${esc(tool.buttonLabel || localizedActionLabel(tool.actionLabel, labels))}</button>
           <button class="csf-button" type="button" data-csf-copy>${esc(labels.copyResult)}</button>
           <button class="csf-button" type="button" data-csf-download>${esc(labels.downloadResult)}</button>
           <button class="csf-button csf-button-ghost" type="button" data-csf-clear>${esc(labels.clear)}</button>
@@ -3102,29 +5730,39 @@
   function renderAdvanced(suite, result) {
     const labels = labelsFor(suite);
     const tool = suite.toolById && suite.toolById.get(result.developerJson && result.developerJson.tool) ? suite.toolById.get(result.developerJson.tool) : { id: result.developerJson && result.developerJson.tool || 'tool' };
-    const rows = debuggerRows(result);
+    const locale = currentLocale();
+    const L = (value) => localizeRuntimePhrase(value, locale);
+    const rows = debuggerRows(result).map((row) => ({
+      step: L(row.step),
+      evidence: L(row.evidence),
+      detail: L(row.detail)
+    }));
     return `
       <section class="csf-results">
         <details class="csf-advanced" open>
-          <summary>${esc(labels.calculationDebugger)}</summary>
+          <summary>${esc(L(labels.calculationDebugger))}</summary>
           <div class="csf-debug-grid">
             <div>
-              <div class="csf-section-head"><span class="csf-icon">▶</span><div><h3>${esc(labels.replayCalculation)}</h3><p>${esc(labels.validationLog)}</p></div></div>
+              <div class="csf-section-head"><span class="csf-icon">▶</span><div><h3>${esc(L(labels.replayCalculation))}</h3><p>${esc(L(labels.validationLog))}</p></div></div>
               <table class="csf-debug-table">
-                <thead><tr><th>Step</th><th>Evidence</th><th>Detail</th></tr></thead>
+                <thead><tr><th>${esc(L('Step'))}</th><th>${esc(L('Evidence'))}</th><th>${esc(L('Detail'))}</th></tr></thead>
                 <tbody>${rows.map((row) => `<tr><td>${esc(row.step)}</td><td>${esc(row.evidence)}</td><td>${esc(row.detail)}</td></tr>`).join('')}</tbody>
               </table>
             </div>
           </div>
         </details>
         <details class="csf-advanced" open>
-          <summary>${esc(labels.developerApiPreview)}</summary>
+          <summary>${esc(L(labels.developerApiPreview))}</summary>
           <div class="csf-api-tabs"><span>cURL</span><span>JavaScript</span><span>Python</span><span>Go</span></div>
           <pre>${esc(apiPreview(suite, tool, result))}</pre>
         </details>
         <details class="csf-advanced" open>
-          <summary>${esc(labels.rawJsonOutput)}</summary>
-          <pre>${esc(JSON.stringify(result.developerJson || result, null, 2))}</pre>
+          <summary>${esc(L(labels.rawJsonOutput))}</summary>
+          <div class="csf-json-head">
+            <span>${esc(labels.browserBoundary)}</span>
+            <button class="csf-button" type="button" data-csf-copy-json>${esc(labels.copyDeveloperJson || 'Copy developer JSON')}</button>
+          </div>
+          <pre data-csf-json-output>${esc(JSON.stringify(result.developerJson || result, null, 2))}</pre>
         </details>
       </section>
     `;
@@ -3147,7 +5785,7 @@
     function analyze(tool, input, context) {
       const handler = tool.analyze || config.analyze || defaultAnalyze;
       const rawResult = handler(tool, input, suite);
-      return normalizeResult(tool, enhanceAnalyzerResult(suite, tool, input, rawResult, context || {}));
+      return localizeResult(suite, normalizeResult(tool, enhanceAnalyzerResult(suite, tool, input, rawResult, context || {})));
     }
 
     function mount(target, options) {
@@ -3167,6 +5805,7 @@
       const tool = localizeTool(suite, rawTool);
       const labels = labelsFor(suite);
       rootElement.dataset.csfMounted = suite.suiteId;
+      rootElement.dataset.csfToolKind = isIbanGeneratorTool(tool) ? 'ibangenerator' : text(tool.kind || 'generic');
       rootElement.classList.add('csf-shell');
       if (rootElement !== requestedElement) rootElement.classList.add('csf-promoted-shell');
       rootElement.style.setProperty('--csf-accent', suite.theme.accent);
@@ -3315,6 +5954,11 @@
       rootElement.addEventListener('click', (event) => {
         const copy = event.target.closest('[data-csf-copy-value]');
         if (copy) copyText(suite, copy.dataset.csfCopyValue || '', null, copy);
+        const copyJson = event.target.closest('[data-csf-copy-json]');
+        if (copyJson) {
+          const value = JSON.stringify(lastResult && (lastResult.developerJson || lastResult) || richSnapshot(), null, 2);
+          copyText(suite, value, labels.copyDeveloperJson || 'Copy developer JSON', copyJson);
+        }
         const repair = event.target.closest('[data-csf-repair-action]');
         if (!repair) return;
         const action = repair.dataset.csfRepairAction;

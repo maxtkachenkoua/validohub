@@ -1,7 +1,9 @@
 (function () {
   'use strict';
 
-  const VERSION = '2026-07-27-country-rich-lab-v3';
+  const VERSION = '2026-07-27-country-rich-lab-v4';
+  const HISTORY_KEY = 'validohub.goldTools.history.v4';
+  const MAX_HISTORY = 6;
 
   const ROUND3_PROFILES = createRound3Profiles();
 
@@ -1112,6 +1114,7 @@
 
   function render(profile) {
     const config = familyConfig(profile);
+    const fixtures = fixtureDeck(profile);
     return `
       <section class="vh-gold-lab" data-gold-lab data-country-rich-lab>
         <div class="vh-gold-head">
@@ -1125,17 +1128,17 @@
         <div class="vh-gold-source-row">${profile.sources.map((source) => `<a href="${esc(source[1])}" target="_blank" rel="noopener">${esc(source[0])}</a>`).join('')}</div>
         <div class="vh-gold-input">
           <div class="vh-gold-samples">
-            <button type="button" data-gold-sample="valid">Valid fixture</button>
-            <button type="button" data-gold-sample="invalid">Invalid fixture</button>
-            <button type="button" data-gold-generate>Generate safe fixture</button>
-            <button type="button" data-gold-batch>Run sample batch</button>
+            ${fixtures.map((fixture) => `<button type="button" data-gold-sample="${esc(fixture.id)}">${esc(fixture.label)}</button>`).join('')}
+            <button type="button" data-gold-batch>Batch replay</button>
           </div>
           <label class="vh-gold-label">${esc(config.inputLabel)}</label>
           <textarea data-gold-input spellcheck="false">${esc(profile.sample)}</textarea>
           <div class="vh-gold-actions">
             <button type="button" class="vh-gold-primary" data-gold-run>${esc(config.primaryAction)}</button>
             <button type="button" data-gold-copy>Copy developer JSON</button>
-            <button type="button" data-gold-sample="valid">Reset sample</button>
+            <button type="button" data-gold-copy-normalized>Copy normalized</button>
+            <button type="button" data-gold-download>Download JSON</button>
+            <select data-gold-history aria-label="Recent local inputs"><option value="">Recent local inputs</option></select>
           </div>
         </div>
         <div class="vh-gold-output" data-gold-output></div>
@@ -1151,9 +1154,15 @@
     const replayRows = report.checks.map((item) => [item[0], item[1] ? 'PASS' : 'REVIEW', item[2]]);
     return `
       <div class="vh-gold-status ${report.ok ? 'is-ok' : 'is-review'}">
-        <span>${report.ok ? 'Local checks passed' : 'Review needed'}</span>
-        <strong>${esc(report.normalized || 'empty')}</strong>
-        <p>${report.ok ? 'The browser-safe rules for this profile agree locally.' : 'The value failed one or more browser-safe checks; keep it as a negative fixture if intentional.'}</p>
+        <div>
+          <span>${report.ok ? 'Local checks passed' : 'Review needed'}</span>
+          <strong>${esc(report.normalized || 'empty')}</strong>
+          <p>${report.ok ? 'The browser-safe rules for this profile agree locally.' : 'The value failed one or more browser-safe checks; keep it as a negative fixture if intentional.'}</p>
+        </div>
+        <div class="vh-gold-status-actions">
+          <button type="button" data-gold-copy-normalized>Copy value</button>
+          <button type="button" data-gold-download>Export JSON</button>
+        </div>
       </div>
       <div class="vh-gold-pipeline">
         ${signal.map((item) => `<article><span>${esc(item[0])}</span><strong>${esc(item[1])}</strong><p>${esc(item[2])}</p></article>`).join('')}
@@ -1185,6 +1194,107 @@
       </div>`;
   }
 
+  function fixtureDeck(profile) {
+    return [
+      { id: 'valid', label: 'Valid sample', value: profile.sample },
+      { id: 'invalid', label: 'Bad check/sample', value: profile.invalid },
+      { id: 'short', label: 'Short sample', value: shortFixture(profile) },
+      { id: 'wrong', label: 'Wrong context', value: wrongContextFixture(profile) },
+      { id: 'generated', label: 'Safe fixture', value: safeGeneratedFixture(profile) }
+    ];
+  }
+
+  function shortFixture(profile) {
+    const compact = text(profile.sample).replace(/\s+/g, '');
+    return compact.slice(0, Math.max(3, Math.min(8, Math.floor(compact.length / 2))));
+  }
+
+  function wrongContextFixture(profile) {
+    const prefix = profile.meta && profile.meta.iso2 ? 'ZZ ' : 'WRONG ';
+    return prefix + text(profile.sample);
+  }
+
+  function safeGeneratedFixture(profile) {
+    const seed = String(Date.now()).slice(-4);
+    if (/invoice-ref|payment-ref|tracking-ref|customs-ref|procurement-ref/.test(profile.family)) {
+      const iso = (profile.meta && profile.meta.iso2) || profile.country.slice(0, 2).toUpperCase();
+      return iso + '-' + profile.family.replace(/-ref$/, '').toUpperCase() + '-2026-' + seed;
+    }
+    return profile.sample;
+  }
+
+  function readHistory(slug) {
+    try {
+      const all = JSON.parse(localStorage.getItem(HISTORY_KEY) || '{}');
+      return Array.isArray(all[slug]) ? all[slug] : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeHistory(slug, value, ok) {
+    if (!value) return;
+    try {
+      const all = JSON.parse(localStorage.getItem(HISTORY_KEY) || '{}');
+      const current = (Array.isArray(all[slug]) ? all[slug] : []).filter((item) => item.value !== value);
+      current.unshift({ value, ok: !!ok, at: Date.now() });
+      all[slug] = current.slice(0, MAX_HISTORY);
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(all));
+    } catch (error) {}
+  }
+
+  function renderHistorySelect(select, slug) {
+    if (!select) return;
+    const history = readHistory(slug);
+    select.innerHTML = history.length
+      ? '<option value="">Recent local inputs</option>' + history.map((item) => `<option value="${esc(item.value)}">${item.ok ? 'PASS' : 'REVIEW'} - ${esc(String(item.value).slice(0, 42))}</option>`).join('')
+      : '<option value="">Recent local inputs</option>';
+  }
+
+  function downloadJson(filename, json) {
+    const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 500);
+  }
+
+  function legacyCopyText(value) {
+    const el = document.createElement('textarea');
+    el.value = value;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    return Promise.resolve();
+  }
+
+  function copyText(value) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(value).catch(() => legacyCopyText(value));
+    }
+    return legacyCopyText(value);
+  }
+
+  function flashAction(button, textValue) {
+    if (!button) return;
+    const original = button.textContent;
+    button.textContent = textValue;
+    setTimeout(() => { button.textContent = original; }, 1200);
+    const popover = document.createElement('span');
+    popover.className = 'vh-gold-copy-popover';
+    popover.textContent = textValue;
+    button.appendChild(popover);
+    setTimeout(() => { popover.remove(); }, 1250);
+  }
+
   function injectStyles() {
     if (document.getElementById('vh-gold-lab-style')) return;
     const style = document.createElement('style');
@@ -1193,42 +1303,45 @@
       .vh-rich-route-host{overflow:hidden}
       .vh-rich-route-host .csf-shell{display:none!important}
       .vh-gold-lab,.vh-gold-lab *{box-sizing:border-box}
-      .vh-gold-lab{margin:0;border:1px solid rgba(148,163,184,.34);border-radius:18px;background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 18px 48px rgba(15,23,42,.08);padding:22px;color:#111827;max-width:100%;overflow:hidden}
+      .vh-gold-lab{margin:0;border:1px solid rgba(148,163,184,.34);border-radius:16px;background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 18px 48px rgba(15,23,42,.08);padding:20px;color:#111827;max-width:100%;overflow:hidden;font-size:15px;letter-spacing:0}
+      .vh-gold-lab *{letter-spacing:0}
       .vh-gold-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
-      .vh-gold-kicker{font-size:.72rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#047857}
-      .vh-gold-head h2{font-size:clamp(1.35rem,2vw,1.9rem);line-height:1.05;margin:.28rem 0 .5rem}
-      .vh-gold-head p{margin:0;color:#64748b;max-width:920px;font-size:.95rem;line-height:1.45}
+      .vh-gold-kicker{font-size:.7rem;font-weight:860;text-transform:uppercase;color:#047857}
+      .vh-gold-head h2{font-size:clamp(1.26rem,1.7vw,1.72rem);line-height:1.08;margin:.25rem 0 .45rem}
+      .vh-gold-head p{margin:0;color:#64748b;max-width:920px;font-size:.91rem;line-height:1.45}
       .vh-gold-badges,.vh-gold-samples,.vh-gold-actions,.vh-gold-source-row{display:flex;flex-wrap:wrap;gap:10px}
-      .vh-gold-badges span,.vh-gold-source-row a,.vh-gold-samples button,.vh-gold-actions button{border:1px solid #dbe7ef;border-radius:999px;background:#fff;padding:8px 12px;font-weight:850;color:#334155;text-decoration:none;line-height:1.15;transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease}
-      .vh-gold-samples button:hover,.vh-gold-actions button:hover,.vh-gold-source-row a:hover{background:#f0fdfa;border-color:#7dd3c7;color:#075e55;box-shadow:0 8px 24px rgba(15,118,110,.12)}
-      .vh-gold-source-row{margin:18px 0}
-      .vh-gold-input{border:1px solid #e2e8f0;border-radius:16px;background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;margin-top:8px}
-      .vh-gold-label{display:block;margin:14px 0 7px;font-size:.82rem;font-weight:900;color:#64748b}
-      .vh-gold-input textarea{width:100%;max-width:100%;min-height:128px;margin:0 0 14px;border:1px solid #dbe3ef;border-radius:14px;padding:14px;font:700 .92rem ui-monospace,SFMono-Regular,Menlo,monospace;color:#0f172a;background:#fff;resize:vertical;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+      .vh-gold-badges span,.vh-gold-source-row a,.vh-gold-samples button,.vh-gold-actions button,.vh-gold-actions select,.vh-gold-status-actions button{position:relative;border:1px solid #dbe7ef;border-radius:999px;background:#fff;padding:8px 12px;font-size:.82rem;font-weight:780;color:#334155;text-decoration:none;line-height:1.12;min-height:36px;transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease}
+      .vh-gold-samples button:hover,.vh-gold-actions button:hover,.vh-gold-actions select:hover,.vh-gold-source-row a:hover,.vh-gold-status-actions button:hover{background:#f0fdfa;border-color:#7dd3c7;color:#075e55;box-shadow:0 8px 24px rgba(15,118,110,.12)}
+      .vh-gold-source-row{margin:15px 0}
+      .vh-gold-input{border:1px solid #e2e8f0;border-radius:14px;background:linear-gradient(180deg,#fff,#fbfdff);padding:15px;margin-top:8px}
+      .vh-gold-label{display:block;margin:13px 0 7px;font-size:.8rem;font-weight:860;color:#64748b}
+      .vh-gold-input textarea{width:100%;max-width:100%;min-height:104px;margin:0 0 12px;border:1px solid #dbe3ef;border-radius:12px;padding:13px 14px;font:720 .9rem/1.42 ui-monospace,SFMono-Regular,Menlo,monospace;color:#0f172a;background:#fff;resize:vertical;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
       .vh-gold-primary{background:#0f172a!important;color:#fff!important;border-color:#0f172a!important}
+      .vh-gold-actions select{max-width:240px}
       .vh-gold-output{min-width:0;margin-top:16px}
-      .vh-gold-status{border-radius:16px;padding:18px;border:1px solid #dbe3ef;background:#fff;margin-bottom:12px;box-shadow:0 10px 28px rgba(15,23,42,.05)}
-      .vh-gold-status span{display:block;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#64748b}
-      .vh-gold-status strong{display:block;margin-top:5px;font-size:clamp(1.1rem,2vw,1.55rem);overflow-wrap:anywhere}
-      .vh-gold-status p{margin:.45rem 0 0;color:#64748b;font-size:.9rem}
+      .vh-gold-status{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;border-radius:14px;padding:16px;border:1px solid #dbe3ef;background:#fff;margin-bottom:12px;box-shadow:0 10px 28px rgba(15,23,42,.05)}
+      .vh-gold-status span{display:block;font-size:.7rem;font-weight:860;text-transform:uppercase;color:#64748b}
+      .vh-gold-status strong{display:block;margin-top:5px;font-size:clamp(1rem,1.55vw,1.32rem);overflow-wrap:anywhere}
+      .vh-gold-status p{margin:.4rem 0 0;color:#64748b;font-size:.88rem}
+      .vh-gold-status-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;flex:0 0 auto}
       .vh-gold-status.is-ok strong{color:#047857}.vh-gold-status.is-review strong{color:#b45309}
       .vh-gold-pipeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:12px 0}
-      .vh-gold-pipeline article,.vh-gold-cards article,.vh-gold-section{border:1px solid #e2e8f0;border-radius:14px;background:#fff;padding:13px;min-width:0}
+      .vh-gold-pipeline article,.vh-gold-cards article,.vh-gold-section{border:1px solid #e2e8f0;border-radius:12px;background:#fff;padding:12px;min-width:0}
       .vh-gold-pipeline article{background:linear-gradient(180deg,#fff,#f8fafc)}
       .vh-gold-pipeline span,.vh-gold-cards span,.vh-gold-fields span{display:block;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#64748b}
-      .vh-gold-pipeline strong{display:block;margin:.25rem 0;font-size:1.02rem;color:#047857;overflow-wrap:anywhere}
-      .vh-gold-pipeline p,.vh-gold-cards p,.vh-gold-fields p,.vh-gold-section li,.vh-gold-sources p{color:#64748b;margin:.25rem 0 0;font-size:.86rem;line-height:1.42}
+      .vh-gold-pipeline strong{display:block;margin:.25rem 0;font-size:.96rem;color:#047857;overflow-wrap:anywhere}
+      .vh-gold-pipeline p,.vh-gold-cards p,.vh-gold-fields p,.vh-gold-section li,.vh-gold-sources p{color:#64748b;margin:.25rem 0 0;font-size:.84rem;line-height:1.42}
       .vh-gold-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
       .vh-gold-cards strong.ok,.vh-gold-batch .ok{color:#047857}.vh-gold-cards strong.review,.vh-gold-batch .review{color:#b45309}
-      .vh-gold-section{margin-top:14px}
-      .vh-gold-section h3{font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid #e2e8f0}
+      .vh-gold-section{margin-top:13px}
+      .vh-gold-section h3{font-size:.8rem;font-weight:880;text-transform:uppercase;margin:0 0 11px;padding-bottom:9px;border-bottom:1px solid #e2e8f0}
       .vh-gold-section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid #e2e8f0}
       .vh-gold-section-head h3{margin:0;padding:0;border:0}
       .vh-gold-section-head button{border:1px solid #dbe7ef;border-radius:999px;background:#fff;padding:7px 11px;font-weight:850;color:#334155;line-height:1.15;white-space:nowrap;transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease}
       .vh-gold-section-head button:hover{background:#f0fdfa;border-color:#7dd3c7;color:#075e55;box-shadow:0 8px 24px rgba(15,118,110,.12)}
       .vh-gold-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
-      .vh-gold-fields div{border:1px solid #edf2f7;border-radius:12px;padding:11px;min-width:0;background:#fbfdff}
-      .vh-gold-fields strong{display:block;overflow-wrap:anywhere;color:#0f172a;font-size:.98rem}
+      .vh-gold-fields div{border:1px solid #edf2f7;border-radius:10px;padding:10px;min-width:0;background:#fbfdff}
+      .vh-gold-fields strong{display:block;overflow-wrap:anywhere;color:#0f172a;font-size:.92rem}
       .vh-gold-table-wrap{width:100%;overflow:auto;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
       .vh-gold-table{width:100%;border-collapse:collapse;font-size:.84rem;table-layout:fixed}
       .vh-gold-table th{background:#f3f6fa;color:#111827;text-align:left;font-weight:900}
@@ -1237,12 +1350,14 @@
       .vh-gold-source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:10px}
       .vh-gold-source-grid a{border:1px solid #dbeafe;border-radius:12px;background:#f8fbff;padding:12px;text-decoration:none;color:#1d4ed8;font-weight:850;min-width:0}
       .vh-gold-source-grid small{display:block;margin-top:4px;color:#64748b;font-size:.72rem}
-      .vh-gold-traps ul{margin:0;padding-left:1.1rem}
-      .vh-gold-traps li{font-size:.86rem;color:#5f6f85}
+      .vh-gold-traps ul{margin:0;padding-left:1.05rem}
+      .vh-gold-traps li{font-size:.8rem;line-height:1.4;color:#5f6f85}
       .vh-gold-section pre{margin:0;overflow:auto;border-radius:12px;background:#0f172a;color:#dbeafe;padding:14px;font-size:.78rem;max-width:100%}
       .vh-gold-batch{display:flex;flex-wrap:wrap;gap:7px}.vh-gold-batch span{border:1px solid #e2e8f0;border-radius:999px;padding:6px 9px;font-weight:800;background:#f8fafc}
+      .vh-gold-copy-popover{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);z-index:3;border-radius:999px;background:#0f172a;color:#fff;padding:6px 9px;font-size:.72rem;font-weight:850;line-height:1;white-space:nowrap;box-shadow:0 10px 28px rgba(15,23,42,.18);pointer-events:none}
+      .vh-gold-copy-popover:after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#0f172a}
       @media(max-width:1080px){.vh-gold-pipeline,.vh-gold-cards,.vh-gold-fields,.vh-gold-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media(max-width:760px){.vh-gold-lab{padding:16px}.vh-gold-head{display:block}.vh-gold-badges{margin-top:12px}.vh-gold-pipeline,.vh-gold-cards,.vh-gold-fields,.vh-gold-source-grid{grid-template-columns:1fr}.vh-gold-table{min-width:680px}}`;
+      @media(max-width:760px){.vh-gold-lab{padding:14px}.vh-gold-head,.vh-gold-status{display:block}.vh-gold-status-actions{justify-content:flex-start;margin-top:12px}.vh-gold-badges{margin-top:12px}.vh-gold-pipeline,.vh-gold-cards,.vh-gold-fields,.vh-gold-source-grid{grid-template-columns:1fr}.vh-gold-table{min-width:680px}.vh-gold-actions button,.vh-gold-actions select,.vh-gold-samples button{width:100%}}`;
     document.head.appendChild(style);
   }
 
@@ -1259,21 +1374,28 @@
     const lab = host.querySelector('[data-gold-lab]');
     const input = lab.querySelector('[data-gold-input]');
     const output = lab.querySelector('[data-gold-output]');
+    const historySelect = lab.querySelector('[data-gold-history]');
+    const fixtures = fixtureDeck(profile);
     let lastJson = null;
-    function run(batch) {
-      const report = analyze(profile, input.value);
-      lastJson = buildDeveloperJson(profile, report);
-      output.innerHTML = renderOutput(profile, report, batch);
+    let lastReport = null;
+    function currentReport() {
+      lastReport = analyze(profile, input.value);
+      lastJson = buildDeveloperJson(profile, lastReport);
+      return lastReport;
     }
+    function run(batch) {
+      const report = currentReport();
+      output.innerHTML = renderOutput(profile, report, batch);
+      writeHistory(profile.slug, input.value, report.ok);
+      renderHistorySelect(historySelect, profile.slug);
+    }
+    renderHistorySelect(historySelect, profile.slug);
     lab.addEventListener('click', (event) => {
       const sample = event.target.closest('[data-gold-sample]');
       if (sample) {
-        input.value = sample.dataset.goldSample === 'invalid' ? profile.invalid : profile.sample;
-        run();
-        return;
-      }
-      if (event.target.closest('[data-gold-generate]')) {
-        input.value = profile.sample;
+        const sampleId = sample.dataset.goldSample;
+        const fixture = fixtures.find((item) => item.id === sampleId);
+        input.value = sampleId === 'generated' ? safeGeneratedFixture(profile) : fixture ? fixture.value : profile.sample;
         run();
         return;
       }
@@ -1282,20 +1404,47 @@
         return;
       }
       if (event.target.closest('[data-gold-batch]')) {
-        const valid = analyze(profile, profile.sample);
-        const invalid = analyze(profile, profile.invalid);
+        const batchFixtures = fixtureDeck(profile);
+        const batch = batchFixtures.map((fixture) => {
+          const result = analyze(profile, fixture.value);
+          return { label: fixture.label, ok: fixture.id === 'valid' || fixture.id === 'generated' ? result.ok : !result.ok };
+        });
         input.value = profile.sample;
-        run([{ label: 'valid fixture', ok: valid.ok }, { label: 'invalid fixture', ok: invalid.ok }]);
+        run(batch);
         return;
       }
       const copyButton = event.target.closest('[data-gold-copy]');
       if (copyButton) {
-        const value = JSON.stringify(lastJson || buildDeveloperJson(profile, analyze(profile, input.value)), null, 2);
-        navigator.clipboard && navigator.clipboard.writeText(value);
-        copyButton.textContent = 'Copied JSON';
-        setTimeout(() => { copyButton.textContent = 'Copy developer JSON'; }, 1200);
+        const report = currentReport();
+        const value = JSON.stringify(buildDeveloperJson(profile, report), null, 2);
+        copyText(value).then(() => flashAction(copyButton, 'Copied JSON'));
+        return;
+      }
+      const copyValueButton = event.target.closest('[data-gold-copy-normalized]');
+      if (copyValueButton) {
+        const report = currentReport();
+        copyText(report.normalized || '').then(() => flashAction(copyValueButton, 'Copied value'));
+        return;
+      }
+      const downloadButton = event.target.closest('[data-gold-download]');
+      if (downloadButton) {
+        const report = currentReport();
+        const json = buildDeveloperJson(profile, report);
+        downloadJson(profile.slug + '-gold-snapshot.json', json);
+        flashAction(downloadButton, 'Downloaded');
       }
     });
+    input.addEventListener('input', () => {
+      clearTimeout(input._vhGoldTimer);
+      input._vhGoldTimer = setTimeout(() => run(), 180);
+    });
+    if (historySelect) {
+      historySelect.addEventListener('change', () => {
+        if (!historySelect.value) return;
+        input.value = historySelect.value;
+        run();
+      });
+    }
     run();
     return true;
   }

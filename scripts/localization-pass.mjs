@@ -2952,6 +2952,1264 @@ function applyExpandedLocalePacks() {
   }
 }
 
+const PRODUCTION_LOCALE_UI = {
+  es: {
+    encoding: 'Codificación', finance: 'Finanzas', hash: 'Hash', text: 'Texto',
+    relatedTools: 'Herramientas relacionadas', continueWithRelated: 'Continuar con herramientas relacionadas',
+    copyResult: 'Copiar resultado', downloadResult: 'Descargar resultado', waitingForInput: 'Esperando entrada',
+    advancedAnalysis: 'Análisis avanzado', developerExamples: 'Ejemplos para desarrolladores',
+    practicalExamples: 'ejemplos prácticos', questionsAndEdgeCases: 'preguntas y casos límite',
+    referencesAndLimits: 'referencias y límites', expandAll: 'Expandir todo', collapseAll: 'Contraer todo'
+  },
+  'pt-BR': {
+    encoding: 'Codificação', finance: 'Finanças', hash: 'Hash', text: 'Texto',
+    relatedTools: 'Ferramentas relacionadas', continueWithRelated: 'Continuar com ferramentas relacionadas',
+    copyResult: 'Copiar resultado', downloadResult: 'Baixar resultado', waitingForInput: 'Aguardando entrada',
+    advancedAnalysis: 'Análise avançada', developerExamples: 'Exemplos para desenvolvedores',
+    practicalExamples: 'exemplos práticos', questionsAndEdgeCases: 'perguntas e casos extremos',
+    referencesAndLimits: 'referências e limites', expandAll: 'Expandir tudo', collapseAll: 'Recolher tudo'
+  },
+  de: {
+    encoding: 'Kodierung', finance: 'Finanzen', hash: 'Hash', text: 'Text',
+    relatedTools: 'Ähnliche Tools', continueWithRelated: 'Mit ähnlichen Tools fortfahren',
+    copyResult: 'Ergebnis kopieren', downloadResult: 'Ergebnis herunterladen', waitingForInput: 'Warte auf Eingabe',
+    advancedAnalysis: 'Erweiterte Analyse', developerExamples: 'Entwicklerbeispiele',
+    practicalExamples: 'Praxisbeispiele', questionsAndEdgeCases: 'Fragen und Randfälle',
+    referencesAndLimits: 'Referenzen und Grenzen', expandAll: 'Alle ausklappen', collapseAll: 'Alle einklappen'
+  },
+  fr: {
+    encoding: 'Encodage', finance: 'Finance', hash: 'Hash', text: 'Texte',
+    nationalIdentifiers: 'Identifiants nationaux', workbench: 'Workbench', tool: 'Outil',
+    countryShape: 'Forme du pays', location: 'Emplacement', runTool: 'Ouvrir l’outil',
+    pasteInput: 'Collez une entrée, choisissez une action et copiez le résultat directement dans le navigateur.',
+    relatedTools: 'Outils liés', continueWithRelated: 'Continuer avec les outils liés',
+    validate: 'Valider', copyResult: 'Copier le résultat', downloadResult: 'Télécharger le résultat',
+    clear: 'Effacer', output: 'Résultat', waitingForInput: 'En attente d’entrée',
+    advancedAnalysis: 'Analyse avancée', guide: 'Guide', faq: 'FAQ',
+    examples: 'Exemples', explanation: 'Explication', developerExamples: 'Exemples développeur',
+    practicalExamples: 'exemples pratiques', questionsAndEdgeCases: 'questions et cas limites',
+    referencesAndLimits: 'références et limites', expandAll: 'Tout développer', collapseAll: 'Tout réduire',
+    mainNavigation: 'Navigation principale', breadcrumb: 'Fil d’Ariane'
+  },
+  pl: {
+    encoding: 'Kodowanie', finance: 'Finanse', hash: 'Hash', text: 'Tekst',
+    relatedTools: 'Powiązane narzędzia', continueWithRelated: 'Kontynuuj z powiązanymi narzędziami'
+  },
+  uk: {
+    encoding: 'Кодування', finance: 'Фінанси', hash: 'Хеш', text: 'Текст',
+    nationalIdentifiers: 'Національні ідентифікатори', workbench: 'Воркбенч', tool: 'Інструмент',
+    countryShape: 'Форма країни', location: 'Розташування', runTool: 'Відкрити інструмент',
+    pasteInput: 'Вставте дані, виберіть дію та скопіюйте результат прямо в браузері.',
+    relatedTools: 'Пов’язані інструменти', continueWithRelated: 'Продовжити з пов’язаними інструментами',
+    validate: 'Перевірити', copyResult: 'Скопіювати результат', downloadResult: 'Завантажити результат',
+    clear: 'Очистити', output: 'Результат', waitingForInput: 'Очікування введення',
+    advancedAnalysis: 'Розширений аналіз', guide: 'Посібник', faq: 'FAQ',
+    examples: 'Приклади', explanation: 'Пояснення', developerExamples: 'Приклади для розробників',
+    practicalExamples: 'практичні приклади', questionsAndEdgeCases: 'питання та граничні випадки',
+    referencesAndLimits: 'джерела та межі', expandAll: 'Розгорнути все', collapseAll: 'Згорнути все',
+    mainNavigation: 'Основна навігація', breadcrumb: 'Навігаційний шлях'
+  }
+};
+
+const PRODUCTION_LOCALE_REPLACEMENTS = {
+  es: {
+    'Browser-only developer intelligence': 'Inteligencia para desarrolladores, solo en el navegador',
+    'Validate, generate, and debug real-world data.': 'Valida, genera y depura datos del mundo real.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Utilidades globales y workbenches por país para identificadores, pagos, formatos bancarios, fixtures locales y diagnósticos de parsers. Privado por defecto, preciso antes de producción.',
+    'Command': 'Comando',
+    'Browse countries': 'Explorar países',
+    'Suggested searches': 'Búsquedas sugeridas',
+    'workbenches indexed.': 'workbenches indexados.',
+    'featured routes ready.': 'rutas destacadas listas.',
+    'matching country/tool routes.': 'rutas de país/herramienta coincidentes.',
+    'premium hubs': 'hubs premium',
+    'workbenches': 'workbenches',
+    'identifier families': 'familias de identificadores',
+    'core locales': 'idiomas base',
+    'Launch lanes': 'Accesos principales',
+    'Global': 'Global',
+    'Universal browser utilities': 'Utilidades universales de navegador',
+    'Countries': 'Países',
+    'Local formats and rules': 'Formatos y reglas locales',
+    'Generators': 'Generadores',
+    'Fresh values for QA': 'Valores nuevos para QA',
+    'Debug Contract': 'Contrato de depuración',
+    'Field breakdown, replay, raw output': 'Desglose de campos, replay y salida cruda',
+    'Evidence before trust': 'Evidencia antes de confiar',
+    'Try signals': 'Prueba señales',
+    'Global Tools': 'Herramientas globales',
+    'Fast utilities that are not tied to one country.': 'Utilidades rápidas que no dependen de un país.',
+    'Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.': 'Abre workbenches universales para payloads, codificación, tokens, identificadores, regex e IBAN entre países.',
+    'Local Instruments': 'Instrumentos locales',
+    'Premium country tools with real debugging depth.': 'Herramientas de país premium con depuración real.',
+    'Identity, registry, tax, payment, and banking workbenches with local samples, validation replay, field breakdown, and official-boundary notes.': 'Workbenches de identidad, registros, impuestos, pagos y banca con muestras locales, replay de validación, desglose de campos y límites oficiales.',
+    'Generate fixtures when validation is not enough.': 'Genera fixtures cuando validar no basta.',
+    'Use fresh browser-only values for tests, demos, forms, and QA flows. Generation belongs next to validation so users can both inspect and create.': 'Usa valores nuevos, solo en navegador, para tests, demos, formularios y QA. La generación vive junto a la validación para inspeccionar y crear.',
+    'Country Intelligence': 'Inteligencia por país',
+    'Browse premium country hubs.': 'Explora hubs de país premium.',
+    'Each full-premium country is generated from the same strict contract: useful local tools, readable visual identity, field-level debugging, and no fake official lookup promises.': 'Cada país full-premium sigue el mismo contrato estricto: herramientas locales útiles, identidad visual clara, depuración por campo y cero promesas falsas de consulta oficial.',
+    'Premium Contract': 'Contrato premium',
+    'Every serious tool needs more than a green check.': 'Toda herramienta seria necesita más que un check verde.',
+    'Explain the fields': 'Explicar los campos',
+    'Named slices, local meaning, checksums, masks, and copy-safe values.': 'Partes nombradas, significado local, checksums, máscaras y valores seguros para copiar.',
+    'Show the pipeline': 'Mostrar el pipeline',
+    'Pass/review states must match the sample, with green success and clear invalid paths.': 'Los estados pass/review deben coincidir con la muestra, con éxito verde y rutas inválidas claras.',
+    'Generate fixtures': 'Generar fixtures',
+    'When the domain supports generation, give users fresh browser-only test data.': 'Cuando el dominio lo permite, ofrece datos de prueba nuevos solo en navegador.',
+    'Name the boundary': 'Nombrar el límite',
+    'Offline structure is not official registry status; the page says exactly where that line is.': 'La estructura offline no es estado registral oficial; la página dice exactamente dónde está el límite.',
+    'A quiet atlas for local developer work.': 'Un atlas sobrio para trabajo local de desarrolladores.',
+    'All 194 country hubs are reachable from one neutral map surface. Hover for a shape preview and integration snapshot; click to open the local developer portal.': 'Los 194 hubs de país están disponibles desde un mapa neutral. Pasa el cursor para ver la forma y el resumen de integración; haz clic para abrir el portal local.',
+    'Global Developer Tools': 'Herramientas globales para desarrolladores',
+    'Browser labs for developer data.': 'Labs de navegador para datos de desarrolladores.',
+    'Compact registry of validators, generators, parsers, security checks, and fixture labs. Private by default, useful before production handoff.': 'Registro compacto de validadores, generadores, parsers, checks de seguridad y labs de fixtures. Privado por defecto, útil antes del handoff a producción.',
+    'global tools': 'herramientas globales',
+    'families': 'familias',
+    'uploads required': 'subidas requeridas',
+    'Find the workbench.': 'Encuentra el workbench.',
+    'Search global tools': 'Buscar herramientas globales',
+    'API contracts': 'Contratos API',
+    'Security': 'Seguridad',
+    'Formats': 'Formatos',
+    'Ops': 'Ops',
+    'AI data': 'Datos IA',
+    'Priority': 'Prioridad',
+    'High-signal starting points.': 'Puntos de partida de alta señal.',
+    'Registry': 'Registro',
+    'Grouped by integration job, not by random utility labels.': 'Agrupado por trabajo de integración, no por etiquetas aleatorias.',
+    'No global tools match this search.': 'Ninguna herramienta global coincide con la búsqueda.',
+    'Open': 'Abrir',
+    'Tools': 'Herramientas',
+    'Global Registry': 'Registro global',
+    'Country Hubs': 'Hubs de país',
+    'Explore local developer specifications, tax structures, payment protocols, and regional validators.': 'Explora especificaciones locales, estructuras fiscales, protocolos de pago y validadores regionales.',
+    'Identifiers': 'Identificadores',
+    'Payments': 'Pagos',
+    'Guides': 'Guías',
+    'Brands': 'Marcas',
+    'Search countries': 'Buscar países',
+    'Filter Region': 'Filtrar región',
+    'Filter Status': 'Filtrar estado',
+    'All Regions': 'Todas las regiones',
+    'All Statuses': 'Todos los estados',
+    'In Progress': 'En progreso',
+    'Developer Features': 'Funciones para desarrolladores',
+    'Government': 'Gobierno',
+    'Banking': 'Banca',
+    'World Map': 'Mapa mundial',
+    'Explore country coverage': 'Explora la cobertura por país',
+    'Hover a country to see its premium shape preview. Click a country shape to open the developer hub.': 'Pasa el cursor por un país para ver su vista premium. Haz clic en la forma para abrir el hub.',
+    'Country Preview': 'Vista del país',
+    'Choose a country': 'Elige un país',
+    'Hover or focus any country card or map shape to inspect local developer coverage. No country is selected by default.': 'Pasa el cursor o enfoca una tarjeta o forma del mapa para revisar la cobertura local. No hay país seleccionado por defecto.',
+    'ISO Codes': 'Códigos ISO',
+    'Language': 'Idioma',
+    'No selection': 'Sin selección',
+    'Completion': 'Completitud',
+    'Coverage': 'Cobertura',
+    'No countries match the current search or filters.': 'Ningún país coincide con la búsqueda o filtros actuales.',
+    'Live': 'Activo',
+    'Building': 'En desarrollo',
+    'Roadmap': 'Roadmap',
+    'Available': 'Disponible',
+    'Planned': 'Planificado',
+    'South America': 'Sudamérica',
+    'North America': 'Norteamérica',
+    'Asia': 'Asia',
+    'Africa': 'África',
+    'Oceania': 'Oceanía',
+    'Data &amp; API Contracts': 'Datos y contratos API',
+    'Data & API Contracts': 'Datos y contratos API',
+    'Security &amp; Trust': 'Seguridad y confianza',
+    'Security & Trust': 'Seguridad y confianza',
+    'Regulated Formats': 'Formatos regulados',
+    'DevOps &amp; Cloud QA': 'DevOps y QA cloud',
+    'DevOps & Cloud QA': 'DevOps y QA cloud',
+    'Frontend &amp; Product QA': 'Frontend y QA de producto',
+    'Frontend & Product QA': 'Frontend y QA de producto',
+    'AI &amp; Data Ops': 'IA y operaciones de datos',
+    'AI & Data Ops': 'IA y operaciones de datos',
+    'Text, Time &amp; Utilities': 'Texto, tiempo y utilidades',
+    'Text, Time & Utilities': 'Texto, tiempo y utilidades'
+  },
+  'pt-BR': {
+    'Browser-only developer intelligence': 'Inteligência para desenvolvedores, só no navegador',
+    'Validate, generate, and debug real-world data.': 'Valide, gere e depure dados do mundo real.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Utilidades globais e workbenches por país para identificadores, pagamentos, formatos bancários, fixtures locais e diagnósticos de parsers. Privado por padrão, preciso antes da produção.',
+    'Command': 'Comando',
+    'Browse countries': 'Explorar países',
+    'workbenches indexed.': 'workbenches indexados.',
+    'featured routes ready.': 'rotas em destaque prontas.',
+    'matching country/tool routes.': 'rotas de país/ferramenta correspondentes.',
+    'premium hubs': 'hubs premium',
+    'identifier families': 'famílias de identificadores',
+    'core locales': 'idiomas principais',
+    'Universal browser utilities': 'Utilidades universais do navegador',
+    'Local formats and rules': 'Formatos e regras locais',
+    'Fresh values for QA': 'Valores novos para QA',
+    'Debug Contract': 'Contrato de depuração',
+    'Field breakdown, replay, raw output': 'Desglose de campos, replay e saída bruta',
+    'Evidence before trust': 'Evidência antes de confiar',
+    'Try signals': 'Teste sinais',
+    'Fast utilities that are not tied to one country.': 'Utilidades rápidas que não dependem de um país.',
+    'Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.': 'Abra workbenches universais para payloads, codificação, tokens, identificadores, regex e fluxos IBAN entre países.',
+    'Local Instruments': 'Instrumentos locais',
+    'Premium country tools with real debugging depth.': 'Ferramentas premium de país com depuração real.',
+    'Identity, registry, tax, payment, and banking workbenches with local samples, validation replay, field breakdown, and official-boundary notes.': 'Workbenches de identidade, registro, impostos, pagamentos e bancos com exemplos locais, replay de validação, campos detalhados e limites oficiais.',
+    'Generate fixtures when validation is not enough.': 'Gere fixtures quando validar não basta.',
+    'Use fresh browser-only values for tests, demos, forms, and QA flows. Generation belongs next to validation so users can both inspect and create.': 'Use valores novos, só no navegador, para testes, demos, formulários e QA. Geração fica junto da validação para inspecionar e criar.',
+    'Country Intelligence': 'Inteligência por país',
+    'Browse premium country hubs.': 'Explore hubs de país premium.',
+    'Premium Contract': 'Contrato premium',
+    'Every serious tool needs more than a green check.': 'Toda ferramenta séria precisa de mais que um check verde.',
+    'Explain the fields': 'Explicar os campos',
+    'Show the pipeline': 'Mostrar o pipeline',
+    'Generate fixtures': 'Gerar fixtures',
+    'Name the boundary': 'Nomear o limite',
+    'A quiet atlas for local developer work.': 'Um atlas discreto para trabalho local de desenvolvedores.',
+    'Global Developer Tools': 'Ferramentas globais para desenvolvedores',
+    'Browser labs for developer data.': 'Labs de navegador para dados de desenvolvedores.',
+    'global tools': 'ferramentas globais',
+    'families': 'famílias',
+    'uploads required': 'uploads necessários',
+    'Find the workbench.': 'Encontre o workbench.',
+    'API contracts': 'Contratos API',
+    'Security': 'Segurança',
+    'Formats': 'Formatos',
+    'Priority': 'Prioridade',
+    'High-signal starting points.': 'Pontos de partida de alto sinal.',
+    'Registry': 'Registro',
+    'Grouped by integration job, not by random utility labels.': 'Agrupado por trabalho de integração, não por etiquetas aleatórias.',
+    'No global tools match this search.': 'Nenhuma ferramenta global corresponde à busca.',
+    'Open': 'Abrir',
+    'Global Registry': 'Registro global',
+    'Country Hubs': 'Hubs de país',
+    'Countries': 'Países',
+    'Explore local developer specifications, tax structures, payment protocols, and regional validators.': 'Explore especificações locais, estruturas fiscais, protocolos de pagamento e validadores regionais.',
+    'Payments': 'Pagamentos',
+    'Guides': 'Guias',
+    'Search countries': 'Buscar países',
+    'Filter Region': 'Filtrar região',
+    'Filter Status': 'Filtrar status',
+    'All Regions': 'Todas as regiões',
+    'All Statuses': 'Todos os status',
+    'In Progress': 'Em progresso',
+    'Developer Features': 'Recursos para desenvolvedores',
+    'Government': 'Governo',
+    'Banking': 'Bancos',
+    'World Map': 'Mapa-múndi',
+    'Explore country coverage': 'Explore a cobertura por país',
+    'Country Preview': 'Prévia do país',
+    'Choose a country': 'Escolha um país',
+    'ISO Codes': 'Códigos ISO',
+    'Language': 'Idioma',
+    'No selection': 'Sem seleção',
+    'Completion': 'Conclusão',
+    'Coverage': 'Cobertura',
+    'No countries match the current search or filters.': 'Nenhum país corresponde à busca ou aos filtros.',
+    'Live': 'Ativo',
+    'Building': 'Em construção',
+    'Roadmap': 'Roadmap',
+    'Available': 'Disponível',
+    'Planned': 'Planejado',
+    'South America': 'América do Sul',
+    'North America': 'América do Norte',
+    'Africa': 'África',
+    'Data &amp; API Contracts': 'Dados e contratos API',
+    'Security &amp; Trust': 'Segurança e confiança',
+    'Regulated Formats': 'Formatos regulados',
+    'DevOps &amp; Cloud QA': 'DevOps e QA cloud',
+    'Frontend &amp; Product QA': 'Frontend e QA de produto',
+    'AI &amp; Data Ops': 'IA e operações de dados',
+    'Text, Time &amp; Utilities': 'Texto, tempo e utilidades'
+  },
+  de: {
+    'Browser-only developer intelligence': 'Browserbasierte Entwicklerintelligenz',
+    'Validate, generate, and debug real-world data.': 'Validiere, generiere und debugge echte Daten.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Globale Utilities und länderspezifische Workbenches für Kennungen, Zahlungen, Bankformate, lokale Testdaten und Parserdiagnosen. Privat per Default, präzise vor Produktion.',
+    'Command': 'Kommando',
+    'Browse countries': 'Länder durchsuchen',
+    'workbenches indexed.': 'Workbenches indexiert.',
+    'featured routes ready.': 'empfohlene Routen bereit.',
+    'matching country/tool routes.': 'passende Länder-/Tool-Routen.',
+    'premium hubs': 'Premium-Hubs',
+    'identifier families': 'Kennungsfamilien',
+    'core locales': 'Kernsprachen',
+    'Launch lanes': 'Startbereiche',
+    'Global': 'Global',
+    'Universal browser utilities': 'Universelle Browser-Utilities',
+    'Countries': 'Länder',
+    'Local formats and rules': 'Lokale Formate und Regeln',
+    'Generators': 'Generatoren',
+    'Fresh values for QA': 'Frische Werte für QA',
+    'Debug Contract': 'Debug-Vertrag',
+    'Field breakdown, replay, raw output': 'Feldaufschlüsselung, Replay, Rohdaten',
+    'Evidence before trust': 'Evidenz vor Vertrauen',
+    'Try signals': 'Signale testen',
+    'Global Tools': 'Globale Tools',
+    'Fast utilities that are not tied to one country.': 'Schnelle Utilities ohne Länderbindung.',
+    'Local Instruments': 'Lokale Instrumente',
+    'Premium country tools with real debugging depth.': 'Premium-Ländertools mit echter Debug-Tiefe.',
+    'Generate fixtures when validation is not enough.': 'Testdaten generieren, wenn Validierung nicht reicht.',
+    'Country Intelligence': 'Länderintelligenz',
+    'Browse premium country hubs.': 'Premium-Länderhubs durchsuchen.',
+    'Premium Contract': 'Premium-Vertrag',
+    'Every serious tool needs more than a green check.': 'Jedes ernsthafte Tool braucht mehr als einen grünen Haken.',
+    'Explain the fields': 'Felder erklären',
+    'Show the pipeline': 'Pipeline zeigen',
+    'Generate fixtures': 'Testdaten generieren',
+    'Name the boundary': 'Grenze benennen',
+    'A quiet atlas for local developer work.': 'Ein ruhiger Atlas für lokale Entwicklerarbeit.',
+    'Global Developer Tools': 'Globale Entwicklertools',
+    'Browser labs for developer data.': 'Browser-Labs für Entwicklerdaten.',
+    'global tools': 'globale Tools',
+    'families': 'Familien',
+    'uploads required': 'Uploads erforderlich',
+    'Find the workbench.': 'Workbench finden.',
+    'API contracts': 'API-Verträge',
+    'Security': 'Sicherheit',
+    'Formats': 'Formate',
+    'Priority': 'Priorität',
+    'High-signal starting points.': 'Startpunkte mit hoher Signalstärke.',
+    'Registry': 'Register',
+    'Grouped by integration job, not by random utility labels.': 'Nach Integrationsaufgabe gruppiert, nicht nach zufälligen Utility-Labels.',
+    'No global tools match this search.': 'Keine globalen Tools passen zu dieser Suche.',
+    'Open': 'Öffnen',
+    'Global Registry': 'Globales Register',
+    'Country Hubs': 'Länderhubs',
+    'Explore local developer specifications, tax structures, payment protocols, and regional validators.': 'Lokale Entwicklerspezifikationen, Steuerstrukturen, Zahlungsprotokolle und regionale Validatoren erkunden.',
+    'Payments': 'Zahlungen',
+    'Guides': 'Leitfäden',
+    'Search countries': 'Länder suchen',
+    'Filter Region': 'Region filtern',
+    'Filter Status': 'Status filtern',
+    'All Regions': 'Alle Regionen',
+    'All Statuses': 'Alle Status',
+    'In Progress': 'In Arbeit',
+    'Developer Features': 'Entwicklerfunktionen',
+    'Government': 'Behörden',
+    'Banking': 'Banking',
+    'World Map': 'Weltkarte',
+    'Explore country coverage': 'Länderabdeckung erkunden',
+    'Country Preview': 'Ländervorschau',
+    'Choose a country': 'Land wählen',
+    'ISO Codes': 'ISO-Codes',
+    'Language': 'Sprache',
+    'No selection': 'Keine Auswahl',
+    'Completion': 'Fertigstellung',
+    'Coverage': 'Abdeckung',
+    'No countries match the current search or filters.': 'Keine Länder passen zu Suche oder Filtern.',
+    'Live': 'Live',
+    'Building': 'Im Aufbau',
+    'Roadmap': 'Roadmap',
+    'Available': 'Verfügbar',
+    'Planned': 'Geplant',
+    'South America': 'Südamerika',
+    'North America': 'Nordamerika',
+    'Africa': 'Afrika',
+    'Data &amp; API Contracts': 'Daten- und API-Verträge',
+    'Security &amp; Trust': 'Sicherheit und Vertrauen',
+    'Regulated Formats': 'Regulierte Formate',
+    'DevOps &amp; Cloud QA': 'DevOps und Cloud-QA',
+    'Frontend &amp; Product QA': 'Frontend- und Produkt-QA',
+    'AI &amp; Data Ops': 'KI- und Datenbetrieb',
+    'Text, Time &amp; Utilities': 'Text, Zeit und Utilities'
+  },
+  fr: {
+    'Browser-only developer intelligence': 'Intelligence développeur, uniquement dans le navigateur',
+    'Validate, generate, and debug real-world data.': 'Validez, générez et déboguez des données réelles.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Utilitaires globaux et workbenches par pays pour identifiants, paiements, formats bancaires, fixtures locales et diagnostics de parsers. Privé par défaut, précis avant la production.',
+    'Command': 'Commande',
+    'Browse countries': 'Explorer les pays',
+    'workbenches indexed.': 'workbenches indexés.',
+    'featured routes ready.': 'routes mises en avant prêtes.',
+    'matching country/tool routes.': 'routes pays/outil correspondantes.',
+    'premium hubs': 'hubs premium',
+    'workbenches': 'workbenches',
+    'identifier families': 'familles d’identifiants',
+    'core locales': 'langues principales',
+    'Launch lanes': 'Accès rapides',
+    'Global': 'Global',
+    'Universal browser utilities': 'Utilitaires navigateur universels',
+    'Countries': 'Pays',
+    'Local formats and rules': 'Formats et règles locales',
+    'Generators': 'Générateurs',
+    'Fresh values for QA': 'Valeurs fraîches pour QA',
+    'Debug Contract': 'Contrat de debug',
+    'Field breakdown, replay, raw output': 'Détail des champs, replay, sortie brute',
+    'Evidence before trust': 'Preuve avant confiance',
+    'Try signals': 'Tester des signaux',
+    'Global Tools': 'Outils globaux',
+    'Fast utilities that are not tied to one country.': 'Utilitaires rapides non liés à un seul pays.',
+    'Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.': 'Ouvrez les workbenches universels pour payloads, encodage, tokens, identifiants, regex et IBAN multi-pays.',
+    'Local Instruments': 'Instruments locaux',
+    'Premium country tools with real debugging depth.': 'Outils pays premium avec une vraie profondeur de debug.',
+    'Identity, registry, tax, payment, and banking workbenches with local samples, validation replay, field breakdown, and official-boundary notes.': 'Workbenches d’identité, registre, fiscalité, paiement et banque avec exemples locaux, replay de validation, détail des champs et limites officielles.',
+    'Generate fixtures when validation is not enough.': 'Générez des fixtures quand valider ne suffit pas.',
+    'Use fresh browser-only values for tests, demos, forms, and QA flows. Generation belongs next to validation so users can both inspect and create.': 'Utilisez des valeurs fraîches, uniquement dans le navigateur, pour tests, démos, formulaires et QA. La génération reste à côté de la validation pour inspecter et créer.',
+    'Country Intelligence': 'Intelligence par pays',
+    'Browse premium country hubs.': 'Explorer les hubs pays premium.',
+    'Each full-premium country is generated from the same strict contract: useful local tools, readable visual identity, field-level debugging, and no fake official lookup promises.': 'Chaque pays full-premium suit le même contrat strict : outils locaux utiles, identité visuelle lisible, debug par champ et aucune fausse promesse de consultation officielle.',
+    'Premium Contract': 'Contrat premium',
+    'Every serious tool needs more than a green check.': 'Tout outil sérieux a besoin de plus qu’un check vert.',
+    'Explain the fields': 'Expliquer les champs',
+    'Named slices, local meaning, checksums, masks, and copy-safe values.': 'Segments nommés, sens local, sommes de contrôle, masques et valeurs sûres à copier.',
+    'Show the pipeline': 'Montrer le pipeline',
+    'Pass/review states must match the sample, with green success and clear invalid paths.': 'Les états pass/review doivent correspondre à l’exemple, avec succès vert et chemins invalides clairs.',
+    'Generate fixtures': 'Générer des fixtures',
+    'When the domain supports generation, give users fresh browser-only test data.': 'Quand le domaine le permet, donnez des données de test fraîches uniquement dans le navigateur.',
+    'Name the boundary': 'Nommer la limite',
+    'Offline structure is not official registry status; the page says exactly where that line is.': 'La structure offline n’est pas un statut officiel de registre ; la page indique exactement la limite.',
+    'A quiet atlas for local developer work.': 'Un atlas calme pour le travail développeur local.',
+    'All 194 country hubs are reachable from one neutral map surface. Hover for a shape preview and integration snapshot; click to open the local developer portal.': 'Les 194 hubs pays sont accessibles depuis une carte neutre. Survolez pour voir la forme et le résumé d’intégration ; cliquez pour ouvrir le portail local.',
+    'Global Developer Tools': 'Outils développeur globaux',
+    'Browser labs for developer data.': 'Labs navigateur pour données développeur.',
+    'Compact registry of validators, generators, parsers, security checks, and fixture labs. Private by default, useful before production handoff.': 'Registre compact de validateurs, générateurs, parsers, contrôles sécurité et labs de fixtures. Privé par défaut, utile avant le passage en production.',
+    'global tools': 'outils globaux',
+    'families': 'familles',
+    'uploads required': 'uploads requis',
+    'Find the workbench.': 'Trouver le workbench.',
+    'Search global tools': 'Rechercher des outils globaux',
+    'API contracts': 'Contrats API',
+    'Security': 'Sécurité',
+    'Formats': 'Formats',
+    'Ops': 'Ops',
+    'AI data': 'Données IA',
+    'Priority': 'Priorité',
+    'High-signal starting points.': 'Points de départ à fort signal.',
+    'Registry': 'Registre',
+    'Grouped by integration job, not by random utility labels.': 'Groupé par tâche d’intégration, pas par étiquettes utilitaires aléatoires.',
+    'No global tools match this search.': 'Aucun outil global ne correspond à cette recherche.',
+    'Open': 'Ouvrir',
+    'Tools': 'Outils',
+    'Global Registry': 'Registre global',
+    'Country Hubs': 'Hubs pays',
+    'Explore local developer specifications, tax structures, payment protocols, and regional validators.': 'Explorez les spécifications locales, structures fiscales, protocoles de paiement et validateurs régionaux.',
+    'Identifiers': 'Identifiants',
+    'Payments': 'Paiements',
+    'Guides': 'Guides',
+    'Brands': 'Marques',
+    'Search countries': 'Rechercher des pays',
+    'Filter Region': 'Filtrer par région',
+    'Filter Status': 'Filtrer par statut',
+    'All Regions': 'Toutes les régions',
+    'All Statuses': 'Tous les statuts',
+    'In Progress': 'En cours',
+    'Developer Features': 'Fonctions développeur',
+    'Government': 'Gouvernement',
+    'Banking': 'Banque',
+    'World Map': 'Carte du monde',
+    'Explore country coverage': 'Explorer la couverture pays',
+    'Hover a country to see its premium shape preview. Click a country shape to open the developer hub.': 'Survolez un pays pour voir son aperçu premium. Cliquez sur sa forme pour ouvrir le hub développeur.',
+    'Country Preview': 'Aperçu du pays',
+    'Choose a country': 'Choisir un pays',
+    'Hover or focus any country card or map shape to inspect local developer coverage. No country is selected by default.': 'Survolez ou focalisez une carte ou une forme pour inspecter la couverture locale. Aucun pays n’est sélectionné par défaut.',
+    'ISO Codes': 'Codes ISO',
+    'Language': 'Langue',
+    'No selection': 'Aucune sélection',
+    'Completion': 'Complétion',
+    'Coverage': 'Couverture',
+    'No countries match the current search or filters.': 'Aucun pays ne correspond à la recherche ou aux filtres.',
+    'Live': 'Actif',
+    'Building': 'En construction',
+    'Roadmap': 'Roadmap',
+    'Available': 'Disponible',
+    'Planned': 'Prévu',
+    'South America': 'Amérique du Sud',
+    'North America': 'Amérique du Nord',
+    'Africa': 'Afrique',
+    'Data &amp; API Contracts': 'Données et contrats API',
+    'Security &amp; Trust': 'Sécurité et confiance',
+    'Regulated Formats': 'Formats réglementés',
+    'DevOps &amp; Cloud QA': 'DevOps et QA cloud',
+    'Frontend &amp; Product QA': 'Frontend et QA produit',
+    'AI &amp; Data Ops': 'IA et opérations data',
+    'Text, Time &amp; Utilities': 'Texte, temps et utilitaires'
+  },
+  pl: {
+    'Browser-only developer intelligence': 'Inteligencja deweloperska tylko w przeglądarce',
+    'Validate, generate, and debug real-world data.': 'Waliduj, generuj i debuguj realne dane.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Globalne narzędzia i workbenche krajowe dla identyfikatorów, płatności, formatów bankowych, lokalnych fixture’ów i diagnostyki parserów. Prywatnie domyślnie, precyzyjnie przed produkcją.',
+    'Command': 'Komenda',
+    'Browse countries': 'Przeglądaj kraje',
+    'workbenches indexed.': 'workbenche w indeksie.',
+    'featured routes ready.': 'wyróżnione ścieżki gotowe.',
+    'matching country/tool routes.': 'pasujące ścieżki krajów/narzędzi.',
+    'premium hubs': 'huby premium',
+    'identifier families': 'rodziny identyfikatorów',
+    'core locales': 'języki bazowe',
+    'Universal browser utilities': 'Uniwersalne narzędzia przeglądarkowe',
+    'Local formats and rules': 'Lokalne formaty i reguły',
+    'Fresh values for QA': 'Świeże wartości do QA',
+    'Debug Contract': 'Kontrakt debugowania',
+    'Field breakdown, replay, raw output': 'Podział pól, replay, surowy wynik',
+    'Evidence before trust': 'Dowód przed zaufaniem',
+    'Try signals': 'Przetestuj sygnały',
+    'Fast utilities that are not tied to one country.': 'Szybkie narzędzia niezwiązane z jednym krajem.',
+    'Local Instruments': 'Instrumenty lokalne',
+    'Premium country tools with real debugging depth.': 'Narzędzia krajowe premium z realną głębią debugowania.',
+    'Generate fixtures when validation is not enough.': 'Generuj fixture’y, gdy sama walidacja nie wystarcza.',
+    'Country Intelligence': 'Inteligencja krajowa',
+    'Browse premium country hubs.': 'Przeglądaj huby krajowe premium.',
+    'Premium Contract': 'Kontrakt premium',
+    'Every serious tool needs more than a green check.': 'Każde poważne narzędzie potrzebuje więcej niż zielony check.',
+    'Explain the fields': 'Wyjaśnij pola',
+    'Show the pipeline': 'Pokaż pipeline',
+    'Generate fixtures': 'Generuj fixture’y',
+    'Name the boundary': 'Nazwij granicę',
+    'A quiet atlas for local developer work.': 'Spokojny atlas do lokalnej pracy deweloperskiej.',
+    'Global Developer Tools': 'Globalne narzędzia deweloperskie',
+    'Browser labs for developer data.': 'Laboratoria przeglądarkowe dla danych deweloperskich.',
+    'Find the workbench.': 'Znajdź workbench.',
+    'High-signal starting points.': 'Punkty startowe o wysokim sygnale.',
+    'Grouped by integration job, not by random utility labels.': 'Pogrupowane według pracy integracyjnej, nie losowych etykiet.',
+    'Country Hubs': 'Huby krajowe',
+    'Explore country coverage': 'Przeglądaj pokrycie krajów',
+    'Choose a country': 'Wybierz kraj',
+    'No selection': 'Brak wyboru',
+    'Coverage': 'Pokrycie',
+    'Completion': 'Ukończenie',
+    'No countries match the current search or filters.': 'Żaden kraj nie pasuje do wyszukiwania lub filtrów.',
+    'Data &amp; API Contracts': 'Dane i kontrakty API',
+    'Security &amp; Trust': 'Bezpieczeństwo i zaufanie',
+    'Regulated Formats': 'Formaty regulowane',
+    'DevOps &amp; Cloud QA': 'DevOps i QA chmury',
+    'Frontend &amp; Product QA': 'Frontend i QA produktu',
+    'AI &amp; Data Ops': 'AI i operacje danych',
+    'Text, Time &amp; Utilities': 'Tekst, czas i narzędzia'
+  },
+  uk: {
+    'Browser-only developer intelligence': 'Інтелект для розробників лише в браузері',
+    'Validate, generate, and debug real-world data.': 'Перевіряйте, генеруйте й дебажте реальні дані.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Глобальні утиліти й воркбенчі за країнами для ідентифікаторів, платежів, банківських форматів, локальних фікстур і діагностики парсерів. Приватно за замовчуванням, точно перед продакшеном.',
+    'Command': 'Команда',
+    'Browse countries': 'Переглянути країни',
+    'workbenches indexed.': 'воркбенчів в індексі.',
+    'featured routes ready.': 'рекомендованих маршрутів готово.',
+    'matching country/tool routes.': 'відповідних маршрутів країн/інструментів.',
+    'premium hubs': 'преміум-хаби',
+    'workbenches': 'воркбенчі',
+    'identifier families': 'сімей ідентифікаторів',
+    'core locales': 'основних мов',
+    'Launch lanes': 'Швидкі входи',
+    'Global': 'Глобальні',
+    'Universal browser utilities': 'Універсальні браузерні утиліти',
+    'Countries': 'Країни',
+    'Local formats and rules': 'Локальні формати й правила',
+    'Generators': 'Генератори',
+    'Fresh values for QA': 'Свіжі значення для QA',
+    'Debug Contract': 'Контракт дебагу',
+    'Field breakdown, replay, raw output': 'Розбір полів, replay, сирий результат',
+    'Evidence before trust': 'Доказ перед довірою',
+    'Try signals': 'Спробуйте сигнали',
+    'Global Tools': 'Глобальні інструменти',
+    'Fast utilities that are not tied to one country.': 'Швидкі утиліти, не прив’язані до однієї країни.',
+    'Local Instruments': 'Локальні інструменти',
+    'Premium country tools with real debugging depth.': 'Преміум-інструменти країн із реальною глибиною дебагу.',
+    'Generate fixtures when validation is not enough.': 'Генеруйте фікстури, коли перевірки недостатньо.',
+    'Country Intelligence': 'Інтелект за країнами',
+    'Browse premium country hubs.': 'Перегляньте преміум-хаби країн.',
+    'Premium Contract': 'Преміум-контракт',
+    'Every serious tool needs more than a green check.': 'Кожному серйозному інструменту потрібно більше, ніж зелена галочка.',
+    'Explain the fields': 'Пояснити поля',
+    'Show the pipeline': 'Показати pipeline',
+    'Generate fixtures': 'Генерувати фікстури',
+    'Name the boundary': 'Назвати межу',
+    'A quiet atlas for local developer work.': 'Спокійний атлас для локальної роботи розробників.',
+    'Global Developer Tools': 'Глобальні інструменти розробника',
+    'Browser labs for developer data.': 'Браузерні лабораторії для даних розробника.',
+    'global tools': 'глобальних інструментів',
+    'families': 'сімей',
+    'uploads required': 'завантажень потрібно',
+    'Find the workbench.': 'Знайдіть воркбенч.',
+    'API contracts': 'API-контракти',
+    'Security': 'Безпека',
+    'Formats': 'Формати',
+    'Priority': 'Пріоритет',
+    'High-signal starting points.': 'Стартові точки з високим сигналом.',
+    'Registry': 'Реєстр',
+    'Grouped by integration job, not by random utility labels.': 'Згруповано за інтеграційною задачею, а не випадковими ярликами.',
+    'No global tools match this search.': 'Жоден глобальний інструмент не відповідає пошуку.',
+    'Open': 'Відкрити',
+    'Tools': 'Інструменти',
+    'Global Registry': 'Глобальний реєстр',
+    'Country Hubs': 'Хаби країн',
+    'Explore local developer specifications, tax structures, payment protocols, and regional validators.': 'Переглядайте локальні специфікації, податкові структури, платіжні протоколи й регіональні валідатори.',
+    'Identifiers': 'Ідентифікатори',
+    'Payments': 'Платежі',
+    'Guides': 'Гіди',
+    'Brands': 'Бренди',
+    'Search countries': 'Пошук країн',
+    'Filter Region': 'Фільтр регіону',
+    'Filter Status': 'Фільтр статусу',
+    'All Regions': 'Усі регіони',
+    'All Statuses': 'Усі статуси',
+    'In Progress': 'У роботі',
+    'Developer Features': 'Функції для розробників',
+    'Government': 'Держава',
+    'Banking': 'Банкінг',
+    'World Map': 'Мапа світу',
+    'Explore country coverage': 'Переглянути покриття країн',
+    'Country Preview': 'Прев’ю країни',
+    'Choose a country': 'Виберіть країну',
+    'ISO Codes': 'ISO-коди',
+    'Language': 'Мова',
+    'No selection': 'Немає вибору',
+    'Completion': 'Готовність',
+    'Coverage': 'Покриття',
+    'No countries match the current search or filters.': 'Жодна країна не відповідає пошуку або фільтрам.',
+    'Live': 'Активно',
+    'Building': 'Будується',
+    'Roadmap': 'Roadmap',
+    'Available': 'Доступно',
+    'Planned': 'Заплановано',
+    'South America': 'Південна Америка',
+    'North America': 'Північна Америка',
+    'Asia': 'Азія',
+    'Africa': 'Африка',
+    'Oceania': 'Океанія',
+    'Data &amp; API Contracts': 'Дані та API-контракти',
+    'Security &amp; Trust': 'Безпека й довіра',
+    'Regulated Formats': 'Регульовані формати',
+    'DevOps &amp; Cloud QA': 'DevOps і хмарний QA',
+    'Frontend &amp; Product QA': 'Frontend і продуктовий QA',
+    'AI &amp; Data Ops': 'AI та операції з даними',
+    'Text, Time &amp; Utilities': 'Текст, час і утиліти'
+  }
+};
+
+const PRODUCTION_TITLE_PHRASES = {
+  fr: [
+    [' Validator &amp; Explainer', ' - validateur et explication'], [' Number Inspector', ' - inspecteur de numéro'],
+    [' Validator', ' - validateur'], [' Inspector', ' - inspecteur'], [' Workbench', ' - workbench'],
+    [' Helper', ' - assistant'], [' Formatter', ' - formateur'], [' Converter', ' - convertisseur'],
+    [' Generator', ' - générateur'], [' Builder', ' - constructeur'], [' Parser', ' - parseur'],
+    [' Auditor', ' - auditeur'], [' Assistant', ' - assistant'], [' Calculator', ' - calculateur'],
+    [' Checker', ' - vérificateur'], [' Detector', ' - détecteur'], [' Normalizer', ' - normalisateur']
+  ],
+  uk: [
+    [' Validator &amp; Explainer', ' - валідатор і пояснення'], [' Number Inspector', ' - інспектор номера'],
+    [' Validator', ' - валідатор'], [' Inspector', ' - інспектор'], [' Workbench', ' - воркбенч'],
+    [' Helper', ' - помічник'], [' Formatter', ' - форматер'], [' Converter', ' - конвертер'],
+    [' Generator', ' - генератор'], [' Builder', ' - конструктор'], [' Parser', ' - парсер'],
+    [' Auditor', ' - аудитор'], [' Assistant', ' - асистент'], [' Calculator', ' - калькулятор'],
+    [' Checker', ' - перевірка'], [' Detector', ' - детектор'], [' Normalizer', ' - нормалізатор']
+  ]
+};
+
+const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
+  es: {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches de navegador para formatos globales',
+    'Browser-only developer workbenches for global formats': 'Workbenches de navegador para formatos globales',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Valida, inspecciona, genera y depura en el navegador identificadores, pagos, formatos bancarios, datos locales y fixtures para desarrolladores.',
+    'Global Developer Tools | ValidoHub': 'Herramientas globales para desarrolladores | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Explora validadores, generadores, parsers, ayudas de seguridad, fixtures locales y depuradores de payloads globales de ValidoHub, solo en navegador.',
+    'Countries | ValidoHub': 'Países | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'Explora hubs de país de ValidoHub, identificadores locales, sistemas de pago, notas bancarias y roadmaps de herramientas por país.',
+    'All Global Tools': 'Todas las herramientas globales',
+    'Search countries': 'Buscar países'
+  },
+  'pt-BR': {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches de navegador para formatos globais',
+    'Browser-only developer workbenches for global formats': 'Workbenches de navegador para formatos globais',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Valide, inspecione, gere e depure no navegador identificadores, pagamentos, formatos bancários, dados locais e fixtures para desenvolvedores.',
+    'Global Developer Tools | ValidoHub': 'Ferramentas globais para desenvolvedores | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Explore validadores, geradores, parsers, auxiliares de segurança, fixtures locais e depuradores de payloads globais da ValidoHub, só no navegador.',
+    'Countries | ValidoHub': 'Países | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'Explore hubs de país da ValidoHub, identificadores locais, sistemas de pagamento, notas bancárias e roadmaps de ferramentas por país.',
+    'All Global Tools': 'Todas as ferramentas globais',
+    'Search countries': 'Buscar países'
+  },
+  de: {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Browser-Workbenches für globale Formate',
+    'Browser-only developer workbenches for global formats': 'Browser-Workbenches für globale Formate',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Kennungen, Zahlungen, Bankformate, Locale-Daten und Entwickler-Testdaten direkt im Browser validieren, inspizieren, generieren und debuggen.',
+    'Global Developer Tools | ValidoHub': 'Globale Entwicklertools | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'ValidoHubs globale, browserbasierte Validatoren, Generatoren, Parser, Sicherheitshelfer, Locale-Testdaten und Payload-Debugger durchsuchen.',
+    'Countries | ValidoHub': 'Länder | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'ValidoHub-Länderhubs, lokale Kennungen, Zahlungssysteme, Banking-Notizen und länderspezifische Tool-Roadmaps erkunden.',
+    'All Global Tools': 'Alle globalen Tools',
+    'Search countries': 'Länder suchen'
+  },
+  fr: {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches navigateur pour formats globaux',
+    'Browser-only developer workbenches for global formats': 'Workbenches navigateur pour formats globaux',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Validez, inspectez, générez et déboguez dans le navigateur les identifiants, paiements, formats bancaires, données locales et fixtures développeur par pays.',
+    'Global Developer Tools | ValidoHub': 'Outils développeur globaux | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Parcourez les validateurs, générateurs, parsers, aides sécurité, fixtures locales et débogueurs de payloads globaux de ValidoHub, uniquement dans le navigateur.',
+    'Countries | ValidoHub': 'Pays | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'Explorez les hubs pays ValidoHub, identifiants locaux, systèmes de paiement, notes bancaires et roadmaps d’outils par pays.',
+    'All Global Tools': 'Tous les outils globaux',
+    'Search countries': 'Rechercher des pays'
+  },
+  pl: {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenche przeglądarkowe dla formatów globalnych',
+    'Browser-only developer workbenches for global formats': 'Workbenche przeglądarkowe dla formatów globalnych',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Waliduj, sprawdzaj, generuj i debuguj w przeglądarce identyfikatory, płatności, formaty bankowe, dane lokalne i fixture’y deweloperskie.',
+    'Global Developer Tools | ValidoHub': 'Globalne narzędzia deweloperskie | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Przeglądaj globalne walidatory, generatory, parsery, narzędzia bezpieczeństwa, fixture’y locale i debuggery payloadów ValidoHub działające w przeglądarce.',
+    'Countries | ValidoHub': 'Kraje | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'Przeglądaj huby krajowe ValidoHub, lokalne identyfikatory, systemy płatności, notatki bankowe i roadmapy narzędzi krajowych.',
+    'All Global Tools': 'Wszystkie globalne narzędzia',
+    'Search countries': 'Szukaj krajów'
+  },
+  uk: {
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Браузерні воркбенчі для глобальних форматів',
+    'Browser-only developer workbenches for global formats': 'Браузерні воркбенчі для глобальних форматів',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Перевіряйте, інспектуйте, генеруйте й дебажте в браузері ідентифікатори, платежі, банківські формати, локальні дані та фікстури розробника за країнами.',
+    'Global Developer Tools | ValidoHub': 'Глобальні інструменти розробника | ValidoHub',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Переглядайте глобальні браузерні валідатори, генератори, парсери, безпекові помічники, локальні фікстури й дебагери payload у ValidoHub.',
+    'Countries | ValidoHub': 'Країни | ValidoHub',
+    'Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.': 'Переглядайте хаби країн ValidoHub, локальні ідентифікатори, платіжні системи, банківські нотатки й roadmaps інструментів за країнами.',
+    'All Global Tools': 'Усі глобальні інструменти',
+    'Search countries': 'Пошук країн'
+  }
+};
+
+const PRODUCTION_WORKBENCH_REPLACEMENTS = {
+  es: {
+    '>Generate<': '>Generar<',
+    'Copy normalized': 'Copiar normalizado',
+    'Copy developer JSON': 'Copiar JSON para desarrolladores',
+    'Download JSON': 'Descargar JSON',
+    'Developer Snapshot': 'Snapshot para desarrolladores',
+    'Developer snapshot JSON': 'Snapshot JSON para desarrolladores',
+    'Current result snapshot': 'Snapshot del resultado actual',
+    'Field breakdown': 'Desglose de campos',
+    'Identifier breakdown': 'Desglose del identificador',
+    'Evidence breakdown': 'Desglose de evidencia',
+    'Validation pipeline': 'Pipeline de validación',
+    'Quality notes': 'Notas de calidad',
+    'Official boundary': 'Límite oficial',
+    'Official sources and boundary': 'Fuentes oficiales y límite',
+    'Integration traps': 'Trampas de integración',
+    'Save implementation time': 'Ahorra tiempo de implementación',
+    'Batch validation': 'Validación por lote',
+    'Run batch': 'Ejecutar lote',
+    'Copy batch JSON': 'Copiar JSON del lote',
+    'Clear batch': 'Limpiar lote',
+    'Recent local inputs': 'Entradas locales recientes',
+    'Recent validations': 'Validaciones recientes',
+    'No recent validations yet': 'Aún no hay validaciones recientes',
+    'Local checks completed in this browser.': 'Las comprobaciones locales se completaron en este navegador.',
+    'Local pass': 'Paso local',
+    'LOCAL PASS': 'PASO LOCAL',
+    'PASS': 'PASS',
+    'REVIEW': 'REVISAR',
+    'Review needed': 'Revisión necesaria',
+    'Offline checks passed': 'Comprobaciones offline superadas',
+    'Valid sample': 'Muestra válida',
+    'Invalid sample': 'Muestra inválida',
+    'Short sample': 'Muestra corta',
+    'Grouped valid sample': 'Muestra válida agrupada',
+    'Bad country prefix': 'Prefijo de país incorrecto',
+    'Bad check digit': 'Dígito de control incorrecto',
+    'Generated IBAN': 'IBAN generado',
+    'BBAN body': 'Cuerpo BBAN',
+    'MOD-97 check digits': 'Dígitos MOD-97',
+    'Masked display': 'Vista enmascarada',
+    'Browser-only boundary': 'Límite solo navegador',
+    'API preview': 'Vista API',
+    'Raw JSON': 'JSON crudo',
+    'Raw JSON output': 'Salida JSON cruda',
+    'Developer API preview': 'Vista API para desarrolladores',
+    'What this tool is for': 'Para qué sirve esta herramienta',
+    'Used for': 'Uso',
+    'Checks locally': 'Comprueba localmente',
+    'Boundary': 'Límite',
+    'Advanced tools': 'Herramientas avanzadas',
+    'Related local tools': 'Herramientas locales relacionadas'
+    ,'Tool input and output': 'Entrada y salida de la herramienta'
+    ,'Primary navigation': 'Navegación principal'
+    ,'Country code': 'Código de país'
+    ,'BBAN / account body': 'BBAN / cuerpo de cuenta'
+    ,'Existing IBAN to repair or inspect': 'IBAN existente para reparar o inspeccionar'
+    ,'Repair existing': 'Reparar existente'
+    ,'JSON payload': 'Payload JSON'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Cantidad de fixtures'
+    ,'Analyze': 'Analizar'
+    ,'Scan and redact': 'Escanear y redactar'
+    ,'Redaction mode': 'Modo de redacción'
+    ,'Payload, log, or text': 'Payload, log o texto'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'Genera dígitos de control IBAN e inspecciona localmente la estructura generada.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Genera dígitos de control IBAN desde código de país y BBAN/cuerpo de cuenta, y repite la validación MOD-97 localmente.'
+  },
+  'pt-BR': {
+    '>Generate<': '>Gerar<',
+    'Copy normalized': 'Copiar normalizado',
+    'Copy developer JSON': 'Copiar JSON para desenvolvedores',
+    'Download JSON': 'Baixar JSON',
+    'Developer Snapshot': 'Snapshot para desenvolvedores',
+    'Developer snapshot JSON': 'Snapshot JSON para desenvolvedores',
+    'Current result snapshot': 'Snapshot do resultado atual',
+    'Field breakdown': 'Detalhamento de campos',
+    'Identifier breakdown': 'Detalhamento do identificador',
+    'Evidence breakdown': 'Detalhamento de evidências',
+    'Validation pipeline': 'Pipeline de validação',
+    'Quality notes': 'Notas de qualidade',
+    'Official boundary': 'Limite oficial',
+    'Official sources and boundary': 'Fontes oficiais e limite',
+    'Integration traps': 'Armadilhas de integração',
+    'Save implementation time': 'Economize tempo de implementação',
+    'Batch validation': 'Validação em lote',
+    'Run batch': 'Executar lote',
+    'Copy batch JSON': 'Copiar JSON do lote',
+    'Clear batch': 'Limpar lote',
+    'Recent local inputs': 'Entradas locais recentes',
+    'Recent validations': 'Validações recentes',
+    'No recent validations yet': 'Ainda não há validações recentes',
+    'Local checks completed in this browser.': 'As verificações locais foram concluídas neste navegador.',
+    'Local pass': 'Aprovado localmente',
+    'LOCAL PASS': 'APROVADO LOCALMENTE',
+    'PASS': 'PASS',
+    'REVIEW': 'REVISAR',
+    'Review needed': 'Revisão necessária',
+    'Offline checks passed': 'Verificações offline aprovadas',
+    'Valid sample': 'Exemplo válido',
+    'Invalid sample': 'Exemplo inválido',
+    'Short sample': 'Exemplo curto',
+    'Grouped valid sample': 'Exemplo válido agrupado',
+    'Bad country prefix': 'Prefixo de país incorreto',
+    'Bad check digit': 'Dígito verificador incorreto',
+    'Generated IBAN': 'IBAN gerado',
+    'BBAN body': 'Corpo BBAN',
+    'MOD-97 check digits': 'Dígitos MOD-97',
+    'Masked display': 'Visualização mascarada',
+    'Browser-only boundary': 'Limite só no navegador',
+    'API preview': 'Prévia da API',
+    'Raw JSON': 'JSON bruto',
+    'Raw JSON output': 'Saída JSON bruta',
+    'Developer API preview': 'Prévia de API para desenvolvedores',
+    'What this tool is for': 'Para que serve esta ferramenta',
+    'Used for': 'Uso',
+    'Checks locally': 'Verifica localmente',
+    'Boundary': 'Limite',
+    'Advanced tools': 'Ferramentas avançadas',
+    'Related local tools': 'Ferramentas locais relacionadas'
+    ,'Tool input and output': 'Entrada e saída da ferramenta'
+    ,'Primary navigation': 'Navegação principal'
+    ,'Country code': 'Código do país'
+    ,'BBAN / account body': 'BBAN / corpo da conta'
+    ,'Existing IBAN to repair or inspect': 'IBAN existente para reparar ou inspecionar'
+    ,'Repair existing': 'Reparar existente'
+    ,'JSON payload': 'Payload JSON'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Quantidade de fixtures'
+    ,'Analyze': 'Analisar'
+    ,'Scan and redact': 'Escanear e redigir'
+    ,'Redaction mode': 'Modo de redação'
+    ,'Payload, log, or text': 'Payload, log ou texto'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'Gere dígitos verificadores de IBAN e inspecione localmente a estrutura gerada.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Gere dígitos verificadores de IBAN a partir do código do país e BBAN/corpo da conta, e repita a validação MOD-97 localmente.'
+  },
+  de: {
+    '>Generate<': '>Generieren<',
+    'Copy normalized': 'Normalisierte Ausgabe kopieren',
+    'Copy developer JSON': 'Entwickler-JSON kopieren',
+    'Download JSON': 'JSON herunterladen',
+    'Developer Snapshot': 'Entwickler-Snapshot',
+    'Developer snapshot JSON': 'Entwickler-Snapshot JSON',
+    'Current result snapshot': 'Snapshot des aktuellen Ergebnisses',
+    'Field breakdown': 'Feldaufschlüsselung',
+    'Identifier breakdown': 'Kennungsaufschlüsselung',
+    'Evidence breakdown': 'Evidenzaufschlüsselung',
+    'Validation pipeline': 'Validierungspipeline',
+    'Quality notes': 'Qualitätsnotizen',
+    'Official boundary': 'Offizielle Grenze',
+    'Official sources and boundary': 'Offizielle Quellen und Grenze',
+    'Integration traps': 'Integrationsfallen',
+    'Save implementation time': 'Implementierungszeit sparen',
+    'Batch validation': 'Batch-Validierung',
+    'Run batch': 'Batch ausführen',
+    'Copy batch JSON': 'Batch-JSON kopieren',
+    'Clear batch': 'Batch leeren',
+    'Recent local inputs': 'Letzte lokale Eingaben',
+    'Recent validations': 'Letzte Validierungen',
+    'No recent validations yet': 'Noch keine Validierungen',
+    'Local checks completed in this browser.': 'Lokale Checks wurden in diesem Browser abgeschlossen.',
+    'Local pass': 'Lokal bestanden',
+    'LOCAL PASS': 'LOKAL BESTANDEN',
+    'PASS': 'PASS',
+    'REVIEW': 'PRÜFEN',
+    'Review needed': 'Prüfung erforderlich',
+    'Offline checks passed': 'Offline-Checks bestanden',
+    'Valid sample': 'Gültiges Beispiel',
+    'Invalid sample': 'Ungültiges Beispiel',
+    'Short sample': 'Kurzes Beispiel',
+    'Grouped valid sample': 'Gruppiertes gültiges Beispiel',
+    'Bad country prefix': 'Falsches Länderpräfix',
+    'Bad check digit': 'Falsche Prüfziffer',
+    'Generated IBAN': 'Generierte IBAN',
+    'BBAN body': 'BBAN-Körper',
+    'MOD-97 check digits': 'MOD-97-Prüfziffern',
+    'Masked display': 'Maskierte Anzeige',
+    'Browser-only boundary': 'Browser-only-Grenze',
+    'API preview': 'API-Vorschau',
+    'Raw JSON': 'Rohes JSON',
+    'Raw JSON output': 'Rohe JSON-Ausgabe',
+    'Developer API preview': 'Entwickler-API-Vorschau',
+    'What this tool is for': 'Wofür dieses Tool ist',
+    'Used for': 'Einsatz',
+    'Checks locally': 'Prüft lokal',
+    'Boundary': 'Grenze',
+    'Advanced tools': 'Erweiterte Tools',
+    'Related local tools': 'Ähnliche lokale Tools'
+    ,'Tool input and output': 'Tool-Eingabe und Ausgabe'
+    ,'Primary navigation': 'Hauptnavigation'
+    ,'Country code': 'Ländercode'
+    ,'BBAN / account body': 'BBAN / Kontokörper'
+    ,'Existing IBAN to repair or inspect': 'Vorhandene IBAN reparieren oder prüfen'
+    ,'Repair existing': 'Vorhandene reparieren'
+    ,'JSON payload': 'JSON-Payload'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Fixture-Anzahl'
+    ,'Analyze': 'Analysieren'
+    ,'Scan and redact': 'Scannen und maskieren'
+    ,'Redaction mode': 'Maskierungsmodus'
+    ,'Payload, log, or text': 'Payload, Log oder Text'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'IBAN-Prüfziffern generieren und die erzeugte IBAN-Struktur lokal prüfen.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'IBAN-Prüfziffern aus Ländercode und BBAN/Kontokörper generieren und MOD-97 lokal nachrechnen.'
+  },
+  fr: {
+    '>Generate<': '>Générer<',
+    'Copy normalized': 'Copier la valeur normalisée',
+    'Copy developer JSON': 'Copier le JSON développeur',
+    'Download JSON': 'Télécharger le JSON',
+    'Developer Snapshot': 'Snapshot développeur',
+    'Developer snapshot JSON': 'Snapshot JSON développeur',
+    'Current result snapshot': 'Snapshot du résultat actuel',
+    'Field breakdown': 'Détail des champs',
+    'Identifier breakdown': 'Détail de l’identifiant',
+    'Evidence breakdown': 'Détail des preuves',
+    'Validation pipeline': 'Pipeline de validation',
+    'Quality notes': 'Notes de qualité',
+    'Official boundary': 'Limite officielle',
+    'Official sources and boundary': 'Sources officielles et limite',
+    'Integration traps': 'Pièges d’intégration',
+    'Save implementation time': 'Gagner du temps d’implémentation',
+    'Batch validation': 'Validation par lot',
+    'Run batch': 'Lancer le lot',
+    'Copy batch JSON': 'Copier le JSON du lot',
+    'Clear batch': 'Effacer le lot',
+    'Recent local inputs': 'Entrées locales récentes',
+    'Recent validations': 'Validations récentes',
+    'No recent validations yet': 'Aucune validation récente',
+    'Local checks completed in this browser.': 'Les contrôles locaux ont été effectués dans ce navigateur.',
+    'Local pass': 'Validation locale',
+    'LOCAL PASS': 'VALIDATION LOCALE',
+    'PASS': 'PASS',
+    'REVIEW': 'À VÉRIFIER',
+    'Review needed': 'Vérification requise',
+    'Offline checks passed': 'Contrôles hors ligne réussis',
+    'Valid sample': 'Exemple valide',
+    'Invalid sample': 'Exemple invalide',
+    'Short sample': 'Exemple court',
+    'Grouped valid sample': 'Exemple valide groupé',
+    'Bad country prefix': 'Préfixe pays incorrect',
+    'Bad check digit': 'Chiffre de contrôle incorrect',
+    'Generated IBAN': 'IBAN généré',
+    'BBAN body': 'Corps BBAN',
+    'MOD-97 check digits': 'Chiffres MOD-97',
+    'Masked display': 'Affichage masqué',
+    'Browser-only boundary': 'Limite navigateur uniquement',
+    'API preview': 'Aperçu API',
+    'Raw JSON': 'JSON brut',
+    'Raw JSON output': 'Sortie JSON brute',
+    'Developer API preview': 'Aperçu API développeur',
+    'What this tool is for': 'À quoi sert cet outil',
+    'Used for': 'Utilisation',
+    'Checks locally': 'Vérifie localement',
+    'Boundary': 'Limite',
+    'Advanced tools': 'Outils avancés',
+    'Related local tools': 'Outils locaux liés'
+    ,'Tool input and output': 'Entrée et sortie de l’outil'
+    ,'Primary navigation': 'Navigation principale'
+    ,'Country code': 'Code pays'
+    ,'BBAN / account body': 'BBAN / corps du compte'
+    ,'Existing IBAN to repair or inspect': 'IBAN existant à réparer ou inspecter'
+    ,'Repair existing': 'Réparer l’existant'
+    ,'JSON payload': 'Payload JSON'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Nombre de fixtures'
+    ,'Analyze': 'Analyser'
+    ,'Scan and redact': 'Scanner et masquer'
+    ,'Redaction mode': 'Mode de masquage'
+    ,'Payload, log, or text': 'Payload, log ou texte'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'Générez les chiffres de contrôle IBAN et inspectez localement la structure générée.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Générez les chiffres de contrôle IBAN depuis un code pays et un BBAN/corps de compte, puis rejouez MOD-97 localement.'
+  },
+  pl: {
+    '>Generate<': '>Generuj<',
+    'Copy normalized': 'Kopiuj znormalizowane',
+    'Copy developer JSON': 'Kopiuj JSON deweloperski',
+    'Download JSON': 'Pobierz JSON',
+    'Developer Snapshot': 'Snapshot deweloperski',
+    'Developer snapshot JSON': 'Snapshot JSON deweloperski',
+    'Current result snapshot': 'Snapshot bieżącego wyniku',
+    'Field breakdown': 'Podział pól',
+    'Identifier breakdown': 'Podział identyfikatora',
+    'Evidence breakdown': 'Podział dowodów',
+    'Validation pipeline': 'Pipeline walidacji',
+    'Quality notes': 'Notatki jakości',
+    'Official boundary': 'Granica oficjalna',
+    'Official sources and boundary': 'Źródła oficjalne i granica',
+    'Integration traps': 'Pułapki integracyjne',
+    'Save implementation time': 'Oszczędzaj czas implementacji',
+    'Batch validation': 'Walidacja batch',
+    'Run batch': 'Uruchom batch',
+    'Copy batch JSON': 'Kopiuj JSON batcha',
+    'Clear batch': 'Wyczyść batch',
+    'Recent local inputs': 'Ostatnie lokalne dane',
+    'Recent validations': 'Ostatnie walidacje',
+    'No recent validations yet': 'Brak ostatnich walidacji',
+    'Local checks completed in this browser.': 'Lokalne kontrole zakończone w tej przeglądarce.',
+    'Local pass': 'Lokalnie poprawne',
+    'LOCAL PASS': 'LOKALNIE POPRAWNE',
+    'PASS': 'PASS',
+    'REVIEW': 'SPRAWDŹ',
+    'Review needed': 'Wymaga sprawdzenia',
+    'Offline checks passed': 'Kontrole offline zakończone powodzeniem',
+    'Valid sample': 'Poprawna próbka',
+    'Invalid sample': 'Niepoprawna próbka',
+    'Short sample': 'Krótka próbka',
+    'Grouped valid sample': 'Poprawna próbka grupowana',
+    'Bad country prefix': 'Błędny prefiks kraju',
+    'Bad check digit': 'Błędna cyfra kontrolna',
+    'Generated IBAN': 'Wygenerowany IBAN',
+    'BBAN body': 'Treść BBAN',
+    'MOD-97 check digits': 'Cyfry kontrolne MOD-97',
+    'Masked display': 'Widok maskowany',
+    'Browser-only boundary': 'Granica przeglądarkowa',
+    'API preview': 'Podgląd API',
+    'Raw JSON': 'Surowy JSON',
+    'Raw JSON output': 'Surowy wynik JSON',
+    'Developer API preview': 'Podgląd API dla deweloperów',
+    'What this tool is for': 'Do czego służy to narzędzie',
+    'Used for': 'Zastosowanie',
+    'Checks locally': 'Sprawdza lokalnie',
+    'Boundary': 'Granica',
+    'Advanced tools': 'Narzędzia zaawansowane',
+    'Related local tools': 'Powiązane narzędzia lokalne'
+    ,'Tool input and output': 'Wejście i wynik narzędzia'
+    ,'Primary navigation': 'Główna nawigacja'
+    ,'Country code': 'Kod kraju'
+    ,'BBAN / account body': 'BBAN / treść konta'
+    ,'Existing IBAN to repair or inspect': 'Istniejący IBAN do naprawy lub inspekcji'
+    ,'Repair existing': 'Napraw istniejący'
+    ,'JSON payload': 'Payload JSON'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Liczba fixture’ów'
+    ,'Analyze': 'Analizuj'
+    ,'Scan and redact': 'Skanuj i maskuj'
+    ,'Redaction mode': 'Tryb maskowania'
+    ,'Payload, log, or text': 'Payload, log lub tekst'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'Generuj cyfry kontrolne IBAN i lokalnie sprawdzaj strukturę wygenerowanego numeru.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Generuj cyfry kontrolne IBAN z kodu kraju i BBAN/treści konta, a potem lokalnie odtwórz walidację MOD-97.'
+  },
+  uk: {
+    '>Generate<': '>Згенерувати<',
+    'Copy normalized': 'Скопіювати нормалізоване',
+    'Copy developer JSON': 'Скопіювати JSON для розробника',
+    'Download JSON': 'Завантажити JSON',
+    'Developer Snapshot': 'Знімок для розробника',
+    'Developer snapshot JSON': 'JSON-знімок для розробника',
+    'Current result snapshot': 'Знімок поточного результату',
+    'Field breakdown': 'Розбір полів',
+    'Identifier breakdown': 'Розбір ідентифікатора',
+    'Evidence breakdown': 'Розбір доказів',
+    'Validation pipeline': 'Пайплайн перевірки',
+    'Quality notes': 'Нотатки якості',
+    'Official boundary': 'Офіційна межа',
+    'Official sources and boundary': 'Офіційні джерела та межа',
+    'Integration traps': 'Інтеграційні пастки',
+    'Save implementation time': 'Економія часу імплементації',
+    'Batch validation': 'Пакетна перевірка',
+    'Run batch': 'Запустити пакет',
+    'Copy batch JSON': 'Скопіювати JSON пакета',
+    'Clear batch': 'Очистити пакет',
+    'Recent local inputs': 'Останні локальні введення',
+    'Recent validations': 'Останні перевірки',
+    'No recent validations yet': 'Останніх перевірок ще немає',
+    'Local checks completed in this browser.': 'Локальні перевірки виконано в цьому браузері.',
+    'Local pass': 'Локально пройдено',
+    'LOCAL PASS': 'ЛОКАЛЬНО ПРОЙДЕНО',
+    'PASS': 'PASS',
+    'REVIEW': 'ПЕРЕВІРИТИ',
+    'Review needed': 'Потрібна перевірка',
+    'Offline checks passed': 'Офлайн-перевірки пройдено',
+    'Valid sample': 'Валідний приклад',
+    'Invalid sample': 'Невалідний приклад',
+    'Short sample': 'Короткий приклад',
+    'Grouped valid sample': 'Згрупований валідний приклад',
+    'Bad country prefix': 'Неправильний префікс країни',
+    'Bad check digit': 'Неправильна контрольна цифра',
+    'Generated IBAN': 'Згенерований IBAN',
+    'BBAN body': 'Тіло BBAN',
+    'MOD-97 check digits': 'Контрольні цифри MOD-97',
+    'Masked display': 'Маскований вигляд',
+    'Browser-only boundary': 'Межа лише браузера',
+    'API preview': 'Попередній перегляд API',
+    'Raw JSON': 'Сирий JSON',
+    'Raw JSON output': 'Сирий JSON-вивід',
+    'Developer API preview': 'API-превʼю для розробника',
+    'What this tool is for': 'Для чого цей інструмент',
+    'Used for': 'Використання',
+    'Checks locally': 'Перевіряє локально',
+    'Boundary': 'Межа',
+    'Advanced tools': 'Розширені інструменти',
+    'Related local tools': 'Повʼязані локальні інструменти'
+    ,'Tool input and output': 'Введення та результат інструмента'
+    ,'Primary navigation': 'Основна навігація'
+    ,'Country code': 'Код країни'
+    ,'BBAN / account body': 'BBAN / тіло рахунку'
+    ,'Existing IBAN to repair or inspect': 'Наявний IBAN для ремонту або інспекції'
+    ,'Repair existing': 'Виправити наявний'
+    ,'JSON payload': 'JSON payload'
+    ,'JSON Schema': 'JSON Schema'
+    ,'Fixture count': 'Кількість фікстур'
+    ,'Analyze': 'Проаналізувати'
+    ,'Scan and redact': 'Сканувати й замаскувати'
+    ,'Redaction mode': 'Режим маскування'
+    ,'Payload, log, or text': 'Payload, лог або текст'
+    ,'Generate International Bank Account Number check digits and inspect generated IBAN structure locally.': 'Генеруйте контрольні цифри IBAN і локально інспектуйте структуру згенерованого номера.'
+    ,'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Генеруйте контрольні цифри IBAN з коду країни та BBAN/тіла рахунку, потім локально відтворюйте MOD-97.'
+  }
+};
+
+function applyProductionLocalePacks() {
+  for (const [locale, overrides] of Object.entries(PRODUCTION_LOCALE_UI)) {
+    UI[locale] = { ...EN_UI_BASE, ...(UI[locale] || {}), ...overrides };
+  }
+}
+
+function hydrateCountryNamesFromRegistry(routeRegistry, locales) {
+  const countries = routeRegistry.getAll().filter(route => route.type === 'country' && route.metadata?.catalog?.iso2);
+  for (const locale of locales || []) {
+    if (locale === 'en') continue;
+    let regionNames = null;
+    try {
+      regionNames = new Intl.DisplayNames([locale], { type: 'region' });
+    } catch {
+      regionNames = null;
+    }
+    COUNTRY_NAMES[locale] = COUNTRY_NAMES[locale] || {};
+    for (const route of countries) {
+      const catalog = route.metadata.catalog || {};
+      const localized = regionNames ? regionNames.of(catalog.iso2) : '';
+      if (localized && localized !== catalog.iso2) COUNTRY_NAMES[locale][catalog.name] = localized;
+    }
+  }
+}
+
+export function hydrateLocalizationDataFromRegistry(routeRegistry, locales) {
+  hydrateCountryNamesFromRegistry(routeRegistry, locales);
+}
+
+export function ensureLocalizedRoutes(routeRegistry, siteRoot, locales) {
+  const configuredLocales = locales && locales.length ? locales : ['en'];
+  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/'));
+  for (const locale of configuredLocales) {
+    if (locale === 'en') continue;
+    for (const englishRoute of englishRoutes) {
+      const { suffix } = splitRouteLocale(englishRoute.path);
+      const localizedPath = routeForLocale(locale, suffix);
+      if (routeRegistry.has(localizedPath)) continue;
+      routeRegistry.register(localizedPath, {
+        type: englishRoute.type,
+        title: englishRoute.title,
+        sourceOwner: englishRoute.sourceOwner,
+        outputPath: resolve(siteRoot, localizedPath.replace(/^\//, ''), 'index.html'),
+        metadata: { ...(englishRoute.metadata || {}), fallback: true, locale, sourcePath: englishRoute.path }
+      });
+    }
+  }
+}
+
+function applyProductionLocaleReplacements(content, locale) {
+  return applyLiteralMap(applyLiteralMap(applyLiteralMap(content, PRODUCTION_LOCALE_REPLACEMENTS[locale]), PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS[locale]), PRODUCTION_WORKBENCH_REPLACEMENTS[locale]);
+}
+
+function applyCountrySummaryPatternTranslations(content, locale) {
+  if (locale === 'en') return content;
+  let next = content;
+  const words = {
+    es: ['Hub premium de', 'para', 'flujos de calidad de datos solo en navegador', 'y'],
+    'pt-BR': ['Hub premium de', 'para', 'fluxos de qualidade de dados só no navegador', 'e'],
+    de: ['Premium-Hub für', 'für', 'browserbasierte Datenqualitäts-Workflows', 'und'],
+    fr: ['Hub premium', 'pour', 'workflows de qualité des données uniquement dans le navigateur', 'et'],
+    pl: ['Hub premium', 'dla', 'przepływy jakości danych tylko w przeglądarce', 'oraz'],
+    uk: ['Преміум-хаб', 'для', 'браузерні workflow якості даних', 'і']
+  }[locale];
+  if (!words) return next;
+  next = next.replace(/Premium ([^<.]+?) developer hub for ([^<.]+?) and browser-only data-quality workflows\./g, (_, country, topics) => {
+    return `${words[0]} ${country} ${words[1]} ${topics} ${words[3]} ${words[2]}.`;
+  });
+  next = next.replace(/Premium ([^<.]+?) developer hub for ([^<.]+?)\./g, (_, country, topics) => {
+    return `${words[0]} ${country} ${words[1]} ${topics}.`;
+  });
+  next = next.replace(/Developer intelligence for ([^<.]+?) identifiers, payments, banking formats, locale conventions, and official systems\./g, (_, country) => {
+    if (locale === 'es') return `Inteligencia para desarrolladores sobre identificadores, pagos, formatos bancarios, convenciones locales y sistemas oficiales de ${country}.`;
+    if (locale === 'pt-BR') return `Inteligência para desenvolvedores sobre identificadores, pagamentos, formatos bancários, convenções locais e sistemas oficiais de ${country}.`;
+    if (locale === 'de') return `Entwicklerinformationen zu Kennungen, Zahlungen, Bankformaten, Locale-Konventionen und offiziellen Systemen in ${country}.`;
+    if (locale === 'fr') return `Intelligence développeur pour les identifiants, paiements, formats bancaires, conventions locales et systèmes officiels de ${country}.`;
+    if (locale === 'pl') return `Informacje deweloperskie o identyfikatorach, płatnościach, formatach bankowych, konwencjach lokalnych i systemach urzędowych kraju ${country}.`;
+    return `Інтелект для розробників про ідентифікатори, платежі, банківські формати, локальні правила та офіційні системи країни ${country}.`;
+  });
+  next = next.replace(/Developer intelligence for ([^<,]+?) identifiers, [^<,]+?, banking formats, locale conventions, and official systems\./g, (_, qualifier) => {
+    if (locale === 'es') return `Inteligencia para desarrolladores sobre identificadores ${qualifier}, pagos, formatos bancarios, convenciones locales y sistemas oficiales.`;
+    if (locale === 'pt-BR') return `Inteligência para desenvolvedores sobre identificadores ${qualifier}, pagamentos, formatos bancários, convenções locais e sistemas oficiais.`;
+    if (locale === 'de') return `Entwicklerinformationen zu ${qualifier}-Kennungen, Zahlungen, Bankformaten, Locale-Konventionen und offiziellen Systemen.`;
+    if (locale === 'fr') return `Intelligence développeur pour les identifiants ${qualifier}, paiements, formats bancaires, conventions locales et systèmes officiels.`;
+    if (locale === 'pl') return `Informacje deweloperskie o identyfikatorach ${qualifier}, płatnościach, formatach bankowych, konwencjach lokalnych i systemach urzędowych.`;
+    return `Інтелект для розробників про ідентифікатори ${qualifier}, платежі, банківські формати, локальні правила та офіційні системи.`;
+  });
+  return next;
+}
+
+function applyLocalizedCountryLinkText(content, locale) {
+  if (locale === 'en') return content;
+  let next = content;
+  const openWord = {
+    es: 'Abrir hub de',
+    'pt-BR': 'Abrir hub de',
+    de: 'Hub öffnen:',
+    fr: 'Ouvrir le hub',
+    pl: 'Otwórz hub:',
+    uk: 'Відкрити хаб'
+  }[locale] || 'Open';
+  next = next.replace(/Open ([^<]+?) Hub/g, (_, name) => `${openWord} ${name}`);
+  next = next.replace(/([^<]+?) Portal \(Roadmap\)/g, (_, name) => {
+    if (locale === 'es') return `${name}: portal en roadmap`;
+    if (locale === 'pt-BR') return `${name}: portal no roadmap`;
+    if (locale === 'de') return `${name}: Portal auf der Roadmap`;
+    if (locale === 'fr') return `${name} : portail en roadmap`;
+    if (locale === 'pl') return `${name}: portal w roadmapie`;
+    return `${name}: портал у roadmap`;
+  });
+  return next;
+}
+
+function applyProductionFinalRepairs(content, locale) {
+  const repairs = {
+    fr: {
+      'ValidoHub | - workbenches navigateur pour formats globaux': 'ValidoHub | Workbenches navigateur pour formats globaux'
+    },
+    uk: {
+      'ValidoHub | Browser-only developer воркбенчі for global formats': 'ValidoHub | Браузерні воркбенчі для глобальних форматів'
+    },
+    pl: {
+      'ValidoHub | - workbenche przeglądarkowe dla formatów globalnych': 'ValidoHub | Workbenche przeglądarkowe dla formatów globalnych',
+      'Global Tools': 'Globalne narzędzia'
+    },
+    'pt-BR': {
+      'ValidoHub | - workbenches de navegador para formatos globais': 'ValidoHub | Workbenches de navegador para formatos globais',
+      'Global Tools': 'Ferramentas globais'
+    }
+  };
+  return applyLiteralMap(content, repairs[locale]);
+}
+
 function applyCountryProtectedValueTranslations(content, locale) {
   const map = COUNTRY_PAGE_RICH_LABELS[locale] || {};
   const values = ['Comma (,)', 'Space ( ) or Dot (.)'];
@@ -3942,6 +5200,7 @@ function applyPolandRichContentLocalizationPacks() {
 
 applyExpandedLocalePacks();
 applyUniversalPolandLocalizationPacks();
+applyProductionLocalePacks();
 applyPolandVocabularyLocalizationPacks();
 applyPolandRichContentLocalizationPacks();
 
@@ -3973,7 +5232,7 @@ function applyCountryPageTranslations(content, locale) {
       next = replaceAllLiteral(next, from, to);
     }
   }
-  for (const [from, to] of TITLE_PHRASES[locale] || []) {
+  for (const [from, to] of [...(TITLE_PHRASES[locale] || []), ...(PRODUCTION_TITLE_PHRASES[locale] || [])]) {
     next = replaceAllLiteral(next, from, to);
   }
   next = applyCountryPageCompletionTranslations(next, locale);
@@ -4010,6 +5269,384 @@ function applyLiteralMap(content, map) {
   let next = content;
   for (const [from, to] of Object.entries(map || {})) {
     next = replaceAllLiteral(next, from, to);
+  }
+  return next;
+}
+
+const CATEGORY_NAV_LABELS = {
+  es: {
+    '>Address<': '>Dirección<',
+    '>Documents<': '>Documentos<',
+    '>Government<': '>Gobierno<',
+    '>Localization<': '>Localización<',
+    '>Logistics<': '>Logística<',
+    '>Privacy<': '>Privacidad<',
+    '>Tax<': '>Impuestos<',
+    '>Banking<': '>Banca<',
+    '>Transport<': '>Transporte<',
+    '>Payments<': '>Pagos<',
+    '>Guides<': '>Guías<',
+    '>Brands<': '>Marcas<',
+    '>Tools<': '>Herramientas<',
+    '>country<': '>país<',
+    'aria-label="Primary navigation"': 'aria-label="Navegación principal"'
+  },
+  'pt-BR': {
+    '>Address<': '>Endereços<',
+    '>Documents<': '>Documentos<',
+    '>Government<': '>Governo<',
+    '>Localization<': '>Localização<',
+    '>Logistics<': '>Logística<',
+    '>Privacy<': '>Privacidade<',
+    '>Tax<': '>Impostos<',
+    '>Banking<': '>Bancos<',
+    '>Transport<': '>Transporte<',
+    '>Payments<': '>Pagamentos<',
+    '>Guides<': '>Guias<',
+    '>Brands<': '>Marcas<',
+    '>Tools<': '>Ferramentas<',
+    '>country<': '>país<',
+    'aria-label="Primary navigation"': 'aria-label="Navegação principal"'
+  },
+  de: {
+    '>Address<': '>Adresse<',
+    '>Documents<': '>Dokumente<',
+    '>Government<': '>Behörden<',
+    '>Localization<': '>Lokalisierung<',
+    '>Logistics<': '>Logistik<',
+    '>Privacy<': '>Datenschutz<',
+    '>Tax<': '>Steuern<',
+    '>Banking<': '>Banking<',
+    '>Transport<': '>Transport<',
+    '>Payments<': '>Zahlungen<',
+    '>Guides<': '>Leitfäden<',
+    '>Brands<': '>Marken<',
+    '>Tools<': '>Tools<',
+    '>country<': '>Land<',
+    'aria-label="Primary navigation"': 'aria-label="Hauptnavigation"'
+  },
+  fr: {
+    '>Address<': '>Adresse<',
+    '>Documents<': '>Documents<',
+    '>Government<': '>Administration<',
+    '>Localization<': '>Localisation<',
+    '>Logistics<': '>Logistique<',
+    '>Privacy<': '>Confidentialité<',
+    '>Tax<': '>Fiscalité<',
+    '>Banking<': '>Banque<',
+    '>Transport<': '>Transport<',
+    '>Payments<': '>Paiements<',
+    '>Guides<': '>Guides<',
+    '>Brands<': '>Marques<',
+    '>Tools<': '>Outils<',
+    '>country<': '>pays<',
+    'aria-label="Primary navigation"': 'aria-label="Navigation principale"'
+  },
+  pl: {
+    '>Address<': '>Adres<',
+    '>Documents<': '>Dokumenty<',
+    '>Government<': '>Administracja<',
+    '>Localization<': '>Lokalizacja<',
+    '>Logistics<': '>Logistyka<',
+    '>Privacy<': '>Prywatność<',
+    '>Tax<': '>Podatki<',
+    '>Banking<': '>Bankowość<',
+    '>Transport<': '>Transport<',
+    '>Payments<': '>Płatności<',
+    '>Guides<': '>Przewodniki<',
+    '>Brands<': '>Marki<',
+    '>Tools<': '>Narzędzia<',
+    '>country<': '>kraj<',
+    'aria-label="Primary navigation"': 'aria-label="Główna nawigacja"'
+  },
+  uk: {
+    '>Address<': '>Адреси<',
+    '>Documents<': '>Документи<',
+    '>Government<': '>Держсектор<',
+    '>Localization<': '>Локалізація<',
+    '>Logistics<': '>Логістика<',
+    '>Privacy<': '>Приватність<',
+    '>Tax<': '>Податки<',
+    '>Banking<': '>Банкінг<',
+    '>Transport<': '>Транспорт<',
+    '>Payments<': '>Платежі<',
+    '>Guides<': '>Гіди<',
+    '>Brands<': '>Бренди<',
+    '>Tools<': '>Інструменти<',
+    '>country<': '>країна<',
+    'aria-label="Primary navigation"': 'aria-label="Основна навігація"'
+  }
+};
+
+function applyCategoryNavTranslations(content, locale) {
+  let next = applyLiteralMap(content, CATEGORY_NAV_LABELS[locale]);
+  const workbenchLabel = {
+    es: 'banco de trabajo',
+    'pt-BR': 'workbench',
+    de: 'Workbench',
+    fr: 'atelier',
+    pl: 'workbench',
+    uk: 'воркбенч'
+  }[locale];
+  if (workbenchLabel) next = next.replace(/ workbench</g, ` ${workbenchLabel}<`);
+  return next;
+}
+
+const GENERATED_TOOL_TITLE_PHRASES = {
+  fr: {
+    'Colombian COP Decimal Currency Formatter': 'Colombie: Formateur de montants COP',
+    'COP Decimal Currency - formateur': 'Formateur de montants COP',
+    'Cedula de ciudadania - validateur': 'Validateur de cédula de ciudadanía',
+    'NIT - validateur': 'Validateur NIT',
+    'IVA / NIT Tax ID - validateur': 'Validateur d’identifiant fiscal IVA / NIT',
+    'Customs / Tax Identifier - assistant': 'Assistant identifiant douane / fiscal',
+    'Cedula - assistant': 'Assistant cédula',
+    'Company Onboarding - auditeur': 'Auditeur d’onboarding entreprise',
+    'RUES / Camara de Comercio Readiness - assistant': 'Assistant de préparation RUES / Cámara de Comercio',
+    'ID Card Format - assistant': 'Assistant format carte d’identité',
+    'Passport Number - assistant': 'Assistant numéro de passeport',
+    'MRZ / Passport - parseur': 'Parseur MRZ / passeport',
+    'Domestic Bank Account - validateur': 'Validateur de compte bancaire local',
+    'Domestic Account Fixture - générateur': 'Générateur de fixtures de compte local',
+    'Locale Number - parseur': 'Parseur de nombres locaux',
+    'Postal Tracking - assistant': 'Assistant de suivi postal',
+    'Domestic Transfer - assistant': 'Assistant de virement local',
+    'Region / Province Code Mapper': 'Mappeur de codes région / province',
+    'Company Suffix - normalisateur': 'Normalisateur de suffixes d’entreprise',
+    'Date Locale - formateur': 'Formateur de dates locales',
+    'Form Field - auditeur': 'Auditeur de champs de formulaire',
+    'Masked Bank Account - formateur': 'Formateur de compte bancaire masqué',
+    'Phone Number - validateur': 'Validateur de numéro de téléphone',
+    'Address - normalisateur': 'Normalisateur d’adresse',
+    'VIN - validateur': 'Validateur VIN'
+  },
+  es: {
+    'COP Decimal Currency - formateador': 'Formateador de importes COP',
+    'Domestic Bank Account - validador': 'Validador de cuenta bancaria local',
+    'Domestic Account Fixture - generador': 'Generador de fixtures de cuenta local',
+    'Phone Number - validador': 'Validador de número de teléfono'
+  },
+  de: {
+    'COP Decimal Currency Formatter': 'COP-Betragsformatierer',
+    'Domestic Bank Account Validator': 'Validator für lokales Bankkonto',
+    'Domestic Account Fixture Generator': 'Fixture-Generator für lokales Konto',
+    'Phone Number Validator': 'Telefonnummern-Validator'
+  },
+  pl: {
+    'COP Decimal Currency - formatter': 'Formatter kwot COP',
+    'Domestic Bank Account - walidator': 'Walidator lokalnego konta bankowego',
+    'Domestic Account Fixture - generator': 'Generator fixture lokalnego konta',
+    'Phone Number - walidator': 'Walidator numeru telefonu'
+  },
+  uk: {
+    'COP Decimal Currency - форматер': 'Форматер сум COP',
+    'Domestic Bank Account - валідатор': 'Валідатор локального банківського рахунку',
+    'Domestic Account Fixture - генератор': 'Генератор фікстур локального рахунку',
+    'Phone Number - валідатор': 'Валідатор номера телефону'
+  },
+  'pt-BR': {
+    'COP Decimal Currency - formatador': 'Formatador de valores COP',
+    'Domestic Bank Account - validador': 'Validador de conta bancária local',
+    'Domestic Account Fixture - gerador': 'Gerador de fixtures de conta local',
+    'Phone Number - validador': 'Validador de número de telefone'
+  }
+};
+
+function applyGeneratedToolTitleTranslations(content, locale) {
+  let next = applyLiteralMap(content, GENERATED_TOOL_TITLE_PHRASES[locale]);
+  next = next.replace(/Continue with related ([^<]+?) tools/g, (_, country) => {
+    if (locale === 'fr') return `Continuer avec les outils liés à la ${country}`;
+    if (locale === 'es') return `Continuar con herramientas relacionadas de ${country}`;
+    if (locale === 'pt-BR') return `Continuar com ferramentas relacionadas de ${country}`;
+    if (locale === 'de') return `Mit verwandten Tools für ${country} fortfahren`;
+    if (locale === 'pl') return `Kontynuuj z powiązanymi narzędziami kraju ${country}`;
+    if (locale === 'uk') return `Продовжити з пов’язаними інструментами: ${country}`;
+    return _;
+  });
+  return next;
+}
+
+const COUNTRY_TOOL_SUMMARY_PATTERNS = {
+  es: [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Valida la forma de $1, separa evidencia de $2 y prepara salida de depuración segura para privacidad.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspecciona la estructura de $1, prefijos de registro, dígitos de control y límites de consulta oficial.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normaliza identificadores $1, inspecciona evidencia fiscal local y prepara diagnósticos para la autoridad tributaria.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Inspecciona identificadores aduaneros, importador/exportador, fiscales y fronterizos sin afirmar estado oficial de aduanas.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Divide evidencia de $1 en cuerpo local, pistas de fecha, notas de checksum y diagnósticos seguros para privacidad.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Audita payloads de alta de empresa para $1, VAT, dirección, banca y preparación para handoff registral oficial.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Prepara evidencia solo en navegador antes de una consulta regulada de $1 o un flujo de registro empresarial.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Inspecciona fragmentos de documento local, números, fechas y límites de privacidad sin probar identidad.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Parsea fragmentos de número de pasaporte, pistas de nacionalidad, fechas de emisión/vencimiento y evidencia MRZ para handoff.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parsea fragmentos MRZ de pasaporte y separa documento, nacionalidad, fechas y checksum sin prueba de identidad.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Valida la forma de cuenta bancaria local, cortes banco/cuenta, evidencia de riel de pago y límites oficiales de titularidad.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Genera referencias de cuenta local seguras para fixtures, separa evidencia banco/cuenta y prepara payloads de prueba de pago.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normaliza importes $1, separadores decimales, agrupación y vistas numéricas seguras para API.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Detecta y enmascara evidencia local de identificadores, teléfono, dirección, banco e impuestos en texto plano.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Genera e inspecciona fixtures JSON para identificadores, direcciones, pagos y pruebas seguras para privacidad.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Audita fragmentos de payload API para locale, impuestos, identificadores, cuentas locales, fechas, importes y límites oficiales.']
+  ],
+  'pt-BR': [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Valida o formato de $1, separa evidências de $2 e prepara saída de depuração segura para privacidade.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspeciona a estrutura de $1, prefixos de registro, dígitos de controle e limites de consulta oficial.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normaliza identificadores $1, inspeciona evidência fiscal local e prepara diagnósticos para a autoridade tributária.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Inspeciona identificadores aduaneiros, importador/exportador, fiscais e de fronteira sem afirmar status oficial de aduana.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Separa evidência de $1 em corpo local, pistas de data, notas de checksum e diagnósticos seguros para privacidade.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Audita payloads de cadastro de empresa para $1, VAT, endereço, bancos e prontidão para handoff registral oficial.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Prepara evidência só no navegador antes de uma consulta regulada de $1 ou fluxo de registro empresarial.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Inspeciona trechos de documento local, números, datas e limites de privacidade sem provar identidade.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Parseia trechos de número de passaporte, pistas de nacionalidade, emissão/vencimento e evidência MRZ para handoff.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parseia trechos MRZ de passaporte e separa documento, nacionalidade, datas e checksum sem prova de identidade.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Valida o formato de conta bancária local, cortes banco/conta, evidência de trilho de pagamento e limites oficiais de titularidade.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Gera referências de conta local seguras para fixtures, separa evidência banco/conta e prepara payloads de teste de pagamento.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normaliza valores $1, separadores decimais, agrupamento e prévias numéricas seguras para API.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Detecta e mascara evidências locais de identificador, telefone, endereço, banco e impostos em texto puro.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Gera e inspeciona fixtures JSON para identificadores, endereços, pagamentos e testes seguros para privacidade.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Audita trechos de payload API para locale, impostos, identificadores, contas locais, datas, valores e limites oficiais.']
+  ],
+  de: [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Prüft die Form von $1, trennt $2-Evidenz und bereitet datenschutzsichere Debug-Ausgabe vor.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspiziert die Struktur von $1, registerartige Präfixe, Prüfziffern und Grenzen offizieller Abfragen.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normalisiert $1-Kennungen, inspiziert lokale Steuerkörper-Evidenz und bereitet Diagnosen für Behörden-Handoffs vor.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Inspiziert Zoll-, Import-/Export-, Steuer- und Grenzprozess-Kennungen ohne offiziellen Zollstatus zu behaupten.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Teilt $1-Evidenz in lokalen Körper, Datumshinweise, Prüfsummen-Notizen und datenschutzsichere Diagnosen.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Auditiert Unternehmens-Onboarding-Payloads für $1, VAT, Adresse, Banking und Bereitschaft für offizielle Register-Handoffs.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Bereitet browserbasierte Evidenz vor einer regulierten $1-Abfrage oder einem Unternehmensregister-Workflow vor.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Inspiziert lokale Ausweisfragmente, Dokumentnummern, Daten und Datenschutzgrenzen ohne Identität nachzuweisen.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Parst Passnummer-Fragmente, Nationalitätshinweise, Ausstellungs-/Ablaufdaten und MRZ-Handoff-Evidenz.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parst Pass-MRZ-Fragmente und trennt Dokument, Nationalität, Daten und Prüfsummen-Evidenz ohne Identitätsnachweis.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Prüft die Form lokaler Bankkonten, Bank-/Kontoteile, Zahlungsrail-Evidenz und Grenzen offizieller Kontoinhaberschaft.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Generiert fixture-sichere lokale Kontoreferenzen, trennt Bank-/Konto-Evidenz und bereitet Zahlungs-Testpayloads vor.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normalisiert $1-Beträge, Dezimaltrennzeichen, Gruppierung und API-sichere numerische Vorschauen.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Erkennt und maskiert lokale Kennungs-, Telefon-, Adress-, Bank- und Steuer-Evidenz in Klartext.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Generiert und inspiziert JSON-Fixtures für lokale Kennungen, Adressen, Zahlungen und datenschutzsichere Tests.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Auditiert API-Payload-Fragmente für Locale, Steuern, Kennungen, lokale Konten, Daten, Beträge und offizielle Grenzen.']
+  ],
+  fr: [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Valide la forme $1, sépare l’évidence $2 et prépare une sortie de debug respectueuse de la confidentialité.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspecte la structure $1, les préfixes de type registre, les chiffres de contrôle et les limites des consultations officielles.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normalise les identifiants $1, inspecte l’évidence fiscale locale et prépare les diagnostics pour l’autorité fiscale.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Inspecte les identifiants douane, importateur/exportateur, fiscaux et frontaliers sans prétendre à un statut officiel.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Découpe l’évidence $1 en corps local, indices de date, notes de checksum et diagnostics sûrs pour la confidentialité.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Audite les payloads d’entrée entreprise pour $1, VAT, adresse, banque et préparation au handoff registre officiel.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Prépare une évidence uniquement navigateur avant une consultation réglementée $1 ou un workflow de registre d’entreprise.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Inspecte des fragments de carte d’identité locale, numéros, dates et limites de confidentialité sans preuve d’identité.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Parse les fragments de numéro de passeport, indices de nationalité, dates d’émission/expiration et évidence MRZ pour handoff.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parse les fragments MRZ de passeport et sépare document, nationalité, dates et checksum sans preuve d’identité.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Valide la forme de compte bancaire local, les segments banque/compte, l’évidence de rail de paiement et les limites de propriété officielle.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Génère des références de compte local sûres pour fixtures, sépare l’évidence banque/compte et prépare des payloads de test de paiement.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normalise les montants $1, séparateurs décimaux, groupements et aperçus numériques sûrs pour API.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Détecte et masque les évidences locales d’identifiants, téléphone, adresse, banque et fiscalité en texte brut.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Génère et inspecte des fixtures JSON pour identifiants, adresses, paiements et tests sûrs pour la confidentialité.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Audite les fragments de payload API pour locale, fiscalité, identifiants, comptes locaux, dates, montants et limites officielles.']
+  ],
+  pl: [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Sprawdza kształt $1, rozdziela dowody $2 i przygotowuje bezpieczny prywatnościowo wynik debugowania.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Inspektuje strukturę $1, prefiksy rejestrowe, cyfry kontrolne i granice oficjalnych lookupów.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Normalizuje identyfikatory $1, inspektuje lokalne dowody podatkowe i przygotowuje diagnostykę dla organu podatkowego.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Inspektuje identyfikatory celne, importera/eksportera, podatkowe i graniczne bez deklarowania oficjalnego statusu.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Dzieli dowody $1 na lokalny korpus, wskazówki daty, notatki checksum i bezpieczną diagnostykę.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Audytuje payloady onboardingowe firmy pod $1, VAT, adres, bankowość i gotowość do oficjalnego rejestru.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Przygotowuje dowody wyłącznie w przeglądarce przed regulowanym lookupiem $1 lub workflow rejestru firmy.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Inspektuje lokalne fragmenty dokumentu tożsamości, numery, daty i granice prywatności bez potwierdzania tożsamości.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Parsuje fragmenty numeru paszportu, wskazówki narodowości, daty wydania/ważności i dowody MRZ do handoffu.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Parsuje fragmenty MRZ paszportu i rozdziela dokument, narodowość, daty oraz checksum bez dowodu tożsamości.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Sprawdza kształt lokalnego konta bankowego, segmenty bank/konto, dowody raila płatniczego i granice oficjalnej własności konta.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Generuje bezpieczne fixture’y lokalnych referencji konta, rozdziela dowody bank/konto i przygotowuje payloady testowe płatności.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Normalizuje kwoty $1, separatory dziesiętne, grupowanie i numeryczne podglądy bezpieczne dla API.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Wykrywa i maskuje lokalne dowody identyfikatorów, telefonu, adresu, banku i podatków w tekście.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Generuje i inspektuje fixture’y JSON dla lokalnych identyfikatorów, adresów, płatności i testów bezpiecznych prywatnościowo.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Audytuje fragmenty payloadów API pod locale, podatki, identyfikatory, konta lokalne, daty, kwoty i oficjalne granice.']
+  ],
+  uk: [
+    [/Validate ([^<.]+?) shape, split ([^<.]+?) evidence, and prepare privacy-safe debugging output\./g, 'Перевіряє форму $1, розділяє докази $2 і готує приватно-безпечний debug-вивід.'],
+    [/Inspect ([^<.]+?) structure, registry-style prefixes, control digits, and official lookup boundaries\./g, 'Інспектує структуру $1, реєстрові префікси, контрольні цифри та межі офіційних lookup.'],
+    [/Normalize ([^<.]+?) identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics\./g, 'Нормалізує ідентифікатори $1, інспектує локальні податкові докази й готує діагностику для податкового handoff.'],
+    [/Inspect customs, importer\/exporter, tax, and border-process identifiers without claiming official customs status\./g, 'Інспектує митні, імпортно-експортні, податкові та прикордонні ідентифікатори без заяви про офіційний митний статус.'],
+    [/Split ([^<.]+?) evidence into local body, date hints, checksum notes, and privacy-safe diagnostics\./g, 'Розкладає докази $1 на локальне тіло, підказки дати, checksum-нотатки й приватно-безпечну діагностику.'],
+    [/Audit company intake payloads for ([^<.]+?), VAT, address, banking, and official registry handoff readiness\./g, 'Аудитить payload onboarding компанії для $1, VAT, адреси, банкінгу та готовності до офіційного реєстрового handoff.'],
+    [/Prepare browser-only evidence before a regulated ([^<.]+?) lookup or company registry workflow\./g, 'Готує браузерні докази перед регульованим lookup $1 або workflow реєстру компаній.'],
+    [/Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity\./g, 'Інспектує фрагменти локального ID-документа, номери, дати й межі приватності без доказу особи.'],
+    [/Parse passport-number snippets, nationality hints, issue\/expiry dates, and MRZ handoff evidence\./g, 'Парсить фрагменти номера паспорта, підказки громадянства, дати видачі/закінчення та MRZ-докази для handoff.'],
+    [/Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof\./g, 'Парсить MRZ-фрагменти паспорта й розділяє документ, громадянство, дати та checksum без доказу особи.'],
+    [/Validate domestic bank account shape, bank\/account slices, payment-rail evidence, and official bank ownership boundaries\./g, 'Перевіряє форму локального банківського рахунку, зрізи банк/рахунок, докази платіжного rail і межі офіційної власності рахунку.'],
+    [/Generate fixture-safe domestic account references, split bank\/account evidence, and prepare payment test payloads\./g, 'Генерує fixture-safe локальні референси рахунку, розділяє докази банк/рахунок і готує тестові платіжні payload.'],
+    [/Normalize ([A-Z]{3}) amount strings, decimal separators, grouping, and API-safe numeric previews\./g, 'Нормалізує суми $1, десяткові роздільники, групування та API-безпечні числові превʼю.'],
+    [/Detect and mask local identifier, phone, address, bank, and tax evidence in plain text\./g, 'Виявляє й маскує локальні докази ідентифікаторів, телефону, адреси, банку та податків у plain text.'],
+    [/Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests\./g, 'Генерує й інспектує JSON-фікстури для локальних ідентифікаторів, адрес, платежів і приватно-безпечних тестів.'],
+    [/Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries\./g, 'Аудитить фрагменти API payload для locale, податків, ідентифікаторів, локальних рахунків, дат, сум і офіційних меж.']
+  ]
+};
+
+const COUNTRY_TOOL_SUMMARY_EXTRA_PATTERNS = {
+  es: [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Normaliza sufijos locales de empresa, etiquetas registrales y variantes de clave de búsqueda para formularios de onboarding.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normaliza fechas locales, vistas ISO, pistas de periodo fiscal y diagnósticos de parsing regional.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Valida la forma del VIN, separa evidencia WMI/VDS/VIS y prepara diagnósticos de intake vehicular.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normaliza calle, código postal, localidad, región y país para formularios de dirección locales.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Valida la forma del código postal, separa pistas de área/entrega y conserva los límites de consulta postal oficial.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Valida la forma del teléfono local, prefijo de país, bloques nacionales y notas de seguridad para formularios de contacto.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Normaliza fragmentos CSV de $1 para campos decimales, fechas, postal, teléfono, impuestos y banca.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Normaliza teléfonos locales a vistas estilo E.164 y separa evidencia país/nacional.']
+  ],
+  'pt-BR': [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Normaliza sufixos locais de empresa, etiquetas cadastrais e variantes de chave de busca para formulários de onboarding.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normaliza datas locais, prévias ISO, pistas de período fiscal e diagnósticos de parsing regional.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Valida o formato do VIN, separa evidência WMI/VDS/VIS e prepara diagnósticos de intake veicular.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normaliza rua, código postal, localidade, região e país para formulários de endereço locais.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Valida o formato do código postal, separa pistas de área/entrega e preserva limites de consulta postal oficial.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Valida o formato do telefone local, prefixo do país, blocos nacionais e notas de segurança para formulário de contato.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Normaliza trechos CSV de $1 para campos decimais, datas, postal, telefone, impostos e bancos.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Normaliza telefone local para prévias estilo E.164 e separa evidência país/nacional.']
+  ],
+  de: [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Normalisiert lokale Unternehmenssuffixe, Registerlabels und Suchschlüsselvarianten für Onboarding-Formulare.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normalisiert lokale Daten, ISO-Vorschauen, Geschäftsjahreshinweise und Locale-Parsingdiagnosen.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Prüft die VIN-Form, trennt WMI/VDS/VIS-Evidenz und bereitet Fahrzeugaufnahme-Diagnosen vor.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normalisiert Straße, Postleitzahl, Ort, Region und Land für lokale Adressformulare.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Prüft die Postleitzahlform, trennt Gebiets-/Zustellhinweise und erhält Grenzen offizieller Postabfragen.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Prüft lokale Telefonform, Landespräfix, nationale Nummernblöcke und Sicherheitshinweise für Kontaktformulare.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Normalisiert CSV-Fragmente für $1 mit Dezimal-, Datums-, Post-, Telefon-, Steuer- und Bankingfeldern.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Normalisiert lokale Telefonnummern zu E.164-ähnlichen Vorschauen und trennt Länder-/Nationalevidenz.']
+  ],
+  fr: [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Normalise les suffixes d’entreprise locaux, libellés de registre et variantes de clés de recherche pour les formulaires d’onboarding.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normalise les dates locales, aperçus ISO, indices de période fiscale et diagnostics de parsing locale.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Valide la forme VIN, sépare l’évidence WMI/VDS/VIS et prépare les diagnostics d’entrée véhicule.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normalise rue, code postal, localité, région et pays pour les formulaires d’adresse locaux.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Valide la forme du code postal, sépare les indices zone/livraison et préserve les limites des consultations postales officielles.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Valide la forme du téléphone local, le préfixe pays, les blocs nationaux et les notes de sécurité des formulaires de contact.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Normalise les fragments CSV de $1 pour champs décimaux, dates, postal, téléphone, fiscalité et banque.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Normalise les téléphones locaux vers des aperçus de type E.164 et sépare l’évidence pays/nationale.']
+  ],
+  pl: [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Normalizuje lokalne sufiksy firm, etykiety rejestrowe i warianty kluczy wyszukiwania dla formularzy onboardingowych.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Normalizuje lokalne daty, podglądy ISO, wskazówki okresów fiskalnych i diagnostykę parsingu locale.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Sprawdza kształt VIN, rozdziela dowody WMI/VDS/VIS i przygotowuje diagnostykę przyjęcia pojazdu.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Normalizuje ulicę, kod pocztowy, miejscowość, region i kraj dla lokalnych formularzy adresowych.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Sprawdza kształt kodu pocztowego, dzieli wskazówki rejonu/doręczenia i zachowuje granice oficjalnych lookupów pocztowych.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Sprawdza lokalny format telefonu, prefiks kraju, bloki numeru krajowego i notatki bezpieczeństwa formularza kontaktowego.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Normalizuje fragmenty CSV dla $1: pola dziesiętne, daty, poczta, telefon, podatki i bankowość.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Normalizuje lokalny telefon do podglądów typu E.164 i dzieli dowody kraju/numeru krajowego.']
+  ],
+  uk: [
+    [/Normalize local company suffixes, registry labels, and search-key variants for onboarding forms\./g, 'Нормалізує локальні суфікси компаній, реєстрові мітки та варіанти search-key для onboarding форм.'],
+    [/Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics\./g, 'Нормалізує локальні дати, ISO-превʼю, підказки фіскального періоду та діагностику locale parsing.'],
+    [/Validate VIN shape, split WMI\/VDS\/VIS evidence, and prepare vehicle-intake diagnostics\./g, 'Перевіряє форму VIN, розділяє докази WMI/VDS/VIS і готує діагностику vehicle intake.'],
+    [/Normalize street, postal code, locality, region, and country lines for local address forms\./g, 'Нормалізує вулицю, поштовий код, населений пункт, регіон і країну для локальних адресних форм.'],
+    [/Validate codigo postal shape, split area\/delivery hints, and preserve official postal lookup boundaries\./g, 'Перевіряє форму поштового коду, розділяє підказки зони/доставки й зберігає межі офіційного postal lookup.'],
+    [/Validate local phone shape, country prefix, national number blocks, and contact-form safety notes\./g, 'Перевіряє локальну форму телефону, префікс країни, блоки національного номера та safety notes для контактної форми.'],
+    [/Normalize CSV snippets for ([^<.]+?) decimal, date, postal, phone, tax, and banking fields\./g, 'Нормалізує CSV-фрагменти для $1: десяткові, дата, пошта, телефон, податки та банкінг.'],
+    [/Normalize local phone input to E\.164-style previews and split country\/national evidence\./g, 'Нормалізує локальний телефон до E.164-style превʼю й розділяє докази країна/національний номер.']
+  ]
+};
+
+function applyCountryToolSummaryPatterns(content, locale) {
+  let next = content;
+  for (const [pattern, replacement] of [
+    ...(COUNTRY_TOOL_SUMMARY_PATTERNS[locale] || []),
+    ...(COUNTRY_TOOL_SUMMARY_EXTRA_PATTERNS[locale] || [])
+  ]) {
+    next = next.replace(pattern, replacement);
   }
   return next;
 }
@@ -4186,7 +5823,7 @@ function localizeSeoAndStructuredData(content, locale, routePath) {
   return next;
 }
 
-function rewriteHrefLocale(content, locale, routeRegistry) {
+export function rewriteHrefLocale(content, locale, routeRegistry) {
   return content.replace(/href="\/en\/([^"]*)"/g, (match, target) => {
     const normalizedTarget = String(target || '').replace(/^\/+/, '');
     const localizedCandidate = `/${locale}/${normalizedTarget}`;
@@ -4217,24 +5854,37 @@ function injectAlternateLinks(content, currentPath, routeRegistry, locales) {
   return next;
 }
 
-function translateVisibleHtml(content, locale) {
+export function translateVisibleHtml(content, locale) {
   const normalized = normalizeLocale(locale);
   if (normalized === 'en') return content;
   const { protectedHtml, blocks } = protectBlocks(content);
   let next = protectedHtml;
   next = applyCommonUiTranslations(next, normalized);
+  next = applyCategoryNavTranslations(next, normalized);
+  next = applyProductionLocaleReplacements(next, normalized);
+  next = applyGeneratedToolTitleTranslations(next, normalized);
+  next = applyCountryToolSummaryPatterns(next, normalized);
   next = applyLiteralMap(next, SECTION_LABELS[normalized]);
   next = applyParameterizedCountryTranslations(next, normalized);
   next = applyCountryTitleTranslations(next, normalized);
   next = applyDocumentationSummaryTranslations(next, normalized);
   next = applyCountryPageTranslations(next, normalized);
+  next = applyGeneratedToolTitleTranslations(next, normalized);
+  next = applyCountrySummaryPatternTranslations(next, normalized);
+  next = applyLocalizedCountryLinkText(next, normalized);
   next = localizeCountryNames(next, normalized);
-  const restored = restoreBlocks(next, blocks);
+  next = applyProductionFinalRepairs(next, normalized);
+  let restored = restoreBlocks(next, blocks);
+  restored = applyGeneratedToolTitleTranslations(restored, normalized);
+  restored = applyCountryToolSummaryPatterns(restored, normalized);
   return applyCountryProtectedValueTranslations(restored, normalized);
 }
 
 export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locales, options = {}) {
   const configuredLocales = locales && locales.length ? locales : ['en'];
+  const forceRefresh = Boolean(options.forceRefresh);
+  hydrateCountryNamesFromRegistry(routeRegistry, configuredLocales);
+  ensureLocalizedRoutes(routeRegistry, siteRoot, configuredLocales);
   const includeSuffixes = new Set((options.includeSuffixes || []).map(suffix => {
     const normalized = String(suffix || '/').trim();
     if (!normalized || normalized === '/') return '/';
@@ -4245,25 +5895,6 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     if (!includeSuffixes.size) return true;
     return includeSuffixes.has(splitRouteLocale(route.path).suffix);
   };
-  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/') && shouldProcessRoute(route));
-
-  for (const locale of configuredLocales) {
-    if (locale === 'en') continue;
-    for (const englishRoute of englishRoutes) {
-      const { suffix } = splitRouteLocale(englishRoute.path);
-      const localizedPath = routeForLocale(locale, suffix);
-      if (!routeRegistry.has(localizedPath)) {
-        routeRegistry.register(localizedPath, {
-          type: englishRoute.type,
-          title: englishRoute.title,
-          sourceOwner: 'node',
-          outputPath: resolve(siteRoot, localizedPath.replace(/^\//, ''), 'index.html'),
-          metadata: { fallback: true, locale, sourcePath: englishRoute.path }
-        });
-      }
-    }
-  }
-
   for (const route of routeRegistry.getAll().filter(shouldProcessRoute)) {
     const { locale, suffix } = splitRouteLocale(route.path);
     if (locale === 'en') continue;
@@ -4273,7 +5904,7 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     if (!englishRoute || !(await pathExists(englishRoute.outputPath))) continue;
 
     const shouldRefreshFromNodeSource = englishRoute.sourceOwner === 'node' || ['country', 'countries'].includes(englishRoute.type);
-    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource) continue;
+    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) continue;
 
     let content = await readFile(englishRoute.outputPath, 'utf8');
     content = rewriteHrefLocale(content, locale, routeRegistry);

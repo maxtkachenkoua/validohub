@@ -8,6 +8,79 @@ ValidoHub is a premium browser-only developer intelligence platform. The user wa
 
 The product goal is not only validation. Where the domain supports it, tools must also generate safe fixtures, explain structure, show debug internals, expose developer handoff data, and guide the user visually through what can be checked, generated, copied, or exported.
 
+## 2026-07-28 Country Factory Runtime Localization Sweep
+
+- The latest localization pass is intentionally shared factory infrastructure, not a one-off French Colombia page fix.
+- `assets/js/tools/country-suite-factory.js` now localizes common runtime blocks for generated country tools across production locales: compact route rails, validation pipeline cards, field/anatomy breakdowns, calculation debugger table, `Developer API preview`, and `Raw JSON output` summaries.
+- Generated country-suite mounts now pass `iso2`, `iso3`, and `adjective` metadata into the factory so localized country names can resolve through `Intl.DisplayNames`.
+- Current acceptance route: `/fr/colombia/colombia-currency-decimal-formatter/`, plus smoke coverage for the same Colombia currency route in `de`, `es`, `pt-BR`, `pl`, and `uk`. Full build has not been run.
+
+## 2026-07-28 Country Locale Navigation and Summary Sweep
+
+- `scripts/build-country-dev.mjs` now prepares localized route siblings via `ensureLocalizedRoutes()` and hydrates country display names before materializing locale trees. This lets scoped country builds rewrite known `/en/...` nav/related links to the active locale instead of leaving English navigation islands.
+- Country-tool breadcrumbs/categories now get localized labels for common nav/category text (`Address`, `Documents`, `Government`, `Privacy`, `Tax`, `country`, etc.), and generated `/en/categories/country/` breadcrumbs fall back to `/<locale>/countries/`.
+- Generated country tool titles normalize English demonym prefixes on localized pages: e.g. `Colombian ...` becomes `Colombie: ...`, `Ecuadorian ...` becomes `Еквадор: ...`.
+- `scripts/localization-pass.mjs` now carries summary translation patterns for common generated country-tool descriptions across identifier/tax/banking/MRZ/currency/address/phone/postal/VIN/CSV/date/company/privacy/API fixture routes.
+- Verified without full build: syntax checks plus scoped Colombia and Ecuador builds for `es,pt-BR,de,fr,pl,uk`; grep smoke found no stale `/en/` links, English action buttons, or checked English summary starts in sampled localized pages.
+
+## 2026-07-28 Production Locale Tool Page Foundation
+
+- Localization now covers more than portal shells. `scripts/build-tools-dev.mjs` localizes selected `/tools/<slug>/` pages during scoped builds and uses `forceRefresh` so stale localized tool HTML is regenerated from current English output.
+- `scripts/localization-pass.mjs` now exports `translateVisibleHtml()` and includes a production workbench-surface phrase pack for `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`: Generate, Copy developer JSON, Field breakdown, Integration traps, Official boundary, batch controls, IBAN form labels, JSON/redaction form labels, and common status labels.
+- `scripts/build-country-dev.mjs` applies `translateVisibleHtml()` while materializing locale country trees, so scoped country builds now get the same production locale sweep for generated country hub/tool HTML.
+- Runtime layer improved: `assets/js/tools/country-suite-factory.js` no longer lets generated English `suite.i18n` base labels override locale defaults, translates Validate/Generate CTA labels dynamically, and has fuller production locale labels for the shared country workbench chrome.
+- Runtime layer improved for global tools: `assets/js/tools/generic-suite.js` now localizes common chrome for samples, action buttons, quality cards, integration traps, advanced sections, official boundary, developer snapshot copy/download actions, and waiting/input-ready states.
+- Verified without full build: `node --check` for changed files, `npm run build:tools -- --slugs iban-generator,json-schema-workbench,secret-pii-redactor --locales es,pt-BR,de,fr,pl,uk`, `npm run build:country -- --country brazil --locales es,pt-BR,de,fr,pl,uk`, plus grep smoke on localized global pages. Remaining localization work is long-tail bespoke runtime/domain copy, not the portal/tool-page infrastructure.
+
+## 2026-07-27 Production Locale Portal Foundation
+
+- Current priority shifted away from new functionality and toward localization quality across the real production languages from `site.yaml`: `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`.
+- `scripts/localization-pass.mjs` now has a production locale overlay for homepage, tools portal, countries portal, SEO titles/descriptions, common workbench labels, country-summary repair, and `fr`/`uk` title phrase coverage.
+- Localized country display names are hydrated from route-registry country metadata via `Intl.DisplayNames`, instead of relying only on the old hardcoded Poland/Brazil/Spain/Germany map.
+- `/en/tools/` is explicitly marked Node-owned in `scripts/build-portal-dev.mjs`, `scripts/build-tools-dev.mjs`, and `scripts/build-all.mjs`; this fixes localized `/tools/` pages copying the stale Java tools portal instead of the fresh premium Node portal.
+- Verified without full build: `node --check` for changed localization/build scripts, scoped `npm run build:portal`, grep smoke for stale English portal strings, and Playwright smoke on `/fr/`, `/uk/`, `/de/tools/`, `/es/countries/`, `/pl/tools/`, and `/pt-BR/` with correct `lang`, localized title/H1, and zero horizontal overflow.
+- Remaining localization work from that stage has been partly addressed by the 2026-07-28 tool-page/runtime layer above.
+
+## 2026-07-27 Homepage Premium Command Center
+
+- `/en/` was redesigned as the product face with a compact premium command-center hero, restrained launch lanes, dense metrics, tighter sections, and a calmer visual system.
+- The old flag-gradient home map was replaced with a neutral atlas treatment matching `/en/countries/`; no country is selected by default and no popover appears at load.
+- Home map popovers now include country outline preview art via `data-country-outline` and `data-vh-world-popover-image`.
+- Key files: `scripts/build-countries-portal.mjs`, `assets/css/validohub.css`, and `assets/js/portal-home.js`.
+- Verified without full build: `node --check` for changed portal JS/MJS, scoped `npm run build:portal -- --locales en`, and Playwright desktop/mobile smoke on `http://127.0.0.1:8141/en/` with zero overflow, neutral map fill, and zero active countries at load.
+
+## 2026-07-27 Countries Portal Premium Registry
+
+- `/en/countries/` was redesigned as a compact premium country registry.
+- The world map visual design was intentionally preserved; only initial selection behavior changed.
+- No country is selected on page load anymore. Preview sidebar starts in a neutral `Choose a country` state, and Brazil is not active by default.
+- Country cards now use smaller typography, two-line summaries, inline ISO/currency/region facts, compact chips, and no link underline.
+- Key files: `scripts/build-countries-portal.mjs`, `assets/css/countries-portal.css`, `assets/css/validohub.css`, and `assets/js/countries-portal.js`.
+- Verified without full build: `node --check` for changed portal JS/MJS, scoped `npm run build:portal -- --locales en`, and Playwright desktop/mobile smoke on `http://127.0.0.1:8141/en/countries/` with zero overflow and zero active countries at load.
+
+## 2026-07-27 Global Tools Gold Interaction Floor
+
+- Current global tool count is 79 `/en/tools/*` routes.
+- `assets/js/tools/generic-suite.js` now provides a shared Gold interaction floor for the 72 global routes that use the Generic Utility Workbench Suite; Base64, URL, JSON, and JWT remain on 7 stronger dedicated runtimes.
+- Added current-result evidence strips, sample/batch replay matrices, official/source-system boundary panels, domain-specific Integration traps, and in-block Developer Snapshot actions (`Copy developer JSON`, `Copy result`, `Download JSON`).
+- Cache-busted generic-suite runtime version: `generic-suite-global-gold-v2-20260727` in `scripts/build-tools-dev.mjs`, `scripts/build-country-dev.mjs`, and `scripts/build-all.mjs`.
+- Verified without full build: scoped `npm run build:tools -- --locales en`, static sweep across all 79 generated global pages with no missing workbench/runtime, and `npm run audit:global-premium -- --base http://127.0.0.1:8141` passing for its 69-route browser coverage.
+
+## 2026-07-27 Global Tools Portal Premium Registry
+
+- `/en/tools/` was redesigned as a compact premium registry, not a giant flat tool directory.
+- Global tools are now grouped by integration job: Data & API Contracts, Security & Trust, Regulated Formats, DevOps & Cloud QA, Frontend & Product QA, AI & Data Ops, and Text/Time utilities.
+- Key files: `scripts/build-countries-portal.mjs`, `assets/css/validohub.css`, and `assets/js/portal-tools.js`.
+- Verified without full build: `node --check` for changed portal JS/MJS, scoped `npm run build:portal -- --locales en`, and Playwright desktop/mobile smoke on `http://127.0.0.1:8141/en/tools/` with zero horizontal overflow.
+
+## 2026-07-27 Country Tool MVP Triage
+
+- Latest triage report: `docs/reports/COUNTRY_TOOL_MVP_TRIAGE.md`.
+- Parsed mounted factory country-suite inventory: 11,747 tools across 190 suite files. Legacy/special wrappers for Brazil, France, Netherlands, Poland, and generic suite were intentionally excluded from this parser.
+- MVP buckets: 5,697 `SHIP/SPOTCHECK`, 2,948 `REVIEW`, 2,244 `MERGE/GLOBALIZE`, 858 `HIDE/REFERENCE`.
+- Product decision: do not present the country catalog as a giant flat list of equally premium tools. Keep high-value structured tools primary, demote repeated checklist/readiness/handoff/policy pages, and merge generic developer-data/privacy/regex/slug/API helpers into stronger global/locale-aware tools unless a country has real local specification value.
+- Next implementation step is a visibility-tier pass, not more blind tool count expansion: derive or add `primary`, `secondary`, `reference`, and `hide` tiers while preserving existing URLs until deletion/redirects are explicitly approved.
+
 ## Repository Boundary
 
 - Work primarily in ValidoHub: `/Users/maxtkachenko/work/validohub`.
@@ -85,6 +158,79 @@ IBAN coverage requires both validation and generation.
 - Invalid, short, bad-country-prefix, and bad-checksum examples must stay review/error paths and must not silently generate a valid IBAN.
 - IBAN debug output should include country prefix, MOD-97 check digits, BBAN/account body, grouping/masking, local BBAN field map where possible, and official-boundary notes.
 
+## 2026-07-27 Factory IBAN Generator Gold Pass
+
+- `assets/js/tools/country-suite-factory.js` now carries 44 route-locked country IBAN generator profiles with expected length and local BBAN anatomy slices.
+- Factory IBAN generator routes must show `Generate`, not validator-first copy; every normal click must create a fresh full IBAN for the route country and exact country length.
+- Invalid, short, and wrong-prefix fixtures must remain `Review needed`; do not fresh-generate over active review samples.
+- Current verified representatives: Albania, Germany, Spain, and Switzerland scoped builds plus browser smoke on `/en/albania/albania-iban-generator/`, `/en/germany/germany-iban-generator/`, `/en/spain/spain-iban-generator/`, and `/en/switzerland/switzerland-iban-generator/`.
+- AI log: `docs/ai/gold-tools/IBAN_GENERATOR_FACTORY_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Tax/Business Identifier Gold Pass
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for generated VAT, EORI, company, and register identifier tools.
+- Scope is 629 identifier tools across 190 country suites: `company`, `vat`, `register`, and `eori`. Do not broaden this matcher to tax-rate, tax-return, invoice, onboarding, audit, suffix, payroll, document, amount, date, or remittance tools.
+- The analyzer adds route prefix inference, valid-sample fallback for generated suites that only mount `slug/name`, local type markers, body/root/check-hint slices, placeholder rejection, masked developer JSON, official-boundary output, and a compact input rail.
+- Where profile-backed company/tax parsers exist, VAT/EORI can reuse their checksum/shape replay for stronger local evidence. Do not claim live VAT, registry, customs, filing, ownership, or company status.
+- Current verified representatives: Germany VAT, Austria EORI, Belgium VAT, Algeria generic tax, plus Algeria tax-rate negative scope check.
+- AI log: `docs/ai/gold-tools/FACTORY_TAX_BUSINESS_IDENTIFIER_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Contact/Address Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for generated `phone`, `postal`, and `address` tools.
+- Scope is 834 tools across 190 country suites: 380 phone, 191 postal, and 263 address tools. Keep this matcher narrow; do not apply it to region, municipality, transliteration, date, amount, tax, payment, or document tools unless they receive their own audited family pass.
+- The analyzer adds route-sample calling-code/postal-shape inference, local phone/postal/address parts, E.164-style preview for phone values, postal/address token and sample-shape comparison, masked developer JSON, explicit carrier/postal/geocode official-boundary copy, and a compact route-context rail.
+- CSS was hardened after QA found a rail-collapse risk: factory rails now use full-width auto-fit grids and minimum card widths so text does not become vertical. Run scoped builds sequentially; parallel country builds can race on shared generated assets.
+- Verified representatives: Algeria phone, Algeria postal, Japan address, Algeria region negative scope check, and Canada postal Gold Lab as an existing richer non-factory route.
+- AI log: `docs/ai/gold-tools/FACTORY_CONTACT_ADDRESS_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Document/Vehicle/Reference Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for generated document/passport/MRZ, vehicle/plate/VIN, customs, and tracking tools.
+- Scope is 2,090 tools across 191 country suites: `document`, `passport`, `plate`, `vin`, `vehicle`, `vehicleMask`, `customs`, and `tracking`. Keep payment, invoice, e-invoice, remittance, and procurement out of this pass; they should get a separate workflow/reference pass.
+- The analyzer adds token extraction, route sample-shape replay, masked developer JSON, VIN WMI/VDS/VIS anatomy, MRZ line parsing for real and escaped newlines, MRZ check-slot evidence when available, customs importer/HS/amount hints, tracking prefix/body slices, and explicit official/provider boundaries.
+- Analyzer priority matters: document/vehicle/reference runs before tax/business so VIN/customs pages do not show tax rails because broad generated copy contains tax/registration terms.
+- Verified representatives: Algeria MRZ, Algeria plate, Australia VIN, Algeria customs, Algeria tracking, plus Algeria postal negative scope check. All smoke checks had valid pass, invalid review, and zero horizontal overflow.
+- AI log: `docs/ai/gold-tools/FACTORY_DOCUMENT_VEHICLE_REFERENCE_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Payment/Invoice Workflow Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for generated payment reference, payment, remittance, invoice, e-invoice, and procurement tools.
+- Scope is 1,161 tools across 191 country suites: `paymentref`, `payment`, `remittance`, `invoice`, `einvoice`, and `procurement`. Keep this matcher out of IBAN generator/validator, tax-rate, tax-return, document/vehicle/reference, contact/address, and bespoke Gold Lab routes.
+- The analyzer adds reference extraction, XML/JSON/e-invoice payload classification, amount/currency hints, date hints, party/account evidence, route sample-shape replay, placeholder rejection, masked developer JSON, and explicit settlement/fiscal/e-invoice/procurement official-boundary output.
+- Analyzer priority matters: payment/invoice workflow runs after document/vehicle/reference and before tax/business so invoice/payment/procurement pages do not show tax rails because broad generated copy contains tax/company words.
+- Verified representatives: Algeria payment reference, Algeria remittance, Algeria invoice, Algeria e-invoicing, Algeria procurement, Germany XRechnung, Germany ZUGFeRD, Japan payment reference, Japan e-invoicing, plus Algeria VIN negative scope check. All smoke checks had valid pass, invalid review, and zero horizontal overflow.
+- Australia payment/e-invoicing routes are already intercepted by `gold-tools-lab.js`; treat them as existing route-bound Gold Lab profiles, not factory smoke targets.
+- AI log: `docs/ai/gold-tools/FACTORY_PAYMENT_INVOICE_WORKFLOW_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Bank/Account Workflow Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for non-IBAN bank/account workflows.
+- Scope is 806 id-matched route candidates across 192 suites: bank account validators/inspectors/fixture generators, BIC/SWIFT, routing/bank-code/BLZ/sort-code helpers, masked bank-account formatters, SEPA/direct-debit/domestic-transfer helpers, and bank-statement/payment-reconciliation routes. Keep plain payment references, invoices, remittances, documents, vehicles, tax authority handoff, tax-rate/return, postal, phone, and IBAN routes out of this pass.
+- The analyzer adds BIC institution/country/location/branch slices, BIC country inference from valid samples, domestic routing/account/body slices, ABA checksum replay when a nine-digit US routing candidate is visible, mandate/scheme hints, statement line/date/amount/reference hints, masked previews, developer JSON parts, and explicit bank/provider ownership-settlement boundaries.
+- Analyzer priority matters: bank/account runs after profile parsers and before document/reference and payment workflow so direct-debit/domestic-transfer/bank-statement pages do not fall into broad payment copy.
+- Verified representatives: Algeria bank account, Algeria BIC/SWIFT, Algeria direct-debit mandate, Algeria bank-statement parser, Algeria masked bank-account formatter, Australia domestic transfer, plus Algeria payment-reference and VIN negative scope checks. All factory smoke checks had valid pass, invalid review, and zero horizontal overflow.
+- Germany BLZ and Australia bank-account routes are already intercepted by `gold-tools-lab.js`; treat them as stronger route-bound Gold Lab profiles, not factory smoke failures.
+- AI log: `docs/ai/gold-tools/FACTORY_BANK_ACCOUNT_WORKFLOW_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Locale/Date/Currency Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for locale/date/currency workflows.
+- Scope is 234 route candidates across 188 suites: locale-number parsers, currency/decimal formatters, date-locale formatters, calendar-week helpers, timezone/business-hours helpers, and holiday-calendar fixture helpers. Keep banking, payment references, invoices, tax, documents, vehicles, postal, phone, address, and IBAN routes out of this pass.
+- The analyzer adds localized number extraction, group/decimal separator detection, canonical machine-number export, currency marker detection, date component/order parsing, ISO date/week replay, timezone/business-hour hints, day/month ambiguity warnings, masked developer JSON, and explicit exchange-rate/holiday/DST/source boundaries.
+- Analyzer priority matters: locale/date/currency runs after banking and before document/reference/payment/tax fallbacks so locale tools get their own rail while banking/payment pages keep their existing rails.
+- Verified representatives: Algeria calendar week, Algeria locale number, Algeria currency decimal, Algeria date locale, Japan calendar week, Japan locale number, Canada currency decimal, Canada timezone business hours, Bahamas date locale, plus Algeria bank-account and payment-reference negative scope checks. All factory smoke checks had valid pass, invalid review, and zero horizontal overflow.
+- AI log: `docs/ai/gold-tools/FACTORY_LOCALE_DATE_CURRENCY_GOLD_LOG.md`.
+
+## 2026-07-27 Factory Developer Data Workflow Gold Floor
+
+- `assets/js/tools/country-suite-factory.js` now has a targeted analyzer for developer-data workflows.
+- Scope is 2,742 id/kind-matched tools across 187 parsed mounted country-suite files: CSV locale, JSON fixture/schema, API/webhook/OpenAPI/GraphQL payload, data-quality, form-field/autofill, regex, slug/transliteration, personal-data fixture, privacy redaction/PII masking/support-ticket scrubber, document OCR cleanup, integration smoke, SQL seed, test-case matrix, retention, checkout, and shipping-label helpers.
+- The analyzer adds JSON validity/type/key extraction, CSV delimiter/header/row-count/row-width profiling, field/key extraction from payloads and labelled text, safe fixture JSON, privacy-signal detection, masked previews, OCR cleanup evidence, form/accessibility label evidence, developer JSON, and explicit source-truth/privacy/compliance boundaries.
+- Analyzer priority matters: developer-data runs after banking and locale but before broad document/payment/tax/contact fallbacks. Keep bank/account, payment/invoice, locale/date/currency, IBAN, tax identifier, phone, postal, and address routes in their dedicated rails unless a more specific audited pass supersedes them.
+- Verified representatives: Algeria CSV locale, data-quality, regex, form-field, support-ticket scrubber, document OCR, Canada API payload, Canada JSON schema, Canada form-autofill fixture, United States webhook payload, Japan data-quality, plus Algeria bank-account/payment-reference/calendar-week negative scope checks. All checked routes had the expected rail and zero horizontal overflow.
+- AI log: `docs/ai/gold-tools/FACTORY_DEVELOPER_DATA_WORKFLOW_GOLD_LOG.md`.
+
 ## Generic Global Tools Contract
 
 Global tools are first-class products, not utilities.
@@ -134,6 +280,8 @@ Before final sign-off on any new task, run the smallest relevant scoped build an
 
 - Shared Gold overlay source: `assets/js/tools/gold-tools-lab.js`.
 - Current profile count: 281 route-bound profiles.
+- Current shared runtime version: `2026-07-27-country-rich-lab-v4`, injected as `gold-tools-lab.js?v=gold-tools-lab-v4-20260727`.
+- Round 4 raised the broad shared floor with fixture deck, batch replay, current-result JSON/value copy, JSON download, route-local history, copy popovers, tighter typography, better spacing, and desktop/mobile overflow hardening.
 - Pix, Mexico CURP, and Spain ID remain the bespoke reference-quality pages. The shared overlay is the broad strong layer below those pages.
 - Round 3 added 171 strong Gold profiles for postal codes, phone/E.164, BIC/SWIFT, passport-like document numbers, vehicle plates, invoice/payment/bank references, postal tracking, customs references, and procurement identifiers.
 - New analyzer families include `bic`, `phone-local`, `postal-local`, `passport-lite`, `vehicle-plate`, and structured reference analyzers.
@@ -221,6 +369,14 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
 - Official boundary remains strict: local pass does not prove identity, document authenticity, taxpayer status, company registration, VIES status, ownership, or official assignment.
 - Verified with syntax checks, `build:country -- --country spain --locales en`, generated HTML script grep, browser smoke, and `audit:country-premium -- --country spain --locales en` passing `full-premium-ready`.
 
+## 2026-07-27 Brazil CPF/CNPJ Bespoke Gold V1
+
+- Brazil CPF/CNPJ has been promoted from shared overlay profiles into a bespoke Gold runtime. Source: `assets/js/tools/brazil-tax-id.js`; spec: `docs/product/BRAZIL_TAX_ID_WORKBENCH_SPEC.md`; AI log: `docs/ai/gold-tools/BRAZIL_TAX_ID_GOLD_LOG.md`.
+- The dedicated lab mounts on `/en/brazil/brazil-cpf-validator/` and `/en/brazil/brazil-cnpj-validator/`, replaces the Brazil suite host, and suppresses `gold-tools-lab.js` on those routes.
+- Implemented CPF and CNPJ normalization, display/storage/masked forms, repeated-placeholder rejection, safe fictional fixture generation, two modulo-11 check-digit replays, field anatomy, replay table, Receita source/boundary panel, Integration traps, and Developer Snapshot JSON copy.
+- Official boundary remains strict: local pass does not prove identity, company existence, Receita status, ownership, tax standing, account ownership, PIX reachability, or authorization to transact.
+- Scoped/full builders postprocess these Brazil routes to use `validohub.brazil-tax-id` and load `brazil-tax-id.js`.
+
 ## 2026-07-27 Gold Tools Round 2 Flagship Expansion
 
 - Shared Gold overlay coverage now contains 110 route-bound profiles in `assets/js/tools/gold-tools-lab.js`.
@@ -230,3 +386,13 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
 - Build wiring was synchronized in scoped and full builders. The expanded country set was rebuilt sequentially with `npm run build:country -- --country <slug> --locales en`; no full build was run.
 - Verification completed: JS syntax checks, 110/110 valid fixture PASS, 110/110 invalid fixture REVIEW, 0 missing profile routes, and 0 missing shared scripts except the deliberate Spain bespoke route.
 - See `docs/ai/gold-tools/ROUND2_FLAGSHIP_EXPANSION_LOG.md` for the detailed AI trace.
+
+## 2026-07-27 Country MVP Visibility Layer
+
+- Implemented source-level country catalog tiers in `scripts/render-country-sections.mjs`.
+- Country hubs now surface primary and secondary tools first, label rows with compact tier pills, and put lower-value readiness/checklist/handoff/policy routes in a closed `More reference workflows` group. URLs remain stable and search still finds reference rows.
+- Compact `Integration traps` typography was applied across factory tools, generic-suite traps, Gold lab traps, Pix, Brazil CPF/CNPJ, Spain legacy trap styles, and Mexico CURP.
+- Verification run without full build: `node --check` for touched JS, scoped `build:country -- --country canada|brazil|spain|mexico|poland --locales en`, grep of generated country hubs, and headless browser smoke via `http://127.0.0.1:8140`.
+- Browser smoke results to remember: Poland catalog has 21 primary, 34 secondary, 6 reference, reference group closed by default, no horizontal overflow; Poland IBAN/generic traps, Brazil CPF/Pix traps, Spain factory traps, and Mexico CURP traps compute at about 12.8px.
+- Follow-up label polish: `assets/css/country.css` now renders country catalog rows as a 3-column grid (`text / tier label / arrow`) on desktop and a compact 2-column layout on mobile. This fixed the user-reported floating Primary/Secondary labels. All 194 English country hubs were targeted-rebuilt through `compileCountriesPortal`; mass HTML check returned `badCount: 0`.
+- Follow-up related-only page fix: scoped `build:country` was missing the South America factory slugs, so Chile/Colombia/Ecuador/Paraguay/Peru/Uruguay tool pages could render only the related-tools block because their suite runtime waited for `window.ValidoHubCountrySuiteFactory`. `scripts/build-country-dev.mjs` now includes the full South America factory set, the six affected countries were rebuilt with `--locales en`, and a generated HTML audit found 0 `csf-static-host` pages missing `/assets/js/tools/country-suite-factory.js`.

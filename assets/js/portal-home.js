@@ -70,7 +70,8 @@
       capital: map.querySelector('[data-vh-world-popover-capital]'),
       currency: map.querySelector('[data-vh-world-popover-currency]'),
       tools: map.querySelector('[data-vh-world-popover-tools]'),
-      signals: map.querySelector('[data-vh-world-popover-signals]')
+      signals: map.querySelector('[data-vh-world-popover-signals]'),
+      image: map.querySelector('[data-vh-world-popover-image]')
     };
 
     function getCountryElement(target) {
@@ -87,6 +88,7 @@
         currency: element.getAttribute('data-country-currency') || '--',
         tools: element.getAttribute('data-country-workbenches') || '--',
         signals: element.getAttribute('data-country-signals') || 'Local developer formats.',
+        outline: element.getAttribute('data-country-outline') || '',
         href: element.getAttribute('data-country-href') || ''
       };
     }
@@ -116,6 +118,14 @@
       if (fields.currency) fields.currency.textContent = data.currency;
       if (fields.tools) fields.tools.textContent = data.tools + ' workbenches';
       if (fields.signals) fields.signals.textContent = data.signals;
+      if (fields.image && data.outline && fields.image.getAttribute('src') !== data.outline) {
+        fields.image.src = data.outline;
+        fields.image.alt = data.name + ' country shape';
+      }
+      map.querySelectorAll('[data-vh-world-country].is-country-active').forEach(function (item) {
+        item.classList.remove('is-country-active');
+      });
+      element.classList.add('is-country-active');
       positionPopover(element);
       popover.classList.add('is-visible');
     }
@@ -150,7 +160,11 @@
       openCountry(element);
     });
 
-    var firstCountry = map.querySelector('[data-country-slug="france"]') || map.querySelector('[data-vh-world-country]');
-    if (firstCountry) showCountry(firstCountry);
+    map.addEventListener('pointerleave', function () {
+      if (popover) popover.classList.remove('is-visible');
+      map.querySelectorAll('[data-vh-world-country].is-country-active').forEach(function (item) {
+        item.classList.remove('is-country-active');
+      });
+    });
   });
 })();

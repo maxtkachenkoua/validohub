@@ -3850,7 +3850,7 @@
     if (!factory) return false;
     const suite = factory.createSuite({
       suiteId: COUNTRY.slug + '-suite',
-      country: { slug: COUNTRY.slug, name: COUNTRY.name },
+      country: { slug: COUNTRY.slug, name: COUNTRY.name, iso2: COUNTRY.iso2, iso3: COUNTRY.iso3, adjective: COUNTRY.adjective },
       theme: { accent: '#0072CE', accent2: '#FCD116', accent3: '#009E60' },
       tools: RAW_TOOLS,
       analyze

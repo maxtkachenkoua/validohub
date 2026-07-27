@@ -28,6 +28,7 @@ Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT
 - JSON Workbench: `assets/js/tools/json.js`
 - JWT Workbench: `assets/js/tools/jwt.js`
 - PIX Workbench: `assets/js/tools/pix.js`
+- Brazil CPF/CNPJ Gold Workbench: `assets/js/tools/brazil-tax-id.js`
 - Spain ID Workbench: `assets/js/tools/spain-id.js`
 - Poland Premium Workbench Suite: `assets/js/tools/poland-suite.js`
 - Poland Expansion Workbench Suite: `assets/js/tools/poland-expansion.js`
@@ -46,6 +47,8 @@ ValidoHub now has an additive Gold browser-lab overlay for flagship local-market
 The overlay is a baseline, not a claim that every target has exhausted its public specification. Several formats already have concrete local checksum replay in `overlay-v1`; others intentionally remain conservative until exact official-source deepening is completed. Brazil Pix is intentionally not mounted through the shared overlay because its bespoke runtime owns the full page. The AI implementation index and progress log live in `docs/ai/gold-tools/`.
 
 Brazil Pix has been promoted beyond the shared overlay into the first bespoke Gold V2 payment/QR/payload lab. It now exposes BR Code formatting, deliberate bad-CRC fixtures, safe-fixture diff, nested TLV paths, offsets, raw TLV segments, CRC replay input, implementation lint, official BCB/source links, Pix-specific traps, local QR SVG generation, and explicit DICT/payment/settlement boundaries in `assets/js/tools/pix.js`. Pix must keep visible Gold identity inside the main runtime (`Brazil PIX Gold Workbench`, `Gold Browser Lab`, connected evidence strip); do not re-add the shared overlay or remove the Gold presentation when fixing duplicates.
+
+Shared Gold Tools Lab V4 now raises the broad country-tool floor across 281 route-bound profiles. It adds a richer fixture deck, batch replay, current-result copy/export, JSON download, local input history, anchored copy confirmations, compact premium typography, tighter internal spacing, and mobile overflow hardening. This is still the broad shared floor below bespoke flagships, not a claim that all profiles are finished Pix/CURP-level pages.
 
 
 ## Countries Platform
@@ -68,6 +71,8 @@ Current country hubs:
 Current country workbench routes:
 
 - Brazil PIX Workbench: `/en/brazil/brazil-pix-validator/`
+- Brazil CPF Gold Workbench: `/en/brazil/brazil-cpf-validator/`
+- Brazil CNPJ Gold Workbench: `/en/brazil/brazil-cnpj-validator/`
 - Brazil IBAN Validator: `/en/brazil/brazil-iban-validator/`
 - France SIREN Validator & Explainer: `/en/france/france-siren-validator/`
 - France SIRET Validator & Explainer: `/en/france/france-siret-validator/`
@@ -324,7 +329,7 @@ Brazil now follows the Poland country-hub gold-standard layout with its own loca
 
 ## Generic Utility Workbench Suite
 
-Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, and hash tools with real browser-only behavior. The ValidoHub build post-processes those generated tool pages in `scripts/build-all.mjs`, materializes full premium workbench markup where Engine output is too generic, and injects the shared workbench helper scripts plus `generic-suite.js` without changing Valido Engine. The generic suite now includes the premium country-tool interaction baseline where the domain supports it: branded tool headers, working success-first samples, intentional edge/error samples, local result cards, validation pipelines, field breakdowns, quality notes, expanded advanced analysis, UUID batch generation, IBAN masked display, regex capture-group reporting, text diff result cards, hash digest comparison, and corrected hash/slug execution.
+Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, hash tools, and the broad global premium batches with real browser-only behavior. The ValidoHub build post-processes those generated tool pages in `scripts/build-all.mjs`, materializes full premium workbench markup where Engine output is too generic, and injects the shared workbench helper scripts plus `generic-suite.js` without changing Valido Engine. The generic suite now includes the premium country-tool interaction baseline where the domain supports it: branded tool headers, working success-first samples, intentional edge/error samples, local result cards, validation pipelines, field breakdowns, quality notes, expanded advanced analysis, UUID batch generation, IBAN masked display, regex capture-group reporting, text diff result cards, hash digest comparison, and corrected hash/slug execution. The global Gold interaction floor adds current-result evidence strips, sample/batch replay matrices, official-boundary panels, domain-specific integration traps, and in-block Developer Snapshot copy/download actions across the 72 generated global-suite routes; the remaining 7 global routes continue to use stronger dedicated Base64, URL, JSON, and JWT runtimes.
 
 Global Premium Tools Batch V2 adds fifteen additional browser-only global workbenches: JSON Schema, OpenAPI, YAML/TOML, XML/XPath, CSV Profiler, SQL Risk Inspector, Cron, Regex Explainer/Generator, Date/Timezone, Color Contrast/Tokens, Markdown/MDX, GraphQL, Email/Domain, User-Agent/Client Hints, and HTTP Security Headers. These tools share `assets/js/tools/generic-suite.js`, use dedicated `validohub.*` algorithm ids, and are governed by `docs/product/GLOBAL_PREMIUM_TOOLS_BATCH_V2_SPEC.md`.
 
@@ -400,4 +405,4 @@ The broad shared Gold overlay at `assets/js/tools/gold-tools-lab.js` now covers 
 
 The overlay includes source links, valid/invalid fixtures, safe fixture generation, local analysis, anatomy/replay fields, batch replay, integration traps, official-boundary notes, and developer JSON. It now contains real local replay handlers for selected high-demand formats including South Africa ID, Turkey TCKN, Israel Teudat Zehut, Portugal NIF, Croatia OIB, Czech ICO, Greece AFM, Ecuador cedula, Uruguay cedula, and Kenya KRA PIN, plus strong shared analyzers for BIC/SWIFT, phone/E.164, postal codes, passport-like document numbers, vehicle plates, invoices, payment references, bank/account references, postal tracking, customs references, and procurement identifiers.
 
-Pix, Mexico CURP, and Spain ID remain the bespoke Gold references. Do not treat the shared overlay as the endpoint for a truly flagship format; promote the tool to a dedicated runtime/spec/log when the page deserves Pix/CURP/Spain-level interaction.
+Pix, Brazil CPF/CNPJ, Mexico CURP, and Spain ID are now the bespoke Gold references. Pix remains the accepted V2 payment/payload ceiling; CPF/CNPJ, CURP, and Spain ID are V1 identifier/registry labs. Do not treat the shared overlay as the endpoint for a truly flagship format; promote the tool to a dedicated runtime/spec/log when the page deserves Pix/CURP/Spain-level interaction.

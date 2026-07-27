@@ -17,7 +17,7 @@ function usage() {
     "Usage: node scripts/build-tools-dev.mjs [--slugs slug-a,slug-b] [--locales en,pl]",
     "",
     "Fast global-tools materializer. It recompiles shared CSS/JS assets, renders /en/tools/ from source,",
-    "syncs browser runtimes, refreshes selected generated /tools/<slug>/ pages, and localizes only /tools/.",
+    "syncs browser runtimes, refreshes selected generated /tools/<slug>/ pages, and localizes the portal plus selected pages.",
     "It does not run the Java publisher; new YAML routes still require a release/full build once."
   ].join("\n");
 }
@@ -95,6 +95,7 @@ async function syncRuntimeAssets() {
 
 
 const WORKBENCH_SCRIPT_VERSION = "country-premium-20260719";
+const GENERIC_SUITE_SCRIPT_VERSION = "generic-suite-global-gold-v2-20260727";
 
 const GENERIC_SUITE_ALGORITHMS = new Set([
   "validohub.json-schema", "validohub.openapi", "validohub.yaml-toml", "validohub.xml-xpath",
@@ -139,7 +140,8 @@ function ensureRegExp(value) {
 }
 
 function ensureScriptTag(content, src) {
-  const tag = '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>';
+  const version = src.endsWith("/generic-suite.js") ? GENERIC_SUITE_SCRIPT_VERSION : WORKBENCH_SCRIPT_VERSION;
+  const tag = '<script src="' + src + '?v=' + version + '"></script>';
   const escaped = ensureRegExp(src);
   let next = content.replace(new RegExp('<script src="' + escaped + '(?:\\?[^"\\n]*)?"></script>', "g"), "");
   return next.replace("</body>", tag + "\n</body>");
@@ -200,6 +202,8 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.help) { console.log(usage()); return; }
   const routeRegistry = await buildRouteRegistry();
+  const toolsPortalRoute = routeRegistry.get("/en/tools/");
+  if (toolsPortalRoute) toolsPortalRoute.sourceOwner = "node";
   const selectedSlugs = args.slugs.length ? [...new Set(args.slugs)] : globalToolSlugs(routeRegistry);
   const locales = args.locales.length ? args.locales : ["en"];
   if (!locales.includes("en")) locales.unshift("en");
@@ -217,8 +221,12 @@ async function main() {
 
   const allLocales = await configuredLocales();
   const portalLocales = locales.length ? locales : allLocales;
-  await applyFinalLocalizationPass(routeRegistry, siteRoot, portalLocales, { includeSuffixes: ["/tools/"] });
-  console.log("✓ Localized tools portal only: " + portalLocales.map(locale => "/" + locale + "/tools/").join(", "));
+  const localizedSuffixes = ["/tools/"].concat(selectedSlugs.map(slug => "/tools/" + slug + "/"));
+  await applyFinalLocalizationPass(routeRegistry, siteRoot, portalLocales, {
+    includeSuffixes: localizedSuffixes,
+    forceRefresh: true
+  });
+  console.log("✓ Localized tools portal and " + selectedSlugs.length + " selected tool pages for " + portalLocales.join(", "));
 
   const result = await refreshToolPageAssets(selectedSlugs, locales, assetsManifest);
   console.log("✓ Refreshed current CSS/JS bundle links on " + result.updated + " selected tool pages (checked " + result.checked + ")");

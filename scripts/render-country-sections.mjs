@@ -1240,6 +1240,36 @@ function routeSlug(route) {
   return route.path.split('/').filter(Boolean).at(-1) || '';
 }
 
+function countryRouteVisibilityTier(route) {
+  const slug = routeSlug(route).toLowerCase();
+  const title = String(route.title || '').toLowerCase();
+  const text = `${slug} ${title}`;
+  if (/(business-register-readiness|e-invoicing-readiness|tax-authority-handoff|accounting-audit-trail|license-checklist|kyc-document-bundle|utility-bill-address-proof|sanctions-screening|withholding-tax-form|data-retention-policy)/.test(slug)) {
+    return 'reference';
+  }
+  if (/(slug-normalizer|regex-pack|accessibility-locale-copy|accessibility-form-label|support-ticket-scrubber|api-payload-auditor|openapi-country-schema|graphql-input-auditor|sql-seed-data|test-case-matrix|ecommerce-checkout)/.test(slug)) {
+    return 'secondary';
+  }
+  if (/(national-id|ssn|sin|ein|tax-id|vat|eori|company-registration|business-number|passport|mrz|id-card|driver|licen[cs]e|iban|bic|swift|bank-account|routing|sort-code|blz|payment-reference|invoice-number|postal-code|phone|address|vehicle|vin|plate)/.test(text)) {
+    return 'primary';
+  }
+  if (/(csv-locale|json-fixture|data-quality|privacy-redaction|pii-masker|personal-data-fixture|document-ocr|form-autofill|form-field|locale-number|currency|date-locale|calendar-week|timezone|customs|tracking|remittance|reconciliation|statement|direct-debit|domestic-transfer|masked-bank|masked-iban)/.test(slug)) {
+    return 'secondary';
+  }
+  if (/(readiness|checklist|handoff|policy|auditor|copy-checker)/.test(slug)) {
+    return 'reference';
+  }
+  return 'secondary';
+}
+
+function routeTierRank(route) {
+  const tier = countryRouteVisibilityTier(route);
+  if (tier === 'primary') return 0;
+  if (tier === 'secondary') return 1;
+  if (tier === 'reference') return 2;
+  return 3;
+}
+
 const COUNTRY_FLAGS = {
   brazil: '🇧🇷',
   br: '🇧🇷',
@@ -1898,16 +1928,21 @@ function groupCountryWorkbenchRoutes(routes, model = null) {
     (group || other).routes.push(route);
   }
 
+  [...buckets, other].forEach(group => {
+    group.routes.sort((a, b) => routeTierRank(a) - routeTierRank(b) || (a.title || '').localeCompare(b.title || ''));
+  });
+
   return [...buckets, other].filter(group => group.routes.length > 0);
 }
 
 function renderExpandableRouteGroup(group, open = false, extraSearchText = '') {
   const rows = group.routes.map(route => `
-    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-slug="${escapeHtml(routeSlug(route))}" data-search-text="${escapeHtml([route.title || '', routeSlug(route), route.path || '', getCountryRouteDescription(route), group.title, group.summary, extraSearchText].join(' '))}" href="${route.path}">
+    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-tier="${escapeHtml(countryRouteVisibilityTier(route))}" data-route-slug="${escapeHtml(routeSlug(route))}" data-search-text="${escapeHtml([route.title || '', routeSlug(route), route.path || '', getCountryRouteDescription(route), group.title, group.summary, extraSearchText, countryRouteVisibilityTier(route)].join(' '))}" href="${route.path}">
       <span>
         <strong>${escapeHtml(route.title || route.path)}</strong>
-        <small>Browser-only local workbench</small>
+        <small>${countryRouteVisibilityTier(route) === 'primary' ? 'Primary local workbench' : countryRouteVisibilityTier(route) === 'secondary' ? 'Secondary local workflow' : 'Reference workflow'}</small>
       </span>
+      <em class="vh-country-tier-pill">${escapeHtml(countryRouteVisibilityTier(route))}</em>
       <span class="vh-country-row-arrow" aria-hidden="true">→</span>
     </a>
   `).join('\n');
@@ -1926,6 +1961,16 @@ function renderExpandableRouteGroup(group, open = false, extraSearchText = '') {
       </div>
     </details>
   `;
+}
+
+function renderReferenceRouteGroup(routes, extraSearchText = '') {
+  if (!routes.length) return '';
+  return renderExpandableRouteGroup({
+    key: 'reference',
+    title: 'More reference workflows',
+    summary: 'Lower-priority checklist, handoff, readiness, and generic helper routes kept available by URL without crowding the MVP catalog.',
+    routes
+  }, false, extraSearchText);
 }
 
 function findRoutes(routes, pattern) {
@@ -1969,6 +2014,10 @@ function findCountryStandardRoute(routes, label) {
 export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const routes = getCountryValidatorRoutes(model, routeRegistry);
   if (routes.length === 0) return '';
+  const primaryRoutes = routes.filter(route => countryRouteVisibilityTier(route) === 'primary');
+  const secondaryRoutes = routes.filter(route => countryRouteVisibilityTier(route) === 'secondary');
+  const referenceRoutes = routes.filter(route => countryRouteVisibilityTier(route) === 'reference');
+  const catalogRoutes = routes.filter(route => countryRouteVisibilityTier(route) !== 'reference');
 
   const featuredPatterns = model.iso2 === 'BR'
     ? /(brazil-cpf-validator|brazil-cnpj-validator|brazil-pix-validator|brazil-boleto-barcode-validator|brazil-linha-digitavel-validator|brazil-nfe-access-key-validator|brazil-cep-validator|brazil-phone-e164-formatter|brazil-renavam-validator|brazil-data-quality-workbench)/
@@ -1979,8 +2028,8 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
         : model.iso2 === 'ES'
           ? /(spain-id-validator|spain-dni-validator|spain-nie-validator|spain-vat-id-validator|spain-iban-validator|spain-ccc-bank-account-inspector|spain-bizum-reference-helper|spain-postal-code-validator|spain-phone-number-validator|spain-data-quality-workbench)/
           : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
-  const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
-  const groups = groupCountryWorkbenchRoutes(routes, model);
+  const featured = catalogRoutes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
+  const groups = groupCountryWorkbenchRoutes(catalogRoutes, model);
   const catalog = model.catalog || {};
   const countrySearchText = [
     model.summary,
@@ -2061,9 +2110,10 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
 
   const stats = `
     <div class="vh-country-catalog-stats" aria-label="Country workbench coverage">
-      <span><strong>${routes.length}</strong><small>available workbenches</small></span>
-      <span><strong>${groups.length}</strong><small>organized domains</small></span>
-      <span><strong>0</strong><small>server calls required</small></span>
+      <span><strong>${routes.length}</strong><small>total routes</small></span>
+      <span><strong>${primaryRoutes.length}</strong><small>primary tools</small></span>
+      <span><strong>${secondaryRoutes.length}</strong><small>secondary workflows</small></span>
+      <span><strong>${referenceRoutes.length}</strong><small>reference helpers</small></span>
     </div>
   `;
 
@@ -2075,11 +2125,12 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
 
   const groupsHtml = `
     <div class="vh-country-intent-filters" data-country-intent-filters>
-      <button class="vh-country-intent-chip is-active" type="button" data-country-intent="all">All intents <span>${routes.length}</span></button>
+      <button class="vh-country-intent-chip is-active" type="button" data-country-intent="all">Primary + secondary <span>${catalogRoutes.length}</span></button>
       ${intentChips}
     </div>
     <div class="vh-country-route-groups">
       ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2, countrySearchText)).join('\n')}
+      ${renderReferenceRouteGroup(referenceRoutes, countrySearchText)}
     </div>
     <p class="vh-country-tool-search-empty" data-country-tool-search-empty>No matching workbenches found for this country. Try local identifiers, payments, address, phone, or tax terms.</p>
   `;
@@ -2091,7 +2142,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
     ${featuredHtml}
     ${groupsHtml}
   `;
-  return createSection('Tool Catalog', `${model.displayName} workbench suite`, 'country-workbench-catalog', 'All country-specific tools grouped by user intent so developers can scan the whole country baseline without a wall of cards.', content);
+  return createSection('Tool Catalog', `${model.displayName} workbench suite`, 'country-workbench-catalog', 'Primary local tools stay visible first; lower-priority reference workflows remain searchable without crowding the MVP catalog.', content);
 }
 
 // 1. Facts Sections

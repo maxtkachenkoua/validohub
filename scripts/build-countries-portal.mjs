@@ -387,30 +387,26 @@ async function renderHomeWorldMap(countryRoutes, metrics) {
   const byIso2 = new Map(countries.map(country => [String(country.iso2 || '').toLowerCase(), country]));
   const rawSvg = await readFile(resolve(projectRoot, 'assets', 'images', 'countries', 'world-map.svg'), 'utf8');
   const supportedIso2 = new Set([...rawSvg.matchAll(/\bid="([a-z]{2})"/g)].map(match => match[1].toUpperCase()).filter(iso2 => byIso2.has(iso2.toLowerCase())));
-  const gradients = countries.map(country => {
-    const [a, b, c] = country.colors;
-    return `
-      <linearGradient id="vh-home-flag-${country.slug}" x1="0%" x2="100%" y1="0%" y2="0%">
-        <stop offset="0%" stop-color="${a}"></stop>
-        <stop offset="48%" stop-color="${b}"></stop>
-        <stop offset="100%" stop-color="${c}"></stop>
-      </linearGradient>
-    `;
-  }).join('\n');
+  const mapDefs = `
+    <filter id="vh-home-premium-lift" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#0f172a" flood-opacity="0.18"></feDropShadow>
+      <feDropShadow dx="0" dy="-1" stdDeviation="0.65" flood-color="#ffffff" flood-opacity="0.55"></feDropShadow>
+    </filter>
+  `;
 
   let svg = rawSvg
     .replace('<svg ', '<svg class="vh-home-world-svg" ')
     .replace('role="img"', 'role="img" focusable="false"')
     .replace(/<title id="title">.*?<\/title>/s, '<title id="title">Interactive ValidoHub world coverage map</title>')
-    .replace(/<desc id="desc">.*?<\/desc>/s, '<desc id="desc">Countries are colored with their flag palette. Hover or focus a country for a short developer hub preview; click to open it.</desc>');
+    .replace(/<desc id="desc">.*?<\/desc>/s, '<desc id="desc">Neutral world atlas. Hover or focus a country for a short developer hub preview; click to open it.</desc>');
 
-  svg = svg.replace(/(<svg\b[^>]*>)/, `$1\n<defs>${gradients}</defs>`);
+  svg = svg.replace(/(<svg\b[^>]*>)/, `$1\n<defs>${mapDefs}</defs>`);
 
   for (const country of countries) {
     const iso2 = String(country.iso2 || '').toLowerCase();
     const attrs = [
       `id="vh-home-world-${country.slug}"`,
-      'class="vh-home-world-country"',
+      `class="vh-home-world-country vh-marker-${country.slug}"`,
       'tabindex="0"',
       'role="link"',
       'data-vh-world-country',
@@ -426,8 +422,9 @@ async function renderHomeWorldMap(countryRoutes, metrics) {
       `data-country-language="${escapeHtml(country.language)}"`,
       `data-country-workbenches="${country.workbenchCount}"`,
       `data-country-signals="${escapeHtml([...country.identifiers, ...country.payments].join(' · ') || 'Local developer formats')}"`,
+      `data-country-outline="${escapeHtml(country.outlineSrc)}"`,
       `aria-label="Open ${escapeHtml(country.name)} developer hub"`,
-      `style="fill:url(#vh-home-flag-${country.slug})"`
+      `style="--vh-map-a:${country.colors[0]}; --vh-map-b:${country.colors[1]}; --vh-map-c:${country.colors[2]};"`
     ].join(' ');
     svg = svg.replace(new RegExp(`(<(?:path|g)\\s+)id="${iso2}"`), `$1${attrs}`);
   }
@@ -438,8 +435,8 @@ async function renderHomeWorldMap(countryRoutes, metrics) {
     <section class="vh-home-section vh-home-world-section vh-home-search-results" id="home-world-map" aria-labelledby="home-world-map-title">
       <div class="vh-home-section-head">
         <span class="vh-eyebrow">World Coverage</span>
-        <h2 id="home-world-map-title">Open any country from the live map.</h2>
-        <p>All ${metrics.totalCountries} official country hubs are reachable from one surface. Countries use their flag palette; hover for a quick integration snapshot, click to open the local developer portal.</p>
+        <h2 id="home-world-map-title">A quiet atlas for local developer work.</h2>
+        <p>All ${metrics.totalCountries} country hubs are reachable from one neutral map surface. Hover for a shape preview and integration snapshot; click to open the local developer portal.</p>
       </div>
       <div class="vh-home-world-shell">
         <div class="vh-home-world-map" data-vh-world-map>
@@ -448,6 +445,9 @@ async function renderHomeWorldMap(countryRoutes, metrics) {
             ${markerHtml}
           </div>
           <div class="vh-home-world-popover" data-vh-world-popover role="status" aria-live="polite">
+            <span class="vh-home-world-popover-art">
+              <img src="" alt="" loading="lazy" decoding="async" data-vh-world-popover-image>
+            </span>
             <div class="vh-home-world-popover-top">
               <span data-vh-world-popover-flag>🌍</span>
               <div>
@@ -569,11 +569,11 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
   const heroHtml = `
     <section class="vh-home-hero" aria-labelledby="home-title">
       <div class="vh-home-hero-copy">
-        <span class="vh-eyebrow">Developer Intelligence Command Center</span>
-        <h1 id="home-title">Find the right validator, generator, or debugger.</h1>
-        <p>Search global tools, country workbenches, local identifiers, payment formats, IBAN generators, and parser diagnostics from one browser-only launcher.</p>
+        <span class="vh-eyebrow">Browser-only developer intelligence</span>
+        <h1 id="home-title">Validate, generate, and debug real-world data.</h1>
+        <p>Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.</p>
         <div class="vh-home-search-panel" data-home-search>
-          <label class="vh-home-search-label" for="home-command-search">Paste or search any format</label>
+          <label class="vh-home-search-label" for="home-command-search">Command</label>
           <div class="vh-home-search-row">
             <input id="home-command-search" type="search" placeholder="Search JSON, JWT, IBAN generator, PESEL, PIX, SIRET, VAT..." autocomplete="off" data-home-search-input>
             <a class="vh-home-search-action" href="/en/countries/">Browse countries</a>
@@ -598,12 +598,12 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
       </div>
       <aside class="vh-home-command-card" aria-label="Launch lanes">
         <a href="#home-global-tools" class="vh-home-lane vh-home-search-card" data-search="global tools json jwt base64 url regex uuid iban developer">
-          <span>Global Tools</span>
+          <span>Global</span>
           <strong>JSON, JWT, Base64, URL, Regex</strong>
           <em>Universal browser utilities</em>
         </a>
         <a href="/en/countries/" class="vh-home-lane vh-home-search-card" data-search="country tools countries local identifiers payments banking tax local formats local rules">
-          <span>Country Tools</span>
+          <span>Countries</span>
           <strong>${metrics.totalCountries} hubs, ${metrics.totalWorkbenches} workbenches</strong>
           <em>Local formats and rules</em>
         </a>
@@ -737,11 +737,55 @@ function classifyToolRoute(route) {
   const title = cleanToolTitle(route);
   const slug = route.path.split('/').filter(Boolean).pop() || '';
   const haystack = `${title} ${slug}`.toLowerCase();
-  if (/generator|generate|fixture|uuid|locale-test-data/.test(haystack)) return 'Generators';
-  if (/jwt|secret|pii|webhook|hash|md5|sha|signature/.test(haystack)) return 'Security & Integrity';
-  if (/json|csv|xml|iso20022|regex|diff|html|url|base64|case|slug|mrz/.test(haystack)) return 'Parsers & Debuggers';
-  if (/iban|vat|swift|bic|phone|postal/.test(haystack)) return 'Validation Workbenches';
-  return 'Developer Utilities';
+  if (/kubernetes|dockerfile|github-actions|terraform|nginx|apache|webserver/.test(haystack)) return 'DevOps & Cloud QA';
+  if (/prompt|rag|vector|fine-tune|finetune|eval|dataset/.test(haystack)) return 'AI & Data Ops';
+  if (/jwt|jwk|oauth|secret|pii|cookie|tls|dns|spf|dmarc|sri|webhook|signature|headers|csp|cors|rate-limit/.test(haystack)) return 'Security & Trust';
+  if (/iban|swift|bic|vat|iso20022|sepa|mrz|phone|postal/.test(haystack)) return 'Regulated Formats';
+  if (/accessibility|design-token|color-contrast|stack-trace|browser-storage|user-agent|seo|html-meta/.test(haystack)) return 'Frontend & Product QA';
+  if (/json|openapi|swagger|graphql|yaml|toml|xml|xpath|csv|sql|regex|avro|protobuf|ndjson|jsonpath|jmespath|rest-error|idempotency|websocket|sse|diff|patch/.test(haystack)) return 'Data & API Contracts';
+  if (/base64|url|html|markdown|mdx|case|slug|uuid|date|timezone|cron|locale|hash|md5|sha/.test(haystack)) return 'Text, Time & Utilities';
+  return 'Text, Time & Utilities';
+}
+
+function categoryMetaFor(category) {
+  const meta = {
+    'Data & API Contracts': {
+      kicker: 'Contracts',
+      summary: 'Schema, payload, query, log, and protocol inspectors for integration review.',
+      query: 'json openapi graphql csv sql xml'
+    },
+    'Security & Trust': {
+      kicker: 'Security',
+      summary: 'Headers, tokens, secrets, signatures, DNS, cookies, and policy surfaces.',
+      query: 'security jwt headers secret webhook'
+    },
+    'Regulated Formats': {
+      kicker: 'Formats',
+      summary: 'Banking, tax, identity, phone, postal, and payment formats with explicit live-system boundaries.',
+      query: 'iban vat swift phone postal'
+    },
+    'DevOps & Cloud QA': {
+      kicker: 'Ops',
+      summary: 'Static review labs for infrastructure, CI, webserver, and deployment artifacts.',
+      query: 'docker kubernetes terraform github'
+    },
+    'Frontend & Product QA': {
+      kicker: 'Frontend',
+      summary: 'Accessibility, metadata, storage, design-token, user-agent, and stack-trace QA.',
+      query: 'accessibility design seo stack'
+    },
+    'AI & Data Ops': {
+      kicker: 'AI Data',
+      summary: 'RAG, prompt safety, eval, fine-tune, and vector metadata preparation checks.',
+      query: 'rag prompt eval vector'
+    },
+    'Text, Time & Utilities': {
+      kicker: 'Utilities',
+      summary: 'Encoding, hashes, URLs, dates, slugs, case conversion, UUIDs, cron, and markdown helpers.',
+      query: 'url base64 uuid date hash'
+    }
+  };
+  return meta[category] || { kicker: 'Tools', summary: 'Browser-only developer workbenches.', query: category };
 }
 
 function toolSummaryFor(route) {
@@ -801,11 +845,36 @@ function renderToolsPortalCards(toolRoutes) {
     return `
       <a class="vh-tool-card" href="${route.path}" data-tool-card data-category="${escapeHtml(category)}" data-search="${escapeHtml(search)}">
         <span class="vh-tool-card-mark">${escapeHtml(mark)}</span>
-        <span class="vh-tool-card-category">${escapeHtml(category)}</span>
-        <strong>${escapeHtml(title)}</strong>
-        <span>${escapeHtml(summary)}</span>
-        <em>Open workbench</em>
+        <span class="vh-tool-card-copy">
+          <span class="vh-tool-card-category">${escapeHtml(category)}</span>
+          <strong>${escapeHtml(title)}</strong>
+          <span>${escapeHtml(summary)}</span>
+        </span>
+        <em aria-hidden="true">Open</em>
       </a>
+    `;
+  }).join('\n');
+}
+
+function renderToolsCategorySections(toolRoutes, categoryOrder) {
+  return categoryOrder.map((category) => {
+    const routes = toolRoutes.filter(route => classifyToolRoute(route) === category);
+    if (!routes.length) return '';
+    const meta = categoryMetaFor(category);
+    return `
+      <section class="vh-tools-family" data-tools-group>
+        <div class="vh-tools-family-head">
+          <div>
+            <span class="vh-tools-family-kicker">${escapeHtml(meta.kicker)}</span>
+            <h3>${escapeHtml(category)}</h3>
+            <p>${escapeHtml(meta.summary)}</p>
+          </div>
+          <button type="button" data-tools-query="${escapeHtml(meta.query)}">${routes.length} tools</button>
+        </div>
+        <div class="vh-tools-grid">
+          ${renderToolsPortalCards(routes)}
+        </div>
+      </section>
     `;
   }).join('\n');
 }
@@ -824,19 +893,29 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
   const toolRoutes = routeRegistry.getAll()
     .filter(route => route.path.startsWith('/en/tools/') && route.path !== '/en/tools/')
     .sort((a, b) => cleanToolTitle(a).localeCompare(cleanToolTitle(b)));
-  const categories = [...new Set(toolRoutes.map(classifyToolRoute))].sort();
-  const cardsHtml = renderToolsPortalCards(toolRoutes);
+  const categoryOrder = [
+    'Data & API Contracts',
+    'Security & Trust',
+    'Regulated Formats',
+    'DevOps & Cloud QA',
+    'Frontend & Product QA',
+    'AI & Data Ops',
+    'Text, Time & Utilities'
+  ].filter(category => toolRoutes.some(route => classifyToolRoute(route) === category));
+  const categories = categoryOrder;
+  const categorySectionsHtml = renderToolsCategorySections(toolRoutes, categoryOrder);
   const featured = [
     '/en/tools/json-schema-workbench/',
     '/en/tools/openapi-inspector/',
+    '/en/tools/webhook-signature-verifier/',
     '/en/tools/http-security-headers-inspector/',
-    '/en/tools/cron-expression-workbench/'
+    '/en/tools/iban-generator/',
+    '/en/tools/secret-pii-redactor/'
   ].map(path => routeRegistry.get(path)).filter(Boolean);
   const featuredHtml = featured.map(route => `
     <a class="vh-tools-feature" href="${route.path}">
-      <span>${escapeHtml(toolMarkFor(route))}</span>
+      <span>${escapeHtml(classifyToolRoute(route))}</span>
       <strong>${escapeHtml(cleanToolTitle(route))}</strong>
-      <em>${escapeHtml(toolSummaryFor(route))}</em>
     </a>
   `).join('\n');
 
@@ -860,13 +939,13 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
   const heroHtml = `
     <section class="vh-tools-hero" aria-labelledby="tools-title">
       <div class="vh-tools-hero-copy">
-        <span class="vh-eyebrow">Global Workbench Registry</span>
-        <h1 id="tools-title">Universal validators, generators, parsers, and debugging labs.</h1>
-        <p>Use browser-only tools for payloads, identities, payments, secrets, signatures, locales, and QA fixtures before data reaches production.</p>
+        <span class="vh-eyebrow">Global Tools</span>
+        <h1 id="tools-title">Browser labs for developer data.</h1>
+        <p>Compact registry of validators, generators, parsers, security checks, and fixture labs. Private by default, useful before production handoff.</p>
       </div>
       <aside class="vh-tools-hero-panel" aria-label="Global tool coverage">
         <div><strong>${toolRoutes.length}</strong><span>global tools</span></div>
-        <div><strong>${categories.length}</strong><span>tool families</span></div>
+        <div><strong>${categories.length}</strong><span>families</span></div>
         <div><strong>0</strong><span>uploads required</span></div>
       </aside>
     </section>
@@ -876,27 +955,27 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
     <div class="vh-tools-portal" data-tools-search>
       <section class="vh-tools-command">
         <div>
-          <span class="vh-eyebrow">Find A Global Tool</span>
-          <h2>Search by format, workflow, or debugging need.</h2>
+          <span class="vh-eyebrow">Command</span>
+          <h2>Find the workbench.</h2>
         </div>
         <label class="vh-tools-search">
           <span class="vh-sr-only">Search global tools</span>
-          <input type="search" placeholder="Search JSON Schema, OpenAPI, cron, headers, SQL, GraphQL, webhook, MRZ, VAT..." autocomplete="off" data-tools-search-input>
+          <input type="search" placeholder="Search JSON, OpenAPI, JWT, IBAN, CSP, SQL, RAG..." autocomplete="off" data-tools-search-input>
         </label>
         <div class="vh-tools-chips" aria-label="Suggested tool searches">
-          <button type="button" data-tools-query="generator">Generators</button>
-          <button type="button" data-tools-query="payment">Payments</button>
-          <button type="button" data-tools-query="security">Security</button>
-          <button type="button" data-tools-query="locale">Locale QA</button>
-          <button type="button" data-tools-query="field breakdown">Field breakdown</button>
+          <button type="button" data-tools-query="json openapi graphql">API contracts</button>
+          <button type="button" data-tools-query="security jwt headers secret">Security</button>
+          <button type="button" data-tools-query="iban vat swift phone">Formats</button>
+          <button type="button" data-tools-query="docker kubernetes terraform">Ops</button>
+          <button type="button" data-tools-query="rag prompt eval vector">AI data</button>
           <button type="button" data-tools-query="">Clear</button>
         </div>
       </section>
 
-      <section class="vh-tools-section">
+      <section class="vh-tools-featured">
         <div class="vh-tools-section-head">
-          <span class="vh-eyebrow">Featured</span>
-          <h2>High-intent workbenches for validation and generation.</h2>
+          <span class="vh-eyebrow">Priority</span>
+          <h2>High-signal starting points.</h2>
         </div>
         <div class="vh-tools-feature-grid">
           ${featuredHtml}
@@ -905,13 +984,11 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
 
       <section class="vh-tools-section">
         <div class="vh-tools-section-head">
-          <span class="vh-eyebrow">All Global Tools</span>
-          <h2><span data-tools-count>${toolRoutes.length}</span> workbenches ready.</h2>
-          <p>Every new global tool must ship with valid and invalid samples, field breakdown, pipeline evidence, copy feedback, and a clear official-boundary note.</p>
+          <span class="vh-eyebrow">Registry</span>
+          <h2><span data-tools-count>${toolRoutes.length}</span> workbenches.</h2>
+          <p>Grouped by integration job, not by random utility labels.</p>
         </div>
-        <div class="vh-tools-grid">
-          ${cardsHtml}
-        </div>
+        ${categorySectionsHtml}
         <p class="vh-tools-empty" data-tools-empty hidden>No global tools match this search.</p>
       </section>
     </div>
@@ -982,29 +1059,34 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
       const d = r.metadata;
       const progress = Number(d.catalog.completion) || 0;
       const status = d.catalog.status || 'planned';
+      const statusLabel = status === 'available' ? 'Live' : (status === 'inProgress' ? 'Building' : 'Roadmap');
+      const currencyLabel = d.catalog.currencyCode && d.catalog.currencyCode !== d.catalog.currency
+        ? `${d.catalog.currency} (${d.catalog.currencyCode})`
+        : d.catalog.currency;
       
       const badgeClass = status === 'available'
         ? 'vh-country-status-ready'
         : (status === 'inProgress' ? 'vh-country-status-in-progress' : 'vh-country-status-badge vh-custom-badge');
 
       const identifiersChips = (d.catalog.identifiers || []).slice(0, 3).map(id => `
-        <span class="vh-country-status-badge vh-custom-badge">${escapeHtml(id)}</span>
+        <span class="vh-countries-chip vh-countries-chip-identifier">${escapeHtml(id)}</span>
       `).join('');
 
       const paymentsChips = (d.catalog.payments || []).slice(0, 3).map(p => `
-        <span class="vh-country-status-badge vh-country-status-ready">${escapeHtml(p)}</span>
+        <span class="vh-countries-chip vh-countries-chip-payment">${escapeHtml(p)}</span>
       `).join('');
 
       return `
         <a class="vh-countries-card status-${status}" 
            href="${r.path}" 
            data-country-id="${d.id}"
+           data-accent="${d.id}"
            data-flag="${escapeHtml(d.catalog.flag)}"
            data-name="${escapeHtml(d.catalog.name)}"
            data-summary="${escapeHtml(d.catalog.summary)}"
            data-iso="${escapeHtml(d.catalog.iso2)} / ${escapeHtml(d.catalog.iso3)}"
            data-lang="${escapeHtml(d.catalog.language)}"
-           data-currency="${escapeHtml(d.catalog.currency)} (${escapeHtml(d.catalog.currencyCode)})"
+           data-currency="${escapeHtml(currencyLabel)}"
            data-continent="${escapeHtml(d.catalog.continent)}"
            data-region="${escapeHtml(d.catalog.region)}"
            data-status="${status}"
@@ -1016,20 +1098,20 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
               <span class="vh-flag">${escapeHtml(d.catalog.flag)}</span>
               <h3>${escapeHtml(d.catalog.name)}</h3>
             </div>
-            <span class="${badgeClass}">${escapeHtml(status)}</span>
+            <span class="${badgeClass}">${escapeHtml(statusLabel)}</span>
           </div>
-          <p class="vh-mt-xs vh-mb-xs">${escapeHtml(d.catalog.summary)}</p>
+          <p class="vh-countries-card-summary">${escapeHtml(d.catalog.summary)}</p>
           <div class="vh-countries-card-facts">
-            <div><strong>ISO:</strong> ${escapeHtml(d.catalog.iso2)}</div>
-            <div><strong>Currency:</strong> ${escapeHtml(d.catalog.currency)}</div>
-            <div><strong>Region:</strong> ${escapeHtml(d.catalog.region)}</div>
+            <div><span>ISO</span><strong>${escapeHtml(d.catalog.iso2)}</strong></div>
+            <div><span>Currency</span><strong>${escapeHtml(d.catalog.currency)}</strong></div>
+            <div><span>Region</span><strong>${escapeHtml(d.catalog.region)}</strong></div>
           </div>
-          <div class="vh-flex vh-align-center vh-justify-between vh-mb-xs">
-            <span class="vh-country-card-label">Roadmap</span>
+          <div class="vh-countries-card-progress">
+            <span>Coverage</span>
             <strong>${progress}%</strong>
           </div>
           <progress class="vh-progress-bar" max="100" value="${progress}"></progress>
-          <div class="vh-country-badge-row vh-mt-xs">
+          <div class="vh-countries-chip-row">
             ${identifiersChips}
             ${paymentsChips}
           </div>
@@ -1051,23 +1133,23 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
   }).join('\n');
 
   const previewPanelHtml = `
-    <aside class="vh-countries-preview-panel" data-preview-panel="true">
+    <aside class="vh-countries-preview-panel is-empty" data-preview-panel="true">
       <span class="vh-eyebrow">Country Preview</span>
-      <div class="vh-countries-preview-flag" data-preview-flag="true">🇧🇷</div>
-      <h2 class="vh-text-center" data-preview-name="true">Brazil</h2>
-      <p class="vh-text-center vh-color-muted" data-preview-summary="true">Developer intelligence for Brazilian taxpayer identifiers, local banking integration, and instant payment frameworks.</p>
+      <div class="vh-countries-preview-flag is-empty" data-preview-flag="true" aria-hidden="true"></div>
+      <h2 data-preview-name="true">Choose a country</h2>
+      <p data-preview-summary="true">Hover or focus any country card or map shape to inspect local developer coverage. No country is selected by default.</p>
       <div class="vh-countries-preview-list">
-        <div><dt>ISO Codes</dt><dd data-preview-iso="true">BR / BRA</dd></div>
-        <div><dt>Language</dt><dd data-preview-lang="true">Portuguese</dd></div>
-        <div><dt>Currency</dt><dd data-preview-currency="true">BRL (Brazilian real)</dd></div>
-        <div><dt>Region</dt><dd data-preview-region="true">South America</dd></div>
+        <div><dt>ISO Codes</dt><dd data-preview-iso="true">No selection</dd></div>
+        <div><dt>Language</dt><dd data-preview-lang="true">No selection</dd></div>
+        <div><dt>Currency</dt><dd data-preview-currency="true">No selection</dd></div>
+        <div><dt>Region</dt><dd data-preview-region="true">No selection</dd></div>
       </div>
-      <div class="vh-flex vh-align-center vh-justify-between vh-mb-xs">
+      <div class="vh-countries-preview-progress">
         <span>Completion</span>
-        <strong data-preview-percent="true">45%</strong>
+        <strong data-preview-percent="true">0%</strong>
       </div>
-      <progress class="vh-progress-bar" max="100" value="45" data-preview-progress="true"></progress>
-      <a class="vh-countries-preview-action" href="/en/brazil/" data-preview-link="true">Open Brazil Hub</a>
+      <progress class="vh-progress-bar" max="100" value="0" data-preview-progress="true"></progress>
+      <a class="vh-countries-preview-action is-muted" href="#" data-preview-link="true" tabindex="-1" aria-disabled="true">Choose a country</a>
     </aside>
   `;
 
@@ -1144,7 +1226,7 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
   `;
 
   const portalHeroHtml = `
-    <header class="vh-page-intro">
+    <header class="vh-page-intro vh-countries-intro">
       <span class="vh-eyebrow">Global Registry</span>
       <h1>Country Hubs</h1>
       <p>Explore local developer specifications, tax structures, payment protocols, and regional validators.</p>

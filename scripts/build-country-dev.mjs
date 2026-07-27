@@ -5,6 +5,12 @@ import { fileURLToPath } from 'node:url';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { renderCountryPage } from './build-countries-portal.mjs';
 import { refreshGeneratedAssetLinks, updateBundleAssetLinks } from './dev-asset-links.mjs';
+import {
+  ensureLocalizedRoutes,
+  hydrateLocalizationDataFromRegistry,
+  rewriteHrefLocale,
+  translateVisibleHtml
+} from './localization-pass.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
@@ -175,6 +181,18 @@ const COUNTRY_RUNTIME_BY_SLUG = {
 const LEGACY_RICH_LAYER = 'country-legacy-rich-layer.js';
 const LEGACY_RICH_COUNTRIES = new Set(['brazil', 'poland', 'france', 'netherlands']);
 const GOLD_LAB_RUNTIME = 'gold-tools-lab.js';
+const GOLD_LAB_SCRIPT_VERSION = 'gold-tools-lab-v4-20260727';
+const GENERIC_SUITE_RUNTIME = 'generic-suite.js';
+const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-global-gold-v2-20260727';
+const COUNTRY_SUITE_FACTORY_RUNTIME = 'country-suite-factory.js';
+const COUNTRY_SUITE_FACTORY_SCRIPT_VERSION = 'country-suite-factory-rail-preview-fix-20260727';
+
+function toolScriptVersion(script) {
+  if (script === GOLD_LAB_RUNTIME) return GOLD_LAB_SCRIPT_VERSION;
+  if (script === GENERIC_SUITE_RUNTIME) return GENERIC_SUITE_SCRIPT_VERSION;
+  if (script === COUNTRY_SUITE_FACTORY_RUNTIME) return COUNTRY_SUITE_FACTORY_SCRIPT_VERSION;
+  return 'country-premium-20260719';
+}
 const GOLD_LAB_COUNTRIES = new Set([
   'argentina',
   'australia',
@@ -247,12 +265,13 @@ const GOLD_LAB_ALGORITHMS = new Set([
   'validohub.pesel'
 ]);
 const GOLD_STANDALONE_RUNTIMES_BY_COUNTRY = {
-  brazil: ['pix.js'],
+  brazil: ['pix.js', 'brazil-tax-id.js'],
   poland: ['pesel.js'],
   spain: ['spain-id.js']
 };
 const STANDALONE_RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.brazil-pix', ['pix.js']],
+  ['validohub.iban-generator', [GENERIC_SUITE_RUNTIME]],
   ['validohub.spain-id', ['spain-id.js']]
 ]);
 const GOLD_LAB_ROUTE_OVERRIDES = new Set([
@@ -502,6 +521,16 @@ const FACTORY_COUNTRY_SLUGS = new Set([
   'united-kingdom',
   'vatican-city',
   'argentina',
+  'bolivia',
+  'chile',
+  'colombia',
+  'ecuador',
+  'guyana',
+  'paraguay',
+  'peru',
+  'suriname',
+  'uruguay',
+  'venezuela',
   'united-states',
   'canada',
   'mexico',
@@ -749,7 +778,7 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
 
   const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
   const runtimeTags = runtimeScriptsForCountry(country)
-    .map(script => `<script src="/assets/js/tools/${script}?v=country-premium-20260719"></script>`)
+    .map(script => `<script src="/assets/js/tools/${script}?v=${toolScriptVersion(script)}"></script>`)
     .join('\n');
   const relatedCards = routes.slice(0, 12).map(route => `
     <a href="${escapeHtml(route.href)}" class="link-card">
@@ -831,6 +860,59 @@ async function configuredLocales() {
   return values.length ? values : CORE_PRODUCTION_LOCALES;
 }
 
+function commonCountryTitlePrefix(routes) {
+  const titles = routes
+    .map(route => String(route.title || '').trim())
+    .filter(Boolean);
+  if (!titles.length) return '';
+
+  const counts = new Map();
+  for (const title of titles) {
+    const words = title.split(/\s+/).filter(Boolean).slice(0, 4);
+    for (let length = 1; length <= words.length; length += 1) {
+      const prefix = words.slice(0, length).join(' ');
+      counts.set(prefix, (counts.get(prefix) || 0) + 1);
+    }
+  }
+
+  const minimum = Math.max(3, Math.ceil(titles.length * 0.6));
+  const genericStarts = new Set(['API', 'BIC', 'CSV', 'Data', 'Domestic', 'IBAN', 'JSON', 'MRZ', 'Tax', 'VAT', 'VIN']);
+  return Array.from(counts.entries())
+    .filter(([prefix, count]) => count >= minimum && !genericStarts.has(prefix.split(/\s+/)[0]))
+    .sort((a, b) => {
+      const wordDelta = b[0].split(/\s+/).length - a[0].split(/\s+/).length;
+      if (wordDelta) return wordDelta;
+      return b[1] - a[1];
+    })[0]?.[0] || '';
+}
+
+function localizedCountryNameFromIso(locale, iso2, fallback) {
+  if (locale === 'en') return fallback;
+  try {
+    const display = new Intl.DisplayNames([locale], { type: 'region' }).of(iso2);
+    if (display && display !== iso2) return display;
+  } catch {
+    // Use the English country name below when Intl cannot localize this code.
+  }
+  return fallback;
+}
+
+async function buildCountryLocalizationProfile(country, locales) {
+  const dataPath = resolve(projectRoot, 'countries', 'data', `${country}.json`);
+  if (!(await pathExists(dataPath))) return null;
+  const data = JSON.parse(await readFile(dataPath, 'utf8'));
+  const routes = Array.isArray(data.hub?.routes) ? data.hub.routes : [];
+  const iso2 = data.catalog?.iso2 || '';
+  const fallbackName = data.catalog?.name || country;
+  return {
+    titlePrefix: commonCountryTitlePrefix(routes),
+    localizedNames: Object.fromEntries(locales.map(locale => [
+      locale,
+      localizedCountryNameFromIso(locale, iso2, fallbackName)
+    ]))
+  };
+}
+
 async function scanHtmlFiles(dir) {
   const out = [];
   const entries = await readdir(dir, { withFileTypes: true });
@@ -884,7 +966,15 @@ function buildAlternateTags(country, suffix, locales) {
   return tags.join('\n  ');
 }
 
-function localizeCountryHtml(content, { country, locale, suffix, locales }) {
+function normalizeLocalizedCountryToolTitles(content, { locale, localizationProfile }) {
+  if (locale === 'en' || !localizationProfile?.titlePrefix) return content;
+  const localizedCountry = localizationProfile.localizedNames?.[locale];
+  if (!localizedCountry) return content;
+  const prefixPattern = escapeRegExp(localizationProfile.titlePrefix);
+  return content.replace(new RegExp(`>${prefixPattern}\\s+`, 'g'), `>${localizedCountry}: `);
+}
+
+function localizeCountryHtml(content, { country, locale, suffix, locales, routeRegistry, localizationProfile }) {
   let next = content;
   next = next.replace(/<html\s+lang="[^"]+">/i, `<html lang="${locale}">`);
   next = next.replace(new RegExp(`https://validohub\\.com/en/${escapeRegExp(country)}/`, 'g'), `https://validohub.com/${locale}/${country}/`);
@@ -894,6 +984,12 @@ function localizeCountryHtml(content, { country, locale, suffix, locales }) {
   next = next.replace(/<link rel="alternate" hreflang="[^"]+" href="[^"]+">\s*/gi, '');
   next = next.replace('</head>', `  ${buildAlternateTags(country, suffix, locales)}\n</head>`);
   next = pruneRelatedLinksToCountry(next, { country, locale, suffix });
+  if (locale !== 'en') {
+    next = rewriteHrefLocale(next, locale, routeRegistry);
+    next = next.replace(/href="\/en\/categories\/country\/"/g, `href="/${locale}/countries/"`);
+    next = normalizeLocalizedCountryToolTitles(next, { locale, localizationProfile });
+    next = translateVisibleHtml(next, locale);
+  }
   return next;
 }
 
@@ -934,7 +1030,8 @@ function ensureOrderedToolScripts(content, scripts) {
     const src = `/assets/js/tools/${script}`;
     const oldTag = new RegExp(`<script src="${escapeRegExp(src)}(?:\\?[^\"]*)?"></script>`, 'g');
     next = next.replace(oldTag, '');
-    tags.push(`<script src="${src}?v=country-premium-20260719"></script>`);
+    const version = toolScriptVersion(script);
+    tags.push(`<script src="${src}?v=${version}"></script>`);
   }
   return next.replace('</body>', tags.join('') + '\n</body>');
 }
@@ -942,7 +1039,8 @@ function ensureOrderedToolScripts(content, scripts) {
 function ensureAdditionalToolScript(content, script) {
   const src = `/assets/js/tools/${script}`;
   if (content.includes(src)) return content;
-  return content.replace('</body>', `<script src="${src}?v=country-premium-20260719"></script>\n</body>`);
+  const version = toolScriptVersion(script);
+  return content.replace('</body>', `<script src="${src}?v=${version}"></script>\n</body>`);
 }
 
 function removeToolScript(content, script) {
@@ -953,6 +1051,18 @@ function removeToolScript(content, script) {
 
 function applyRouteSpecificRuntimeOverrides(content, filePath) {
   const normalizedFilePath = filePath.replace(/\\/g, '/');
+  if (
+    normalizedFilePath.endsWith('/en/brazil/brazil-cpf-validator/index.html') ||
+    normalizedFilePath.endsWith('/en/brazil/brazil-cnpj-validator/index.html')
+  ) {
+    let next = removeToolScript(content, GOLD_LAB_RUNTIME);
+    next = removeToolScript(next, LEGACY_RICH_LAYER);
+    next = removeToolScript(next, 'brazil-suite.js');
+    next = ensureAdditionalToolScript(next, 'brazil-tax-id.js');
+    next = next.replace(/\/assets\/js\/tools\/brazil-tax-id\.js\?v=[^"]+/g, '/assets/js/tools/brazil-tax-id.js?v=brazil-tax-id-gold-20260727');
+    next = next.replace(/data-algorithm-id="validohub\.brazil-suite"/g, 'data-algorithm-id="validohub.brazil-tax-id"');
+    return next;
+  }
   if (normalizedFilePath.endsWith('/en/spain/spain-id-validator/index.html')) {
     let next = removeToolScript(content, GOLD_LAB_RUNTIME);
     next = ensureAdditionalToolScript(next, 'spain-id.js');
@@ -1010,8 +1120,9 @@ async function syncRuntimeAssets(country) {
 
   const runtime = COUNTRY_RUNTIME_BY_SLUG[country] || `${country}-suite.js`;
   const scripts = Array.from(new Set(runtimeScriptsForCountry(country)
-    .concat(GOLD_STANDALONE_RUNTIMES_BY_COUNTRY[country] || [])))
-    .filter((script) => script !== 'country-suite-factory.js');
+    .concat(GOLD_STANDALONE_RUNTIMES_BY_COUNTRY[country] || [])
+    .concat([GENERIC_SUITE_RUNTIME])))
+    .filter((script) => script !== COUNTRY_SUITE_FACTORY_RUNTIME);
   for (const script of scripts) {
     const sourceRuntime = resolve(projectRoot, 'assets', 'js', 'tools', script);
     if (await pathExists(sourceRuntime)) {
@@ -1053,7 +1164,7 @@ async function syncCountryVisualAssets(country) {
   return copied;
 }
 
-async function materializeLocaleCountry({ country, locale, locales }) {
+async function materializeLocaleCountry({ country, locale, locales, routeRegistry, localizationProfile }) {
   const sourceDir = resolve(siteRoot, 'en', country);
   const targetDir = resolve(siteRoot, locale, country);
   if (!(await pathExists(sourceDir))) {
@@ -1071,7 +1182,7 @@ async function materializeLocaleCountry({ country, locale, locales }) {
     const relative = filePath.replace(targetDir, '').replace(/\\/g, '/').replace(/\/index\.html$/, '/');
     const suffix = relative === '/index.html' || relative === '/' ? '/' : relative;
     const content = await readFile(filePath, 'utf8');
-    const next = localizeCountryHtml(content, { country, locale, suffix, locales });
+    const next = localizeCountryHtml(content, { country, locale, suffix, locales, routeRegistry, localizationProfile });
     await writeFile(filePath, next, 'utf8');
   }
 
@@ -1149,6 +1260,7 @@ async function main() {
   if (!country) throw new Error('Missing --country.\n' + usage());
   const locales = args.locales.length ? args.locales : await configuredLocales();
   if (!locales.includes('en')) locales.unshift('en');
+  const localizationProfile = await buildCountryLocalizationProfile(country, locales);
 
   console.log(`=== ValidoHub country dev build: ${country} ===`);
   console.log(`Locales: ${locales.join(', ')}`);
@@ -1156,7 +1268,9 @@ async function main() {
   console.log(`✓ Compiled assets: ${assetsManifest.css}, ${assetsManifest.js}`);
   const globalAssetLinks = await refreshGeneratedAssetLinks(siteRoot, assetsManifest);
   console.log(`✓ Refreshed current CSS/JS bundle links on ${globalAssetLinks.updated} generated pages (checked ${globalAssetLinks.checked})`);
-  await renderEnglishCountryFromSource(country, assetsManifest);
+  const routeRegistry = await renderEnglishCountryFromSource(country, assetsManifest);
+  ensureLocalizedRoutes(routeRegistry, siteRoot, locales);
+  hydrateLocalizationDataFromRegistry(routeRegistry, locales);
   console.log(`✓ Rendered /en/${country}/ from source`);
   const renderedToolPages = await renderEnglishCountryToolPages(country, assetsManifest);
   if (renderedToolPages) console.log(`✓ Rendered ${renderedToolPages} country tool pages from source`);
@@ -1170,7 +1284,7 @@ async function main() {
 
   let pages = 0;
   for (const locale of locales) {
-    pages += await materializeLocaleCountry({ country, locale, locales });
+    pages += await materializeLocaleCountry({ country, locale, locales, routeRegistry, localizationProfile });
   }
 
   const checked = await validateCountryHtml(country, locales);
