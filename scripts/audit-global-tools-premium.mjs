@@ -9,7 +9,7 @@ const routes = [
     path: "/en/tools/",
     input: null,
     sampleText: null,
-    mustContain: ["Global Workbench Registry", "Phone E.164", "Webhook Signature", "All Global Tools"],
+    mustContain: ["High-signal starting points", "Phone E.164", "Webhook Signature", "Grouped by integration job"],
   },
   {
     path: "/en/tools/json-formatter/",

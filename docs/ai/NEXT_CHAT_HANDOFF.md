@@ -8,6 +8,21 @@ ValidoHub is a premium browser-only developer intelligence platform. The user wa
 
 The product goal is not only validation. Where the domain supports it, tools must also generate safe fixtures, explain structure, show debug internals, expose developer handoff data, and guide the user visually through what can be checked, generated, copied, or exported.
 
+## 2026-07-28 Localization, Search, and SEO Hardening Sweep
+
+- User approved the whole overnight scope: finish localization foundations across production languages (`en`, `es`, `pt-BR`, `de`, `fr`, `pl`, `uk`), fix search, fix missing local tool language switchers, improve SEO readiness, and apply product-quality user feedback without asking again.
+- `assets/js/bundle.js` country hub search now ranks matches instead of only filtering: exact slug/title and key aliases (`pesel`, `cpf`, `pix`, `curp`, `rut`, `iban`, etc.) beat generic reference rows; search status copy is localized.
+- `scripts/build-country-dev.mjs` now injects the normal site header into generated local country tool pages, so `initGlobalLanguageSwitcher()` can mount the language selector on routes like `/fr/colombia/colombia-currency-decimal-formatter/`.
+- `scripts/render-country-sections.mjs` now emits canonical source-level country catalog row titles and compact tier labels (`Primary workbench`, `Strong workflow`, `Reference workflow`) instead of raw generated/hybrid titles.
+- `scripts/localization-pass.mjs` now repairs country catalog rows after broad translation passes using `data-route-slug`, localizes intent chips/group summaries/tier pills, and repairs related country link cards from href slugs so localized global tool pages do not show broken `French/German/Finnish ...` hybrids.
+- `assets/js/tools/generic-suite.js` now localizes global tool replay matrices, table headers, pass/review labels, and official-boundary text instead of leaving English runtime islands.
+- `assets/js/tools/country-suite-factory.js` and `assets/css/workbench.css` add a small top breathing gap for the first Advanced analysis / Validation pipeline block.
+- Added `scripts/audit-seo-production.mjs` and `npm run audit:seo` for deploy-safe SEO checks: title, description, canonical, current hreflang, h1 count, noindex, generated placeholders, plus optional strict localization warnings.
+- Added `scripts/audit-localization-production.mjs`, `npm run audit:localization`, `scripts/repair-generated-localization.mjs`, and `npm run repair:localization`. The repair script fast-fixes generated localized HTML/runtime UI leftovers and SEO shell issues (thin titles, current-locale hreflang, localized canonical shell) without requiring a full Maven publish.
+- Full generated verification after the repair passed: `npm run audit:localization -- --limit 120` checked 28,588 localized pages with 0 warnings; `npm run audit:seo -- --strict-localization` checked 40,888 pages successfully.
+- Source/build verification remains scoped, not a completed full build: `node --check` for changed JS/MJS, scoped `build:tools -- --slugs iban-generator,json-schema-workbench,secret-pii-redactor --locales fr,uk,de,es,pt-BR,pl`, scoped `build:country -- --country poland|colombia --locales fr,uk,de,es,pt-BR,pl`, generated HTML grep smokes, and representative `npm run audit:seo -- --paths ... --strict-localization`.
+- Full `npm run build:full` was attempted but stopped after the Maven publisher stayed silent for a long time before Node post-processing. Do not claim the Maven full build passed. The generated site state was instead repaired and audited in place as above.
+
 ## 2026-07-28 Country Factory Runtime Localization Sweep
 
 - The latest localization pass is intentionally shared factory infrastructure, not a one-off French Colombia page fix.
@@ -396,3 +411,44 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
 - Browser smoke results to remember: Poland catalog has 21 primary, 34 secondary, 6 reference, reference group closed by default, no horizontal overflow; Poland IBAN/generic traps, Brazil CPF/Pix traps, Spain factory traps, and Mexico CURP traps compute at about 12.8px.
 - Follow-up label polish: `assets/css/country.css` now renders country catalog rows as a 3-column grid (`text / tier label / arrow`) on desktop and a compact 2-column layout on mobile. This fixed the user-reported floating Primary/Secondary labels. All 194 English country hubs were targeted-rebuilt through `compileCountriesPortal`; mass HTML check returned `badCount: 0`.
 - Follow-up related-only page fix: scoped `build:country` was missing the South America factory slugs, so Chile/Colombia/Ecuador/Paraguay/Peru/Uruguay tool pages could render only the related-tools block because their suite runtime waited for `window.ValidoHubCountrySuiteFactory`. `scripts/build-country-dev.mjs` now includes the full South America factory set, the six affected countries were rebuilt with `--locales en`, and a generated HTML audit found 0 `csf-static-host` pages missing `/assets/js/tools/country-suite-factory.js`.
+
+## 2026-07-28 Localization Coverage Pass
+
+- Expanded production localization for `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk` across shared homepage copy, global tools cards, country tool cards, generated tool chrome, runtime status labels, integration traps, official-boundary notes, result-preview labels, and related-tool titles.
+- Source changes are centered in `scripts/localization-pass.mjs`, `scripts/repair-generated-localization.mjs`, `scripts/audit-localization-production.mjs`, `assets/js/tools/generic-suite.js`, and `assets/js/tools/country-suite-factory.js`. Homepage generator summaries in `scripts/build-countries-portal.mjs` were softened from "fixture payloads" to "test data".
+- Generated HTML was repaired in place after the localization-map changes. A hard raw scan for the user-reported English leftovers (`Waiting for input`, `Privacy boundary`, `Runs locally`, `Integration traps`, `fixture payload`, `Neutral world atlas`, etc.) returned clean across `generated/validohub/{es,pt-BR,de,fr,pl,uk}`.
+- A follow-up taxonomy pass localized recurring Countries Portal terms such as `Region`, `postal code`, `bank account`, `tax payment reference`, `privacy`, `vehicles`, `documents`, and the map hover/click copy. Global tool related lists also received a generated pass for localized country names and common account-fixture labels.
+- Verification passed: `node --check` for `scripts/localization-pass.mjs`, `scripts/repair-generated-localization.mjs`, `scripts/audit-localization-production.mjs`, `scripts/build-countries-portal.mjs`, `assets/js/tools/generic-suite.js`, and `assets/js/tools/country-suite-factory.js`; targeted `npm run audit:localization` passed for 19 representative localized pages with 0 warnings.
+- Follow-up full-localization hardening added a reusable `TOOL_TITLE_TERM_TRANSLATIONS` layer and lightweight `translateToolTitleChromeHtml()` pass for related-card / country-catalog / tool-title chrome. This specifically cleaned long-tail visible names like `Address Transliteration`, `Data Quality Workbench`, `Domestic Account Fixture`, `Czech Rodne cislo`, `Ukrainian RNOKPP`, and `Italian Codice Fiscale` across localized generated pages.
+- Generated HTML was repaired in place again: first repair checked 40,888 pages and updated 9,329; targeted hard-blocker rewrite updated 665/665 files; long-tail chrome rewrite updated 23,863/23,863 files.
+- Verification now passes at full generated-localized scope: `npm run audit:localization -- --limit 120` checked 28,588 localized pages with 0 warnings. Additional raw `rg` scans for both hard blockers and long-tail tool-title terms returned clean across `generated/validohub/{es,pt-BR,de,fr,pl,uk}`. No full build was run.
+
+## 2026-07-29 MVP Freeze / SEO / Search Pass
+
+- Global `/tools/` search is now ranked instead of plain substring filtering. Source: `assets/js/portal-tools.js`. It normalizes accents/punctuation, understands common Cyrillic/transliterated aliases for identifiers and developer terms, expands category terms, highlights the top result, and opens the best result on Enter.
+- `assets/css/validohub.css` adds compact search-status and top-result styling for the global tools portal.
+- SEO audit hardening lives in `scripts/audit-seo-production.mjs`. It now checks root `robots.txt`/`sitemap.xml`, canonical locale consistency, current hreflang, strict localization needles, placeholder leaks, and warns on missing x-default/social/JSON-LD coverage without making the existing generated site undeployable for non-critical social gaps.
+- Added `scripts/audit-performance-budget.mjs` plus `npm run audit:performance`. It validates generated asset size budgets and manifest asset integrity, and warns on very large generated HTML pages.
+- Added `docs/product/MVP_DEPLOYMENT_FREEZE_CHECKLIST.md` as the release freeze contract: no new functionality during freeze, exact audit gates, smoke routes, UX acceptance, SEO acceptance, and rollback note.
+- Still do not claim a full build passed. The intended verification for this pass is syntax checks plus scoped portal rebuild/copy and audits; full build remains explicitly optional.
+
+## 2026-07-29 Search Relevance Hardening
+
+- Added a deeper search polish layer for both global tools and country hubs. `/tools/` now supports URL-persisted queries (`?q=`), Cmd/Ctrl+K focus, localized empty-state suggestion chips, broader Cyrillic/Ukrainian/Russian aliases, phrase aliases, and more useful expansions for SEO, email, sitemap, regex, schema, token, IBAN, PII, webhook, and security searches.
+- Country hub search in `assets/js/bundle.js` now persists `?q=`, restores the query on load, clears it with the Clear button, keeps no-result suggestions open as clickable fallback rows, and understands high-signal aliases for PESEL, Pix, CURP, RUT/RUN, DNI, IBAN/NRB, SWIFT/BIC, VAT/EORI, MRZ/passport/document, postal/phone/address, bank account, tax, invoice, and PII terms.
+- Search ranking now gives direct validator/generator route matches a stronger boost, so short queries like `pix`, `dni`, `curp`, `песель`, and `iban generator` prefer the actual workbench instead of nearby reference/copy tools.
+- Added `scripts/audit-search-relevance.mjs` and `npm run audit:search`; `audit:full` now includes the search relevance gate.
+- Verification passed after the portal rebuild/repair cycle: `npm run audit:search`, `npm run audit:performance`, `npm run audit:localization -- --limit 120`, and `npm run audit:seo -- --strict-localization` across 40,888 generated pages. Full build was not run.
+
+## 2026-07-29 MVP Freeze Candidate Final Pass
+
+- Final freeze pass found two real release blockers and fixed them without adding product scope:
+  - Generated country factory pages were stale for many locales/countries: some still shipped the generic `Run the tool` shell and loaded suite runtimes without `country-suite-factory.js`. A one-time generated repair refreshed 37,014 factory pages and synced 201 runtime assets so generated output matches the current build pipeline contract.
+  - Audit guards had drifted after premium redesigns: `/en/tools/` now uses the elite compact registry copy instead of old `Global Workbench Registry`/`All Global Tools` labels, and Spain ID's bespoke field breakdown is titled `Identifier Anatomy`. The guards now check the actual accepted premium UI without weakening coverage.
+- Final release gates passed:
+  - `npm run audit:full`
+  - `npm run audit:localization -- --limit 120` (28,588 localized pages, 0 warnings)
+  - `npm run audit:seo -- --strict-localization` (40,888 pages)
+  - Targeted JS/MJS syntax checks for changed search/audit scripts
+- Browser smoke passed through a temporary static server for 20 routes across desktop and mobile. Covered homepage, localized homepage, `/tools/`, `/countries/`, country search query restore for Poland/Brazil/Mexico/Spain, PESEL/CPF/Pix/CURP/Spain ID/IBAN generator, and Italy IBAN factory runtime. The smoke checked one H1, no `[object Object]`, no page-level horizontal overflow, restored search query values, and no generic `Run the tool` shell on repaired factory pages.
+- Full build was still not run; this pass used release audits plus generated repair because the source build pipeline already contains the correct runtime wiring and the failing state was stale generated HTML.

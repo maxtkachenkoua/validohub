@@ -1936,11 +1936,18 @@ function groupCountryWorkbenchRoutes(routes, model = null) {
 }
 
 function renderExpandableRouteGroup(group, open = false, extraSearchText = '') {
+  const tierLabel = (route) => {
+    const tier = countryRouteVisibilityTier(route);
+    if (tier === 'primary') return 'Primary workbench';
+    if (tier === 'secondary') return 'Strong workflow';
+    return 'Reference workflow';
+  };
+  const canonicalTitle = (route) => canonicalCountryToolTitle(route);
   const rows = group.routes.map(route => `
-    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-tier="${escapeHtml(countryRouteVisibilityTier(route))}" data-route-slug="${escapeHtml(routeSlug(route))}" data-search-text="${escapeHtml([route.title || '', routeSlug(route), route.path || '', getCountryRouteDescription(route), group.title, group.summary, extraSearchText, countryRouteVisibilityTier(route)].join(' '))}" href="${route.path}">
+    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-tier="${escapeHtml(countryRouteVisibilityTier(route))}" data-route-slug="${escapeHtml(routeSlug(route))}" data-search-text="${escapeHtml([route.title || '', canonicalTitle(route), routeSlug(route), route.path || '', getCountryRouteDescription(route), group.title, group.summary, extraSearchText, countryRouteVisibilityTier(route)].join(' '))}" href="${route.path}">
       <span>
-        <strong>${escapeHtml(route.title || route.path)}</strong>
-        <small>${countryRouteVisibilityTier(route) === 'primary' ? 'Primary local workbench' : countryRouteVisibilityTier(route) === 'secondary' ? 'Secondary local workflow' : 'Reference workflow'}</small>
+        <strong>${escapeHtml(canonicalTitle(route))}</strong>
+        <small>${tierLabel(route)}</small>
       </span>
       <em class="vh-country-tier-pill">${escapeHtml(countryRouteVisibilityTier(route))}</em>
       <span class="vh-country-row-arrow" aria-hidden="true">→</span>
@@ -1961,6 +1968,36 @@ function renderExpandableRouteGroup(group, open = false, extraSearchText = '') {
       </div>
     </details>
   `;
+}
+
+function canonicalCountryToolTitle(route) {
+  const slug = routeSlug(route);
+  const title = String(route.title || route.path || '').trim();
+  const rules = [
+    [/pesel/, 'PESEL Validator'],
+    [/cpf/, 'CPF Validator'],
+    [/cnpj/, 'CNPJ Validator'],
+    [/pix/, 'Pix Validator'],
+    [/curp/, 'CURP Validator'],
+    [/(^|-)rut(-|$)/, 'RUT Validator'],
+    [/iban.*generator/, 'IBAN Generator'],
+    [/iban|nrb/, 'IBAN / NRB Workbench'],
+    [/vat|tva|btw|mwst|iva/, 'VAT / Tax ID Validator'],
+    [/eori/, 'EORI Inspector'],
+    [/swift|bic/, 'BIC / SWIFT Inspector'],
+    [/postal|postcode|cep/, 'Postal Code Validator'],
+    [/phone|e164/, 'Phone Number Formatter'],
+    [/mrz/, 'MRZ Passport / ID Parser'],
+    [/vin/, 'VIN Validator'],
+    [/license-plate|licence-plate|plate/, 'License Plate Inspector'],
+    [/json-schema/, 'JSON Schema Workbench'],
+    [/openapi|swagger/, 'OpenAPI / Swagger Inspector'],
+    [/webhook/, 'Webhook Signature Workbench']
+  ];
+  for (const [pattern, label] of rules) {
+    if (pattern.test(slug)) return label;
+  }
+  return title.replace(/\b(country|local)\b\s*/gi, '').replace(/\s{2,}/g, ' ').trim() || title;
 }
 
 function renderReferenceRouteGroup(routes, extraSearchText = '') {

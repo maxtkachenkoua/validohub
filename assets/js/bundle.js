@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let activeSuggestionIndex = -1;
     let visibleMatches = [];
+    let rankedMatches = [];
     let activeIntent = 'all';
     intentFilters.forEach(button => {
       const isActive = button.classList.contains('is-active');
@@ -137,6 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const aliases = new Map([
       ['pasel', 'pesel'],
       ['pesel id', 'pesel'],
+      ['polish pesel', 'pesel'],
+      ['cpf brazil', 'cpf'],
+      ['cnpj brazil', 'cnpj'],
+      ['pix brazil', 'pix'],
+      ['curp mexico', 'curp'],
+      ['rut chile', 'rut'],
       ['vat pl', 'poland vat'],
       ['nrb', 'iban nrb'],
       ['iban', 'iban nrb'],
@@ -144,8 +151,74 @@ document.addEventListener('DOMContentLoaded', () => {
       ['bic', 'swift bic'],
       ['ksef xml', 'ksef'],
       ['jpk xml', 'jpk'],
-      ['regon company', 'regon']
+      ['regon company', 'regon'],
+      ['песель', 'pesel'],
+      ['песел', 'pesel'],
+      ['пэсель', 'pesel'],
+      ['пікс', 'pix'],
+      ['пикс', 'pix'],
+      ['цурп', 'curp'],
+      ['курп', 'curp'],
+      ['рут', 'rut'],
+      ['рун', 'run'],
+      ['ібан', 'iban nrb'],
+      ['ибан', 'iban nrb'],
+      ['нрб', 'iban nrb'],
+      ['свіфт', 'swift bic'],
+      ['свифт', 'swift bic'],
+      ['бік', 'swift bic'],
+      ['бик', 'swift bic'],
+      ['ват', 'vat'],
+      ['ндс', 'vat'],
+      ['еорі', 'eori'],
+      ['еори', 'eori'],
+      ['мрз', 'mrz'],
+      ['паспорт', 'passport'],
+      ['документ', 'id card'],
+      ['документы', 'id card'],
+      ['документи', 'id card'],
+      ['пошта', 'postal code'],
+      ['почта', 'postal code'],
+      ['поштовий код', 'postal code'],
+      ['почтовый код', 'postal code'],
+      ['телефон', 'phone'],
+      ['адреса', 'address'],
+      ['адрес', 'address'],
+      ['банк', 'bank iban'],
+      ['рахунок', 'bank account'],
+      ['счет', 'bank account'],
+      ['рахунок банк', 'bank account'],
+      ['счет банк', 'bank account'],
+      ['податок', 'tax vat'],
+      ['налог', 'tax vat'],
+      ['інвойс', 'invoice'],
+      ['инвойс', 'invoice'],
+      ['рахунок фактура', 'invoice'],
+      ['счет фактура', 'invoice'],
+      ['секрет', 'pii masker'],
+      ['маска', 'pii masker'],
+      ['персональні дані', 'pii masker'],
+      ['персональные данные', 'pii masker']
     ]);
+
+    const searchCopy = {
+      en: { match: 'match', matches: 'matches', for: 'for', enter: 'Enter to jump', toolsIn: 'tools in', search: 'Search', countryWorkbenches: 'country workbenches' },
+      es: { match: 'resultado', matches: 'resultados', for: 'para', enter: 'Enter para abrir', toolsIn: 'herramientas en', search: 'Buscar', countryWorkbenches: 'workbenches del país' },
+      'pt-BR': { match: 'resultado', matches: 'resultados', for: 'para', enter: 'Enter para abrir', toolsIn: 'ferramentas em', search: 'Buscar', countryWorkbenches: 'workbenches do país' },
+      de: { match: 'Treffer', matches: 'Treffer', for: 'für', enter: 'Enter zum Öffnen', toolsIn: 'Tools in', search: 'Suche', countryWorkbenches: 'Länder-Workbenches' },
+      fr: { match: 'résultat', matches: 'résultats', for: 'pour', enter: 'Entrée pour ouvrir', toolsIn: 'outils dans', search: 'Rechercher', countryWorkbenches: 'workbenches pays' },
+      pl: { match: 'wynik', matches: 'wyniki', for: 'dla', enter: 'Enter, aby otworzyć', toolsIn: 'narzędzi w', search: 'Szukaj', countryWorkbenches: 'workbenche kraju' },
+      uk: { match: 'збіг', matches: 'збігів', for: 'для', enter: 'Enter, щоб відкрити', toolsIn: 'інструментів у', search: 'Пошук', countryWorkbenches: 'воркбенчах країни' }
+    };
+
+    function localeCode() {
+      return detectPathLocale() || normalizeLocaleTag(document.documentElement.lang || '') || 'en';
+    }
+
+    function searchLabel(key) {
+      const locale = localeCode();
+      return (searchCopy[locale] && searchCopy[locale][key]) || searchCopy.en[key] || key;
+    }
 
     function getRecentTerms() {
       try {
@@ -180,6 +253,55 @@ document.addEventListener('DOMContentLoaded', () => {
       return aliases.get(normalized) || normalized;
     }
 
+    function setCountrySearchParam(rawQuery) {
+      if (!window.history?.replaceState) return;
+      const value = String(rawQuery || '').trim();
+      const url = new URL(window.location.href);
+      if (value) url.searchParams.set('q', value);
+      else url.searchParams.delete('q');
+      window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+    }
+
+    function queryTokens(query) {
+      return normalizeSearchText(query).split(' ').filter(Boolean);
+    }
+
+    function routeTierBoost(row) {
+      const tier = row.dataset.routeTier || '';
+      if (tier === 'primary') return 90;
+      if (tier === 'secondary') return 45;
+      if (tier === 'reference') return -20;
+      return 0;
+    }
+
+    function rowSearchScore(row, query) {
+      const normalizedQuery = normalizeSearchText(query);
+      if (!normalizedQuery) return 0;
+      const tokens = queryTokens(normalizedQuery);
+      const title = normalizeSearchText(row.querySelector('strong')?.textContent || '');
+      const slug = normalizeSearchText(row.dataset.routeSlug || '');
+      const meta = normalizeSearchText(row.querySelector('small')?.textContent || '');
+      const haystack = normalizeSearchText([
+        title,
+        slug,
+        row.dataset.searchText || '',
+        row.textContent || ''
+      ].join(' '));
+      let score = routeTierBoost(row);
+      if (slug === normalizedQuery || title === normalizedQuery) score += 1400;
+      if (tokens.length === 1 && slug.includes(`${tokens[0]} validator`)) score += 700;
+      if (slug.includes(normalizedQuery) || title.includes(normalizedQuery)) score += 850;
+      if (tokens.length && tokens.every(token => slug.split(' ').includes(token))) score += 760;
+      if (tokens.length && tokens.every(token => title.split(' ').includes(token))) score += 720;
+      if (tokens.length && tokens.every(token => haystack.includes(token))) score += 220;
+      if (haystack.includes(normalizedQuery)) score += 140;
+      if (meta.includes('reference')) score -= 35;
+      if (/personal identifiers|documents, contacts|country developer|data quality|tool intelligence/.test(title) && !tokens.some(token => slug.split(' ').includes(token))) {
+        score -= 180;
+      }
+      return score;
+    }
+
     function buildSuggestionItem(row, index, rawQuery) {
       const href = row.getAttribute('href') || '#';
       const title = (row.querySelector('strong')?.textContent || '').trim() || (row.textContent || '').trim();
@@ -199,10 +321,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      visibleMatches = rows.filter(row => !row.hidden);
+      visibleMatches = rankedMatches.length ? rankedMatches : rows.filter(row => !row.hidden);
       const topMatches = visibleMatches.slice(0, 8);
       if (!topMatches.length) {
-        closeSuggestions();
+        const fallback = popularFallback.slice(0, 6).map((entry, index) => `
+          <button class="vh-country-search-suggestion" type="button" role="option" data-country-search-shortcut="${escapeHtml(entry.query)}" data-suggestion-index="${index}">
+            <span class="vh-country-search-suggestion-title">${escapeHtml(entry.label)}</span>
+            <span class="vh-country-search-suggestion-meta">${escapeHtml(searchLabel('search'))}</span>
+          </button>
+        `).join('');
+        suggestions.innerHTML = fallback;
+        suggestions.hidden = !fallback;
+        activeSuggestionIndex = -1;
         return;
       }
 
@@ -231,7 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openActiveSuggestion() {
       const active = suggestions.querySelector('.vh-country-search-suggestion.is-active') || suggestions.querySelector('.vh-country-search-suggestion');
-      if (active) {
+      if (active?.matches('[data-country-search-shortcut]')) {
+        const query = active.getAttribute('data-country-search-shortcut') || '';
+        input.value = query;
+        updateCountryToolSearch(query);
+        input.focus();
+      } else if (active) {
         window.location.href = active.getAttribute('href');
       }
     }
@@ -242,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         openActiveSuggestion();
         return;
       }
-      const firstMatch = catalog.querySelector('.vh-country-catalog-row.is-tool-search-match') || rows[0];
+      const firstMatch = rankedMatches[0] || catalog.querySelector('.vh-country-catalog-row.is-tool-search-match') || rows[0];
       if (firstMatch) {
         firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
         firstMatch.focus({ preventScroll: true });
@@ -280,6 +415,13 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const link = event.target.closest('.vh-country-search-suggestion');
       if (!link) return;
+      if (link.matches('[data-country-search-shortcut]')) {
+        const query = link.getAttribute('data-country-search-shortcut') || '';
+        input.value = query;
+        updateCountryToolSearch(query);
+        input.focus();
+        return;
+      }
       window.location.href = link.getAttribute('href');
     });
 
@@ -289,6 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const shortcut = chip.getAttribute('data-country-search-shortcut') || '';
       input.value = shortcut;
       updateCountryToolSearch(shortcut);
+      setCountrySearchParam(shortcut);
       input.focus();
     });
 
@@ -309,6 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearButton?.addEventListener('click', () => {
       input.value = '';
       updateCountryToolSearch('');
+      setCountrySearchParam('');
       closeSuggestions();
       input.focus();
     });
@@ -343,11 +487,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ].join(' '));
         const rowIntent = row.dataset.intentGroup || 'other';
         const matchesIntent = activeIntent === 'all' || activeIntent === rowIntent;
-        const matches = matchesIntent && (!query || haystack.includes(query));
+        const score = query ? rowSearchScore(row, query) : routeTierBoost(row);
+        const matches = matchesIntent && (!query || score > 0 || haystack.includes(query));
+        row.dataset.searchScore = String(score);
         row.hidden = !matches;
         row.classList.toggle('is-tool-search-match', Boolean(query && matches));
         if (matches) matchCount += 1;
       });
+
+      rankedMatches = rows
+        .filter(row => !row.hidden)
+        .sort((a, b) => Number(b.dataset.searchScore || 0) - Number(a.dataset.searchScore || 0));
 
       groups.forEach(group => {
         const groupIntent = group.dataset.countryRouteGroup || group.querySelector('.vh-country-catalog-row')?.dataset.intentGroup || 'other';
@@ -372,12 +522,12 @@ document.addEventListener('DOMContentLoaded', () => {
       catalog.classList.toggle('is-tool-search-empty', Boolean(query && matchCount === 0));
       if (status) {
         if (query) {
-          const matchLabel = matchCount === 1 ? 'match' : 'matches';
-          status.textContent = `${matchCount} ${matchLabel} for “${rawQuery.trim()}” · Enter to jump`;
+          const matchLabel = matchCount === 1 ? searchLabel('match') : searchLabel('matches');
+          status.textContent = `${matchCount} ${matchLabel} ${searchLabel('for')} “${rawQuery.trim()}” · ${searchLabel('enter')}`;
         } else if (activeIntent !== 'all') {
-          status.textContent = `${matchCount} tools in ${activeIntent.replace(/-/g, ' ')}`;
+          status.textContent = `${matchCount} ${searchLabel('toolsIn')} ${activeIntent.replace(/-/g, ' ')}`;
         } else {
-          status.textContent = `Search ${allCount} country workbenches`;
+          status.textContent = `${searchLabel('search')} ${allCount} ${searchLabel('countryWorkbenches')}`;
         }
       }
 
@@ -386,9 +536,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       renderShortcutChips();
       renderSuggestions(rawQuery);
+      setCountrySearchParam(rawQuery);
     }
 
     renderShortcutChips();
+    const initialQuery = new URLSearchParams(window.location.search).get('q') || '';
+    if (initialQuery) {
+      input.value = initialQuery;
+      updateCountryToolSearch(initialQuery);
+    } else {
+      updateCountryToolSearch('');
+    }
   });
 
   function copyText(value) {

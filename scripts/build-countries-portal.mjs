@@ -552,8 +552,8 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
   const generatorToolsHtml = renderHomeToolCards(routeRegistry, [
     { path: '/en/tools/iban-generator/', kicker: 'Global', summary: 'IBAN generator for structural fixtures.', keywords: ['generator', 'iban'] },
     { path: '/en/poland/poland-iban-generator/', kicker: 'Poland', summary: 'Generate Polish IBAN/NRB-style fixtures.', keywords: ['generator', 'payments'] },
-    { path: '/en/france/france-iban-generator/', kicker: 'France', summary: 'Generate French IBAN fixture payloads.', keywords: ['generator', 'payments'] },
-    { path: '/en/germany/germany-iban-generator/', kicker: 'Germany', summary: 'Generate German IBAN fixture payloads.', keywords: ['generator', 'payments'] }
+    { path: '/en/france/france-iban-generator/', kicker: 'France', summary: 'Generate French IBAN test data.', keywords: ['generator', 'payments'] },
+    { path: '/en/germany/germany-iban-generator/', kicker: 'Germany', summary: 'Generate German IBAN test data.', keywords: ['generator', 'payments'] }
   ], 'vh-home-tool-card-compact');
   const featuredCountriesHtml = renderHomeCountryCards(countryRoutes);
   const worldMapHtml = await renderHomeWorldMap(countryRoutes, metrics);

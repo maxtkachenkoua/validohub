@@ -776,10 +776,16 @@
 .vh-country-search-suggestion {
   display: grid;
   gap: 0.12rem;
+  width: 100%;
   padding: 0.58rem 0.75rem;
+  border: 0;
   border-bottom: 1px solid rgb(var(--vh-country-accent-primary) / 0.08);
+  background: transparent;
   color: var(--vh-color-text);
+  font: inherit;
+  text-align: left;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .vh-country-search-suggestion:last-child {

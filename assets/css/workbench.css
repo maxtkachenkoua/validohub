@@ -1911,6 +1911,11 @@ select:focus {
   container-type: inline-size;
 }
 
+.generic-suite-workbench .advanced-panel > div:first-child,
+.generic-suite-workbench .advanced-panel .rich-text > :first-child {
+  margin-top: 0.85rem;
+}
+
 .generic-suite-workbench .advanced-panel > div,
 .generic-suite-workbench .advanced-panel .rich-text,
 .generic-suite-workbench .generic-analysis-section,

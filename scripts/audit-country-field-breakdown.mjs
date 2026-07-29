@@ -79,7 +79,7 @@ const countryToolChecks = [
   {
     country: 'Spain',
     file: 'assets/js/tools/spain-id.js',
-    tokens: ['data-spain-breakdown', 'renderBreakdown', 'breakdownHtml', 'Identifier Breakdown', 'spain-token-row', 'spain-detail-grid']
+    tokens: ['data-spain-breakdown', 'renderBreakdown', 'breakdownHtml', 'Identifier Anatomy', 'spain-token-row', 'spain-anatomy-table']
   }
 ];
 

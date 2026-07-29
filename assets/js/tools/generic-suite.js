@@ -19,56 +19,237 @@
       'Privacy boundary': 'Límite de privacidad', 'Correctness boundary': 'Límite de corrección', 'Developer handling': 'Handoff para desarrolladores', 'Fixture safety': 'Seguridad de fixtures', 'Quality note': 'Nota de calidad',
       'Integration traps': 'Trampas de integración', 'Save implementation time': 'Ahorra tiempo de implementación', 'Common failure points to catch before wiring this into production.': 'Puntos de fallo comunes antes de conectarlo a producción.',
       'Quality notes': 'Notas de calidad', 'Developer API preview': 'Vista API para desarrolladores', 'Developer snapshot JSON': 'Snapshot JSON para desarrolladores', 'Sample and batch replay': 'Replay de muestras y lote', 'Official boundary': 'Límite oficial',
-      'Validation pipeline': 'Pipeline de validación', 'Field breakdown': 'Desglose de campos', 'Review': 'Revisar', 'Pass': 'Pass', 'Copy developer JSON': 'Copiar JSON para desarrolladores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Descargar JSON',
+      'Validation pipeline': 'Pipeline de validación', 'Field breakdown': 'Desglose de campos', 'Review': 'Revisar', 'Pass': 'Aprobado', 'Copy developer JSON': 'Copiar JSON para desarrolladores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Descargar JSON',
       'Current result snapshot': 'Snapshot del resultado actual', 'Waiting for input': 'Esperando entrada', 'Input ready': 'Entrada lista', 'Needs input': 'Falta entrada', 'Needs review': 'Revisión necesaria', 'Ready locally': 'Listo localmente',
-      'Running locally in this browser...': 'Ejecutando localmente en este navegador...', 'Run the tool before copying this value.': 'Ejecuta la herramienta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Ejecuta la herramienta antes de descargar el JSON.', 'Copied developer JSON.': 'JSON para desarrolladores copiado.', 'Copied current result.': 'Resultado actual copiado.', 'Downloaded developer JSON.': 'JSON para desarrolladores descargado.'
+      'Running locally in this browser...': 'Ejecutando localmente en este navegador...', 'Run the tool before copying this value.': 'Ejecuta la herramienta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Ejecuta la herramienta antes de descargar el JSON.', 'Copied developer JSON.': 'JSON para desarrolladores copiado.', 'Copied current result.': 'Resultado actual copiado.', 'Downloaded developer JSON.': 'JSON para desarrolladores descargado.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Aún no hay fixtures de ejemplo empaquetadas para esta herramienta. Usa el JSON del resultado actual como primera fixture de regresión.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Reproduce las fixtures válidas, inválidas, límite, generadoras y de contexto incorrecto con el mismo handler del navegador antes de conectarlo a CI.',
+      Fixture: 'Fixture', Action: 'Acción', Intent: 'Intención', 'Input preview': 'Vista previa de entrada',
+      'review fixture': 'fixture de revisión', 'success/edge fixture': 'fixture correcta/límite', 'generated fixture': 'fixture generada',
+      'Official boundary proof': 'Prueba de límite oficial', 'Target runtime or source system': 'Runtime objetivo o sistema fuente', 'local diagnostics, parse failures, and review evidence': 'diagnósticos locales, fallos de parseo y evidencia de revisión', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'sintaxis local, estructura, fixtures generadas y evidencia para handoff técnico',
+      'All analysis runs in this browser and uses the current input/result only.': 'Todo el análisis se ejecuta en este navegador y usa solo la entrada o el resultado actual.', 'ValidoHub does not prove': 'ValidoHub no prueba'
     },
     'pt-BR': {
       Samples: 'Exemplos', Calculate: 'Calcular', Convert: 'Converter', Explain: 'Explicar', Format: 'Formatar', Generate: 'Gerar', Parse: 'Parsear', Validate: 'Validar',
       'Privacy boundary': 'Limite de privacidade', 'Correctness boundary': 'Limite de correção', 'Developer handling': 'Handoff para desenvolvedores', 'Fixture safety': 'Segurança dos fixtures', 'Quality note': 'Nota de qualidade',
       'Integration traps': 'Armadilhas de integração', 'Save implementation time': 'Economize tempo de implementação', 'Common failure points to catch before wiring this into production.': 'Pontos comuns de falha antes de ligar isso em produção.',
       'Quality notes': 'Notas de qualidade', 'Developer API preview': 'Prévia de API para desenvolvedores', 'Developer snapshot JSON': 'Snapshot JSON para desenvolvedores', 'Sample and batch replay': 'Replay de exemplos e lote', 'Official boundary': 'Limite oficial',
-      'Validation pipeline': 'Pipeline de validação', 'Field breakdown': 'Detalhamento de campos', 'Review': 'Revisar', 'Pass': 'Pass', 'Copy developer JSON': 'Copiar JSON para desenvolvedores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Baixar JSON',
+      'Validation pipeline': 'Pipeline de validação', 'Field breakdown': 'Detalhamento de campos', 'Review': 'Revisar', 'Pass': 'Aprovado', 'Copy developer JSON': 'Copiar JSON para desenvolvedores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Baixar JSON',
       'Current result snapshot': 'Snapshot do resultado atual', 'Waiting for input': 'Aguardando entrada', 'Input ready': 'Entrada pronta', 'Needs input': 'Falta entrada', 'Needs review': 'Revisão necessária', 'Ready locally': 'Pronto localmente',
-      'Running locally in this browser...': 'Executando localmente neste navegador...', 'Run the tool before copying this value.': 'Execute a ferramenta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Execute a ferramenta antes de baixar o JSON.', 'Copied developer JSON.': 'JSON para desenvolvedores copiado.', 'Copied current result.': 'Resultado atual copiado.', 'Downloaded developer JSON.': 'JSON para desenvolvedores baixado.'
+      'Running locally in this browser...': 'Executando localmente neste navegador...', 'Run the tool before copying this value.': 'Execute a ferramenta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Execute a ferramenta antes de baixar o JSON.', 'Copied developer JSON.': 'JSON para desenvolvedores copiado.', 'Copied current result.': 'Resultado atual copiado.', 'Downloaded developer JSON.': 'JSON para desenvolvedores baixado.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Ainda não há fixtures de exemplo empacotadas para esta ferramenta. Use o JSON do resultado atual como primeira fixture de regressão.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Reexecute as fixtures válidas, inválidas, de borda, geradoras e de contexto incorreto pelo mesmo handler do navegador antes de ligar isto ao CI.',
+      Fixture: 'Fixture', Action: 'Ação', Intent: 'Intenção', 'Input preview': 'Prévia da entrada',
+      'review fixture': 'fixture de revisão', 'success/edge fixture': 'fixture correta/borda', 'generated fixture': 'fixture gerada',
+      'Official boundary proof': 'Prova de limite oficial', 'Target runtime or source system': 'Runtime alvo ou sistema fonte', 'local diagnostics, parse failures, and review evidence': 'diagnósticos locais, falhas de parse e evidências de revisão', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'sintaxe local, estrutura, fixtures geradas e evidência para handoff técnico',
+      'All analysis runs in this browser and uses the current input/result only.': 'Toda análise roda neste navegador e usa apenas a entrada ou o resultado atual.', 'ValidoHub does not prove': 'ValidoHub não prova'
     },
     de: {
       Samples: 'Beispiele', Calculate: 'Berechnen', Convert: 'Konvertieren', Explain: 'Erklaeren', Format: 'Formatieren', Generate: 'Generieren', Parse: 'Parsen', Validate: 'Pruefen',
       'Privacy boundary': 'Datenschutzgrenze', 'Correctness boundary': 'Korrektheitsgrenze', 'Developer handling': 'Entwickler-Handoff', 'Fixture safety': 'Fixture-Sicherheit', 'Quality note': 'Qualitaetsnotiz',
       'Integration traps': 'Integrationsfallen', 'Save implementation time': 'Implementierungszeit sparen', 'Common failure points to catch before wiring this into production.': 'Haeufige Fehlerpunkte vor der Produktion abfangen.',
       'Quality notes': 'Qualitaetsnotizen', 'Developer API preview': 'Entwickler-API-Vorschau', 'Developer snapshot JSON': 'Entwickler-Snapshot JSON', 'Sample and batch replay': 'Beispiel- und Batch-Replay', 'Official boundary': 'Offizielle Grenze',
-      'Validation pipeline': 'Validierungspipeline', 'Field breakdown': 'Feldaufschluesselung', 'Review': 'Pruefen', 'Pass': 'Pass', 'Copy developer JSON': 'Entwickler-JSON kopieren', 'Copy result': 'Ergebnis kopieren', 'Download JSON': 'JSON herunterladen',
+      'Validation pipeline': 'Validierungspipeline', 'Field breakdown': 'Feldaufschluesselung', 'Review': 'Pruefen', 'Pass': 'Bestanden', 'Copy developer JSON': 'Entwickler-JSON kopieren', 'Copy result': 'Ergebnis kopieren', 'Download JSON': 'JSON herunterladen',
       'Current result snapshot': 'Snapshot des aktuellen Ergebnisses', 'Waiting for input': 'Warte auf Eingabe', 'Input ready': 'Eingabe bereit', 'Needs input': 'Eingabe fehlt', 'Needs review': 'Pruefung erforderlich', 'Ready locally': 'Lokal bereit',
-      'Running locally in this browser...': 'Laeuft lokal in diesem Browser...', 'Run the tool before copying this value.': 'Fuehre das Tool aus, bevor du diesen Wert kopierst.', 'Run the tool before downloading developer JSON.': 'Fuehre das Tool aus, bevor du JSON herunterlaedst.', 'Copied developer JSON.': 'Entwickler-JSON kopiert.', 'Copied current result.': 'Aktuelles Ergebnis kopiert.', 'Downloaded developer JSON.': 'Entwickler-JSON heruntergeladen.'
+      'Running locally in this browser...': 'Laeuft lokal in diesem Browser...', 'Run the tool before copying this value.': 'Fuehre das Tool aus, bevor du diesen Wert kopierst.', 'Run the tool before downloading developer JSON.': 'Fuehre das Tool aus, bevor du JSON herunterlaedst.', 'Copied developer JSON.': 'Entwickler-JSON kopiert.', 'Copied current result.': 'Aktuelles Ergebnis kopiert.', 'Downloaded developer JSON.': 'Entwickler-JSON heruntergeladen.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Fuer dieses Tool sind noch keine gebuendelten Beispiel-Fixtures definiert. Nutze das aktuelle Ergebnis-JSON als erste Regressions-Fixture.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Spiele gueltige, ungueltige, Grenzfall-, Generator- und Wrong-Context-Fixtures ueber denselben Browser-Handler ab, bevor du das Tool in CI einbindest.',
+      Fixture: 'Fixture', Action: 'Aktion', Intent: 'Zweck', 'Input preview': 'Eingabevorschau',
+      'review fixture': 'Review-Fixture', 'success/edge fixture': 'Erfolgs-/Grenzfall-Fixture', 'generated fixture': 'generierte Fixture',
+      'Official boundary proof': 'Nachweis der offiziellen Grenze', 'Target runtime or source system': 'Zielruntime oder Quellsystem', 'local diagnostics, parse failures, and review evidence': 'lokale Diagnostik, Parse-Fehler und Review-Nachweise', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'lokale Syntax, Struktur, generierte Fixtures und Entwickler-Handoff-Nachweise',
+      'All analysis runs in this browser and uses the current input/result only.': 'Die gesamte Analyse laeuft in diesem Browser und nutzt nur die aktuelle Eingabe oder das aktuelle Ergebnis.', 'ValidoHub does not prove': 'ValidoHub beweist nicht'
     },
     fr: {
       Samples: 'Exemples', Calculate: 'Calculer', Convert: 'Convertir', Explain: 'Expliquer', Format: 'Formater', Generate: 'Générer', Parse: 'Parser', Validate: 'Valider',
       'Privacy boundary': 'Limite de confidentialité', 'Correctness boundary': 'Limite de correction', 'Developer handling': 'Handoff développeur', 'Fixture safety': 'Sécurité des fixtures', 'Quality note': 'Note de qualité',
       'Integration traps': 'Pièges d’intégration', 'Save implementation time': 'Gagner du temps d’implémentation', 'Common failure points to catch before wiring this into production.': 'Points de rupture courants à vérifier avant la production.',
       'Quality notes': 'Notes de qualité', 'Developer API preview': 'Aperçu API développeur', 'Developer snapshot JSON': 'Snapshot JSON développeur', 'Sample and batch replay': 'Replay des exemples et du lot', 'Official boundary': 'Limite officielle',
-      'Validation pipeline': 'Pipeline de validation', 'Field breakdown': 'Détail des champs', 'Review': 'À vérifier', 'Pass': 'Pass', 'Copy developer JSON': 'Copier le JSON développeur', 'Copy result': 'Copier le résultat', 'Download JSON': 'Télécharger le JSON',
+      'Validation pipeline': 'Pipeline de validation', 'Field breakdown': 'Détail des champs', 'Review': 'À vérifier', 'Pass': 'Réussi', 'Copy developer JSON': 'Copier le JSON développeur', 'Copy result': 'Copier le résultat', 'Download JSON': 'Télécharger le JSON',
       'Current result snapshot': 'Snapshot du résultat actuel', 'Waiting for input': 'En attente d’entrée', 'Input ready': 'Entrée prête', 'Needs input': 'Entrée requise', 'Needs review': 'Vérification requise', 'Ready locally': 'Prêt localement',
-      'Running locally in this browser...': 'Exécution locale dans ce navigateur...', 'Run the tool before copying this value.': 'Lancez l’outil avant de copier cette valeur.', 'Run the tool before downloading developer JSON.': 'Lancez l’outil avant de télécharger le JSON.', 'Copied developer JSON.': 'JSON développeur copié.', 'Copied current result.': 'Résultat actuel copié.', 'Downloaded developer JSON.': 'JSON développeur téléchargé.'
+      'Running locally in this browser...': 'Exécution locale dans ce navigateur...', 'Run the tool before copying this value.': 'Lancez l’outil avant de copier cette valeur.', 'Run the tool before downloading developer JSON.': 'Lancez l’outil avant de télécharger le JSON.', 'Copied developer JSON.': 'JSON développeur copié.', 'Copied current result.': 'Résultat actuel copié.', 'Downloaded developer JSON.': 'JSON développeur téléchargé.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Aucune fixture d’exemple n’est encore fournie pour cet outil. Utilisez le JSON du résultat courant comme première fixture de régression.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Rejouez les fixtures valides, invalides, limites, génératrices et hors contexte avec le même handler navigateur avant de brancher l’outil dans la CI.',
+      Fixture: 'Fixture', Action: 'Action', Intent: 'Intention', 'Input preview': 'Aperçu de l’entrée',
+      'review fixture': 'fixture à vérifier', 'success/edge fixture': 'fixture réussie/limite', 'generated fixture': 'fixture générée',
+      'Official boundary proof': 'Preuve de limite officielle', 'Target runtime or source system': 'Runtime cible ou système source', 'local diagnostics, parse failures, and review evidence': 'diagnostics locaux, erreurs de parsing et preuves de vérification', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'syntaxe locale, structure, fixtures générées et preuves de handoff développeur',
+      'All analysis runs in this browser and uses the current input/result only.': 'Toute l’analyse s’exécute dans ce navigateur et utilise uniquement l’entrée ou le résultat courant.', 'ValidoHub does not prove': 'ValidoHub ne prouve pas'
     },
     pl: {
       Samples: 'Przykłady', Calculate: 'Oblicz', Convert: 'Konwertuj', Explain: 'Wyjaśnij', Format: 'Formatuj', Generate: 'Generuj', Parse: 'Parsuj', Validate: 'Sprawdź',
       'Privacy boundary': 'Granica prywatności', 'Correctness boundary': 'Granica poprawności', 'Developer handling': 'Handoff deweloperski', 'Fixture safety': 'Bezpieczeństwo fixture’ów', 'Quality note': 'Notatka jakości',
       'Integration traps': 'Pułapki integracyjne', 'Save implementation time': 'Oszczędzaj czas implementacji', 'Common failure points to catch before wiring this into production.': 'Typowe punkty awarii do sprawdzenia przed produkcją.',
       'Quality notes': 'Notatki jakości', 'Developer API preview': 'Podgląd API dla deweloperów', 'Developer snapshot JSON': 'Snapshot JSON deweloperski', 'Sample and batch replay': 'Replay próbek i batcha', 'Official boundary': 'Granica oficjalna',
-      'Validation pipeline': 'Pipeline walidacji', 'Field breakdown': 'Podział pól', 'Review': 'Sprawdź', 'Pass': 'Pass', 'Copy developer JSON': 'Kopiuj JSON deweloperski', 'Copy result': 'Kopiuj wynik', 'Download JSON': 'Pobierz JSON',
+      'Validation pipeline': 'Pipeline walidacji', 'Field breakdown': 'Podział pól', 'Review': 'Sprawdź', 'Pass': 'Zaliczone', 'Copy developer JSON': 'Kopiuj JSON deweloperski', 'Copy result': 'Kopiuj wynik', 'Download JSON': 'Pobierz JSON',
       'Current result snapshot': 'Snapshot bieżącego wyniku', 'Waiting for input': 'Oczekiwanie na dane', 'Input ready': 'Dane gotowe', 'Needs input': 'Brak danych', 'Needs review': 'Wymaga sprawdzenia', 'Ready locally': 'Gotowe lokalnie',
-      'Running locally in this browser...': 'Działa lokalnie w tej przeglądarce...', 'Run the tool before copying this value.': 'Uruchom narzędzie przed skopiowaniem tej wartości.', 'Run the tool before downloading developer JSON.': 'Uruchom narzędzie przed pobraniem JSON.', 'Copied developer JSON.': 'Skopiowano JSON deweloperski.', 'Copied current result.': 'Skopiowano bieżący wynik.', 'Downloaded developer JSON.': 'Pobrano JSON deweloperski.'
+      'Running locally in this browser...': 'Działa lokalnie w tej przeglądarce...', 'Run the tool before copying this value.': 'Uruchom narzędzie przed skopiowaniem tej wartości.', 'Run the tool before downloading developer JSON.': 'Uruchom narzędzie przed pobraniem JSON.', 'Copied developer JSON.': 'Skopiowano JSON deweloperski.', 'Copied current result.': 'Skopiowano bieżący wynik.', 'Downloaded developer JSON.': 'Pobrano JSON deweloperski.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Dla tego narzędzia nie ma jeszcze dołączonych fixture’ów przykładowych. Użyj JSON bieżącego wyniku jako pierwszej fixture regresyjnej.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Odtwórz poprawne, błędne, brzegowe, generowane i wrong-context fixture’y przez ten sam handler przeglądarkowy przed podłączeniem do CI.',
+      Fixture: 'Fixture', Action: 'Akcja', Intent: 'Intencja', 'Input preview': 'Podgląd wejścia',
+      'review fixture': 'fixture do sprawdzenia', 'success/edge fixture': 'fixture poprawna/brzegowa', 'generated fixture': 'wygenerowana fixture',
+      'Official boundary proof': 'Dowód granicy oficjalnej', 'Target runtime or source system': 'Docelowy runtime lub system źródłowy', 'local diagnostics, parse failures, and review evidence': 'lokalna diagnostyka, błędy parsowania i dowody review', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'lokalna składnia, struktura, wygenerowane fixture’y i dowody handoffu deweloperskiego',
+      'All analysis runs in this browser and uses the current input/result only.': 'Cała analiza działa w tej przeglądarce i używa tylko bieżącego wejścia lub wyniku.', 'ValidoHub does not prove': 'ValidoHub nie dowodzi'
     },
     uk: {
       Samples: 'Приклади', Calculate: 'Обчислити', Convert: 'Конвертувати', Explain: 'Пояснити', Format: 'Форматувати', Generate: 'Згенерувати', Parse: 'Розпарсити', Validate: 'Перевірити',
       'Privacy boundary': 'Межа приватності', 'Correctness boundary': 'Межа коректності', 'Developer handling': 'Передача розробнику', 'Fixture safety': 'Безпека фікстур', 'Quality note': 'Нотатка якості',
       'Integration traps': 'Інтеграційні пастки', 'Save implementation time': 'Економія часу імплементації', 'Common failure points to catch before wiring this into production.': 'Типові точки збоїв перед підключенням до продакшну.',
       'Quality notes': 'Нотатки якості', 'Developer API preview': 'API-превʼю для розробника', 'Developer snapshot JSON': 'JSON-знімок для розробника', 'Sample and batch replay': 'Replay прикладів і пакета', 'Official boundary': 'Офіційна межа',
-      'Validation pipeline': 'Пайплайн перевірки', 'Field breakdown': 'Розбір полів', 'Review': 'Перевірити', 'Pass': 'Pass', 'Copy developer JSON': 'Скопіювати JSON для розробника', 'Copy result': 'Скопіювати результат', 'Download JSON': 'Завантажити JSON',
+      'Validation pipeline': 'Пайплайн перевірки', 'Field breakdown': 'Розбір полів', 'Review': 'Перевірити', 'Pass': 'Пройдено', 'Copy developer JSON': 'Скопіювати JSON для розробника', 'Copy result': 'Скопіювати результат', 'Download JSON': 'Завантажити JSON',
       'Current result snapshot': 'Знімок поточного результату', 'Waiting for input': 'Очікування введення', 'Input ready': 'Дані готові', 'Needs input': 'Потрібні дані', 'Needs review': 'Потрібна перевірка', 'Ready locally': 'Готово локально',
-      'Running locally in this browser...': 'Виконується локально в цьому браузері...', 'Run the tool before copying this value.': 'Запустіть інструмент перед копіюванням цього значення.', 'Run the tool before downloading developer JSON.': 'Запустіть інструмент перед завантаженням JSON.', 'Copied developer JSON.': 'JSON для розробника скопійовано.', 'Copied current result.': 'Поточний результат скопійовано.', 'Downloaded developer JSON.': 'JSON для розробника завантажено.'
+      'Running locally in this browser...': 'Виконується локально в цьому браузері...', 'Run the tool before copying this value.': 'Запустіть інструмент перед копіюванням цього значення.', 'Run the tool before downloading developer JSON.': 'Запустіть інструмент перед завантаженням JSON.', 'Copied developer JSON.': 'JSON для розробника скопійовано.', 'Copied current result.': 'Поточний результат скопійовано.', 'Downloaded developer JSON.': 'JSON для розробника завантажено.',
+      'No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.': 'Для цього інструмента ще немає вбудованих прикладів-фікстур. Використайте JSON поточного результату як першу регресійну фікстуру.',
+      'Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.': 'Проганяйте валідні, невалідні, крайові, генераторні та wrong-context фікстури через той самий браузерний handler перед підключенням до CI.',
+      Fixture: 'Фікстура', Action: 'Дія', Intent: 'Намір', 'Input preview': 'Попередній перегляд вводу',
+      'review fixture': 'фікстура для перевірки', 'success/edge fixture': 'успішна/крайова фікстура', 'generated fixture': 'згенерована фікстура',
+      'Official boundary proof': 'Доказ офіційної межі', 'Target runtime or source system': 'Цільовий runtime або система-джерело', 'local diagnostics, parse failures, and review evidence': 'локальна діагностика, помилки парсингу та докази для перевірки', 'local syntax, structure, generated fixtures, and developer handoff evidence': 'локальний синтаксис, структура, згенеровані фікстури та докази для передачі розробнику',
+      'All analysis runs in this browser and uses the current input/result only.': 'Увесь аналіз виконується в цьому браузері й використовує лише поточний ввід або результат.', 'ValidoHub does not prove': 'ValidoHub не доводить'
     }
   };
+
+  const PREMIUM_RUNTIME_TRANSLATIONS = {
+    es: {
+      'Browser workbench': 'Workbench de navegador',
+      'Browser-only': 'Solo navegador',
+      Offline: 'Offline',
+      'Copy / download': 'Copiar / descargar',
+      'Advanced diagnostics': 'Diagnóstico avanzado',
+      'Run a private, offline developer workflow directly in this browser.': 'Ejecuta un flujo privado y offline directamente en este navegador.',
+      'Banking fixtures': 'Fixtures bancarias',
+      'IBAN Generator': 'Generador IBAN',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Genera dígitos de control IBAN desde el código de país y el cuerpo BBAN/cuenta, y reproduce MOD-97 localmente.',
+      'Generate check digits': 'Generar dígitos de control',
+      'MOD-97 replay': 'Replay MOD-97',
+      'BBAN body': 'Cuerpo BBAN',
+      'Fixture-safe': 'Seguro para fixtures',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Mantén formas compactas, visibles, enmascaradas, generadas y parseadas como campos separados; los viajes solo por puntuación esconden bugs del parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Un aprobado local solo prueba sintaxis, checksum o forma; cuentas, operador, postal, identidad, VIES o directorios requieren el sistema propietario.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Mantén fixtures de prefijo incorrecto, checksum malo, cortas y agrupadas en CI para que producción no acepte el mercado equivocado.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'No trates la salida local del navegador como prueba de aceptación por una API, cuenta, dominio, certificado o servicio externo.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Mantén entrada cruda, salida normalizada, salida enmascarada y JSON exportado como campos separados en tests de integración.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Conserva fixtures negativas: malformadas, riesgosas, cortas, expiradas, débiles y fuera de contexto detectan regresiones más rápido.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'No pegues secretos, datos de clientes ni credenciales reales en tickets o capturas; usa salida enmascarada.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Valida aparte el runtime final cuando cambien idiomas, codificaciones, motores regex, locales o reglas de checksum.'
+    },
+    'pt-BR': {
+      'Browser workbench': 'Workbench de navegador',
+      'Browser-only': 'Só navegador',
+      Offline: 'Offline',
+      'Copy / download': 'Copiar / baixar',
+      'Advanced diagnostics': 'Diagnóstico avançado',
+      'Run a private, offline developer workflow directly in this browser.': 'Execute um fluxo privado e offline diretamente neste navegador.',
+      'Banking fixtures': 'Fixtures bancárias',
+      'IBAN Generator': 'Gerador IBAN',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Gere dígitos verificadores IBAN a partir do código do país e corpo BBAN/conta, e reproduza MOD-97 localmente.',
+      'Generate check digits': 'Gerar dígitos verificadores',
+      'MOD-97 replay': 'Replay MOD-97',
+      'BBAN body': 'Corpo BBAN',
+      'Fixture-safe': 'Seguro para fixtures',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Mantenha formas compactas, exibidas, mascaradas, geradas e parseadas em campos separados; idas e voltas só de pontuação escondem bugs do parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Um aprovado local prova apenas sintaxe, checksum ou formato; conta, operadora, postal, identidade, VIES ou diretório exigem o sistema responsável.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Mantenha fixtures de prefixo errado, checksum ruim, curtas e agrupadas na CI para produção não aceitar o mercado errado.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Não trate saída local do navegador como prova de que API, conta, domínio, certificado ou serviço externo aceita o valor.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Mantenha entrada bruta, saída normalizada, saída mascarada e JSON exportado como campos separados nos testes de integração.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Guarde fixtures negativas: malformadas, arriscadas, curtas, expiradas, fracas e fora de contexto pegam regressões mais rápido.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'Não cole segredos, dados de clientes ou credenciais reais em tickets ou screenshots; use saída mascarada.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Valide separadamente o runtime final quando idiomas, codificações, motores regex, locales ou regras de checksum diferirem.'
+    },
+    de: {
+      'Browser workbench': 'Browser-Workbench',
+      'Browser-only': 'Nur Browser',
+      Offline: 'Offline',
+      'Copy / download': 'Kopieren / herunterladen',
+      'Advanced diagnostics': 'Erweiterte Diagnostik',
+      'Run a private, offline developer workflow directly in this browser.': 'Führe einen privaten Offline-Workflow direkt in diesem Browser aus.',
+      'Banking fixtures': 'Banking-Fixtures',
+      'IBAN Generator': 'IBAN-Generator',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Generiere IBAN-Prüfziffern aus Ländercode und BBAN/Kontokörper und rechne MOD-97 lokal nach.',
+      'Generate check digits': 'Prüfziffern generieren',
+      'MOD-97 replay': 'MOD-97-Replay',
+      'BBAN body': 'BBAN-Körper',
+      'Fixture-safe': 'Fixture-sicher',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Halte kompakte, sichtbare, maskierte, generierte und geparste Formen getrennt; reine Interpunktions-Roundtrips verstecken Parserfehler.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Ein lokales OK beweist nur Syntax, Prüfsumme oder Form; Konto-, Carrier-, Postal-, Identitäts-, VIES- oder Verzeichnisstatus braucht das zuständige System.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Halte Wrong-Prefix-, Bad-Checksum-, kurze und gruppierte Fixtures in CI, damit Produktionsadapter nicht still den falschen Markt akzeptieren.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Behandle browserlokale Ausgabe nicht als Beweis, dass Produktions-API, Konto, Domain, Zertifikat oder externer Dienst den Wert akzeptiert.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Halte Roheingabe, normalisierte Ausgabe, maskierte Ausgabe und exportiertes JSON in Integrationstests getrennt.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Behalte negative Fixtures: fehlerhafte, riskante, kurze, abgelaufene, schwache und falsche Kontextbeispiele finden Regressionen schneller.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'Keine Secrets, Kundendaten oder Live-Zugangsdaten in Tickets oder Screenshots einfügen; nutze maskierte Ausgabe.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Prüfe Zielruntime-Verhalten separat, wenn Sprachen, Encodings, Regex-Engines, Locales oder Prüfsummenregeln abweichen.'
+    },
+    fr: {
+      'Browser workbench': 'Workbench navigateur',
+      'Browser-only': 'Navigateur uniquement',
+      Offline: 'Hors ligne',
+      'Copy / download': 'Copier / télécharger',
+      'Advanced diagnostics': 'Diagnostics avancés',
+      'Run a private, offline developer workflow directly in this browser.': 'Exécutez un workflow privé et hors ligne directement dans ce navigateur.',
+      'Banking fixtures': 'Fixtures bancaires',
+      'IBAN Generator': 'Générateur IBAN',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Générez les chiffres de contrôle IBAN depuis le code pays et le corps BBAN/compte, puis rejouez MOD-97 localement.',
+      'Generate check digits': 'Générer les chiffres de contrôle',
+      'MOD-97 replay': 'Replay MOD-97',
+      'BBAN body': 'Corps BBAN',
+      'Fixture-safe': 'Sûr pour fixtures',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Gardez les formes compactes, affichées, masquées, générées et parsées dans des champs séparés ; les allers-retours de ponctuation masquent les bugs de parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Un succès local prouve seulement la syntaxe, le checksum ou la forme ; compte, opérateur, postal, identité, VIES ou annuaire exigent le système responsable.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Gardez des fixtures mauvais préfixe, mauvais checksum, courtes et groupées dans la CI pour éviter qu’un adaptateur accepte le mauvais marché.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Ne traitez pas la sortie locale du navigateur comme preuve qu’une API, un compte, un domaine, un certificat ou un service externe accepte la valeur.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Gardez entrée brute, sortie normalisée, sortie masquée et JSON exporté dans des champs séparés pour les tests d’intégration.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Conservez les fixtures négatives : malformées, risquées, courtes, expirées, faibles ou hors contexte capturent les régressions plus vite.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'Ne collez pas de secrets, données client ou identifiants réels dans tickets ou captures ; utilisez la sortie masquée.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Validez séparément le runtime cible quand langues, encodages, moteurs regex, locales ou règles de checksum diffèrent.'
+    },
+    pl: {
+      'Browser workbench': 'Workbench przeglądarkowy',
+      'Browser-only': 'Tylko przeglądarka',
+      Offline: 'Offline',
+      'Copy / download': 'Kopiuj / pobierz',
+      'Advanced diagnostics': 'Zaawansowana diagnostyka',
+      'Run a private, offline developer workflow directly in this browser.': 'Uruchom prywatny workflow offline bezpośrednio w tej przeglądarce.',
+      'Banking fixtures': 'Fixture’y bankowe',
+      'IBAN Generator': 'Generator IBAN',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Generuj cyfry kontrolne IBAN z kodu kraju i BBAN/treści konta, potem lokalnie odtwórz MOD-97.',
+      'Generate check digits': 'Generuj cyfry kontrolne',
+      'MOD-97 replay': 'Replay MOD-97',
+      'BBAN body': 'Treść BBAN',
+      'Fixture-safe': 'Bezpieczne dla fixture’ów',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Trzymaj formy kompaktowe, wyświetlane, maskowane, generowane i parsowane w osobnych polach; same znaki interpunkcyjne ukrywają błędy parsera.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Lokalny sukces dowodzi tylko składni, sumy kontrolnej lub formy; status konta, operatora, poczty, tożsamości, VIES lub katalogu wymaga systemu źródłowego.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Trzymaj fixture’y ze złym prefiksem, złą sumą, krótkie i grupowane w CI, aby adaptery nie przyjęły cicho złego rynku.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Nie traktuj wyniku lokalnego jako dowodu, że produkcyjne API, konto, domena, certyfikat lub usługa zewnętrzna akceptuje wartość.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Trzymaj wejście surowe, wynik normalizowany, wynik maskowany i eksportowany JSON w osobnych polach testów integracyjnych.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Zachowuj fixture’y negatywne: błędne, ryzykowne, krótkie, wygasłe, słabe i z błędnego kontekstu szybciej łapią regresje.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'Nie wklejaj sekretów, danych klientów ani żywych poświadczeń do ticketów lub zrzutów; używaj maskowania.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Waliduj runtime docelowy osobno, gdy różnią się języki, kodowania, silniki regex, locale lub reguły sum kontrolnych.'
+    },
+    uk: {
+      'Browser workbench': 'Браузерний воркбенч',
+      'Browser-only': 'Лише браузер',
+      Offline: 'Офлайн',
+      'Copy / download': 'Копіювання / завантаження',
+      'Advanced diagnostics': 'Розширена діагностика',
+      'Run a private, offline developer workflow directly in this browser.': 'Запускайте приватний офлайн-сценарій для розробника прямо в цьому браузері.',
+      'Banking fixtures': 'Банківські фікстури',
+      'IBAN Generator': 'IBAN - генератор',
+      'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.': 'Генеруйте контрольні цифри IBAN з коду країни та BBAN/тіла рахунку, потім локально відтворюйте MOD-97.',
+      'Generate check digits': 'Згенерувати контрольні цифри',
+      'MOD-97 replay': 'MOD-97 replay',
+      'BBAN body': 'Тіло BBAN',
+      'Fixture-safe': 'Безпечно для фікстур',
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Тримайте компактну, відображувану, масковану, згенеровану й розпарсену форми в окремих полях; кругові перетворення лише пунктуації ховають помилки парсера.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Локальний успіх доводить лише синтаксис, checksum або форму; статус рахунку, оператора, пошти, особи, VIES чи каталогу потребує системи-власника.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Тримайте фікстури з неправильним префіксом, поганим checksum, короткі й згруповані в CI, щоб продакшн-адаптери не приймали хибний ринок мовчки.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Не сприймайте браузерний локальний результат як доказ, що продакшн API, рахунок, домен, сертифікат або зовнішній сервіс приймає значення.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.': 'Тримайте сирий ввід, нормалізований результат, маскований результат і експортований JSON окремими полями в інтеграційних тестах.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Зберігайте негативні фікстури: malformed, risky, short, expired, weak і wrong-context приклади ловлять регресії швидше за happy path.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.': 'Не вставляйте секрети, дані клієнтів або живі креденшали в тікети чи скриншоти; для передачі використовуйте маскований результат.',
+      'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Перевіряйте поведінку цільового runtime окремо, коли відрізняються мови, кодування, regex-движки, локалі або checksum-правила.'
+    }
+  };
+
+  Object.entries(PREMIUM_RUNTIME_TRANSLATIONS).forEach(([locale, entries]) => {
+    UI[locale] = Object.assign(UI[locale] || {}, entries);
+  });
 
   function tr(key) {
     return (UI[currentLocale()] && UI[currentLocale()][key]) || key;
@@ -126,7 +307,7 @@
   function sampleRow(samples) {
     if (!samples || !samples.length) return "";
     return '<div class="generic-sample-row" aria-label="' + escape(tr('Samples')) + '"><span>' + escape(tr('Samples')) + '</span>' +
-      samples.map((sample) => '<button type="button" class="button button-secondary" data-sample="' + escape(sample.id) + '">' + escape(sample.label) + '</button>').join("") +
+      samples.map((sample) => '<button type="button" class="button button-secondary" data-sample="' + escape(sample.id) + '">' + escape(tr(sample.label)) + '</button>').join("") +
       '</div>';
   }
 
@@ -315,21 +496,24 @@
     workbench.form.dataset.genericTheme = config.theme || 'utility';
     if (workbench.form.querySelector('.generic-premium-hero')) return;
     const chips = (config.chips || defaultPremiumChips)
-      .map((chip) => '<span>' + escape(chip) + '</span>')
+      .map((chip) => '<span>' + escape(tr(chip)) + '</span>')
       .join('');
+    const title = tr(config.title || '');
+    const summary = tr(config.summary || 'Run a private, offline developer workflow directly in this browser.');
+    const kicker = tr(config.kicker || 'Browser workbench');
     const hero = [
-      '<section class="generic-premium-hero" aria-label="' + escape(config.title) + ' workbench overview">',
+      '<section class="generic-premium-hero" aria-label="' + escape(title) + ' workbench overview">',
       '  <div class="generic-premium-mark" aria-hidden="true">' + escape(config.mark || 'VH') + '</div>',
       '  <div class="generic-premium-copy">',
-      '    <p class="generic-premium-kicker">' + escape(config.kicker || 'Browser workbench') + '</p>',
-      '    <h3>' + escape(config.title) + '</h3>',
-      '    <p>' + escape(config.summary || 'Run a private, offline developer workflow directly in this browser.') + '</p>',
+      '    <p class="generic-premium-kicker">' + escape(kicker) + '</p>',
+      '    <h3>' + escape(title) + '</h3>',
+      '    <p>' + escape(summary) + '</p>',
       '    <div class="generic-premium-chips">' + chips + '</div>',
       '  </div>',
       '  <div class="generic-premium-boundary">',
-      '    <span>Privacy boundary</span>',
-      '    <strong>Runs locally</strong>',
-      '    <small>No upload, database, runtime API, or server-side execution.</small>',
+      '    <span>' + escape(tr('Privacy boundary')) + '</span>',
+      '    <strong>' + escape(tr('Runs locally')) + '</strong>',
+      '    <small>' + escape(tr('No upload, database, runtime API, or server-side execution.')) + '</small>',
       '  </div>',
       '</section>',
       integrationTraps(config)
@@ -392,7 +576,7 @@
     const items = integrationTrapItems(config);
     return '<section class="generic-integration-traps" aria-label="' + escape(tr('Integration traps')) + '">' +
       '<div><p class="generic-premium-kicker">' + escape(tr('Integration traps')) + '</p><h4>' + escape(tr('Save implementation time')) + '</h4><span>' + escape(tr('Common failure points to catch before wiring this into production.')) + '</span></div>' +
-      '<ul>' + items.map((item) => '<li>' + escape(item) + '</li>').join('') + '</ul>' +
+      '<ul>' + items.map((item) => '<li>' + escape(tr(item)) + '</li>').join('') + '</ul>' +
       '</section>';
   }
 
@@ -479,18 +663,18 @@
   function sampleReplayMatrix(config) {
     const samples = (config.samples || []).slice(0, 10);
     if (!samples.length) {
-      return '<div class="generic-batch-replay"><p>No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.</p></div>';
+      return '<div class="generic-batch-replay"><p>' + escape(tr('No bundled sample fixtures are declared for this tool yet. Use the current result JSON as the first regression fixture.')) + '</p></div>';
     }
     const rows = samples.map((sample) => {
       const values = sample.values || {};
       const preview = sample.value != null ? sample.value : (values.input || values.payload || values.iban || values.uuid || values.pattern || values.country || values.title || values.query || values.schema || values.changed || '');
       const intent = /invalid|bad|wrong|short|expired|weak|missing|malformed|risk|unsafe/i.test(sample.id + ' ' + sample.label) ? 'review fixture' : 'success/edge fixture';
-      return '<tr><td><button type="button" class="generic-mini-action" data-sample="' + escape(sample.id) + '">' + escape(sample.label) + '</button></td><td>' + escape(sample.action || config.defaultAction || 'run') + '</td><td>' + escape(intent) + '</td><td><code>' + escape(String(preview || 'generated fixture').slice(0, 96)) + '</code></td></tr>';
+      return '<tr><td><button type="button" class="generic-mini-action" data-sample="' + escape(sample.id) + '">' + escape(sample.label) + '</button></td><td>' + escape(tr(sample.action || config.defaultAction || 'run')) + '</td><td>' + escape(tr(intent)) + '</td><td><code>' + escape(String(preview || tr('generated fixture')).slice(0, 96)) + '</code></td></tr>';
     }).join('');
     return [
       '<div class="generic-batch-replay">',
-      '  <p>Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.</p>',
-      '  <div class="generic-table-scroll"><table><thead><tr><th>Fixture</th><th>Action</th><th>Intent</th><th>Input preview</th></tr></thead><tbody>',
+      '  <p>' + escape(tr('Replay the bundled valid, invalid, edge, generator, and wrong-context fixtures through the same browser handler before wiring this tool into CI.')) + '</p>',
+      '  <div class="generic-table-scroll"><table><thead><tr><th>' + escape(tr('Fixture')) + '</th><th>' + escape(tr('Action')) + '</th><th>' + escape(tr('Intent')) + '</th><th>' + escape(tr('Input preview')) + '</th></tr></thead><tbody>',
       rows,
       '  </tbody></table></div>',
       '</div>'
@@ -517,8 +701,8 @@
     const proved = result.ok === false ? 'local diagnostics, parse failures, and review evidence' : 'local syntax, structure, generated fixtures, and developer handoff evidence';
     return [
       '<div class="generic-boundary-grid">',
-      '  <article><span>' + escape(tr('Official boundary')) + '</span><strong>' + escape(proved) + '</strong><p>All analysis runs in this browser and uses the current input/result only.</p></article>',
-      '  <article><span>' + escape(tr('Review')) + '</span><strong>' + escape(owner) + '</strong><p>ValidoHub does not prove ' + escape(notProved) + '.</p></article>',
+      '  <article><span>' + escape(tr('Official boundary')) + '</span><strong>' + escape(tr(proved)) + '</strong><p>' + escape(tr('All analysis runs in this browser and uses the current input/result only.')) + '</p></article>',
+      '  <article><span>' + escape(tr('Review')) + '</span><strong>' + escape(tr(owner)) + '</strong><p>' + escape(tr('ValidoHub does not prove')) + ' ' + escape(notProved) + '.</p></article>',
       '</div>'
     ].join('');
   }

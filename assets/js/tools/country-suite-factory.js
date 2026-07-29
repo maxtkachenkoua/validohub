@@ -159,7 +159,17 @@
       developerApiPreview: 'Entwickler-API-Vorschau',
       rawJsonOutput: 'Rohe JSON-Ausgabe',
       advancedTools: 'Erweiterte Tools',
+      advancedToolsSummary: 'Verlauf, Batch-Diagnostik, API-Vorschau, Roh-JSON und lokale Links.',
+      toolIntelligenceSummary: 'Verlauf, Batch-Checks, API-Handoff, Roh-JSON und lokale Workflows bleiben verfügbar, ohne den Hauptablauf zu überladen.',
       relatedLocalTools: 'Aehnliche lokale Tools',
+      browserHistory: 'Browserverlauf',
+      multiRowValidator: 'Mehrzeilen-Validator',
+      useCurrentInput: 'Aktuelle Eingabe nutzen',
+      batchResult: 'Batch-Ergebnis',
+      apiPreview: 'API-Vorschau',
+      rawJson: 'Roh-JSON',
+      batchEmpty: 'Batch ausfuehren, um Pass-/Pruefstatus auf dieser Seite zu vergleichen.',
+      relatedLocalFallback: 'Lokale verwandte Tools erscheinen hier nach dem Build-Pruning.',
       usedFor: 'Einsatz',
       checksLocally: 'Lokale Checks',
       officialBoundaryShort: 'Grenze'
@@ -211,7 +221,17 @@
       developerApiPreview: 'Vista previa de API para desarrolladores',
       rawJsonOutput: 'Salida JSON bruta',
       advancedTools: 'Herramientas avanzadas',
+      advancedToolsSummary: 'Historial, diagnósticos por lote, vista API, JSON bruto y enlaces locales.',
+      toolIntelligenceSummary: 'Historial, checks por lote, handoff API, JSON bruto y workflows locales siguen disponibles sin ocupar el flujo principal.',
       relatedLocalTools: 'Herramientas locales relacionadas',
+      browserHistory: 'Historial del navegador',
+      multiRowValidator: 'Validador multi-fila',
+      useCurrentInput: 'Usar entrada actual',
+      batchResult: 'Resultado del lote',
+      apiPreview: 'Vista API',
+      rawJson: 'JSON bruto',
+      batchEmpty: 'Ejecuta el lote para comparar estados aprobado/revisar sin salir de la página.',
+      relatedLocalFallback: 'Las herramientas locales relacionadas aparecen aquí después del pruning del build.',
       toolContextTitle: 'Para que sirve',
       usedFor: 'Uso',
       checksLocally: 'Comprueba localmente',
@@ -267,7 +287,17 @@
       developerApiPreview: 'Aperçu API développeur',
       rawJsonOutput: 'Sortie JSON brute',
       advancedTools: 'Outils avancés',
+      advancedToolsSummary: 'Historique, diagnostics par lot, aperçu API, JSON brut et liens locaux.',
+      toolIntelligenceSummary: 'Historique, contrôles par lot, handoff API, JSON brut et workflows locaux restent disponibles sans prendre le contrôle du flux principal.',
       relatedLocalTools: 'Outils locaux liés',
+      browserHistory: 'Historique navigateur',
+      multiRowValidator: 'Validateur multi-lignes',
+      useCurrentInput: 'Utiliser l’entrée actuelle',
+      batchResult: 'Résultat du lot',
+      apiPreview: 'Aperçu API',
+      rawJson: 'JSON brut',
+      batchEmpty: 'Lancez le lot pour comparer les états réussi/à vérifier sans quitter cette page.',
+      relatedLocalFallback: 'Les outils locaux liés apparaissent ici après le pruning du build.',
       toolContextTitle: 'A quoi sert cet outil',
       usedFor: 'Utilisation',
       checksLocally: 'Verifie localement',
@@ -320,7 +350,17 @@
       developerApiPreview: 'Podgląd API deweloperskiego',
       rawJsonOutput: 'Surowe wyjście JSON',
       advancedTools: 'Narzędzia zaawansowane',
+      advancedToolsSummary: 'Historia, diagnostyka batch, podgląd API, surowy JSON i lokalne linki.',
+      toolIntelligenceSummary: 'Historia, kontrole batch, handoff API, surowy JSON i lokalne workflow pozostają dostępne bez przejmowania głównego przepływu.',
       relatedLocalTools: 'Powiązane narzędzia lokalne',
+      browserHistory: 'Historia przeglądarki',
+      multiRowValidator: 'Walidator wielowierszowy',
+      useCurrentInput: 'Użyj bieżących danych',
+      batchResult: 'Wynik batcha',
+      apiPreview: 'Podgląd API',
+      rawJson: 'Surowy JSON',
+      batchEmpty: 'Uruchom batch, aby porównać stany zaliczone/sprawdź bez opuszczania strony.',
+      relatedLocalFallback: 'Powiązane narzędzia lokalne pojawią się tutaj po przycięciu builda.',
       toolContextTitle: 'Do czego sluzy to narzedzie',
       usedFor: 'Uzycie',
       checksLocally: 'Sprawdza lokalnie',
@@ -373,7 +413,17 @@
       developerApiPreview: 'Prévia da API para desenvolvedores',
       rawJsonOutput: 'Saída JSON bruta',
       advancedTools: 'Ferramentas avançadas',
+      advancedToolsSummary: 'Histórico, diagnósticos em lote, prévia da API, JSON bruto e links locais.',
+      toolIntelligenceSummary: 'Histórico, verificações em lote, handoff de API, JSON bruto e fluxos locais ficam disponíveis sem tomar conta do fluxo principal.',
       relatedLocalTools: 'Ferramentas locais relacionadas',
+      browserHistory: 'Histórico do navegador',
+      multiRowValidator: 'Validador multi-linha',
+      useCurrentInput: 'Usar entrada atual',
+      batchResult: 'Resultado do lote',
+      apiPreview: 'Prévia da API',
+      rawJson: 'JSON bruto',
+      batchEmpty: 'Execute o lote para comparar estados aprovado/revisar sem sair desta página.',
+      relatedLocalFallback: 'Ferramentas locais relacionadas aparecem aqui depois do pruning do build.',
       toolContextTitle: 'Para que serve',
       usedFor: 'Uso',
       checksLocally: 'Verifica localmente',
@@ -426,7 +476,17 @@
       developerApiPreview: 'Попередній перегляд API для розробника',
       rawJsonOutput: 'Сирий JSON-вивід',
       advancedTools: 'Розширені інструменти',
+      advancedToolsSummary: 'Історія, пакетна діагностика, API-превʼю, сирий JSON і локальні посилання.',
+      toolIntelligenceSummary: 'Історія, пакетні перевірки, API-handoff, сирий JSON і локальні сценарії доступні, але не забирають основний workflow.',
       relatedLocalTools: 'Пов’язані локальні інструменти',
+      browserHistory: 'Історія браузера',
+      multiRowValidator: 'Багаторядковий валідатор',
+      useCurrentInput: 'Використати поточне введення',
+      batchResult: 'Результат пакета',
+      apiPreview: 'API-превʼю',
+      rawJson: 'Сирий JSON',
+      batchEmpty: 'Запустіть пакет, щоб порівняти стани пройдено/перевірити без переходу зі сторінки.',
+      relatedLocalFallback: 'Пов’язані локальні інструменти з’являться тут після pruning build.',
       toolContextTitle: 'Для чого цей інструмент',
       usedFor: 'Використання',
       checksLocally: 'Локальні перевірки',
@@ -849,6 +909,55 @@
       'Pass': 'Пройдено',
       'Review': 'Перевірити'
     }
+  });
+
+  const COMMON_TRAP_TRANSLATIONS = {
+    es: {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Mantén formas compactas, visibles, enmascaradas, generadas y parseadas como campos separados; los viajes solo por puntuación esconden bugs del parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Un aprobado local solo prueba sintaxis, checksum o forma; cuentas, operador, postal, identidad, VIES o directorios requieren el sistema propietario.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Mantén fixtures de prefijo incorrecto, checksum malo, cortas y agrupadas en CI para que producción no acepte el mercado equivocado.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'No trates la salida local del navegador como prueba de aceptación por una API, cuenta, dominio, certificado o servicio externo.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Conserva fixtures negativas: malformadas, riesgosas, cortas, expiradas, débiles y fuera de contexto detectan regresiones más rápido.'
+    },
+    'pt-BR': {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Mantenha formas compactas, exibidas, mascaradas, geradas e parseadas em campos separados; idas e voltas só de pontuação escondem bugs do parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Um aprovado local prova apenas sintaxe, checksum ou formato; conta, operadora, postal, identidade, VIES ou diretório exigem o sistema responsável.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Mantenha fixtures de prefixo errado, checksum ruim, curtas e agrupadas na CI para produção não aceitar o mercado errado.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Não trate saída local do navegador como prova de que API, conta, domínio, certificado ou serviço externo aceita o valor.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Guarde fixtures negativas: malformadas, arriscadas, curtas, expiradas, fracas e fora de contexto pegam regressões mais rápido.'
+    },
+    de: {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Halte kompakte, sichtbare, maskierte, generierte und geparste Formen getrennt; reine Interpunktions-Roundtrips verstecken Parserfehler.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Ein lokales OK beweist nur Syntax, Prüfsumme oder Form; Konto-, Carrier-, Postal-, Identitäts-, VIES- oder Verzeichnisstatus braucht das zuständige System.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Halte Wrong-Prefix-, Bad-Checksum-, kurze und gruppierte Fixtures in CI, damit Produktionsadapter nicht still den falschen Markt akzeptieren.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Behandle browserlokale Ausgabe nicht als Beweis, dass Produktions-API, Konto, Domain, Zertifikat oder externer Dienst den Wert akzeptiert.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Behalte negative Fixtures: fehlerhafte, riskante, kurze, abgelaufene, schwache und falsche Kontextbeispiele finden Regressionen schneller.'
+    },
+    fr: {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Gardez les formes compactes, affichées, masquées, générées et parsées dans des champs séparés ; les allers-retours de ponctuation masquent les bugs de parser.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Un succès local prouve seulement la syntaxe, le checksum ou la forme ; compte, opérateur, postal, identité, VIES ou annuaire exigent le système responsable.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Gardez des fixtures mauvais préfixe, mauvais checksum, courtes et groupées dans la CI pour éviter qu’un adaptateur accepte le mauvais marché.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Ne traitez pas la sortie locale du navigateur comme preuve qu’une API, un compte, un domaine, un certificat ou un service externe accepte la valeur.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Conservez les fixtures négatives : malformées, risquées, courtes, expirées, faibles ou hors contexte capturent les régressions plus vite.'
+    },
+    pl: {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Trzymaj formy kompaktowe, wyświetlane, maskowane, generowane i parsowane w osobnych polach; same znaki interpunkcyjne ukrywają błędy parsera.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Lokalny sukces dowodzi tylko składni, sumy kontrolnej lub formy; status konta, operatora, poczty, tożsamości, VIES lub katalogu wymaga systemu źródłowego.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Trzymaj fixture’y ze złym prefiksem, złą sumą, krótkie i grupowane w CI, aby adaptery nie przyjęły cicho złego rynku.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Nie traktuj wyniku lokalnego jako dowodu, że produkcyjne API, konto, domena, certyfikat lub usługa zewnętrzna akceptuje wartość.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Zachowuj fixture’y negatywne: błędne, ryzykowne, krótkie, wygasłe, słabe i z błędnego kontekstu szybciej łapią regresje.'
+    },
+    uk: {
+      'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.': 'Тримайте компактну, відображувану, масковану, згенеровану й розпарсену форми в окремих полях; кругові перетворення лише пунктуації ховають помилки парсера.',
+      'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.': 'Локальний успіх доводить лише синтаксис, checksum або форму; статус рахунку, оператора, пошти, особи, VIES чи каталогу потребує системи-власника.',
+      'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.': 'Тримайте фікстури з неправильним префіксом, поганим checksum, короткі й згруповані в CI, щоб продакшн-адаптери не приймали хибний ринок мовчки.',
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.': 'Не сприймайте браузерний локальний результат як доказ, що продакшн API, рахунок, домен, сертифікат або зовнішній сервіс приймає значення.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.': 'Зберігайте негативні фікстури: malformed, risky, short, expired, weak і wrong-context приклади ловлять регресії швидше за happy path.'
+    }
+  };
+
+  Object.entries(COMMON_TRAP_TRANSLATIONS).forEach(([locale, entries]) => {
+    RUNTIME_EXACT_SHARED_PHRASES[locale] = Object.assign(RUNTIME_EXACT_SHARED_PHRASES[locale] || {}, entries);
   });
 
   const RUNTIME_COUNTRY_NAME_OVERRIDES = {
@@ -4920,6 +5029,7 @@
         grid-template-columns: minmax(0, min(100%, 54rem));
         gap: .85rem;
         justify-content: center;
+        padding: .35rem 1rem 1rem;
       }
       .csf-debug-grid > div {
         min-width: 0;
@@ -4927,6 +5037,7 @@
       }
       .csf-debug-grid .csf-section-head {
         justify-content: center;
+        margin-top: .35rem;
       }
       .csf-debug-table {
         width: 100%;
@@ -5211,12 +5322,36 @@
       boundary: localizeRuntimePhrase(rawProfile.boundary, locale)
     };
     const countryName = localizedCountryDisplayName(suite, locale);
-    const firstSentence = locale === 'fr'
-      ? `${tool.name} aide les équipes ${countryName} à inspecter ${profile.subject} avant l’entrée dans les formulaires, imports ou workflows de conformité.`
-      : `${tool.name} helps ${countryName} teams inspect ${profile.subject} before it moves into forms, imports, or compliance workflows.`;
-    const secondSentence = locale === 'fr'
-      ? `${tool.summary} Le résultat uniquement navigateur sert à normaliser et déboguer, tandis que ${profile.boundary} reste du ressort du système officiel ou fournisseur responsable.`
-      : `${tool.summary} The browser-only result is useful for normalization and debugging, while ${profile.boundary} still belongs to the responsible official or source system.`;
+    const contextSentences = {
+      de: [
+        `${tool.name} hilft Teams in ${countryName}, ${profile.subject} zu pruefen, bevor Daten in Formulare, Importe oder Compliance-Workflows gehen.`,
+        `${tool.summary} Das Browser-Ergebnis eignet sich fuer Normalisierung und Debugging; ${profile.boundary} bleibt beim zustaendigen offiziellen System oder Anbieter.`
+      ],
+      es: [
+        `${tool.name} ayuda a equipos de ${countryName} a inspeccionar ${profile.subject} antes de pasarlo a formularios, importaciones o workflows de cumplimiento.`,
+        `${tool.summary} El resultado solo en navegador sirve para normalizar y depurar; ${profile.boundary} sigue perteneciendo al sistema oficial o proveedor responsable.`
+      ],
+      fr: [
+        `${tool.name} aide les équipes ${countryName} à inspecter ${profile.subject} avant l’entrée dans les formulaires, imports ou workflows de conformité.`,
+        `${tool.summary} Le résultat uniquement navigateur sert à normaliser et déboguer, tandis que ${profile.boundary} reste du ressort du système officiel ou fournisseur responsable.`
+      ],
+      pl: [
+        `${tool.name} pomaga zespołom ${countryName} sprawdzić ${profile.subject}, zanim trafi do formularzy, importów lub workflow zgodności.`,
+        `${tool.summary} Wynik w przeglądarce służy do normalizacji i debugowania; ${profile.boundary} pozostaje po stronie właściwego systemu oficjalnego lub dostawcy.`
+      ],
+      'pt-BR': [
+        `${tool.name} ajuda equipes de ${countryName} a inspecionar ${profile.subject} antes de enviar para formulários, importações ou fluxos de conformidade.`,
+        `${tool.summary} O resultado somente no navegador serve para normalização e depuração; ${profile.boundary} continua no sistema oficial ou provedor responsável.`
+      ],
+      uk: [
+        `${tool.name} допомагає командам ${countryName} перевіряти ${profile.subject}, перш ніж дані підуть у форми, імпорти або compliance-сценарії.`,
+        `${tool.summary} Браузерний результат корисний для нормалізації й дебагу; ${profile.boundary} лишається відповідальністю офіційної системи або провайдера.`
+      ]
+    };
+    const [firstSentence, secondSentence] = contextSentences[locale] || [
+      `${tool.name} helps ${countryName} teams inspect ${profile.subject} before it moves into forms, imports, or compliance workflows.`,
+      `${tool.summary} The browser-only result is useful for normalization and debugging, while ${profile.boundary} still belongs to the responsible official or source system.`
+    ];
     return `
       <section class="csf-context" aria-label="${esc(labels.toolContextTitle)}">
         <div class="csf-context-grid">

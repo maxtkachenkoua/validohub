@@ -197,13 +197,16 @@ if (fs.existsSync('scripts/build-all.mjs')) {
     failures.push('build pipeline integrity script table must inherit TOOL_SCRIPT_BY_ALGORITHM instead of drifting into a second manual suite mapping');
   }
   const requiredLegacyMappings = [
-    "'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js']",
-    "'validohub.poland-suite': ['country-legacy-rich-layer.js', 'poland-suite.js']",
-    "'validohub.france-suite': ['country-legacy-rich-layer.js', 'france-suite.js']",
-    "'validohub.netherlands-suite': ['country-legacy-rich-layer.js', 'netherlands-suite.js']"
+    { algorithm: 'validohub.brazil-suite', runtime: 'brazil-suite.js' },
+    { algorithm: 'validohub.poland-suite', runtime: 'poland-suite.js' },
+    { algorithm: 'validohub.france-suite', runtime: 'france-suite.js' },
+    { algorithm: 'validohub.netherlands-suite', runtime: 'netherlands-suite.js' }
   ];
-  for (const token of requiredLegacyMappings) {
-    if (!build.includes(token)) failures.push(`build pipeline missing legacy rich layer mapping: ${token}`);
+  for (const mapping of requiredLegacyMappings) {
+    const pattern = new RegExp(`'${mapping.algorithm}'\\s*:\\s*\\[[^\\]]*'country-legacy-rich-layer\\.js'[^\\]]*'${mapping.runtime.replace('.', '\\.')}'`);
+    if (!pattern.test(build)) {
+      failures.push(`build pipeline missing legacy rich layer mapping: ${mapping.algorithm} -> country-legacy-rich-layer.js before ${mapping.runtime}`);
+    }
   }
   const forbiddenMappings = [
     "'validohub.brazil-suite': 'country-suite-factory.js'",

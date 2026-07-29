@@ -780,6 +780,21 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
   const runtimeTags = runtimeScriptsForCountry(country)
     .map(script => `<script src="/assets/js/tools/${script}?v=${toolScriptVersion(script)}"></script>`)
     .join('\n');
+  const headerHtml = `
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/" aria-label="Home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/tools/">Tools</a>
+          <a href="/en/countries/" class="is-active" aria-current="page">Countries</a>
+          <a href="/en/categories/national-identifiers/">Identifiers</a>
+        </nav>
+      </div>
+    </header>`;
   const relatedCards = routes.slice(0, 12).map(route => `
     <a href="${escapeHtml(route.href)}" class="link-card">
       <span>${escapeHtml(route.title)}</span>
@@ -835,7 +850,7 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
         </section>`;
     const assembledHtml = layoutTemplate
       .replaceAll('{{ HEAD }}', () => headHtml)
-      .replaceAll('{{ HEADER }}', () => '')
+      .replaceAll('{{ HEADER }}', () => headerHtml)
       .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
       .replaceAll('{{ HERO }}', () => '')
       .replaceAll('{{ CONTENT }}', () => contentHtml)

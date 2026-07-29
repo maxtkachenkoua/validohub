@@ -10,7 +10,12 @@
     "build:tools": "node scripts/build-tools-dev.mjs",
     "build:full": "node scripts/build-all.mjs",
     "audit:tools": "node scripts/audit-global-tools-premium.mjs",
-    "audit:full": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs && node scripts/audit-global-tools-premium.mjs"
+    "audit:seo": "node scripts/audit-seo-production.mjs",
+    "audit:localization": "node scripts/audit-localization-production.mjs",
+    "audit:performance": "node scripts/audit-performance-budget.mjs",
+    "audit:search": "node scripts/audit-search-relevance.mjs",
+    "repair:localization": "node scripts/repair-generated-localization.mjs",
+    "audit:full": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs && node scripts/audit-global-tools-premium.mjs && node scripts/audit-performance-budget.mjs && node scripts/audit-search-relevance.mjs"
   },
   "dependencies": {
     "playwright": "^1.61.1"

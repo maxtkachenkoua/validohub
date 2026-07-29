@@ -1186,10 +1186,16 @@ p {
 .vh-country-search-suggestion {
   display: grid;
   gap: 0.12rem;
+  width: 100%;
   padding: 0.58rem 0.75rem;
+  border: 0;
   border-bottom: 1px solid rgb(var(--vh-country-accent-primary) / 0.08);
+  background: transparent;
   color: var(--vh-color-text);
+  font: inherit;
+  text-align: left;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .vh-country-search-suggestion:last-child {
@@ -5084,6 +5090,11 @@ select:focus {
   container-type: inline-size;
 }
 
+.generic-suite-workbench .advanced-panel > div:first-child,
+.generic-suite-workbench .advanced-panel .rich-text > :first-child {
+  margin-top: 0.85rem;
+}
+
 .generic-suite-workbench .advanced-panel > div,
 .generic-suite-workbench .advanced-panel .rich-text,
 .generic-suite-workbench .generic-analysis-section,
@@ -5892,6 +5903,15 @@ a.vh-graph-node:hover {
   box-shadow: 0 0 0 4px rgba(0, 128, 112, 0.12);
 }
 
+.vh-tools-search-status {
+  min-height: 1.1rem;
+  margin: 0.35rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.73rem;
+  font-weight: 760;
+  letter-spacing: 0;
+}
+
 .vh-tools-chips {
   display: flex;
   flex-wrap: wrap;
@@ -6048,6 +6068,12 @@ a.vh-graph-node:hover {
   outline: none;
 }
 
+.vh-tool-card.is-search-lead {
+  border-color: rgba(0, 110, 95, 0.56);
+  background: linear-gradient(180deg, rgba(240, 253, 250, 0.94), rgba(255, 255, 255, 0.98));
+  box-shadow: 0 14px 34px rgba(15, 118, 110, 0.1);
+}
+
 .vh-tool-card-mark {
   display: inline-grid;
   place-items: center;
@@ -6126,6 +6152,29 @@ a.vh-graph-node:hover {
   border-radius: 8px;
   color: var(--color-text-muted);
   font-weight: 800;
+}
+
+.vh-tools-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.65rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.vh-tools-empty-actions button {
+  min-height: 1.85rem;
+  padding: 0 0.62rem;
+  border: 1px solid rgba(15, 118, 110, 0.22);
+  border-radius: 999px;
+  background: rgba(240, 253, 250, 0.82);
+  color: #0f766e;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 850;
+  cursor: pointer;
 }
 
 @media (max-width: 880px) {
