@@ -22,6 +22,15 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
 - Current capabilities: current-result evidence strip, premium sample/batch replay matrix, official/source-system boundary panel, domain-specific Integration traps, Developer API preview, Developer Snapshot JSON, in-block `Copy developer JSON`, `Copy result`, and `Download JSON` actions, plus expanded anti-overflow CSS for long payloads and tables.
 - Current quality status: shared Gold interaction floor for global tools, not a claim that every route is a bespoke Pix/PESEL/CURP-level flagship. High-value structured formats should still graduate to dedicated bespoke runtimes when public specs support deeper behavior.
 
+## Reference Guides
+
+- Source generator: `scripts/build-reference-guides.mjs`
+- Styling: `assets/css/validohub.css`
+- Build command: `npm run build:guides`
+- Current coverage: `/guides/` plus 45 high-signal guide pages across global tools, local identifiers, tax IDs, IBAN/banking, payments, privacy/security, and developer fixtures.
+- Current capabilities: compact guide index, tool-first guide hero, live-workbench CTA, quick facts, browser-checkable evidence cards, official-boundary cards, integration traps, TechArticle/CollectionPage JSON-LD, localized route copies, hreflang/canonical via the final localization pass, and scoped sitemap refresh.
+- Current quality status: SEO/support layer for useful workflows. It must not become a thin article layer for all generated tools; guides should be added only when they help users choose or integrate a real live workbench.
+
 ## Global Premium Tools Batch V2
 
 - Source JS: `assets/js/tools/generic-suite.js`

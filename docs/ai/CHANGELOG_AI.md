@@ -1287,3 +1287,10 @@ Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Back
 - Verified with scoped English builds for Canada, Brazil, Spain, Mexico, and Poland plus headless browser smoke on Poland catalog/generator, Brazil CPF/Pix, Spain ID, and Mexico CURP. No full build was run.
 - Follow-up polish fixed the tier pills so Primary/Secondary/Reference labels use a stable right-side grid rail instead of floating in the middle of rows. All 194 English country hubs were targeted-rebuilt through `compileCountriesPortal`, and a mass HTML check found 0 catalog tier mismatches.
 - Fixed related-only South America tool pages caused by scoped builds omitting `country-suite-factory.js` for Chile, Colombia, Ecuador, Paraguay, Peru, and Uruguay. Added the full South America factory set to `scripts/build-country-dev.mjs`, rebuilt those six countries with `--locales en`, and verified 11,509 generated `csf-static-host` tool pages have the factory runtime.
+
+## 2026-07-29 Reference Guides Layer
+
+- Added `scripts/build-reference-guides.mjs` and `npm run build:guides` for a Node-owned `/guides/` reference layer.
+- Generated scope is intentionally value-driven: `/guides/` plus 45 high-signal guide pages across global developer tools, identifiers, tax IDs, banking, payments, privacy/security, and fixture workflows.
+- Added compact guide styling in `assets/css/validohub.css`, guide phrase coverage in `scripts/localization-pass.mjs`, localized route generation through the final localization pass, and scoped sitemap refresh for all configured production locales.
+- Product constraint: guides support live workbenches and SEO. They must not replace tool-first pages or become a thin article page for every generated country route.

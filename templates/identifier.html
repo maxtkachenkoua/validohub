@@ -1,5 +1,5 @@
 <!-- Quick Facts and Metadata -->
-<section class="vh-card">
+<section class="vh-card vh-identifier-facts-card">
   <div class="section-heading vh-hidden">
     <span class="vh-eyebrow">Quick Facts</span>
     <h2>Entity Summary</h2>
@@ -8,7 +8,7 @@
 </section>
 
 <!-- Structured Overview -->
-<section class="vh-card">
+<section class="vh-card vh-identifier-content-card">
   <div class="section-heading vh-mt-md">
     <span class="vh-eyebrow">Overview</span>
     <h2>What is {{ ENTITY_NAME }}?</h2>
@@ -25,7 +25,7 @@
 {{ CHECKSUM }}
 
 <!-- Examples Section -->
-<section class="vh-card">
+<section class="vh-card vh-identifier-content-card" id="developer-implementation">
   <div class="section-heading">
     <span class="vh-eyebrow">Test cases</span>
     <h2>Validation Examples</h2>
@@ -48,7 +48,7 @@
     <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
     {{ SNIPPET_DATA_JSON }}
     <div class="vh-code-card-header">
-      <span>🔌</span> Language Code Snippets
+      <span class="vh-code-card-mark">API</span> Language Code Snippets
     </div>
     <div class="vh-code-tabs">
       <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>

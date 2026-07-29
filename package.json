@@ -5,6 +5,8 @@
     "test": "node scripts/test-pages.mjs",
     "build:country": "node scripts/build-country-dev.mjs",
     "build:portal": "node scripts/build-portal-dev.mjs",
+    "build:identifiers": "node scripts/build-identifiers.mjs",
+    "build:guides": "node scripts/build-reference-guides.mjs",
     "audit:country-premium": "node scripts/audit-country-premium.mjs",
     "audit:global-premium": "node scripts/audit-global-tools-premium.mjs",
     "build:tools": "node scripts/build-tools-dev.mjs",

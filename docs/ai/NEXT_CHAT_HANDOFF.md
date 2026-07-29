@@ -8,6 +8,22 @@ ValidoHub is a premium browser-only developer intelligence platform. The user wa
 
 The product goal is not only validation. Where the domain supports it, tools must also generate safe fixtures, explain structure, show debug internals, expose developer handoff data, and guide the user visually through what can be checked, generated, copied, or exported.
 
+## 2026-07-29 Reference Guides Layer
+
+- User asked whether informational/reference article pages should exist for global and local tools. Product decision: yes, but only as a tool-first support/SEO layer for high-signal workflows, not as a thin page factory for every generated route.
+- Added `scripts/build-reference-guides.mjs` and `npm run build:guides`. The first batch generates `/en/guides/` plus 45 guide pages: 15 global guide topics and 30 local identifier/tax/banking/payment/fixture guide topics.
+- Guide pages use the shared ValidoHub shell and new `.vh-guide-*` CSS in `assets/css/validohub.css`: compact hero, live workbench CTA, quick facts, browser-checkable evidence, official boundary, integration traps, and final live-tool CTA.
+- Guides are localized through `applyFinalLocalizationPass`; `scripts/localization-pass.mjs` now includes guide-specific repeated UI phrase replacements for `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`.
+- The scoped guide build appends guide URLs for all configured production locales to `generated/validohub/sitemap.xml`. No full build is required for guide iteration.
+
+## 2026-07-29 Country IBAN Generator Shell Fix
+
+- User flagged Albania and France IBAN generator pages as visually/functionally broken. Root cause was two paths: factory country IBAN pages still showed duplicated page intro plus flag-red hero accent, while legacy standalone country IBAN pages still used the old generic `Run the tool` shell or stale rewritten values.
+- `scripts/build-country-dev.mjs` now rewrites standalone country IBAN generator pages for Brazil, France, Netherlands, and Poland into a route-locked generator-first card: hidden country input, visible BBAN/account body, existing IBAN repair/inspect field, fresh generate, validate, copy, download, and compact route context rail. France now uses correct `FR` length 27 with BBAN `20041010050500013M02606`.
+- `assets/css/workbench.css` now hides duplicate `.page-intro` for both `.page-stack` and `.vh-page-stack` when a country IBAN/factory workbench is mounted, and calms factory `.csf-hero` from raw country/flag red to a restrained teal/blue premium accent.
+- Scoped rebuilds only: `npm run build:country -- --country france --locales en,fr,uk` and `npm run build:country -- --country albania --locales en,fr,uk`. No full build.
+- Verification: `node --check scripts/build-country-dev.mjs scripts/build-all.mjs`; generated audit found 44/44 English country IBAN generator pages with no `Run the tool`, no visible `Country code`, and either `vh-country-iban-generator-card` or `csf-static-host`; Playwright smoke on `/en/france/france-iban-generator/` and `/en/albania/albania-iban-generator/` confirmed duplicate H1 hidden, France generates `FR...`, Albania generates `AL...`, and Albania hero top border is `rgb(15, 118, 110)`.
+
 ## 2026-07-28 Localization, Search, and SEO Hardening Sweep
 
 - User approved the whole overnight scope: finish localization foundations across production languages (`en`, `es`, `pt-BR`, `de`, `fr`, `pl`, `uk`), fix search, fix missing local tool language switchers, improve SEO readiness, and apply product-quality user feedback without asking again.
@@ -452,3 +468,22 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
   - Targeted JS/MJS syntax checks for changed search/audit scripts
 - Browser smoke passed through a temporary static server for 20 routes across desktop and mobile. Covered homepage, localized homepage, `/tools/`, `/countries/`, country search query restore for Poland/Brazil/Mexico/Spain, PESEL/CPF/Pix/CURP/Spain ID/IBAN generator, and Italy IBAN factory runtime. The smoke checked one H1, no `[object Object]`, no page-level horizontal overflow, restored search query values, and no generic `Run the tool` shell on repaired factory pages.
 - Full build was still not run; this pass used release audits plus generated repair because the source build pipeline already contains the correct runtime wiring and the failing state was stale generated HTML.
+
+## 2026-07-29 Homepage Bugfix / Premium Search Pass
+
+- Homepage search no longer hides cards or changes page layout while typing. `assets/js/portal-home.js` now renders a stable dropdown backed by featured DOM entries plus `/sitemap.xml`, supports Cyrillic/Ukrainian aliases such as `песель`, rewrites results to the current locale, and opens the best result on Enter.
+- Search ranking now prefers concrete validator/generator/inspector/workbench URLs over country hubs and taxonomy pages. Browser smoke confirmed `pesel` opens `/en/poland/pesel-validator/` and `песель` on `/uk/` returns `/uk/poland/pesel-validator/`.
+- Homepage source (`scripts/build-countries-portal.mjs`) now renders 15 global tools, 15 local instruments, 15 generators, and 15 country cards. The home world-map marker overlay was removed; the `/countries/` map design was not changed.
+- Header/footer polish: `assets/css/validohub.css` has a more premium compact logo/nav treatment and a compact footer link cluster. `renderFooter()` in portal/identifier generators no longer outputs `Static tools generated by Valido Engine.`
+- `scripts/repair-generated-localization.mjs` gained `--footer-only`; the fast repair checked 40,888 generated pages and updated 20,688 footer instances without running the heavy localization translate pass.
+- Verification passed: JS/MJS syntax checks, `npm run build:portal`, `node scripts/repair-generated-localization.mjs --footer-only`, `npm run audit:search`, `npm run audit:performance`, generated HTML greps, and Playwright homepage smoke. Full build was not run.
+- Follow-up visual polish added a subtle color layer to the homepage only: faint section tints, thin accent lines, colored card top borders, and a slightly warmer search panel. Rebuilt with `npm run build:portal`, confirmed footer-only repair had 0 remaining updates, and browser smoke showed the new CSS bundle, stable PESEL dropdown, 45 tool cards, 15 country cards, and no old footer text.
+
+## 2026-07-29 Identifier Info Pages Premium Pass
+
+- The forgotten informational identifier page family (`/identifiers/pesel/`, `cpf`, `cnpj`, `nip`, `regon`, `steuer-id`) now uses a premium reference-page shell instead of the old sparse info layout.
+- Source changes: `scripts/build-identifiers.mjs`, `templates/identifier.html`, `assets/css/validohub.css`, and `scripts/localization-pass.mjs`.
+- `build:identifiers` is now a scoped multilingual builder: it regenerates the 6 English identifier pages and then refreshes `/de|es|fr|pl|pt-BR|uk/identifiers/{id}/` through `applyFinalLocalizationPass` with `forceRefresh` and identifier-only suffixes. No full build needed for this family.
+- New page shell includes: validator CTA, country hub CTA, developer snippets anchor, compact reference-boundary panel, clean spec badges, facts grid, polished visual structure blocks, calmer tables, and non-emoji code-card marker.
+- Localization pass gained identifier-reference UI strings for es, pt-BR, de, fr, pl, and uk. Long markdown article bodies still exist only as `*.en.md`; creating true translated article bodies remains separate content work if desired.
+- Verification passed: `node --check scripts/build-identifiers.mjs`, `node --check scripts/localization-pass.mjs`, `npm run build:portal`, `npm run build:identifiers`, 42-page generated HTML audit, and Playwright desktop/mobile smoke for `/en|fr|uk/identifiers/pesel/` with zero horizontal overflow and no old `🔌` marker.

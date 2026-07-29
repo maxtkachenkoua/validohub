@@ -981,7 +981,7 @@ const GENERIC_UTILITY_WORKBENCHES = {
 
 const COUNTRY_IBAN_GENERATOR_PROFILES = {
   brazil: { code: 'BR', name: 'Brazil', bban: '00000000000010932840814P2' },
-  france: { code: 'FR', name: 'France', bban: '1420041010050500013M02606' },
+  france: { code: 'FR', name: 'France', bban: '20041010050500013M02606' },
   germany: { code: 'DE', name: 'Germany', bban: '370400440532013000' },
   italy: { code: 'IT', name: 'Italy', bban: 'X0542811101000000123456' },
   netherlands: { code: 'NL', name: 'Netherlands', bban: 'ABNA0417164300' },
@@ -998,17 +998,73 @@ function countryIbanGeneratorWorkbench(slug, countrySlug) {
     id: slug,
     algorithmId: 'validohub.iban-generator',
     capability: 'generate',
+    isCountryIbanGenerator: true,
+    countryCode: profile.code,
+    countryName: profile.name,
+    expectedLength: (profile.code + '00' + profile.bban).length,
     forms: [{
       capability: 'generate',
-      title: 'Generate ' + profile.name + ' IBAN',
+      title: 'Generate',
       fields: [
-        { type: 'text', name: 'country', label: 'Country code', value: profile.code, required: true },
         { type: 'text', name: 'bban', label: profile.name + ' BBAN / account body', value: profile.bban, required: true },
         { type: 'text', name: 'iban', label: 'Existing IBAN to repair or inspect' }
       ],
       actions: ['generate', 'validate', 'explain']
     }]
   };
+}
+
+function renderCountryIbanGeneratorWorkbench(config) {
+  const form = config.forms[0];
+  const fields = [
+    '<input type="hidden" name="country" value="' + escapeHtml(config.countryCode || '') + '">',
+    form.fields.map(renderGenericField).join('')
+  ].join('');
+  const actions = ['generate', 'validate'].map((action, index) =>
+    '<button type="button" class="button ' + (index === 0 ? 'button-primary' : 'button-secondary') + '" data-action="' + escapeHtml(action) + '">' + escapeHtml(action.charAt(0).toUpperCase() + action.slice(1)) + '</button>'
+  ).join('');
+  return [
+    '<section class="workbench-card vh-country-iban-generator-card" aria-label="' + escapeHtml(config.countryName || 'Country') + ' IBAN generator">',
+    '<div class="workbench-heading vh-country-iban-heading">',
+    '<span class="eyebrow">Banking fixtures</span>',
+    '<h2>Generate ' + escapeHtml(config.countryName || 'country') + ' IBAN fixtures</h2>',
+    '<p>Create a fresh route-locked IBAN, repair check digits, inspect an existing value, and copy developer-ready evidence locally.</p>',
+    '<div class="vh-country-iban-rail" aria-label="IBAN route context">',
+    '<article><span>Route country</span><strong>' + escapeHtml(config.countryCode || '') + '</strong><small>' + escapeHtml(config.countryName || '') + '</small></article>',
+    '<article><span>Expected length</span><strong>' + escapeHtml(String(config.expectedLength || '15-34')) + '</strong><small>IBAN characters</small></article>',
+    '<article><span>Generate mode</span><strong>Fresh fixture</strong><small>New local value every click</small></article>',
+    '</div>',
+    '</div>',
+    '<div class="workbench-list">',
+    '<form class="tool-workbench" id="tool-' + escapeHtml(config.id) + '-generate" data-algorithm-id="' + escapeHtml(config.algorithmId) + '" data-capability="generate" data-country-iban-generator="true">',
+    '<div class="workbench-form-heading">',
+    '<h3>' + escapeHtml(form.title) + '</h3>',
+    '<span class="input-mode-badge" data-input-mode-badge>' + escapeHtml((config.countryCode || 'IBAN') + ' fixture ready') + '</span>',
+    '</div>',
+    '<div class="field-grid">',
+    fields,
+    '</div>',
+    '<div class="button-row">',
+    actions,
+    '<button type="button" class="button button-secondary" data-tool-copy>Copy result</button>',
+    '<button type="button" class="button button-secondary" data-tool-download>Download result</button>',
+    '<button type="button" class="button button-ghost" data-tool-clear>Clear</button>',
+    '</div>',
+    '<label class="field output-field">',
+    '<span>Output</span>',
+    '<textarea class="tool-output" readonly data-tool-output></textarea>',
+    '</label>',
+    '<p class="tool-message" aria-live="polite" data-tool-message></p>',
+    '<div class="tool-feedback" data-tool-feedback></div>',
+    '<div class="preview-panel" data-tool-preview></div>',
+    '<details class="advanced-panel" data-advanced-panel>',
+    '<summary>Advanced analysis</summary>',
+    '<div data-tool-advanced></div>',
+    '</details>',
+    '</form>',
+    '</div>',
+    '</section>'
+  ].join('');
 }
 
 function renderGenericField(field) {
@@ -1100,7 +1156,9 @@ function ensureGenericUtilityWorkbench(content, route) {
     : null;
   if (algorithmMatch && FACTORY_TOOL_ALGORITHMS.has(algorithmMatch[1])) return content;
   if (!config) return content;
-  const workbench = renderGenericUtilityWorkbench(config);
+  const workbench = config.isCountryIbanGenerator
+    ? renderCountryIbanGeneratorWorkbench(config)
+    : renderGenericUtilityWorkbench(config);
   let next = content;
   if (/<section class="workbench-card"[\s\S]*?<\/section>\s*<article class="content-card">/.test(next)) {
     next = next.replace(/<section class="workbench-card"[\s\S]*?<\/section>\s*<article class="content-card">/, workbench + '\n\n        <article class="content-card">');

@@ -274,6 +274,13 @@ const STANDALONE_RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.iban-generator', [GENERIC_SUITE_RUNTIME]],
   ['validohub.spain-id', ['spain-id.js']]
 ]);
+
+const STANDALONE_IBAN_GENERATOR_PROFILES = {
+  brazil: { code: 'BR', name: 'Brazil', bban: '00000000000010932840814P2' },
+  france: { code: 'FR', name: 'France', bban: '20041010050500013M02606' },
+  netherlands: { code: 'NL', name: 'Netherlands', bban: 'ABNA0417164300' },
+  poland: { code: 'PL', name: 'Poland', bban: '109010140000071219812874' }
+};
 const GOLD_LAB_ROUTE_OVERRIDES = new Set([
   '/en/poland/poland-invoice-number-helper/index.html',
   '/en/poland/poland-mrz-passport-id-parser/index.html',
@@ -1064,6 +1071,61 @@ function removeToolScript(content, script) {
   return content.replace(oldTag, '');
 }
 
+function renderCountryIbanGeneratorWorkbench({ country, profile }) {
+  const expectedLength = (profile.code + '00' + profile.bban).length;
+  return [
+    `<section class="workbench-card vh-country-iban-generator-card" aria-label="${escapeHtml(profile.name)} IBAN generator">`,
+    '<div class="workbench-list">',
+    `<form class="tool-workbench" id="tool-${escapeHtml(country)}-iban-generator-generate" data-algorithm-id="validohub.iban-generator" data-capability="generate" data-country-iban-generator="true">`,
+    '<input type="hidden" name="country" value="' + escapeHtml(profile.code) + '">',
+    '<div class="workbench-form-heading">',
+    '<h3>Generate</h3>',
+    '<span class="input-mode-badge" data-input-mode-badge>' + escapeHtml(profile.code) + ' fixture ready</span>',
+    '</div>',
+    '<div class="vh-country-iban-rail" aria-label="IBAN route context">',
+    '<article><span>Route country</span><strong>' + escapeHtml(profile.code) + '</strong><small>' + escapeHtml(profile.name) + '</small></article>',
+    '<article><span>Expected length</span><strong>' + escapeHtml(String(expectedLength)) + '</strong><small>IBAN characters</small></article>',
+    '<article><span>Generate mode</span><strong>Fresh fixture</strong><small>New local value every click</small></article>',
+    '</div>',
+    '<div class="field-grid">',
+    '<label class="field"><span>' + escapeHtml(profile.name) + ' BBAN / account body</span><input type="text" name="bban" value="' + escapeHtml(profile.bban) + '" required="required"></label>',
+    '<label class="field"><span>Existing IBAN to repair or inspect</span><input type="text" name="iban" value=""></label>',
+    '</div>',
+    '<div class="button-row">',
+    '<button type="button" class="button button-primary" data-action="generate">Generate</button>',
+    '<button type="button" class="button button-secondary" data-action="validate">Validate</button>',
+    '<button type="button" class="button button-secondary" data-tool-copy>Copy result</button>',
+    '<button type="button" class="button button-secondary" data-tool-download>Download result</button>',
+    '<button type="button" class="button button-ghost" data-tool-clear>Clear</button>',
+    '</div>',
+    '<label class="field output-field"><span>Output</span><textarea class="tool-output" readonly data-tool-output></textarea></label>',
+    '<p class="tool-message" aria-live="polite" data-tool-message></p>',
+    '<div class="tool-feedback" data-tool-feedback></div>',
+    '<div class="preview-panel" data-tool-preview></div>',
+    '<details class="advanced-panel" data-advanced-panel><summary>Advanced analysis</summary><div data-tool-advanced></div></details>',
+    '</form>',
+    '</div>',
+    '</section>'
+  ].join('');
+}
+
+function rewriteStandaloneCountryIbanGenerator(content, filePath) {
+  const normalizedFilePath = filePath.replace(/\\/g, '/');
+  const match = normalizedFilePath.match(/\/generated\/validohub\/en\/([^/]+)\/\1-iban-generator\/index\.html$/);
+  if (!match) return content;
+  if (!content.includes('data-algorithm-id="validohub.iban-generator"')) return content;
+  const country = match[1];
+  const profile = STANDALONE_IBAN_GENERATOR_PROFILES[country];
+  if (!profile) return content;
+  const workbench = renderCountryIbanGeneratorWorkbench({ country, profile });
+  let next = content;
+  const workbenchPattern = /<section class="workbench-card[^"]*"[\s\S]*?<\/section>\s*(?=<(?:article|section) class="(?:content-card|related-section)")/;
+  if (workbenchPattern.test(next)) {
+    next = next.replace(workbenchPattern, workbench + '\n\n        ');
+  }
+  return next;
+}
+
 function applyRouteSpecificRuntimeOverrides(content, filePath) {
   const normalizedFilePath = filePath.replace(/\\/g, '/');
   if (
@@ -1100,9 +1162,9 @@ async function refreshEnglishCountryRuntimeScripts(country) {
   let updated = 0;
   for (const filePath of htmlFiles) {
     const content = await readFile(filePath, 'utf8');
-    let next = content;
+    let next = rewriteStandaloneCountryIbanGenerator(content, filePath);
     if (content.includes(`data-algorithm-id="${algorithmId}"`)) {
-      next = ensureOrderedToolScripts(content, runtimeScriptsForCountry(country));
+      next = ensureOrderedToolScripts(next, runtimeScriptsForCountry(country));
     }
     for (const [standaloneAlgorithmId, scripts] of STANDALONE_RUNTIME_BY_ALGORITHM) {
       if (next.includes(`data-algorithm-id="${standaloneAlgorithmId}"`)) {
