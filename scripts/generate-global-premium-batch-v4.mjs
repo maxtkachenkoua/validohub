@@ -208,6 +208,7 @@ async function main() {
     '    // END global premium batch v4 configs',
     batch.map(configEntry).join('\n')
   );
+  suite = suite.replace(/(\}, hashHandler\('sha256'\)\])\n(    \/\/ BEGIN global premium batch v4 configs)/, "$1,\n$2");
   await writeFile(suitePath, suite, 'utf8');
 
   const auditPath = resolve(projectRoot, 'scripts', 'audit-global-tools-premium.mjs');

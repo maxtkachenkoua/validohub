@@ -387,8 +387,13 @@
   function sampleRow(samples) {
     if (!samples || !samples.length) return "";
     return '<div class="generic-sample-row" aria-label="' + escape(tr('Samples')) + '"><span>' + escape(tr('Samples')) + '</span>' +
-      samples.map((sample) => '<button type="button" class="button button-secondary" data-sample="' + escape(sample.id) + '">' + escape(tr(sample.label)) + '</button>').join("") +
+      samples.map((sample) => '<button type="button" class="button button-secondary" data-sample="' + escape(sample.id) + '">' + escape(sampleButtonLabel(sample.label)) + '</button>').join("") +
       '</div>';
+  }
+
+  function sampleButtonLabel(label) {
+    const value = tr(label);
+    return /(sample|fixture|example|valid|invalid|generate|random|test)/i.test(value) ? value : value + ' sample';
   }
 
   function ensureSamples(workbench, config) {
@@ -3525,7 +3530,7 @@
       slug: 'sha256-generator', title: 'SHA-256 Generator', defaultAction: 'generate', theme: 'hash', mark: 'SHA256', kicker: 'Modern digest',
       summary: 'Generate SHA-256 hashes for payload fingerprints, fixture verification, cache keys, and copy-safe developer output.',
       chips: ['Modern digest', 'Payload fingerprint', 'Hex output', 'Offline'], samples: commonSamples.text.concat([{ id: 'validate-sha256', label: 'Validate digest', values: { input: 'Hello, ValidoHub!', hash: '1f54daf3cfa728c3e4cc4d86732c94ec9b42ed112579ee625e4cfe9294f0ad58' }, action: 'validate' }])
-    }, hashHandler('sha256')]
+    }, hashHandler('sha256')],
     // BEGIN global premium batch v4 configs
     ['validohub.oauth-oidc-flow', { slug: 'oauth-oidc-flow-debugger', title: "OAuth / OIDC Flow Debugger", kind: 'oauth-oidc-flow-debugger', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'OAUTH', kicker: "Auth redirect QA", summary: "Validate OAuth and OpenID Connect redirect flows, PKCE hints, scopes, state, nonce, issuer, and callback handoff without contacting an identity provider.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["authorize","token","client_id","redirect_uri","scope","state","nonce","code_challenge","issuer"], riskWords: ["implicit","token=","client_secret","localhost","missing state","openid email profile admin"], samples: [{"id":"happy-path","label":"PKCE flow","values":{"profile":"security-auth","input":"https://auth.example.com/authorize?response_type=code&client_id=web&redirect_uri=https%3A%2F%2Fapp.example.com%2Fcallback&scope=openid%20profile&state=st_123&nonce=n_123&code_challenge=abc&code_challenge_method=S256"},"action":"parse"},{"id":"implicit-risk","label":"Implicit risk","values":{"profile":"security-auth","input":"https://auth.example.com/authorize?response_type=token&client_id=web&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback&scope=openid%20email%20admin"},"action":"validate"}] }, globalPremiumBatchHandler],
     ['validohub.jwt-risk-scanner', { slug: 'jwt-risk-scanner', title: "JWT Risk Scanner", kind: 'jwt-risk-scanner', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'JWT!', kicker: "Claim risk QA", summary: "Scan JWT headers and claims for weak algorithms, missing audience, expired tokens, oversized scopes, issuer drift, and browser-only verification boundaries.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["alg","typ","iss","aud","sub","exp","iat","scope","kid"], riskWords: ["\"alg\":\"none\"","\"alg\":\"HS256\"","admin","exp\":0","password","secret"], samples: [{"id":"rs-token","label":"RS token claims","values":{"profile":"security-auth","input":"{\"alg\":\"RS256\",\"kid\":\"billing-2026\"}\n{\"iss\":\"https://auth.example.com\",\"aud\":\"billing-api\",\"sub\":\"usr_123\",\"scope\":\"invoice:read\",\"exp\":1900000000}"},"action":"parse"},{"id":"weak-token","label":"Weak claims","values":{"profile":"security-auth","input":"{\"alg\":\"none\"}\n{\"sub\":\"usr_123\",\"scope\":\"admin write:*\",\"exp\":0}"},"action":"validate"}] }, globalPremiumBatchHandler],

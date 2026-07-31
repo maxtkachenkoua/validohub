@@ -137,7 +137,7 @@
 
     function addToolHeader(workbench, config) {
       if (workbench.form.querySelector('[data-plb-tool-head]')) return;
-      const chips = (config.samples || []).slice(0, 3).map(function(sample, index) { return '<button type="button" data-plb-header-sample="' + index + '">' + util.escapeHtml(labelForSample(sample)) + '</button>'; }).join('');
+      const chips = (config.samples || []).slice(0, 3).map(function(sample, index) { return '<button type="button" data-plb-header-sample="' + index + '">' + util.escapeHtml(sampleChipLabel(sample)) + '</button>'; }).join('');
       const options = (config.samples || []).map(function(sample, index) { return '<option value="' + index + '">' + escapeAttr(labelForSample(sample)) + '</option>'; }).join('');
       const head = document.createElement('section');
       head.className = 'plb-tool-head';
@@ -788,6 +788,10 @@
     function maskAddress(value) { return String(value || '').replace(/\b\d{2}-?\d{3}\b/g, '**-***').replace(/\b\d+[A-Za-z]?(?:\/\d+)?\b/g, '**'); }
     function maskPii(value) { return String(value || '').replace(/PL\d{26}|\b\d{26}\b/gi, m => m.slice(0,4) + ' **** **** **** ' + m.slice(-4)).replace(/\b\d{11}\b/g, m => maskDigits(m, 3, 3)).replace(/\b\d{10}\b/g, m => maskDigits(m, 3, 3)); }
     function labelForSample(sample) { return String(sample).split(/\r?\n/)[0].slice(0, 44); }
+    function sampleChipLabel(sample) {
+      const label = labelForSample(sample);
+      return /(sample|fixture|example|valid|invalid|address|postal|phone|iban|nip|regon|pesel)/i.test(label) ? label : 'Sample: ' + label;
+    }
     function setInput(workbench, value) { const input = workbench.primaryInput(); if (input) { input.value = value; input.dispatchEvent(new Event('input', { bubbles:true })); } }
     function pickLineValue(input, pattern) {
       const text = String(input || '');

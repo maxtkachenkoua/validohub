@@ -57,7 +57,7 @@
 
     function addToolHeader(workbench, config) {
       if (workbench.form.querySelector('[data-plx-tool-head]')) return;
-      const chips = (config.samples || []).slice(0, 3).map((sample, index) => '<button type="button" data-plx-header-sample="' + index + '">' + util.escapeHtml(sample) + '</button>').join('');
+      const chips = (config.samples || []).slice(0, 3).map((sample, index) => '<button type="button" data-plx-header-sample="' + index + '">' + util.escapeHtml(sampleChipLabel(sample, config)) + '</button>').join('');
       const options = (config.samples || []).map((sample, index) => '<option value="' + index + '">' + escapeAttr(sample) + '</option>').join('');
       const head = document.createElement('section');
       head.className = 'plx-tool-head';
@@ -135,6 +135,10 @@
     function hydrateFromQuery(workbench) { const value = new URLSearchParams(window.location.search).get('value'); if (value) { setInput(workbench, value); run(workbench, 'validate', { quiet:true }); } }
     function detectInputMode(value) { const config = TOOLS[currentSlug()] || TOOLS['poland-id-card-validator']; if (!String(value||'').trim()) return { label:'Waiting for ' + config.label, state:'' }; const result = config.analyze(value); return { label: result.valid ? 'Looks valid: ' + result.type : 'Needs review: ' + result.type, state: result.valid ? 'text':'invalid' }; }
     function applySample(workbench, id) { const config = workbench.form._polandExpansionConfig; const sample = config && config.samples[Number(id)]; if (sample) { setInput(workbench, sample); run(workbench, 'validate'); } }
+    function sampleChipLabel(sample, config) {
+      const label = String(sample || '').split(/\r?\n/)[0].slice(0, 44);
+      return /(sample|fixture|example|valid|invalid|generate|random|test)/i.test(label) ? label : 'Sample: ' + label;
+    }
 
     function run(workbench, action, options) {
       options = options || {};

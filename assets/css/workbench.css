@@ -139,6 +139,7 @@
   border-color: var(--line-strong);
   box-shadow: var(--shadow);
   margin-bottom: var(--vh-space-lg);
+  max-width: 100%;
 }
 
 .workbench-heading {
@@ -3081,4 +3082,3 @@ body .csf-root .csf-hero {
     columns: 1;
   }
 }
-

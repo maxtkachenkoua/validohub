@@ -156,8 +156,8 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
   if (!factory.includes('resultPassed || check.pass')) {
     failures.push('factory success pipelines must render passed checks green end to end');
   }
-  if (!factory.includes('renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}')) {
-    failures.push('factory must render the tool context block immediately after hero and before advanced tools');
+  if (!factory.includes('renderHero(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}')) {
+    failures.push('factory must render styled samples/input immediately after hero, then context before advanced tools');
   }
 }
 

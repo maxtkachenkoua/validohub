@@ -2,7 +2,7 @@ import { access, cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/pro
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildDevRouteRegistry } from './route-registry.mjs';
+import { buildRouteRegistry } from './route-registry.mjs';
 import { renderCountryPage } from './build-countries-portal.mjs';
 import { updateBundleAssetLinks } from './dev-asset-links.mjs';
 import {
@@ -761,7 +761,7 @@ async function compileDesignAssets() {
 }
 
 async function renderEnglishCountryFromSource(country, assetsManifest) {
-  const routeRegistry = await buildDevRouteRegistry();
+  const routeRegistry = await buildRouteRegistry();
   const route = routeRegistry.getAll().find(item => item.type === 'country' && item.metadata?.id === country);
   if (!route) throw new Error(`Country route not found in source registry: ${country}`);
   await renderCountryPage(route, routeRegistry, assetsManifest);

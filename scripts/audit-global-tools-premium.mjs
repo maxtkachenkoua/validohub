@@ -484,7 +484,7 @@ const routes = [
     path: "/en/tools/robots-txt-tester/",
     input: "textarea, input",
     sampleText: "Blocked site",
-    mustContain: ["robotstxt", "Field breakdown", "Developer snapshot JSON"],
+    mustContain: ["robots.txt", "Field breakdown", "Developer snapshot JSON"],
   },
   {
     path: "/en/tools/xml-sitemap-inspector/",
