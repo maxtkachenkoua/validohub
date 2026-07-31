@@ -72,6 +72,7 @@ For multi-machine or multi-terminal QA, run shard indexes `0..N-1`. This is a vi
 For large visual QA, do not start with the monolithic release build. Use the resumable release-prep chunks first:
 
 ```bash
+npm run build:release:plan -- --locales en --scope portal,tools,identifiers
 npm run build:release:incremental -- --locales en --scope changed
 npm run build:release:incremental -- --locales en --scope portal,tools,identifiers
 npm run build:release:incremental -- --locales en --all-countries --limit 10
@@ -79,6 +80,10 @@ npm run build:release:status
 ```
 
 `build:release:incremental` records completed steps in `generated/validohub/.build/release-incremental.json`. Each saved step includes a source fingerprint, so edited templates, scripts, CSS, YAML, or country data automatically make the affected step pending again. If the laptop sleeps, the terminal is killed, or a country chunk fails, rerun the same command and it skips only still-current completed steps. Repeating `--all-countries --limit 10` walks the next unfinished country chunk, so a full country pass can be done across multiple sessions.
+
+Use `--plan`/`npm run build:release:plan` before long runs to see the exact pending step names and ids. Use `--resume-from country:spain` or any printed step id when you want to restart at a known point, `--limit` to keep the chunk small, and `npm run build:release:status` from a second terminal to see the active step, last output, recent failures, and recent completed chunks.
+
+Every incremental step has a watchdog: by default it prints progress every 60 seconds, stops a single step after 90 minutes, and stops a single step after 15 minutes with no output. Tune this with `--progress-seconds`, `--step-timeout-minutes`, and `--max-silent-seconds`; use `0` for any limit only when you intentionally want to disable it.
 
 Use `--no-resume` when you intentionally want to force a step even though its source fingerprint matches. Use `npm run build:release:incremental -- --reset` only when you want to discard all saved release-prep state.
 
@@ -97,6 +102,7 @@ When the site is visually close and you want a real release signal without losin
 ```bash
 npm run build:changed -- --dry-run --locales en
 npm run build:changed -- --locales en
+npm run build:release:plan -- --locales en --scope portal,tools,identifiers
 npm run build:release:incremental -- --locales en --scope portal,tools,identifiers
 npm run build:release:incremental -- --locales en --all-countries --limit 20
 npm run build:release:status

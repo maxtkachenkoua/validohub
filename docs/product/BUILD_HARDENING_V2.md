@@ -23,7 +23,8 @@ Use full commands only at checkpoints:
 
 - `npm run build:full` is the full Java + Node publisher and site integrity gate. It may take a long time because it validates the full generated site.
 - `npm run audit:full` is the broad country-suite/global audit gate.
-- `npm run build:release:incremental` is the resumable release-prep gate. It chunks portal, global tool, identifier, and country static builds, stores source fingerprints, and skips only completed chunks whose inputs have not changed.
+- `npm run build:release:incremental` is the resumable release-prep gate. It chunks portal, global tool, identifier, and country static builds, stores source fingerprints, skips only completed chunks whose inputs have not changed, and protects each step with progress heartbeats, a per-step timeout, and a no-output watchdog.
+- `npm run build:release:plan` prints the pending incremental release-prep steps without running them. Use it before any long country sweep, then run small windows with `--limit`, restart with `--resume-from <step-name-or-id>`, and watch progress from another terminal with `npm run build:release:status`.
 
 The legacy `npm run build` still points to the full build for compatibility, but AI agents must not use it for routine UI/runtime/content iteration unless the user explicitly asks for a full release build or new YAML routes must be published.
 

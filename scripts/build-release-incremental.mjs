@@ -9,6 +9,9 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
 const statePath = resolve(projectRoot, 'generated', 'validohub', '.build', 'release-incremental.json');
 const CORE_PRODUCTION_LOCALES = ['en', 'es', 'pt-BR', 'de', 'fr', 'pl', 'uk'];
+const DEFAULT_STEP_TIMEOUT_MINUTES = 90;
+const DEFAULT_PROGRESS_SECONDS = 60;
+const DEFAULT_MAX_SILENT_SECONDS = 900;
 const hashCache = new Map();
 
 function usage() {
@@ -18,15 +21,31 @@ function usage() {
     '  node scripts/build-release-incremental.mjs --locales en --scope portal,tools,identifiers',
     '  node scripts/build-release-incremental.mjs --locales en --countries brazil,poland',
     '  node scripts/build-release-incremental.mjs --locales en --all-countries --limit 10',
+    '  node scripts/build-release-incremental.mjs --plan --locales en --all-countries --limit 10',
+    '  node scripts/build-release-incremental.mjs --resume-from country:spain --all-countries --limit 10',
     '  node scripts/build-release-incremental.mjs --status',
     '',
     'Resumable release-prep build. It runs the fast static builders in chunks and records completed',
-    'steps under generated/validohub/.build/release-incremental.json. It does not run the Java publisher.'
+    'steps under generated/validohub/.build/release-incremental.json. It does not run the Java publisher.',
+    '',
+    'Safety flags:',
+    '  --plan / --dry-run              Print the pending work without running it.',
+    '  --resume-from <step-name|id>    Ignore earlier planned steps and resume at this step.',
+    '  --limit <n> --offset <n>        Run a small deterministic window.',
+    '  --step-timeout-minutes <n>      Stop one stuck step after this many minutes; 0 disables.',
+    '  --max-silent-seconds <n>        Stop one stuck step after this many seconds with no output; 0 disables.',
+    '  --progress-seconds <n>          Print a heartbeat while a step is running; 0 disables.',
+    '  --no-resume                    Re-run matching completed fingerprints intentionally.'
   ].join('\n');
 }
 
 function parseList(value) {
   return String(value || '').split(',').map(item => item.trim()).filter(Boolean);
+}
+
+function parseNonNegativeInteger(value, fallback = 0) {
+  const parsed = Number.parseInt(String(value || ''), 10);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
 }
 
 function parseArgs(argv) {
@@ -41,7 +60,11 @@ function parseArgs(argv) {
     status: false,
     reset: false,
     help: false,
-    noResume: false
+    noResume: false,
+    resumeFrom: '',
+    stepTimeoutMinutes: DEFAULT_STEP_TIMEOUT_MINUTES,
+    progressSeconds: DEFAULT_PROGRESS_SECONDS,
+    maxSilentSeconds: DEFAULT_MAX_SILENT_SECONDS
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -49,7 +72,8 @@ function parseArgs(argv) {
     if (value === '--help' || value === '-h') args.help = true;
     else if (value === '--status') args.status = true;
     else if (value === '--reset') args.reset = true;
-    else if (value === '--dry-run') args.dryRun = true;
+    else if (value === '--dry-run' || value === '--plan') args.dryRun = true;
+    else if (value === '--skip-existing') args.noResume = false;
     else if (value === '--no-resume') args.noResume = true;
     else if (value === '--all-countries') args.allCountries = true;
     else if (value === '--locales') args.locales = parseList(argv[++index] || 'en');
@@ -58,10 +82,18 @@ function parseArgs(argv) {
     else if (value.startsWith('--scope=')) args.scope = parseList(value.slice('--scope='.length));
     else if (value === '--countries') args.countries = parseList(argv[++index] || '');
     else if (value.startsWith('--countries=')) args.countries = parseList(value.slice('--countries='.length));
-    else if (value === '--limit') args.limit = Math.max(0, Number.parseInt(argv[++index] || '0', 10) || 0);
-    else if (value.startsWith('--limit=')) args.limit = Math.max(0, Number.parseInt(value.slice('--limit='.length), 10) || 0);
-    else if (value === '--offset') args.offset = Math.max(0, Number.parseInt(argv[++index] || '0', 10) || 0);
-    else if (value.startsWith('--offset=')) args.offset = Math.max(0, Number.parseInt(value.slice('--offset='.length), 10) || 0);
+    else if (value === '--limit') args.limit = parseNonNegativeInteger(argv[++index], 0);
+    else if (value.startsWith('--limit=')) args.limit = parseNonNegativeInteger(value.slice('--limit='.length), 0);
+    else if (value === '--offset') args.offset = parseNonNegativeInteger(argv[++index], 0);
+    else if (value.startsWith('--offset=')) args.offset = parseNonNegativeInteger(value.slice('--offset='.length), 0);
+    else if (value === '--resume-from') args.resumeFrom = String(argv[++index] || '').trim();
+    else if (value.startsWith('--resume-from=')) args.resumeFrom = value.slice('--resume-from='.length).trim();
+    else if (value === '--step-timeout-minutes') args.stepTimeoutMinutes = parseNonNegativeInteger(argv[++index], DEFAULT_STEP_TIMEOUT_MINUTES);
+    else if (value.startsWith('--step-timeout-minutes=')) args.stepTimeoutMinutes = parseNonNegativeInteger(value.slice('--step-timeout-minutes='.length), DEFAULT_STEP_TIMEOUT_MINUTES);
+    else if (value === '--progress-seconds') args.progressSeconds = parseNonNegativeInteger(argv[++index], DEFAULT_PROGRESS_SECONDS);
+    else if (value.startsWith('--progress-seconds=')) args.progressSeconds = parseNonNegativeInteger(value.slice('--progress-seconds='.length), DEFAULT_PROGRESS_SECONDS);
+    else if (value === '--max-silent-seconds') args.maxSilentSeconds = parseNonNegativeInteger(argv[++index], DEFAULT_MAX_SILENT_SECONDS);
+    else if (value.startsWith('--max-silent-seconds=')) args.maxSilentSeconds = parseNonNegativeInteger(value.slice('--max-silent-seconds='.length), DEFAULT_MAX_SILENT_SECONDS);
   }
 
   if (!args.locales.length) args.locales = ['en'];
@@ -81,18 +113,19 @@ async function pathExists(filePath) {
 
 async function readState() {
   if (!(await pathExists(statePath))) {
-    return { version: 2, completed: {}, failures: {}, runs: [] };
+    return { version: 3, completed: {}, failures: {}, runs: [], active: null };
   }
   try {
     const parsed = JSON.parse(await readFile(statePath, 'utf8'));
     return {
-      version: 2,
+      version: 3,
       completed: parsed.completed || {},
       failures: parsed.failures || {},
-      runs: parsed.runs || []
+      runs: parsed.runs || [],
+      active: parsed.active || null
     };
   } catch {
-    return { version: 2, completed: {}, failures: {}, runs: [] };
+    return { version: 3, completed: {}, failures: {}, runs: [], active: null };
   }
 }
 
@@ -305,8 +338,21 @@ function buildStaticSteps(args, countrySlugs) {
   return steps.map(step => ({ ...step, id: stepId(step.name, step.args) }));
 }
 
+function matchesResumeToken(step, token) {
+  if (!token) return false;
+  return step.name === token || step.id === token || step.id.includes(token);
+}
+
 function applyWindow(steps, args, state) {
-  const afterOffset = args.offset ? steps.slice(args.offset) : steps;
+  let windowed = steps;
+  if (args.resumeFrom) {
+    const resumeIndex = steps.findIndex(step => matchesResumeToken(step, args.resumeFrom));
+    if (resumeIndex === -1) {
+      throw new Error(`Cannot find --resume-from step "${args.resumeFrom}". Use --plan to inspect planned step names.`);
+    }
+    windowed = steps.slice(resumeIndex);
+  }
+  const afterOffset = args.offset ? windowed.slice(args.offset) : windowed;
   const pending = args.noResume ? afterOffset : afterOffset.filter(step => {
     const completed = state.completed[step.id];
     return !completed || completed.fingerprint !== step.fingerprint;
@@ -326,25 +372,125 @@ function printSteps(title, steps) {
     return;
   }
   steps.forEach((step, index) => {
-    console.log(`${index + 1}. ${step.command} ${step.args.join(' ')}`);
+    console.log(`${index + 1}. ${step.name}`);
+    console.log(`   ${step.command} ${step.args.join(' ')}`);
     console.log(`   ${step.reason}`);
+    console.log(`   id: ${step.id}`);
   });
 }
 
-async function runStep(step) {
+function formatDuration(durationMs) {
+  const totalSeconds = Math.max(0, Math.round(durationMs / 1000));
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  if (hours) return `${hours}h ${minutes}m ${seconds}s`;
+  if (minutes) return `${minutes}m ${seconds}s`;
+  return `${seconds}s`;
+}
+
+function killChild(child, signal) {
+  if (!child.killed) child.kill(signal);
+}
+
+async function runStep(step, options = {}) {
   const started = Date.now();
+  let lastOutputAt = started;
+  const timeoutMs = options.stepTimeoutMinutes > 0 ? options.stepTimeoutMinutes * 60 * 1000 : 0;
+  const progressMs = options.progressSeconds > 0 ? options.progressSeconds * 1000 : 0;
+  const maxSilentMs = options.maxSilentSeconds > 0 ? options.maxSilentSeconds * 1000 : 0;
   console.log(`\n=== ${step.name} ===`);
   console.log(`${step.command} ${step.args.join(' ')}`);
+  console.log([
+    `Step timeout: ${timeoutMs ? `${options.stepTimeoutMinutes}m` : 'disabled'}`,
+    `silent watchdog: ${maxSilentMs ? `${options.maxSilentSeconds}s` : 'disabled'}`,
+    `progress: ${progressMs ? `${options.progressSeconds}s` : 'disabled'}`
+  ].join(' | '));
   return await new Promise((resolvePromise, rejectPromise) => {
+    let finished = false;
+    let terminating = false;
+    let progressTimer = null;
+    let timeoutTimer = null;
+    let silentTimer = null;
+
+    function clearTimers() {
+      if (progressTimer) clearInterval(progressTimer);
+      if (timeoutTimer) clearTimeout(timeoutTimer);
+      if (silentTimer) clearInterval(silentTimer);
+    }
+
+    function failForWatchdog(message) {
+      if (finished || terminating) return;
+      terminating = true;
+      console.error(`\n[build:release:incremental] ${message}`);
+      killChild(child, 'SIGINT');
+      setTimeout(() => killChild(child, 'SIGTERM'), 5000).unref();
+    }
+
     const child = spawn(step.command, step.args, {
       cwd: projectRoot,
       shell: false,
-      stdio: 'inherit'
+      stdio: ['ignore', 'pipe', 'pipe']
     });
-    child.on('error', rejectPromise);
+
+    function handleOutput(stream, chunk) {
+      lastOutputAt = Date.now();
+      if (options.onActiveUpdate) {
+        options.onActiveUpdate({
+          lastOutputAt: new Date(lastOutputAt).toISOString(),
+          lastHeartbeatAt: new Date().toISOString()
+        });
+      }
+      stream.write(chunk);
+    }
+
+    child.stdout.on('data', chunk => handleOutput(process.stdout, chunk));
+    child.stderr.on('data', chunk => handleOutput(process.stderr, chunk));
+
+    if (progressMs) {
+      progressTimer = setInterval(() => {
+        const now = Date.now();
+        const elapsed = formatDuration(now - started);
+        const silent = formatDuration(now - lastOutputAt);
+        console.log(`[build:release:incremental] still running ${step.name}; elapsed ${elapsed}; no output ${silent}`);
+        if (options.onActiveUpdate) {
+          options.onActiveUpdate({
+            lastHeartbeatAt: new Date(now).toISOString(),
+            lastOutputAt: new Date(lastOutputAt).toISOString()
+          });
+        }
+      }, progressMs);
+      progressTimer.unref();
+    }
+
+    if (timeoutMs) {
+      timeoutTimer = setTimeout(() => {
+        failForWatchdog(`${step.name} exceeded --step-timeout-minutes ${options.stepTimeoutMinutes}`);
+      }, timeoutMs);
+      timeoutTimer.unref();
+    }
+
+    if (maxSilentMs) {
+      silentTimer = setInterval(() => {
+        const silentForMs = Date.now() - lastOutputAt;
+        if (silentForMs >= maxSilentMs) {
+          failForWatchdog(`${step.name} produced no output for ${formatDuration(silentForMs)}; max is ${options.maxSilentSeconds}s`);
+        }
+      }, Math.min(maxSilentMs, 30_000));
+      silentTimer.unref();
+    }
+
+    child.on('error', error => {
+      finished = true;
+      clearTimers();
+      rejectPromise(error);
+    });
     child.on('close', code => {
+      finished = true;
+      clearTimers();
       const durationMs = Date.now() - started;
       if (code === 0) resolvePromise({ durationMs });
+      else if (terminating) rejectPromise(new Error(`${step.name} stopped by timeout/watchdog with exit code ${code}`));
       else rejectPromise(new Error(`${step.name} failed with exit code ${code}`));
     });
   });
@@ -355,13 +501,42 @@ function printStatus(state) {
   const failures = Object.keys(state.failures).length;
   console.log('=== ValidoHub incremental release build status ===');
   console.log(`State: ${statePath}`);
+  if (state.active) {
+    const startedAt = Date.parse(state.active.startedAt);
+    const elapsed = Number.isFinite(startedAt) ? ` (${formatDuration(Date.now() - startedAt)} elapsed)` : '';
+    console.log('');
+    console.log('Active step:');
+    console.log(`- ${state.active.name}${elapsed}`);
+    console.log(`  ${state.active.command} ${(state.active.args || []).join(' ')}`);
+    if (state.active.lastOutputAt) console.log(`  last output: ${state.active.lastOutputAt}`);
+    if (state.active.lastHeartbeatAt) console.log(`  last heartbeat: ${state.active.lastHeartbeatAt}`);
+  }
   console.log(`Completed steps: ${completed}`);
   console.log(`Failures: ${failures}`);
   const recent = Object.entries(state.completed).slice(-12);
   if (recent.length) {
     console.log('');
     console.log('Recent completed:');
-    for (const [id, meta] of recent) console.log(`- ${id} (${meta.durationMs}ms)`);
+    for (const [id, meta] of recent) console.log(`- ${id} (${formatDuration(meta.durationMs || 0)})`);
+  }
+  const failed = Object.entries(state.failures).slice(-8);
+  if (failed.length) {
+    console.log('');
+    console.log('Recent failures:');
+    for (const [id, meta] of failed) {
+      console.log(`- ${id} at ${meta.failedAt || 'unknown time'}`);
+      console.log(`  ${meta.message || 'No failure message recorded.'}`);
+    }
+  }
+  const runs = (state.runs || []).slice(-5);
+  if (runs.length) {
+    console.log('');
+    console.log('Recent runs:');
+    for (const run of runs) {
+      const parts = [`started ${run.startedAt}`, `pending ${run.pending}`];
+      if (run.completedAt) parts.push(`completed ${run.completedAt}`);
+      console.log(`- ${parts.join('; ')}`);
+    }
   }
 }
 
@@ -403,7 +578,12 @@ async function main() {
   console.log('=== ValidoHub incremental release build ===');
   console.log(`Locales: ${args.locales.join(', ')}`);
   console.log(`Planned steps: ${plannedSteps.length}`);
+  if (args.resumeFrom) console.log(`Resume from: ${args.resumeFrom}`);
+  if (args.offset) console.log(`Offset: ${args.offset}`);
+  if (args.limit) console.log(`Limit: ${args.limit}`);
   console.log(`Skipped by cache: ${plannedSteps.filter(step => isStepCompleted(step, state)).length}`);
+  console.log(`Step timeout: ${args.stepTimeoutMinutes ? `${args.stepTimeoutMinutes}m` : 'disabled'}`);
+  console.log(`Silent watchdog: ${args.maxSilentSeconds ? `${args.maxSilentSeconds}s` : 'disabled'}`);
   printSteps(args.dryRun ? 'Dry-run pending steps:' : 'Pending steps:', pendingSteps);
 
   if (args.dryRun || !pendingSteps.length) return;
@@ -412,15 +592,56 @@ async function main() {
     startedAt: new Date().toISOString(),
     locales: args.locales,
     planned: plannedSteps.length,
-    pending: pendingSteps.length
+    pending: pendingSteps.length,
+    resumeFrom: args.resumeFrom || null,
+    limit: args.limit || null,
+    offset: args.offset || null,
+    stepTimeoutMinutes: args.stepTimeoutMinutes,
+    maxSilentSeconds: args.maxSilentSeconds
   };
   state.runs.push(run);
+  state.runs = state.runs.slice(-30);
   await writeState(state);
 
   for (const step of pendingSteps) {
     const startedAt = new Date().toISOString();
+    let activeWriteChain = Promise.resolve();
+    let lastActiveWriteAt = 0;
+    function updateActive(partial, force = false) {
+      if (!state.active || state.active.id !== step.id) return;
+      Object.assign(state.active, partial);
+      const now = Date.now();
+      if (!force && now - lastActiveWriteAt < 15_000) return;
+      lastActiveWriteAt = now;
+      activeWriteChain = activeWriteChain
+        .catch(() => {})
+        .then(() => writeState(state))
+        .catch(error => {
+          console.warn(`[build:release:incremental] could not persist active status: ${error.message || error}`);
+        });
+    }
+
     try {
-      const result = await runStep(step);
+      state.active = {
+        id: step.id,
+        name: step.name,
+        command: step.command,
+        args: step.args,
+        reason: step.reason,
+        fingerprint: step.fingerprint,
+        startedAt,
+        lastHeartbeatAt: startedAt,
+        lastOutputAt: null
+      };
+      await writeState(state);
+
+      const result = await runStep(step, {
+        stepTimeoutMinutes: args.stepTimeoutMinutes,
+        progressSeconds: args.progressSeconds,
+        maxSilentSeconds: args.maxSilentSeconds,
+        onActiveUpdate: updateActive
+      });
+      await activeWriteChain;
       state.completed[step.id] = {
         name: step.name,
         command: step.command,
@@ -432,23 +653,29 @@ async function main() {
         durationMs: result.durationMs
       };
       delete state.failures[step.id];
+      state.active = null;
       await writeState(state);
       console.log(`✓ ${step.name} completed in ${Math.round(result.durationMs / 1000)}s`);
     } catch (error) {
+      await activeWriteChain;
       state.failures[step.id] = {
         name: step.name,
         command: step.command,
         args: step.args,
         reason: step.reason,
+        fingerprint: step.fingerprint,
         startedAt,
         failedAt: new Date().toISOString(),
         message: error.message || String(error)
       };
+      state.active = null;
       await writeState(state);
       throw error;
     }
   }
 
+  run.completedAt = new Date().toISOString();
+  await writeState(state);
   console.log('\n✓ Incremental release chunk complete.');
   printStatus(state);
 }

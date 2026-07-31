@@ -8,6 +8,14 @@ ValidoHub is a premium browser-only developer intelligence platform. The user wa
 
 The product goal is not only validation. Where the domain supports it, tools must also generate safe fixtures, explain structure, show debug internals, expose developer handoff data, and guide the user visually through what can be checked, generated, copied, or exported.
 
+## 2026-07-31 Incremental Release Build Safety
+
+- User is understandably avoiding the monolithic full build because a previous full run lasted 8+ hours and never reached a useful finish. Do not answer that by blindly rerunning `npm run build:full`.
+- `scripts/build-release-incremental.mjs` is now the safer release-prep path: it supports `--plan`/`npm run build:release:plan`, `--resume-from <step-name-or-id>`, small `--limit` windows, active-step status, progress heartbeats, a per-step timeout, and a no-output watchdog.
+- Defaults: progress every 60 seconds, stop a single incremental step after 90 minutes, stop a single incremental step after 15 minutes with no output. Tune with `--progress-seconds`, `--step-timeout-minutes`, and `--max-silent-seconds`; pass `0` only when intentionally disabling a guard.
+- `npm run build:release:status` reads `generated/validohub/.build/release-incremental.json` and shows active step, last output, recent failures, recent runs, and completed chunks. Use it from a second terminal during long chunks.
+- Verification for this safety pass was intentionally not a full build: `node --check scripts/build-release-incremental.mjs`, `npm run build:release:status`, and `npm run build:release:plan -- --locales en --scope portal,tools,identifiers --limit 2`, plus a `--resume-from global-tools` plan smoke.
+
 ## 2026-07-29 Reference Guides Layer
 
 - User asked whether informational/reference article pages should exist for global and local tools. Product decision: yes, but only as a tool-first support/SEO layer for high-signal workflows, not as a thin page factory for every generated route.
