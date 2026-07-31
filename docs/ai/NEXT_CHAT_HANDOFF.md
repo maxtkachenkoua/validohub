@@ -530,3 +530,14 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
 - The second pass left only Brazil Address Formatter as weak because the accepted legacy-rich layer still said `API handoff preview` and lacked a visible Official boundary. Fixed `assets/js/tools/country-legacy-rich-layer.js` to use developer JSON/raw output wording and add a common Official boundary strip; synced through `npm run build:country -- --country brazil --locales en`.
 - Final visual audit result: `checked: 72`, `weakCount: 0`, `errors: 0`, `overflow: 0`, `oldMarker: 0`, `missingRelated: 0`, `fewTopSamples: 0`, `missingBoundary: 0`, `missingDeveloper: 0`, `largeTextarea: 0`.
 - Contract checks passed without full build: `npm run audit:generated-premium`, `npm run audit:country-premium -- --country brazil`, and `npm run audit:country-premium -- --country bahrain`.
+
+## 2026-07-31 Reusable Visual Premium Audit Gate
+
+- Added `scripts/audit-visual-premium.mjs` plus `npm run audit:visual-premium`.
+- It is now the reusable version of the prior one-off Playwright visual audit. It scans generated premium country/global tool routes, starts a local static server unless `--base-url` is provided, and samples routes with known bad/good references plus diverse country/global tool categories.
+- Current checks: JS page errors, desktop overflow, mobile overflow for the first `--mobile-limit` routes, old/fake markers (`Run the tool`, fake API, `/v1/tools/`, `API handoff preview`), missing workbench, missing country related footer, too-few top sample/action controls, missing boundary/trap text, missing developer output, and oversized textareas.
+- Useful commands:
+  - `npm run audit:visual-premium`
+  - `npm run audit:visual-premium -- --limit 500 --mobile-limit 80`
+  - `npm run audit:visual-premium -- --limit 250 --shards 4 --shard-index 0`
+- Verified without full build: `node --check scripts/audit-visual-premium.mjs`, `npm run audit:visual-premium -- --limit 24 --mobile-limit 8`, `npm run audit:visual-premium -- --limit 120 --mobile-limit 40` (`weakCount: 0`), and `npm run audit:generated-premium`.

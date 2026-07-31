@@ -21,6 +21,7 @@
     "audit:performance": "node scripts/audit-performance-budget.mjs",
     "audit:search": "node scripts/audit-search-relevance.mjs",
     "audit:generated-premium": "node scripts/audit-generated-premium-contract.mjs",
+    "audit:visual-premium": "node scripts/audit-visual-premium.mjs",
     "repair:localization": "node scripts/repair-generated-localization.mjs",
     "audit:full": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs && node scripts/audit-global-tools-premium.mjs && node scripts/audit-performance-budget.mjs && node scripts/audit-search-relevance.mjs && node scripts/audit-generated-premium-contract.mjs"
   },

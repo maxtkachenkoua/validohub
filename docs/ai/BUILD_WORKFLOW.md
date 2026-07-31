@@ -47,6 +47,26 @@ npm run build:identifiers
 
 Use this for identifier article templates and identifier landing pages.
 
+## Visual premium audit
+
+Use this after tool-shell, workbench, CSS, runtime, or generated preview repairs when you want a browser-level signal without a full build:
+
+```bash
+npm run audit:visual-premium
+```
+
+The audit starts a local static server for `generated/validohub`, samples premium country/global tool routes, and checks for JavaScript errors, desktop/mobile horizontal overflow, old/fake markers, missing workbench shells, missing country related footers, too-few top workbench samples, missing boundary text, missing developer output, and oversized textareas.
+
+Useful scoped runs:
+
+```bash
+npm run audit:visual-premium -- --limit 24 --mobile-limit 8
+npm run audit:visual-premium -- --limit 500 --mobile-limit 80
+npm run audit:visual-premium -- --limit 250 --shards 4 --shard-index 0
+```
+
+For multi-machine or multi-terminal QA, run shard indexes `0..N-1`. This is a visual/DOM sampling gate, not a replacement for `audit:generated-premium` or release builds.
+
 ## Release build
 
 For large visual QA, do not start with the monolithic release build. Use the resumable release-prep chunks first:

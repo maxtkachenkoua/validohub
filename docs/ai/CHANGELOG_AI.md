@@ -22,6 +22,12 @@
 - Fixed the accepted legacy-rich layer for Brazil/Poland/France/Netherlands routes: replaced lingering `API handoff preview` wording with developer JSON/raw output language and added a visible Official boundary strip.
 - Verification completed without full build: `node --check` for the two touched runtimes, scoped `build:country` for Bahrain and Brazil, Playwright visual audit finished with `checked: 72`, `weakCount: 0`, `overflow: 0`, `oldMarker: 0`, plus `npm run audit:generated-premium`, `npm run audit:country-premium -- --country brazil`, and `npm run audit:country-premium -- --country bahrain`.
 
+## 2026-07-31 - Visual Premium Audit Gate
+
+- Added `scripts/audit-visual-premium.mjs` and `npm run audit:visual-premium` as a reusable Playwright sampling gate for premium country/global tool pages.
+- The audit starts a local generated-site server unless `--base-url` is provided, supports `--limit`, `--mobile-limit`, `--locales`, `--shards`, and `--shard-index`, and checks for JS errors, desktop/mobile overflow, old/fake markers, missing workbenches, missing country related footers, too-few top workbench samples, missing boundary text, missing developer output, and oversized textareas.
+- Verification completed without full build: `node --check scripts/audit-visual-premium.mjs`, `npm run audit:visual-premium -- --limit 24 --mobile-limit 8`, `npm run audit:visual-premium -- --limit 120 --mobile-limit 40`, and `npm run audit:generated-premium` all passed.
+
 ## 2026-07-28 - Country Factory Runtime Localization Sweep
 
 - Promoted the country-suite runtime localization work from page-specific French fixes into the shared `country-suite-factory.js` layer used by generated country tools.
