@@ -18,7 +18,7 @@
       Samples: 'Ejemplos', Calculate: 'Calcular', Convert: 'Convertir', Explain: 'Explicar', Format: 'Formatear', Generate: 'Generar', Parse: 'Parsear', Validate: 'Validar',
       'Privacy boundary': 'Límite de privacidad', 'Correctness boundary': 'Límite de corrección', 'Developer handling': 'Handoff para desarrolladores', 'Fixture safety': 'Seguridad de fixtures', 'Quality note': 'Nota de calidad',
       'Integration traps': 'Trampas de integración', 'Save implementation time': 'Ahorra tiempo de implementación', 'Common failure points to catch before wiring this into production.': 'Puntos de fallo comunes antes de conectarlo a producción.',
-      'Quality notes': 'Notas de calidad', 'Developer API preview': 'Vista API para desarrolladores', 'Developer snapshot JSON': 'Snapshot JSON para desarrolladores', 'Sample and batch replay': 'Replay de muestras y lote', 'Official boundary': 'Límite oficial',
+      'Quality notes': 'Notas de calidad', 'Developer snapshot JSON': 'Snapshot JSON para desarrolladores', 'Sample and batch replay': 'Replay de muestras y lote', 'Official boundary': 'Límite oficial',
       'Validation pipeline': 'Pipeline de validación', 'Field breakdown': 'Desglose de campos', 'Review': 'Revisar', 'Pass': 'Aprobado', 'Copy developer JSON': 'Copiar JSON para desarrolladores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Descargar JSON',
       'Current result snapshot': 'Snapshot del resultado actual', 'Waiting for input': 'Esperando entrada', 'Input ready': 'Entrada lista', 'Needs input': 'Falta entrada', 'Needs review': 'Revisión necesaria', 'Ready locally': 'Listo localmente',
       'Running locally in this browser...': 'Ejecutando localmente en este navegador...', 'Run the tool before copying this value.': 'Ejecuta la herramienta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Ejecuta la herramienta antes de descargar el JSON.', 'Copied developer JSON.': 'JSON para desarrolladores copiado.', 'Copied current result.': 'Resultado actual copiado.', 'Downloaded developer JSON.': 'JSON para desarrolladores descargado.',
@@ -33,7 +33,7 @@
       Samples: 'Exemplos', Calculate: 'Calcular', Convert: 'Converter', Explain: 'Explicar', Format: 'Formatar', Generate: 'Gerar', Parse: 'Parsear', Validate: 'Validar',
       'Privacy boundary': 'Limite de privacidade', 'Correctness boundary': 'Limite de correção', 'Developer handling': 'Handoff para desenvolvedores', 'Fixture safety': 'Segurança dos fixtures', 'Quality note': 'Nota de qualidade',
       'Integration traps': 'Armadilhas de integração', 'Save implementation time': 'Economize tempo de implementação', 'Common failure points to catch before wiring this into production.': 'Pontos comuns de falha antes de ligar isso em produção.',
-      'Quality notes': 'Notas de qualidade', 'Developer API preview': 'Prévia de API para desenvolvedores', 'Developer snapshot JSON': 'Snapshot JSON para desenvolvedores', 'Sample and batch replay': 'Replay de exemplos e lote', 'Official boundary': 'Limite oficial',
+      'Quality notes': 'Notas de qualidade', 'Developer snapshot JSON': 'Snapshot JSON para desenvolvedores', 'Sample and batch replay': 'Replay de exemplos e lote', 'Official boundary': 'Limite oficial',
       'Validation pipeline': 'Pipeline de validação', 'Field breakdown': 'Detalhamento de campos', 'Review': 'Revisar', 'Pass': 'Aprovado', 'Copy developer JSON': 'Copiar JSON para desenvolvedores', 'Copy result': 'Copiar resultado', 'Download JSON': 'Baixar JSON',
       'Current result snapshot': 'Snapshot do resultado atual', 'Waiting for input': 'Aguardando entrada', 'Input ready': 'Entrada pronta', 'Needs input': 'Falta entrada', 'Needs review': 'Revisão necessária', 'Ready locally': 'Pronto localmente',
       'Running locally in this browser...': 'Executando localmente neste navegador...', 'Run the tool before copying this value.': 'Execute a ferramenta antes de copiar este valor.', 'Run the tool before downloading developer JSON.': 'Execute a ferramenta antes de baixar o JSON.', 'Copied developer JSON.': 'JSON para desenvolvedores copiado.', 'Copied current result.': 'Resultado atual copiado.', 'Downloaded developer JSON.': 'JSON para desenvolvedores baixado.',
@@ -48,7 +48,7 @@
       Samples: 'Beispiele', Calculate: 'Berechnen', Convert: 'Konvertieren', Explain: 'Erklaeren', Format: 'Formatieren', Generate: 'Generieren', Parse: 'Parsen', Validate: 'Pruefen',
       'Privacy boundary': 'Datenschutzgrenze', 'Correctness boundary': 'Korrektheitsgrenze', 'Developer handling': 'Entwickler-Handoff', 'Fixture safety': 'Fixture-Sicherheit', 'Quality note': 'Qualitaetsnotiz',
       'Integration traps': 'Integrationsfallen', 'Save implementation time': 'Implementierungszeit sparen', 'Common failure points to catch before wiring this into production.': 'Haeufige Fehlerpunkte vor der Produktion abfangen.',
-      'Quality notes': 'Qualitaetsnotizen', 'Developer API preview': 'Entwickler-API-Vorschau', 'Developer snapshot JSON': 'Entwickler-Snapshot JSON', 'Sample and batch replay': 'Beispiel- und Batch-Replay', 'Official boundary': 'Offizielle Grenze',
+      'Quality notes': 'Qualitaetsnotizen', 'Developer snapshot JSON': 'Entwickler-Snapshot JSON', 'Sample and batch replay': 'Beispiel- und Batch-Replay', 'Official boundary': 'Offizielle Grenze',
       'Validation pipeline': 'Validierungspipeline', 'Field breakdown': 'Feldaufschluesselung', 'Review': 'Pruefen', 'Pass': 'Bestanden', 'Copy developer JSON': 'Entwickler-JSON kopieren', 'Copy result': 'Ergebnis kopieren', 'Download JSON': 'JSON herunterladen',
       'Current result snapshot': 'Snapshot des aktuellen Ergebnisses', 'Waiting for input': 'Warte auf Eingabe', 'Input ready': 'Eingabe bereit', 'Needs input': 'Eingabe fehlt', 'Needs review': 'Pruefung erforderlich', 'Ready locally': 'Lokal bereit',
       'Running locally in this browser...': 'Laeuft lokal in diesem Browser...', 'Run the tool before copying this value.': 'Fuehre das Tool aus, bevor du diesen Wert kopierst.', 'Run the tool before downloading developer JSON.': 'Fuehre das Tool aus, bevor du JSON herunterlaedst.', 'Copied developer JSON.': 'Entwickler-JSON kopiert.', 'Copied current result.': 'Aktuelles Ergebnis kopiert.', 'Downloaded developer JSON.': 'Entwickler-JSON heruntergeladen.',
@@ -63,7 +63,7 @@
       Samples: 'Exemples', Calculate: 'Calculer', Convert: 'Convertir', Explain: 'Expliquer', Format: 'Formater', Generate: 'Générer', Parse: 'Parser', Validate: 'Valider',
       'Privacy boundary': 'Limite de confidentialité', 'Correctness boundary': 'Limite de correction', 'Developer handling': 'Handoff développeur', 'Fixture safety': 'Sécurité des fixtures', 'Quality note': 'Note de qualité',
       'Integration traps': 'Pièges d’intégration', 'Save implementation time': 'Gagner du temps d’implémentation', 'Common failure points to catch before wiring this into production.': 'Points de rupture courants à vérifier avant la production.',
-      'Quality notes': 'Notes de qualité', 'Developer API preview': 'Aperçu API développeur', 'Developer snapshot JSON': 'Snapshot JSON développeur', 'Sample and batch replay': 'Replay des exemples et du lot', 'Official boundary': 'Limite officielle',
+      'Quality notes': 'Notes de qualité', 'Developer snapshot JSON': 'Snapshot JSON développeur', 'Sample and batch replay': 'Replay des exemples et du lot', 'Official boundary': 'Limite officielle',
       'Validation pipeline': 'Pipeline de validation', 'Field breakdown': 'Détail des champs', 'Review': 'À vérifier', 'Pass': 'Réussi', 'Copy developer JSON': 'Copier le JSON développeur', 'Copy result': 'Copier le résultat', 'Download JSON': 'Télécharger le JSON',
       'Current result snapshot': 'Snapshot du résultat actuel', 'Waiting for input': 'En attente d’entrée', 'Input ready': 'Entrée prête', 'Needs input': 'Entrée requise', 'Needs review': 'Vérification requise', 'Ready locally': 'Prêt localement',
       'Running locally in this browser...': 'Exécution locale dans ce navigateur...', 'Run the tool before copying this value.': 'Lancez l’outil avant de copier cette valeur.', 'Run the tool before downloading developer JSON.': 'Lancez l’outil avant de télécharger le JSON.', 'Copied developer JSON.': 'JSON développeur copié.', 'Copied current result.': 'Résultat actuel copié.', 'Downloaded developer JSON.': 'JSON développeur téléchargé.',
@@ -78,7 +78,7 @@
       Samples: 'Przykłady', Calculate: 'Oblicz', Convert: 'Konwertuj', Explain: 'Wyjaśnij', Format: 'Formatuj', Generate: 'Generuj', Parse: 'Parsuj', Validate: 'Sprawdź',
       'Privacy boundary': 'Granica prywatności', 'Correctness boundary': 'Granica poprawności', 'Developer handling': 'Handoff deweloperski', 'Fixture safety': 'Bezpieczeństwo fixture’ów', 'Quality note': 'Notatka jakości',
       'Integration traps': 'Pułapki integracyjne', 'Save implementation time': 'Oszczędzaj czas implementacji', 'Common failure points to catch before wiring this into production.': 'Typowe punkty awarii do sprawdzenia przed produkcją.',
-      'Quality notes': 'Notatki jakości', 'Developer API preview': 'Podgląd API dla deweloperów', 'Developer snapshot JSON': 'Snapshot JSON deweloperski', 'Sample and batch replay': 'Replay próbek i batcha', 'Official boundary': 'Granica oficjalna',
+      'Quality notes': 'Notatki jakości', 'Developer snapshot JSON': 'Snapshot JSON deweloperski', 'Sample and batch replay': 'Replay próbek i batcha', 'Official boundary': 'Granica oficjalna',
       'Validation pipeline': 'Pipeline walidacji', 'Field breakdown': 'Podział pól', 'Review': 'Sprawdź', 'Pass': 'Zaliczone', 'Copy developer JSON': 'Kopiuj JSON deweloperski', 'Copy result': 'Kopiuj wynik', 'Download JSON': 'Pobierz JSON',
       'Current result snapshot': 'Snapshot bieżącego wyniku', 'Waiting for input': 'Oczekiwanie na dane', 'Input ready': 'Dane gotowe', 'Needs input': 'Brak danych', 'Needs review': 'Wymaga sprawdzenia', 'Ready locally': 'Gotowe lokalnie',
       'Running locally in this browser...': 'Działa lokalnie w tej przeglądarce...', 'Run the tool before copying this value.': 'Uruchom narzędzie przed skopiowaniem tej wartości.', 'Run the tool before downloading developer JSON.': 'Uruchom narzędzie przed pobraniem JSON.', 'Copied developer JSON.': 'Skopiowano JSON deweloperski.', 'Copied current result.': 'Skopiowano bieżący wynik.', 'Downloaded developer JSON.': 'Pobrano JSON deweloperski.',
@@ -93,7 +93,7 @@
       Samples: 'Приклади', Calculate: 'Обчислити', Convert: 'Конвертувати', Explain: 'Пояснити', Format: 'Форматувати', Generate: 'Згенерувати', Parse: 'Розпарсити', Validate: 'Перевірити',
       'Privacy boundary': 'Межа приватності', 'Correctness boundary': 'Межа коректності', 'Developer handling': 'Передача розробнику', 'Fixture safety': 'Безпека фікстур', 'Quality note': 'Нотатка якості',
       'Integration traps': 'Інтеграційні пастки', 'Save implementation time': 'Економія часу імплементації', 'Common failure points to catch before wiring this into production.': 'Типові точки збоїв перед підключенням до продакшну.',
-      'Quality notes': 'Нотатки якості', 'Developer API preview': 'API-превʼю для розробника', 'Developer snapshot JSON': 'JSON-знімок для розробника', 'Sample and batch replay': 'Replay прикладів і пакета', 'Official boundary': 'Офіційна межа',
+      'Quality notes': 'Нотатки якості', 'Developer snapshot JSON': 'JSON-знімок для розробника', 'Sample and batch replay': 'Replay прикладів і пакета', 'Official boundary': 'Офіційна межа',
       'Validation pipeline': 'Пайплайн перевірки', 'Field breakdown': 'Розбір полів', 'Review': 'Перевірити', 'Pass': 'Пройдено', 'Copy developer JSON': 'Скопіювати JSON для розробника', 'Copy result': 'Скопіювати результат', 'Download JSON': 'Завантажити JSON',
       'Current result snapshot': 'Знімок поточного результату', 'Waiting for input': 'Очікування введення', 'Input ready': 'Дані готові', 'Needs input': 'Потрібні дані', 'Needs review': 'Потрібна перевірка', 'Ready locally': 'Готово локально',
       'Running locally in this browser...': 'Виконується локально в цьому браузері...', 'Run the tool before copying this value.': 'Запустіть інструмент перед копіюванням цього значення.', 'Run the tool before downloading developer JSON.': 'Запустіть інструмент перед завантаженням JSON.', 'Copied developer JSON.': 'JSON для розробника скопійовано.', 'Copied current result.': 'Поточний результат скопійовано.', 'Downloaded developer JSON.': 'JSON для розробника завантажено.',
@@ -108,7 +108,7 @@
 
   const PREMIUM_RUNTIME_TRANSLATIONS = {
     es: {
-      'Browser workbench': 'Workbench de navegador',
+      'Local utility': 'Utilidad local',
       'Browser-only': 'Solo navegador',
       Offline: 'Offline',
       'Copy / download': 'Copiar / descargar',
@@ -131,7 +131,7 @@
       'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Valida aparte el runtime final cuando cambien idiomas, codificaciones, motores regex, locales o reglas de checksum.'
     },
     'pt-BR': {
-      'Browser workbench': 'Workbench de navegador',
+      'Local utility': 'Utilidad local',
       'Browser-only': 'Só navegador',
       Offline: 'Offline',
       'Copy / download': 'Copiar / baixar',
@@ -154,7 +154,7 @@
       'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Valide separadamente o runtime final quando idiomas, codificações, motores regex, locales ou regras de checksum diferirem.'
     },
     de: {
-      'Browser workbench': 'Browser-Workbench',
+      'Local utility': 'Lokales Tool',
       'Browser-only': 'Nur Browser',
       Offline: 'Offline',
       'Copy / download': 'Kopieren / herunterladen',
@@ -177,7 +177,7 @@
       'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Prüfe Zielruntime-Verhalten separat, wenn Sprachen, Encodings, Regex-Engines, Locales oder Prüfsummenregeln abweichen.'
     },
     fr: {
-      'Browser workbench': 'Workbench navigateur',
+      'Local utility': 'Utilitaire local',
       'Browser-only': 'Navigateur uniquement',
       Offline: 'Hors ligne',
       'Copy / download': 'Copier / télécharger',
@@ -200,7 +200,7 @@
       'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Validez séparément le runtime cible quand langues, encodages, moteurs regex, locales ou règles de checksum diffèrent.'
     },
     pl: {
-      'Browser workbench': 'Workbench przeglądarkowy',
+      'Local utility': 'Narzędzie lokalne',
       'Browser-only': 'Tylko przeglądarka',
       Offline: 'Offline',
       'Copy / download': 'Kopiuj / pobierz',
@@ -223,7 +223,7 @@
       'Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.': 'Waliduj runtime docelowy osobno, gdy różnią się języki, kodowania, silniki regex, locale lub reguły sum kontrolnych.'
     },
     uk: {
-      'Browser workbench': 'Браузерний воркбенч',
+      'Local utility': 'Локальна утиліта',
       'Browser-only': 'Лише браузер',
       Offline: 'Офлайн',
       'Copy / download': 'Копіювання / завантаження',
@@ -292,6 +292,86 @@
     if (field) field.value = value;
   }
 
+  function normalizeHexColor(value) {
+    const raw = String(value || '').trim();
+    const match = raw.match(/^#?([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (!match) return '';
+    const hex = match[1].toLowerCase();
+    if (hex.length === 3) {
+      return '#' + hex.split('').map((char) => char + char).join('');
+    }
+    return '#' + hex;
+  }
+
+  function isColorInput(input, config) {
+    if (!input || input.tagName !== 'INPUT') return false;
+    if (input.type === 'color') return true;
+    const name = String(input.name || '').toLowerCase();
+    const label = input.closest('.field') && input.closest('.field').querySelector('span');
+    const text = (name + ' ' + (label ? label.textContent : '') + ' ' + (config.kind || '')).toLowerCase();
+    if (/token|name|slug|label/.test(name)) return false;
+    if (config.kind === 'color-contrast' && /^(foreground|background)$/.test(name)) return true;
+    return /\b(foreground|background|fg|bg|accent|brand|hex|color)\b/.test(text);
+  }
+
+  function syncColorPickers(form) {
+    if (!form) return;
+    form.querySelectorAll('[data-color-picker-for]').forEach((picker) => {
+      const target = form.querySelector('[name="' + picker.dataset.colorPickerFor + '"]');
+      const next = target && normalizeHexColor(target.value);
+      if (next && picker.value !== next) picker.value = next;
+      if (target && !target.value && picker.value !== '#000000') picker.value = '#000000';
+    });
+  }
+
+  function enhanceColorInputs(workbench, config) {
+    if (!workbench || !workbench.form || workbench.form.dataset.genericColorInputsEnhanced === 'true') return;
+    workbench.form.dataset.genericColorInputsEnhanced = 'true';
+    const inputs = Array.from(workbench.form.querySelectorAll('input[name]')).filter((input) => isColorInput(input, config));
+    inputs.forEach((input) => {
+      const label = input.closest('.field');
+      if (!label || label.querySelector('[data-color-picker-for="' + input.name + '"]')) return;
+      const swatchValue = normalizeHexColor(input.value) || '#000000';
+      input.type = 'text';
+      input.inputMode = 'text';
+      input.autocomplete = 'off';
+      input.spellcheck = false;
+      input.classList.add('generic-color-text-input');
+      const picker = document.createElement('input');
+      picker.type = 'color';
+      picker.className = 'generic-color-picker';
+      picker.value = swatchValue;
+      picker.dataset.colorPickerFor = input.name;
+      picker.setAttribute('aria-label', (label.querySelector('span') ? label.querySelector('span').textContent : input.name) + ' picker');
+      const control = document.createElement('div');
+      control.className = 'generic-color-control';
+      input.parentNode.insertBefore(control, input);
+      control.appendChild(picker);
+      control.appendChild(input);
+      input.addEventListener('input', function () {
+        const next = normalizeHexColor(input.value);
+        if (next && picker.value !== next) picker.value = next;
+      });
+      input.addEventListener('change', function () {
+        const next = normalizeHexColor(input.value);
+        if (!next) return;
+        input.value = next;
+        if (picker.value !== next) picker.value = next;
+      });
+      picker.addEventListener('input', function () {
+        input.value = picker.value;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    });
+    const clearButton = workbench.form.querySelector('[data-tool-clear]');
+    if (clearButton) {
+      clearButton.addEventListener('click', function () {
+        window.setTimeout(function () { syncColorPickers(workbench.form); }, 0);
+      });
+    }
+  }
+
   function formValues(workbench) {
     if (workbench && typeof workbench.values === 'function') {
       return workbench.values();
@@ -313,9 +393,9 @@
 
   function ensureSamples(workbench, config) {
     if (!config.samples || !config.samples.length || workbench.form.querySelector('.generic-sample-row')) return;
-    const actions = workbench.form.querySelector('.button-row');
-    if (!actions) return;
-    actions.insertAdjacentHTML('beforebegin', sampleRow(config.samples));
+    const anchor = workbench.form.querySelector('.field-grid') || workbench.form.querySelector('.workbench-form-heading') || workbench.form.firstElementChild;
+    if (!anchor) return;
+    anchor.insertAdjacentHTML('beforebegin', sampleRow(config.samples));
   }
 
   const actionLabels = {
@@ -378,7 +458,107 @@
     return changed;
   }
 
+  function runConfigEnhancement(workbench, config) {
+    if (!config || typeof config.enhance !== 'function') return;
+    config.enhance(workbench, config);
+  }
+
+  function generatedSpotlightPayload(result, output) {
+    const rawOutput = String(output || '').trim();
+    const candidates = [];
+    const push = (value) => {
+      const next = String(value == null ? '' : value).trim();
+      if (next) candidates.push(next);
+    };
+    push(rawOutput);
+    if (result && Array.isArray(result.resultCards)) {
+      const priority = result.resultCards.filter((card) => /generated|normalized|uuid|iban|fixture|value|compact|urn/i.test(String(card.label || '')));
+      priority.concat(result.resultCards).forEach((card) => push(card && card.value));
+    }
+    if (result && result.developerJson && typeof result.developerJson === 'object') {
+      ['generated', 'uuid', 'iban', 'value', 'normalized', 'compact', 'urn', 'output'].forEach((key) => {
+        const value = result.developerJson[key];
+        if (Array.isArray(value)) push(value.join('\n'));
+        else push(value);
+      });
+    }
+    const copyValue = candidates.find(Boolean) || rawOutput;
+    const lines = copyValue.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    return { copyValue, displayValue: lines[0] || copyValue, lines };
+  }
+
+  function shouldShowGeneratedSpotlight(workbench, config, result, output) {
+    if (!workbench || !workbench.form || !config) return false;
+    if (result && result.ok === false) return false;
+    const mode = String((result && result.mode) || workbench.form.dataset.activeAction || config.defaultAction || '').toLowerCase();
+    const payload = generatedSpotlightPayload(result, output);
+    if (!payload.copyValue) return false;
+    if (mode === 'generate') return true;
+    return /generator|fixture/.test(String(config.slug + ' ' + config.title).toLowerCase()) && mode !== 'validate' && mode !== 'parse';
+  }
+
+  function ensureGeneratedSpotlight(workbench) {
+    let node = workbench.form.querySelector('[data-generated-spotlight]');
+    if (node) return node;
+    node = document.createElement('section');
+    node.className = 'generic-generated-spotlight';
+    node.hidden = true;
+    node.dataset.generatedSpotlight = 'true';
+    node.innerHTML = [
+      '<div class="generic-generated-spotlight__meta">',
+      '  <span class="generic-generated-spotlight__kicker">' + escape(tr('Generated result')) + '</span>',
+      '  <strong data-generated-title>' + escape(tr('Ready to copy')) + '</strong>',
+      '  <small data-generated-note></small>',
+      '</div>',
+      '<div class="generic-generated-spotlight__value" data-generated-value></div>',
+      '<button type="button" class="button button-secondary" data-generated-copy>' + escape(tr('Copy')) + '</button>'
+    ].join('');
+    const row = workbench.form.querySelector('.button-row');
+    if (row) row.insertAdjacentElement('afterend', node);
+    else workbench.form.appendChild(node);
+    node.querySelector('[data-generated-copy]').addEventListener('click', function () {
+      const value = this.dataset.copyValue || '';
+      if (!value) return;
+      copyText(value, function () {
+        const scratch = document.createElement('textarea');
+        scratch.value = value;
+        scratch.setAttribute('readonly', '');
+        scratch.style.position = 'fixed';
+        scratch.style.opacity = '0';
+        document.body.appendChild(scratch);
+        scratch.select();
+        document.execCommand('copy');
+        scratch.remove();
+      });
+      workbench.setMessage(tr('Generated result copied.'), 'success');
+    });
+    return node;
+  }
+
+  function updateGeneratedSpotlight(workbench, config, result, output) {
+    const node = ensureGeneratedSpotlight(workbench);
+    if (!shouldShowGeneratedSpotlight(workbench, config, result, output)) {
+      node.hidden = true;
+      return;
+    }
+    const payload = generatedSpotlightPayload(result, output);
+    const lines = payload.lines;
+    const title = lines.length > 1 ? tr('Batch generated') : tr('Generated value');
+    const note = lines.length > 1
+      ? String(lines.length) + ' ' + tr('values ready. Copy exports the full batch.')
+      : tr('Copy-ready value from this browser run.');
+    node.querySelector('[data-generated-title]').textContent = title;
+    node.querySelector('[data-generated-note]').textContent = note;
+    node.querySelector('[data-generated-value]').textContent = payload.displayValue;
+    node.querySelector('[data-generated-copy]').dataset.copyValue = payload.copyValue;
+    node.hidden = false;
+  }
+
   function refineWorkbenchHeading(workbench, config) {
+    const shellHeading = workbench && workbench.form && workbench.form.querySelector('.workbench-form-heading');
+    if (shellHeading) {
+      shellHeading.remove();
+    }
     if (!config.workbenchTitle && !config.workbenchIntro) return;
     const card = workbench.form.closest('.workbench-card');
     if (!card) return;
@@ -453,27 +633,6 @@
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 250);
   }
 
-  function apiPreview(config, result) {
-    const payload = {
-      tool: config.slug,
-      mode: result.mode || config.defaultAction || 'run',
-      input: result.developerJson && (result.developerJson.input || result.developerJson.uuid || result.developerJson.iban || result.developerJson.pattern || result.developerJson.country || null),
-      output: result.output || '',
-      localOnly: true
-    };
-    const path = '/v1/tools/' + (config.slug || 'generic-tool') + '/run';
-    return [
-      '<div class="generic-api-preview">',
-      resultCards([
-        { label: 'Endpoint shape', value: path, note: 'example contract only' },
-        { label: 'Execution', value: 'Browser local', note: 'no request is sent' },
-        { label: 'Payload', value: 'JSON', note: 'copy for handoff tests' }
-      ]),
-      codeBlock('curl -X POST https://api.validohub.com' + path + ' \\\n  -H "Content-Type: application/json" \\\n  -d ' + JSON.stringify(JSON.stringify(payload)), 'bash'),
-      '</div>'
-    ].join('');
-  }
-
   function charProfile(value) {
     const text = String(value || '');
     return {
@@ -500,7 +659,7 @@
       .join('');
     const title = tr(config.title || '');
     const summary = tr(config.summary || 'Run a private, offline developer workflow directly in this browser.');
-    const kicker = tr(config.kicker || 'Browser workbench');
+    const kicker = tr(config.kicker || 'Local utility');
     const hero = [
       '<section class="generic-premium-hero" aria-label="' + escape(title) + ' workbench overview">',
       '  <div class="generic-premium-mark" aria-hidden="true">' + escape(config.mark || 'VH') + '</div>',
@@ -528,31 +687,70 @@
     const title = String(config.title || 'this tool').toLowerCase();
     const kind = String(config.kind || config.theme || '').toLowerCase();
     const domain = title + ' ' + kind + ' ' + String(config.group || '').toLowerCase();
-    const domainTraps = [];
-    if (/iban|bic|swift|vat|phone|postal|mrz|uuid/.test(domain)) {
-      domainTraps.push(
-        'Keep compact, display, masked, generated, and parsed forms as separate fields; punctuation-only round trips hide parser bugs.',
-        'A local pass proves syntax, checksum, or shape only; live account, carrier, postal, identity, VIES, or directory status needs the owning system.',
-        'Keep wrong-prefix, bad-checksum, short, and grouped fixtures in CI so production adapters do not silently accept the wrong market.'
-      );
-    } else if (/json|schema|openapi|graphql|xml|yaml|toml|csv|avro|protobuf|ndjson|log|dataset|rag|vector/.test(domain)) {
-      domainTraps.push(
-        'Do not infer compatibility from one happy-path payload; preserve representative nulls, missing fields, ragged rows, and malformed examples.',
-        'Keep parser diagnostics, normalized output, source text, and generated fixtures separate in API contracts and test snapshots.',
-        'Run target-runtime validation in CI for dialect-specific schema, YAML, regex, XML, CSV, GraphQL, or JSONPath behavior.'
-      );
-    } else if (/security|jwt|oauth|cookie|tls|dns|spf|dmarc|secret|cors|header|csp|webhook|sri/.test(domain)) {
-      domainTraps.push(
-        'Treat local findings as static evidence; re-check deployed headers, DNS records, certificates, signatures, cookies, and keys in production.',
-        'Never paste live secrets into issue trackers or screenshots; use the masked output and rotate anything that reached logs.',
-        'Keep expired, weak, unsigned, wildcard, missing-flag, and bad-signature fixtures in CI because security regressions often look syntactically valid.'
-      );
-    } else if (/docker|kubernetes|terraform|github actions|config|stack|browser storage|accessibility|design token/.test(domain)) {
-      domainTraps.push(
-        'Static analysis does not execute CI, cloud, browser, cluster, or accessibility tooling; use it to create review gates before runtime checks.',
-        'Keep environment-specific secrets, release IDs, source-map hints, and browser storage dumps masked before handoff.',
-        'Store generated review JSON with the artifact so future diffs preserve the same safety signals and evidence fields.'
-      );
+    const families = [
+      {
+        pattern: /iban|bban|bic|swift|sepa|payment reference|bank|routing|luhn|card|currency|minor unit/,
+        items: [
+          'Treat generated banking and payment fixtures as structural test data only; account ownership, reachability, sanctions, and settlement status require the provider or bank.',
+          'Keep country code, check digits, BBAN/body, formatted display, compact value, and masked preview as separate fields in exports and assertions.',
+          'Regression-test wrong country prefixes, bad check digits, short bodies, pasted statement text, non-breaking spaces, and leading zeroes.'
+        ]
+      },
+      {
+        pattern: /jwt|jwks|oauth|oidc|cookie|samesite|csp|cors|security header|tls|dns|spf|dmarc|webhook|signature|secret|pii|redaction|password|sri/,
+        items: [
+          'Treat browser findings as static evidence; deployed headers, DNS records, certificates, signatures, cookies, keys, and identity-provider state still need live verification.',
+          'Never paste live secrets, customer records, bearer tokens, or private keys into tickets or screenshots; use masked output and rotate anything that reached logs.',
+          'Keep expired keys, weak algorithms, missing flags, bad signatures, replayed nonces, and malformed headers as negative fixtures in CI.'
+        ]
+      },
+      {
+        pattern: /openapi|swagger|graphql|schema|json schema|json-ld|structured data|api|pagination|idempotency|error code|breaking change/,
+        items: [
+          'Do not infer API compatibility from one happy-path payload; preserve nulls, missing fields, additional fields, enum drift, versioned errors, and malformed examples.',
+          'Keep source payload, normalized contract, parser diagnostics, generated fixtures, and stable error codes separate for downstream tests.',
+          'Validate the same fixture against the target runtime or gateway because OpenAPI, JSON Schema, GraphQL, and client generators disagree on edge cases.'
+        ]
+      },
+      {
+        pattern: /xml|sitemap|robots|canonical|hreflang|snippet|seo|url|slug/,
+        items: [
+          'Local SEO checks catch shape and consistency issues, but crawl, indexation, canonical selection, and rich-result eligibility are decided by search engines.',
+          'Keep canonical URLs, hreflang clusters, robots decisions, sitemap locs, and rendered snippets as separate evidence fields before publishing.',
+          'Test duplicate URLs, trailing slashes, mixed protocols, locale fallbacks, noindex conflicts, and malformed XML before submitting crawl files.'
+        ]
+      },
+      {
+        pattern: /csv|dataset|duplicate row|unicode|confusable|base64|url encoder|regex|text diff|json patch|merge patch|yaml|toml|ndjson|avro|protobuf/,
+        items: [
+          'Preserve raw text, decoded text, normalized text, parser diagnostics, and escaped output separately so copy/paste bugs remain debuggable.',
+          'Test empty rows, duplicate rows, mixed encodings, confusable Unicode, multiline fields, spreadsheet quotes, and target-engine regex differences.',
+          'Do not trust a browser preview as storage compatibility; replay the exported fixture in the database, queue, parser, or runtime that will consume it.'
+        ]
+      },
+      {
+        pattern: /locale|date|time|number|timezone|currency formatter|minor units|calendar|holiday/,
+        items: [
+          'Keep locale, calendar, timezone, currency, decimal separator, grouping separator, and source text explicit; browser locale defaults should not become API contracts.',
+          'Test daylight-saving boundaries, midnight rollovers, ambiguous day/month order, non-breaking spaces, localized digits, and zero-decimal currencies.',
+          'Rates, legal tender status, holidays, and business hours change outside this browser lab and need a current official or provider source.'
+        ]
+      },
+      {
+        pattern: /docker|kubernetes|terraform|github actions|config|stack|browser storage|accessibility|design token|release|environment/,
+        items: [
+          'Static analysis does not execute CI, cloud, browser, cluster, or accessibility tooling; use it as a review gate before runtime checks.',
+          'Keep environment-specific secrets, release IDs, source-map hints, browser storage dumps, and vendor payloads masked before handoff.',
+          'Store generated review JSON with the artifact so future diffs preserve the same safety signals and evidence fields.'
+        ]
+      }
+    ];
+    const matched = families.find((family) => family.pattern.test(domain));
+    if (matched) {
+      return unique(matched.items.concat([
+        'Retain negative fixtures for malformed, risky, short, expired, weak, and wrong-context samples; happy paths miss most regressions.',
+        'Copy the developer JSON into tests so future changes preserve the same local evidence fields.'
+      ])).slice(0, 6);
     }
     const items = [
       'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.',
@@ -569,7 +767,7 @@
     } else {
       items.push('Copy the developer JSON into tests so future changes preserve the same local evidence fields.');
     }
-    return unique(domainTraps.concat(items)).slice(0, 6);
+    return unique(items).slice(0, 6);
   }
 
   function integrationTraps(config) {
@@ -635,6 +833,7 @@
     workbench.setBadge({ label: result.badge || (ok ? tr('Ready locally') : tr('Needs review')), state: ok ? 'valid' : 'invalid' });
     workbench.setStats(result.stats || [], result.notes || [], ok ? 'success' : 'error');
     workbench.setPreview(result.previewTitle || '', result.previewHtml || '');
+    updateGeneratedSpotlight(workbench, config, result, output);
     workbench.setAdvanced(result.advancedHtml || defaultAdvanced(config, result));
   }
 
@@ -654,7 +853,6 @@
     sections.push(advancedSection(tr('Sample and batch replay'), sampleReplayMatrix(config)));
     sections.push(advancedSection(tr('Official boundary'), officialBoundary(config, result)));
     if (result.developerJson) {
-      sections.push(advancedSection(tr('Developer API preview'), apiPreview(config, result)));
       sections.push(advancedSection(tr('Developer snapshot JSON'), developerSnapshot(config, result)));
     }
     return sections.join('');
@@ -776,12 +974,15 @@
         ensureActionButtons(workbench, currentConfig);
         ensureSamples(workbench, currentConfig);
         prefillDefaultFields(workbench, currentConfig);
+        enhanceColorInputs(workbench, currentConfig);
+        runConfigEnhancement(workbench, currentConfig);
         if (!workbench.form.dataset.genericSuiteActionsBound) {
           workbench.form.dataset.genericSuiteActionsBound = 'true';
           workbench.form.addEventListener('click', function (event) {
             const copyButton = event.target.closest('[data-generic-copy]');
             const downloadButton = event.target.closest('[data-generic-download]');
             if (!copyButton && !downloadButton) return;
+            event.preventDefault();
             const last = workbench.genericSuiteLastResult || {};
             const jsonText = last.developerJson ? JSON.stringify(last.developerJson, null, 2) : '';
             const outputText = last.output || '';
@@ -825,6 +1026,7 @@
         if (!sample) return;
         if (sample.values) {
           Object.keys(sample.values).forEach((name) => setField(workbench, name, sample.values[name]));
+          syncColorPickers(workbench.form);
         } else if (sample.value != null) {
           const primary = workbench.primaryInput && workbench.primaryInput();
           if (primary) primary.value = sample.value;
@@ -1403,6 +1605,244 @@
     return Object.keys(ibanCountryProfiles).find((code) => ibanCountryProfiles[code] === profile) || '';
   }
 
+  function ibanProfileForCountry(country) {
+    const code = String(country || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
+    return ibanCountryProfiles[code] || null;
+  }
+
+  function defaultIbanGeneratorProfile() {
+    return ibanCountryProfiles.DE || Object.values(ibanCountryProfiles)[0] || null;
+  }
+
+  function bbanForProfile(profile) {
+    return String((profile && profile.sample) || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(4);
+  }
+
+  function groupedIban(value) {
+    return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/(.{4})/g, '$1 ').trim();
+  }
+
+  function activeIbanGeneratorProfile(workbench, config) {
+    const routeProfile = (config && config.generatorProfile) || countryProfileForPath();
+    if (routeProfile) return routeProfile;
+    const values = formValues(workbench);
+    return ibanProfileForCountry(values.country) || defaultIbanGeneratorProfile();
+  }
+
+  function syncIbanGeneratorQuickResult(workbench, generated, batchText) {
+    const card = workbench && workbench.form && workbench.form.querySelector('[data-iban-quick-result]');
+    if (!card || !generated || !generated.iban) return;
+    const grouped = groupedIban(generated.iban);
+    const compact = String(generated.iban || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const value = card.querySelector('[data-iban-quick-value]');
+    const meta = card.querySelector('[data-iban-quick-meta]');
+    if (value) value.textContent = grouped;
+    if (meta) meta.textContent = generated.country + ' / ' + generated.checkDigits + ' check digits / MOD-97 ' + generated.remainder;
+    card.dataset.ibanCopyValue = compact;
+    card.hidden = false;
+    const batchOutput = workbench.form.querySelector('[data-iban-batch-output]');
+    const batchCopy = workbench.form.querySelector('[data-iban-batch-copy]');
+    if (batchText && batchOutput) {
+      batchOutput.value = batchText;
+      batchOutput.hidden = false;
+      if (batchCopy) batchCopy.disabled = false;
+    }
+  }
+
+  function resetIbanGeneratorQuickResult(workbench) {
+    if (!workbench || !workbench.form) return;
+    const card = workbench.form.querySelector('[data-iban-quick-result]');
+    if (card) {
+      card.hidden = true;
+      delete card.dataset.ibanCopyValue;
+      const value = card.querySelector('[data-iban-quick-value]');
+      const meta = card.querySelector('[data-iban-quick-meta]');
+      if (value) value.textContent = '';
+      if (meta) meta.textContent = '';
+    }
+    const batchOutput = workbench.form.querySelector('[data-iban-batch-output]');
+    const batchCopy = workbench.form.querySelector('[data-iban-batch-copy]');
+    if (batchOutput) {
+      batchOutput.value = '';
+      batchOutput.hidden = true;
+    }
+    if (batchCopy) batchCopy.disabled = true;
+  }
+
+  function generateIbanBatch(workbench, config, count) {
+    const profile = activeIbanGeneratorProfile(workbench, config);
+    if (!profile) throw new Error('Choose a country before batch generation.');
+    const country = countryCodeForProfile(profile);
+    const values = formValues(workbench);
+    let seed = String(values.bban || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (!seed && values.iban) seed = parseIbanGeneratorInput(values).bban;
+    if (!seed) seed = bbanForProfile(profile);
+    const rows = [];
+    for (let index = 0; index < count; index += 1) {
+      const bban = randomizeBbanBody(seed);
+      const generated = generateIbanValue(country, bban);
+      rows.push(generated);
+    }
+    return rows;
+  }
+
+  function ensureIbanGeneratorQuickTools(workbench, config) {
+    if (!workbench || !workbench.form || workbench.form.dataset.ibanGeneratorQuickTools === 'true') return;
+    workbench.form.dataset.ibanGeneratorQuickTools = 'true';
+    const actions = workbench.form.querySelector('.button-row');
+    if (!actions) return;
+    actions.insertAdjacentHTML('afterend', [
+      '<div class="vh-iban-instant-result" data-iban-quick-result hidden>',
+      '  <div class="vh-iban-instant-result__copy">',
+      '    <span>Generated IBAN</span>',
+      '    <strong data-iban-quick-value></strong>',
+      '    <small data-iban-quick-meta></small>',
+      '  </div>',
+      '  <button type="button" class="button button-secondary" data-iban-quick-copy>Copy IBAN</button>',
+      '</div>',
+      '<div class="vh-iban-batch-panel" data-iban-batch-panel>',
+      '  <label><span>Batch generate</span><select data-iban-batch-count><option value="5">5 IBANs</option><option value="10" selected>10 IBANs</option><option value="25">25 IBANs</option><option value="50">50 IBANs</option><option value="100">100 IBANs</option></select></label>',
+      '  <button type="button" class="button button-secondary" data-iban-batch-generate>Generate batch</button>',
+      '  <button type="button" class="button button-secondary" data-iban-batch-copy disabled>Copy batch</button>',
+      '</div>',
+      '<textarea class="vh-iban-batch-output" spellcheck="false" readonly hidden data-iban-batch-output aria-label="Generated IBAN batch"></textarea>'
+    ].join(''));
+
+    workbench.form.addEventListener('click', function (event) {
+      const quickCopy = event.target.closest('[data-iban-quick-copy]');
+      const batchGenerate = event.target.closest('[data-iban-batch-generate]');
+      const batchCopy = event.target.closest('[data-iban-batch-copy]');
+      if (!quickCopy && !batchGenerate && !batchCopy) return;
+      if (quickCopy) {
+        const card = workbench.form.querySelector('[data-iban-quick-result]');
+        const value = card && card.dataset.ibanCopyValue;
+        if (!value) {
+          workbench.setMessage('Generate an IBAN before copying it.', 'error');
+          return;
+        }
+        copyText(value).then(function () { workbench.setMessage('Copied generated IBAN.', 'success'); });
+        return;
+      }
+      if (batchCopy) {
+        const output = workbench.form.querySelector('[data-iban-batch-output]');
+        const value = output && output.value;
+        if (!value) {
+          workbench.setMessage('Generate a batch before copying it.', 'error');
+          return;
+        }
+        copyText(value).then(function () { workbench.setMessage('Copied generated IBAN batch.', 'success'); });
+        return;
+      }
+      if (batchGenerate) {
+        const select = workbench.form.querySelector('[data-iban-batch-count]');
+        const count = Math.max(1, Math.min(100, Number(select && select.value) || 10));
+        const rows = generateIbanBatch(workbench, config, count);
+        if (!rows.length) return;
+        const first = rows[0];
+        setField(workbench, 'country', first.country);
+        setField(workbench, 'bban', first.bban);
+        setField(workbench, 'iban', '');
+        const batchText = rows.map((item) => groupedIban(item.iban)).join('\n');
+        syncIbanGeneratorQuickResult(workbench, first, batchText);
+        workbench.setMessage(count + ' IBAN fixtures generated locally.', 'success');
+        workbench.setBadge({ label: 'Batch ready', state: 'valid' });
+      }
+    });
+
+    const clearButton = workbench.form.querySelector('[data-tool-clear]');
+    if (clearButton) {
+      clearButton.addEventListener('click', function () {
+        window.setTimeout(function () { resetIbanGeneratorQuickResult(workbench); }, 0);
+      });
+    }
+  }
+
+  function enhanceIbanGeneratorWorkbench(workbench, config) {
+    if (!workbench || !workbench.form || workbench.form.dataset.ibanGeneratorEnhanced === 'true') return;
+    ensureIbanGeneratorQuickTools(workbench, config);
+    const routeProfile = (config && config.generatorProfile) || countryProfileForPath();
+    if (routeProfile) {
+      workbench.form.dataset.ibanGeneratorEnhanced = 'true';
+      const routeCountry = countryCodeForProfile(routeProfile);
+      const countryInput = workbench.form.querySelector('[name="country"]');
+      const bbanInput = workbench.form.querySelector('[name="bban"]');
+      const existingInput = workbench.form.querySelector('[name="iban"]');
+      if (countryInput) {
+        countryInput.value = routeCountry;
+        countryInput.readOnly = true;
+        countryInput.removeAttribute('required');
+        const countryLabel = countryInput.closest('.field');
+        const labelText = countryLabel && countryLabel.querySelector('span');
+        if (labelText) labelText.textContent = 'Country';
+      }
+      if (bbanInput) {
+        bbanInput.required = false;
+        bbanInput.removeAttribute('required');
+        bbanInput.placeholder = 'Leave blank to generate a fresh ' + routeCountry + ' BBAN';
+        const bbanLabel = bbanInput.closest('.field');
+        if (bbanLabel && !bbanLabel.querySelector('.vh-iban-field-hint')) {
+          bbanLabel.insertAdjacentHTML('beforeend', '<small class="vh-iban-field-hint">Optional for Generate. Blank creates a fresh route-locked fixture.</small>');
+        }
+      }
+      if (existingInput) {
+        existingInput.placeholder = 'Optional: paste an IBAN to inspect or repair check digits';
+      }
+      return;
+    }
+    const countryInput = workbench.form.querySelector('[name="country"]');
+    const bbanInput = workbench.form.querySelector('[name="bban"]');
+    if (!countryInput || countryInput.tagName === 'SELECT') return;
+    workbench.form.dataset.ibanGeneratorEnhanced = 'true';
+    const countryLabel = countryInput.closest('.field');
+    if (countryLabel) {
+      const labelText = countryLabel.querySelector('span');
+      if (labelText) labelText.textContent = 'Country';
+    }
+    const select = document.createElement('select');
+    select.name = countryInput.name;
+    select.required = true;
+    select.className = (countryInput.className ? countryInput.className + ' ' : '') + 'vh-iban-country-select';
+    select.setAttribute('aria-label', 'IBAN country');
+    const defaultProfile = defaultIbanGeneratorProfile();
+    const defaultCode = countryCodeForProfile(defaultProfile) || 'DE';
+    Object.keys(ibanCountryProfiles).sort((a, b) => {
+      const left = ibanCountryProfiles[a].countryName || a;
+      const right = ibanCountryProfiles[b].countryName || b;
+      return left.localeCompare(right);
+    }).forEach((code) => {
+      const profile = ibanCountryProfiles[code];
+      const option = document.createElement('option');
+      option.value = code;
+      option.textContent = (profile.countryName || code) + ' (' + code + ') - ' + profile.length + ' chars';
+      select.appendChild(option);
+    });
+    select.value = String(countryInput.value || defaultCode).toUpperCase().slice(0, 2);
+    countryInput.replaceWith(select);
+    if (bbanInput) {
+      bbanInput.required = false;
+      bbanInput.removeAttribute('required');
+      bbanInput.placeholder = 'Leave blank to generate a random BBAN for the selected country';
+      bbanInput.addEventListener('input', function () {
+        delete bbanInput.dataset.generatedIbanCountry;
+      });
+      const bbanLabel = bbanInput.closest('.field');
+      if (bbanLabel && !bbanLabel.querySelector('.vh-iban-field-hint')) {
+        bbanLabel.insertAdjacentHTML('beforeend', '<small class="vh-iban-field-hint">Optional for Generate. Paste a BBAN only when you need to repair or replay your own body.</small>');
+      }
+    }
+    select.addEventListener('change', function () {
+      if (!bbanInput) return;
+      if (!bbanInput.value || bbanInput.dataset.generatedIbanCountry) {
+        bbanInput.value = '';
+        delete bbanInput.dataset.generatedIbanCountry;
+      }
+    });
+    const existingInput = workbench.form.querySelector('[name="iban"]');
+    if (existingInput) {
+      existingInput.placeholder = 'Optional: paste an IBAN to inspect or repair check digits';
+    }
+  }
+
   function countrySlugForProfile(profile) {
     return profile.countrySlug || profile.slug.replace(/-iban.*$/, '');
   }
@@ -1433,6 +1873,7 @@
       defaultValues: { country: code, bban, iban: '' },
       lockFields: ['country'],
       generatorProfile: profile,
+      enhance: enhanceIbanGeneratorWorkbench,
       samples: [
         { id: 'fresh-local', label: profile.countryName + ' fresh IBAN', values: { country: code, bban, iban: '' }, action: 'generate' },
         { id: 'known-local', label: 'Inspect valid fixture', values: { country: '', bban: '', iban: profile.sample }, action: 'validate' },
@@ -1523,32 +1964,43 @@
 
   function ibanGeneratorHandler(workbench, action, config) {
     const values = formValues(workbench);
-    const profile = (config && config.generatorProfile) || countryProfileForPath();
-    const expectedCountry = profile ? countryCodeForProfile(profile) : '';
-    if (profile && !values.country) {
+    const routeProfile = (config && config.generatorProfile) || countryProfileForPath();
+    let profile = routeProfile || ibanProfileForCountry(values.country);
+    if (!profile && action === 'generate' && !values.iban) profile = defaultIbanGeneratorProfile();
+    const expectedCountry = routeProfile ? countryCodeForProfile(routeProfile) : '';
+    const profileCountry = profile ? countryCodeForProfile(profile) : '';
+    if (routeProfile && !values.country) {
       values.country = expectedCountry;
       setField(workbench, 'country', expectedCountry);
     }
-    if (profile && !values.bban && !values.iban) {
-      values.bban = profile.sample.slice(4);
-      setField(workbench, 'bban', values.bban);
+    if (!routeProfile && profile && !values.country && !values.iban) {
+      values.country = profileCountry;
+      setField(workbench, 'country', profileCountry);
+    }
+    if (profile && action === 'generate' && !values.bban && !values.iban) {
+      values.bban = bbanForProfile(profile);
     }
     const parsed = parseIbanGeneratorInput(values);
-    if (!parsed.country || !parsed.bban) throw new Error('Enter a two-letter country code and BBAN/account body.');
+    if (!parsed.country && profileCountry) parsed.country = profileCountry;
+    if (!parsed.bban && action === 'generate' && profile) parsed.bban = bbanForProfile(profile);
+    if (!parsed.country || !parsed.bban) throw new Error('Choose a country, or paste an existing IBAN/BBAN to inspect.');
     if (action === 'generate') {
       if (expectedCountry) parsed.country = expectedCountry;
       parsed.bban = randomizeBbanBody(parsed.bban);
       setField(workbench, 'country', parsed.country);
       setField(workbench, 'bban', parsed.bban);
+      const bbanField = workbench.form.querySelector('[name="bban"]');
+      if (bbanField) bbanField.dataset.generatedIbanCountry = parsed.country;
       setField(workbench, 'iban', '');
     }
     const generated = generateIbanValue(parsed.country, parsed.bban);
     const existingRemainder = parsed.existing ? ibanMod97(parsed.existing) : null;
     const routeCountryOk = expectedCountry ? generated.country === expectedCountry : /^[A-Z]{2}$/.test(generated.country);
     const profileLengthOk = profile ? generated.iban.length === profile.length : generated.iban.length >= 15 && generated.iban.length <= 34;
-    const grouped = generated.iban.replace(/(.{4})/g, '$1 ').trim();
+    const grouped = groupedIban(generated.iban);
     const masked = generated.iban.length > 8 ? generated.iban.slice(0, 4) + ' ' + '•••• '.repeat(Math.max(1, Math.ceil((generated.iban.length - 8) / 4))).trim() + ' ' + generated.iban.slice(-4) : generated.iban;
     const valid = /^[A-Z]{2}$/.test(generated.country) && routeCountryOk && profileLengthOk && generated.bban.length >= 4 && generated.remainder === 1 && (!parsed.existing || action === 'generate' || existingRemainder === 1);
+    syncIbanGeneratorQuickResult(workbench, generated);
     const pipeline = [
       { name: 'Route country', ok: routeCountryOk, detail: expectedCountry ? generated.country + ' / expected ' + expectedCountry : generated.country || 'missing' },
       { name: 'BBAN present', ok: generated.bban.length >= 4, detail: generated.bban.length + ' characters' },
@@ -1644,7 +2096,6 @@
         { label: 'Bank lookup', value: 'Not performed', note: 'offline browser boundary' }
       ])),
       advancedSection('Quality notes', qualityGrid((profile || detectedProfile) ? (profile || detectedProfile).quality : ['IBAN validation proves syntax and checksum only.', 'Account ownership, status, and bank acceptance require official rails.'])),
-      advancedSection('Developer API preview', apiPreview(config || { slug: 'iban-validator', defaultAction: 'validate' }, { output: grouped, mode: action || 'validate', developerJson: { iban: normalized, country, valid } })),
       advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify({ iban: normalized, masked, country, expectedLength: expected, mod97: mod, valid, countryWorkbench: localLink || null, nationalCheck }, null, 2), 'json'))
     ];
     return {
@@ -2958,15 +3409,19 @@
     }, ibanHandler],
     ['validohub.iban-generator', {
       slug: 'iban-generator', title: 'IBAN Generator', defaultAction: 'generate', theme: 'finance', mark: 'IBG', kicker: 'Banking fixtures',
-      summary: 'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.',
-      chips: ['Generate check digits', 'MOD-97 replay', 'BBAN body', 'Fixture-safe'],
+      summary: 'Choose a supported country and generate fresh structural IBAN fixtures locally, with optional BBAN repair and MOD-97 replay.',
+      chips: ['Country dropdown', 'Random BBAN', 'MOD-97 replay', 'Fixture-safe'],
       actions: ['generate', 'validate', 'explain'],
+      defaultValues: { country: 'DE', bban: '', iban: '' },
+      readyBadge: 'Country selected',
+      enhance: enhanceIbanGeneratorWorkbench,
       samples: [
-        { id: 'germany-bban', label: 'Germany BBAN', values: { country: 'DE', bban: '370400440532013000' }, action: 'generate' },
-        { id: 'czechia-bban', label: 'Czechia BBAN', values: { country: 'CZ', bban: '08000000192000145399' }, action: 'generate' },
-        { id: 'spain-bban', label: 'Spain BBAN', values: { country: 'ES', bban: '21000418450200051332' }, action: 'generate' },
-        { id: 'uk-sort-code', label: 'UK sort code', values: { country: 'GB', bban: 'WEST12345698765432' }, action: 'generate' },
-        { id: 'italy-abi-cab', label: 'Italy ABI/CAB', values: { country: 'IT', bban: 'X0542811101000000123456' }, action: 'generate' },
+        { id: 'germany-random', label: 'Germany random', values: { country: 'DE', bban: '', iban: '' }, action: 'generate' },
+        { id: 'france-random', label: 'France random', values: { country: 'FR', bban: '', iban: '' }, action: 'generate' },
+        { id: 'poland-random', label: 'Poland random', values: { country: 'PL', bban: '', iban: '' }, action: 'generate' },
+        { id: 'spain-random', label: 'Spain random', values: { country: 'ES', bban: '', iban: '' }, action: 'generate' },
+        { id: 'uk-random', label: 'UK random', values: { country: 'GB', bban: '', iban: '' }, action: 'generate' },
+        { id: 'custom-bban', label: 'Custom BBAN', values: { country: 'IT', bban: 'X0542811101000000123456', iban: '' }, action: 'generate' },
         { id: 'bad-country', label: 'Bad country prefix', values: { country: '1X', bban: '370400440532013000' }, action: 'validate' },
         { id: 'repair-existing', label: 'Repair existing', values: { country: '', bban: '', iban: 'DE00370400440532013000' }, action: 'generate' }
       ],
@@ -3071,7 +3526,50 @@
       summary: 'Generate SHA-256 hashes for payload fingerprints, fixture verification, cache keys, and copy-safe developer output.',
       chips: ['Modern digest', 'Payload fingerprint', 'Hex output', 'Offline'], samples: commonSamples.text.concat([{ id: 'validate-sha256', label: 'Validate digest', values: { input: 'Hello, ValidoHub!', hash: '1f54daf3cfa728c3e4cc4d86732c94ec9b42ed112579ee625e4cfe9294f0ad58' }, action: 'validate' }])
     }, hashHandler('sha256')]
+    // BEGIN global premium batch v4 configs
+    ['validohub.oauth-oidc-flow', { slug: 'oauth-oidc-flow-debugger', title: "OAuth / OIDC Flow Debugger", kind: 'oauth-oidc-flow-debugger', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'OAUTH', kicker: "Auth redirect QA", summary: "Validate OAuth and OpenID Connect redirect flows, PKCE hints, scopes, state, nonce, issuer, and callback handoff without contacting an identity provider.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["authorize","token","client_id","redirect_uri","scope","state","nonce","code_challenge","issuer"], riskWords: ["implicit","token=","client_secret","localhost","missing state","openid email profile admin"], samples: [{"id":"happy-path","label":"PKCE flow","values":{"profile":"security-auth","input":"https://auth.example.com/authorize?response_type=code&client_id=web&redirect_uri=https%3A%2F%2Fapp.example.com%2Fcallback&scope=openid%20profile&state=st_123&nonce=n_123&code_challenge=abc&code_challenge_method=S256"},"action":"parse"},{"id":"implicit-risk","label":"Implicit risk","values":{"profile":"security-auth","input":"https://auth.example.com/authorize?response_type=token&client_id=web&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback&scope=openid%20email%20admin"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.jwt-risk-scanner', { slug: 'jwt-risk-scanner', title: "JWT Risk Scanner", kind: 'jwt-risk-scanner', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'JWT!', kicker: "Claim risk QA", summary: "Scan JWT headers and claims for weak algorithms, missing audience, expired tokens, oversized scopes, issuer drift, and browser-only verification boundaries.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["alg","typ","iss","aud","sub","exp","iat","scope","kid"], riskWords: ["\"alg\":\"none\"","\"alg\":\"HS256\"","admin","exp\":0","password","secret"], samples: [{"id":"rs-token","label":"RS token claims","values":{"profile":"security-auth","input":"{\"alg\":\"RS256\",\"kid\":\"billing-2026\"}\n{\"iss\":\"https://auth.example.com\",\"aud\":\"billing-api\",\"sub\":\"usr_123\",\"scope\":\"invoice:read\",\"exp\":1900000000}"},"action":"parse"},{"id":"weak-token","label":"Weak claims","values":{"profile":"security-auth","input":"{\"alg\":\"none\"}\n{\"sub\":\"usr_123\",\"scope\":\"admin write:*\",\"exp\":0}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.jwks-rotation', { slug: 'jwks-rotation-inspector', title: "JWKS Rotation Inspector", kind: 'jwks-rotation-inspector', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'JWKS', kicker: "Keyset lifecycle QA", summary: "Inspect JWKS key sets for algorithm mix, duplicate kids, legacy keys, use/sig metadata, rotation coverage, and offline verification boundaries.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["keys","kid","kty","alg","use","x5c","n","e"], riskWords: ["HS256","oct","duplicate","legacy","missing kid","none"], samples: [{"id":"rotation","label":"Two-key rotation","values":{"profile":"security-auth","input":"{\"keys\":[{\"kty\":\"RSA\",\"kid\":\"current\",\"alg\":\"RS256\",\"use\":\"sig\"},{\"kty\":\"RSA\",\"kid\":\"next\",\"alg\":\"RS256\",\"use\":\"sig\"}]}"},"action":"parse"},{"id":"legacy","label":"Legacy oct key","values":{"profile":"security-auth","input":"{\"keys\":[{\"kty\":\"oct\",\"kid\":\"legacy\",\"alg\":\"HS256\"}]}"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.openapi-breaking-diff', { slug: 'openapi-breaking-change-diff', title: "OpenAPI Breaking Change Diff", kind: 'openapi-breaking-change-diff', batch: 'global-4-7', group: 'Backend / API', defaultAction: 'validate', theme: 'developer', mark: 'APIΔ', kicker: "Contract diff QA", summary: "Compare OpenAPI before and after snippets for removed paths, method changes, schema drift, status-code regressions, and client-breaking review items.", chips: ["Backend / API","Focused QA","Browser only","Developer JSON"], signalWords: ["openapi","paths","components","schemas","responses","required","deprecated"], riskWords: ["removed","delete","breaking","required","401","500"], samples: [{"id":"safe-add","label":"Add endpoint","values":{"profile":"backend-api","input":"openapi: 3.1.0\npaths:\n  /invoices:\n    get:\n      responses:\n        \"200\": {description: ok}","changed":"openapi: 3.1.0\npaths:\n  /invoices:\n    get:\n      responses:\n        \"200\": {description: ok}\n  /customers:\n    get:\n      responses:\n        \"200\": {description: ok}"},"action":"parse"},{"id":"remove-path","label":"Removed path","values":{"profile":"backend-api","input":"paths:\n  /invoices:\n    get: {}\n  /customers:\n    get: {}","changed":"paths:\n  /invoices:\n    get: {}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.json-patch-builder', { slug: 'json-patch-builder', title: "JSON Patch Builder", kind: 'json-patch-builder', batch: 'global-4-7', group: 'Data & Integration', defaultAction: 'validate', theme: 'developer', mark: 'PATCH', kicker: "RFC 6902 payload QA", summary: "Build and inspect JSON Patch operations with add, replace, remove, move, copy, test, pointer safety, and before/after handoff previews.", chips: ["Data & Integration","Focused QA","Browser only","Developer JSON"], signalWords: ["op","path","value","add","replace","remove","test"], riskWords: ["remove /","password","secret","missing test","unsafe path"], samples: [{"id":"replace-email","label":"Replace field","values":{"profile":"data-integration","input":"[{\"op\":\"test\",\"path\":\"/status\",\"value\":\"draft\"},{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"paid\"}]"},"action":"parse"},{"id":"risky-remove","label":"Risky remove","values":{"profile":"data-integration","input":"[{\"op\":\"remove\",\"path\":\"/customer\"},{\"op\":\"replace\",\"path\":\"/password\",\"value\":\"secret\"}]"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.json-merge-patch-builder', { slug: 'json-merge-patch-builder', title: "JSON Merge Patch Builder", kind: 'json-merge-patch-builder', batch: 'global-4-7', group: 'Data & Integration', defaultAction: 'validate', theme: 'developer', mark: 'MERGE', kicker: "RFC 7396 payload QA", summary: "Inspect JSON Merge Patch payloads for null deletes, nested object replacement, sparse updates, destructive fields, and API-safe copy output.", chips: ["Data & Integration","Focused QA","Browser only","Developer JSON"], signalWords: ["null","status","metadata","patch","merge","replace"], riskWords: ["password","secret","\"id\": null","\"email\": null","delete"], samples: [{"id":"status-only","label":"Status update","values":{"profile":"data-integration","input":"{\"status\":\"paid\",\"metadata\":{\"source\":\"webhook\"}}"},"action":"parse"},{"id":"delete-email","label":"Null delete","values":{"profile":"data-integration","input":"{\"email\":null,\"password\":\"secret\"}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.rest-pagination-contract', { slug: 'rest-pagination-contract-tester', title: "REST Pagination Contract Tester", kind: 'rest-pagination-contract-tester', batch: 'global-4-7', group: 'Backend / API', defaultAction: 'validate', theme: 'developer', mark: 'PAGE', kicker: "Pagination QA", summary: "Inspect REST pagination contracts for cursor, limit, next links, ordering stability, total counts, retry windows, and client handoff notes.", chips: ["Backend / API","Focused QA","Browser only","Developer JSON"], signalWords: ["cursor","limit","next","prev","total","page","per_page","Link:"], riskWords: ["offset","missing next","unstable sort","limit=10000","page=1"], samples: [{"id":"cursor-json","label":"Cursor response","values":{"profile":"backend-api","input":"{\"data\":[{\"id\":\"inv_1\"}],\"next_cursor\":\"cur_2\",\"limit\":50,\"has_more\":true}"},"action":"parse"},{"id":"offset-risk","label":"Offset risk","values":{"profile":"backend-api","input":"GET /items?page=1&limit=10000\n{\"data\":[],\"total\":999999}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.api-error-catalog', { slug: 'api-error-code-catalog-builder', title: "API Error Code Catalog Builder", kind: 'api-error-code-catalog-builder', batch: 'global-4-7', group: 'Backend / API', defaultAction: 'validate', theme: 'developer', mark: 'ERRS', kicker: "Error taxonomy QA", summary: "Build and validate API error-code catalogs with stable codes, retryability, HTTP status mapping, localization keys, and support escalation metadata.", chips: ["Backend / API","Focused QA","Browser only","Developer JSON"], signalWords: ["code","status","retryable","message","locale","docs","type"], riskWords: ["UNKNOWN","Something went wrong","500","stack","exception"], samples: [{"id":"catalog","label":"Stable catalog","values":{"profile":"backend-api","input":"[{\"code\":\"PAYMENT_DECLINED\",\"status\":402,\"retryable\":false,\"messageKey\":\"errors.payment_declined\"},{\"code\":\"RATE_LIMITED\",\"status\":429,\"retryable\":true,\"messageKey\":\"errors.rate_limited\"}]"},"action":"parse"},{"id":"thin","label":"Thin errors","values":{"profile":"backend-api","input":"{\"error\":\"Something went wrong\",\"status\":500}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.webhook-replay-payload', { slug: 'webhook-replay-payload-builder', title: "Webhook Replay Payload Builder", kind: 'webhook-replay-payload-builder', batch: 'global-4-7', group: 'Backend / API', defaultAction: 'validate', theme: 'developer', mark: 'REPLAY', kicker: "Event fixture QA", summary: "Build replayable webhook fixtures with event id, timestamp, signature base string, idempotency hints, retry count, and raw-payload boundaries.", chips: ["Backend / API","Focused QA","Browser only","Developer JSON"], signalWords: ["event","id","timestamp","signature","retry","payload","webhook"], riskWords: ["missing id","no timestamp","secret","password","duplicate"], samples: [{"id":"invoice-event","label":"Invoice event","values":{"profile":"backend-api","input":"{\"id\":\"evt_123\",\"type\":\"invoice.created\",\"created\":\"2026-07-29T10:00:00Z\",\"data\":{\"id\":\"inv_123\",\"total\":12500}}"},"action":"parse"},{"id":"thin-event","label":"Thin event","values":{"profile":"backend-api","input":"{\"type\":\"paid\",\"data\":{\"password\":\"secret\"}}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.idempotency-collision-lab', { slug: 'idempotency-collision-lab', title: "Idempotency Collision Lab", kind: 'idempotency-collision-lab', batch: 'global-4-7', group: 'Backend / API', defaultAction: 'validate', theme: 'developer', mark: 'IDEM+', kicker: "Retry collision QA", summary: "Model idempotency collision cases across keys, payload fingerprints, expiry windows, conflict responses, and duplicate replay handling.", chips: ["Backend / API","Focused QA","Browser only","Developer JSON"], signalWords: ["Idempotency-Key","fingerprint","retry","conflict","expiry","payload","POST"], riskWords: ["123","same key different body","no expiry","missing key","duplicate charge"], samples: [{"id":"safe-retry","label":"Safe retry","values":{"profile":"backend-api","input":"POST /payments\nIdempotency-Key: idem_cart_123\nBody fingerprint: sha256:abc\nRetry window: 24h\nSame payload on retry"},"action":"parse"},{"id":"collision","label":"Collision","values":{"profile":"backend-api","input":"Idempotency-Key: 123\nFirst body amount=100\nSecond body amount=200"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.robots-txt-tester', { slug: 'robots-txt-tester', title: "robots.txt Tester", kind: 'robots-txt-tester', batch: 'global-4-7', group: 'SEO / Publishing', defaultAction: 'validate', theme: 'developer', mark: 'ROBOTS', kicker: "Crawler rule QA", summary: "Inspect robots.txt directives for user-agent groups, allow/disallow precedence, sitemap hints, crawl-delay portability, and accidental blocking.", chips: ["SEO / Publishing","Focused QA","Browser only","Developer JSON"], signalWords: ["User-agent","Disallow","Allow","Sitemap","Crawl-delay"], riskWords: ["Disallow: /","noindex","private","admin","staging"], samples: [{"id":"sane","label":"Sane robots","values":{"profile":"seo-publishing","input":"User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: https://validohub.com/sitemap.xml"},"action":"parse"},{"id":"blocked","label":"Blocked site","values":{"profile":"seo-publishing","input":"User-agent: *\nDisallow: /"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.xml-sitemap-inspector', { slug: 'xml-sitemap-inspector', title: "XML Sitemap Inspector", kind: 'xml-sitemap-inspector', batch: 'global-4-7', group: 'SEO / Publishing', defaultAction: 'validate', theme: 'developer', mark: 'SITE', kicker: "Indexing map QA", summary: "Inspect XML sitemaps for URL count, loc/lastmod shape, hreflang adjacency, sitemap-index structure, duplicate URLs, and crawl handoff notes.", chips: ["SEO / Publishing","Focused QA","Browser only","Developer JSON"], signalWords: ["urlset","sitemapindex","<loc>","<lastmod>","hreflang","priority"], riskWords: ["localhost","noindex","duplicate","404","staging"], samples: [{"id":"urlset","label":"URL set","values":{"profile":"seo-publishing","input":"<urlset><url><loc>https://validohub.com/en/tools/</loc><lastmod>2026-07-29</lastmod></url></urlset>"},"action":"parse"},{"id":"bad-loc","label":"Bad loc","values":{"profile":"seo-publishing","input":"<urlset><url><loc>http://localhost:8140/test</loc></url></urlset>"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.canonical-hreflang-auditor', { slug: 'canonical-hreflang-auditor', title: "Canonical / Hreflang Auditor", kind: 'canonical-hreflang-auditor', batch: 'global-4-7', group: 'SEO / Publishing', defaultAction: 'validate', theme: 'developer', mark: 'HREF', kicker: "Locale SEO QA", summary: "Audit canonical and hreflang clusters for x-default, reciprocal alternates, mixed hosts, missing locales, and duplicate canonical drift.", chips: ["SEO / Publishing","Focused QA","Browser only","Developer JSON"], signalWords: ["canonical","hreflang","alternate","x-default","rel=","href="], riskWords: ["localhost","staging","missing x-default","duplicate canonical","noindex"], samples: [{"id":"cluster","label":"Locale cluster","values":{"profile":"seo-publishing","input":"<link rel=\"canonical\" href=\"https://validohub.com/en/tools/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://validohub.com/en/tools/\">\n<link rel=\"alternate\" hreflang=\"fr\" href=\"https://validohub.com/fr/tools/\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://validohub.com/en/tools/\">"},"action":"parse"},{"id":"mixed-host","label":"Mixed host","values":{"profile":"seo-publishing","input":"<link rel=\"canonical\" href=\"http://localhost:8140/en/tools/\">"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.search-snippet-preview', { slug: 'search-snippet-preview', title: "Search Snippet Preview", kind: 'search-snippet-preview', batch: 'global-4-7', group: 'SEO / Publishing', defaultAction: 'validate', theme: 'developer', mark: 'SERP', kicker: "SERP copy QA", summary: "Preview title, meta description, slug, canonical, and Open Graph copy length for search-result snippets and localized landing pages.", chips: ["SEO / Publishing","Focused QA","Browser only","Developer JSON"], signalWords: ["title","description","canonical","og:title","slug","meta"], riskWords: ["too long","missing description","duplicate","Untitled","localhost"], samples: [{"id":"good-snippet","label":"Good snippet","values":{"profile":"seo-publishing","input":"<title>IBAN Generator | ValidoHub</title>\n<meta name=\"description\" content=\"Generate structural IBAN test data locally with MOD-97 evidence, copy-ready output, and no server upload.\">"},"action":"parse"},{"id":"thin-snippet","label":"Thin snippet","values":{"profile":"seo-publishing","input":"<title>Tool</title>"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.structured-data-jsonld', { slug: 'structured-data-json-ld-validator', title: "Structured Data / JSON-LD Validator", kind: 'structured-data-json-ld-validator', batch: 'global-4-7', group: 'SEO / Publishing', defaultAction: 'validate', theme: 'developer', mark: 'LD+J', kicker: "Schema.org QA", summary: "Inspect JSON-LD blocks for SoftwareApplication, BreadcrumbList, FAQPage, Article, required fields, invalid JSON, and rich-result boundary notes.", chips: ["SEO / Publishing","Focused QA","Browser only","Developer JSON"], signalWords: ["@context","@type","SoftwareApplication","BreadcrumbList","FAQPage","name","url"], riskWords: ["not json","missing @context","localhost","reviewRating","aggregateRating"], samples: [{"id":"software-app","label":"Software app","values":{"profile":"seo-publishing","input":"{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"ValidoHub\",\"applicationCategory\":\"DeveloperApplication\",\"url\":\"https://validohub.com/en/tools/\"}"},"action":"parse"},{"id":"bad-jsonld","label":"Bad JSON-LD","values":{"profile":"seo-publishing","input":"{\"@type\":\"SoftwareApplication\",\"name\":}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.csv-schema-inferencer', { slug: 'csv-schema-inferencer', title: "CSV Schema Inferencer", kind: 'csv-schema-inferencer', batch: 'global-4-7', group: 'Data Quality', defaultAction: 'validate', theme: 'developer', mark: 'CSV→S', kicker: "Import schema QA", summary: "Infer column types, required fields, nullability, delimiters, enum candidates, sample values, and fixture JSON from CSV data.", chips: ["Data Quality","Focused QA","Browser only","Developer JSON"], signalWords: ["id","email","amount","date","true","false",",",";"], riskWords: ["ragged","missing","null","N/A","bad date","password"], samples: [{"id":"typed-csv","label":"Typed CSV","values":{"profile":"data-quality","input":"id,email,amount,paid,date\n1,billing@example.com,125.50,true,2026-07-29\n2,support@example.com,88,false,2026-07-30"},"action":"parse"},{"id":"ragged-csv","label":"Ragged CSV","values":{"profile":"data-quality","input":"id,email,amount\n1,billing@example.com,125\n2,support@example.com"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.duplicate-row-detector', { slug: 'duplicate-row-detector', title: "Duplicate Row Detector", kind: 'duplicate-row-detector', batch: 'global-4-7', group: 'Data Quality', defaultAction: 'validate', theme: 'developer', mark: 'DUPE', kicker: "Import dedupe QA", summary: "Detect exact and key-based duplicate rows in CSV, JSONL, and pasted lists, with collision keys, counts, and safe dedupe export notes.", chips: ["Data Quality","Focused QA","Browser only","Developer JSON"], signalWords: ["id","email","sku","duplicate","row","hash"], riskWords: ["same email","same id","empty","duplicate","password"], samples: [{"id":"duplicates","label":"Duplicate emails","values":{"profile":"data-quality","input":"id,email,total\n1,billing@example.com,125\n2,billing@example.com,125\n3,support@example.com,88"},"action":"parse"},{"id":"clean-list","label":"Clean list","values":{"profile":"data-quality","input":"A-001\nA-002\nA-003"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.unicode-confusable-scanner', { slug: 'unicode-confusable-scanner', title: "Unicode Normalizer / Confusable Scanner", kind: 'unicode-confusable-scanner', batch: 'global-4-7', group: 'Data Quality', defaultAction: 'validate', theme: 'developer', mark: 'UNI', kicker: "Text spoofing QA", summary: "Normalize Unicode text, detect mixed scripts, hidden spaces, confusable identifiers, smart punctuation, and copy-safe canonical output.", chips: ["Data Quality","Focused QA","Browser only","Developer JSON"], signalWords: ["é","а","Α","zero width","NFC","NFKC","ZWSP"], riskWords: ["​","‮","paypal","раураl","mixed script"], samples: [{"id":"mixed-script","label":"Mixed script","values":{"profile":"data-quality","input":"раураl.com and paypal.com\nzero​width"},"action":"parse"},{"id":"normal-text","label":"Normal text","values":{"profile":"data-quality","input":"Café → Café, ValidoHub"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.locale-number-parser', { slug: 'locale-number-parser', title: "Locale Number Parser", kind: 'locale-number-parser', batch: 'global-4-7', group: 'Locale / Formats', defaultAction: 'validate', theme: 'developer', mark: 'NUM', kicker: "Numeric locale QA", summary: "Parse locale-specific number strings, grouping separators, decimal conventions, percent/currency markers, canonical machine value, and ambiguity warnings.", chips: ["Locale / Formats","Focused QA","Browser only","Developer JSON"], signalWords: [",",".","1 234","1.234,56","1,234.56","%","currency"], riskWords: ["ambiguous","NaN","mixed","bad grouping","1,234,56"], samples: [{"id":"eu-number","label":"EU number","values":{"profile":"locale-formats","input":"1.234,56 EUR\n12,5%\n1 000 000,00"},"action":"parse"},{"id":"mixed-number","label":"Mixed separators","values":{"profile":"locale-formats","input":"1,234,56"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.locale-date-parser', { slug: 'locale-date-parser', title: "Locale Date Parser", kind: 'locale-date-parser', batch: 'global-4-7', group: 'Locale / Formats', defaultAction: 'validate', theme: 'developer', mark: 'DATE', kicker: "Date locale QA", summary: "Parse locale date strings, month names, day/month ambiguity, ISO output, timezone hints, and fixture-safe validation notes.", chips: ["Locale / Formats","Focused QA","Browser only","Developer JSON"], signalWords: ["2026","/","-","Jan","Feb","Mär","лип","UTC"], riskWords: ["31/02","13/13","ambiguous","invalid","DST"], samples: [{"id":"mixed-dates","label":"Mixed dates","values":{"profile":"locale-formats","input":"29/07/2026\n07/29/2026\n2026-07-29T10:00:00Z"},"action":"parse"},{"id":"invalid-date","label":"Invalid date","values":{"profile":"locale-formats","input":"31/02/2026\n13/13/2026"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.luhn-card-fixture-generator', { slug: 'luhn-card-fixture-generator', title: "Card Number Masker / Luhn Fixture Generator", kind: 'luhn-card-fixture-generator', batch: 'global-4-7', group: 'Payments / Fixtures', defaultAction: 'validate', theme: 'developer', mark: 'LUHN', kicker: "Payment test QA", summary: "Generate and inspect Luhn-valid test card fixtures, masks, last4 output, brand shape hints, and payment-provider boundary notes.", chips: ["Payments / Fixtures","Focused QA","Browser only","Developer JSON"], signalWords: ["4242","4111","5555","3782","luhn","card","last4"], riskWords: ["real card","cvv","password","4111111111111111","live"], samples: [{"id":"visa-test","label":"Visa test","values":{"profile":"payments-fixtures","input":"4242 4242 4242 4242"},"action":"parse"},{"id":"bad-luhn","label":"Bad Luhn","values":{"profile":"payments-fixtures","input":"4242 4242 4242 4241"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.bin-iin-shape-inspector', { slug: 'bin-iin-shape-inspector', title: "BIN / IIN Shape Inspector", kind: 'bin-iin-shape-inspector', batch: 'global-4-7', group: 'Payments / Fixtures', defaultAction: 'validate', theme: 'developer', mark: 'BIN', kicker: "Card prefix QA", summary: "Inspect payment card BIN/IIN prefix shape, length, brand hints, mask safety, test-data boundaries, and no-live-issuer lookup notes.", chips: ["Payments / Fixtures","Focused QA","Browser only","Developer JSON"], signalWords: ["BIN","IIN","Visa","Mastercard","Amex","6 digits","8 digits"], riskWords: ["real card","full PAN","issuer lookup","cvv","live"], samples: [{"id":"bin8","label":"8-digit BIN","values":{"profile":"payments-fixtures","input":"42424200 **** **** 4242"},"action":"parse"},{"id":"full-pan","label":"Full PAN risk","values":{"profile":"payments-fixtures","input":"4111111111111111 CVV 123"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.currency-minor-units', { slug: 'currency-minor-units-checker', title: "Currency Minor Units Checker", kind: 'currency-minor-units-checker', batch: 'global-4-7', group: 'Payments / Fixtures', defaultAction: 'validate', theme: 'developer', mark: 'ISO4217', kicker: "Money amount QA", summary: "Inspect currency minor units, decimal precision, integer amount conversion, zero-decimal currencies, and API-safe money payload shape.", chips: ["Payments / Fixtures","Focused QA","Browser only","Developer JSON"], signalWords: ["USD","EUR","JPY","KWD","amount","minor","decimal"], riskWords: ["floating point","too many decimals","JPY .00","NaN","missing currency"], samples: [{"id":"money-json","label":"Money JSON","values":{"profile":"payments-fixtures","input":"{\"currency\":\"JPY\",\"amount\":\"1250\",\"minorUnits\":0}\n{\"currency\":\"KWD\",\"amount\":\"12.345\",\"minorUnits\":3}"},"action":"parse"},{"id":"bad-money","label":"Bad precision","values":{"profile":"payments-fixtures","input":"{\"currency\":\"JPY\",\"amount\":\"12.34\"}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.sepa-pain001-fixture', { slug: 'sepa-pain001-fixture-helper', title: "SEPA pain.001 Fixture Helper", kind: 'sepa-pain001-fixture-helper', batch: 'global-4-7', group: 'Payments / Fixtures', defaultAction: 'validate', theme: 'developer', mark: 'PAIN', kicker: "Credit transfer XML QA", summary: "Build and inspect SEPA pain.001 credit-transfer fixture structure, debtor/creditor IBANs, amounts, remittance, and bank-status boundary notes.", chips: ["Payments / Fixtures","Focused QA","Browser only","Developer JSON"], signalWords: ["pain.001","CstmrCdtTrfInitn","PmtInf","Dbtr","Cdtr","IBAN","InstdAmt"], riskWords: ["real account","missing IBAN","invalid XML","live bank","password"], samples: [{"id":"pain-fixture","label":"pain.001 fixture","values":{"profile":"payments-fixtures","input":"<CstmrCdtTrfInitn><PmtInf><Dbtr><Nm>Demo GmbH</Nm></Dbtr><CdtTrfTxInf><Amt><InstdAmt Ccy=\"EUR\">125.50</InstdAmt></Amt><Cdtr><Nm>Acme SAS</Nm></Cdtr></CdtTrfTxInf></PmtInf></CstmrCdtTrfInitn>"},"action":"parse"},{"id":"thin-payment","label":"Thin payment","values":{"profile":"payments-fixtures","input":"<Payment><Amount>125.50</Amount></Payment>"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.payment-reference-generator', { slug: 'payment-reference-generator', title: "Payment Reference Generator", kind: 'payment-reference-generator', batch: 'global-4-7', group: 'Payments / Fixtures', defaultAction: 'validate', theme: 'developer', mark: 'REF', kicker: "Reference fixture QA", summary: "Generate and inspect structured payment references, invoice references, check-digit hints, remittance text, and provider boundary notes.", chips: ["Payments / Fixtures","Focused QA","Browser only","Developer JSON"], signalWords: ["RF","invoice","reference","remittance","check digit","payment"], riskWords: ["real invoice","ambiguous","too long","password","secret"], samples: [{"id":"rf-reference","label":"RF reference","values":{"profile":"payments-fixtures","input":"Generate RF creditor reference for invoice INV-2026-0042 amount EUR 125.50"},"action":"parse"},{"id":"ambiguous-ref","label":"Ambiguous free text","values":{"profile":"payments-fixtures","input":"payment for thing"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.password-policy-tester', { slug: 'password-policy-tester', title: "Password Policy Tester", kind: 'password-policy-tester', batch: 'global-4-7', group: 'Security / Auth', defaultAction: 'validate', theme: 'developer', mark: 'PASS', kicker: "Credential policy QA", summary: "Test password policy rules locally for length, character classes, breached-pattern hints, user-info overlap, entropy approximation, and UX-safe feedback.", chips: ["Security / Auth","Focused QA","Browser only","Developer JSON"], signalWords: ["length","uppercase","lowercase","number","symbol","entropy","password"], riskWords: ["password","123456","qwerty","admin","email","secret"], samples: [{"id":"strong-ish","label":"Strong-ish sample","values":{"profile":"security-auth","input":"Policy: min 14, require letters numbers symbols\nSample: correct horse battery staple 2026!"},"action":"parse"},{"id":"weak","label":"Weak sample","values":{"profile":"security-auth","input":"password123"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.csp-nonce-hash-helper', { slug: 'csp-nonce-hash-helper', title: "CSP Nonce / Hash Helper", kind: 'csp-nonce-hash-helper', batch: 'global-4-7', group: 'Security / Browser', defaultAction: 'validate', theme: 'developer', mark: 'NONCE', kicker: "Inline script CSP QA", summary: "Generate and inspect CSP nonce and hash policy snippets for inline scripts/styles, strict-dynamic boundaries, and deploy-safe rotation notes.", chips: ["Security / Browser","Focused QA","Browser only","Developer JSON"], signalWords: ["nonce-","sha256-","script-src","style-src","strict-dynamic","unsafe-inline"], riskWords: ["unsafe-inline","static nonce","reuse","*","unsafe-eval"], samples: [{"id":"hash-script","label":"Hash inline script","values":{"profile":"security-browser","input":"<script>window.__APP_VERSION__=\"2026.07\";</script>"},"action":"parse"},{"id":"unsafe-inline","label":"Unsafe policy","values":{"profile":"security-browser","input":"script-src 'self' 'unsafe-inline' *"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.cookie-samesite-lab', { slug: 'cookie-samesite-lab', title: "Cookie SameSite Lab", kind: 'cookie-samesite-lab', batch: 'global-4-7', group: 'Security / Browser', defaultAction: 'validate', theme: 'developer', mark: 'SAME', kicker: "Cross-site cookie QA", summary: "Model SameSite cookie behavior for first-party, cross-site, top-level navigation, iframe, OAuth callback, Secure, HttpOnly, and partitioned-cookie contexts.", chips: ["Security / Browser","Focused QA","Browser only","Developer JSON"], signalWords: ["SameSite","Lax","Strict","None","Secure","HttpOnly","Partitioned"], riskWords: ["SameSite=None","missing Secure","third-party","iframe","Domain=."], samples: [{"id":"oauth-cookie","label":"OAuth callback cookie","values":{"profile":"security-browser","input":"Set-Cookie: __Host-session=abc; Path=/; Secure; HttpOnly; SameSite=Lax\nScenario: top-level OAuth callback"},"action":"parse"},{"id":"third-party","label":"Third-party risk","values":{"profile":"security-browser","input":"Set-Cookie: sid=abc; SameSite=None"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.email-header-auth-inspector', { slug: 'email-header-auth-inspector', title: "Email Header / SPF-DKIM-DMARC Inspector", kind: 'email-header-auth-inspector', batch: 'global-4-7', group: 'Security / Email', defaultAction: 'validate', theme: 'developer', mark: 'MAIL+', kicker: "Email delivery QA", summary: "Inspect pasted email headers for SPF, DKIM, DMARC, ARC, alignment hints, authentication-results, forwarding caveats, and no-live-DNS boundaries.", chips: ["Security / Email","Focused QA","Browser only","Developer JSON"], signalWords: ["Authentication-Results","spf=","dkim=","dmarc=","From:","Return-Path","ARC-Seal"], riskWords: ["spf=fail","dkim=fail","dmarc=fail","spoof","softfail","none"], samples: [{"id":"pass-headers","label":"Passing headers","values":{"profile":"security-email","input":"Authentication-Results: mx.example; spf=pass smtp.mailfrom=example.com; dkim=pass header.d=example.com; dmarc=pass header.from=example.com\nFrom: Billing <billing@example.com>"},"action":"parse"},{"id":"fail-headers","label":"Failing headers","values":{"profile":"security-email","input":"Authentication-Results: mx.example; spf=fail; dkim=fail; dmarc=fail\nFrom: Security <security@paypaI.example>"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.log-redaction-rule-tester', { slug: 'log-redaction-rule-tester', title: "Log Redaction Rule Tester", kind: 'log-redaction-rule-tester', batch: 'global-4-7', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'developer', mark: 'REDACT', kicker: "Privacy log QA", summary: "Test log redaction rules against payloads, verify masked output, detect missed secrets/PII, preserve debugging fields, and export safe examples.", chips: ["Security / Ops Premium","Focused QA","Browser only","Developer JSON"], signalWords: ["redact","mask","email","token","authorization","password","rule"], riskWords: ["sk_live","Bearer ","password=","email=","ssn","private key"], samples: [{"id":"log-safe","label":"Log with secrets","values":{"profile":"security-ops-premium","input":"Authorization: Bearer sk_live_1234567890abcdef\nemail=billing@example.com\nrequest_id=req_123\nRule: mask authorization and email"},"action":"parse"},{"id":"clean-log","label":"Clean log","values":{"profile":"security-ops-premium","input":"level=info request_id=req_123 status=200"},"action":"parse"}] }, globalPremiumBatchHandler],
+    // END global premium batch v4 configs
   ];
 
-  configs.forEach(([algorithmId, config, handler]) => framework.registerPlugin(algorithmId, plugin(config, handler)));
+  configs.forEach(function (entry) {
+    if (!Array.isArray(entry) || entry.length < 3) return;
+    const algorithmId = entry[0];
+    const config = entry[1];
+    const handler = entry[2];
+    if (!algorithmId || !config || typeof handler !== 'function') return;
+    framework.registerPlugin(algorithmId, plugin(config, handler));
+  });
+
+  if (typeof framework.mountAll === "function") {
+    framework.mountAll();
+  }
 })();

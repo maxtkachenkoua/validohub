@@ -487,15 +487,6 @@
       });
     }
 
-    const apiSnippets = {
-      curl: `curl -X POST https://api.validohub.com/v1/json/format \\\n  -H "Content-Type: application/json" \\\n  -d '{"input": "$INPUT$"}'`,
-      javascript: `fetch("https://api.validohub.com/v1/json/format", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ input: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
-      python: `import requests\n\nres = requests.post(\n    "https://api.validohub.com/v1/json/format",\n    json={"input": "$INPUT$"}\n)\nprint(res.json())`,
-      java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("https://api.validohub.com/v1/json/format"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"input\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
-      csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"input\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("https://api.validohub.com/v1/json/format", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
-      go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"input": "$INPUT$"}\`)\n\tres, _ := http.Post("https://api.validohub.com/v1/json/format", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
-    };
-
     function run(workbench, action, options) {
       const values = workbench.values();
       const rawInput = values.input || values.json || '';
@@ -784,41 +775,8 @@
               </div>
             </details>
           </section>
-          <div class="pesel-api-card">
-            <div class="pesel-section-title">
-              <span>🔌</span> Developer API Preview
-            </div>
-            <div class="pesel-api-tabs">
-              <button type="button" class="pesel-api-tab active" data-lang="curl">cURL</button>
-              <button type="button" class="pesel-api-tab" data-lang="javascript">JavaScript</button>
-              <button type="button" class="pesel-api-tab" data-lang="python">Python</button>
-              <button type="button" class="pesel-api-tab" data-lang="java">Java</button>
-              <button type="button" class="pesel-api-tab" data-lang="csharp">C#</button>
-              <button type="button" class="pesel-api-tab" data-lang="go">Go</button>
-            </div>
-            <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
-              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-              <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal.replace(/\n/g, '\\n').replace(/'/g, "\\'"))}</pre>
-            </div>
-          </div>
         </div>
       `);
-
-      const devSection = workbench.form.querySelector('.pesel-dev-section');
-      if (devSection) {
-        const apiBlock = devSection.querySelector('#pesel-api-code-block');
-        const tabs = devSection.querySelectorAll('.pesel-api-tab');
-        tabs.forEach(t => {
-          t.addEventListener('click', () => {
-            tabs.forEach(btn => btn.classList.remove('active'));
-            t.classList.add('active');
-            const lang = t.dataset.lang;
-            if (apiBlock && apiSnippets[lang]) {
-              apiBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal.replace(/\n/g, '\\n').replace(/'/g, "\\'"));
-            }
-          });
-        });
-      }
 
       document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
         const btn = card.querySelector('.pesel-dev-accordion-copy-btn');

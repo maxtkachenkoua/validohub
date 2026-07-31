@@ -1,5 +1,4 @@
-import { exec } from 'node:child_process';
-import { promisify } from 'node:util';
+import { spawn } from 'node:child_process';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile, writeFile, readdir, rm, access, mkdir } from 'node:fs/promises';
@@ -9,17 +8,95 @@ import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from '.
 import { compileIdentifiers } from './build-identifiers.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
-const execAsync = promisify(exec);
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
 const siteRoot = resolve(projectRoot, 'generated', 'validohub');
 const locale = 'en';
 
+function parseBuildCliOptions(argv) {
+  const timeoutOption = argv.indexOf('--timeout-minutes');
+  const progressOption = argv.indexOf('--progress-seconds');
+  const timeoutMinutes = timeoutOption >= 0 ? Number(argv[timeoutOption + 1]) : Number(process.env.VALIDOHUB_FULL_BUILD_TIMEOUT_MINUTES || 180);
+  const progressSeconds = progressOption >= 0 ? Number(argv[progressOption + 1]) : Number(process.env.VALIDOHUB_BUILD_PROGRESS_SECONDS || 60);
+  return {
+    timeoutMs: argv.includes('--no-timeout') ? 0 : Math.max(0, Number.isFinite(timeoutMinutes) ? timeoutMinutes : 180) * 60 * 1000,
+    progressMs: Math.max(10, Number.isFinite(progressSeconds) ? progressSeconds : 60) * 1000
+  };
+}
+
+const buildCliOptions = parseBuildCliOptions(process.argv.slice(2));
+
+function formatDuration(ms) {
+  const totalSeconds = Math.max(0, Math.round(ms / 1000));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  if (minutes === 0) return `${seconds}s`;
+  return `${minutes}m ${seconds}s`;
+}
+
+async function runBuildPhase(label, action) {
+  const startedAt = Date.now();
+  console.log(`\n[phase] ${label}...`);
+  try {
+    const result = await action();
+    console.log(`[phase] ${label} done in ${formatDuration(Date.now() - startedAt)}.`);
+    return result;
+  } catch (error) {
+    console.error(`[phase] ${label} failed after ${formatDuration(Date.now() - startedAt)}.`);
+    throw error;
+  }
+}
+
 async function runCommand(command, cwd) {
   console.log(`Running: ${command} in ${cwd}`);
-  const { stdout, stderr } = await execAsync(command, { cwd });
-  if (stdout) console.log(stdout);
-  if (stderr) console.warn(stderr);
+  const startedAt = Date.now();
+  let lastOutputAt = startedAt;
+
+  await new Promise((resolvePromise, rejectPromise) => {
+    const child = spawn(command, {
+      cwd,
+      shell: true,
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
+
+    const progressTimer = setInterval(() => {
+      const elapsed = Date.now() - startedAt;
+      const silent = Date.now() - lastOutputAt;
+      console.log(`[build] Still running after ${formatDuration(elapsed)}; no output for ${formatDuration(silent)}.`);
+    }, buildCliOptions.progressMs);
+
+    const timeoutTimer = buildCliOptions.timeoutMs > 0 ? setTimeout(() => {
+      const elapsed = Date.now() - startedAt;
+      console.error(`[build] Command exceeded ${formatDuration(buildCliOptions.timeoutMs)} after ${formatDuration(elapsed)}. Sending SIGINT.`);
+      child.kill('SIGINT');
+      setTimeout(() => {
+        if (!child.killed) child.kill('SIGKILL');
+      }, 15_000);
+    }, buildCliOptions.timeoutMs) : null;
+
+    child.stdout.on('data', chunk => {
+      lastOutputAt = Date.now();
+      process.stdout.write(chunk);
+    });
+    child.stderr.on('data', chunk => {
+      lastOutputAt = Date.now();
+      process.stderr.write(chunk);
+    });
+    child.on('error', error => {
+      clearInterval(progressTimer);
+      if (timeoutTimer) clearTimeout(timeoutTimer);
+      rejectPromise(error);
+    });
+    child.on('close', (code, signal) => {
+      clearInterval(progressTimer);
+      if (timeoutTimer) clearTimeout(timeoutTimer);
+      if (code === 0) {
+        resolvePromise();
+        return;
+      }
+      rejectPromise(new Error(`Command failed (${command}) with code ${code ?? 'null'}${signal ? ` and signal ${signal}` : ''}`));
+    });
+  });
 }
 
 async function pathExists(path) {
@@ -28,6 +105,17 @@ async function pathExists(path) {
     return true;
   } catch {
     return false;
+  }
+}
+
+function buildConcurrency(defaultValue = 32) {
+  const parsed = Number(process.env.VALIDOHUB_BUILD_CONCURRENCY || defaultValue);
+  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : defaultValue;
+}
+
+async function runWithConcurrency(items, worker, concurrency = buildConcurrency()) {
+  for (let index = 0; index < items.length; index += concurrency) {
+    await Promise.all(items.slice(index, index + concurrency).map(worker));
   }
 }
 
@@ -74,21 +162,6 @@ async function compileAssets() {
   const destCssDir = resolve(siteRoot, 'assets', 'css');
   const destJsDir = resolve(siteRoot, 'assets', 'js');
 
-  // Clean obsolete fingerprinted CSS from source assets/css/ and generated output dirs
-  // Only delete hashed bundles (bundle.[6-char hex].ext), NOT source bundle.js
-  const hashedBundlePattern = /^bundle\.[a-f0-9]{6}\.(css|js)$/;
-  for (const dir of [srcCssDir, destCssDir, destJsDir]) {
-    if (await pathExists(dir)) {
-      const files = await readdir(dir);
-      for (const file of files) {
-        if (hashedBundlePattern.test(file)) {
-          await rm(resolve(dir, file));
-        }
-      }
-    }
-  }
-
-
   // Write new hashed assets to generated output only (NOT back to source assets/)
   const cssFileName = `bundle.${cssHash}.css`;
   const jsFileName = `bundle.${jsHash}.js`;
@@ -127,6 +200,38 @@ async function compileAssets() {
 
 
 const TOOL_SCRIPT_BY_ALGORITHM = {
+  // BEGIN global premium batch v4 scripts
+  'validohub.oauth-oidc-flow': 'generic-suite.js',
+  'validohub.jwt-risk-scanner': 'generic-suite.js',
+  'validohub.jwks-rotation': 'generic-suite.js',
+  'validohub.openapi-breaking-diff': 'generic-suite.js',
+  'validohub.json-patch-builder': 'generic-suite.js',
+  'validohub.json-merge-patch-builder': 'generic-suite.js',
+  'validohub.rest-pagination-contract': 'generic-suite.js',
+  'validohub.api-error-catalog': 'generic-suite.js',
+  'validohub.webhook-replay-payload': 'generic-suite.js',
+  'validohub.idempotency-collision-lab': 'generic-suite.js',
+  'validohub.robots-txt-tester': 'generic-suite.js',
+  'validohub.xml-sitemap-inspector': 'generic-suite.js',
+  'validohub.canonical-hreflang-auditor': 'generic-suite.js',
+  'validohub.search-snippet-preview': 'generic-suite.js',
+  'validohub.structured-data-jsonld': 'generic-suite.js',
+  'validohub.csv-schema-inferencer': 'generic-suite.js',
+  'validohub.duplicate-row-detector': 'generic-suite.js',
+  'validohub.unicode-confusable-scanner': 'generic-suite.js',
+  'validohub.locale-number-parser': 'generic-suite.js',
+  'validohub.locale-date-parser': 'generic-suite.js',
+  'validohub.luhn-card-fixture-generator': 'generic-suite.js',
+  'validohub.bin-iin-shape-inspector': 'generic-suite.js',
+  'validohub.currency-minor-units': 'generic-suite.js',
+  'validohub.sepa-pain001-fixture': 'generic-suite.js',
+  'validohub.payment-reference-generator': 'generic-suite.js',
+  'validohub.password-policy-tester': 'generic-suite.js',
+  'validohub.csp-nonce-hash-helper': 'generic-suite.js',
+  'validohub.cookie-samesite-lab': 'generic-suite.js',
+  'validohub.email-header-auth-inspector': 'generic-suite.js',
+  'validohub.log-redaction-rule-tester': 'generic-suite.js',
+  // END global premium batch v4 scripts
   'validohub.pesel': ['pesel.js', 'gold-tools-lab.js'],
   'validohub.brazil-pix': ['pix.js'],
   'validohub.brazil-tax-id': ['brazil-tax-id.js'],
@@ -595,9 +700,9 @@ const FACTORY_TOOL_ALGORITHMS = new Set([
   'validohub.romania-suite'
 ]);
 
-const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
+const WORKBENCH_SCRIPT_VERSION = 'country-premium-clickfix-20260730';
 const GOLD_LAB_SCRIPT_VERSION = 'gold-tools-lab-v4-20260727';
-const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-global-gold-v2-20260727';
+const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-clickfix-mount-20260730';
 const COUNTRY_SUITE_FACTORY_SCRIPT_VERSION = 'country-suite-factory-rail-preview-fix-20260727';
 
 function versionForWorkbenchScript(srcOrScript) {
@@ -723,6 +828,38 @@ function stripHtml(value) {
 }
 
 const GENERIC_UTILITY_WORKBENCHES = {
+  // BEGIN global premium batch v4 workbenches
+  'oauth-oidc-flow-debugger': { id: 'oauth-oidc-flow-debugger', algorithmId: 'validohub.oauth-oidc-flow', capability: 'validate', group: 'Security / Auth', forms: [{ capability: 'validate', title: 'Auth redirect QA', fields: [{ type: 'textarea', name: 'input', label: 'OAuth redirect or token exchange notes' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-auth', 'strict', 'review'], value: 'security-auth' }], actions: ['validate','parse','generate','explain'] }] },
+  'jwt-risk-scanner': { id: 'jwt-risk-scanner', algorithmId: 'validohub.jwt-risk-scanner', capability: 'validate', group: 'Security / Auth', forms: [{ capability: 'validate', title: 'Claim risk QA', fields: [{ type: 'textarea', name: 'input', label: 'JWT or decoded claims JSON' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-auth', 'strict', 'review'], value: 'security-auth' }], actions: ['validate','parse','generate','explain'] }] },
+  'jwks-rotation-inspector': { id: 'jwks-rotation-inspector', algorithmId: 'validohub.jwks-rotation', capability: 'validate', group: 'Security / Auth', forms: [{ capability: 'validate', title: 'Keyset lifecycle QA', fields: [{ type: 'textarea', name: 'input', label: 'JWKS JSON' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-auth', 'strict', 'review'], value: 'security-auth' }], actions: ['validate','parse','generate','explain'] }] },
+  'openapi-breaking-change-diff': { id: 'openapi-breaking-change-diff', algorithmId: 'validohub.openapi-breaking-diff', capability: 'validate', group: 'Backend / API', forms: [{ capability: 'validate', title: 'Contract diff QA', fields: [{ type: 'textarea', name: 'input', label: 'Before OpenAPI snippet' }, { type: 'textarea', name: 'changed', label: 'Changed / after payload' }, { type: 'select', name: 'profile', label: 'Profile', options: ['backend-api', 'strict', 'review'], value: 'backend-api' }], actions: ['validate','parse','generate','explain'] }] },
+  'json-patch-builder': { id: 'json-patch-builder', algorithmId: 'validohub.json-patch-builder', capability: 'validate', group: 'Data & Integration', forms: [{ capability: 'validate', title: 'RFC 6902 payload QA', fields: [{ type: 'textarea', name: 'input', label: 'JSON Patch operations or before payload' }, { type: 'select', name: 'profile', label: 'Profile', options: ['data-integration', 'strict', 'review'], value: 'data-integration' }], actions: ['validate','parse','generate','explain'] }] },
+  'json-merge-patch-builder': { id: 'json-merge-patch-builder', algorithmId: 'validohub.json-merge-patch-builder', capability: 'validate', group: 'Data & Integration', forms: [{ capability: 'validate', title: 'RFC 7396 payload QA', fields: [{ type: 'textarea', name: 'input', label: 'JSON Merge Patch body' }, { type: 'select', name: 'profile', label: 'Profile', options: ['data-integration', 'strict', 'review'], value: 'data-integration' }], actions: ['validate','parse','generate','explain'] }] },
+  'rest-pagination-contract-tester': { id: 'rest-pagination-contract-tester', algorithmId: 'validohub.rest-pagination-contract', capability: 'validate', group: 'Backend / API', forms: [{ capability: 'validate', title: 'Pagination QA', fields: [{ type: 'textarea', name: 'input', label: 'Pagination response or headers' }, { type: 'select', name: 'profile', label: 'Profile', options: ['backend-api', 'strict', 'review'], value: 'backend-api' }], actions: ['validate','parse','generate','explain'] }] },
+  'api-error-code-catalog-builder': { id: 'api-error-code-catalog-builder', algorithmId: 'validohub.api-error-catalog', capability: 'validate', group: 'Backend / API', forms: [{ capability: 'validate', title: 'Error taxonomy QA', fields: [{ type: 'textarea', name: 'input', label: 'Error catalog JSON/YAML' }, { type: 'select', name: 'profile', label: 'Profile', options: ['backend-api', 'strict', 'review'], value: 'backend-api' }], actions: ['validate','parse','generate','explain'] }] },
+  'webhook-replay-payload-builder': { id: 'webhook-replay-payload-builder', algorithmId: 'validohub.webhook-replay-payload', capability: 'validate', group: 'Backend / API', forms: [{ capability: 'validate', title: 'Event fixture QA', fields: [{ type: 'textarea', name: 'input', label: 'Webhook event payload' }, { type: 'select', name: 'profile', label: 'Profile', options: ['backend-api', 'strict', 'review'], value: 'backend-api' }], actions: ['validate','parse','generate','explain'] }] },
+  'idempotency-collision-lab': { id: 'idempotency-collision-lab', algorithmId: 'validohub.idempotency-collision-lab', capability: 'validate', group: 'Backend / API', forms: [{ capability: 'validate', title: 'Retry collision QA', fields: [{ type: 'textarea', name: 'input', label: 'Retry scenario text' }, { type: 'select', name: 'profile', label: 'Profile', options: ['backend-api', 'strict', 'review'], value: 'backend-api' }], actions: ['validate','parse','generate','explain'] }] },
+  'robots-txt-tester': { id: 'robots-txt-tester', algorithmId: 'validohub.robots-txt-tester', capability: 'validate', group: 'SEO / Publishing', forms: [{ capability: 'validate', title: 'Crawler rule QA', fields: [{ type: 'textarea', name: 'input', label: 'robots.txt' }, { type: 'select', name: 'profile', label: 'Profile', options: ['seo-publishing', 'strict', 'review'], value: 'seo-publishing' }], actions: ['validate','parse','generate','explain'] }] },
+  'xml-sitemap-inspector': { id: 'xml-sitemap-inspector', algorithmId: 'validohub.xml-sitemap-inspector', capability: 'validate', group: 'SEO / Publishing', forms: [{ capability: 'validate', title: 'Indexing map QA', fields: [{ type: 'textarea', name: 'input', label: 'XML sitemap' }, { type: 'select', name: 'profile', label: 'Profile', options: ['seo-publishing', 'strict', 'review'], value: 'seo-publishing' }], actions: ['validate','parse','generate','explain'] }] },
+  'canonical-hreflang-auditor': { id: 'canonical-hreflang-auditor', algorithmId: 'validohub.canonical-hreflang-auditor', capability: 'validate', group: 'SEO / Publishing', forms: [{ capability: 'validate', title: 'Locale SEO QA', fields: [{ type: 'textarea', name: 'input', label: 'HTML head links' }, { type: 'select', name: 'profile', label: 'Profile', options: ['seo-publishing', 'strict', 'review'], value: 'seo-publishing' }], actions: ['validate','parse','generate','explain'] }] },
+  'search-snippet-preview': { id: 'search-snippet-preview', algorithmId: 'validohub.search-snippet-preview', capability: 'validate', group: 'SEO / Publishing', forms: [{ capability: 'validate', title: 'SERP copy QA', fields: [{ type: 'textarea', name: 'input', label: 'Title and metadata notes' }, { type: 'select', name: 'profile', label: 'Profile', options: ['seo-publishing', 'strict', 'review'], value: 'seo-publishing' }], actions: ['validate','parse','generate','explain'] }] },
+  'structured-data-json-ld-validator': { id: 'structured-data-json-ld-validator', algorithmId: 'validohub.structured-data-jsonld', capability: 'validate', group: 'SEO / Publishing', forms: [{ capability: 'validate', title: 'Schema.org QA', fields: [{ type: 'textarea', name: 'input', label: 'JSON-LD script or object' }, { type: 'select', name: 'profile', label: 'Profile', options: ['seo-publishing', 'strict', 'review'], value: 'seo-publishing' }], actions: ['validate','parse','generate','explain'] }] },
+  'csv-schema-inferencer': { id: 'csv-schema-inferencer', algorithmId: 'validohub.csv-schema-inferencer', capability: 'validate', group: 'Data Quality', forms: [{ capability: 'validate', title: 'Import schema QA', fields: [{ type: 'textarea', name: 'input', label: 'CSV data' }, { type: 'select', name: 'profile', label: 'Profile', options: ['data-quality', 'strict', 'review'], value: 'data-quality' }], actions: ['validate','parse','generate','explain'] }] },
+  'duplicate-row-detector': { id: 'duplicate-row-detector', algorithmId: 'validohub.duplicate-row-detector', capability: 'validate', group: 'Data Quality', forms: [{ capability: 'validate', title: 'Import dedupe QA', fields: [{ type: 'textarea', name: 'input', label: 'CSV, JSONL, or list rows' }, { type: 'select', name: 'profile', label: 'Profile', options: ['data-quality', 'strict', 'review'], value: 'data-quality' }], actions: ['validate','parse','generate','explain'] }] },
+  'unicode-confusable-scanner': { id: 'unicode-confusable-scanner', algorithmId: 'validohub.unicode-confusable-scanner', capability: 'validate', group: 'Data Quality', forms: [{ capability: 'validate', title: 'Text spoofing QA', fields: [{ type: 'textarea', name: 'input', label: 'Unicode text' }, { type: 'select', name: 'profile', label: 'Profile', options: ['data-quality', 'strict', 'review'], value: 'data-quality' }], actions: ['validate','parse','generate','explain'] }] },
+  'locale-number-parser': { id: 'locale-number-parser', algorithmId: 'validohub.locale-number-parser', capability: 'validate', group: 'Locale / Formats', forms: [{ capability: 'validate', title: 'Numeric locale QA', fields: [{ type: 'textarea', name: 'input', label: 'Number strings' }, { type: 'select', name: 'profile', label: 'Profile', options: ['locale-formats', 'strict', 'review'], value: 'locale-formats' }], actions: ['validate','parse','generate','explain'] }] },
+  'locale-date-parser': { id: 'locale-date-parser', algorithmId: 'validohub.locale-date-parser', capability: 'validate', group: 'Locale / Formats', forms: [{ capability: 'validate', title: 'Date locale QA', fields: [{ type: 'textarea', name: 'input', label: 'Date strings' }, { type: 'select', name: 'profile', label: 'Profile', options: ['locale-formats', 'strict', 'review'], value: 'locale-formats' }], actions: ['validate','parse','generate','explain'] }] },
+  'luhn-card-fixture-generator': { id: 'luhn-card-fixture-generator', algorithmId: 'validohub.luhn-card-fixture-generator', capability: 'validate', group: 'Payments / Fixtures', forms: [{ capability: 'validate', title: 'Payment test QA', fields: [{ type: 'textarea', name: 'input', label: 'Card number or fixture request' }, { type: 'select', name: 'profile', label: 'Profile', options: ['payments-fixtures', 'strict', 'review'], value: 'payments-fixtures' }], actions: ['validate','parse','generate','explain'] }] },
+  'bin-iin-shape-inspector': { id: 'bin-iin-shape-inspector', algorithmId: 'validohub.bin-iin-shape-inspector', capability: 'validate', group: 'Payments / Fixtures', forms: [{ capability: 'validate', title: 'Card prefix QA', fields: [{ type: 'textarea', name: 'input', label: 'BIN/IIN or masked PAN' }, { type: 'select', name: 'profile', label: 'Profile', options: ['payments-fixtures', 'strict', 'review'], value: 'payments-fixtures' }], actions: ['validate','parse','generate','explain'] }] },
+  'currency-minor-units-checker': { id: 'currency-minor-units-checker', algorithmId: 'validohub.currency-minor-units', capability: 'validate', group: 'Payments / Fixtures', forms: [{ capability: 'validate', title: 'Money amount QA', fields: [{ type: 'textarea', name: 'input', label: 'Money payload or amount list' }, { type: 'select', name: 'profile', label: 'Profile', options: ['payments-fixtures', 'strict', 'review'], value: 'payments-fixtures' }], actions: ['validate','parse','generate','explain'] }] },
+  'sepa-pain001-fixture-helper': { id: 'sepa-pain001-fixture-helper', algorithmId: 'validohub.sepa-pain001-fixture', capability: 'validate', group: 'Payments / Fixtures', forms: [{ capability: 'validate', title: 'Credit transfer XML QA', fields: [{ type: 'textarea', name: 'input', label: 'pain.001 XML or fixture notes' }, { type: 'select', name: 'profile', label: 'Profile', options: ['payments-fixtures', 'strict', 'review'], value: 'payments-fixtures' }], actions: ['validate','parse','generate','explain'] }] },
+  'payment-reference-generator': { id: 'payment-reference-generator', algorithmId: 'validohub.payment-reference-generator', capability: 'validate', group: 'Payments / Fixtures', forms: [{ capability: 'validate', title: 'Reference fixture QA', fields: [{ type: 'textarea', name: 'input', label: 'Payment reference request' }, { type: 'select', name: 'profile', label: 'Profile', options: ['payments-fixtures', 'strict', 'review'], value: 'payments-fixtures' }], actions: ['validate','parse','generate','explain'] }] },
+  'password-policy-tester': { id: 'password-policy-tester', algorithmId: 'validohub.password-policy-tester', capability: 'validate', group: 'Security / Auth', forms: [{ capability: 'validate', title: 'Credential policy QA', fields: [{ type: 'textarea', name: 'input', label: 'Password policy and sample' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-auth', 'strict', 'review'], value: 'security-auth' }], actions: ['validate','parse','generate','explain'] }] },
+  'csp-nonce-hash-helper': { id: 'csp-nonce-hash-helper', algorithmId: 'validohub.csp-nonce-hash-helper', capability: 'validate', group: 'Security / Browser', forms: [{ capability: 'validate', title: 'Inline script CSP QA', fields: [{ type: 'textarea', name: 'input', label: 'CSP or inline script/style' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-browser', 'strict', 'review'], value: 'security-browser' }], actions: ['validate','parse','generate','explain'] }] },
+  'cookie-samesite-lab': { id: 'cookie-samesite-lab', algorithmId: 'validohub.cookie-samesite-lab', capability: 'validate', group: 'Security / Browser', forms: [{ capability: 'validate', title: 'Cross-site cookie QA', fields: [{ type: 'textarea', name: 'input', label: 'Set-Cookie header or scenario' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-browser', 'strict', 'review'], value: 'security-browser' }], actions: ['validate','parse','generate','explain'] }] },
+  'email-header-auth-inspector': { id: 'email-header-auth-inspector', algorithmId: 'validohub.email-header-auth-inspector', capability: 'validate', group: 'Security / Email', forms: [{ capability: 'validate', title: 'Email delivery QA', fields: [{ type: 'textarea', name: 'input', label: 'Email headers' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-email', 'strict', 'review'], value: 'security-email' }], actions: ['validate','parse','generate','explain'] }] },
+  'log-redaction-rule-tester': { id: 'log-redaction-rule-tester', algorithmId: 'validohub.log-redaction-rule-tester', capability: 'validate', group: 'Security / Ops Premium', forms: [{ capability: 'validate', title: 'Privacy log QA', fields: [{ type: 'textarea', name: 'input', label: 'Logs and redaction rules' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-ops-premium', 'strict', 'review'], value: 'security-ops-premium' }], actions: ['validate','parse','generate','explain'] }] },
+  // END global premium batch v4 workbenches
   'json-schema-workbench': { id: 'json-schema-workbench', algorithmId: 'validohub.json-schema', capability: 'analyze', forms: [{ capability: 'analyze', title: 'Analyze', fields: [{ type: 'textarea', name: 'input', label: 'JSON payload' }, { type: 'textarea', name: 'schema', label: 'JSON Schema' }, { type: 'number', name: 'count', label: 'Fixture count', value: "2", min: '1', max: '25' }], actions: ["analyze","validate","generate","explain"] }] },
   'openapi-inspector': { id: 'openapi-inspector', algorithmId: 'validohub.openapi', capability: 'inspect', forms: [{ capability: 'inspect', title: 'Inspect', fields: [{ type: 'textarea', name: 'input', label: 'OpenAPI JSON or YAML' }, { type: 'select', name: 'profile', label: 'Profile', options: ["auto","openapi-3","swagger-2"], value: "auto" }], actions: ["inspect","validate","generate","explain"] }] },
   'yaml-toml-workbench': { id: 'yaml-toml-workbench', algorithmId: 'validohub.yaml-toml', capability: 'inspect', forms: [{ capability: 'inspect', title: 'Inspect', fields: [{ type: 'select', name: 'format', label: 'Format', options: ["auto","yaml","toml"], value: "auto" }, { type: 'textarea', name: 'input', label: 'YAML or TOML config' }], actions: ["inspect","validate","format","explain"] }] },
@@ -1134,11 +1271,6 @@ function renderGenericUtilityWorkbench(config) {
   ].join('')).join('');
   return [
     '<section class="workbench-card" aria-label="Tool input and output">',
-    '<div class="workbench-heading">',
-    '<span class="eyebrow">Workbench</span>',
-    '<h2>Run the tool</h2>',
-    '<p>Paste input, choose an action, and copy the result directly in your browser.</p>',
-    '</div>',
     '<div class="workbench-list">',
     forms,
     '</div>',
@@ -1665,6 +1797,46 @@ function applyUiLocaleTranslations(content, localeCode) {
   return next;
 }
 
+function localizedChromeLabels(localeCode) {
+  const locale = String(localeCode || 'en');
+  const dictionary = {
+    en: { home: 'Home', tools: 'Tools', countries: 'Countries', identifiers: 'Identifiers', navigation: 'Main navigation' },
+    fr: { home: 'Accueil', tools: 'Outils', countries: 'Pays', identifiers: 'Identifiants', navigation: 'Navigation principale' },
+    uk: { home: 'Головна', tools: 'Інструменти', countries: 'Країни', identifiers: 'Ідентифікатори', navigation: 'Головна навігація' },
+    de: { home: 'Startseite', tools: 'Tools', countries: 'Länder', identifiers: 'Kennungen', navigation: 'Hauptnavigation' },
+    es: { home: 'Inicio', tools: 'Herramientas', countries: 'Países', identifiers: 'Identificadores', navigation: 'Navegación principal' },
+    pl: { home: 'Start', tools: 'Narzędzia', countries: 'Kraje', identifiers: 'Identyfikatory', navigation: 'Nawigacja główna' },
+    'pt-BR': { home: 'Início', tools: 'Ferramentas', countries: 'Países', identifiers: 'Identificadores', navigation: 'Navegação principal' }
+  };
+  return dictionary[locale] || dictionary.en;
+}
+
+function normalizePrimaryNavigation(content, localeCode = 'en', routePath = '') {
+  const labels = localizedChromeLabels(localeCode);
+  const prefix = `/${localeCode}/`;
+  const isGlobalTool = routePath.includes('/tools/');
+  const isIdentifier = routePath.includes('/identifiers/') || routePath.includes('/categories/national-identifiers/');
+  const routeParts = routePath.split('/').filter(Boolean);
+  const isCountryArea = routePath.includes('/countries/') || (!isGlobalTool && !isIdentifier && routeParts.length >= 2);
+  const link = (href, label, active) => `<a href="${href}"${active ? ' aria-current="page" class="is-active"' : ''}>${escapeHtml(label)}</a>`;
+  const nav = `<nav class="primary-nav" aria-label="${escapeHtml(labels.navigation)}">`
+    + link(prefix, labels.home, routePath === prefix)
+    + link(`${prefix}tools/`, labels.tools, routePath.includes('/tools/'))
+    + link(`${prefix}countries/`, labels.countries, isCountryArea)
+    + link(`${prefix}categories/national-identifiers/`, labels.identifiers, isIdentifier)
+    + '</nav>';
+
+  return content.replace(/<nav class="primary-nav"[^>]*>[\s\S]*?<\/nav>/g, nav);
+}
+
+function removeGeneratedFooterText(content) {
+  return content.replace(/\s*<p>[^<]*Valido Engine\.?[^<]*<\/p>/giu, '');
+}
+
+function normalizeGeneratedChrome(content, localeCode = 'en', routePath = '') {
+  return removeGeneratedFooterText(normalizePrimaryNavigation(content, localeCode, routePath));
+}
+
 function localizeSeoUrls(content, localeCode) {
   const locale = String(localeCode || 'en');
   if (locale === 'en') return content;
@@ -1681,7 +1853,8 @@ function localizeSeoUrls(content, localeCode) {
 
 async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
   const locales = await getConfiguredLocales();
-  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/'));
+  const allRoutes = routeRegistry.getAll();
+  const englishRoutes = allRoutes.filter(route => route.path.startsWith('/en/'));
 
   // Register missing locale routes for every English route.
   for (const localeCode of locales) {
@@ -1707,15 +1880,15 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
   }
 
   // Materialize any route that is still missing output by cloning the English equivalent.
-  for (const route of routeRegistry.getAll()) {
+  await runWithConcurrency(routeRegistry.getAll(), async (route) => {
     const { locale: routeLocale, suffix } = splitRouteLocale(route.path);
-    if (routeLocale === 'en') continue;
-    if (await pathExists(route.outputPath)) continue;
+    if (routeLocale === 'en') return;
+    if (await pathExists(route.outputPath)) return;
 
     const englishPath = routeForLocale('en', suffix);
     const englishRoute = routeRegistry.get(englishPath);
     if (!englishRoute || !(await pathExists(englishRoute.outputPath))) {
-      continue;
+      return;
     }
 
     let localizedContent = await readFile(englishRoute.outputPath, 'utf8');
@@ -1727,21 +1900,25 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
     await mkdir(dirname(route.outputPath), { recursive: true });
     await writeFile(route.outputPath, localizedContent, 'utf8');
     console.log(`✓ Generated localized route fallback: ${route.path}`);
-  }
+  });
 
   // Normalize alternate locale links and locale-pinned internal hrefs on every route.
-  for (const route of routeRegistry.getAll()) {
-    if (!(await pathExists(route.outputPath))) continue;
+  await runWithConcurrency(routeRegistry.getAll(), async (route) => {
+    if (!(await pathExists(route.outputPath))) return;
     const { locale: routeLocale } = splitRouteLocale(route.path);
     let content = await readFile(route.outputPath, 'utf8');
+    const original = content;
     if (routeLocale !== 'en') {
       content = rewriteHrefLocale(content, routeLocale, routeRegistry);
       content = localizeSeoUrls(content, routeLocale);
       content = applyUiLocaleTranslations(content, routeLocale);
     }
+    content = normalizeGeneratedChrome(content, routeLocale, route.path);
     content = injectAlternateLinks(content, route.path, routeRegistry, locales);
-    await writeFile(route.outputPath, content, 'utf8');
-  }
+    if (content !== original) {
+      await writeFile(route.outputPath, content, 'utf8');
+    }
+  });
 }
 
 function pageTitleForDocumentation(content, route) {
@@ -1784,7 +1961,8 @@ function keepCountrySuiteRelatedLinksLocal(content, route) {
   const normalizedPath = routePath.endsWith('/') ? routePath : `${routePath}/`;
   const allowedPrefix = `/en/${countrySlug}/`;
 
-  return content.replace(/<section class="related-section">([\s\S]*?)<\/section>/g, (section) => {
+  return content.replace(/<section class="related-section(?:\s[^"]*)?">([\s\S]*?)<\/section>/g, (section) => {
+    if (section.includes('vh-tool-related-footer')) return section;
     return section.replace(/<a href="([^"]+)" class="link-card">[\s\S]*?<\/a>/g, (card, href) => {
       const normalizedHref = href.endsWith('/') ? href : `${href}/`;
       return normalizedHref.startsWith(allowedPrefix) && normalizedHref !== normalizedPath ? card : '';
@@ -1832,6 +2010,7 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       content = collapseFactoryWorkbenchShell(content);
       content = ensureToolScript(content);
       content = keepCountrySuiteRelatedLinksLocal(content, route);
+      content = normalizeGeneratedChrome(content, splitRouteLocale(route.path).locale, route.path);
 
       // Force current hashed bundles on Java-owned pages to avoid stale hash drift across publish stages.
       content = content.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, `<link rel="stylesheet" href="${assetsManifest.css}">`);
@@ -1878,6 +2057,23 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       await writeFile(filePath, content, 'utf8');
       console.log(`✓ Post-processed Java page: ${route.path}`);
     }
+  }
+}
+
+async function normalizeGeneratedChromeFiles(routeRegistry) {
+  let updated = 0;
+  for (const route of routeRegistry.getAll()) {
+    if (!(await pathExists(route.outputPath))) continue;
+    const { locale: routeLocale } = splitRouteLocale(route.path);
+    const content = await readFile(route.outputPath, 'utf8');
+    const next = normalizeGeneratedChrome(content, routeLocale, route.path);
+    if (next !== content) {
+      await writeFile(route.outputPath, next, 'utf8');
+      updated += 1;
+    }
+  }
+  if (updated > 0) {
+    console.log(`✓ Normalized chrome on ${updated} generated pages`);
   }
 }
 
@@ -1962,7 +2158,8 @@ async function pruneCountrySuiteRelatedLinksToCountry() {
     const content = await readFile(filePath, 'utf8');
     if (!content.includes('class="related-section"')) continue;
 
-    const next = content.replace(/<section class="related-section">[\s\S]*?<\/section>/g, (section) => {
+    const next = content.replace(/<section class="related-section(?:\s[^"]*)?">[\s\S]*?<\/section>/g, (section) => {
+      if (section.includes('vh-tool-related-footer')) return section;
       return section.replace(/<a href="([^"]+)" class="link-card">[\s\S]*?<\/a>/g, (card, href) => {
         const normalizedHref = href.endsWith('/') ? href : `${href}/`;
         return normalizedHref.startsWith(allowedPrefix) && normalizedHref !== pagePath ? card : '';
@@ -2233,23 +2430,23 @@ async function main() {
 
     // 1. Compile Graph/Search Indexes
     console.log('\n[Step 1/5] Compiling Knowledge Graph & Search Indexes...');
-    await runCommand('node scripts/compile-countries-registry.mjs', projectRoot);
+    await runBuildPhase('Compile countries registry', () => runCommand('node scripts/compile-countries-registry.mjs', projectRoot));
 
     // 2. Asset Concatenation, Fingerprinting and Manifest writing
     console.log('\n[Step 2/5] Compiling Design-System Hashed Assets...');
-    const assetsManifest = await compileAssets();
-    const configuredLocales = await getConfiguredLocales();
-    await validateConfiguredLocaleSwitcher(configuredLocales);
-    await pruneGeneratedLocaleDirectories(configuredLocales);
+    const assetsManifest = await runBuildPhase('Compile hashed assets', () => compileAssets());
+    const configuredLocales = await runBuildPhase('Load configured locales', () => getConfiguredLocales());
+    await runBuildPhase('Validate locale switcher', () => validateConfiguredLocaleSwitcher(configuredLocales));
+    await runBuildPhase('Prune generated locale directories', () => pruneGeneratedLocaleDirectories(configuredLocales));
 
     // 3. Publish/Materialize Static Site via Maven
     console.log('\n[Step 3/5] Executing Maven Site Publisher...');
     const engineDir = '/Users/maxtkachenko/work/valido-engine';
-    await runCommand('mvn -pl valido-cli exec:java -Dexec.mainClass="com.validoengine.cli.EngineMain" -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"', engineDir);
+    await runBuildPhase('Run Java publisher', () => runCommand('mvn -pl valido-cli exec:java -Dexec.mainClass="com.validoengine.cli.EngineMain" -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"', engineDir));
 
     // 4. Pass 1: Build Registry & Assert Ownership Integrity
     console.log('\n[Step 4/5] Loading Canonical Route Registry...');
-    const routeRegistry = await buildRouteRegistry();
+    const routeRegistry = await runBuildPhase('Load canonical route registry', () => buildRouteRegistry());
     console.log(`Registry loaded successfully: ${routeRegistry.getAll().length} routes discovered.`);
 
     // 5. Pass 2: Generators Materialization
@@ -2258,20 +2455,21 @@ async function main() {
     if (homeRoute) homeRoute.sourceOwner = 'node';
     const toolsPortalRoute = routeRegistry.get('/en/tools/');
     if (toolsPortalRoute) toolsPortalRoute.sourceOwner = 'node';
-    await compileHomePortal(routeRegistry, assetsManifest);
-    await compileToolsPortal(routeRegistry, assetsManifest);
-    await compileCountriesPortal(routeRegistry, assetsManifest);
-    await compileIdentifiers(routeRegistry, assetsManifest);
-    await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);
-    await postProcessJavaPages(routeRegistry, assetsManifest);
-    await applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales);
-    await pruneCountrySuiteRelatedLinksToCountry();
-    await normalizeWorkbenchScriptVersions();
-    await ensureGeneratedToolScripts();
-    await writeSitemap(routeRegistry);
+    await runBuildPhase('Compile home portal', () => compileHomePortal(routeRegistry, assetsManifest));
+    await runBuildPhase('Compile tools portal', () => compileToolsPortal(routeRegistry, assetsManifest));
+    await runBuildPhase('Compile countries portal', () => compileCountriesPortal(routeRegistry, assetsManifest));
+    await runBuildPhase('Compile identifiers', () => compileIdentifiers(routeRegistry, assetsManifest));
+    await runBuildPhase('Ensure localized route fallbacks', () => ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest));
+    await runBuildPhase('Post-process Java pages', () => postProcessJavaPages(routeRegistry, assetsManifest));
+    await runBuildPhase('Apply final localization pass', () => applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales));
+    await runBuildPhase('Normalize generated chrome files', () => normalizeGeneratedChromeFiles(routeRegistry));
+    await runBuildPhase('Prune country tool related links', () => pruneCountrySuiteRelatedLinksToCountry());
+    await runBuildPhase('Normalize workbench script versions', () => normalizeWorkbenchScriptVersions());
+    await runBuildPhase('Ensure generated tool scripts', () => ensureGeneratedToolScripts());
+    await runBuildPhase('Write sitemap', () => writeSitemap(routeRegistry));
 
     // 6. Site Integrity Verification & Metrics
-    const metrics = await validateSiteOutput(routeRegistry, assetsManifest);
+    const metrics = await runBuildPhase('Validate generated site output', () => validateSiteOutput(routeRegistry, assetsManifest));
 
     // Build duration
     const buildDuration = Date.now() - startTime;

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: xml-sitemap-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: XML Sitemap Inspector
+summary:
+  en: Inspect XML sitemaps for URL count, loc/lastmod shape, hreflang adjacency, sitemap-index structure, duplicate URLs, and crawl handoff notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.xml-sitemap-inspector
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: XML sitemap
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - seo-publishing
+          - strict
+          - review
+        default: "seo-publishing"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [canonical-hreflang-auditor, search-snippet-preview, structured-data-json-ld-validator, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: XML Sitemap Inspector
+  description:
+    en: Inspect XML sitemaps for URL count, loc/lastmod shape, hreflang adjacency, sitemap-index structure, duplicate URLs, and crawl handoff notes.

@@ -1171,7 +1171,6 @@ export function renderCountryCivicSnapshot(model) {
       <div class="vh-country-city-panel">
         <div class="vh-flex vh-align-center vh-justify-between vh-gap-sm">
           <h3>Main cities</h3>
-          <span class="vh-country-status-badge vh-custom-badge">approx.</span>
         </div>
         <ul>
           ${cities.map(renderCityChip).join('\n')}
@@ -1977,6 +1976,8 @@ function canonicalCountryToolTitle(route) {
     [/pesel/, 'PESEL Validator'],
     [/cpf/, 'CPF Validator'],
     [/cnpj/, 'CNPJ Validator'],
+    [/pix-copy-paste-decoder|pix-copy.*decoder/, 'Pix Copy-and-Paste Decoder'],
+    [/pix-qr-payload-generator|pix.*qr.*payload.*generator/, 'Pix QR Payload Generator'],
     [/pix/, 'Pix Validator'],
     [/curp/, 'CURP Validator'],
     [/(^|-)rut(-|$)/, 'RUT Validator'],
@@ -2055,6 +2056,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const secondaryRoutes = routes.filter(route => countryRouteVisibilityTier(route) === 'secondary');
   const referenceRoutes = routes.filter(route => countryRouteVisibilityTier(route) === 'reference');
   const catalogRoutes = routes.filter(route => countryRouteVisibilityTier(route) !== 'reference');
+  const totalWorkbenchRoutes = primaryRoutes.length + secondaryRoutes.length + referenceRoutes.length;
 
   const featuredPatterns = model.iso2 === 'BR'
     ? /(brazil-cpf-validator|brazil-cnpj-validator|brazil-pix-validator|brazil-boleto-barcode-validator|brazil-linha-digitavel-validator|brazil-nfe-access-key-validator|brazil-cep-validator|brazil-phone-e164-formatter|brazil-renavam-validator|brazil-data-quality-workbench)/
@@ -2147,7 +2149,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
 
   const stats = `
     <div class="vh-country-catalog-stats" aria-label="Country workbench coverage">
-      <span><strong>${routes.length}</strong><small>total routes</small></span>
+      <span><strong>${totalWorkbenchRoutes}</strong><small>total workbenches</small></span>
       <span><strong>${primaryRoutes.length}</strong><small>primary tools</small></span>
       <span><strong>${secondaryRoutes.length}</strong><small>secondary workflows</small></span>
       <span><strong>${referenceRoutes.length}</strong><small>reference helpers</small></span>

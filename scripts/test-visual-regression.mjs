@@ -257,48 +257,20 @@ async function runVisualTests() {
             await page.waitForTimeout(100);
           }
 
-          // Locate Developer API Preview card
-          const apiCard = await page.$('.pesel-api-card');
-          if (!apiCard) {
-            console.error('  ❌ FAIL: Developer API Preview (.pesel-api-card) not found after validation.');
+          const rawJsonPanel = await page.evaluate(() => {
+            const summaries = Array.from(document.querySelectorAll('details summary'));
+            const summary = summaries.find(node => /Raw JSON Output/i.test(node.textContent || ''));
+            if (!summary) return { found: false, text: '' };
+            const details = summary.closest('details');
+            if (details) details.open = true;
+            const code = details?.querySelector('code, pre');
+            return { found: true, text: (code?.textContent || '').trim() };
+          });
+          if (!rawJsonPanel.found || !rawJsonPanel.text || rawJsonPanel.text.includes('$INPUT$')) {
+            console.error('  ❌ FAIL: Raw JSON Output panel is missing or empty after validation.');
             hasFailure = true;
           } else {
-            console.log('  ✓ Pass: Developer API Preview visible in DOM.');
-          }
-
-          // Read visible language tabs, compare with exposed apiSnippets
-          const visibleTabs = await page.evaluate(() => {
-            const btns = Array.from(document.querySelectorAll('.pesel-api-tab'));
-            return btns.map(b => b.dataset.lang);
-          });
-          const sourceSnippets = await page.evaluate(() => {
-            return Object.keys(window.ValidoWorkbench.plugins['validohub.pesel'].apiSnippets);
-          });
-
-          console.log(`  Visible tabs dataset langs: [${visibleTabs.join(', ')}]`);
-          console.log(`  Exposed apiSnippets keys:   [${sourceSnippets.join(', ')}]`);
-
-          const tabsMatch = visibleTabs.length === sourceSnippets.length &&
-                            visibleTabs.every(t => sourceSnippets.includes(t));
-          if (!tabsMatch) {
-            console.error('  ❌ FAIL: Visible tabs do not match the apiSnippets keys source of truth.');
-            hasFailure = true;
-          } else {
-            console.log('  ✓ Pass: Rendered visible tabs match languages in the snippet source.');
-          }
-
-          // Click every tab and assert non-empty code preview content
-          for (const lang of visibleTabs) {
-            const tabButton = await page.$(`.pesel-api-tab[data-lang="${lang}"]`);
-            await tabButton.click();
-            await page.waitForTimeout(50);
-            const codeBlockText = await page.$eval('#pesel-api-code-block', el => el.textContent.trim());
-            if (!codeBlockText || codeBlockText.includes('$INPUT$')) {
-              console.error(`  ❌ FAIL: Code block is empty or not replaced for tab: ${lang}`);
-              hasFailure = true;
-            } else {
-              console.log(`  ✓ Pass: Language tab [${lang}] displays non-empty code snippet.`);
-            }
+            console.log('  ✓ Pass: Raw JSON Output panel is visible and populated.');
           }
 
           // Open advanced details panel, capture open/closed screenshots

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: robots-txt-tester
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: robots.txt Tester
+summary:
+  en: Inspect robots.txt directives for user-agent groups, allow/disallow precedence, sitemap hints, crawl-delay portability, and accidental blocking.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.robots-txt-tester
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: robots.txt
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - seo-publishing
+          - strict
+          - review
+        default: "seo-publishing"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [xml-sitemap-inspector, canonical-hreflang-auditor, search-snippet-preview, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: robots.txt Tester
+  description:
+    en: Inspect robots.txt directives for user-agent groups, allow/disallow precedence, sitemap hints, crawl-delay portability, and accidental blocking.

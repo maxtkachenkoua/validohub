@@ -8,7 +8,7 @@ const productionLocales = new Set(['es', 'pt-BR', 'de', 'fr', 'pl', 'uk']);
 
 const hardNeedles = [
   'Waiting for input',
-  'Developer API preview',
+  'Developer snapshot JSON',
   'Raw JSON output',
   'Primary local workbench',
   'Secondary local workflow',

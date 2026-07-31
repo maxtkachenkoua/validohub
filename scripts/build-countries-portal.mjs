@@ -56,6 +56,58 @@ function escapeHtmlJson(jsonStr) {
     .replace(/\u2029/g, '\\u2029');
 }
 
+function sectionAnchor(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function toolsCategoryAnchor(category) {
+  const mapped = {
+    'Data & API Contracts': 'data-api-contracts',
+    'Security & Trust': 'security-trust',
+    'Regulated Formats': 'regulated-formats',
+    'DevOps & Cloud QA': 'devops-cloud-qa',
+    'Frontend & Product QA': 'frontend-product-qa',
+    'AI & Data Ops': 'ai-data-ops',
+    'Text, Time & Utilities': 'text-time-utilities'
+  };
+  return mapped[category] || sectionAnchor(category);
+}
+
+function countriesContinentAnchor(continent) {
+  const mapped = {
+    'South America': 'americas',
+    'América do Sul': 'americas',
+    'Amérique du Sud': 'americas',
+    'Ameryka Południowa': 'americas',
+    'Sudamérica': 'americas',
+    'Südamerika': 'americas',
+    'Південна Америка': 'americas',
+    Europe: 'europe',
+    Europa: 'europe',
+    Європа: 'europe',
+    Asia: 'asia-pacific',
+    Азія: 'asia-pacific',
+    Africa: 'africa-middle-east',
+    África: 'africa-middle-east',
+    Afrique: 'africa-middle-east',
+    Afrika: 'africa-middle-east',
+    Африка: 'africa-middle-east',
+    Oceania: 'oceania',
+    Oceanía: 'oceania',
+    Ozeanien: 'oceania',
+    Океанія: 'oceania',
+    'North America': 'north-america',
+    'América do Norte': 'north-america',
+    Norteamérica: 'north-america',
+    'Північна Америка': 'north-america'
+  };
+  return mapped[continent] || sectionAnchor(continent);
+}
+
 async function pathExists(path) {
   try {
     await access(path);
@@ -904,7 +956,7 @@ function renderToolsCategorySections(toolRoutes, categoryOrder) {
     if (!routes.length) return '';
     const meta = categoryMetaFor(category);
     return `
-      <section class="vh-tools-family" data-tools-group>
+      <section class="vh-tools-family" id="${escapeHtml(toolsCategoryAnchor(category))}" data-tools-group>
         <div class="vh-tools-family-head">
           <div>
             <span class="vh-tools-family-kicker">${escapeHtml(meta.kicker)}</span>
@@ -1162,7 +1214,7 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
     }).join('\n');
 
     return `
-      <section class="vh-countries-continent-group" data-continent="${escapeHtml(continent)}">
+      <section class="vh-countries-continent-group" id="${escapeHtml(countriesContinentAnchor(continent))}" data-continent="${escapeHtml(continent)}">
         <div class="vh-countries-continent-heading">
           <h3>${escapeHtml(continent)}</h3>
           <span class="vh-country-status-badge vh-custom-badge">${groupCountries.length} countries</span>

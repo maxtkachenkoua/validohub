@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: csp-nonce-hash-helper
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: CSP Nonce / Hash Helper
+summary:
+  en: Generate and inspect CSP nonce and hash policy snippets for inline scripts/styles, strict-dynamic boundaries, and deploy-safe rotation notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.csp-nonce-hash-helper
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSP or inline script/style
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-browser
+          - strict
+          - review
+        default: "security-browser"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [cookie-samesite-lab, email-header-auth-inspector, log-redaction-rule-tester, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CSP Nonce / Hash Helper
+  description:
+    en: Generate and inspect CSP nonce and hash policy snippets for inline scripts/styles, strict-dynamic boundaries, and deploy-safe rotation notes.

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: canonical-hreflang-auditor
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Canonical / Hreflang Auditor
+summary:
+  en: Audit canonical and hreflang clusters for x-default, reciprocal alternates, mixed hosts, missing locales, and duplicate canonical drift.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.canonical-hreflang-auditor
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: HTML head links
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - seo-publishing
+          - strict
+          - review
+        default: "seo-publishing"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [search-snippet-preview, structured-data-json-ld-validator, csv-schema-inferencer, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Canonical / Hreflang Auditor
+  description:
+    en: Audit canonical and hreflang clusters for x-default, reciprocal alternates, mixed hosts, missing locales, and duplicate canonical drift.

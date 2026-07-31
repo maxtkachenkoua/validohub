@@ -72,11 +72,20 @@ async function pathExists(filePath) {
   }
 }
 
+async function preferredRasterAssetPath(assetPath) {
+  if (!/\.png$/i.test(String(assetPath || ''))) return assetPath;
+
+  const webpPath = assetPath.replace(/\.png$/i, '.webp');
+  const fullWebpPath = resolve(projectRoot, webpPath.replace(/^\//, ''));
+  return await pathExists(fullWebpPath) ? webpPath : assetPath;
+}
+
 async function renderCountryVisualAsset(assetPath, altText) {
   const fullPath = resolve(projectRoot, assetPath.replace(/^\//, ''));
   if (isRasterAsset(assetPath)) {
     if (!(await pathExists(fullPath))) return '';
-    return `<img src="${escapeHtml(assetPath)}" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">`;
+    const src = await preferredRasterAssetPath(assetPath);
+    return `<img src="${escapeHtml(src)}" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">`;
   }
 
   const rawSvg = await readFile(fullPath, 'utf8');
@@ -212,6 +221,12 @@ const COUNTRY_SEARCH_HINTS = [
   { label: 'PIX', pattern: /\bpix\b/ },
   { label: 'CPF', pattern: /\bcpf\b/ },
   { label: 'CNPJ', pattern: /cnpj/ },
+  { label: 'Boleto', pattern: /boleto|linha digitavel/ },
+  { label: 'CEP', pattern: /\bcep\b/ },
+  { label: 'CNAE', pattern: /\bcnae\b/ },
+  { label: 'RENAVAM', pattern: /renavam/ },
+  { label: 'NF-e', pattern: /\bnf-?e\b|nfe|fiscal access/ },
+  { label: 'CNAB', pattern: /\bcnab\b/ },
   { label: 'DNI', pattern: /\bdni\b/ },
   { label: 'NIE', pattern: /\bnie\b/ },
   { label: 'NIF', pattern: /\bnif\b/ },
@@ -259,17 +274,13 @@ function deriveCountrySearchHints(model, routeRegistry) {
           return routeText.includes(part) || Boolean(aliasPattern && aliasPattern.test(routeText));
         });
       })
-      .slice(0, 6)
     : [];
 
-  if (routedModelHints.length > 0) {
-    return routedModelHints;
-  }
-
-  const hints = COUNTRY_SEARCH_HINTS
+  const routeHints = COUNTRY_SEARCH_HINTS
     .filter(item => item.pattern.test(routeText))
-    .map(item => item.label)
-    .slice(0, 5);
+    .map(item => item.label);
+
+  const hints = Array.from(new Set([...routedModelHints, ...routeHints])).slice(0, 10);
 
   if (hints.length === 0) {
     const fallback = routes
@@ -277,7 +288,7 @@ function deriveCountrySearchHints(model, routeRegistry) {
       .filter(Boolean)
       .map(title => title.split(/\s+/)[0])
       .filter(Boolean)
-      .slice(0, 5);
+      .slice(0, 10);
     if (fallback.length > 0) {
       hints.push(...fallback);
     }

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: jwks-rotation-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JWKS Rotation Inspector
+summary:
+  en: Inspect JWKS key sets for algorithm mix, duplicate kids, legacy keys, use/sig metadata, rotation coverage, and offline verification boundaries.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.jwks-rotation
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JWKS JSON
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-auth
+          - strict
+          - review
+        default: "security-auth"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [openapi-breaking-change-diff, json-patch-builder, json-merge-patch-builder, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JWKS Rotation Inspector
+  description:
+    en: Inspect JWKS key sets for algorithm mix, duplicate kids, legacy keys, use/sig metadata, rotation coverage, and offline verification boundaries.

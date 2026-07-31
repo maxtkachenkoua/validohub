@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: json-patch-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSON Patch Builder
+summary:
+  en: Build and inspect JSON Patch operations with add, replace, remove, move, copy, test, pointer safety, and before/after handoff previews.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.json-patch-builder
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JSON Patch operations or before payload
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - data-integration
+          - strict
+          - review
+        default: "data-integration"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-merge-patch-builder, rest-pagination-contract-tester, api-error-code-catalog-builder, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSON Patch Builder
+  description:
+    en: Build and inspect JSON Patch operations with add, replace, remove, move, copy, test, pointer safety, and before/after handoff previews.

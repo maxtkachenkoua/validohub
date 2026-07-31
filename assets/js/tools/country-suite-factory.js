@@ -77,7 +77,6 @@
     hoverBreakdown: 'Inspect each detected field group and its local meaning.',
     calculationDebugger: 'Calculation debugger',
     replayCalculation: 'Replay calculation',
-    developerApiPreview: 'Developer API preview',
     repairSuggestions: 'Repair suggestions',
     rawJsonOutput: 'Raw JSON output',
     validationLog: 'Validation pipeline logs',
@@ -85,20 +84,19 @@
     browserBoundary: 'Browser-only boundary',
     premiumDebugLayer: 'Premium debug layer',
     toolIntelligence: '{country} tool intelligence',
-    toolIntelligenceSummary: 'History, batch checks, API handoff, raw JSON, and local related workflows stay available without taking over the main workflow.',
+    toolIntelligenceSummary: 'History, batch checks, local JSON, raw output, and related workflows stay available without taking over the main workflow.',
     localBadge: '{code} local',
     browserHistory: 'Browser history',
     multiRowValidator: 'Multi-row validator',
     useCurrentInput: 'Use current input',
     batchResult: 'Batch result',
-    apiPreview: 'API preview',
     rawJson: 'Raw JSON',
     relatedLocalTools: 'Related local tools',
     batchEmpty: 'Run batch to compare pass/review states without leaving this page.',
     pasteOnePerLine: 'Paste one value per line first.',
     relatedLocalFallback: 'Country-local related tools appear here after build pruning.',
     advancedTools: 'Advanced tools',
-    advancedToolsSummary: 'History, batch diagnostics, API preview, raw JSON, and local related links.',
+    advancedToolsSummary: 'History, batch diagnostics, local JSON, raw output, and related links.',
     ibanGenerator: 'IBAN generator',
     ibanGeneratorSummary: 'Generate a structurally valid IBAN from a country code and BBAN/account body.',
     generatedIban: 'Generated IBAN',
@@ -156,7 +154,6 @@
       identifierBreakdown: 'Kennungsaufschluesselung',
       browserBoundary: 'Browser-only-Grenze',
       premiumDebugLayer: 'Premium-Debug-Layer',
-      developerApiPreview: 'Entwickler-API-Vorschau',
       rawJsonOutput: 'Rohe JSON-Ausgabe',
       advancedTools: 'Erweiterte Tools',
       advancedToolsSummary: 'Verlauf, Batch-Diagnostik, API-Vorschau, Roh-JSON und lokale Links.',
@@ -166,7 +163,6 @@
       multiRowValidator: 'Mehrzeilen-Validator',
       useCurrentInput: 'Aktuelle Eingabe nutzen',
       batchResult: 'Batch-Ergebnis',
-      apiPreview: 'API-Vorschau',
       rawJson: 'Roh-JSON',
       batchEmpty: 'Batch ausfuehren, um Pass-/Pruefstatus auf dieser Seite zu vergleichen.',
       relatedLocalFallback: 'Lokale verwandte Tools erscheinen hier nach dem Build-Pruning.',
@@ -218,7 +214,6 @@
       identifierBreakdown: 'Desglose del identificador',
       browserBoundary: 'Límite solo navegador',
       premiumDebugLayer: 'Capa premium de depuración',
-      developerApiPreview: 'Vista previa de API para desarrolladores',
       rawJsonOutput: 'Salida JSON bruta',
       advancedTools: 'Herramientas avanzadas',
       advancedToolsSummary: 'Historial, diagnósticos por lote, vista API, JSON bruto y enlaces locales.',
@@ -228,7 +223,6 @@
       multiRowValidator: 'Validador multi-fila',
       useCurrentInput: 'Usar entrada actual',
       batchResult: 'Resultado del lote',
-      apiPreview: 'Vista API',
       rawJson: 'JSON bruto',
       batchEmpty: 'Ejecuta el lote para comparar estados aprobado/revisar sin salir de la página.',
       relatedLocalFallback: 'Las herramientas locales relacionadas aparecen aquí después del pruning del build.',
@@ -284,7 +278,6 @@
       identifierBreakdown: 'Détail de l’identifiant',
       browserBoundary: 'Limite navigateur uniquement',
       premiumDebugLayer: 'Couche de débogage premium',
-      developerApiPreview: 'Aperçu API développeur',
       rawJsonOutput: 'Sortie JSON brute',
       advancedTools: 'Outils avancés',
       advancedToolsSummary: 'Historique, diagnostics par lot, aperçu API, JSON brut et liens locaux.',
@@ -294,7 +287,6 @@
       multiRowValidator: 'Validateur multi-lignes',
       useCurrentInput: 'Utiliser l’entrée actuelle',
       batchResult: 'Résultat du lot',
-      apiPreview: 'Aperçu API',
       rawJson: 'JSON brut',
       batchEmpty: 'Lancez le lot pour comparer les états réussi/à vérifier sans quitter cette page.',
       relatedLocalFallback: 'Les outils locaux liés apparaissent ici après le pruning du build.',
@@ -347,7 +339,6 @@
       identifierBreakdown: 'Podział identyfikatora',
       browserBoundary: 'Granica przeglądarkowa',
       premiumDebugLayer: 'Premium warstwa debugowania',
-      developerApiPreview: 'Podgląd API deweloperskiego',
       rawJsonOutput: 'Surowe wyjście JSON',
       advancedTools: 'Narzędzia zaawansowane',
       advancedToolsSummary: 'Historia, diagnostyka batch, podgląd API, surowy JSON i lokalne linki.',
@@ -357,7 +348,6 @@
       multiRowValidator: 'Walidator wielowierszowy',
       useCurrentInput: 'Użyj bieżących danych',
       batchResult: 'Wynik batcha',
-      apiPreview: 'Podgląd API',
       rawJson: 'Surowy JSON',
       batchEmpty: 'Uruchom batch, aby porównać stany zaliczone/sprawdź bez opuszczania strony.',
       relatedLocalFallback: 'Powiązane narzędzia lokalne pojawią się tutaj po przycięciu builda.',
@@ -410,7 +400,6 @@
       identifierBreakdown: 'Detalhamento do identificador',
       browserBoundary: 'Limite só no navegador',
       premiumDebugLayer: 'Camada premium de depuração',
-      developerApiPreview: 'Prévia da API para desenvolvedores',
       rawJsonOutput: 'Saída JSON bruta',
       advancedTools: 'Ferramentas avançadas',
       advancedToolsSummary: 'Histórico, diagnósticos em lote, prévia da API, JSON bruto e links locais.',
@@ -420,7 +409,6 @@
       multiRowValidator: 'Validador multi-linha',
       useCurrentInput: 'Usar entrada atual',
       batchResult: 'Resultado do lote',
-      apiPreview: 'Prévia da API',
       rawJson: 'JSON bruto',
       batchEmpty: 'Execute o lote para comparar estados aprovado/revisar sem sair desta página.',
       relatedLocalFallback: 'Ferramentas locais relacionadas aparecem aqui depois do pruning do build.',
@@ -473,7 +461,6 @@
       identifierBreakdown: 'Розбір ідентифікатора',
       browserBoundary: 'Межа лише браузера',
       premiumDebugLayer: 'Преміум шар дебагу',
-      developerApiPreview: 'Попередній перегляд API для розробника',
       rawJsonOutput: 'Сирий JSON-вивід',
       advancedTools: 'Розширені інструменти',
       advancedToolsSummary: 'Історія, пакетна діагностика, API-превʼю, сирий JSON і локальні посилання.',
@@ -483,7 +470,6 @@
       multiRowValidator: 'Багаторядковий валідатор',
       useCurrentInput: 'Використати поточне введення',
       batchResult: 'Результат пакета',
-      apiPreview: 'API-превʼю',
       rawJson: 'Сирий JSON',
       batchEmpty: 'Запустіть пакет, щоб порівняти стани пройдено/перевірити без переходу зі сторінки.',
       relatedLocalFallback: 'Пов’язані локальні інструменти з’являться тут після pruning build.',
@@ -1487,6 +1473,30 @@
     const profile = ibanProfileForSuite(suite);
     const targetBbanLength = profile ? Math.max(4, profile.length - 4) : body.length;
     return freshBbanBody(body, targetBbanLength);
+  }
+
+  function generateIbanBatchRows(suite, tool, current, count) {
+    const compact = alnumOnly(current || (tool.samples && tool.samples[0] && tool.samples[0].value) || '');
+    const profile = ibanProfileForSuite(suite);
+    const country = countryCodeForSuite(suite, tool, compact);
+    let body = compact;
+    if (country && body.startsWith(country)) {
+      body = /^\d{2}/.test(body.slice(2, 4)) ? body.slice(4) : body.slice(2);
+    }
+    const targetBbanLength = profile ? Math.max(4, profile.length - 4) : Math.max(4, body.length);
+    const rows = [];
+    for (let index = 0; index < Math.max(1, Math.min(100, Number(count) || 10)); index += 1) {
+      const bban = freshBbanBody(body, targetBbanLength);
+      const generated = generateIban(country, bban);
+      rows.push({
+        bban,
+        iban: generated.iban,
+        grouped: groupIban(generated.iban),
+        checkDigits: generated.checkDigits,
+        remainder: generated.remainder
+      });
+    }
+    return rows;
   }
 
   const FACTORY_IBAN_PROFILES = {
@@ -3285,7 +3295,7 @@
         fieldSlice('number token', number.token || 'not detected', 'Localized numeric token extracted from the input.', number.ok ? 'green' : 'red'),
         fieldSlice('group separator', number.group || 'none', 'Detected thousands/grouping separator.'),
         fieldSlice('decimal separator', number.decimal || 'none', 'Detected decimal separator.'),
-        fieldSlice('canonical number', number.ok ? number.normalized : 'not detected', 'Machine-safe numeric form for JSON/API handoff.', number.ok ? 'green' : 'red')
+        fieldSlice('canonical number', number.ok ? number.normalized : 'not detected', 'Machine-safe numeric form for JSON/local JSON.', number.ok ? 'green' : 'red')
       );
     } else if (kindLabel === 'Calendar week') {
       domainSlices.push(
@@ -3297,7 +3307,7 @@
     } else if (kindLabel === 'Business time') {
       domainSlices.push(
         fieldSlice('date/time token', dateParts.token || (hasTimezone ? 'timezone evidence detected' : 'not detected'), 'Date or timezone evidence for business-hours fixtures.', (dateOk || hasTimezone) ? 'green' : 'red'),
-        fieldSlice('timezone evidence', hasTimezone ? 'detected' : 'not detected', 'Timezone offset/name evidence retained for API handoff.'),
+        fieldSlice('timezone evidence', hasTimezone ? 'detected' : 'not detected', 'Timezone offset/name evidence retained for local JSON.'),
         fieldSlice('business-hour hint', (raw.match(/\b\d{1,2}(?::\d{2})?\s*(?:AM|PM)?\b/i) || ['not detected'])[0], 'Visible local time or hour hint.'),
         fieldSlice('holiday boundary', 'not checked', 'Official holidays, DST policy updates, and business closures require source data.', 'red')
       );
@@ -3344,7 +3354,7 @@
       primary: normalized,
       normalized,
       breakdownTitle: `${parsed.kindLabel} locale anatomy & evidence breakdown`,
-      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for parser tests, localized forms, import/export fixtures, and API handoff.`,
+      breakdownSummary: `Decoded ${suite.country.name} ${family} evidence for parser tests, localized forms, import/export fixtures, and local JSON.`,
       breakdown: parsed.slices,
       checks: parsed.checks,
       fields: [
@@ -4392,6 +4402,80 @@
         line-height: 1.35;
         overflow-wrap: anywhere;
         word-break: normal;
+      }
+      .csf-iban-instant-result {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin: .72rem 0 .58rem;
+        border: 1px solid color-mix(in srgb, var(--csf-accent) 30%, var(--csf-line));
+        border-radius: .82rem;
+        background: linear-gradient(135deg, color-mix(in srgb, var(--csf-accent) 9%, #fff), #fff 60%);
+        padding: .72rem .82rem;
+      }
+      .csf-iban-instant-result[hidden],
+      .csf-iban-batch-output[hidden] {
+        display: none;
+      }
+      .csf-iban-instant-result div {
+        min-width: 0;
+        display: grid;
+        gap: .18rem;
+      }
+      .csf-iban-instant-result span,
+      .csf-iban-batch-tools label span {
+        color: var(--csf-muted);
+        font-size: .66rem;
+        font-weight: 900;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .csf-iban-instant-result strong {
+        color: var(--csf-ink);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: clamp(1rem, 1.25vw, 1.16rem);
+        line-height: 1.15;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .csf-iban-instant-result small {
+        color: var(--csf-muted);
+        font-size: .76rem;
+        font-weight: 750;
+      }
+      .csf-iban-batch-tools {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        gap: .52rem;
+        margin: .42rem 0 .72rem;
+      }
+      .csf-iban-batch-tools label {
+        display: grid;
+        gap: .24rem;
+      }
+      .csf-iban-batch-tools select {
+        min-height: 2.35rem;
+        border: 1px solid var(--csf-line);
+        border-radius: .64rem;
+        background: #fff;
+        padding: 0 1.8rem 0 .68rem;
+        color: var(--csf-ink);
+        font: 850 .82rem/1 var(--csf-font);
+      }
+      .csf-iban-batch-output {
+        width: 100%;
+        min-height: 8.5rem;
+        margin: .2rem 0 .72rem;
+        border: 1px solid color-mix(in srgb, var(--csf-accent) 24%, var(--csf-line));
+        border-radius: .78rem;
+        background: #fff;
+        padding: .72rem .82rem;
+        color: var(--csf-ink);
+        font: 760 .88rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        resize: vertical;
       }
       .csf-presets-grid {
         display: grid;
@@ -5638,6 +5722,31 @@
           </label>
         </div>
         <textarea class="csf-textarea" spellcheck="false" data-csf-input aria-label="${esc(isIbanGen ? `${suite.country.name} BBAN or IBAN to repair` : tool.name)}">${esc(tool.samples[0].value)}</textarea>
+        ${isIbanGen ? `
+          <div class="csf-iban-instant-result" data-csf-iban-instant hidden>
+            <div>
+              <span>${esc(L('Generated IBAN'))}</span>
+              <strong data-csf-iban-instant-value></strong>
+              <small data-csf-iban-instant-meta></small>
+            </div>
+            <button class="csf-button" type="button" data-csf-iban-copy>${esc(L('Copy IBAN'))}</button>
+          </div>
+          <div class="csf-iban-batch-tools">
+            <label>
+              <span>${esc(L('Batch generate'))}</span>
+              <select data-csf-iban-batch-count>
+                <option value="5">5 IBANs</option>
+                <option value="10" selected>10 IBANs</option>
+                <option value="25">25 IBANs</option>
+                <option value="50">50 IBANs</option>
+                <option value="100">100 IBANs</option>
+              </select>
+            </label>
+            <button class="csf-button" type="button" data-csf-iban-batch-generate>${esc(L('Generate batch'))}</button>
+            <button class="csf-button" type="button" data-csf-iban-batch-copy disabled>${esc(L('Copy batch'))}</button>
+          </div>
+          <textarea class="csf-iban-batch-output" spellcheck="false" readonly hidden data-csf-iban-batch-output aria-label="${esc(L('Generated IBAN batch'))}"></textarea>
+        ` : ''}
         <div class="csf-actions">
           <button class="csf-button csf-button-primary" type="button" data-csf-run>${esc(tool.buttonLabel || localizedActionLabel(tool.actionLabel, labels))}</button>
           <button class="csf-button" type="button" data-csf-copy>${esc(labels.copyResult)}</button>
@@ -5727,12 +5836,10 @@
         </div>
         <div class="csf-rich-tabs" role="tablist">
           <button class="csf-rich-tab" type="button" aria-selected="true" data-csf-rich-tab="batch">${esc(labels.batchResult)}</button>
-          <button class="csf-rich-tab" type="button" aria-selected="false" data-csf-rich-tab="api">${esc(labels.apiPreview)}</button>
           <button class="csf-rich-tab" type="button" aria-selected="false" data-csf-rich-tab="json">${esc(labels.rawJson)}</button>
           <button class="csf-rich-tab" type="button" aria-selected="false" data-csf-rich-tab="related">${esc(labels.relatedLocalTools)}</button>
         </div>
         <div class="csf-rich-panel" data-csf-rich-panel="batch"><div class="csf-rich-output" data-csf-rich-batch-output><p>${esc(labels.batchEmpty)}</p></div></div>
-        <div class="csf-rich-panel" data-csf-rich-panel="api" hidden><pre class="csf-rich-code" data-csf-rich-api></pre></div>
         <div class="csf-rich-panel" data-csf-rich-panel="json" hidden><pre class="csf-rich-code" data-csf-rich-json>{}</pre></div>
         <div class="csf-rich-panel" data-csf-rich-panel="related" hidden>${renderRichRelatedLinks(suite, tool) || `<p>${esc(labels.relatedLocalFallback)}</p>`}</div>
       </details>
@@ -5766,17 +5873,6 @@
       rows.push({ step: part.label, evidence: part.value, detail: part.note || '' });
     }
     return rows.slice(0, 12);
-  }
-
-  function apiPreview(suite, tool, result) {
-    const country = suite.country.slug;
-    const endpoint = `https://api.validohub.com/v1/${country}/${tool.id}/analyze`;
-    const body = JSON.stringify({ input: result.normalized || result.primary || '' });
-    return [
-      `curl -X POST ${endpoint} \\`,
-      `  -H "Content-Type: application/json" \\`,
-      `  -d '${body.replace(/'/g, "\\'")}'`
-    ].join('\n');
   }
 
   function renderPipeline(suite, result) {
@@ -5887,11 +5983,6 @@
           </div>
         </details>
         <details class="csf-advanced" open>
-          <summary>${esc(L(labels.developerApiPreview))}</summary>
-          <div class="csf-api-tabs"><span>cURL</span><span>JavaScript</span><span>Python</span><span>Go</span></div>
-          <pre>${esc(apiPreview(suite, tool, result))}</pre>
-        </details>
-        <details class="csf-advanced" open>
           <summary>${esc(L(labels.rawJsonOutput))}</summary>
           <div class="csf-json-head">
             <span>${esc(labels.browserBoundary)}</span>
@@ -5957,8 +6048,15 @@
       const richHistorySelect = rootElement.querySelector('[data-csf-rich-history]');
       const richBatchInput = rootElement.querySelector('[data-csf-rich-batch-input]');
       const richBatchResults = rootElement.querySelector('[data-csf-rich-batch-output]');
-      const richApi = rootElement.querySelector('[data-csf-rich-api]');
       const richJson = rootElement.querySelector('[data-csf-rich-json]');
+      const ibanInstant = rootElement.querySelector('[data-csf-iban-instant]');
+      const ibanInstantValue = rootElement.querySelector('[data-csf-iban-instant-value]');
+      const ibanInstantMeta = rootElement.querySelector('[data-csf-iban-instant-meta]');
+      const ibanQuickCopy = rootElement.querySelector('[data-csf-iban-copy]');
+      const ibanBatchCount = rootElement.querySelector('[data-csf-iban-batch-count]');
+      const ibanBatchGenerate = rootElement.querySelector('[data-csf-iban-batch-generate]');
+      const ibanBatchCopy = rootElement.querySelector('[data-csf-iban-batch-copy]');
+      const ibanBatchOutput = rootElement.querySelector('[data-csf-iban-batch-output]');
       let lastResult = null;
       let lastBatch = [];
       let activeSampleIntent = sampleIntent(tool.samples[0]);
@@ -5991,8 +6089,37 @@
 
       function refreshRichPanels() {
         const result = lastResult || analyze(rawTool, input.value, { sampleIntent: activeSampleIntent });
-        if (richApi) richApi.textContent = apiPreview(suite, tool, result);
         if (richJson) richJson.textContent = JSON.stringify(richSnapshot(), null, 2);
+      }
+
+      function syncIbanInstant(result, batchText) {
+        if (!isIbanGeneratorTool(tool) || !ibanInstant || !result || !result.normalized) return;
+        ibanInstant.hidden = false;
+        ibanInstant.dataset.csfIbanCopyValue = result.normalized;
+        if (ibanInstantValue) ibanInstantValue.textContent = result.primary || groupIban(result.normalized);
+        if (ibanInstantMeta) {
+          const data = result.developerJson || {};
+          ibanInstantMeta.textContent = `${data.country || suite.country.iso2 || suite.country.name} / ${data.checkDigits || '--'} check digits / MOD-97 ${data.mod97 == null ? '--' : data.mod97}`;
+        }
+        if (batchText && ibanBatchOutput) {
+          ibanBatchOutput.value = batchText;
+          ibanBatchOutput.hidden = false;
+          if (ibanBatchCopy) ibanBatchCopy.disabled = false;
+        }
+      }
+
+      function resetIbanInstant() {
+        if (ibanInstant) {
+          ibanInstant.hidden = true;
+          delete ibanInstant.dataset.csfIbanCopyValue;
+        }
+        if (ibanInstantValue) ibanInstantValue.textContent = '';
+        if (ibanInstantMeta) ibanInstantMeta.textContent = '';
+        if (ibanBatchOutput) {
+          ibanBatchOutput.value = '';
+          ibanBatchOutput.hidden = true;
+        }
+        if (ibanBatchCopy) ibanBatchCopy.disabled = true;
       }
 
       function run(options) {
@@ -6005,6 +6132,7 @@
         output.innerHTML = renderResultBlocks(suite, lastResult);
         state.textContent = lastResult.status === 'success' ? labels.offlinePassed : labels.reviewNeeded;
         state.dataset.state = lastResult.status;
+        syncIbanInstant(lastResult);
         writeHistory(suite, tool, input.value);
         refreshHistory();
         refreshRichPanels();
@@ -6072,6 +6200,7 @@
         output.innerHTML = '';
         state.textContent = labels.waiting;
         state.dataset.state = 'waiting';
+        resetIbanInstant();
       });
       rootElement.querySelector('[data-csf-copy]').addEventListener('click', (event) => {
         const value = lastResult ? lastResult.normalized : input.value;
@@ -6185,6 +6314,35 @@
         if (batchResults) batchResults.innerHTML = '';
         lastBatch = [];
       });
+      if (ibanQuickCopy) {
+        ibanQuickCopy.addEventListener('click', (event) => {
+          const value = ibanInstant && ibanInstant.dataset.csfIbanCopyValue;
+          if (value) copyText(suite, value, labels.copyResult, event.currentTarget);
+        });
+      }
+      if (ibanBatchGenerate) {
+        ibanBatchGenerate.addEventListener('click', () => {
+          const count = Number(ibanBatchCount && ibanBatchCount.value) || 10;
+          const rows = generateIbanBatchRows(suite, tool, input.value, count);
+          if (!rows.length) return;
+          input.value = rows[0].bban;
+          activeSampleIntent = 'valid';
+          lastResult = analyze(rawTool, input.value, { sampleIntent: activeSampleIntent });
+          output.innerHTML = renderResultBlocks(suite, lastResult);
+          state.textContent = labels.offlinePassed;
+          state.dataset.state = 'success';
+          syncIbanInstant(lastResult, rows.map((row) => row.grouped).join('\n'));
+          writeHistory(suite, tool, input.value);
+          refreshHistory();
+          refreshRichPanels();
+        });
+      }
+      if (ibanBatchCopy) {
+        ibanBatchCopy.addEventListener('click', (event) => {
+          const value = ibanBatchOutput && ibanBatchOutput.value;
+          if (value) copyText(suite, value, labels.copyBatchJson || labels.copyResult, event.currentTarget);
+        });
+      }
       run();
       refreshRichPanels();
       return rootElement;

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: log-redaction-rule-tester
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Log Redaction Rule Tester
+summary:
+  en: Test log redaction rules against payloads, verify masked output, detect missed secrets/PII, preserve debugging fields, and export safe examples.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.log-redaction-rule-tester
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Logs and redaction rules
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-ops-premium
+          - strict
+          - review
+        default: "security-ops-premium"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [oauth-oidc-flow-debugger, jwt-risk-scanner, jwks-rotation-inspector, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Log Redaction Rule Tester
+  description:
+    en: Test log redaction rules against payloads, verify masked output, detect missed secrets/PII, preserve debugging fields, and export safe examples.

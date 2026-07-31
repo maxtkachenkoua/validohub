@@ -1,35 +1,33 @@
 {
-  "generatedAt": "2026-07-27T10:28:45.785Z",
+  "generatedAt": "2026-07-31T11:28:37.629Z",
   "results": [
     {
-      "slug": "brazil",
-      "name": "brazil",
+      "slug": "spain",
+      "name": "spain",
       "iso2": null,
       "catalogStatus": "available",
-      "completion": 95,
+      "completion": 100,
       "yamlExists": true,
       "dataRouteToolCount": 0,
-      "toolCount": 63,
-      "availableWorkbenchCount": 61,
+      "toolCount": 61,
+      "availableWorkbenchCount": 1,
       "plannedWorkbenchCount": 0,
-      "generatedEnglishToolPages": 63,
-      "checkedGeneratedPages": 63,
+      "generatedEnglishToolPages": 61,
+      "checkedGeneratedPages": 61,
       "algorithms": [
-        "validohub.brazil-pix",
-        "validohub.brazil-suite",
-        "validohub.iban",
-        "validohub.iban-generator"
+        "validohub.spain-id",
+        "validohub.spain-suite"
       ],
       "runtimes": [
-        "brazil-suite.js",
-        "generic-suite.js",
-        "pix.js"
+        "spain-id.js",
+        "spain-suite.js"
       ],
       "state": "full-premium-ready",
       "blockers": [],
       "warnings": [
-        "brazil: availableWorkbenches (61) differs from tool YAML count (63)"
-      ]
+        "spain: availableWorkbenches (1) differs from tool YAML count (61)"
+      ],
+      "factoryRuntime": true
     }
   ]
 }

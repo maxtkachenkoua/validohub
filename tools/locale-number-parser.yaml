@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: locale-number-parser
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Locale Number Parser
+summary:
+  en: Parse locale-specific number strings, grouping separators, decimal conventions, percent/currency markers, canonical machine value, and ambiguity warnings.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.locale-number-parser
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Number strings
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - locale-formats
+          - strict
+          - review
+        default: "locale-formats"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [locale-date-parser, luhn-card-fixture-generator, bin-iin-shape-inspector, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Locale Number Parser
+  description:
+    en: Parse locale-specific number strings, grouping separators, decimal conventions, percent/currency markers, canonical machine value, and ambiguity warnings.

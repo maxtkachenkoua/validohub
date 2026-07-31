@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: email-header-auth-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Email Header / SPF-DKIM-DMARC Inspector
+summary:
+  en: Inspect pasted email headers for SPF, DKIM, DMARC, ARC, alignment hints, authentication-results, forwarding caveats, and no-live-DNS boundaries.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.email-header-auth-inspector
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Email headers
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-email
+          - strict
+          - review
+        default: "security-email"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [log-redaction-rule-tester, oauth-oidc-flow-debugger, jwt-risk-scanner, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Email Header / SPF-DKIM-DMARC Inspector
+  description:
+    en: Inspect pasted email headers for SPF, DKIM, DMARC, ARC, alignment hints, authentication-results, forwarding caveats, and no-live-DNS boundaries.

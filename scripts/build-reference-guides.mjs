@@ -255,7 +255,7 @@ function renderGuideHero(profile) {
       </div>
       <aside class="vh-guide-hero-panel" aria-label="Guide promise">
         <span class="vh-eyebrow">Tool-first reference</span>
-        <strong>Use the guide to decide, then run the live browser workbench.</strong>
+        <strong>Use the guide to decide, then run the local tool.</strong>
         <p>No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.</p>
       </aside>
     </header>

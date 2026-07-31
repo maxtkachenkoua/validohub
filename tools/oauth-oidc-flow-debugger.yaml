@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: oauth-oidc-flow-debugger
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: OAuth / OIDC Flow Debugger
+summary:
+  en: Validate OAuth and OpenID Connect redirect flows, PKCE hints, scopes, state, nonce, issuer, and callback handoff without contacting an identity provider.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.oauth-oidc-flow
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: OAuth redirect or token exchange notes
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-auth
+          - strict
+          - review
+        default: "security-auth"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-risk-scanner, jwks-rotation-inspector, openapi-breaking-change-diff, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: OAuth / OIDC Flow Debugger
+  description:
+    en: Validate OAuth and OpenID Connect redirect flows, PKCE hints, scopes, state, nonce, issuer, and callback handoff without contacting an identity provider.

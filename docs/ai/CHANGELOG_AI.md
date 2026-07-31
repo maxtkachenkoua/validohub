@@ -1,3 +1,20 @@
+## 2026-07-31 - Country/Global Legacy Tool Layout Kill Sweep
+
+- Removed the intermediate `vh-generic-country-*` generated repair shell from the allowed premium contract. `scripts/audit-generated-premium-contract.mjs` now fails generated pages that contain old/intermediate tool shell markers, fake API preview copy, `Run the tool`, or stale Engine footer text.
+- Reworked `scripts/repair-generic-country-tools-premium.mjs` so stale factory country-suite pages collapse to the real `csf-static-host`, accepted legacy-rich Brazil/Poland/France/Netherlands pages keep their form host but lose the intermediate hero/sample/trap shell, and bespoke Spain ID pages keep their own runtime while dropping the same intermediate shell.
+- Removed fake `/v1/...` endpoint metadata from `assets/js/tools/country-legacy-rich-layer.js`; developer output remains local JSON/debug capture, not a public API promise.
+- Made country tool related footers country-local by default in `scripts/build-country-dev.mjs` and `scripts/repair-country-tool-related-footer.mjs`. The footer keeps same-country related links plus country hub, countries directory, and global tools directory actions; cross-country related cards are no longer emitted by the shared footer.
+- Tightened audits for the current architecture: `scripts/audit-country-suite-factory.mjs` excludes bespoke Spain ID from factory script requirements, and `scripts/audit-country-premium.mjs` allows directory action links while still blocking foreign country related cards.
+- Refreshed generated preview without a full build: collapsed 82,250 stale country-suite pages, cleaned 1,771 accepted legacy-rich pages, cleaned 7 Spain ID bespoke pages, and rewrote 84,028 country tool related footers.
+- Verification: syntax checks for changed JS/MJS, `npm run audit:generated-premium` across 86,632 HTML pages, `npm run audit:country-suite`, and targeted `npm run audit:country-premium -- --country bahrain|belgium` all passed. Full build was not run.
+
+## 2026-07-31 - Spain ID Gold-Lite Layout Polish
+
+- Fixed the Spain ID bespoke standalone mount on generated country pages where the host is already a `<form>`; the runtime now reuses that form instead of inserting an invalid nested form.
+- Reworked the first viewport of `/en/spain/spain-id-validator/`: safe fixture auto-renders, styled fixture/generator chips sit above the input, the textarea is compact, action buttons stay in one desktop row, and result summary cards appear before the timeline.
+- Kept official/source links in the lower source panel rather than inflating the top fixture deck.
+- Verification completed without full build: `node --check assets/js/tools/spain-id.js`, `npm run build:country -- --country spain`, Playwright desktop/mobile sanity against `http://127.0.0.1:8141/en/spain/spain-id-validator/`, `npm run audit:country-premium -- --country spain`, and `npm run audit:generated-premium`.
+
 ## 2026-07-28 - Country Factory Runtime Localization Sweep
 
 - Promoted the country-suite runtime localization work from page-specific French fixes into the shared `country-suite-factory.js` layer used by generated country tools.

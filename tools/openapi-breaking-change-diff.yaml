@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: openapi-breaking-change-diff
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: OpenAPI Breaking Change Diff
+summary:
+  en: Compare OpenAPI before and after snippets for removed paths, method changes, schema drift, status-code regressions, and client-breaking review items.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.openapi-breaking-diff
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Before OpenAPI snippet
+      - type: textarea
+        name: changed
+        label:
+          en: Changed / after payload
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - backend-api
+          - strict
+          - review
+        default: "backend-api"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-patch-builder, json-merge-patch-builder, rest-pagination-contract-tester, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: OpenAPI Breaking Change Diff
+  description:
+    en: Compare OpenAPI before and after snippets for removed paths, method changes, schema drift, status-code regressions, and client-breaking review items.

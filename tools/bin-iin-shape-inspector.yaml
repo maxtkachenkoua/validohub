@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: bin-iin-shape-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: BIN / IIN Shape Inspector
+summary:
+  en: Inspect payment card BIN/IIN prefix shape, length, brand hints, mask safety, test-data boundaries, and no-live-issuer lookup notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.bin-iin-shape-inspector
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: BIN/IIN or masked PAN
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - payments-fixtures
+          - strict
+          - review
+        default: "payments-fixtures"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [currency-minor-units-checker, sepa-pain001-fixture-helper, payment-reference-generator, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: BIN / IIN Shape Inspector
+  description:
+    en: Inspect payment card BIN/IIN prefix shape, length, brand hints, mask safety, test-data boundaries, and no-live-issuer lookup notes.

@@ -1,7 +1,7 @@
 import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildRouteRegistry } from './route-registry.mjs';
+import { buildDevRouteRegistry } from './route-registry.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -853,7 +853,8 @@ export async function compileIdentifiers(routeRegistry, assetsManifest) {
 async function main() {
   const manifestPath = resolve(projectRoot, 'assets', 'assets-manifest.json');
   const assetsManifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-  const routeRegistry = await buildRouteRegistry();
+  console.log('=== ValidoHub identifier dev build ===');
+  const routeRegistry = await buildDevRouteRegistry();
   const includeSuffixes = await compileIdentifiers(routeRegistry, assetsManifest);
   const locales = await configuredLocales();
   await applyFinalLocalizationPass(routeRegistry, siteRoot, locales, {

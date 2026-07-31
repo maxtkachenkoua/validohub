@@ -1320,7 +1320,7 @@ const POLAND_LOCALE_COPY = {
     "availableWorkbenches": "доступні воркбенчі",
     "organizedDomains": "організовані домени",
     "serverCallsRequired": "потрібні серверні виклики",
-    "toolCardDescription": "Відкрити готовий до реального використання браузерний воркбенч для цього стандарту даних країни.",
+    "toolCardDescription": "Відкрити готовий до реального використання локальний інструмент для цього стандарту даних країни.",
     "officialAdministrativeOutline": "Офіційний адміністративний контур",
     "geographicPositionEurope": "Географічне розташування в Європі",
     "shapeCaption": "Контур країни {country}",
@@ -3709,10 +3709,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'Dígitos MOD-97',
     'Masked display': 'Vista enmascarada',
     'Browser-only boundary': 'Límite solo navegador',
-    'API preview': 'Vista API',
+    'Local JSON': 'Vista API',
     'Raw JSON': 'JSON crudo',
     'Raw JSON output': 'Salida JSON cruda',
-    'Developer API preview': 'Vista API para desarrolladores',
+    'Developer snapshot JSON': 'Vista API para desarrolladores',
     'What this tool is for': 'Para qué sirve esta herramienta',
     'Used for': 'Uso',
     'Checks locally': 'Comprueba localmente',
@@ -3792,10 +3792,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'Dígitos MOD-97',
     'Masked display': 'Visualização mascarada',
     'Browser-only boundary': 'Limite só no navegador',
-    'API preview': 'Prévia da API',
+    'Local JSON': 'Prévia da API',
     'Raw JSON': 'JSON bruto',
     'Raw JSON output': 'Saída JSON bruta',
-    'Developer API preview': 'Prévia de API para desenvolvedores',
+    'Developer snapshot JSON': 'Prévia de API para desenvolvedores',
     'What this tool is for': 'Para que serve esta ferramenta',
     'Used for': 'Uso',
     'Checks locally': 'Verifica localmente',
@@ -3875,10 +3875,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'MOD-97-Prüfziffern',
     'Masked display': 'Maskierte Anzeige',
     'Browser-only boundary': 'Browser-only-Grenze',
-    'API preview': 'API-Vorschau',
+    'Local JSON': 'API-Vorschau',
     'Raw JSON': 'Rohes JSON',
     'Raw JSON output': 'Rohe JSON-Ausgabe',
-    'Developer API preview': 'Entwickler-API-Vorschau',
+    'Developer snapshot JSON': 'Entwickler-API-Vorschau',
     'What this tool is for': 'Wofür dieses Tool ist',
     'Used for': 'Einsatz',
     'Checks locally': 'Prüft lokal',
@@ -3958,10 +3958,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'Chiffres MOD-97',
     'Masked display': 'Affichage masqué',
     'Browser-only boundary': 'Limite navigateur uniquement',
-    'API preview': 'Aperçu API',
+    'Local JSON': 'Aperçu API',
     'Raw JSON': 'JSON brut',
     'Raw JSON output': 'Sortie JSON brute',
-    'Developer API preview': 'Aperçu API développeur',
+    'Developer snapshot JSON': 'Aperçu API développeur',
     'What this tool is for': 'À quoi sert cet outil',
     'Used for': 'Utilisation',
     'Checks locally': 'Vérifie localement',
@@ -4041,10 +4041,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'Cyfry kontrolne MOD-97',
     'Masked display': 'Widok maskowany',
     'Browser-only boundary': 'Granica przeglądarkowa',
-    'API preview': 'Podgląd API',
+    'Local JSON': 'Podgląd API',
     'Raw JSON': 'Surowy JSON',
     'Raw JSON output': 'Surowy wynik JSON',
-    'Developer API preview': 'Podgląd API dla deweloperów',
+    'Developer snapshot JSON': 'Podgląd API dla deweloperów',
     'What this tool is for': 'Do czego służy to narzędzie',
     'Used for': 'Zastosowanie',
     'Checks locally': 'Sprawdza lokalnie',
@@ -4124,10 +4124,10 @@ const PRODUCTION_WORKBENCH_REPLACEMENTS = {
     'MOD-97 check digits': 'Контрольні цифри MOD-97',
     'Masked display': 'Маскований вигляд',
     'Browser-only boundary': 'Межа лише браузера',
-    'API preview': 'Попередній перегляд API',
+    'Local JSON': 'Попередній перегляд API',
     'Raw JSON': 'Сирий JSON',
     'Raw JSON output': 'Сирий JSON-вивід',
-    'Developer API preview': 'API-превʼю для розробника',
+    'Developer snapshot JSON': 'API-превʼю для розробника',
     'What this tool is for': 'Для чого цей інструмент',
     'Used for': 'Використання',
     'Checks locally': 'Перевіряє локально',
@@ -4458,7 +4458,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Guías centradas en herramientas para datos reales de desarrollador.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Páginas breves y prácticas para workbenches de ValidoHub: qué puede probar el navegador, qué sigue siendo oficial y qué herramienta usar después.',
     'Tool-first reference': 'Referencia centrada en herramientas',
-    'Use the guide to decide, then run the live browser workbench.': 'Usa la guía para decidir y luego ejecuta el workbench vivo en el navegador.',
+    'Use the guide to decide, then run the local tool.': 'Usa la guía para decidir y luego ejecuta la herramienta local.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Sin falsa consulta de registro, sin promesa de subida y sin callejón sin salida documental. La herramienta de producción sigue siendo el flujo principal.',
     'Browse reference guides': 'Explorar guías de referencia',
     'Why this exists': 'Por qué existe',
@@ -4502,7 +4502,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Guias centrados em ferramentas para dados reais de desenvolvedor.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Páginas breves e práticas para workbenches ValidoHub: o que o navegador prova, o que permanece oficial e qual ferramenta usar em seguida.',
     'Tool-first reference': 'Referência centrada na ferramenta',
-    'Use the guide to decide, then run the live browser workbench.': 'Use o guia para decidir e depois execute o workbench vivo no navegador.',
+    'Use the guide to decide, then run the local tool.': 'Use o guia para decidir e depois execute a ferramenta local.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Sem consulta falsa de registro, sem promessa de upload e sem beco sem saída documental. A ferramenta de produção continua sendo o fluxo principal.',
     'Browse reference guides': 'Explorar guias de referência',
     'Why this exists': 'Por que existe',
@@ -4546,7 +4546,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Tool-zuerst-Leitfäden für reale Entwicklerdaten.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Kurze praktische Referenzen für ValidoHub-Workbenches: was der Browser belegen kann, was offiziell bleibt und welches Live-Tool als Nächstes passt.',
     'Tool-first reference': 'Tool-zuerst-Referenz',
-    'Use the guide to decide, then run the live browser workbench.': 'Nutze den Leitfaden zur Entscheidung und starte dann die Live-Workbench im Browser.',
+    'Use the guide to decide, then run the local tool.': 'Nutze den Leitfaden zur Entscheidung und starte dann das lokale Tool.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Kein falscher Register-Lookup, kein Upload-Versprechen und keine Dokumentations-Sackgasse. Das Produktions-Tool bleibt der Hauptablauf.',
     'Browse reference guides': 'Referenzleitfäden durchsuchen',
     'Why this exists': 'Warum es existiert',
@@ -4590,7 +4590,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Guides centrés sur les outils pour données développeur réelles.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Pages de référence courtes et pratiques pour les workbenches ValidoHub : ce que le navigateur peut prouver, ce qui reste officiel et quel outil utiliser ensuite.',
     'Tool-first reference': 'Référence centrée sur l’outil',
-    'Use the guide to decide, then run the live browser workbench.': 'Utilisez le guide pour décider, puis lancez le workbench vivant dans le navigateur.',
+    'Use the guide to decide, then run the local tool.': 'Utilisez le guide pour décider, puis lancez l’outil local.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Pas de fausse consultation de registre, pas de promesse d’upload et pas d’impasse documentaire. L’outil de production reste le flux principal.',
     'Browse reference guides': 'Explorer les guides de référence',
     'Why this exists': 'Pourquoi cela existe',
@@ -4634,7 +4634,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Przewodniki tool-first dla realnych danych deweloperskich.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Krótkie praktyczne referencje dla workbenchy ValidoHub: co może potwierdzić przeglądarka, co pozostaje oficjalne i którego narzędzia użyć dalej.',
     'Tool-first reference': 'Referencja tool-first',
-    'Use the guide to decide, then run the live browser workbench.': 'Użyj przewodnika do decyzji, potem uruchom żywy workbench w przeglądarce.',
+    'Use the guide to decide, then run the local tool.': 'Użyj przewodnika do decyzji, potem uruchom narzędzie lokalne.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Bez fałszywego lookupu rejestru, obietnicy uploadu i dokumentacyjnej ślepej uliczki. Narzędzie produkcyjne pozostaje głównym przepływem.',
     'Browse reference guides': 'Przeglądaj przewodniki',
     'Why this exists': 'Po co to jest',
@@ -4678,7 +4678,7 @@ const GUIDE_REFERENCE_REPLACEMENTS = {
     'Tool-first guides for real-world developer data.': 'Гіди tool-first для реальних даних розробника.',
     'Short, practical reference pages for ValidoHub workbenches: what the browser can prove, what stays official, and which live tool to use next.': 'Короткі практичні довідки для воркбенчів ValidoHub: що може довести браузер, що лишається офіційним і який живий інструмент відкрити далі.',
     'Tool-first reference': 'Довідка tool-first',
-    'Use the guide to decide, then run the live browser workbench.': 'Використайте гід для рішення, а потім запустіть живий браузерний воркбенч.',
+    'Use the guide to decide, then run the local tool.': 'Скористайтеся гідом для рішення, а потім запустіть локальний інструмент.',
     'No fake registry lookup, no upload promise, and no documentation dead end. The production tool remains the primary workflow.': 'Без фейкового пошуку в реєстрі, без обіцянки upload і без документаційного тупика. Продакшен-інструмент залишається головним сценарієм.',
     'Browse reference guides': 'Переглянути довідкові гіди',
     'Why this exists': 'Навіщо це існує',
@@ -6091,7 +6091,7 @@ const POLAND_UK_RICH_CONTENT_LABELS = {
   'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': 'Розрахунки податкового мікрорахунку залежать від PESEL або NIP і є підтримкою маршрутизації платежу, а не банківським lookup.',
   'Tax microaccount helpers derive payment-account context from PESEL or NIP input for offline pre-checks.': 'Помічники податкового мікрорахунку виводять контекст платіжного рахунку з PESEL або NIP для офлайн-попередніх перевірок.',
   'Related banking workbenches': 'Пов’язані банківські воркбенчі',
-  'Related browser-only workbench': 'Пов’язаний браузерний воркбенч',
+  'Related browser-only workbench': 'Пов’язаний локальний інструмент',
   'Related payment workbenches': 'Пов’язані платіжні воркбенчі',
   'National Identifiers': 'Ідентифікатори країни',
   'Numer Identyfikacji Podatkowej. Polish tax identification number.': 'Numer Identyfikacji Podatkowej. Польський податковий ідентифікаційний номер.',
@@ -7719,6 +7719,12 @@ function localizeSeoAndStructuredData(content, locale, routePath) {
   return next;
 }
 
+function repairStructuredDataKeys(content) {
+  return String(content || '')
+    .replace(/"application(?:Cat[eé]gorie|Kategorie|Kategoria|Категорія)"\s*:/g, '"applicationCategory":')
+    .replace(/"operating(?:System|Syst[eè]me|System|Sistema|Система)"\s*:/g, '"operatingSystem":');
+}
+
 export function rewriteHrefLocale(content, locale, routeRegistry) {
   return content.replace(/href="\/en\/([^"]*)"/g, (match, target) => {
     const normalizedTarget = String(target || '').replace(/^\/+/, '');
@@ -7790,12 +7796,18 @@ export function translateVisibleHtml(content, locale) {
   restored = applyLiteralMap(restored, GUIDE_REFERENCE_REPLACEMENTS[normalized]);
   restored = repairCountryCatalogRows(restored, normalized);
   restored = repairRelatedCountryLinkCards(restored, normalized);
-  return applyCountryProtectedValueTranslations(restored, normalized);
+  return repairStructuredDataKeys(applyCountryProtectedValueTranslations(restored, normalized));
 }
 
 export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locales, options = {}) {
   const configuredLocales = locales && locales.length ? locales : ['en'];
   const forceRefresh = Boolean(options.forceRefresh);
+  const concurrency = Math.max(1, Number(options.concurrency || process.env.VALIDOHUB_LOCALIZATION_CONCURRENCY || 32));
+  const runBatches = async (items, worker) => {
+    for (let index = 0; index < items.length; index += concurrency) {
+      await Promise.all(items.slice(index, index + concurrency).map(worker));
+    }
+  };
   hydrateCountryNamesFromRegistry(routeRegistry, configuredLocales);
   ensureLocalizedRoutes(routeRegistry, siteRoot, configuredLocales);
   const includeSuffixes = new Set((options.includeSuffixes || []).map(suffix => {
@@ -7808,16 +7820,17 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     if (!includeSuffixes.size) return true;
     return includeSuffixes.has(splitRouteLocale(route.path).suffix);
   };
-  for (const route of routeRegistry.getAll().filter(shouldProcessRoute)) {
+  const routesToProcess = routeRegistry.getAll().filter(shouldProcessRoute);
+  await runBatches(routesToProcess, async (route) => {
     const { locale, suffix } = splitRouteLocale(route.path);
-    if (locale === 'en') continue;
+    if (locale === 'en') return;
 
     const englishPath = routeForLocale('en', suffix);
     const englishRoute = routeRegistry.get(englishPath);
-    if (!englishRoute || !(await pathExists(englishRoute.outputPath))) continue;
+    if (!englishRoute || !(await pathExists(englishRoute.outputPath))) return;
 
     const shouldRefreshFromNodeSource = englishRoute.sourceOwner === 'node' || ['country', 'countries'].includes(englishRoute.type);
-    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) continue;
+    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) return;
 
     let content = await readFile(englishRoute.outputPath, 'utf8');
     content = rewriteHrefLocale(content, locale, routeRegistry);
@@ -7826,20 +7839,24 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     await mkdir(dirname(route.outputPath), { recursive: true });
     await writeFile(route.outputPath, content, 'utf8');
     console.log(`✓ Generated localized route: ${route.path}`);
-  }
+  });
 
-  for (const route of routeRegistry.getAll().filter(shouldProcessRoute)) {
-    if (!(await pathExists(route.outputPath))) continue;
+  await runBatches(routesToProcess, async (route) => {
+    if (!(await pathExists(route.outputPath))) return;
     const { locale } = splitRouteLocale(route.path);
     let content = await readFile(route.outputPath, 'utf8');
+    const original = content;
     if (locale !== 'en') {
       content = rewriteHrefLocale(content, locale, routeRegistry);
       content = localizeSeoAndStructuredData(content, locale, route.path);
       content = translateVisibleHtml(content, locale);
     }
+    content = repairStructuredDataKeys(content);
     content = injectAlternateLinks(content, route.path, routeRegistry, configuredLocales);
-    await writeFile(route.outputPath, content, 'utf8');
-  }
+    if (content !== original) {
+      await writeFile(route.outputPath, content, 'utf8');
+    }
+  });
 }
 
 export function localizedRuntimeLabels(localeCode) {

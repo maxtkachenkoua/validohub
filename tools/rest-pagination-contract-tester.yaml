@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: rest-pagination-contract-tester
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: REST Pagination Contract Tester
+summary:
+  en: Inspect REST pagination contracts for cursor, limit, next links, ordering stability, total counts, retry windows, and client handoff notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.rest-pagination-contract
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Pagination response or headers
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - backend-api
+          - strict
+          - review
+        default: "backend-api"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [api-error-code-catalog-builder, webhook-replay-payload-builder, idempotency-collision-lab, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: REST Pagination Contract Tester
+  description:
+    en: Inspect REST pagination contracts for cursor, limit, next links, ordering stability, total counts, retry windows, and client handoff notes.

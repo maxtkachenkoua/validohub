@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: structured-data-json-ld-validator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Structured Data / JSON-LD Validator
+summary:
+  en: Inspect JSON-LD blocks for SoftwareApplication, BreadcrumbList, FAQPage, Article, required fields, invalid JSON, and rich-result boundary notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.structured-data-jsonld
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JSON-LD script or object
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - seo-publishing
+          - strict
+          - review
+        default: "seo-publishing"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [csv-schema-inferencer, duplicate-row-detector, unicode-confusable-scanner, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Structured Data / JSON-LD Validator
+  description:
+    en: Inspect JSON-LD blocks for SoftwareApplication, BreadcrumbList, FAQPage, Article, required fields, invalid JSON, and rich-result boundary notes.

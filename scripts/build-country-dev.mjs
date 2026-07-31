@@ -2,9 +2,9 @@ import { access, cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/pro
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildRouteRegistry } from './route-registry.mjs';
+import { buildDevRouteRegistry } from './route-registry.mjs';
 import { renderCountryPage } from './build-countries-portal.mjs';
-import { refreshGeneratedAssetLinks, updateBundleAssetLinks } from './dev-asset-links.mjs';
+import { updateBundleAssetLinks } from './dev-asset-links.mjs';
 import {
   ensureLocalizedRoutes,
   hydrateLocalizationDataFromRegistry,
@@ -183,7 +183,7 @@ const LEGACY_RICH_COUNTRIES = new Set(['brazil', 'poland', 'france', 'netherland
 const GOLD_LAB_RUNTIME = 'gold-tools-lab.js';
 const GOLD_LAB_SCRIPT_VERSION = 'gold-tools-lab-v4-20260727';
 const GENERIC_SUITE_RUNTIME = 'generic-suite.js';
-const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-global-gold-v2-20260727';
+const GENERIC_SUITE_SCRIPT_VERSION = 'generic-suite-clickfix-mount-20260730';
 const COUNTRY_SUITE_FACTORY_RUNTIME = 'country-suite-factory.js';
 const COUNTRY_SUITE_FACTORY_SCRIPT_VERSION = 'country-suite-factory-rail-preview-fix-20260727';
 
@@ -191,7 +191,7 @@ function toolScriptVersion(script) {
   if (script === GOLD_LAB_RUNTIME) return GOLD_LAB_SCRIPT_VERSION;
   if (script === GENERIC_SUITE_RUNTIME) return GENERIC_SUITE_SCRIPT_VERSION;
   if (script === COUNTRY_SUITE_FACTORY_RUNTIME) return COUNTRY_SUITE_FACTORY_SCRIPT_VERSION;
-  return 'country-premium-20260719';
+  return 'country-premium-clickfix-20260730';
 }
 const GOLD_LAB_COUNTRIES = new Set([
   'argentina',
@@ -744,14 +744,6 @@ async function compileDesignAssets() {
   const srcCssDir = resolve(projectRoot, 'assets', 'css');
   const destCssDir = resolve(siteRoot, 'assets', 'css');
   const destJsDir = resolve(siteRoot, 'assets', 'js');
-  const hashedBundlePattern = /^bundle\.[a-f0-9]{6}\.(css|js)$/;
-
-  for (const dir of [srcCssDir, destCssDir, destJsDir]) {
-    if (!(await pathExists(dir))) continue;
-    for (const file of await readdir(dir)) {
-      if (hashedBundlePattern.test(file)) await rm(resolve(dir, file));
-    }
-  }
 
   await mkdir(destCssDir, { recursive: true });
   await mkdir(destJsDir, { recursive: true });
@@ -769,7 +761,7 @@ async function compileDesignAssets() {
 }
 
 async function renderEnglishCountryFromSource(country, assetsManifest) {
-  const routeRegistry = await buildRouteRegistry();
+  const routeRegistry = await buildDevRouteRegistry();
   const route = routeRegistry.getAll().find(item => item.type === 'country' && item.metadata?.id === country);
   if (!route) throw new Error(`Country route not found in source registry: ${country}`);
   await renderCountryPage(route, routeRegistry, assetsManifest);
@@ -802,12 +794,6 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
         </nav>
       </div>
     </header>`;
-  const relatedCards = routes.slice(0, 12).map(route => `
-    <a href="${escapeHtml(route.href)}" class="link-card">
-      <span>${escapeHtml(route.title)}</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  `).join('');
   let rendered = 0;
 
   for (const route of routes) {
@@ -839,6 +825,7 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
       applicationCategory: 'DeveloperApplication',
       operatingSystem: 'All'
     };
+    const relatedFooter = await renderCompactToolRelatedFooter({ country, data, routes, currentRoute: route });
     const contentHtml = `
         <header class="page-intro">
           <span class="eyebrow">${escapeHtml(data.catalog.name)} workbench</span>
@@ -848,13 +835,7 @@ async function renderEnglishCountryToolPages(country, assetsManifest) {
 
         <section class="workbench-card csf-static-host" aria-label="Premium country workbench" data-algorithm-id="validohub.${escapeHtml(country)}-suite"></section>
 
-        <section class="related-section">
-          <div class="section-heading">
-            <span class="eyebrow">Related tools</span>
-            <h2>Continue with related ${escapeHtml(data.catalog.name)} tools</h2>
-          </div>
-          <div class="card-grid">${relatedCards}</div>
-        </section>`;
+        ${relatedFooter}`;
     const assembledHtml = layoutTemplate
       .replaceAll('{{ HEAD }}', () => headHtml)
       .replaceAll('{{ HEADER }}', () => headerHtml)
@@ -923,7 +904,7 @@ async function buildCountryLocalizationProfile(country, locales) {
   const dataPath = resolve(projectRoot, 'countries', 'data', `${country}.json`);
   if (!(await pathExists(dataPath))) return null;
   const data = JSON.parse(await readFile(dataPath, 'utf8'));
-  const routes = Array.isArray(data.hub?.routes) ? data.hub.routes : [];
+  const routes = routesFromCountryData(data);
   const iso2 = data.catalog?.iso2 || '';
   const fallbackName = data.catalog?.name || country;
   return {
@@ -964,6 +945,215 @@ function escapeHtmlJson(value) {
     .replace(/</g, '\\u003c')
     .replace(/>/g, '\\u003e')
     .replace(/&/g, '\\u0026');
+}
+
+const TOOL_WORKFLOW_GROUPS = [
+  {
+    id: 'identity',
+    label: 'Identity',
+    terms: ['dni', 'id-card', 'passport', 'mrz', 'personal', 'residence', 'driving', 'license', 'licence', 'national-id', 'curp', 'pesel', 'cpf', 'rnokpp', 'cedula', 'cuil']
+  },
+  {
+    id: 'tax',
+    label: 'Tax and registry',
+    terms: ['tax', 'vat', 'iva', 'cuit', 'nit', 'tin', 'eori', 'company', 'registry', 'register', 'customs', 'fiscal', 'invoice', 'importer']
+  },
+  {
+    id: 'banking',
+    label: 'Banking and payments',
+    terms: ['iban', 'bank', 'account', 'payment', 'transfer', 'remittance', 'swift', 'bic', 'cbu', 'cvu', 'boleto', 'pix', 'qr', 'debit', 'payout']
+  },
+  {
+    id: 'address',
+    label: 'Address and contact',
+    terms: ['address', 'postal', 'postcode', 'zip', 'phone', 'e164', 'region', 'municipality', 'locale-number', 'date-locale', 'currency-decimal']
+  },
+  {
+    id: 'privacy',
+    label: 'Privacy and fixtures',
+    terms: ['pii', 'redaction', 'personal-data', 'fixture', 'support-ticket', 'ocr', 'data-quality', 'api-payload', 'json-fixture', 'regex', 'form-field', 'smoke-test', 'csv', 'slug', 'copy']
+  },
+  {
+    id: 'vehicle',
+    label: 'Vehicle and transport',
+    terms: ['vehicle', 'vin', 'plate', 'tracking']
+  }
+];
+
+let allCountryRouteCache = null;
+
+function routeSearchText(route) {
+  return `${route?.href || ''} ${route?.title || ''} ${route?.text || ''} ${route?.summary || ''}`.toLowerCase();
+}
+
+function workflowForRoute(route) {
+  const searchText = routeSearchText(route);
+  return TOOL_WORKFLOW_GROUPS.find(group => group.terms.some(term => searchText.includes(term))) || {
+    id: 'general',
+    label: 'Developer workflow',
+    terms: []
+  };
+}
+
+function keywordSetForRoute(route) {
+  const stopWords = new Set([
+    'and', 'the', 'for', 'with', 'from', 'into', 'local', 'browser', 'only', 'helper', 'validator', 'generator',
+    'inspector', 'parser', 'workbench', 'country', 'evidence', 'format', 'formats', 'official', 'boundary'
+  ]);
+  return new Set(routeSearchText(route)
+    .replace(/https?:\/\/\S+/g, ' ')
+    .split(/[^a-z0-9]+/i)
+    .filter(token => token.length > 2 && !stopWords.has(token)));
+}
+
+function routesFromCountryData(data) {
+  const countrySlug = data.id || data.catalog?.id || '';
+  const routes = [];
+  if (Array.isArray(data.hub?.routes)) routes.push(...data.hub.routes);
+  if (Array.isArray(data.catalog?.availableWorkbenches)) {
+    routes.push(...data.catalog.availableWorkbenches
+      .filter(name => typeof name === 'string' && name.trim())
+      .map(name => ({
+        title: name,
+        href: `/en/${countrySlug}/${countrySlug}-${slugifyToolName(name)}/`,
+        text: ''
+      })));
+  }
+  if (Array.isArray(data.availableWorkbenches)) {
+    routes.push(...data.availableWorkbenches
+      .filter(tool => tool?.id)
+      .map(tool => ({
+        title: tool.name || tool.title || String(tool.id).replace(/-/g, ' '),
+        href: `/en/${countrySlug}/${tool.id}/`,
+        text: tool.description || tool.text || ''
+      })));
+  } else if (data.availableWorkbenches && typeof data.availableWorkbenches === 'object') {
+    routes.push(...Object.entries(data.availableWorkbenches)
+      .map(([name, details]) => ({
+        title: name,
+        href: `/en/${countrySlug}/${countrySlug}-${slugifyToolName(name)}/`,
+        text: details?.description || ''
+      })));
+  }
+  const seen = new Set();
+  return routes.filter(route => {
+    const href = String(route.href || '');
+    if (!href || seen.has(href)) return false;
+    seen.add(href);
+    return true;
+  });
+}
+
+function slugifyToolName(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function scoreRelatedTool(currentRoute, candidateRoute) {
+  const currentWorkflow = workflowForRoute(currentRoute).id;
+  const candidateWorkflow = workflowForRoute(candidateRoute).id;
+  const currentKeywords = keywordSetForRoute(currentRoute);
+  const candidateKeywords = keywordSetForRoute(candidateRoute);
+  let score = currentWorkflow === candidateWorkflow ? 40 : 0;
+  for (const keyword of currentKeywords) {
+    if (candidateKeywords.has(keyword)) score += 4;
+  }
+  if (String(candidateRoute.title || '').toLowerCase().includes(String(currentRoute.title || '').split(/\s+/).at(-1)?.toLowerCase() || '')) score += 5;
+  return score;
+}
+
+async function readCountryRouteIndex() {
+  if (allCountryRouteCache) return allCountryRouteCache;
+  const dataDir = resolve(projectRoot, 'countries', 'data');
+  const files = (await readdir(dataDir)).filter(file => file.endsWith('.json'));
+  const entries = [];
+  for (const file of files) {
+    try {
+      const data = JSON.parse(await readFile(resolve(dataDir, file), 'utf8'));
+      const routes = routesFromCountryData(data);
+      if (!routes.length) continue;
+      entries.push({
+        slug: data.id || data.catalog?.id || file.replace(/\.json$/, ''),
+        name: data.catalog?.name || file.replace(/\.json$/, ''),
+        region: data.catalog?.region || data.catalog?.continent || '',
+        continent: data.catalog?.continent || '',
+        routes
+      });
+    } catch {
+      // Ignore malformed country data here; the build validation pass reports those separately.
+    }
+  }
+  allCountryRouteCache = entries;
+  return entries;
+}
+
+async function sameWorkflowCountryTools({ country, data, currentRoute }) {
+  const workflow = workflowForRoute(currentRoute);
+  const index = await readCountryRouteIndex();
+  const scored = [];
+  for (const entry of index) {
+    if (entry.slug === country) continue;
+    const regionBoost = entry.region && entry.region === (data.catalog?.region || data.catalog?.continent) ? 12 : 0;
+    const continentBoost = entry.continent && entry.continent === data.catalog?.continent ? 8 : 0;
+    const best = entry.routes
+      .map(route => ({
+        route,
+        score: scoreRelatedTool(currentRoute, route) + regionBoost + continentBoost,
+        workflowId: workflowForRoute(route).id
+      }))
+      .filter(item => item.workflowId === workflow.id && item.score > 0)
+      .sort((a, b) => b.score - a.score)[0];
+    if (best) scored.push({ ...best, countryName: entry.name });
+  }
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 6)
+    .map(item => item.route);
+}
+
+function renderCompactRelatedLinks(routes) {
+  return routes.map(route => `
+              <a href="${escapeHtml(route.href)}" class="link-card">
+                <span>${escapeHtml(route.title)}</span>
+                <span aria-hidden="true">→</span>
+              </a>`).join('');
+}
+
+async function renderCompactToolRelatedFooter({ country, data, routes, currentRoute }) {
+  const pageHref = String(currentRoute.href || '');
+  const sameCountry = routes
+    .filter(route => route.href && route.href !== pageHref)
+    .map(route => ({ route, score: scoreRelatedTool(currentRoute, route) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 12)
+    .map(item => item.route);
+  const countryName = data.catalog?.name || data.hub?.name || country;
+  return `
+        <section class="related-section vh-tool-related-footer" aria-label="Related navigation">
+          <div class="section-heading">
+            <span class="eyebrow">Related tools</span>
+            <h2>Useful next steps</h2>
+            <p>Short, relevant links for this country and workflow.</p>
+          </div>
+          <div class="vh-tool-related-layout">
+            <div class="vh-tool-related-group">
+              <h3>Related ${escapeHtml(countryName)} tools</h3>
+              <div class="vh-tool-related-links">${renderCompactRelatedLinks(sameCountry)}</div>
+            </div>
+            <div class="vh-tool-related-side">
+              <div class="vh-tool-related-actions">
+                <a href="/en/${escapeHtml(country)}/" class="pill-link">All ${escapeHtml(countryName)} tools</a>
+                <a href="/en/countries/" class="pill-link">All country tools</a>
+                <a href="/en/tools/" class="pill-link">Global tools</a>
+              </div>
+            </div>
+          </div>
+        </section>`;
 }
 
 function routeFromFile(filePath) {
@@ -1296,11 +1486,15 @@ async function validateCountryHtml(country, locales) {
       if (/<p class="vh-(?:mt-xs vh-mb-xs|mb-xs vh-mt-xs)">\s*<\/p>/.test(content)) failures.push(`${route} contains empty country info-card summary`);
       if (isFactoryCountry && content.includes('>Run the tool<')) failures.push(`${route} still shows generic Run the tool shell`);
       if (isFactoryCountry && content.includes('workbench-heading')) failures.push(`${route} still contains generic workbench heading`);
-      const relatedSection = content.match(/<section class="related-section">[\s\S]*?<\/section>/)?.[0] || '';
-      const foreignRelated = [...relatedSection.matchAll(/href="([^"]+)"/g)]
-        .map(match => match[1])
-        .filter(href => href.startsWith('/') && !href.startsWith(`/${locale}/${country}/`));
-      if (foreignRelated.length) failures.push(`${route} has cross-country related links: ${foreignRelated.slice(0, 3).join(', ')}`);
+      const relatedSections = [...content.matchAll(/<section class="related-section(?:\s[^"]*)?">[\s\S]*?<\/section>/g)]
+        .map(match => match[0])
+        .filter(section => !section.includes('vh-tool-related-footer'));
+      for (const relatedSection of relatedSections) {
+        const foreignRelated = [...relatedSection.matchAll(/href="([^"]+)"/g)]
+          .map(match => match[1])
+          .filter(href => href.startsWith('/') && !href.startsWith(`/${locale}/${country}/`));
+        if (foreignRelated.length) failures.push(`${route} has legacy cross-country related links: ${foreignRelated.slice(0, 3).join(', ')}`);
+      }
       if (isFactoryCountry && content.includes('data-algorithm-id="validohub.') && content.includes(`${country}-suite`)) {
         if (!content.includes('/assets/js/tools/country-suite-factory.js')) failures.push(`${route} missing country-suite-factory.js`);
         if (!content.includes(`/assets/js/tools/${COUNTRY_RUNTIME_BY_SLUG[country] || `${country}-suite.js`}`)) failures.push(`${route} missing country runtime script`);
@@ -1343,8 +1537,6 @@ async function main() {
   console.log(`Locales: ${locales.join(', ')}`);
   const assetsManifest = await compileDesignAssets();
   console.log(`✓ Compiled assets: ${assetsManifest.css}, ${assetsManifest.js}`);
-  const globalAssetLinks = await refreshGeneratedAssetLinks(siteRoot, assetsManifest);
-  console.log(`✓ Refreshed current CSS/JS bundle links on ${globalAssetLinks.updated} generated pages (checked ${globalAssetLinks.checked})`);
   const routeRegistry = await renderEnglishCountryFromSource(country, assetsManifest);
   ensureLocalizedRoutes(routeRegistry, siteRoot, locales);
   hydrateLocalizationDataFromRegistry(routeRegistry, locales);

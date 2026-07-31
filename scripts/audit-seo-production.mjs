@@ -123,7 +123,7 @@ async function auditFile(file, options) {
   if (options.strictLocalization && locale !== 'en') {
     const englishUiNeedles = [
       'Waiting for input',
-      'Developer API preview',
+      'Developer snapshot JSON',
       'Raw JSON output',
       'Primary local workbench',
       'Secondary local workflow',

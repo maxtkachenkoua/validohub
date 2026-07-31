@@ -8,6 +8,7 @@
   const count = root.querySelector('[data-tools-count]');
   const empty = root.querySelector('[data-tools-empty]');
   const chips = Array.from(root.querySelectorAll('[data-tools-query]'));
+  const searchShell = input?.closest('.vh-tools-search');
   const locale = (document.documentElement.lang || 'en').split('-')[0];
   const messages = {
     en: { matches: 'matches', empty: 'No global tools match this search.', enter: 'Press Enter to open the top result.', try: 'Try' },
@@ -22,9 +23,18 @@
   const searchStatus = document.createElement('p');
   searchStatus.className = 'vh-tools-search-status';
   searchStatus.setAttribute('aria-live', 'polite');
+  const dropdown = document.createElement('div');
+  dropdown.className = 'vh-tools-search-dropdown';
+  dropdown.setAttribute('data-tools-search-results', '');
+  dropdown.setAttribute('role', 'listbox');
+  dropdown.hidden = true;
 
-  if (input) {
-    input.insertAdjacentElement('afterend', searchStatus);
+  if (searchShell) {
+    searchShell.append(dropdown);
+    searchShell.insertAdjacentElement('afterend', searchStatus);
+  } else if (input) {
+    input.insertAdjacentElement('afterend', dropdown);
+    dropdown.insertAdjacentElement('afterend', searchStatus);
   }
 
   function normalize(value) {
@@ -34,6 +44,15 @@
       .replace(/[^\p{L}\p{N}]+/gu, ' ')
       .trim()
       .toLowerCase();
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   const aliases = new Map([
@@ -203,6 +222,37 @@
     return score ? score - model.index / 1000 : 0;
   }
 
+  function resultSubtitle(model) {
+    const category = model.card.dataset.category || '';
+    const summary = model.card.querySelector('span:last-child')?.textContent?.trim() || '';
+    return [category, summary].filter(Boolean).join(' · ');
+  }
+
+  function renderDropdown(ranked, query) {
+    if (!dropdown) return;
+    const hasQuery = Boolean(normalize(query));
+    const results = hasQuery ? ranked.filter(model => model.score > 0).slice(0, 12) : [];
+    dropdown.hidden = results.length === 0;
+    if (!results.length) {
+      dropdown.innerHTML = '';
+      return;
+    }
+    dropdown.innerHTML = results.map((model, index) => {
+      const title = model.card.querySelector('strong')?.textContent?.trim() || model.card.textContent.trim();
+      const href = model.card.getAttribute('href') || '#';
+      const subtitle = resultSubtitle(model);
+      return `
+        <a class="vh-tools-search-result${index === 0 ? ' is-top-result' : ''}" href="${escapeHtml(href)}" role="option">
+          <span>
+            <strong>${escapeHtml(title)}</strong>
+            ${subtitle ? `<em>${escapeHtml(subtitle)}</em>` : ''}
+          </span>
+          <small>${index === 0 ? 'Enter' : 'Open'}</small>
+        </a>
+      `;
+    }).join('');
+  }
+
   function applyFilter(query) {
     const tokens = queryTokens(query);
     const ranked = cardModels
@@ -236,17 +286,31 @@
       const visibleCards = Array.from(group.querySelectorAll('[data-tool-card]')).some((card) => !card.hidden);
       group.hidden = !visibleCards;
     }
+    renderDropdown(ranked, query);
     return lead;
+  }
+
+  function applyChipQuery(chip) {
+    const searchQuery = chip.dataset.toolsQuery || '';
+    const displayQuery = searchQuery ? (chip.textContent || searchQuery).trim() : '';
+    if (input) {
+      input.value = displayQuery;
+      input.dataset.searchQuery = searchQuery;
+    }
+    applyFilter(searchQuery);
+    setQueryParam(searchQuery);
+    input?.focus();
   }
 
   if (input) {
     input.addEventListener('input', () => {
+      input.dataset.searchQuery = '';
       applyFilter(input.value);
       setQueryParam(input.value);
     });
     input.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter') return;
-      const lead = applyFilter(input.value);
+      const lead = applyFilter(input.dataset.searchQuery || input.value);
       if (!lead || lead.hidden) return;
       event.preventDefault();
       lead.click();
@@ -260,22 +324,22 @@
 
   for (const chip of chips) {
     chip.addEventListener('click', () => {
-      const query = chip.dataset.toolsQuery || '';
-      if (input) input.value = query;
-      applyFilter(query);
-      setQueryParam(query);
-      input?.focus();
+      applyChipQuery(chip);
     });
   }
 
   root.addEventListener('click', (event) => {
     const button = event.target.closest('[data-tools-query]');
     if (!button || chips.includes(button)) return;
-    const query = button.dataset.toolsQuery || '';
-    if (input) input.value = query;
-    applyFilter(query);
-    setQueryParam(query);
-    input?.focus();
+    applyChipQuery(button);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!root.contains(event.target)) dropdown.hidden = true;
+  });
+
+  input?.addEventListener('focus', () => {
+    if (normalize(input.dataset.searchQuery || input.value)) applyFilter(input.dataset.searchQuery || input.value);
   });
 
   document.addEventListener('keydown', (event) => {

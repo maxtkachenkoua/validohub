@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   initGlobalLanguageSwitcher();
+  initMegaNavigation();
   initCountryClocks();
 
   // 1. Component-Scoped Code Snippets Language Tabs
@@ -241,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!shortcutsWrap) return;
       const recent = getRecentTerms();
       const baseQueries = popularFallback.map(entry => entry.query);
-      const terms = Array.from(new Set([...recent, ...baseQueries])).slice(0, 8);
+      const terms = Array.from(new Set([...recent, ...baseQueries])).slice(0, 10);
       shortcutsWrap.innerHTML = terms.map(term => {
         const label = shortcutLabelByQuery.get(term) || term;
         return `<button class="vh-country-search-chip" type="button" data-country-search-shortcut="${escapeHtml(term)}">${escapeHtml(label)}</button>`;
@@ -304,14 +305,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function buildSuggestionItem(row, index, rawQuery) {
       const href = row.getAttribute('href') || '#';
-      const title = (row.querySelector('strong')?.textContent || '').trim() || (row.textContent || '').trim();
-      const meta = (row.querySelector('small')?.textContent || href).trim();
+      const slug = row.dataset.routeSlug || '';
+      const baseTitle = (row.querySelector('strong')?.textContent || '').trim() || (row.textContent || '').trim();
+      const title = routeSearchTitle(slug, baseTitle);
+      const meta = routeSearchMeta(slug, row, href);
       return `
         <a class="vh-country-search-suggestion" href="${escapeHtml(href)}" role="option" data-suggestion-index="${index}">
           <span class="vh-country-search-suggestion-title">${highlightMatches(title, rawQuery)}</span>
           <span class="vh-country-search-suggestion-meta">${highlightMatches(meta, rawQuery)}</span>
         </a>
       `;
+    }
+
+    function routeSearchTitle(slug, title) {
+      if (/pix-copy-paste-decoder|pix-copy.*decoder/.test(slug)) return 'Pix Copy-and-Paste Decoder';
+      if (/pix-qr-payload-generator|pix.*qr.*payload.*generator/.test(slug)) return 'Pix QR Payload Generator';
+      return title;
+    }
+
+    function routeSearchMeta(slug, row, href) {
+      if (/pix-validator/.test(slug)) return 'Pix key and BR Code validation';
+      if (/pix-copy-paste-decoder|pix-copy.*decoder/.test(slug)) return 'Decode copy-and-paste BR Code payloads';
+      if (/pix-qr-payload-generator|pix.*qr.*payload.*generator/.test(slug)) return 'Generate Pix QR payload fixtures';
+      return (row.querySelector('small')?.textContent || href).trim();
     }
 
     function renderSuggestions(rawQuery) {
@@ -651,6 +667,293 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nav) return;
 
     applyAutoLocale(localeState);
+  }
+
+  function initMegaNavigation() {
+    const header = document.querySelector('.site-header');
+    const nav = header?.querySelector('.primary-nav');
+    if (!header || !nav || header.dataset.megaReady === 'true') return;
+    header.dataset.megaReady = 'true';
+
+    const localeMatch = window.location.pathname.match(/^\/(en|es|de|fr|pl|uk|pt-BR)(?:\/|$)/);
+    const locale = localeMatch?.[1] || 'en';
+    const href = (path) => `/${locale}${path}`;
+    const navLinks = Array.from(nav.querySelectorAll('a'));
+    const linkFor = (key) => navLinks.find((link) => {
+      const url = link.getAttribute('href') || '';
+      const text = (link.textContent || '').toLowerCase();
+      if (key === 'tools') return /\/tools\/?$/.test(url) || text.includes('tools') || text.includes('outils') || text.includes('werkzeuge') || text.includes('narz') || text.includes('інстру');
+      if (key === 'countries') return /\/countries\/?$/.test(url) || text.includes('countr') || text.includes('pays') || text.includes('país') || text.includes('länder') || text.includes('kraje') || text.includes('країн');
+      return /national-identifiers/.test(url) || text.includes('identifier') || text.includes('identifi') || text.includes('kennung') || text.includes('ідентиф');
+    });
+
+    const menuData = {
+      tools: {
+        kicker: 'Global Tools',
+        title: 'Browser utilities by workflow',
+        columns: [
+          {
+            title: 'Payloads & APIs',
+            preview: '5 shown',
+            allLabel: 'See all Payloads & APIs',
+            allPath: '/tools/#data-api-contracts',
+            links: [
+              ['JSON Formatter', '/tools/json-formatter/'],
+              ['JSON Validator', '/tools/json-validator/'],
+              ['JSON Schema Workbench', '/tools/json-schema-workbench/'],
+              ['OpenAPI / Swagger Inspector', '/tools/openapi-inspector/'],
+              ['GraphQL Workbench', '/tools/graphql-workbench/']
+            ]
+          },
+          {
+            title: 'Security & Web',
+            preview: '5 shown',
+            allLabel: 'See all Security & Web',
+            allPath: '/tools/#security-trust',
+            links: [
+              ['HTTP Security Headers', '/tools/http-security-headers-inspector/'],
+              ['Webhook Signature Verifier', '/tools/webhook-signature-verifier/'],
+              ['Secret & PII Redactor', '/tools/secret-pii-redactor/'],
+              ['CSP Builder / Auditor', '/tools/csp-builder-auditor/'],
+              ['CORS Policy Workbench', '/tools/cors-policy-workbench/']
+            ]
+          },
+          {
+            title: 'Encoding & Text',
+            preview: '5 shown',
+            allLabel: 'See all Encoding & Text',
+            allPath: '/tools/#text-time-utilities',
+            links: [
+              ['Base64 Encoder', '/tools/base64-encoder/'],
+              ['Base64 Decoder', '/tools/base64-decoder/'],
+              ['URL Encoder', '/tools/url-encoder/'],
+              ['Regex Tester', '/tools/regex-tester/'],
+              ['Text Diff', '/tools/text-diff/']
+            ]
+          },
+          {
+            title: 'Banking & Test Data',
+            preview: '5 shown',
+            allLabel: 'See all Banking & Test Data',
+            allPath: '/tools/#regulated-formats',
+            links: [
+              ['IBAN Generator', '/tools/iban-generator/'],
+              ['IBAN Validator', '/tools/iban-validator/'],
+              ['SWIFT / BIC Workbench', '/tools/swift-bic-workbench/'],
+              ['UUID Generator', '/tools/uuid-generator/'],
+              ['Locale Test Data Generator', '/tools/locale-test-data-generator/']
+            ]
+          }
+        ],
+        actions: [['Open all global tools', '/tools/'], ['IBAN generator', '/tools/iban-generator/']]
+      },
+      countries: {
+        kicker: 'Countries',
+        title: 'Coverage by continent',
+        columns: [
+          {
+            title: 'Americas',
+            preview: '8 shown',
+            allLabel: 'See all Americas',
+            allPath: '/countries/#americas',
+            countries: [
+              ['🇧🇷', 'Brazil', '/brazil/'], ['🇦🇷', 'Argentina', '/argentina/'], ['🇨🇱', 'Chile', '/chile/'],
+              ['🇨🇴', 'Colombia', '/colombia/'], ['🇲🇽', 'Mexico', '/mexico/'], ['🇺🇸', 'United States', '/united-states/'],
+              ['🇨🇦', 'Canada', '/canada/'], ['🇵🇪', 'Peru', '/peru/']
+            ]
+          },
+          {
+            title: 'Europe',
+            preview: '8 shown',
+            allLabel: 'See all Europe',
+            allPath: '/countries/#europe',
+            countries: [
+              ['🇵🇱', 'Poland', '/poland/'], ['🇫🇷', 'France', '/france/'], ['🇩🇪', 'Germany', '/germany/'],
+              ['🇳🇱', 'Netherlands', '/netherlands/'], ['🇪🇸', 'Spain', '/spain/'], ['🇮🇹', 'Italy', '/italy/'],
+              ['🇨🇭', 'Switzerland', '/switzerland/'], ['🇨🇿', 'Czechia', '/czechia/']
+            ]
+          },
+          {
+            title: 'Asia Pacific',
+            preview: '8 shown',
+            allLabel: 'See all Asia Pacific',
+            allPath: '/countries/#asia-pacific',
+            countries: [
+              ['🇯🇵', 'Japan', '/japan/'], ['🇮🇳', 'India', '/india/'], ['🇸🇬', 'Singapore', '/singapore/'],
+              ['🇦🇺', 'Australia', '/australia/'], ['🇮🇩', 'Indonesia', '/indonesia/'], ['🇵🇭', 'Philippines', '/philippines/'],
+              ['🇹🇷', 'Turkey', '/turkey/'], ['🇰🇿', 'Kazakhstan', '/kazakhstan/']
+            ]
+          },
+          {
+            title: 'Africa & Middle East',
+            preview: '7 shown',
+            allLabel: 'See all Africa & Middle East',
+            allPath: '/countries/#africa-middle-east',
+            countries: [
+              ['🇿🇦', 'South Africa', '/south-africa/'], ['🇪🇬', 'Egypt', '/egypt/'], ['🇳🇬', 'Nigeria', '/nigeria/'],
+              ['🇰🇪', 'Kenya', '/kenya/'], ['🇲🇦', 'Morocco', '/morocco/'], ['🇮🇱', 'Israel', '/israel/'],
+              ['🇦🇪', 'United Arab Emirates', '/united-arab-emirates/']
+            ]
+          }
+        ],
+        actions: [['Open country directory', '/countries/'], ['Brazil hub', '/brazil/'], ['Poland hub', '/poland/']]
+      },
+      identifiers: {
+        kicker: 'Identifiers',
+        title: 'Local ID systems worth checking first',
+        columns: [
+          {
+            title: 'Personal IDs',
+            preview: '5 shown',
+            allLabel: 'See all personal identifiers',
+            allPath: '/categories/national-identifiers/',
+            links: [
+              ['PESEL', '/poland/pesel-validator/'],
+              ['CURP', '/mexico/mexico-curp-validator/'],
+              ['Brazil CPF', '/brazil/brazil-cpf-validator/'],
+              ['France NIR', '/france/france-nir-key-validator/'],
+              ['Netherlands BSN', '/netherlands/netherlands-bsn-validator/']
+            ]
+          },
+          {
+            title: 'Business & Tax',
+            preview: '5 shown',
+            allLabel: 'See all business IDs',
+            allPath: '/categories/national-identifiers/',
+            links: [
+              ['Brazil CNPJ', '/brazil/brazil-cnpj-validator/'],
+              ['France SIRET', '/france/france-siret-validator/'],
+              ['EU VAT Number', '/tools/eu-vat-number-workbench/'],
+              ['Poland REGON', '/poland/poland-regon-validator/'],
+              ['EORI Inspector', '/poland/poland-eori-inspector/']
+            ]
+          },
+          {
+            title: 'Payments & Banking',
+            preview: '5 shown',
+            allLabel: 'See all payment IDs',
+            allPath: '/tools/#regulated-formats',
+            links: [
+              ['Brazil Pix', '/brazil/brazil-pix-validator/'],
+              ['IBAN Validator', '/tools/iban-validator/'],
+              ['IBAN Generator', '/tools/iban-generator/'],
+              ['SWIFT / BIC', '/tools/swift-bic-workbench/'],
+              ['Boleto Barcode', '/brazil/brazil-boleto-barcode-validator/']
+            ]
+          },
+          {
+            title: 'Documents & Mobility',
+            preview: '4 shown',
+            allLabel: 'See all document tools',
+            allPath: '/countries/',
+            links: [
+              ['MRZ Passport Workbench', '/tools/mrz-passport-workbench/'],
+              ['VIN Validator', '/poland/poland-vin-validator/'],
+              ['License Plate Inspector', '/poland/poland-license-plate-inspector/'],
+              ['ID Card Validator', '/poland/poland-id-card-validator/']
+            ]
+          }
+        ],
+        actions: [['Open identifier library', '/categories/national-identifiers/'], ['PESEL guide', '/identifiers/pesel/']]
+      }
+    };
+
+    const menu = document.createElement('div');
+    menu.className = 'vh-mega-menu';
+    menu.hidden = true;
+    header.appendChild(menu);
+
+    let activeKey = null;
+    let closeTimer = null;
+
+    const render = (key) => {
+      const data = menuData[key];
+      if (!data) return;
+      activeKey = key;
+      menu.innerHTML = `
+        <div class="vh-mega-shell" role="dialog" aria-label="${escapeHtml(data.title)}">
+          <div class="vh-mega-head">
+            <span>${escapeHtml(data.kicker)}</span>
+            <strong>${escapeHtml(data.title)}</strong>
+          </div>
+          <div class="vh-mega-grid">
+            ${data.columns.map((column) => `
+              <section class="vh-mega-column">
+                <h3>${escapeHtml(column.title)}</h3>
+                <div class="${column.countries ? 'vh-mega-country-list' : 'vh-mega-link-list'}">
+                  ${(column.countries || column.links).map((item) => {
+                    const label = column.countries ? item[1] : item[0];
+                    const icon = column.countries ? `<span class="vh-mega-flag">${item[0]}</span>` : '<span class="vh-mega-dot"></span>';
+                    const path = column.countries ? item[2] : item[1];
+                    return `<a class="vh-mega-item" href="${href(path)}">${icon}<span>${escapeHtml(label)}</span></a>`;
+                  }).join('')}
+                </div>
+                ${column.allLabel && column.allPath ? `
+                  <div class="vh-mega-column-foot">
+                    <span>${escapeHtml(column.preview || 'Preview')}</span>
+                    <a href="${href(column.allPath)}">${escapeHtml(column.allLabel)}</a>
+                  </div>
+                ` : ''}
+              </section>
+            `).join('')}
+          </div>
+          <div class="vh-mega-actions">
+            ${data.actions.map(([label, path]) => `<a href="${href(path)}">${escapeHtml(label)}</a>`).join('')}
+          </div>
+        </div>`;
+    };
+
+    const open = (key) => {
+      window.clearTimeout(closeTimer);
+      render(key);
+      menu.hidden = false;
+      navLinks.forEach((link) => link.setAttribute('aria-expanded', String(link === linkFor(key))));
+    };
+
+    const close = () => {
+      menu.hidden = true;
+      activeKey = null;
+      navLinks.forEach((link) => link.removeAttribute('aria-expanded'));
+    };
+
+    const scheduleClose = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(close, 140);
+    };
+
+    ['tools', 'countries', 'identifiers'].forEach((key) => {
+      const link = linkFor(key);
+      if (!link) return;
+      link.classList.add('vh-mega-trigger');
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.addEventListener('mouseenter', () => open(key));
+      link.addEventListener('mouseover', () => open(key));
+      link.addEventListener('pointerenter', () => open(key));
+      link.addEventListener('focus', () => open(key));
+      link.addEventListener('click', (event) => {
+        if (window.matchMedia('(max-width: 860px)').matches && activeKey !== key) {
+          event.preventDefault();
+          open(key);
+        }
+      });
+    });
+
+    nav.addEventListener('mouseleave', scheduleClose);
+    nav.addEventListener('mousemove', (event) => {
+      const trigger = event.target.closest?.('.vh-mega-trigger');
+      if (!trigger) return;
+      if (trigger === linkFor('tools')) open('tools');
+      if (trigger === linkFor('countries')) open('countries');
+      if (trigger === linkFor('identifiers')) open('identifiers');
+    });
+    menu.addEventListener('mouseenter', () => window.clearTimeout(closeTimer));
+    menu.addEventListener('mouseleave', scheduleClose);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (!menu.hidden && !header.contains(event.target)) close();
+    });
   }
 
   function initCountryClocks() {

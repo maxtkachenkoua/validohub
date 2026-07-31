@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: luhn-card-fixture-generator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Card Number Masker / Luhn Fixture Generator
+summary:
+  en: Generate and inspect Luhn-valid test card fixtures, masks, last4 output, brand shape hints, and payment-provider boundary notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.luhn-card-fixture-generator
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Card number or fixture request
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - payments-fixtures
+          - strict
+          - review
+        default: "payments-fixtures"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [bin-iin-shape-inspector, currency-minor-units-checker, sepa-pain001-fixture-helper, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Card Number Masker / Luhn Fixture Generator
+  description:
+    en: Generate and inspect Luhn-valid test card fixtures, masks, last4 output, brand shape hints, and payment-provider boundary notes.

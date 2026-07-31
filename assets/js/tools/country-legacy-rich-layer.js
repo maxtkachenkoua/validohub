@@ -2,10 +2,10 @@
   'use strict';
 
   const LEGACY = {
-    'validohub.brazil-suite': { country: 'Brazil', slug: 'brazil', code: 'BR', accent: '#15803d', soft: '#ecfdf5', endpoint: '/v1/br/workbench/inspect', sampleHint: 'CPF, CNPJ, PIX, boleto, CEP, NF-e, BRL' },
-    'validohub.poland-suite': { country: 'Poland', slug: 'poland', code: 'PL', accent: '#9f1239', soft: '#fff1f2', endpoint: '/v1/pl/workbench/inspect', sampleHint: 'PESEL, NIP, REGON, KRS, BLIK, NRB' },
-    'validohub.france-suite': { country: 'France', slug: 'france', code: 'FR', accent: '#0055a4', soft: '#eff6ff', endpoint: '/v1/fr/workbench/inspect', sampleHint: 'SIREN, SIRET, TVA, RIB, IBAN, INSEE' },
-    'validohub.netherlands-suite': { country: 'Netherlands', slug: 'netherlands', code: 'NL', accent: '#21468b', soft: '#eff6ff', endpoint: '/v1/nl/workbench/inspect', sampleHint: 'BSN, KVK, BTW, iDEAL, IBAN, postcode' }
+    'validohub.brazil-suite': { country: 'Brazil', slug: 'brazil', code: 'BR', accent: '#15803d', soft: '#ecfdf5', sampleHint: 'CPF, CNPJ, PIX, boleto, CEP, NF-e, BRL' },
+    'validohub.poland-suite': { country: 'Poland', slug: 'poland', code: 'PL', accent: '#9f1239', soft: '#fff1f2', sampleHint: 'PESEL, NIP, REGON, KRS, BLIK, NRB' },
+    'validohub.france-suite': { country: 'France', slug: 'france', code: 'FR', accent: '#0055a4', soft: '#eff6ff', sampleHint: 'SIREN, SIRET, TVA, RIB, IBAN, INSEE' },
+    'validohub.netherlands-suite': { country: 'Netherlands', slug: 'netherlands', code: 'NL', accent: '#21468b', soft: '#eff6ff', sampleHint: 'BSN, KVK, BTW, iDEAL, IBAN, postcode' }
   };
 
   const escape = (value) => String(value == null ? '' : value)
@@ -95,15 +95,6 @@
     };
   }
 
-  function apiSnippet(meta, sample) {
-    const body = JSON.stringify({ input: sample || '<local-input>', tool: currentToolSlug(), locale: currentLocale(), offline: true }, null, 2);
-    return [
-      'curl -X POST https://api.validohub.com' + meta.endpoint + ' \\',
-      '  -H "Content-Type: application/json" \\',
-      "  -d '" + body.replace(/'/g, "'\\''") + "'"
-    ].join('\n');
-  }
-
   function relatedLinks(meta) {
     const section = document.querySelector('.related-section');
     if (!section) return '';
@@ -132,9 +123,8 @@
       '  <article class="lrp-card"><span class="lrp-label">Recent validations</span><h4>Browser history</h4><select class="lrp-select" data-lrp-history><option value="">No recent inputs yet</option></select><div class="lrp-row" style="margin-top:8px"><button class="lrp-button" type="button" data-lrp-clear-history>Clear history</button></div></article>',
       '  <article class="lrp-card"><span class="lrp-label">Batch diagnostics</span><h4>Multi-row validator</h4><textarea class="lrp-textarea" data-lrp-batch placeholder="Paste one ' + escape(meta.sampleHint) + ' sample per line"></textarea><div class="lrp-row" style="margin-top:8px"><button class="lrp-button primary" type="button" data-lrp-run-batch>Run batch</button><button class="lrp-button" type="button" data-lrp-load-current>Use current input</button></div></article>',
       '</div>',
-      '<div class="lrp-tabs" role="tablist"><button class="lrp-tab" type="button" aria-selected="true" data-lrp-tab="batch">Batch result</button><button class="lrp-tab" type="button" aria-selected="false" data-lrp-tab="api">API preview</button><button class="lrp-tab" type="button" aria-selected="false" data-lrp-tab="json">Raw JSON</button><button class="lrp-tab" type="button" aria-selected="false" data-lrp-tab="related">Related local tools</button></div>',
+      '<div class="lrp-tabs" role="tablist"><button class="lrp-tab" type="button" aria-selected="true" data-lrp-tab="batch">Batch result</button><button class="lrp-tab" type="button" aria-selected="false" data-lrp-tab="json">Raw JSON</button><button class="lrp-tab" type="button" aria-selected="false" data-lrp-tab="related">Related local tools</button></div>',
       '<div class="lrp-panel" data-lrp-panel="batch"><div class="lrp-output" data-lrp-batch-output><p>Run batch to compare pass/review states without leaving this page.</p></div></div>',
-      '<div class="lrp-panel" data-lrp-panel="api" hidden><pre class="lrp-code" data-lrp-api></pre></div>',
       '<div class="lrp-panel" data-lrp-panel="json" hidden><pre class="lrp-code" data-lrp-json>{}</pre></div>',
       '<div class="lrp-panel" data-lrp-panel="related" hidden>' + (relatedLinks(meta) || '<p>Country-local related tools appear here after build pruning.</p>') + '</div>'
     ].join('');
@@ -144,7 +134,6 @@
     const history = lab.querySelector('[data-lrp-history]');
     const batch = lab.querySelector('[data-lrp-batch]');
     const batchOut = lab.querySelector('[data-lrp-batch-output]');
-    const api = lab.querySelector('[data-lrp-api]');
     const json = lab.querySelector('[data-lrp-json]');
 
     function refreshHistory() {
@@ -157,7 +146,6 @@
     function refreshPanels() {
       const value = input ? input.value : '';
       const snap = resultSnapshot(workbench, meta);
-      api.textContent = apiSnippet(meta, value || meta.sampleHint);
       json.textContent = JSON.stringify(snap, null, 2);
       if (value) writeHistory(meta, value, snap.result && snap.result.valid === false ? 'review' : 'checked');
       refreshHistory();
@@ -274,13 +262,12 @@
     const textarea = root.querySelector('.nls-textarea, textarea');
     const lab = document.createElement('section');
     lab.className = 'lrp-lab';
-    lab.innerHTML = '<div class="lrp-head"><div><span class="lrp-kicker">Premium debug layer</span><h3>Netherlands tool intelligence</h3><p>History, batch diagnostics, API preview, raw DOM/result capture, and local related workflows.</p></div><span class="lrp-badge">NL local</span></div><div class="lrp-grid"><article class="lrp-card"><span class="lrp-label">Recent validations</span><h4>Browser history</h4><select class="lrp-select" data-lrp-history><option value="">No recent inputs yet</option></select></article><article class="lrp-card"><span class="lrp-label">Batch diagnostics</span><h4>Multi-row validator</h4><textarea class="lrp-textarea" data-lrp-batch placeholder="Paste BSN, KVK, BTW, iDEAL, IBAN, postcode rows"></textarea><div class="lrp-row" style="margin-top:8px"><button class="lrp-button primary" type="button" data-lrp-run-batch>Run batch</button><button class="lrp-button" type="button" data-lrp-load-current>Use current input</button></div></article></div><div class="lrp-tabs"><button class="lrp-tab" aria-selected="true" type="button" data-lrp-tab="batch">Batch result</button><button class="lrp-tab" aria-selected="false" type="button" data-lrp-tab="api">API preview</button><button class="lrp-tab" aria-selected="false" type="button" data-lrp-tab="json">Raw JSON</button><button class="lrp-tab" aria-selected="false" type="button" data-lrp-tab="related">Related local tools</button></div><div class="lrp-panel" data-lrp-panel="batch"><div class="lrp-output" data-lrp-batch-output><p>Run batch to compare pass/review states.</p></div></div><div class="lrp-panel" data-lrp-panel="api" hidden><pre class="lrp-code" data-lrp-api></pre></div><div class="lrp-panel" data-lrp-panel="json" hidden><pre class="lrp-code" data-lrp-json>{}</pre></div><div class="lrp-panel" data-lrp-panel="related" hidden>' + (relatedLinks(meta) || '<p>Country-local related tools appear here after build pruning.</p>') + '</div>';
+    lab.innerHTML = '<div class="lrp-head"><div><span class="lrp-kicker">Premium debug layer</span><h3>Netherlands tool intelligence</h3><p>History, batch diagnostics, raw DOM/result capture, and local related workflows.</p></div><span class="lrp-badge">NL local</span></div><div class="lrp-grid"><article class="lrp-card"><span class="lrp-label">Recent validations</span><h4>Browser history</h4><select class="lrp-select" data-lrp-history><option value="">No recent inputs yet</option></select></article><article class="lrp-card"><span class="lrp-label">Batch diagnostics</span><h4>Multi-row validator</h4><textarea class="lrp-textarea" data-lrp-batch placeholder="Paste BSN, KVK, BTW, iDEAL, IBAN, postcode rows"></textarea><div class="lrp-row" style="margin-top:8px"><button class="lrp-button primary" type="button" data-lrp-run-batch>Run batch</button><button class="lrp-button" type="button" data-lrp-load-current>Use current input</button></div></article></div><div class="lrp-tabs"><button class="lrp-tab" aria-selected="true" type="button" data-lrp-tab="batch">Batch result</button><button class="lrp-tab" aria-selected="false" type="button" data-lrp-tab="json">Raw JSON</button><button class="lrp-tab" aria-selected="false" type="button" data-lrp-tab="related">Related local tools</button></div><div class="lrp-panel" data-lrp-panel="batch"><div class="lrp-output" data-lrp-batch-output><p>Run batch to compare pass/review states.</p></div></div><div class="lrp-panel" data-lrp-panel="json" hidden><pre class="lrp-code" data-lrp-json>{}</pre></div><div class="lrp-panel" data-lrp-panel="related" hidden>' + (relatedLinks(meta) || '<p>Country-local related tools appear here after build pruning.</p>') + '</div>';
     const anchor = root.querySelector('.nls-hero') || root.firstElementChild;
     anchor.insertAdjacentElement('afterend', lab);
     const history = lab.querySelector('[data-lrp-history]');
     const batch = lab.querySelector('[data-lrp-batch]');
     const batchOut = lab.querySelector('[data-lrp-batch-output]');
-    const api = lab.querySelector('[data-lrp-api]');
     const json = lab.querySelector('[data-lrp-json]');
     function refreshHistory() {
       const list = readHistory(meta);
@@ -288,7 +275,6 @@
     }
     function capture() {
       const value = textarea ? textarea.value : '';
-      api.textContent = apiSnippet(meta, value || meta.sampleHint);
       json.textContent = JSON.stringify({ country: meta.country, toolSlug: currentToolSlug(), route: location.pathname, input: value, textResult: compact((root.querySelector('.nls-output') || {}).textContent || '').slice(0, 2000), offlineOnly: true, capturedAt: new Date().toISOString() }, null, 2);
       if (value) writeHistory(meta, value, 'checked');
       refreshHistory();

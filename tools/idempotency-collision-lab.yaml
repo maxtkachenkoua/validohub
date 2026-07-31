@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: idempotency-collision-lab
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Idempotency Collision Lab
+summary:
+  en: Model idempotency collision cases across keys, payload fingerprints, expiry windows, conflict responses, and duplicate replay handling.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.idempotency-collision-lab
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Retry scenario text
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - backend-api
+          - strict
+          - review
+        default: "backend-api"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [robots-txt-tester, xml-sitemap-inspector, canonical-hreflang-auditor, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Idempotency Collision Lab
+  description:
+    en: Model idempotency collision cases across keys, payload fingerprints, expiry windows, conflict responses, and duplicate replay handling.

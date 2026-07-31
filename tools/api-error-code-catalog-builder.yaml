@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: api-error-code-catalog-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: API Error Code Catalog Builder
+summary:
+  en: Build and validate API error-code catalogs with stable codes, retryability, HTTP status mapping, localization keys, and support escalation metadata.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.api-error-catalog
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Error catalog JSON/YAML
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - backend-api
+          - strict
+          - review
+        default: "backend-api"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [webhook-replay-payload-builder, idempotency-collision-lab, robots-txt-tester, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: API Error Code Catalog Builder
+  description:
+    en: Build and validate API error-code catalogs with stable codes, retryability, HTTP status mapping, localization keys, and support escalation metadata.

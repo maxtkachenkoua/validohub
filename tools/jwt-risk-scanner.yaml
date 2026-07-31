@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: jwt-risk-scanner
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JWT Risk Scanner
+summary:
+  en: Scan JWT headers and claims for weak algorithms, missing audience, expired tokens, oversized scopes, issuer drift, and browser-only verification boundaries.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.jwt-risk-scanner
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JWT or decoded claims JSON
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-auth
+          - strict
+          - review
+        default: "security-auth"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwks-rotation-inspector, openapi-breaking-change-diff, json-patch-builder, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JWT Risk Scanner
+  description:
+    en: Scan JWT headers and claims for weak algorithms, missing audience, expired tokens, oversized scopes, issuer drift, and browser-only verification boundaries.

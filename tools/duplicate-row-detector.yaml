@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: duplicate-row-detector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Duplicate Row Detector
+summary:
+  en: Detect exact and key-based duplicate rows in CSV, JSONL, and pasted lists, with collision keys, counts, and safe dedupe export notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.duplicate-row-detector
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSV, JSONL, or list rows
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - data-quality
+          - strict
+          - review
+        default: "data-quality"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [unicode-confusable-scanner, locale-number-parser, locale-date-parser, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Duplicate Row Detector
+  description:
+    en: Detect exact and key-based duplicate rows in CSV, JSONL, and pasted lists, with collision keys, counts, and safe dedupe export notes.

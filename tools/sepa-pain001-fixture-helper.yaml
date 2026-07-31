@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: sepa-pain001-fixture-helper
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: SEPA pain.001 Fixture Helper
+summary:
+  en: Build and inspect SEPA pain.001 credit-transfer fixture structure, debtor/creditor IBANs, amounts, remittance, and bank-status boundary notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.sepa-pain001-fixture
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: pain.001 XML or fixture notes
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - payments-fixtures
+          - strict
+          - review
+        default: "payments-fixtures"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [payment-reference-generator, password-policy-tester, csp-nonce-hash-helper, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SEPA pain.001 Fixture Helper
+  description:
+    en: Build and inspect SEPA pain.001 credit-transfer fixture structure, debtor/creditor IBANs, amounts, remittance, and bank-status boundary notes.

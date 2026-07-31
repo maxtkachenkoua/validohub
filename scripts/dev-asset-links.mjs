@@ -32,12 +32,25 @@ export function updateBundleAssetLinks(content, assetsManifest) {
   return next;
 }
 
-export async function refreshGeneratedAssetLinks(siteRoot, assetsManifest) {
-  const htmlFiles = await scanHtmlFiles(siteRoot);
+function routeOutputPath(siteRoot, routePath) {
+  return resolve(siteRoot, String(routePath || '/').replace(/^\//, ''), 'index.html');
+}
+
+export async function refreshGeneratedAssetLinks(siteRoot, assetsManifest, options = {}) {
+  const htmlFiles = options.routePaths?.length
+    ? [...new Set(options.routePaths.map(routePath => routeOutputPath(siteRoot, routePath)))]
+    : await scanHtmlFiles(siteRoot);
   let updated = 0;
+  let checked = 0;
 
   for (const filePath of htmlFiles) {
-    const content = await readFile(filePath, 'utf8');
+    let content = '';
+    try {
+      content = await readFile(filePath, 'utf8');
+    } catch {
+      continue;
+    }
+    checked += 1;
     const next = updateBundleAssetLinks(content, assetsManifest);
     if (next !== content) {
       await writeFile(filePath, next, 'utf8');
@@ -45,5 +58,5 @@ export async function refreshGeneratedAssetLinks(siteRoot, assetsManifest) {
     }
   }
 
-  return { checked: htmlFiles.length, updated };
+  return { checked, updated };
 }

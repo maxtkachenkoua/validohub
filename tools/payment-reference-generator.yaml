@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: payment-reference-generator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Payment Reference Generator
+summary:
+  en: Generate and inspect structured payment references, invoice references, check-digit hints, remittance text, and provider boundary notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.payment-reference-generator
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Payment reference request
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - payments-fixtures
+          - strict
+          - review
+        default: "payments-fixtures"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [password-policy-tester, csp-nonce-hash-helper, cookie-samesite-lab, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Payment Reference Generator
+  description:
+    en: Generate and inspect structured payment references, invoice references, check-digit hints, remittance text, and provider boundary notes.

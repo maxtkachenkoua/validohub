@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: search-snippet-preview
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Search Snippet Preview
+summary:
+  en: Preview title, meta description, slug, canonical, and Open Graph copy length for search-result snippets and localized landing pages.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.search-snippet-preview
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Title and metadata notes
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - seo-publishing
+          - strict
+          - review
+        default: "seo-publishing"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [structured-data-json-ld-validator, csv-schema-inferencer, duplicate-row-detector, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Search Snippet Preview
+  description:
+    en: Preview title, meta description, slug, canonical, and Open Graph copy length for search-result snippets and localized landing pages.

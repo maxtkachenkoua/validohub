@@ -14,7 +14,7 @@ function escapeRegExp(value) {
 
 const REPAIR_NEEDLES = [
   'Waiting for input',
-  'Developer API preview',
+  'Developer snapshot JSON',
   'Raw JSON output',
   'Primary local workbench',
   'Secondary local workflow',
@@ -109,7 +109,7 @@ const REPAIR_NEEDLES = [
 const FAST_REPAIRS = {
   es: {
     'Waiting for input': 'Esperando entrada',
-    'Developer API preview': 'Vista previa de API para desarrolladores',
+    'Developer snapshot JSON': 'Vista previa de API para desarrolladores',
     'Raw JSON output': 'Salida JSON sin procesar',
     'Primary local workbench': 'Workbench local principal',
     'Secondary local workflow': 'Flujo local secundario',
@@ -152,7 +152,7 @@ const FAST_REPAIRS = {
   },
   'pt-BR': {
     'Waiting for input': 'Aguardando entrada',
-    'Developer API preview': 'Prévia da API para desenvolvedores',
+    'Developer snapshot JSON': 'Prévia da API para desenvolvedores',
     'Raw JSON output': 'Saída JSON bruta',
     'Primary local workbench': 'Workbench local principal',
     'Secondary local workflow': 'Fluxo local secundário',
@@ -195,7 +195,7 @@ const FAST_REPAIRS = {
   },
   de: {
     'Waiting for input': 'Warte auf Eingabe',
-    'Developer API preview': 'API-Vorschau für Entwickler',
+    'Developer snapshot JSON': 'API-Vorschau für Entwickler',
     'Raw JSON output': 'Rohes JSON-Ergebnis',
     'Primary local workbench': 'Primärer lokaler Workbench',
     'Secondary local workflow': 'Sekundärer lokaler Workflow',
@@ -240,7 +240,7 @@ const FAST_REPAIRS = {
   },
   fr: {
     'Waiting for input': 'En attente d’entrée',
-    'Developer API preview': 'Aperçu API développeur',
+    'Developer snapshot JSON': 'Aperçu API développeur',
     'Raw JSON output': 'Sortie JSON brute',
     'Primary local workbench': 'Workbench local principal',
     'Secondary local workflow': 'Workflow local secondaire',
@@ -283,7 +283,7 @@ const FAST_REPAIRS = {
   },
   pl: {
     'Waiting for input': 'Oczekiwanie na dane',
-    'Developer API preview': 'Podgląd API dla deweloperów',
+    'Developer snapshot JSON': 'Podgląd API dla deweloperów',
     'Raw JSON output': 'Surowy wynik JSON',
     'Primary local workbench': 'Główny lokalny workbench',
     'Secondary local workflow': 'Dodatkowy lokalny workflow',
@@ -326,7 +326,7 @@ const FAST_REPAIRS = {
   },
   uk: {
     'Waiting for input': 'Очікування введення',
-    'Developer API preview': 'Попередній перегляд API для розробників',
+    'Developer snapshot JSON': 'Попередній перегляд API для розробників',
     'Raw JSON output': 'Сирий JSON-вивід',
     'Primary local workbench': 'Основний локальний воркбенч',
     'Secondary local workflow': 'Додатковий локальний workflow',

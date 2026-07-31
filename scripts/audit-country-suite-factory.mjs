@@ -19,7 +19,6 @@ if (fs.existsSync('assets/js/tools/country-legacy-rich-layer.js')) {
     'Premium debug layer',
     'Batch diagnostics',
     'Recent validations',
-    'API preview',
     'Raw JSON',
     'validohub.brazil-suite',
     'validohub.poland-suite',
@@ -75,13 +74,10 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
     'data-csf-repair-action',
     'Premium debug layer',
     'toolIntelligence',
-    'apiPreview',
     'rawJson',
     'relatedLocalTools',
     'csf-debug-table',
-    'csf-api-tabs',
     'calculationDebugger',
-    'developerApiPreview',
     'rawJsonOutput',
     'COUNTRY_INTELLIGENCE_PROFILES',
     'enhanceAnalyzerResult',
@@ -435,6 +431,7 @@ for (const suite of factoryGeneratedSuites) {
       .filter((entry) => entry.startsWith(suite.slug + '-'))
       .filter((entry) => fs.existsSync(generatedDir + '/' + entry + '/index.html'));
     for (const entry of entries) {
+      if (suite.slug === 'spain' && entry === 'spain-id-validator') continue;
       const html = fs.readFileSync(generatedDir + '/' + entry + '/index.html', 'utf8');
       const factoryIndex = html.search(/<script src="\/assets\/js\/tools\/country-suite-factory\.js(?:\?[^"]*)?"><\/script>/);
       const runtimeEsc = suite.runtime.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

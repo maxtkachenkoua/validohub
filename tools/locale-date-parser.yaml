@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: locale-date-parser
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Locale Date Parser
+summary:
+  en: Parse locale date strings, month names, day/month ambiguity, ISO output, timezone hints, and fixture-safe validation notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.locale-date-parser
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Date strings
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - locale-formats
+          - strict
+          - review
+        default: "locale-formats"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [luhn-card-fixture-generator, bin-iin-shape-inspector, currency-minor-units-checker, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Locale Date Parser
+  description:
+    en: Parse locale date strings, month names, day/month ambiguity, ISO output, timezone hints, and fixture-safe validation notes.

@@ -833,18 +833,8 @@
     window.history.replaceState({ path: newUrl }, '', newUrl);
   };
 
-  const apiSnippets = {
-    curl: `curl -X POST https://api.validohub.com/v1/pl/pesel/validate \\\n  -H "Content-Type: application/json" \\\n  -d '{"pesel": "$INPUT$"}'`,
-    javascript: `fetch("https://api.validohub.com/v1/pl/pesel/validate", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ pesel: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
-    python: `import requests\n\nres = requests.post(\n    "https://api.validohub.com/v1/pl/pesel/validate",\n    json={"pesel": "$INPUT$"}\n)\nprint(res.json())`,
-    java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("https://api.validohub.com/v1/pl/pesel/validate"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"pesel\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
-    csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"pesel\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("https://api.validohub.com/v1/pl/pesel/validate", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
-    go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"pesel": "$INPUT$"}\`)\n\tres, _ := http.Post("https://api.validohub.com/v1/pl/pesel/validate", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
-  };
-
   const PeselPlugin = {
     filePrefix: 'pesel-validation',
-    apiSnippets: apiSnippets,
     applySample: function (workbench, name) {
       const input = workbench.primaryInput();
       if (!input) return;
@@ -2098,41 +2088,6 @@
         checksumDebugger.style.display = 'block';
       }
 
-      // Dynamically build Developer API Preview block if snippets exist
-      let apiCardHtml = '';
-      if (apiSnippets && Object.keys(apiSnippets).length > 0) {
-        const tabLabels = {
-          curl: 'cURL',
-          javascript: 'JavaScript',
-          python: 'Python',
-          java: 'Java',
-          csharp: 'C#',
-          go: 'Go'
-        };
-
-        let tabsHtml = '';
-        Object.keys(apiSnippets).forEach((lang, idx) => {
-          const activeClass = idx === 0 ? 'active' : '';
-          const label = tabLabels[lang] || lang;
-          tabsHtml += `<button type="button" class="pesel-api-tab ${activeClass}" data-lang="${lang}">${label}</button>`;
-        });
-
-        apiCardHtml = `
-        <!-- Developer API Preview block -->
-        <div class="pesel-api-card" style="margin-top: 16px; border: 1px solid var(--vh-color-border, #334155); border-radius: 8px; background: var(--vh-color-surface-soft, #1e293b); padding: 20px;">
-          <div class="pesel-section-title">
-            <span>🔌</span> Developer API Preview
-          </div>
-          <div class="pesel-api-tabs">
-            ${tabsHtml}
-          </div>
-          <div style="background: var(--vh-color-code-bg, #18181b); color: var(--vh-color-code-text, #fafafa); padding: 12px; border-radius: 6px; position: relative;">
-            <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-            <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--vh-color-code-text, #fafafa); background: transparent;">${apiSnippets[Object.keys(apiSnippets)[0]].replace('$INPUT$', inputVal)}</pre>
-          </div>
-        </div>`;
-      }
-
       // Update DevTools structured accordions
       workbench.setAdvanced(`
         <div class="pesel-dev-section reveal-element reveal-delay-5">
@@ -2165,25 +2120,7 @@
             </div>
           </details>
         </div>
-        ${apiCardHtml}
       `);
-
-      // Bind dynamic API tabs trigger relative to the advanced analysis container
-      const advancedContainer = workbench.form.querySelector('[data-tool-advanced]');
-      if (advancedContainer) {
-        const apiCodeBlock = advancedContainer.querySelector('#pesel-api-code-block');
-        const tabs = advancedContainer.querySelectorAll('.pesel-api-tab');
-        tabs.forEach(t => {
-          t.addEventListener('click', () => {
-            tabs.forEach(btn => btn.classList.remove('active'));
-            t.classList.add('active');
-            const lang = t.dataset.lang;
-            if (apiCodeBlock && apiSnippets[lang]) {
-              apiCodeBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
-            }
-          });
-        });
-      }
 
       // Attach copy button listeners to DevTools cards
       document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {

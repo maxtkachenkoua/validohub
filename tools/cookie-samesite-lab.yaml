@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: cookie-samesite-lab
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Cookie SameSite Lab
+summary:
+  en: Model SameSite cookie behavior for first-party, cross-site, top-level navigation, iframe, OAuth callback, Secure, HttpOnly, and partitioned-cookie contexts.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.cookie-samesite-lab
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Set-Cookie header or scenario
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - security-browser
+          - strict
+          - review
+        default: "security-browser"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [email-header-auth-inspector, log-redaction-rule-tester, oauth-oidc-flow-debugger, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Cookie SameSite Lab
+  description:
+    en: Model SameSite cookie behavior for first-party, cross-site, top-level navigation, iframe, OAuth callback, Secure, HttpOnly, and partitioned-cookie contexts.

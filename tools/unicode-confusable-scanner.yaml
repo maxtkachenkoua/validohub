@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: unicode-confusable-scanner
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Unicode Normalizer / Confusable Scanner
+summary:
+  en: Normalize Unicode text, detect mixed scripts, hidden spaces, confusable identifiers, smart punctuation, and copy-safe canonical output.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.unicode-confusable-scanner
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Unicode text
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - data-quality
+          - strict
+          - review
+        default: "data-quality"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [locale-number-parser, locale-date-parser, luhn-card-fixture-generator, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Unicode Normalizer / Confusable Scanner
+  description:
+    en: Normalize Unicode text, detect mixed scripts, hidden spaces, confusable identifiers, smart punctuation, and copy-safe canonical output.

@@ -41,33 +41,46 @@
         clearButton.setAttribute("aria-keyshortcuts", "Escape");
       }
       if (this.plugin.onMount) {
-        this.plugin.onMount(this);
+        try {
+          this.plugin.onMount(this);
+        } catch (error) {
+          console.error("[ValidoHub] Workbench extension failed", error);
+        }
       }
       this.ensureGenericToolHero();
       this.bindLiveMode(initialAction);
       this.bindFileInput();
+      this.form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        workbench.run(workbench.form.dataset.activeAction || initialAction);
+      });
       this.form.addEventListener("click", function (event) {
         var actionButton = event.target.closest("[data-action]");
         if (actionButton) {
+          event.preventDefault();
           workbench.markActiveAction(actionButton.dataset.action);
           workbench.run(actionButton.dataset.action);
           return;
         }
         var sampleButton = event.target.closest("[data-sample]");
         if (sampleButton) {
+          event.preventDefault();
           workbench.plugin.applySample(workbench, sampleButton.dataset.sample);
           workbench.updateBadge();
           return;
         }
         if (event.target.closest("[data-tool-copy]")) {
+          event.preventDefault();
           workbench.copy();
           return;
         }
         if (event.target.closest("[data-tool-download]")) {
+          event.preventDefault();
           workbench.download();
           return;
         }
         if (event.target.closest("[data-tool-clear]")) {
+          event.preventDefault();
           workbench.clear();
         }
       });
@@ -447,7 +460,7 @@
       return {
         theme: "utility",
         mark: clean ? clean.split(/\s+/).slice(0, 2).map(function (part) { return part.charAt(0); }).join("").toUpperCase() : "VH",
-        kicker: "Browser workbench",
+        kicker: "Local utility",
         chips: ["Browser-only", "Offline", "Copy / download", "Advanced diagnostics"]
       };
     }

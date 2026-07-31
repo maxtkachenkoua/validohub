@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: webhook-replay-payload-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Webhook Replay Payload Builder
+summary:
+  en: Build replayable webhook fixtures with event id, timestamp, signature base string, idempotency hints, retry count, and raw-payload boundaries.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.webhook-replay-payload
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Webhook event payload
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - backend-api
+          - strict
+          - review
+        default: "backend-api"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [idempotency-collision-lab, robots-txt-tester, xml-sitemap-inspector, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Webhook Replay Payload Builder
+  description:
+    en: Build replayable webhook fixtures with event id, timestamp, signature base string, idempotency hints, retry count, and raw-payload boundaries.

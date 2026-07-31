@@ -359,7 +359,8 @@ function scanGeneratedPage(slug, locale, toolId, result) {
   const related = html.match(/<section[^>]+class="[^"]*related-section[^"]*"[\s\S]*?<\/section>/i)?.[0] ?? '';
   if (related) {
     const hrefs = [...related.matchAll(/href="([^"]+)"/g)].map((m) => m[1]).filter((href) => href.startsWith('/'));
-    const foreign = hrefs.filter((href) => !href.startsWith(`/${locale}/${slug}/`) && !href.startsWith(`/${slug}/`));
+    const allowedDirectoryLinks = new Set([`/${locale}/countries/`, `/${locale}/tools/`, `/${locale}/${slug}/`]);
+    const foreign = hrefs.filter((href) => !href.startsWith(`/${locale}/${slug}/`) && !href.startsWith(`/${slug}/`) && !allowedDirectoryLinks.has(href));
     if (foreign.length) result.blockers.push(`${locale}/${slug}/${toolId}: related links escape country: ${foreign.slice(0, 3).join(', ')}`);
   }
 }

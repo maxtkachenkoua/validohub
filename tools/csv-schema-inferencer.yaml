@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: csv-schema-inferencer
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: CSV Schema Inferencer
+summary:
+  en: Infer column types, required fields, nullability, delimiters, enum candidates, sample values, and fixture JSON from CSV data.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.csv-schema-inferencer
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSV data
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - data-quality
+          - strict
+          - review
+        default: "data-quality"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [duplicate-row-detector, unicode-confusable-scanner, locale-number-parser, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CSV Schema Inferencer
+  description:
+    en: Infer column types, required fields, nullability, delimiters, enum candidates, sample values, and fixture JSON from CSV data.

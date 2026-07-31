@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: json-merge-patch-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSON Merge Patch Builder
+summary:
+  en: Inspect JSON Merge Patch payloads for null deletes, nested object replacement, sparse updates, destructive fields, and API-safe copy output.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.json-merge-patch-builder
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JSON Merge Patch body
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - data-integration
+          - strict
+          - review
+        default: "data-integration"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [rest-pagination-contract-tester, api-error-code-catalog-builder, webhook-replay-payload-builder, json-schema-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSON Merge Patch Builder
+  description:
+    en: Inspect JSON Merge Patch payloads for null deletes, nested object replacement, sparse updates, destructive fields, and API-safe copy output.

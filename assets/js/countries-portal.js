@@ -31,9 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const previewProgress = portal.querySelector('[data-preview-progress]');
   const previewLink = portal.querySelector('[data-preview-link]');
 
+  function normalizeMapSearchText(value) {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function matchesStrictMapSearch(card, marker, query) {
+    if (!query) return true;
+    const iso = normalizeMapSearchText(card.dataset.iso || '');
+    const name = normalizeMapSearchText(card.dataset.name || '');
+    const countryId = normalizeMapSearchText(card.dataset.countryId || '');
+    const identityFields = [
+      name,
+      countryId
+    ]
+      .filter(Boolean);
+    const isoTokens = iso.split(/\s+/).filter(Boolean);
+    const identityTokens = identityFields.flatMap(value => value.split(/\s+/).filter(Boolean));
+
+    if (query.length <= 2) {
+      return isoTokens.some(token => token === query)
+        || identityFields.some(value => value === query || value.startsWith(query))
+        || identityTokens.some(token => token === query || token.startsWith(query));
+    }
+
+    return identityFields.some(value => value === query || value.startsWith(query))
+      || identityTokens.some(token => token === query || token.startsWith(query))
+      || isoTokens.some(token => token === query);
+  }
+
   // 1. Filtering Logic
   function applyFilters() {
     const searchVal = searchInput.value.toLowerCase().trim();
+    const strictMapSearchVal = normalizeMapSearchText(searchInput.value).trim();
+    const hasMapSearch = strictMapSearchVal.length >= 2;
     const regionVal = regionSelect.value;
     const statusVal = statusSelect.value;
 
@@ -49,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let visibleCardsCount = 0;
+    const hasActiveMapFilters = Boolean(hasMapSearch || regionVal !== 'all' || statusVal !== 'all' || checkedFeatures.length);
 
     cards.forEach(card => {
       const searchData = card.dataset.search || '';
@@ -65,19 +101,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check features match
       const matchesFeatures = checkedFeatures.every(f => featuresData.includes(f));
 
-      if (matchesSearch && matchesRegion && matchesStatus && matchesFeatures) {
+      const matches = matchesSearch && matchesRegion && matchesStatus && matchesFeatures;
+
+      if (matches) {
         card.classList.remove('is-filtered-out');
         visibleCardsCount++;
-        // Sync map marker
-        const countryId = card.dataset.countryId;
-        const marker = portal.querySelector(`.vh-marker-${countryId}`);
-        if (marker) marker.classList.remove('is-filtered-out');
       } else {
         card.classList.add('is-filtered-out');
-        // Sync map marker
-        const countryId = card.dataset.countryId;
-        const marker = portal.querySelector(`.vh-marker-${countryId}`);
-        if (marker) marker.classList.add('is-filtered-out');
+      }
+
+      const countryId = card.dataset.countryId;
+      const marker = portal.querySelector(`.vh-marker-${countryId}`);
+      if (marker) {
+        const matchesMapSearch = !hasMapSearch || matchesStrictMapSearch(card, marker, strictMapSearchVal);
+        const matchesMap = matchesMapSearch && matchesRegion && matchesStatus && matchesFeatures;
+        marker.classList.remove('is-filtered-out');
+        marker.classList.toggle('is-filter-match', hasActiveMapFilters && matchesMap);
+        marker.classList.toggle('is-filter-dimmed', hasActiveMapFilters && !matchesMap);
       }
     });
 
@@ -94,6 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle empty state
     if (visibleCardsCount === 0) {
       emptyState.classList.remove('is-filtered-out');
+      markers.forEach(marker => {
+        marker.classList.remove('is-filter-match');
+        marker.classList.toggle('is-filter-dimmed', hasActiveMapFilters);
+      });
     } else {
       emptyState.classList.add('is-filtered-out');
     }
@@ -159,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!worldMap || !target || typeof target.closest !== 'function') return null;
     const item = target.closest('[data-vh-countries-map-item]');
     if (!item || !worldMap.contains(item)) return null;
-    if (item.classList.contains('is-filtered-out')) return null;
     return item;
   }
 

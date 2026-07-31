@@ -190,9 +190,39 @@
   z-index: 20;
 }
 
+.vh-countries-map-marker.is-filter-match {
+  opacity: 1;
+  filter: none;
+  transform: translate(-50%, -50%) scale(1.16);
+  border-color: rgb(15, 118, 110);
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.11), 0 14px 30px rgba(15, 118, 110, 0.22);
+  z-index: 22;
+}
+
+.vh-countries-map-marker.is-filter-dimmed {
+  opacity: 0.28;
+  filter: grayscale(100%) saturate(0.35);
+  transform: translate(-50%, -50%) scale(0.86);
+  box-shadow: none;
+  z-index: 8;
+}
+
+.vh-countries-map-marker.is-filter-dimmed:hover,
+.vh-countries-map-marker.is-filter-dimmed:focus-visible {
+  opacity: 0.72;
+  filter: grayscale(45%) saturate(0.75);
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 18;
+}
+
 .vh-countries-map-marker.status-planned {
   opacity: 0.65;
   filter: grayscale(80%);
+}
+
+.vh-countries-map-marker.status-planned.is-filter-match {
+  opacity: 1;
+  filter: none;
 }
 
 /* Directory Groups */

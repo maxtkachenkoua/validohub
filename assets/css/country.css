@@ -301,7 +301,7 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  background: var(--vh-color-surface);
+  background: transparent;
   border: 1px solid var(--vh-color-border);
   border-radius: var(--vh-radius-lg);
   padding: 0;
@@ -312,7 +312,7 @@
 
 .vh-country-visual-label {
   position: absolute;
-  top: 0.75rem;
+  top: 0.48rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -339,10 +339,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f7efe4;
+  width: 100%;
+  background: transparent;
   border-radius: inherit;
   padding: 0;
-  height: clamp(180px, 22vw, 230px);
+  height: clamp(170px, 20vw, 214px);
   overflow: hidden;
 }
 
@@ -358,7 +359,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Captions / Metadata labels */
@@ -755,6 +756,8 @@
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.45rem;
   margin-top: 0.62rem;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
 .vh-country-search-suggestions {
@@ -771,6 +774,10 @@
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 26px 58px rgb(var(--vh-country-accent-primary) / 0.18), 0 14px 34px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(12px);
+}
+
+.vh-country-search-suggestions:empty {
+  display: none;
 }
 
 .vh-country-search-suggestion {
@@ -822,6 +829,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  margin-top: 0.18rem;
+  padding-top: 0.16rem;
+  border-top: 0;
 }
 
 .vh-country-search-chip {
@@ -1013,7 +1023,7 @@
 
 .vh-country-tool-search-input:focus {
   border-color: rgb(var(--vh-country-accent-primary) / 0.5);
-  box-shadow: 0 0 0 4px rgb(var(--vh-country-accent-primary) / 0.1);
+  box-shadow: 0 0 0 3px rgb(var(--vh-country-accent-primary) / 0.1);
 }
 
 .vh-country-tool-search-control button {
@@ -1829,4 +1839,29 @@
 .vh-country-localization-notes,
 .vh-country-progress {
   display: block;
+}
+
+/* Country search polish: keep shortcuts visually separate without a divider. */
+.vh-country-tool-search .vh-country-tool-search-control {
+  margin-bottom: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.vh-country-tool-search .vh-country-tool-search-input,
+.vh-country-tool-search .vh-country-tool-search-input:focus,
+.vh-country-tool-search .vh-country-tool-search-control button,
+.vh-country-tool-search .vh-country-tool-search-control button:hover,
+.vh-country-tool-search .vh-country-tool-search-control button:focus-visible {
+  border-bottom-color: rgb(var(--vh-country-accent-primary) / 0.16) !important;
+}
+
+.vh-country-tool-search .vh-country-search-shortcuts {
+  flex-wrap: nowrap !important;
+  gap: 0.42rem !important;
+  margin-top: 0.62rem !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
 }
