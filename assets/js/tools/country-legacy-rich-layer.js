@@ -32,6 +32,9 @@
       .lrp-head h3 { margin: 4px 0 0; font-size: 1.02rem; line-height: 1.2; letter-spacing: 0; }
       .lrp-head p { margin: 5px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.45; }
       .lrp-badge { flex: 0 0 auto; border: 1px solid color-mix(in srgb, var(--lrp-accent) 30%, var(--line)); border-radius: 999px; background: #fff; color: var(--lrp-accent); font-weight: 900; padding: 7px 11px; }
+      .lrp-boundary { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; border: 1px solid color-mix(in srgb, var(--lrp-accent) 22%, var(--line)); border-radius: 12px; background: rgba(255, 255, 255, .88); padding: 11px 12px; margin-top: 12px; }
+      .lrp-boundary strong { color: var(--text); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+      .lrp-boundary span { color: var(--muted); font-size: .82rem; line-height: 1.4; text-align: right; max-width: 620px; }
       .lrp-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 12px; margin-top: 14px; }
       .lrp-card { border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, .9); padding: 12px; min-width: 0; }
       .lrp-card h4 { margin: 4px 0 9px; font-size: .9rem; letter-spacing: 0; }
@@ -54,7 +57,7 @@
       .lrp-related { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
       .lrp-related a { display: inline-flex; align-items: center; max-width: 100%; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--text); font-weight: 850; font-size: .78rem; padding: 7px 10px; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .legacy-rich-enhanced .related-section .link-grid, .legacy-rich-enhanced .related-section > p { max-width: 100%; overflow-wrap: anywhere; }
-      @media (max-width: 820px) { .lrp-grid { grid-template-columns: 1fr; } .lrp-head { flex-direction: column; } .lrp-line { grid-template-columns: 34px minmax(0, 1fr); } .lrp-line span:last-child { grid-column: 2; } }
+      @media (max-width: 820px) { .lrp-grid { grid-template-columns: 1fr; } .lrp-head, .lrp-boundary { flex-direction: column; } .lrp-boundary span { text-align: left; } .lrp-line { grid-template-columns: 34px minmax(0, 1fr); } .lrp-line span:last-child { grid-column: 2; } }
     `;
     document.head.appendChild(style);
   }
@@ -118,7 +121,8 @@
     const lab = document.createElement('section');
     lab.className = 'lrp-lab';
     lab.innerHTML = [
-      '<div class="lrp-head"><div><span class="lrp-kicker">Premium debug layer</span><h3>' + escape(meta.country) + ' tool intelligence</h3><p>Shared PESEL-depth controls for history, batch checks, API handoff preview, raw JSON, and local related workflows.</p></div><span class="lrp-badge">' + escape(meta.code) + ' local</span></div>',
+      '<div class="lrp-head"><div><span class="lrp-kicker">Premium debug layer</span><h3>' + escape(meta.country) + ' tool intelligence</h3><p>Shared PESEL-depth controls for history, batch checks, developer JSON, raw output, and local related workflows.</p></div><span class="lrp-badge">' + escape(meta.code) + ' local</span></div>',
+      '<div class="lrp-boundary"><strong>Official boundary</strong><span>Runs locally in this browser. It does not prove identity, ownership, registry status, tax status, settlement, delivery, geocoding, or official assignment.</span></div>',
       '<div class="lrp-grid">',
       '  <article class="lrp-card"><span class="lrp-label">Recent validations</span><h4>Browser history</h4><select class="lrp-select" data-lrp-history><option value="">No recent inputs yet</option></select><div class="lrp-row" style="margin-top:8px"><button class="lrp-button" type="button" data-lrp-clear-history>Clear history</button></div></article>',
       '  <article class="lrp-card"><span class="lrp-label">Batch diagnostics</span><h4>Multi-row validator</h4><textarea class="lrp-textarea" data-lrp-batch placeholder="Paste one ' + escape(meta.sampleHint) + ' sample per line"></textarea><div class="lrp-row" style="margin-top:8px"><button class="lrp-button primary" type="button" data-lrp-run-batch>Run batch</button><button class="lrp-button" type="button" data-lrp-load-current>Use current input</button></div></article>',

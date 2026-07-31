@@ -521,3 +521,12 @@ Finished country hubs must use premium 3D raster country visuals, not flat proce
 - The Spain ID workbench now auto-renders the safe `00000000T` fixture, shows styled fixture and random-generator chips at the top, keeps a compact textarea, keeps desktop actions to `Validate`, `Copy normalized`, `Copy developer JSON`, `Clear`, and `Batch replay`, and moves summary cards above the timeline.
 - Official/source links remain available in the lower Sources panel rather than stretching the top sample deck.
 - Verification completed without full build: `node --check assets/js/tools/spain-id.js`, `npm run build:country -- --country spain`, Playwright desktop/mobile sanity on the 8141 preview with no JS errors and no mobile horizontal overflow, `npm run audit:country-premium -- --country spain`, and `npm run audit:generated-premium`.
+
+## 2026-07-31 Targeted Visual Audit Follow-Up
+
+- After pushing checkpoint `3d982b0`, a targeted Playwright visual audit sampled 72 representative routes across known bad references, Gold references, and diverse country-suite categories.
+- First pass found no old markers, JS errors, overflow, missing developer output, missing related footers, or large textareas. It did find a shared UX issue: several long-tail Country Suite Factory pages had valid sample controls too low in the first viewport because the factory rendered context/debug/traps before the input.
+- Fixed `assets/js/tools/country-suite-factory.js` render order to `hero -> input/samples/results -> context/debug/traps`, then synced generated preview through `npm run build:country -- --country bahrain --locales en`.
+- The second pass left only Brazil Address Formatter as weak because the accepted legacy-rich layer still said `API handoff preview` and lacked a visible Official boundary. Fixed `assets/js/tools/country-legacy-rich-layer.js` to use developer JSON/raw output wording and add a common Official boundary strip; synced through `npm run build:country -- --country brazil --locales en`.
+- Final visual audit result: `checked: 72`, `weakCount: 0`, `errors: 0`, `overflow: 0`, `oldMarker: 0`, `missingRelated: 0`, `fewTopSamples: 0`, `missingBoundary: 0`, `missingDeveloper: 0`, `largeTextarea: 0`.
+- Contract checks passed without full build: `npm run audit:generated-premium`, `npm run audit:country-premium -- --country brazil`, and `npm run audit:country-premium -- --country bahrain`.

@@ -15,6 +15,13 @@
 - Kept official/source links in the lower source panel rather than inflating the top fixture deck.
 - Verification completed without full build: `node --check assets/js/tools/spain-id.js`, `npm run build:country -- --country spain`, Playwright desktop/mobile sanity against `http://127.0.0.1:8141/en/spain/spain-id-validator/`, `npm run audit:country-premium -- --country spain`, and `npm run audit:generated-premium`.
 
+## 2026-07-31 - Targeted Visual Audit Pass
+
+- Ran a browser-based targeted visual audit across 72 representative country/global tool pages after the legacy-layout sweep. The audit checked JS errors, horizontal overflow, old/fake markers, related footer presence, top-of-workbench samples, boundary/trap text, developer output, and oversized textareas.
+- Fixed the shared Country Suite Factory render order so pages now render `hero -> input/samples/results -> context/debug/traps`; this moves styled samples and the main workbench into the first viewport on long-tail CSF pages.
+- Fixed the accepted legacy-rich layer for Brazil/Poland/France/Netherlands routes: replaced lingering `API handoff preview` wording with developer JSON/raw output language and added a visible Official boundary strip.
+- Verification completed without full build: `node --check` for the two touched runtimes, scoped `build:country` for Bahrain and Brazil, Playwright visual audit finished with `checked: 72`, `weakCount: 0`, `overflow: 0`, `oldMarker: 0`, plus `npm run audit:generated-premium`, `npm run audit:country-premium -- --country brazil`, and `npm run audit:country-premium -- --country bahrain`.
+
 ## 2026-07-28 - Country Factory Runtime Localization Sweep
 
 - Promoted the country-suite runtime localization work from page-specific French fixes into the shared `country-suite-factory.js` layer used by generated country tools.

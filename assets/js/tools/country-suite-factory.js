@@ -6037,7 +6037,7 @@
       rootElement.style.setProperty('--csf-accent', suite.theme.accent);
       rootElement.style.setProperty('--csf-accent-2', suite.theme.accent2);
       rootElement.style.setProperty('--csf-accent-3', suite.theme.accent3 || '#f59e0b');
-      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}${renderIntegrationTraps(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
+      rootElement.innerHTML = `${renderHero(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}${renderIntegrationTraps(suite, tool)}`;
 
       const input = rootElement.querySelector('[data-csf-input]');
       const output = rootElement.querySelector('[data-csf-output]');

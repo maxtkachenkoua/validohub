@@ -1,32 +1,28 @@
 {
-  "generatedAt": "2026-07-31T11:28:37.629Z",
+  "generatedAt": "2026-07-31T11:56:44.383Z",
   "results": [
     {
-      "slug": "spain",
-      "name": "spain",
+      "slug": "bahrain",
+      "name": "bahrain",
       "iso2": null,
       "catalogStatus": "available",
       "completion": 100,
       "yamlExists": true,
-      "dataRouteToolCount": 0,
-      "toolCount": 61,
-      "availableWorkbenchCount": 1,
+      "dataRouteToolCount": 62,
+      "toolCount": 62,
+      "availableWorkbenchCount": 62,
       "plannedWorkbenchCount": 0,
-      "generatedEnglishToolPages": 61,
-      "checkedGeneratedPages": 61,
+      "generatedEnglishToolPages": 62,
+      "checkedGeneratedPages": 62,
       "algorithms": [
-        "validohub.spain-id",
-        "validohub.spain-suite"
+        "validohub.bahrain-suite"
       ],
       "runtimes": [
-        "spain-id.js",
-        "spain-suite.js"
+        "bahrain-suite.js"
       ],
       "state": "full-premium-ready",
       "blockers": [],
-      "warnings": [
-        "spain: availableWorkbenches (1) differs from tool YAML count (61)"
-      ],
+      "warnings": [],
       "factoryRuntime": true
     }
   ]
