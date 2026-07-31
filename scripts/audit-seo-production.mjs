@@ -61,6 +61,28 @@ async function readOptional(path) {
   }
 }
 
+async function sitemapUrlsFromXml(xml, sourceName, seen = new Set()) {
+  if (!xml) return [];
+  const locs = [...xml.matchAll(/<loc>(https:\/\/validohub\.com\/[^<]*)<\/loc>/g)].map(match => match[1]);
+  const childSitemaps = locs.filter(loc => /\/sitemap-[^/]+\.xml$/i.test(loc));
+  if (!childSitemaps.length) return locs.filter(loc => !/\/sitemap[^/]*\.xml$/i.test(loc));
+
+  const urls = [];
+  for (const childLoc of childSitemaps) {
+    const childName = childLoc.replace(productionOrigin + '/', '');
+    if (seen.has(childName)) continue;
+    seen.add(childName);
+    const childXml = await readOptional(resolve(siteRoot, childName));
+    if (!childXml) {
+      urls.push(childLoc);
+      continue;
+    }
+    urls.push(...await sitemapUrlsFromXml(childXml, childName, seen));
+  }
+  if (!urls.length && sourceName) return locs;
+  return urls;
+}
+
 async function auditSiteArtifacts() {
   const failures = [];
   const warnings = [];
@@ -79,7 +101,7 @@ async function auditSiteArtifacts() {
 
   if (!sitemap) failures.push('/ missing sitemap.xml');
   else {
-    const urls = sitemap.match(/<loc>https:\/\/validohub\.com\/[^<]*<\/loc>/g) || [];
+    const urls = await sitemapUrlsFromXml(sitemap, 'sitemap.xml');
     if (urls.length < 1000) failures.push(`/ sitemap.xml looks too small (${urls.length} URLs)`);
     if (!urls.some(url => url.includes('/en/'))) failures.push('/ sitemap.xml missing English URLs');
     if (!urls.some(url => url.includes('/uk/'))) warnings.push('/ sitemap.xml missing Ukrainian URLs');

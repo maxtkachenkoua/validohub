@@ -423,17 +423,21 @@ ${renderHead(meta, cssHref)}
 }
 
 async function ensureSitemapRoutes(metas) {
-  let sitemap = await readFile(sitemapPath, 'utf8');
+  let rootSitemap = await readFile(sitemapPath, 'utf8');
+  const targetPath = rootSitemap.includes('<sitemapindex')
+    ? resolve(siteRoot, 'sitemap-en.xml')
+    : sitemapPath;
+  let sitemap = await readFile(targetPath, 'utf8');
   const additions = [];
   for (const meta of metas) {
     const loc = `https://validohub.com/en/tools/${meta.slug}/`;
     if (!sitemap.includes(loc)) {
-      additions.push(`  <url><loc>${loc}</loc></url>`);
+      additions.push(`<url><loc>${loc}</loc></url>`);
     }
   }
   if (additions.length) {
     sitemap = sitemap.replace('</urlset>', additions.join('\n') + '\n</urlset>');
-    await writeFile(sitemapPath, sitemap, 'utf8');
+    await writeFile(targetPath, sitemap, 'utf8');
   }
   return additions.length;
 }

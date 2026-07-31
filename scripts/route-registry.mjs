@@ -231,19 +231,31 @@ async function registerIdentifierRoutes(registry) {
   }
 }
 
-async function registerGlobalToolRoutesFromSitemap(registry) {
+async function readSitemapLocs() {
   const sitemapPath = resolve(projectRoot, 'generated', 'validohub', 'sitemap.xml');
   let sitemapContent = '';
   try {
     sitemapContent = await readFile(sitemapPath, 'utf8');
   } catch {
-    sitemapContent = '';
+    return [];
   }
+  const rootLocs = [...sitemapContent.matchAll(/<loc>https:\/\/validohub\.com([^<]+)<\/loc>/g)].map(match => match[1]);
+  const childSitemaps = rootLocs.filter(path => /^\/sitemap-[^/]+\.xml$/i.test(path));
+  if (!childSitemaps.length) return rootLocs;
 
+  const locs = [];
+  for (const childPath of childSitemaps) {
+    const childContent = await readFile(resolve(siteRoot, childPath.replace(/^\/+/, '')), 'utf8').catch(() => '');
+    locs.push(...[...childContent.matchAll(/<loc>https:\/\/validohub\.com([^<]+)<\/loc>/g)].map(match => match[1]));
+  }
+  return locs;
+}
+
+async function registerGlobalToolRoutesFromSitemap(registry) {
   const slugs = new Set(NEW_GLOBAL_TOOL_SLUGS);
-  const locRegex = /<loc>https:\/\/validohub\.com\/en\/tools\/([^/<]+)\/<\/loc>/g;
-  let match;
-  while ((match = locRegex.exec(sitemapContent)) !== null) {
+  for (const loc of await readSitemapLocs()) {
+    const match = loc.match(/^\/en\/tools\/([^/<]+)\/$/);
+    if (!match) continue;
     slugs.add(match[1]);
   }
 
@@ -299,18 +311,12 @@ export async function buildRouteRegistry() {
   const registry = new RouteRegistry();
 
   // 1. Load Java-owned routes from target sitemap.xml
-  const sitemapPath = resolve(projectRoot, 'generated', 'validohub', 'sitemap.xml');
-  let sitemapContent = '';
-  try {
-    sitemapContent = await readFile(sitemapPath, 'utf8');
-  } catch (err) {
-    throw new Error(`FATAL: Could not read sitemap.xml to discover Java-owned routes. Make sure the Java publisher has run. Error: ${err.message}`);
+  const sitemapLocs = await readSitemapLocs();
+  if (!sitemapLocs.length) {
+    throw new Error('FATAL: Could not read sitemap.xml to discover Java-owned routes. Make sure the Java publisher has run.');
   }
-
-  const locRegex = /<loc>https:\/\/validohub\.com([^<]+)<\/loc>/g;
-  let match;
-  while ((match = locRegex.exec(sitemapContent)) !== null) {
-    let routePath = match[1];
+  for (const loc of sitemapLocs) {
+    let routePath = loc;
     if (!routePath.endsWith('/')) {
       routePath += '/';
     }

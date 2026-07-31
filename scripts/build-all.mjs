@@ -827,6 +827,59 @@ function stripHtml(value) {
   return String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 }
 
+function escapeAttribute(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function normalizeSeoHead(content, route, title, description) {
+  let next = content;
+  const routePath = route.path || '/en/';
+  const canonicalUrl = `https://validohub.com${routePath}`;
+  const pageTitle = title.length >= 12 ? title : `${title} | ValidoHub`;
+  const pageDescription = description.length >= 45
+    ? description
+    : `Run browser-only ${title} checks, examples, and developer diagnostics on ValidoHub.`;
+
+  if (/<title>[\s\S]*?<\/title>/i.test(next)) {
+    next = next.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(pageTitle)}</title>`);
+  } else {
+    next = next.replace(/<head\b[^>]*>/i, match => `${match}\n  <title>${escapeHtml(pageTitle)}</title>`);
+  }
+
+  if (/<meta\s+name="description"\s+content="[^"]*"/i.test(next)) {
+    next = next.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${escapeAttribute(pageDescription)}"`);
+  } else {
+    next = next.replace(/<\/title>/i, `</title>\n  <meta name="description" content="${escapeAttribute(pageDescription)}">`);
+  }
+
+  if (/<link\s+rel="alternate"\s+hreflang=/i.test(next) && !/<link\s+rel="alternate"\s+hreflang="x-default"/i.test(next)) {
+    const xDefault = `<link rel="alternate" hreflang="x-default" href="${canonicalUrl.replace(/\/(?:es|pt-BR|de|fr|pl|uk)\//, '/en/')}">`;
+    next = next.replace(/(<link\s+rel="alternate"\s+hreflang="[^"]+"\s+href="[^"]+">\s*)+/i, match => `${match}  ${xDefault}\n`);
+  }
+
+  const socialTags = [
+    ['property', 'og:title', pageTitle],
+    ['property', 'og:description', pageDescription],
+    ['property', 'og:url', canonicalUrl],
+    ['property', 'og:type', 'website'],
+    ['name', 'twitter:card', 'summary'],
+    ['name', 'twitter:title', pageTitle],
+    ['name', 'twitter:description', pageDescription]
+  ];
+  const additions = socialTags
+    .filter(([kind, name]) => !new RegExp(`<meta\\s+${kind}="${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"\\s+content=`, 'i').test(next))
+    .map(([kind, name, value]) => `<meta ${kind}="${name}" content="${escapeAttribute(value)}">`);
+  if (additions.length) {
+    next = next.replace(/<\/head>/i, `${additions.map(line => `  ${line}`).join('\n')}\n</head>`);
+  }
+
+  return next;
+}
+
 const GENERIC_UTILITY_WORKBENCHES = {
   // BEGIN global premium batch v4 workbenches
   'oauth-oidc-flow-debugger': { id: 'oauth-oidc-flow-debugger', algorithmId: 'validohub.oauth-oidc-flow', capability: 'validate', group: 'Security / Auth', forms: [{ capability: 'validate', title: 'Auth redirect QA', fields: [{ type: 'textarea', name: 'input', label: 'OAuth redirect or token exchange notes' }, { type: 'select', name: 'profile', label: 'Profile', options: ['security-auth', 'strict', 'review'], value: 'security-auth' }], actions: ['validate','parse','generate','explain'] }] },
@@ -2033,6 +2086,8 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
         description = `Explore utility tools for ${title.toLowerCase()}.`;
       }
 
+      content = normalizeSeoHead(content, route, title, description);
+
       const jsonLd = {
         "@context": "https://schema.org",
         "@type": type,
@@ -2077,21 +2132,39 @@ async function normalizeGeneratedChromeFiles(routeRegistry) {
   }
 }
 
-// 3. Write final unified sitemap.xml
+// 3. Write final sitemap index and locale shards
 async function writeSitemap(routeRegistry) {
-  const urls = routeRegistry.getAll()
-    .sort((a, b) => a.path.localeCompare(b.path))
-    .map(route => `  <url><loc>https://validohub.com${route.path}</loc></url>`)
-    .join('\n');
-    
-  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+  const routes = routeRegistry.getAll().sort((a, b) => a.path.localeCompare(b.path));
+  const groups = new Map();
+  for (const route of routes) {
+    const { locale: routeLocale } = splitRouteLocale(route.path);
+    if (!groups.has(routeLocale)) groups.set(routeLocale, []);
+    groups.get(routeLocale).push(route);
+  }
+
+  const sitemapFiles = [];
+  for (const [routeLocale, localeRoutes] of [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
+    const urls = localeRoutes
+      .map(route => `<url><loc>https://validohub.com${route.path}</loc></url>`)
+      .join('');
+    const shardName = `sitemap-${routeLocale}.xml`;
+    const shardContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
 </urlset>
 `;
+    await writeFile(resolve(siteRoot, shardName), shardContent, 'utf8');
+    sitemapFiles.push(shardName);
+  }
+
+  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapFiles.map(file => `<sitemap><loc>https://validohub.com/${file}</loc></sitemap>`).join('\n')}
+</sitemapindex>
+`;
 
   await writeFile(resolve(siteRoot, 'sitemap.xml'), sitemapContent, 'utf8');
-  console.log(`✓ Wrote sitemap.xml with ${routeRegistry.getAll().length} routes`);
+  console.log(`✓ Wrote sitemap.xml index with ${routes.length} routes across ${sitemapFiles.length} shard(s)`);
 }
 
 // 4. Recursive folder scanner
@@ -2135,6 +2208,28 @@ async function ensureGeneratedToolScripts() {
     }
   }
   console.log(`✓ Ensured tool script dependencies on ${updated} generated pages`);
+}
+
+async function compactGeneratedSearchIndex() {
+  const indexPath = resolve(siteRoot, 'search-index.json');
+  if (!(await pathExists(indexPath))) return { before: 0, after: 0, count: 0 };
+  const source = await readFile(indexPath, 'utf8');
+  const before = Buffer.byteLength(source);
+  const parsed = JSON.parse(source);
+  const tools = Array.isArray(parsed.tools) ? parsed.tools : [];
+  const compact = {
+    tools: tools.map(item => {
+      const next = {};
+      for (const key of ['toolId', 'title', 'country', 'category', 'route']) {
+        const value = item[key];
+        if (value !== undefined && value !== null && value !== '') next[key] = value;
+      }
+      return next;
+    })
+  };
+  const payload = JSON.stringify(compact);
+  await writeFile(indexPath, payload, 'utf8');
+  return { before, after: Buffer.byteLength(payload), count: tools.length };
 }
 
 async function pruneCountrySuiteRelatedLinksToCountry() {
@@ -2466,6 +2561,10 @@ async function main() {
     await runBuildPhase('Prune country tool related links', () => pruneCountrySuiteRelatedLinksToCountry());
     await runBuildPhase('Normalize workbench script versions', () => normalizeWorkbenchScriptVersions());
     await runBuildPhase('Ensure generated tool scripts', () => ensureGeneratedToolScripts());
+    const compactedSearchIndex = await runBuildPhase('Compact generated search index', () => compactGeneratedSearchIndex());
+    if (compactedSearchIndex.count) {
+      console.log(`✓ Compacted search-index.json for ${compactedSearchIndex.count} tools: ${compactedSearchIndex.before} -> ${compactedSearchIndex.after} bytes`);
+    }
     await runBuildPhase('Write sitemap', () => writeSitemap(routeRegistry));
 
     // 6. Site Integrity Verification & Metrics

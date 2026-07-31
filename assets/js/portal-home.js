@@ -183,21 +183,38 @@
     function readSitemapEntries() {
       if (sitemapEntriesPromise) return sitemapEntriesPromise;
       var locale = currentLocale();
-      sitemapEntriesPromise = fetch('/sitemap.xml', { credentials: 'same-origin' })
-        .then(function (response) {
+      function pathsFromSitemapXml(xml) {
+        return Array.prototype.slice.call(new DOMParser().parseFromString(xml, 'application/xml').querySelectorAll('loc'))
+          .map(function (node) {
+            try {
+              return new URL(node.textContent).pathname;
+            } catch (error) {
+              return '';
+            }
+          });
+      }
+      function fetchText(path) {
+        return fetch(path, { credentials: 'same-origin' }).then(function (response) {
           if (!response.ok) throw new Error('sitemap unavailable');
           return response.text();
-        })
+        });
+      }
+      sitemapEntriesPromise = fetchText('/sitemap.xml')
         .then(function (xml) {
-          var documentXml = new DOMParser().parseFromString(xml, 'application/xml');
-          return Array.prototype.slice.call(documentXml.querySelectorAll('loc'))
-            .map(function (node) {
-              try {
-                return new URL(node.textContent).pathname;
-              } catch (error) {
-                return '';
-              }
-            })
+          var paths = pathsFromSitemapXml(xml);
+          var children = paths.filter(function (path) {
+            return /^\/sitemap-[^/]+\.xml$/i.test(path);
+          });
+          if (!children.length) return paths;
+          children = children.filter(function (path) { return path === '/sitemap-' + locale + '.xml'; }) || children;
+          return Promise.all((children.length ? children : paths).map(fetchText)).then(function (xmls) {
+            return xmls.reduce(function (items, childXml) {
+              return items.concat(pathsFromSitemapXml(childXml));
+            }, []);
+          });
+        })
+        .then(function (paths) {
+          return paths
             .filter(function (path) {
               return path.indexOf('/' + locale + '/') === 0 && !/\.(css|js|png|jpg|jpeg|webp|svg|xml)$/i.test(path);
             })
