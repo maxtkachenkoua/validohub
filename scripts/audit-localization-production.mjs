@@ -81,8 +81,73 @@ const hardNeedles = [
   'Completed locally',
   'Network calls',
   'Sample fixtures',
-  'No upload, database, runtime API, or server-side execution.'
+  'No upload, database, runtime API, or server-side execution.',
+  'ВаліднийoHub',
+  'ВаліднийоHub',
+  'Валіднийate',
+  'Валіднийator',
+  'Poprawnyate',
+  'Poprawnyator',
+  'INTELIGENCJA DEVELOPERSKA TYLKO W PRZEGLĄDARCE',
+  'ІНТЕЛЕКТ ДЛЯ РОЗРОБНИКІВ ЛИШЕ В БРАУЗЕРІ'
 ];
+
+const localeHardNeedles = {
+  pl: [
+    'Generuj and inspect JSON fixtures',
+    'Generuj local accounting evidence checklist',
+    'Banking and Waliduj dane płatnicze',
+    'Developer intelligence for',
+    'Developer Tools',
+    'Browse ValidoHub global browser-only validators',
+    'Generuj, validate, convert'
+  ],
+  uk: [
+    'Згенерувати and inspect JSON fixtures',
+    'Згенерувати local accounting evidence checklist',
+    'Банкінг and Перевіряти платіжні дані',
+    'Developer intelligence for',
+    'Developer Tools',
+    'Developer Інструменти',
+    'Browse ValidoHub global browser-only validators',
+    'Згенерувати, validate, convert'
+  ]
+};
+
+const localeSeoHardNeedles = {
+  pl: [
+    'Browser-only developer workbenches',
+    'Waliduj, inspect',
+    'Generuj and inspect JSON fixtures',
+    'Generuj local accounting evidence checklist',
+    'Developer intelligence for',
+    'Developer Tools',
+    'Practical ValidoHub guides for browser-only developer tools',
+    'Browse ValidoHub global browser-only validators',
+    'Generuj, validate, convert',
+    'country-aware identifiers',
+    'banking formats',
+    'lokalizacja data',
+    'developer fixtures in your browser'
+  ],
+  uk: [
+    'Browser-only developer воркбенчі',
+    'Browser-only developer workbenches',
+    'Перевіряйте, inspect',
+    'Згенерувати and inspect JSON fixtures',
+    'Згенерувати local accounting evidence checklist',
+    'Developer intelligence for',
+    'Developer Tools',
+    'Developer Інструменти',
+    'Practical ValidoHub guides for browser-only developer tools',
+    'Browse ValidoHub global browser-only validators',
+    'Згенерувати, validate, convert',
+    'country-aware identifiers',
+    'banking formats',
+    'локаль data',
+    'developer fixtures in your browser'
+  ]
+};
 
 const softNeedles = [
   'Validate',
@@ -153,6 +218,34 @@ function visibleText(html) {
     .trim();
 }
 
+function decodeHtml(value) {
+  return String(value || '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function seoText(html) {
+  const parts = [];
+  const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
+  if (title) parts.push(title);
+  for (const match of html.matchAll(/<meta\b[^>]*(?:name|property)="(?:description|og:title|og:description|twitter:title|twitter:description)"[^>]*content="([^"]*)"[^>]*>/gi)) {
+    parts.push(match[1]);
+  }
+  return decodeHtml(parts.join(' ')).replace(/\s+/g, ' ').trim();
+}
+
+function structuredDataText(html) {
+  const parts = [];
+  for (const match of html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    parts.push(match[1]);
+  }
+  return decodeHtml(parts.join(' ')).replace(/\s+/g, ' ').trim();
+}
+
 function needleHit(text, needle) {
   if (/^[A-Za-z]+$/.test(needle)) {
     return new RegExp(`(?<![A-Za-z])${needle}(?![A-Za-z])`).test(text);
@@ -183,10 +276,18 @@ async function main() {
     const locale = localeFromRoute(route);
     if (!productionLocales.has(locale)) continue;
     checked += 1;
-    const text = visibleText(await readFile(file, 'utf8'));
-    const hardHits = hardNeedles.filter(needle => needleHit(text, needle));
+    const html = await readFile(file, 'utf8');
+    const text = visibleText(html);
+    const seo = seoText(html);
+    const structuredData = structuredDataText(html);
+    const hardHits = [
+      ...hardNeedles,
+      ...(localeHardNeedles[locale] || [])
+    ].filter(needle => needleHit(text, needle));
+    const seoHits = (localeSeoHardNeedles[locale] || []).filter(needle => needleHit(`${seo} ${structuredData}`, needle));
     const softHits = softNeedles.filter(needle => needleHit(text, needle));
     if (hardHits.length) failures.push(`${route} untranslated high-signal UI: ${hardHits.join(', ')}`);
+    if (seoHits.length) failures.push(`${route} untranslated SEO shell: ${seoHits.join(', ')}`);
     if (softHits.length) warnings.push(`${route} possible English UI/domain text: ${softHits.join(', ')}`);
   }
 

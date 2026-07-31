@@ -3427,9 +3427,9 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Text, Time &amp; Utilities': 'Texte, temps et utilitaires'
   },
   pl: {
-    'Browser-only developer intelligence': 'Inteligencja deweloperska tylko w przeglądarce',
-    'Validate, generate, and debug real-world data.': 'Waliduj, generuj i debuguj realne dane.',
-    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Globalne narzędzia i workbenche krajowe dla identyfikatorów, płatności, formatów bankowych, lokalnych fixture’ów i diagnostyki parserów. Prywatnie domyślnie, precyzyjnie przed produkcją.',
+    'Browser-only developer intelligence': 'Narzędzia deweloperskie w przeglądarce',
+    'Validate, generate, and debug real-world data.': 'Waliduj, generuj i debuguj dane produkcyjne.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Globalne narzędzia i workbenche krajowe dla identyfikatorów, płatności, formatów bankowych, lokalnych danych testowych i diagnostyki parserów. Prywatnie domyślnie, precyzyjnie przed produkcją.',
     'Command': 'Komenda',
     'Browse countries': 'Przeglądaj kraje',
     'workbenches indexed.': 'workbenche w indeksie.',
@@ -3479,9 +3479,9 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Text, Time &amp; Utilities': 'Tekst, czas i narzędzia'
   },
   uk: {
-    'Browser-only developer intelligence': 'Інтелект для розробників лише в браузері',
-    'Validate, generate, and debug real-world data.': 'Перевіряйте, генеруйте й дебажте реальні дані.',
-    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Глобальні утиліти й воркбенчі за країнами для ідентифікаторів, платежів, банківських форматів, локальних фікстур і діагностики парсерів. Приватно за замовчуванням, точно перед продакшеном.',
+    'Browser-only developer intelligence': 'Браузерні інструменти для розробників',
+    'Validate, generate, and debug real-world data.': 'Перевіряйте, генеруйте й дебажте продакшн-дані.',
+    'Global utilities and country-aware workbenches for identifiers, payments, banking formats, local fixtures, and parser diagnostics. Private by default, precise before production.': 'Глобальні інструменти й країнові воркбенчі для ідентифікаторів, платежів, банківських форматів, локальних тестових даних і діагностики парсерів. Усе приватно за замовчуванням і точно перед продакшеном.',
     'Command': 'Команда',
     'Browse countries': 'Переглянути країни',
     'workbenches indexed.': 'воркбенчів в індексі.',
@@ -6946,6 +6946,106 @@ function repairRelatedCountryLinkCards(content, locale) {
   });
 }
 
+const LOCALIZATION_ARTIFACT_REPAIRS = {
+  pl: {
+    'ValidoHub | - workbenche przeglądarkowe dla formatów globalnych': 'ValidoHub | Workbenche przeglądarkowe dla formatów globalnych',
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenche przeglądarkowe dla formatów globalnych',
+    'Developer Tools': 'Narzędzia deweloperskie',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, lokalizacja fixtures, and payload debuggers.': 'Przeglądaj globalne walidatory, generatory, parsery, narzędzia bezpieczeństwa, dane testowe lokalizacji i debuggery payloadów ValidoHub działające w przeglądarce.',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Przeglądaj globalne walidatory, generatory, parsery, narzędzia bezpieczeństwa, dane testowe lokalizacji i debuggery payloadów ValidoHub działające w przeglądarce.',
+    'Generuj, validate, convert, and inspect developer-focused data.': 'Generuj, waliduj, konwertuj i sprawdzaj dane dla deweloperów.',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Waliduj, sprawdzaj, generuj i debuguj w przeglądarce identyfikatory, płatności, formaty bankowe, dane lokalne i dane testowe dla deweloperów.',
+    'Waliduj, inspect, generate, and debug country-aware identifiers, Waliduj dane płatnicze, banking formats, lokalizacja data, and developer fixtures in your browser.': 'Waliduj, sprawdzaj, generuj i debuguj w przeglądarce identyfikatory, płatności, formaty bankowe, dane lokalne i dane testowe dla deweloperów.',
+    'Browser-only developer workbenches for global formats': 'Workbenche przeglądarkowe dla formatów globalnych',
+    'Generuj and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests.': 'Generuj i sprawdzaj fixture’y JSON dla lokalnych identyfikatorów, adresów, płatności i testów bezpiecznych prywatnościowo.',
+    'Generuj and inspect JSON fixtures for local identifiers, addresses, Waliduj dane płatnicze, and prywatność-safe tests.': 'Generuj i sprawdzaj fixture’y JSON dla lokalnych identyfikatorów, adresów, płatności i testów bezpiecznych prywatnościowo.',
+    'Generuj local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs.': 'Generuj lokalną checklistę dowodów księgowych dla faktur, płatności, VAT, dat i niezmiennych logów.',
+    'Generuj local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs.': 'Generuj lokalną checklistę dowodów księgowych dla faktur, płatności, podatków, dat i niezmiennych logów.',
+    'Generuj local accounting evidence checklist for invoices, Waliduj dane płatnicze, VAT, dates, and immutable logs.': 'Generuj lokalną checklistę dowodów księgowych dla faktur, płatności, VAT, dat i niezmiennych logów.',
+    'Generuj local accounting evidence checklist for invoices, Waliduj dane płatnicze, tax, dates, and immutable logs.': 'Generuj lokalną checklistę dowodów księgowych dla faktur, płatności, podatków, dat i niezmiennych logów.',
+    'Banking and Waliduj dane płatnicze': 'Bankowość i płatności',
+    'Banking, Waliduj dane płatnicze': 'Bankowość, płatności',
+    'Practical ValidoHub guides for browser-only developer tools, local identifiers, banking formats, Waliduj dane płatnicze, fixtures, and production boundaries.': 'Praktyczne przewodniki ValidoHub po narzędziach deweloperskich w przeglądarce, lokalnych identyfikatorach, formatach bankowych, płatnościach, danych testowych i granicach produkcyjnych.',
+    'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and lokalizacja conventions.': 'Informacje deweloperskie o lokalnych identyfikatorach, regionalnych protokołach płatności, danych routingu bankowego i konwencjach lokalnych.',
+    'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.': 'Informacje deweloperskie o lokalnych identyfikatorach, regionalnych protokołach płatności, danych routingu bankowego i konwencjach lokalnych.',
+    'Poprawnyate, generate, and debug real-world data.': 'Waliduj, generuj i debuguj dane produkcyjne.',
+    'Poprawnyate, generate, and debug real-world data': 'Waliduj, generuj i debuguj dane produkcyjne',
+    'INTELIGENCJA DEVELOPERSKA TYLKO W PRZEGLĄDARCE': 'NARZĘDZIA DEWELOPERSKIE W PRZEGLĄDARCE',
+    'Inteligencja deweloperska tylko w przeglądarce': 'Narzędzia deweloperskie w przeglądarce',
+    'Globalne narzędzia i workbenche krajowe dla identyfikatorów, płatności, formatów bankowych, lokalnych fixture’ów i diagnostyki parserów. Prywatnie domyślnie, precyzyjnie przed produkcją.': 'Globalne narzędzia i workbenche krajowe dla identyfikatorów, płatności, formatów bankowych, lokalnych danych testowych i diagnostyki parserów. Prywatnie domyślnie, precyzyjnie przed produkcją.',
+    'Poprawnyator': 'walidator',
+    'Poprawnyate': 'Waliduj'
+  },
+  uk: {
+    'ValidoHub | Browser-only developer воркбенчі for global formats': 'ValidoHub | Браузерні воркбенчі для глобальних форматів',
+    'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Браузерні воркбенчі для глобальних форматів',
+    'Developer Tools': 'Інструменти розробника',
+    'Developer Інструменти': 'Інструменти розробника',
+    'Глобальні Developer Інструменти': 'Глобальні інструменти розробника',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, локаль fixtures, and payload debuggers.': 'Переглядайте глобальні браузерні валідатори, генератори, парсери, security-помічники, локальні тестові дані й payload-debuggers ValidoHub.',
+    'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Переглядайте глобальні браузерні валідатори, генератори, парсери, security-помічники, локальні тестові дані й payload-debuggers ValidoHub.',
+    'Згенерувати, validate, convert, and inspect developer-focused data.': 'Генеруйте, перевіряйте, конвертуйте й інспектуйте дані для розробників.',
+    'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Перевіряйте, інспектуйте, генеруйте й дебажте в браузері ідентифікатори, платежі, банківські формати, локальні дані та тестові дані для розробників.',
+    'Перевіряйте, inspect, generate, and debug country-aware identifiers, Перевіряти платіжні дані, banking formats, локаль data, and developer fixtures in your browser.': 'Перевіряйте, інспектуйте, генеруйте й дебажте в браузері ідентифікатори, платежі, банківські формати, локальні дані та тестові дані для розробників.',
+    'Browser-only developer воркбенчі for global formats': 'Браузерні воркбенчі для глобальних форматів',
+    'Browser-only developer workbenches for global formats': 'Браузерні воркбенчі для глобальних форматів',
+    'Згенерувати and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests.': 'Генеруйте й перевіряйте JSON-фікстури для локальних ідентифікаторів, адрес, платежів і приватно-безпечних тестів.',
+    'Згенерувати and inspect JSON fixtures for local identifiers, addresses, Перевіряти платіжні дані, and приватність-safe tests.': 'Генеруйте й перевіряйте JSON-фікстури для локальних ідентифікаторів, адрес, платежів і приватно-безпечних тестів.',
+    'Згенерувати local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs.': 'Генеруйте локальну checklist доказів бухгалтерського аудиту для інвойсів, платежів, VAT, дат і незмінних логів.',
+    'Згенерувати local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs.': 'Генеруйте локальну checklist доказів бухгалтерського аудиту для інвойсів, платежів, податків, дат і незмінних логів.',
+    'Згенерувати local accounting evidence checklist for invoices, Перевіряти платіжні дані, VAT, dates, and immutable logs.': 'Генеруйте локальну checklist доказів бухгалтерського аудиту для інвойсів, платежів, VAT, дат і незмінних логів.',
+    'Згенерувати local accounting evidence checklist for invoices, Перевіряти платіжні дані, tax, dates, and immutable logs.': 'Генеруйте локальну checklist доказів бухгалтерського аудиту для інвойсів, платежів, податків, дат і незмінних логів.',
+    'Банкінг and Перевіряти платіжні дані': 'Банкінг і платежі',
+    'Банкінг, Перевіряти платіжні дані': 'Банкінг, платежі',
+    'Practical ValidoHub guides for browser-only developer tools, local identifiers, banking formats, Перевіряти платіжні дані, fixtures, and production boundaries.': 'Практичні гайди ValidoHub для браузерних інструментів розробника, локальних ідентифікаторів, банківських форматів, платежів, тестових даних і продакшн-меж.',
+    'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and локаль conventions.': 'Інтелект для розробників про локальні ідентифікатори, регіональні платіжні протоколи, банківський routing і локальні правила.',
+    'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.': 'Інтелект для розробників про локальні ідентифікатори, регіональні платіжні протоколи, банківський routing і локальні правила.',
+    'Валіднийate, generate, and debug real-world data.': 'Перевіряйте, генеруйте й дебажте продакшн-дані.',
+    'Валіднийate, generate, and debug real-world data': 'Перевіряйте, генеруйте й дебажте продакшн-дані',
+    'ІНТЕЛЕКТ ДЛЯ РОЗРОБНИКІВ ЛИШЕ В БРАУЗЕРІ': 'БРАУЗЕРНІ ІНСТРУМЕНТИ ДЛЯ РОЗРОБНИКІВ',
+    'Інтелект для розробників лише в браузері': 'Браузерні інструменти для розробників',
+    'Глобальні утиліти й воркбенчі за країнами для ідентифікаторів, платежів, банківських форматів, локальних фікстур і діагностики парсерів. Приватно за замовчуванням, точно перед продакшеном.': 'Глобальні інструменти й країнові воркбенчі для ідентифікаторів, платежів, банківських форматів, локальних тестових даних і діагностики парсерів. Усе приватно за замовчуванням і точно перед продакшеном.',
+    'Валіднийator': 'валідатор',
+    'Валіднийate': 'Перевіряйте'
+  }
+};
+
+function repairBrandAndLocalizationArtifacts(content, locale) {
+  let next = content
+    .replace(/Валідний[oо]Hub/g, 'ValidoHub')
+    .replace(/ВаліднийHub/g, 'ValidoHub')
+    .replace(/Poprawny[oо]?Hub/g, 'ValidoHub')
+    .replace(/<span class="brand-text">[^<]*Hub<\/span>/g, '<span class="brand-text">ValidoHub</span>');
+  next = applyLiteralMap(next, LOCALIZATION_ARTIFACT_REPAIRS[locale]);
+  if (locale === 'pl') {
+    next = next
+      .replace(/Developer Tools \\u0026 Identifiers/g, 'narzędzia deweloperskie i identyfikatory')
+      .replace(/Narzędzia deweloperskie \\u0026 Identifiers/g, 'narzędzia deweloperskie i identyfikatory')
+      .replace(/Developer Tools (&amp;|&) Identifiers/g, 'narzędzia deweloperskie i identyfikatory')
+      .replace(/Narzędzia deweloperskie (&amp;|&) Identifiers/g, 'narzędzia deweloperskie i identyfikatory');
+    next = next.replace(/Developer intelligence for ([^<."]+?) identifiers, (?:Waliduj dane płatnicze|payments), banking formats, (?:lokalizacja|locale) conventions, and official systems\./g, (_, qualifier) => {
+      return `Informacje deweloperskie o identyfikatorach ${qualifier}, płatnościach, formatach bankowych, konwencjach lokalnych i systemach urzędowych.`;
+    });
+    next = next.replace(/Developer intelligence for ([^<."]+?) identifiers, (?:lokalizacja|locale) conventions, and EU-oriented validation workflows\./g, (_, qualifier) => {
+      return `Informacje deweloperskie o identyfikatorach ${qualifier}, konwencjach lokalnych i workflow walidacji dla UE.`;
+    });
+  } else if (locale === 'uk') {
+    next = next
+      .replace(/Developer Tools \\u0026 Identifiers/g, 'інструменти розробника й ідентифікатори')
+      .replace(/Інструменти розробника \\u0026 Identifiers/g, 'інструменти розробника й ідентифікатори')
+      .replace(/Developer Tools (&amp;|&) Identifiers/g, 'інструменти розробника й ідентифікатори')
+      .replace(/Інструменти розробника (&amp;|&) Identifiers/g, 'інструменти розробника й ідентифікатори')
+      .replace(/([\p{L}][^"<|]*?) Developer Інструменти (&amp;|&) Ідентифікатори \| ValidoHub/gu, '$1: інструменти розробника й ідентифікатори | ValidoHub');
+    next = next.replace(/Developer intelligence for ([^<."]+?) identifiers, (?:Перевіряти платіжні дані|payments), banking formats, (?:локаль|locale) conventions, and official systems\./g, (_, qualifier) => {
+      return `Інтелект для розробників про ідентифікатори ${qualifier}, платежі, банківські формати, локальні правила та офіційні системи.`;
+    });
+    next = next.replace(/Developer intelligence for ([^<."]+?) identifiers, (?:локаль|locale) conventions, and EU-oriented validation workflows\./g, (_, qualifier) => {
+      return `Інтелект для розробників про ідентифікатори ${qualifier}, локальні правила та EU-oriented workflow валідації.`;
+    });
+  }
+  return next;
+}
+
 export function translateToolTitleChromeHtml(content, locale) {
   const normalized = normalizeLocale(locale);
   if (normalized === 'en') return content;
@@ -6960,7 +7060,7 @@ export function translateToolTitleChromeHtml(content, locale) {
   next = applyGeneratedToolTitleTranslations(next, normalized);
   next = applyToolTitleTermTranslations(next, normalized);
   next = repairRelatedCountryLinkCards(next, normalized);
-  return next;
+  return repairBrandAndLocalizationArtifacts(next, normalized);
 }
 
 function applyCountryTitleTranslations(content, locale) {
@@ -7796,6 +7896,7 @@ export function translateVisibleHtml(content, locale) {
   restored = applyLiteralMap(restored, GUIDE_REFERENCE_REPLACEMENTS[normalized]);
   restored = repairCountryCatalogRows(restored, normalized);
   restored = repairRelatedCountryLinkCards(restored, normalized);
+  restored = repairBrandAndLocalizationArtifacts(restored, normalized);
   return repairStructuredDataKeys(applyCountryProtectedValueTranslations(restored, normalized));
 }
 
