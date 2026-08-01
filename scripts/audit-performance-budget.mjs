@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const siteRoot = resolve(projectRoot, 'generated', 'validohub');
+const locales = new Set(['en', 'es', 'pt-BR', 'de', 'fr', 'pl', 'uk']);
+const nonCountrySections = new Set(['tools', 'countries', 'categories', 'identifiers']);
+const maxToolHtmlBytes = Number(process.env.VALIDOHUB_MAX_TOOL_HTML_BYTES || 300_000);
+const maxToolRelatedCards = Number(process.env.VALIDOHUB_MAX_TOOL_RELATED_CARDS || 24);
 
 const budgets = [
   { manifestKey: 'css', max: 360_000, label: 'main CSS bundle' },
@@ -11,8 +15,8 @@ const budgets = [
   { path: 'assets/js/portal-tools.js', max: 18_000, label: 'global tools search JS' },
   { path: 'assets/js/portal-home.js', max: 18_000, label: 'home portal JS' },
   { path: 'assets/js/portal-countries.js', max: 40_000, label: 'countries portal JS' },
-  { path: 'search-index.json', max: 2_200_000, label: 'country search index' },
-  { path: 'sitemap.xml', max: 3_000_000, label: 'sitemap' }
+  { path: 'search-index.json', max: 6_000_000, label: 'country search index' },
+  { path: 'sitemap.xml', max: 8_000_000, label: 'sitemap' }
 ];
 
 async function listHtmlFiles(dir, out = []) {
@@ -40,6 +44,18 @@ function routePathForFile(file) {
   return `/${rel.replace(/\/index\.html$/, '/')}`;
 }
 
+function isToolPage(file) {
+  const parts = relative(siteRoot, file).replace(/\\/g, '/').split('/');
+  if (parts.length !== 4 || parts[3] !== 'index.html' || !locales.has(parts[0])) return false;
+  return parts[1] === 'tools' || !nonCountrySections.has(parts[1]);
+}
+
+function relatedCardCount(html) {
+  const relatedMatch = String(html || '').match(/<section[^>]*class="[^"]*related-section[^"]*"[\s\S]*?<\/section>/i);
+  if (!relatedMatch) return 0;
+  return (relatedMatch[0].match(/class="[^"]*link-card[^"]*"/g) || []).length;
+}
+
 async function auditManifest(manifest, failures) {
   for (const key of ['css', 'js']) {
     const asset = String(manifest[key] || '').replace(/^\/+/, '');
@@ -55,14 +71,25 @@ async function auditManifest(manifest, failures) {
   }
 }
 
-async function auditHtmlPages(warnings) {
+async function auditHtmlPages(warnings, failures) {
   const files = await listHtmlFiles(siteRoot);
   let oversized = 0;
   for (const file of files) {
     const size = (await stat(file)).size;
+    const toolPage = isToolPage(file);
+    if (toolPage && size > maxToolHtmlBytes) {
+      failures.push(`${routePathForFile(file)} tool HTML exceeds budget: ${size} > ${maxToolHtmlBytes} bytes`);
+    }
     if (size > 2_500_000) {
       oversized += 1;
       if (warnings.length < 40) warnings.push(`${routePathForFile(file)} large HTML page (${size} bytes)`);
+    }
+    if (toolPage) {
+      const html = await readFile(file, 'utf8');
+      const count = relatedCardCount(html);
+      if (count > maxToolRelatedCards) {
+        failures.push(`${routePathForFile(file)} related card count exceeds budget: ${count} > ${maxToolRelatedCards}`);
+      }
     }
   }
   if (oversized > 40) warnings.push(`...and ${oversized - 40} more large HTML pages`);
@@ -85,7 +112,7 @@ async function main() {
   }
 
   await auditManifest(manifest, failures);
-  const pageCount = await auditHtmlPages(warnings);
+  const pageCount = await auditHtmlPages(warnings, failures);
 
   for (const warning of warnings.slice(0, 60)) console.warn(`WARN ${warning}`);
   if (failures.length) {

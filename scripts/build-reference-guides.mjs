@@ -427,7 +427,7 @@ async function registerGuideRoutes(routeRegistry) {
   return paths.map(path => path.replace(/^\/en/, '') || '/');
 }
 
-async function compileReferenceGuides(routeRegistry, assetsManifest) {
+export async function compileReferenceGuides(routeRegistry, assetsManifest) {
   console.log('--- Rendering reference guides ---');
   await registerGuideRoutes(routeRegistry);
 

@@ -13,6 +13,7 @@
     "build:tools": "node scripts/build-tools-dev.mjs",
     "build:full": "node scripts/build-all.mjs --timeout-minutes 180",
     "build:release": "node scripts/build-all.mjs --timeout-minutes 180",
+    "build:release:node": "node scripts/build-all.mjs --skip-java-publisher --timeout-minutes 180",
     "build:release:incremental": "node scripts/build-release-incremental.mjs",
     "build:release:plan": "node scripts/build-release-incremental.mjs --plan",
     "build:release:status": "node scripts/build-release-incremental.mjs --status",

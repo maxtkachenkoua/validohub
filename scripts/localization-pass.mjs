@@ -1,5 +1,6 @@
 import { dirname, resolve } from 'node:path';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -5103,15 +5104,19 @@ function applyLocalizedCountryLinkText(content, locale) {
     pl: 'Otwórz hub:',
     uk: 'Відкрити хаб'
   }[locale] || 'Open';
-  next = next.replace(/Open ([^<]+?) Hub/g, (_, name) => `${openWord} ${name}`);
-  next = next.replace(/([^<]+?) Portal \(Roadmap\)/g, (_, name) => {
+  const roadmapLabel = (name) => {
     if (locale === 'es') return `${name}: portal en roadmap`;
     if (locale === 'pt-BR') return `${name}: portal no roadmap`;
     if (locale === 'de') return `${name}: Portal auf der Roadmap`;
     if (locale === 'fr') return `${name} : portail en roadmap`;
     if (locale === 'pl') return `${name}: portal w roadmapie`;
     return `${name}: портал у roadmap`;
-  });
+  };
+  next = next.replace(/Open ([^<]+?) Hub/g, (_, name) => `${openWord} ${name}`);
+  next = next.replace(/>([^<]{1,96}?) Portal \(Roadmap\)</g, (_, name) => `>${roadmapLabel(name)}<`);
+  if (next.length < 20_000) {
+    next = next.replace(/([^<]{1,96}?) Portal \(Roadmap\)/g, (_, name) => roadmapLabel(name));
+  }
   return next;
 }
 
@@ -6174,7 +6179,18 @@ function applyCountryPageTranslations(content, locale) {
 
 function protectBlocks(content) {
   const blocks = [];
-  const protectedHtml = content.replace(/<(script|style|pre|code|textarea)\b[^>]*>[\s\S]*?<\/\1>/gi, match => {
+  let protectedHtml = content.replace(/<(script|style|pre|code|textarea)\b[^>]*>[\s\S]*?<\/\1>/gi, match => {
+    const token = `<!--__VH_PROTECTED_${blocks.length}__-->`;
+    blocks.push(match);
+    return token;
+  });
+  protectedHtml = protectedHtml.replace(/\b(href|src|action|content|data-[\w:-]+)="([^"]*)"/gi, (match, _attribute, value) => {
+    if (!/^(?:https?:\/\/|\/|#)/i.test(value)) return match;
+    const token = `<!--__VH_PROTECTED_${blocks.length}__-->`;
+    blocks.push(match);
+    return token;
+  });
+  protectedHtml = protectedHtml.replace(/\b(data-algorithm-id|id|for|aria-controls|aria-labelledby|aria-describedby)="([^"]*)"/gi, (match) => {
     const token = `<!--__VH_PROTECTED_${blocks.length}__-->`;
     blocks.push(match);
     return token;
@@ -6187,15 +6203,28 @@ function restoreBlocks(content, blocks) {
 }
 
 function replaceAllLiteral(content, from, to) {
-  return content.split(from).join(to);
+  const source = String(content);
+  const needle = String(from || '');
+  if (!needle || !source.includes(needle)) return content;
+  return source.replaceAll(needle, String(to));
+}
+
+const literalMapRegexCache = new WeakMap();
+
+function literalMapRegex(map) {
+  if (!map || typeof map !== 'object') return null;
+  if (literalMapRegexCache.has(map)) return literalMapRegexCache.get(map);
+
+  const keys = Object.keys(map).filter(Boolean).sort((left, right) => right.length - left.length);
+  const regex = keys.length ? new RegExp(keys.map(escapeRegExp).join('|'), 'g') : null;
+  literalMapRegexCache.set(map, regex);
+  return regex;
 }
 
 function applyLiteralMap(content, map) {
-  let next = content;
-  for (const [from, to] of Object.entries(map || {})) {
-    next = replaceAllLiteral(next, from, to);
-  }
-  return next;
+  const regex = literalMapRegex(map);
+  if (!regex) return content;
+  return String(content).replace(regex, match => map[match] ?? match);
 }
 
 const CATEGORY_NAV_LABELS = {
@@ -7035,7 +7064,9 @@ function repairBrandAndLocalizationArtifacts(content, locale) {
       .replace(/Інструменти розробника \\u0026 Identifiers/g, 'інструменти розробника й ідентифікатори')
       .replace(/Developer Tools (&amp;|&) Identifiers/g, 'інструменти розробника й ідентифікатори')
       .replace(/Інструменти розробника (&amp;|&) Identifiers/g, 'інструменти розробника й ідентифікатори')
-      .replace(/([\p{L}][^"<|]*?) Developer Інструменти (&amp;|&) Ідентифікатори \| ValidoHub/gu, '$1: інструменти розробника й ідентифікатори | ValidoHub');
+      .replace(/(<title>[^<|]*?) Developer Інструменти (&amp;|&) Ідентифікатори \| ValidoHub/gu, '$1: інструменти розробника й ідентифікатори | ValidoHub')
+      .replace(/(<meta[^>]+content="[^"<|]*?) Developer Інструменти (&amp;|&) Ідентифікатори \| ValidoHub/gu, '$1: інструменти розробника й ідентифікатори | ValidoHub')
+      .replace(/(<h1[^>]*>[^<|]*?) Developer Інструменти (&amp;|&) Ідентифікатори \| ValidoHub/gu, '$1: інструменти розробника й ідентифікатори | ValidoHub');
     next = next.replace(/Developer intelligence for ([^<."]+?) identifiers, (?:Перевіряти платіжні дані|payments), banking formats, (?:локаль|locale) conventions, and official systems\./g, (_, qualifier) => {
       return `Інтелект для розробників про ідентифікатори ${qualifier}, платежі, банківські формати, локальні правила та офіційні системи.`;
     });
@@ -7856,6 +7887,79 @@ function injectAlternateLinks(content, currentPath, routeRegistry, locales) {
   return next;
 }
 
+const LOCALIZATION_CACHE_VERSION = '2026-08-01-url-protect-v2';
+const LOCALIZATION_CACHE_PATTERN = /\s*<!-- vh-localization-cache:[a-f0-9]+ -->\s*/i;
+
+function localizationCacheKey(locale, routePath, englishContent) {
+  return createHash('sha256')
+    .update(LOCALIZATION_CACHE_VERSION)
+    .update('\0')
+    .update(String(locale || ''))
+    .update('\0')
+    .update(String(routePath || ''))
+    .update('\0')
+    .update(String(englishContent || ''))
+    .digest('hex')
+    .slice(0, 24);
+}
+
+function localizationCacheMarker(cacheKey) {
+  return `<!-- vh-localization-cache:${cacheKey} -->`;
+}
+
+function hasLocalizationCacheMarker(content, cacheKey) {
+  return String(content || '').includes(localizationCacheMarker(cacheKey));
+}
+
+function injectLocalizationCacheMarker(content, cacheKey) {
+  const marker = localizationCacheMarker(cacheKey);
+  let next = String(content || '').replace(LOCALIZATION_CACHE_PATTERN, '\n');
+  if (next.includes('</head>')) {
+    return next.replace('</head>', `  ${marker}\n</head>`);
+  }
+  return `${marker}\n${next}`;
+}
+
+function buildConcurrency(defaultValue = 32) {
+  const parsed = Number(process.env.VALIDOHUB_LOCALIZATION_CONCURRENCY || defaultValue);
+  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : defaultValue;
+}
+
+function formatDuration(ms) {
+  const seconds = Math.round(ms / 1000);
+  if (seconds < 60) return `${seconds}s`;
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  return `${minutes}m ${remainder}s`;
+}
+
+async function runWithLocalizationProgress(items, label, worker, concurrency = buildConcurrency()) {
+  const total = items.length;
+  let completed = 0;
+  let changed = 0;
+  const startedAt = Date.now();
+  const progressEvery = Math.max(100, Number(process.env.VALIDOHUB_BUILD_PROGRESS_ITEMS || 1000));
+
+  for (let index = 0; index < total; index += concurrency) {
+    if (index === 0 || index % progressEvery < concurrency) {
+      const end = Math.min(total, index + concurrency);
+      console.log(`[build] ${label}: starting ${index + 1}-${end}/${total}.`);
+    }
+    const batchStartedAt = Date.now();
+    const results = await Promise.all(items.slice(index, index + concurrency).map(worker));
+    for (const result of results) {
+      completed += 1;
+      if (result) changed += 1;
+    }
+    const batchDuration = Date.now() - batchStartedAt;
+    if (completed === total || completed % progressEvery < concurrency || batchDuration > 10_000) {
+      console.log(`[build] ${label}: ${completed}/${total} checked, ${changed} changed, batch ${formatDuration(batchDuration)}, elapsed ${formatDuration(Date.now() - startedAt)}.`);
+    }
+  }
+
+  return { checked: completed, changed };
+}
+
 export function translateVisibleHtml(content, locale) {
   const normalized = normalizeLocale(locale);
   if (normalized === 'en') return content;
@@ -7904,11 +8008,6 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
   const configuredLocales = locales && locales.length ? locales : ['en'];
   const forceRefresh = Boolean(options.forceRefresh);
   const concurrency = Math.max(1, Number(options.concurrency || process.env.VALIDOHUB_LOCALIZATION_CONCURRENCY || 32));
-  const runBatches = async (items, worker) => {
-    for (let index = 0; index < items.length; index += concurrency) {
-      await Promise.all(items.slice(index, index + concurrency).map(worker));
-    }
-  };
   hydrateCountryNamesFromRegistry(routeRegistry, configuredLocales);
   ensureLocalizedRoutes(routeRegistry, siteRoot, configuredLocales);
   const includeSuffixes = new Set((options.includeSuffixes || []).map(suffix => {
@@ -7922,28 +8021,46 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     return includeSuffixes.has(splitRouteLocale(route.path).suffix);
   };
   const routesToProcess = routeRegistry.getAll().filter(shouldProcessRoute);
-  await runBatches(routesToProcess, async (route) => {
+  const refreshedPaths = new Set();
+  await runWithLocalizationProgress(routesToProcess, 'final localization generation', async (route) => {
     const { locale, suffix } = splitRouteLocale(route.path);
-    if (locale === 'en') return;
+    if (locale === 'en') return false;
 
     const englishPath = routeForLocale('en', suffix);
     const englishRoute = routeRegistry.get(englishPath);
-    if (!englishRoute || !(await pathExists(englishRoute.outputPath))) return;
+    if (!englishRoute || !(await pathExists(englishRoute.outputPath))) return false;
 
     const shouldRefreshFromNodeSource = englishRoute.sourceOwner === 'node' || ['country', 'countries'].includes(englishRoute.type);
-    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) return;
+    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) return false;
 
     let content = await readFile(englishRoute.outputPath, 'utf8');
+    const cacheKey = localizationCacheKey(locale, route.path, content);
+    if (!forceRefresh && await pathExists(route.outputPath)) {
+      const existing = await readFile(route.outputPath, 'utf8');
+      if (hasLocalizationCacheMarker(existing, cacheKey)) {
+        refreshedPaths.add(route.path);
+        return false;
+      }
+    }
     content = rewriteHrefLocale(content, locale, routeRegistry);
     content = localizeSeoAndStructuredData(content, locale, route.path);
     content = translateVisibleHtml(content, locale);
+    content = repairStructuredDataKeys(content);
+    content = injectAlternateLinks(content, route.path, routeRegistry, configuredLocales);
+    content = injectLocalizationCacheMarker(content, cacheKey);
     await mkdir(dirname(route.outputPath), { recursive: true });
     await writeFile(route.outputPath, content, 'utf8');
-    console.log(`✓ Generated localized route: ${route.path}`);
-  });
+    refreshedPaths.add(route.path);
+    return true;
+  }, concurrency);
 
-  await runBatches(routesToProcess, async (route) => {
-    if (!(await pathExists(route.outputPath))) return;
+  if (!options.normalizeExisting) {
+    return;
+  }
+
+  await runWithLocalizationProgress(routesToProcess, 'final localization normalization', async (route) => {
+    if (refreshedPaths.has(route.path)) return false;
+    if (!(await pathExists(route.outputPath))) return false;
     const { locale } = splitRouteLocale(route.path);
     let content = await readFile(route.outputPath, 'utf8');
     const original = content;
@@ -7956,8 +8073,10 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     content = injectAlternateLinks(content, route.path, routeRegistry, configuredLocales);
     if (content !== original) {
       await writeFile(route.outputPath, content, 'utf8');
+      return true;
     }
-  });
+    return false;
+  }, concurrency);
 }
 
 export function localizedRuntimeLabels(localeCode) {

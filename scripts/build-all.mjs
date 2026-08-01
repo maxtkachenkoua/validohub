@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from './build-countries-portal.mjs';
 import { compileIdentifiers } from './build-identifiers.mjs';
+import { compileReferenceGuides } from './build-reference-guides.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -20,7 +21,8 @@ function parseBuildCliOptions(argv) {
   const progressSeconds = progressOption >= 0 ? Number(argv[progressOption + 1]) : Number(process.env.VALIDOHUB_BUILD_PROGRESS_SECONDS || 60);
   return {
     timeoutMs: argv.includes('--no-timeout') ? 0 : Math.max(0, Number.isFinite(timeoutMinutes) ? timeoutMinutes : 180) * 60 * 1000,
-    progressMs: Math.max(10, Number.isFinite(progressSeconds) ? progressSeconds : 60) * 1000
+    progressMs: Math.max(10, Number.isFinite(progressSeconds) ? progressSeconds : 60) * 1000,
+    skipJavaPublisher: argv.includes('--skip-java-publisher') || process.env.VALIDOHUB_SKIP_JAVA_PUBLISHER === '1'
   };
 }
 
@@ -108,6 +110,12 @@ async function pathExists(path) {
   }
 }
 
+async function pathHasRenderableHtml(path) {
+  if (!(await pathExists(path))) return false;
+  const content = await readFile(path, 'utf8');
+  return content.trim().length > 100 && /<html\b/i.test(content) && /<\/html>/i.test(content);
+}
+
 function buildConcurrency(defaultValue = 32) {
   const parsed = Number(process.env.VALIDOHUB_BUILD_CONCURRENCY || defaultValue);
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : defaultValue;
@@ -117,6 +125,33 @@ async function runWithConcurrency(items, worker, concurrency = buildConcurrency(
   for (let index = 0; index < items.length; index += concurrency) {
     await Promise.all(items.slice(index, index + concurrency).map(worker));
   }
+}
+
+async function runWithConcurrencyProgress(items, label, worker, concurrency = buildConcurrency()) {
+  const total = items.length;
+  let completed = 0;
+  let changed = 0;
+  const startedAt = Date.now();
+  const progressEvery = Math.max(100, Number(process.env.VALIDOHUB_BUILD_PROGRESS_ITEMS || 1000));
+
+  for (let index = 0; index < total; index += concurrency) {
+    if (index === 0 || index % progressEvery < concurrency) {
+      const end = Math.min(total, index + concurrency);
+      console.log(`[build] ${label}: starting ${index + 1}-${end}/${total}.`);
+    }
+    const batchStartedAt = Date.now();
+    const results = await Promise.all(items.slice(index, index + concurrency).map(worker));
+    for (const result of results) {
+      completed += 1;
+      if (result) changed += 1;
+    }
+    const batchDuration = Date.now() - batchStartedAt;
+    if (completed === total || completed % progressEvery < concurrency || batchDuration > 10_000) {
+      console.log(`[build] ${label}: ${completed}/${total} checked, ${changed} changed, batch ${formatDuration(batchDuration)}, elapsed ${formatDuration(Date.now() - startedAt)}.`);
+    }
+  }
+
+  return { checked: completed, changed };
 }
 
 // 1. Build and fingerprinted assets compiler
@@ -715,7 +750,7 @@ function versionForWorkbenchScript(srcOrScript) {
 
 function ensureToolScript(content) {
   const match = content.match(/data-algorithm-id="([^"]+)"/);
-  if (!match) return applyRouteSpecificWorkbenchOverrides(content);
+  if (!match) return pruneNonInteractiveWorkbenchScripts(content);
   const mapped = TOOL_SCRIPT_BY_ALGORITHM[match[1]];
   if (!mapped) return applyRouteSpecificWorkbenchOverrides(content);
   let next;
@@ -724,7 +759,13 @@ function ensureToolScript(content) {
   } else {
     next = ensureWorkbenchScripts(content, mapped);
   }
-  return applyRouteSpecificWorkbenchOverrides(next);
+  next = applyRouteSpecificWorkbenchOverrides(next);
+  return pruneUnexpectedToolScripts(next);
+}
+
+function pruneNonInteractiveWorkbenchScripts(content) {
+  if (/data-algorithm-id="[^"]+"/.test(content)) return content;
+  return String(content || '').replace(/\s*<script[^>]*src="\/assets\/js\/(?:tools|workbench)\/[^"]+"[^>]*><\/script>\s*/gi, '\n');
 }
 
 function ensureOrderedWorkbenchScripts(content, mappedScripts) {
@@ -759,8 +800,47 @@ const GOLD_LAB_ROUTE_OVERRIDE_PATTERNS = [
   /\/en\/brazil\/brazil-iban-validator\/?/
 ];
 
+function canonicalRoutePathFromContent(content) {
+  const match = String(content || '').match(/<link\s+rel="canonical"\s+href="https:\/\/validohub\.com([^"#?]+)"/i)
+    || String(content || '').match(/<meta\s+property="og:url"\s+content="https:\/\/validohub\.com([^"#?]+)"/i);
+  return match ? (match[1].endsWith('/') ? match[1] : `${match[1]}/`) : '';
+}
+
+function normalizeRoutePathForOverride(pathname) {
+  return String(pathname || '').replace(/^\/(?:es|pt-BR|de|fr|pl|uk)\//, '/en/');
+}
+
+function expectedToolScriptsForContent(content) {
+  const match = String(content || '').match(/data-algorithm-id="([^"]+)"/);
+  if (!match) return new Set();
+  const mapped = TOOL_SCRIPT_BY_ALGORITHM[match[1]];
+  const scripts = new Set(Array.isArray(mapped) ? mapped : (mapped ? [mapped] : []));
+  const overrideRoutePath = normalizeRoutePathForOverride(canonicalRoutePathFromContent(content));
+  if (/\/en\/brazil\/brazil-cpf-validator\/?$/.test(overrideRoutePath) || /\/en\/brazil\/brazil-cnpj-validator\/?$/.test(overrideRoutePath)) {
+    scripts.clear();
+    scripts.add('brazil-tax-id.js');
+  }
+  if (/\/en\/spain\/spain-id-validator\/?$/.test(overrideRoutePath)) {
+    scripts.delete('gold-tools-lab.js');
+    scripts.add('spain-id.js');
+  }
+  if (GOLD_LAB_ROUTE_OVERRIDE_PATTERNS.some((pattern) => pattern.test(overrideRoutePath))) {
+    scripts.add('gold-tools-lab.js');
+  }
+  return scripts;
+}
+
+function pruneUnexpectedToolScripts(content) {
+  const expectedScripts = expectedToolScriptsForContent(content);
+  if (expectedScripts.size === 0) return content;
+  return String(content || '').replace(/\s*<script[^>]*src="\/assets\/js\/tools\/([^"?]+)(?:\?[^"]*)?"[^>]*><\/script>\s*/gi, (tag, scriptName) => {
+    return expectedScripts.has(scriptName) ? tag : '\n';
+  });
+}
+
 function applyRouteSpecificWorkbenchOverrides(content) {
-  if (/\/en\/brazil\/brazil-cpf-validator\/?/.test(content) || /\/en\/brazil\/brazil-cnpj-validator\/?/.test(content)) {
+  const overrideRoutePath = normalizeRoutePathForOverride(canonicalRoutePathFromContent(content));
+  if (/\/en\/brazil\/brazil-cpf-validator\/?$/.test(overrideRoutePath) || /\/en\/brazil\/brazil-cnpj-validator\/?$/.test(overrideRoutePath)) {
     let next = removeWorkbenchScript(content, 'gold-tools-lab.js');
     next = removeWorkbenchScript(next, 'country-legacy-rich-layer.js');
     next = removeWorkbenchScript(next, 'brazil-suite.js');
@@ -769,12 +849,12 @@ function applyRouteSpecificWorkbenchOverrides(content) {
     next = next.replace(/data-algorithm-id="validohub\.brazil-suite"/g, 'data-algorithm-id="validohub.brazil-tax-id"');
     return next;
   }
-  if (/\/en\/spain\/spain-id-validator\/?/.test(content)) {
+  if (/\/en\/spain\/spain-id-validator\/?$/.test(overrideRoutePath)) {
     let next = removeWorkbenchScript(content, 'gold-tools-lab.js');
     next = ensureAdditionalWorkbenchScript(next, 'spain-id.js');
     return next;
   }
-  if (GOLD_LAB_ROUTE_OVERRIDE_PATTERNS.some((pattern) => pattern.test(content))) {
+  if (GOLD_LAB_ROUTE_OVERRIDE_PATTERNS.some((pattern) => pattern.test(overrideRoutePath))) {
     return ensureAdditionalWorkbenchScript(content, 'gold-tools-lab.js');
   }
   return content;
@@ -1932,16 +2012,18 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
     }
   }
 
+  const repairInternalRouteLinks = createInternalRouteLinkRepairer(routeRegistry);
+
   // Materialize any route that is still missing output by cloning the English equivalent.
-  await runWithConcurrency(routeRegistry.getAll(), async (route) => {
+  await runWithConcurrencyProgress(routeRegistry.getAll(), 'localized fallback materialization', async (route) => {
     const { locale: routeLocale, suffix } = splitRouteLocale(route.path);
-    if (routeLocale === 'en') return;
-    if (await pathExists(route.outputPath)) return;
+    if (routeLocale === 'en') return false;
+    if (await pathHasRenderableHtml(route.outputPath)) return false;
 
     const englishPath = routeForLocale('en', suffix);
     const englishRoute = routeRegistry.get(englishPath);
     if (!englishRoute || !(await pathExists(englishRoute.outputPath))) {
-      return;
+      return false;
     }
 
     let localizedContent = await readFile(englishRoute.outputPath, 'utf8');
@@ -1949,15 +2031,17 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
     localizedContent = localizedContent.replace(/<html\s+lang="[^"]+">/i, `<html lang="${routeLocale}">`);
     localizedContent = localizedContent.replace(/"inLanguage"\s*:\s*"en"/g, `"inLanguage":"${routeLocale}"`);
     localizedContent = localizeSeoUrls(localizedContent, routeLocale);
+    localizedContent = repairLocalizedTechnicalAttributes(localizedContent);
+    localizedContent = repairInternalRouteLinks(localizedContent);
 
     await mkdir(dirname(route.outputPath), { recursive: true });
     await writeFile(route.outputPath, localizedContent, 'utf8');
-    console.log(`✓ Generated localized route fallback: ${route.path}`);
+    return true;
   });
 
   // Normalize alternate locale links and locale-pinned internal hrefs on every route.
-  await runWithConcurrency(routeRegistry.getAll(), async (route) => {
-    if (!(await pathExists(route.outputPath))) return;
+  await runWithConcurrencyProgress(routeRegistry.getAll(), 'localized route normalization', async (route) => {
+    if (!(await pathExists(route.outputPath))) return false;
     const { locale: routeLocale } = splitRouteLocale(route.path);
     let content = await readFile(route.outputPath, 'utf8');
     const original = content;
@@ -1966,11 +2050,15 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
       content = localizeSeoUrls(content, routeLocale);
       content = applyUiLocaleTranslations(content, routeLocale);
     }
+    content = repairLocalizedTechnicalAttributes(content);
+    content = repairInternalRouteLinks(content);
     content = normalizeGeneratedChrome(content, routeLocale, route.path);
     content = injectAlternateLinks(content, route.path, routeRegistry, locales);
     if (content !== original) {
       await writeFile(route.outputPath, content, 'utf8');
+      return true;
     }
+    return false;
   });
 }
 
@@ -2023,11 +2111,281 @@ function keepCountrySuiteRelatedLinksLocal(content, route) {
   });
 }
 
+function dedupeGeneratedHeadArtifacts(content, assetsManifest, jsonLdScript) {
+  let next = content
+    .replace(/<link\b(?=[^>]*\brel=["']stylesheet["'])[^>]*>\s*/gi, '')
+    .replace(/<script\b(?=[^>]*\bsrc=["']\/assets\/js\/bundle\.[a-f0-9]{6}\.js["'])[^>]*>\s*<\/script>\s*/gi, '')
+    .replace(/<script\b(?=[^>]*\btype=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>\s*/gi, '');
+
+  const headArtifacts = [
+    `<link rel="stylesheet" href="${assetsManifest.css}">`,
+    `<script src="${assetsManifest.js}"></script>`,
+    jsonLdScript
+  ].join('\n');
+
+  return next.replace('</head>', `${headArtifacts}\n</head>`);
+}
+
+function parentRoutePath(pathname) {
+  const normalized = String(pathname || '').endsWith('/') ? String(pathname || '') : `${pathname}/`;
+  const parts = normalized.split('/').filter(Boolean);
+  if (parts.length <= 1) return '/';
+  return `/${parts.slice(0, -1).join('/')}/`;
+}
+
+function routeSlug(pathname) {
+  const parts = String(pathname || '').split('/').filter(Boolean);
+  return parts[parts.length - 1] || '';
+}
+
+function editDistance(left, right) {
+  const a = String(left || '');
+  const b = String(right || '');
+  if (a === b) return 0;
+  if (!a) return b.length;
+  if (!b) return a.length;
+  let previous = Array.from({ length: b.length + 1 }, (_, index) => index);
+  for (let i = 1; i <= a.length; i += 1) {
+    const current = [i];
+    for (let j = 1; j <= b.length; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      current[j] = Math.min(
+        previous[j] + 1,
+        current[j - 1] + 1,
+        previous[j - 1] + cost
+      );
+    }
+    previous = current;
+  }
+  return previous[b.length];
+}
+
+function normalizeRouteSlugForRepair(slug) {
+  const tokenAliases = new Map([
+    ['configuración-regional', 'locale'],
+    ['configuración regional', 'locale'],
+    ['configuracao-regional', 'locale'],
+    ['configuracao regional', 'locale'],
+    ['configuração-regional', 'locale'],
+    ['configuração regional', 'locale'],
+    ['gebietsschema', 'locale'],
+    ['parametres-regionaux', 'locale'],
+    ['parametres regionaux', 'locale'],
+    ['paramètres-régionaux', 'locale'],
+    ['paramètres régionaux', 'locale'],
+    ['lokalizacja', 'locale'],
+    ['локаль', 'locale'],
+    ['privacidad', 'privacy'],
+    ['privacidade', 'privacy'],
+    ['datenschutz', 'privacy'],
+    ['confidentialite', 'privacy'],
+    ['confidentialité', 'privacy'],
+    ['prywatnosc', 'privacy'],
+    ['prywatność', 'privacy'],
+    ['приватність', 'privacy'],
+    ['telefon', 'phone'],
+    ['teléfono', 'phone'],
+    ['telefone', 'phone'],
+    ['téléphone', 'phone'],
+    ['телефон', 'phone'],
+    ['phonee', 'phone'],
+    ['postleitzahl', 'postal-code'],
+    ['codigo-postal', 'postal-code'],
+    ['codigo postal', 'postal-code'],
+    ['código-postal', 'postal-code'],
+    ['código postal', 'postal-code'],
+    ['code-postal', 'postal-code'],
+    ['code postal', 'postal-code'],
+    ['kod-pocztowy', 'postal-code'],
+    ['kod pocztowy', 'postal-code'],
+    ['поштовий-код', 'postal-code'],
+    ['поштовий код', 'postal-code'],
+    ['zahlungsreferenz', 'payment-reference'],
+    ['referencia-de-pago', 'payment-reference'],
+    ['referencia de pago', 'payment-reference'],
+    ['referência-de-pagamento', 'payment-reference'],
+    ['referência de pagamento', 'payment-reference'],
+    ['référence-de-paiement', 'payment-reference'],
+    ['référence de paiement', 'payment-reference'],
+    ['referencja-płatności', 'payment-reference'],
+    ['referencja płatności', 'payment-reference'],
+    ['платіжна-референція', 'payment-reference'],
+    ['платіжна референція', 'payment-reference'],
+    ['bankkonto', 'bank-account'],
+    ['cuenta-bancaria', 'bank-account'],
+    ['conta-bancária', 'bank-account'],
+    ['compte-bancaire', 'bank-account'],
+    ['konto-bankowe', 'bank-account'],
+    ['банківський-рахунок', 'bank-account'],
+    ['steuernummer', 'tax-number'],
+    ['numero-fiscal', 'tax-number'],
+    ['número-fiscal', 'tax-number'],
+    ['numéro-fiscal', 'tax-number'],
+    ['numer-podatkowy', 'tax-number'],
+    ['податковий-номер', 'tax-number'],
+    ['dokumente', 'documents'],
+    ['documentos', 'documents'],
+    ['dokumenty', 'documents'],
+    ['документи', 'documents'],
+    ['fahrzeuge', 'vehicles'],
+    ['vehículos', 'vehicles'],
+    ['veículos', 'vehicles'],
+    ['véhicules', 'vehicles'],
+    ['pojazdy', 'vehicles'],
+    ['транспорт', 'vehicles']
+  ]);
+  let normalized = String(slug || '').toLowerCase();
+  for (const [from, to] of [...tokenAliases.entries()].sort((left, right) => right[0].length - left[0].length)) {
+    normalized = normalized.split(from).join(to);
+  }
+  return normalized;
+}
+
+function escapeRegexLiteral(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function normalizeTechnicalIdentifierForRepair(value) {
+  const tokenAliases = [
+    ['configuración-regional', 'locale'],
+    ['configuración regional', 'locale'],
+    ['configuracao-regional', 'locale'],
+    ['configuracao regional', 'locale'],
+    ['configuração-regional', 'locale'],
+    ['configuração regional', 'locale'],
+    ['gebietsschema', 'locale'],
+    ['parametres-regionaux', 'locale'],
+    ['parametres regionaux', 'locale'],
+    ['paramètres-régionaux', 'locale'],
+    ['paramètres régionaux', 'locale'],
+    ['lokalizacja', 'locale'],
+    ['локаль', 'locale'],
+    ['privacidad', 'privacy'],
+    ['privacidade', 'privacy'],
+    ['datenschutz', 'privacy'],
+    ['confidentialite', 'privacy'],
+    ['confidentialité', 'privacy'],
+    ['prywatnosc', 'privacy'],
+    ['prywatność', 'privacy'],
+    ['приватність', 'privacy'],
+    ['telefon', 'phone'],
+    ['teléfono', 'phone'],
+    ['telefone', 'phone'],
+    ['téléphone', 'phone'],
+    ['телефон', 'phone'],
+    ['phonee', 'phone'],
+    ['postleitzahl', 'postal-code'],
+    ['codigo-postal', 'postal-code'],
+    ['codigo postal', 'postal-code'],
+    ['código-postal', 'postal-code'],
+    ['código postal', 'postal-code'],
+    ['code-postal', 'postal-code'],
+    ['code postal', 'postal-code'],
+    ['kod-pocztowy', 'postal-code'],
+    ['kod pocztowy', 'postal-code'],
+    ['поштовий-код', 'postal-code'],
+    ['поштовий код', 'postal-code'],
+    ['zahlungsreferenz', 'payment-reference'],
+    ['referencia-de-pago', 'payment-reference'],
+    ['referencia de pago', 'payment-reference'],
+    ['referência-de-pagamento', 'payment-reference'],
+    ['referência de pagamento', 'payment-reference'],
+    ['référence-de-paiement', 'payment-reference'],
+    ['référence de paiement', 'payment-reference'],
+    ['referencja-płatności', 'payment-reference'],
+    ['referencja płatności', 'payment-reference'],
+    ['платіжна-референція', 'payment-reference'],
+    ['платіжна референція', 'payment-reference'],
+    ['bankkonto', 'bank-account'],
+    ['cuenta-bancaria', 'bank-account'],
+    ['conta-bancária', 'bank-account'],
+    ['compte-bancaire', 'bank-account'],
+    ['konto-bankowe', 'bank-account'],
+    ['банківський-рахунок', 'bank-account'],
+    ['steuernummer', 'tax-number'],
+    ['numero-fiscal', 'tax-number'],
+    ['número-fiscal', 'tax-number'],
+    ['numéro-fiscal', 'tax-number'],
+    ['numer-podatkowy', 'tax-number'],
+    ['податковий-номер', 'tax-number'],
+    ['dokumente', 'documents'],
+    ['documentos', 'documents'],
+    ['dokumenty', 'documents'],
+    ['документи', 'documents'],
+    ['fahrzeuge', 'vehicles'],
+    ['vehículos', 'vehicles'],
+    ['veículos', 'vehicles'],
+    ['véhicules', 'vehicles'],
+    ['pojazdy', 'vehicles'],
+    ['транспорт', 'vehicles']
+  ];
+  let normalized = String(value || '');
+  for (const [from, to] of tokenAliases.sort((left, right) => right[0].length - left[0].length)) {
+    normalized = normalized.replace(new RegExp(escapeRegexLiteral(from), 'giu'), to);
+  }
+  return normalized;
+}
+
+function repairLocalizedTechnicalAttributes(content) {
+  return String(content || '').replace(/\b(data-algorithm-id|id|for|aria-controls|aria-labelledby|aria-describedby)="([^"]+)"/gi, (match, attribute, value) => {
+    const repairedValue = normalizeTechnicalIdentifierForRepair(value);
+    if (repairedValue === value) return match;
+    return `${attribute}="${repairedValue}"`;
+  });
+}
+
+function createInternalRouteLinkRepairer(routeRegistry) {
+  const routes = routeRegistry.getAll().map(route => route.path.endsWith('/') ? route.path : `${route.path}/`);
+  const routeSet = new Set(routes);
+  const byParent = new Map();
+  const resolutionCache = new Map();
+  for (const routePath of routes) {
+    const parent = parentRoutePath(routePath);
+    if (!byParent.has(parent)) byParent.set(parent, []);
+    byParent.get(parent).push(routePath);
+  }
+
+  const resolvePath = (pathname) => {
+    const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    if (routeSet.has(normalized)) return normalized;
+    if (resolutionCache.has(normalized)) return resolutionCache.get(normalized);
+
+    const parent = parentRoutePath(normalized);
+    const candidates = byParent.get(parent) || [];
+    const slug = routeSlug(normalized).toLowerCase();
+    const repairedSlug = normalizeRouteSlugForRepair(slug);
+    let best = null;
+    let bestDistance = Infinity;
+    for (const candidate of candidates) {
+      const candidateSlug = routeSlug(candidate).toLowerCase();
+      const distance = Math.min(
+        editDistance(slug, candidateSlug),
+        editDistance(repairedSlug, normalizeRouteSlugForRepair(candidateSlug))
+      );
+      if (distance < bestDistance) {
+        best = candidate;
+        bestDistance = distance;
+      }
+    }
+    const threshold = Math.max(8, Math.ceil(slug.length * 0.35));
+    const resolved = best && bestDistance <= threshold ? best : null;
+    resolutionCache.set(normalized, resolved);
+    return resolved;
+  };
+
+  return (content) => String(content || '').replace(/\b(href|content)="(https:\/\/validohub\.com)?(\/[^"#?]+\/?)([^"]*)"/gi, (match, attribute, origin = '', pathname, suffix = '') => {
+    const resolved = resolvePath(pathname);
+    if (!resolved || resolved === pathname) return match;
+    return `${attribute}="${origin}${resolved}${suffix}"`;
+  });
+}
+
 // 2. Post-process Java-owned pages to use hashed assets, strip inline styles, and inject schema JSON-LD
 async function postProcessJavaPages(routeRegistry, assetsManifest) {
   const javaRoutes = routeRegistry.getAll().filter(r => r.sourceOwner === 'java');
+  const repairInternalRouteLinks = createInternalRouteLinkRepairer(routeRegistry);
   
-  for (const route of javaRoutes) {
+  await runWithConcurrencyProgress(javaRoutes, 'post-process Java pages', async (route) => {
     const filePath = route.outputPath;
     if (await pathExists(filePath)) {
       let content = await readFile(filePath, 'utf8');
@@ -2064,10 +2422,6 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       content = ensureToolScript(content);
       content = keepCountrySuiteRelatedLinksLocal(content, route);
       content = normalizeGeneratedChrome(content, splitRouteLocale(route.path).locale, route.path);
-
-      // Force current hashed bundles on Java-owned pages to avoid stale hash drift across publish stages.
-      content = content.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, `<link rel="stylesheet" href="${assetsManifest.css}">`);
-      content = content.replace(/<script src="\/assets\/js\/bundle\.[a-f0-9]{6}\.js"><\/script>/gi, `<script src="${assetsManifest.js}"></script>`);
 
       // Determine proper JSON-LD schema
       let type = 'WebPage';
@@ -2107,29 +2461,29 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
         .replace(/>/g, '\\u003e');
 
       const jsonLdScript = `<script type="application/ld+json">${escapedJson}</script>`;
-      content = content.replace('</head>', `${jsonLdScript}\n</head>`);
+      content = repairInternalRouteLinks(content);
+      content = dedupeGeneratedHeadArtifacts(content, assetsManifest, jsonLdScript);
 
       await writeFile(filePath, content, 'utf8');
-      console.log(`✓ Post-processed Java page: ${route.path}`);
+      return true;
     }
-  }
+    return false;
+  });
 }
 
 async function normalizeGeneratedChromeFiles(routeRegistry) {
-  let updated = 0;
-  for (const route of routeRegistry.getAll()) {
-    if (!(await pathExists(route.outputPath))) continue;
+  const result = await runWithConcurrencyProgress(routeRegistry.getAll(), 'normalize generated chrome', async (route) => {
+    if (!(await pathExists(route.outputPath))) return false;
     const { locale: routeLocale } = splitRouteLocale(route.path);
     const content = await readFile(route.outputPath, 'utf8');
     const next = normalizeGeneratedChrome(content, routeLocale, route.path);
     if (next !== content) {
       await writeFile(route.outputPath, next, 'utf8');
-      updated += 1;
+      return true;
     }
-  }
-  if (updated > 0) {
-    console.log(`✓ Normalized chrome on ${updated} generated pages`);
-  }
+    return false;
+  });
+  if (result.changed > 0) console.log(`✓ Normalized chrome on ${result.changed} generated pages`);
 }
 
 // 3. Write final sitemap index and locale shards
@@ -2303,6 +2657,10 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     totalHtmlSize += Buffer.byteLength(content, 'utf8');
     const relativePath = '/' + filePath.replace(siteRoot, '').replace(/index\.html$/, '').replace(/^\//, '');
 
+    if (content.trim().length <= 100 || !/<html\b/i.test(content) || !/<\/html>/i.test(content)) {
+      throw new Error(`FATAL: Empty or malformed HTML output detected in route ${relativePath}`);
+    }
+
     // 1. Placeholder Content Guard — Node-owned pages only (Constraint 6)
     // Java-owned tool documentation sections are editorially managed separately
     const isNodeOwned = relativePath.startsWith('/en/countries') ||
@@ -2382,6 +2740,9 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
         }
 
         const allowedScripts = new Set(expectedScripts);
+        if (GOLD_LAB_ROUTE_OVERRIDE_PATTERNS.some((pattern) => pattern.test(content))) {
+          allowedScripts.add('gold-tools-lab.js');
+        }
         const otherScriptRegex = /<script[^>]*src="\/assets\/js\/tools\/([^"?]+)(?:\?[^"]*)?"[^>]*>/gi;
         let otherMatch;
         while ((otherMatch = otherScriptRegex.exec(content)) !== null) {
@@ -2484,7 +2845,15 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
         continue;
       }
 
-      const linkPath = href.split('#')[0];
+      const linkPath = href.split('#')[0].split('?')[0];
+      if (/^\/[^?#]+\.[a-z0-9]+$/i.test(linkPath)) {
+        const generatedFilePath = resolve(siteRoot, linkPath.replace(/^\//, ''));
+        if (!(await pathExists(generatedFilePath))) {
+          throw new Error(`FATAL: Broken generated file path "${href}" referenced in route ${relativePath}`);
+        }
+        linksValidated++;
+        continue;
+      }
       if (!routeRegistry.has(linkPath)) {
         throw new Error(`FATAL: Broken internal route link "${href}" found in page ${relativePath}`);
       }
@@ -2537,7 +2906,11 @@ async function main() {
     // 3. Publish/Materialize Static Site via Maven
     console.log('\n[Step 3/5] Executing Maven Site Publisher...');
     const engineDir = '/Users/maxtkachenko/work/valido-engine';
-    await runBuildPhase('Run Java publisher', () => runCommand('mvn -pl valido-cli exec:java -Dexec.mainClass="com.validoengine.cli.EngineMain" -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"', engineDir));
+    if (buildCliOptions.skipJavaPublisher) {
+      console.warn('[build] Skipping Java publisher (--skip-java-publisher). Reusing existing generated Java-owned routes.');
+    } else {
+      await runBuildPhase('Run Java publisher', () => runCommand('mvn -pl valido-cli exec:java -Dexec.mainClass="com.validoengine.cli.EngineMain" -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"', engineDir));
+    }
 
     // 4. Pass 1: Build Registry & Assert Ownership Integrity
     console.log('\n[Step 4/5] Loading Canonical Route Registry...');
@@ -2554,6 +2927,7 @@ async function main() {
     await runBuildPhase('Compile tools portal', () => compileToolsPortal(routeRegistry, assetsManifest));
     await runBuildPhase('Compile countries portal', () => compileCountriesPortal(routeRegistry, assetsManifest));
     await runBuildPhase('Compile identifiers', () => compileIdentifiers(routeRegistry, assetsManifest));
+    await runBuildPhase('Compile reference guides', () => compileReferenceGuides(routeRegistry, assetsManifest));
     await runBuildPhase('Ensure localized route fallbacks', () => ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest));
     await runBuildPhase('Post-process Java pages', () => postProcessJavaPages(routeRegistry, assetsManifest));
     await runBuildPhase('Apply final localization pass', () => applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales));
