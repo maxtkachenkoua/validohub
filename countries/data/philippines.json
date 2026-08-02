@@ -1,9 +1,9 @@
 {
   "id": "philippines",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/philippines-outline.png",
+    "outlineSrc": "/assets/images/countries/philippines-outline.jpg",
     "outlineAlt": "Philippines country outline",
-    "mapSrc": "/assets/images/countries/philippines-location.png",
+    "mapSrc": "/assets/images/countries/philippines-location.jpg",
     "mapAlt": "World map with Philippines location marker",
     "mapMarker": {
       "x": 72,

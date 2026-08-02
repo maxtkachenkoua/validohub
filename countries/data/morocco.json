@@ -1,9 +1,9 @@
 {
   "id": "morocco",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/morocco-outline.png",
+    "outlineSrc": "/assets/images/countries/morocco-outline.jpg",
     "outlineAlt": "Morocco country outline",
-    "mapSrc": "/assets/images/countries/morocco-location.png",
+    "mapSrc": "/assets/images/countries/morocco-location.jpg",
     "mapAlt": "World map with Morocco location marker",
     "mapMarker": {
       "x": 45,

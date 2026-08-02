@@ -1,9 +1,9 @@
 {
   "id": "cameroon",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cameroon-outline.png",
+    "outlineSrc": "/assets/images/countries/cameroon-outline.jpg",
     "outlineAlt": "Cameroon country outline",
-    "mapSrc": "/assets/images/countries/cameroon-location.png",
+    "mapSrc": "/assets/images/countries/cameroon-location.jpg",
     "mapAlt": "World map with Cameroon location marker",
     "mapMarker": {
       "x": 45,

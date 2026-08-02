@@ -1,9 +1,9 @@
 {
   "id": "greece",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/greece-outline.png",
+    "outlineSrc": "/assets/images/countries/greece-outline.jpg",
     "outlineAlt": "Greece country outline",
-    "mapSrc": "/assets/images/countries/greece-location.png",
+    "mapSrc": "/assets/images/countries/greece-location.jpg",
     "mapAlt": "World map with Greece location marker",
     "mapMarker": {
       "x": 56,

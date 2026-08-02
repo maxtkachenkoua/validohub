@@ -1,9 +1,9 @@
 {
   "id": "united-arab-emirates",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/united-arab-emirates-outline.png",
+    "outlineSrc": "/assets/images/countries/united-arab-emirates-outline.jpg",
     "outlineAlt": "United Arab Emirates country outline",
-    "mapSrc": "/assets/images/countries/united-arab-emirates-location.png",
+    "mapSrc": "/assets/images/countries/united-arab-emirates-location.jpg",
     "mapAlt": "World map with United Arab Emirates location marker",
     "mapMarker": {
       "x": 60,

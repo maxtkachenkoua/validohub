@@ -1,3 +1,78 @@
+## 2026-08-02 - Google Analytics Launch Tag
+
+- Added `config/google-analytics-measurement-id.txt`, `scripts/apply-google-analytics.mjs`, and npm scripts `analytics:apply` / `analytics:dry-run`.
+- `scripts/build-all.mjs` now applies the GA4 tag after sitemap writing and IndexNow key materialization, before generated output validation, so future release builds include Analytics automatically.
+- Applied GA4 Measurement ID `G-QH4SZME9KW` to the current generated site without a full rebuild. Dry-run verified 86,632 HTML files would be updated, the apply pass updated 86,632, and a second dry-run showed 0 changes, confirming the marker is idempotent.
+- Verification passed: `node --check scripts/apply-google-analytics.mjs`, `node --check scripts/build-all.mjs`, `npm run audit:seo`, and `npm run audit:performance`.
+- Packaged `generated/releases/validohub-20260802-173659.tar.gz`, 98,419,432 bytes, sha256 `94e7b628ce3c670cba0969a06a52043644d098378f5ef150f29fc86bbbc52cc9`.
+- Deployed release `20260802-173659` to the VPS. Current symlink points to `/srv/validohub/releases/20260802-173659`; previous rollback target is `/srv/validohub/releases/20260802-171627`.
+- Live verification confirmed `https://validohub.com/en/` contains the `googletagmanager.com/gtag/js?id=G-QH4SZME9KW` script and `gtag('config', 'G-QH4SZME9KW')`.
+
+## 2026-08-02 - IndexNow Submission Pipeline
+
+- Added `config/indexnow-key.txt`, `scripts/indexnow.mjs`, and npm scripts `indexnow:prepare`, `indexnow:dry-run`, and `indexnow:submit`.
+- `scripts/build-all.mjs` now materializes the IndexNow key into the generated site root as `<key>.txt` after sitemap writing, so future release archives include the verification file automatically.
+- Hardened VPS deploy upload by adding an rsync network timeout while keeping macOS-compatible `--progress` output; an attempted `--info=progress2` was rejected by macOS rsync and replaced.
+- Packaged current generated output without a full rebuild: `generated/releases/validohub-20260802-171627.tar.gz`, 97,859,984 bytes, sha256 `2a8bdb73006f941688495cbd589a228c85c8433dece341aea321d479618ad47c`.
+- Deployed release `20260802-171627` to VPS. Current symlink points to `/srv/validohub/releases/20260802-171627`; previous rollback target is `/srv/validohub/releases/20260802-164620`.
+- Verified `https://validohub.com/67952aa5-e375-4253-9942-7d7ae0c560f2.txt` returns the IndexNow key and `https://validohub.com/sitemap.xml` returns `200`.
+- Submitted the English indexable sitemap to IndexNow: dry-run found 12,376 URLs in 2 batches; first full attempt returned `403 SiteVerificationNotCompleted` until `keyLocation` was added to the payload; final full submit returned `HTTP 200` for both batches and completed 12,376 URL submissions.
+
+## 2026-08-02 - Fresh Node Pipeline Release After Image Optimization
+
+- Added localization-pass hardening for release builds: localization cache keys now ignore volatile bundle/CSS hashes and alternate tags, and slow localization batches print the slowest routes. This turned the previously opaque slow area into named country hub routes such as `/de/brazil/`, `/pt-BR/india/`, and `/pl/france/`.
+- Ran fresh `npm run build:release:node -- --archive --progress-seconds 30` after country image optimization. Build integrity passed with `Build Duration: 1281484 ms` (about 21m21s); `Apply final localization pass` was the long phase at 17m02s and rewrote 32,198 pages. The archive was created in 39s.
+- Created `generated/releases/validohub-20260802-164620.tar.gz`, 97,860,193 bytes, sha256 `7fc3cc9883c064a52a6d34df8b0640ca6fbc1667aa21a22def8a294e5e126bd9`.
+- Verification passed: `node --check scripts/localization-pass.mjs`, `node --check scripts/build-all.mjs`, `node --check scripts/optimize-country-images.mjs`, `npm run audit:performance`, `npm run audit:seo`, `npm run audit:generated-premium`, PNG-reference grep, generated JPEG/PNG counts, and representative country image size checks.
+- Deployed release `20260802-164620` to VPS. Current symlink points to `/srv/validohub/releases/20260802-164620`; previous rollback target is `/srv/validohub/releases/20260802-160123`. Live smoke passed for `/`, `/en/`, `/en/tools/`, bundle `/assets/js/bundle.a63ecc.js`, Ukrainian-before-Polish selector order, Egypt JPEG sizes, and old Egypt PNG `404`.
+
+## 2026-08-02 - Language Switcher Route Fallback Fix
+
+- Fixed the live language switcher after SEO launch mode. Because hreflang alternates are now intentionally limited to indexable locales (`en` plus `x-default`), the browser language selector could no longer find non-English alternate links and appeared to do nothing.
+- Updated `assets/js/bundle.js` so locale navigation first uses a matching alternate URL when present, then falls back to constructing the same route under the requested supported locale prefix.
+- Built and deployed node-only release `20260802-025658`: `npm run build:release:node -- --archive --progress-seconds 30` passed with `Build Duration: 203358 ms` (about 3m23s), archive `generated/releases/validohub-20260802-025658.tar.gz`, 946,880,312 bytes, sha256 `6795b673f6831458fac537cbb8d46b989e88e4850ed49aab121fcda94d0ea91b`.
+- Deployed `20260802-025658` to the VPS. Current symlink: `/srv/validohub/current -> /srv/validohub/releases/20260802-025658`; previous rollback target: `/srv/validohub/releases/20260802-023203`.
+- Verification: `node --check assets/js/bundle.js`, `npm run audit:seo`, `npm run audit:performance`, and `npm run audit:generated-premium` passed. Headless browser smoke checks confirmed `https://validohub.com/en/` language select `de` navigates to `https://validohub.com/de/`, then `uk` navigates to `https://validohub.com/uk/`; `https://validohub.com/en/tools/` language select `fr` navigates to `https://validohub.com/fr/tools/`.
+
+## 2026-08-02 - Final Release Archive Deploy And Load Test
+
+- Added `scripts/load-test-static-site.mjs` and `npm run loadtest:vps` for controlled static-site load checks against the VPS/IP preview.
+- Fixed the full build validation gap where localized pages could keep stale `/assets/css/bundle.*.css` and `/assets/js/bundle.*.js` references after `applyFinalLocalizationPass`. `scripts/build-all.mjs` now runs `Normalize generated bundle asset links` after generated chrome normalization and before repair/minification/validation; the successful release run updated 75,068 generated pages to the current bundle hashes.
+- Final `npm run build:release:archive -- --progress-seconds 30` passed with `Build Duration: 233250 ms` (about 3m53s). Current bundles: `/assets/css/bundle.d9cd69.css`, `/assets/js/bundle.02d7da.js`. Minification processed 235 JS/CSS files in 3s and saved 9,641,321 bytes (26.31%).
+- Created deploy archive `generated/releases/validohub-20260802-021127.tar.gz`, 951,057,481 bytes (`913M` by `du`), sha256 `7bed77aed7bb8f47a475dd0c6ce43a297008213d49ed4816a58fc40af093cd1d`; local checksum verification passed.
+- Deployed release `20260802-021127` to the VPS. Current symlink is `/srv/validohub/current -> /srv/validohub/releases/20260802-021127`; previous release is `/srv/validohub/releases/20260802-011524`. Caddy is active, `/`, `/en/`, `/en/tools/`, Brazil CPF, Mexico CURP, and Spain ID smoke checks returned `200`.
+- Ran controlled load test against `http://137.74.173.107`: 100 GET requests/second for 60 seconds, 6,000 attempted/completed, 6,000 HTTP 200, 0 failures/errors, 99.9 req/s observed, latency p50 78.3ms, p95 207.6ms, p99 238.5ms, max 330.3ms.
+- Post-load VPS status stayed healthy: `/dev/sda1` 96G total, 9.7G used, 87G available, `/srv/validohub` 6.8G, Caddy active.
+
+## 2026-08-02 - Generated Asset Minification Before Archive
+
+- Added `scripts/minify-generated-assets.mjs` and `npm run minify:generated-assets` to minify generated `.js` and `.css` files with `esbuild`.
+- Wired `scripts/build-all.mjs` to run `Minify generated CSS/JS assets` after premium-shell repair and before search-index compaction, sitemap writing, validation, and optional archive packaging. Deploy archives created by `npm run build:release:archive` now contain already-minified JS/CSS.
+- Updated hashed bundle compilation so the primary `/assets/css/bundle.*.css` and `/assets/js/bundle.*.js` filenames are based on minified content.
+- Verification without full build: `npm install`, `node --check scripts/minify-generated-assets.mjs`, `node --check scripts/build-all.mjs`, `npm run minify:generated-assets`, `find generated/validohub/assets -type f -name '*.js' -exec node --check {} \;`, `npm run package:site -- --dry-run`, `npm run audit:performance`, and `npm run audit:generated-premium` passed. Current generated asset sizes after the local minify pass: JS about `25M`, CSS about `1.5M`.
+
+## 2026-08-02 - Full Build Timing And Deploy Archive Smoke
+
+- Optimized the Valido Engine HTML exporter and wired ValidoHub full builds to prepare the current engine classpath before publish. Full `npm run build:release -- --progress-seconds 30` now passes in 230,584 ms (about 3m51s), down from 448,524 ms (about 7m29s). `Run Java publisher` dropped from about 4m02s to 15s.
+- Re-ran the Node-only release gate after the premium-shell repair fast path: `npm run build:release:node -- --progress-seconds 30` passed in 169,754 ms (about 2m50s) for 86,632 registered routes. On the already-clean generated tree, `Repair premium tool shells` scanned 86,632 HTML pages in 5s with 0 rewrites.
+- Created a fresh deploy archive from the 3m51s full build with `npm run package:site`: `generated/releases/validohub-20260802-011524.tar.gz`, 955,743,196 bytes, created in 79s, sha256 `ee518717ebb1ef836413f1493cf2806f7f37a55d2b138af0ca1c2a6552935f8c`.
+- Deployed `20260802-011524` to the OVH VPS for IP-only preview. Caddy now serves `/srv/validohub/current` on `:80`; `http://137.74.173.107/` redirects to `/en/`, and `/en/`, `/en/tools/`, and the hashed CSS bundle return `200 OK`.
+- Updated `scripts/package-generated-site.mjs` to set `COPYFILE_DISABLE=1` for tar/zip subprocesses so future macOS-created deploy archives do not emit GNU tar extended-attribute warnings on Ubuntu.
+- Added `scripts/deploy-vps-site.mjs` plus `npm run deploy:vps`, `npm run rollback:vps`, `npm run status:vps`, and `npm run list:vps-releases`. The deploy helper uploads immutable release archives, verifies checksums on the VPS, checks release files before switch, atomically changes `/srv/validohub/current`, reloads Caddy, runs public smoke checks, and auto-rolls back to the previous symlink target if public smoke fails.
+- Verification: `mvn -pl valido-exporter-html -am test`, `mvn -pl valido-cli -am test`, `mvn -pl valido-cli -am -DskipTests install`, direct Engine `publish --site /Users/maxtkachenko/work/validohub/site.yaml`, full `npm run build:release -- --progress-seconds 30`, `npm run audit:generated-premium`, `npm run audit:performance`, `npm run audit:seo`, `shasum -a 256 -c validohub-20260802-011524.tar.gz.sha256`, `node --check scripts/deploy-vps-site.mjs`, `npm run status:vps`, `npm run list:vps-releases`, and `npm run rollback:vps -- --release-id 20260802-011524` passed.
+
+## 2026-08-01 - Generated Premium Shell Repair Pipeline Hook
+
+- Integrated `scripts/repair-generic-country-tools-premium.mjs` into `scripts/build-all.mjs` as the `Repair premium tool shells` phase after localization, chrome normalization, country related-link pruning, and workbench script normalization.
+- Reworked the repair script from a silent full-array walk into a streaming generated-HTML scan with progress output every 5,000 files by default via `VALIDOHUB_REPAIR_PROGRESS_ITEMS`.
+- Optimized the repair script with a concurrency-limited scanner (`VALIDOHUB_REPAIR_CONCURRENCY`, default 48) and fast paths for already-clean global, bespoke, legacy-rich, country-utility, and `csf-static-host` pages. The standalone repair benchmark on the verified generated tree dropped from the previous multi-minute scan to about 5.2 seconds with 86,632 HTML pages scanned and 0 rewrites.
+- Added child-process progress snapshots to `scripts/build-all.mjs`: long silent child commands now print child `pid/etime/cpu/mem/state`, and Maven/Engine publish also prints generated output size. Use `--no-progress-snapshot` or `VALIDOHUB_BUILD_PROGRESS_SNAPSHOT=0` to disable the extra heartbeat.
+- Extended the repair pass to remove stale global `/tools/*` workbench headings and fake API preview blocks in addition to the existing country-tool cleanup for intermediate `vh-generic-country-*` shells, legacy-rich country pages, bespoke Spain ID, and factory suite fallback hosts.
+- Added Brazil CPF/CNPJ bespoke tax-id cleanup and a country-utility cleanup path so legacy-rich country pages only keep `country-legacy-rich-layer.js` when their algorithm is the actual `validohub.<country>-suite`; Brazil IBAN/Pix utility pages no longer get duplicate country suite scripts.
+- Added `scripts/package-generated-site.mjs`, `npm run package:site`, and `npm run build:release:archive` so a verified generated site can be packaged into `generated/releases/validohub-<release-id>.tar.gz` plus a `.sha256` checksum. `tar.gz` is the default for Ubuntu compatibility, with `--format tar.zst` and `--format zip` available.
+- Full `npm run build:release -- --progress-seconds 30` now passes. Final repair stats inside the passing build: 86,632 HTML pages scanned, 734 global tool pages cleaned, 1,365 legacy-rich pages cleaned, 21 bespoke pages cleaned, 392 country utility pages cleaned, and 82,250 pages already premium.
+- Verification: `node --check scripts/repair-generic-country-tools-premium.mjs`, `node --check scripts/package-generated-site.mjs`, `node --check scripts/build-all.mjs`, `node scripts/repair-generic-country-tools-premium.mjs`, `npm run package:site -- --dry-run`, full `npm run build:release -- --progress-seconds 30` passed after the fast-path repair optimization in 448,524 ms, `npm run audit:generated-premium` passed across 86,632 pages, `npm run audit:performance` passed, and `npm run audit:seo` passed with known Open Graph/Twitter warnings.
+
 ## 2026-07-31 - Country/Global Legacy Tool Layout Kill Sweep
 
 - Removed the intermediate `vh-generic-country-*` generated repair shell from the allowed premium contract. `scripts/audit-generated-premium-contract.mjs` now fails generated pages that contain old/intermediate tool shell markers, fake API preview copy, `Run the tool`, or stale Engine footer text.
@@ -1324,3 +1399,34 @@ Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Back
 - Generated scope is intentionally value-driven: `/guides/` plus 45 high-signal guide pages across global developer tools, identifiers, tax IDs, banking, payments, privacy/security, and fixture workflows.
 - Added compact guide styling in `assets/css/validohub.css`, guide phrase coverage in `scripts/localization-pass.mjs`, localized route generation through the final localization pass, and scoped sitemap refresh for all configured production locales.
 - Product constraint: guides support live workbenches and SEO. They must not replace tool-first pages or become a thin article page for every generated country route.
+
+## 2026-08-02 SEO Launch Indexability Mode
+
+- Added release-pipeline SEO indexability control through `VALIDOHUB_SEO_LOCALES`, defaulting to `en`.
+- Kept non-English locale routes accessible for users while adding `noindex, follow` robots meta to non-indexable locale pages.
+- Restricted generated sitemap shards and hreflang alternates to indexable locales plus `x-default`, so the launch sitemap now exposes only English URLs until localization quality is ready.
+- Updated `scripts/audit-seo-production.mjs` so the SEO gate verifies English pages remain indexable, non-English pages remain noindex, and sitemap URLs do not include non-indexable locales.
+- Ran `npm run build:release:node -- --archive --progress-seconds 30`; build integrity passed for `86,632` routes, sitemap wrote `12,376` English indexable routes, and archive `generated/releases/validohub-20260802-023203.tar.gz` was created.
+- Deployed release `20260802-023203` to the VPS IP. Current symlink points to `/srv/validohub/releases/20260802-023203`; rollback target is `/srv/validohub/releases/20260802-021127`.
+- Connected GoDaddy DNS to the VPS: `validohub.com A 137.74.173.107` and `www CNAME validohub.com`.
+- Switched Caddy from IP-only preview to live domain hosting. `https://validohub.com/en/` returns `200`, `http://validohub.com/` redirects to HTTPS, `https://www.validohub.com/en/` redirects to `https://validohub.com/en/`, and `http://137.74.173.107/en/` remains available as an IP preview.
+
+## 2026-08-02 Production Localization Hardening Release
+
+- Added the project rule that any new user-visible UI, navigation, generated runtime copy, SEO text, and structured data must be localized by default for `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`.
+- Fixed broken localization artifacts such as `Gültigate`, `Valideeeate`, English mega-menu labels, untranslated country names, `Company Suffix`, generic `Validation, generation, parsing...` SEO text, JSON-LD role words, `Home` aria/breadcrumb labels, and hybrid French `National Identifiants`.
+- `assets/js/bundle.js` now localizes runtime mega navigation labels and country names instead of relying on English data after page load.
+- `scripts/localization-pass.mjs` now applies safer literal replacements, localized country/tool title cleanup, category shell replacements, structured-data/meta description replacements, and final artifact repairs.
+- `scripts/audit-localization-production.mjs` now hard-blocks the newly found production artifacts, including generic SEO descriptions and national-identifier category shell leftovers.
+- Added `scripts/normalize-generated-seo-indexability.mjs` for standalone post-localization repair of `noindex, follow` robots meta and indexable-only hreflang links when a full build is not rerun.
+- Verification passed after repair/repack: `npm run audit:seo`, `npm run audit:performance`, `npm run audit:generated-premium`, targeted `npm run audit:localization -- --fail-on-soft`, broad generated greps for stale localization markers, and Playwright language-select smoke.
+- Deployed final release `20260802-154058` to VPS. Current symlink points to `/srv/validohub/releases/20260802-154058`. Archive: `generated/releases/validohub-20260802-154058.tar.gz`, `950,081,901` bytes, sha256 `22546de03a57628536a4d988e2f7eec5133fdf51764f91a4bc385bb86739cee0`.
+
+## 2026-08-02 Country Image Optimization Release
+
+- Added `scripts/optimize-country-images.mjs` and `npm run optimize:country-images` to convert country `*-outline` and `*-location` PNGs into 720px JPEGs and prune generated PNG copies.
+- Wired the optimizer into `scripts/build-all.mjs` before generated JS/CSS minification, so future release builds do not repackage the duplicated 860M country PNG set.
+- Rewrote country visual references from `.png` to `.jpg` in source country data, generated scripts, generated HTML/JS/SVG, and refreshed the main runtime bundle hash to `/assets/js/bundle.f941ff.js`.
+- Moved Ukrainian before Polish in the language selector and production locale ordering.
+- Verification passed: `npm run audit:performance`, `npm run audit:seo`, `npm run audit:generated-premium`, generated PNG-reference greps, `node --check` on changed JS/MJS, and live HTTPS checks for bundle order/image content sizes.
+- Deployed release `20260802-160123` to VPS. Current symlink points to `/srv/validohub/releases/20260802-160123`. Archive: `generated/releases/validohub-20260802-160123.tar.gz`, `97,763,266` bytes, sha256 `44078cbc90a0440e184567ce10242d3094ed518339bc1514407aeb96850d1708`.

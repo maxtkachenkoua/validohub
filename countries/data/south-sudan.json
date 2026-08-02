@@ -1,9 +1,9 @@
 {
   "id": "south-sudan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/south-sudan-outline.png",
+    "outlineSrc": "/assets/images/countries/south-sudan-outline.jpg",
     "outlineAlt": "South Sudan country outline",
-    "mapSrc": "/assets/images/countries/south-sudan-location.png",
+    "mapSrc": "/assets/images/countries/south-sudan-location.jpg",
     "mapAlt": "World map with South Sudan location marker",
     "mapMarker": {
       "x": 45,

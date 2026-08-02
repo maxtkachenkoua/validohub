@@ -1,9 +1,9 @@
 {
   "id": "dominica",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/dominica-outline.png",
+    "outlineSrc": "/assets/images/countries/dominica-outline.jpg",
     "outlineAlt": "Dominica country outline",
-    "mapSrc": "/assets/images/countries/dominica-location.png",
+    "mapSrc": "/assets/images/countries/dominica-location.jpg",
     "mapAlt": "Dominica location map",
     "mapMarker": {
       "x": 34,

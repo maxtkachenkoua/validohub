@@ -1,9 +1,9 @@
 {
   "id": "palestine",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/palestine-outline.png",
+    "outlineSrc": "/assets/images/countries/palestine-outline.jpg",
     "outlineAlt": "Palestine country outline",
-    "mapSrc": "/assets/images/countries/palestine-location.png",
+    "mapSrc": "/assets/images/countries/palestine-location.jpg",
     "mapAlt": "World map with Palestine location marker",
     "mapMarker": {
       "x": 55,

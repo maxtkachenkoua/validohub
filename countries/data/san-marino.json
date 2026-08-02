@@ -1,9 +1,9 @@
 {
   "id": "san-marino",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/san-marino-outline.png",
+    "outlineSrc": "/assets/images/countries/san-marino-outline.jpg",
     "outlineAlt": "San Marino country outline",
-    "mapSrc": "/assets/images/countries/san-marino-location.png",
+    "mapSrc": "/assets/images/countries/san-marino-location.jpg",
     "mapAlt": "World map with San Marino location marker",
     "mapMarker": {
       "x": 51,

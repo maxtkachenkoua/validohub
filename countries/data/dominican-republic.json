@@ -1,9 +1,9 @@
 {
   "id": "dominican-republic",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/dominican-republic-outline.png",
+    "outlineSrc": "/assets/images/countries/dominican-republic-outline.jpg",
     "outlineAlt": "Dominican Republic country outline",
-    "mapSrc": "/assets/images/countries/dominican-republic-location.png",
+    "mapSrc": "/assets/images/countries/dominican-republic-location.jpg",
     "mapAlt": "Dominican Republic location map",
     "mapMarker": {
       "x": 34,

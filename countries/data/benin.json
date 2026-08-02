@@ -1,9 +1,9 @@
 {
   "id": "benin",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/benin-outline.png",
+    "outlineSrc": "/assets/images/countries/benin-outline.jpg",
     "outlineAlt": "Benin country outline",
-    "mapSrc": "/assets/images/countries/benin-location.png",
+    "mapSrc": "/assets/images/countries/benin-location.jpg",
     "mapAlt": "World map with Benin location marker",
     "mapMarker": {
       "x": 45,

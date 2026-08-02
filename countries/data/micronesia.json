@@ -1,9 +1,9 @@
 {
   "id": "micronesia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/micronesia-outline.png",
+    "outlineSrc": "/assets/images/countries/micronesia-outline.jpg",
     "outlineAlt": "Micronesia country outline",
-    "mapSrc": "/assets/images/countries/micronesia-location.png",
+    "mapSrc": "/assets/images/countries/micronesia-location.jpg",
     "mapAlt": "World map with Micronesia location marker",
     "mapMarker": {
       "x": 88,

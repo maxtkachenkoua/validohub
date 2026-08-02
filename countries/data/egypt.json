@@ -1,9 +1,9 @@
 {
   "id": "egypt",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/egypt-outline.png",
+    "outlineSrc": "/assets/images/countries/egypt-outline.jpg",
     "outlineAlt": "Egypt country outline",
-    "mapSrc": "/assets/images/countries/egypt-location.png",
+    "mapSrc": "/assets/images/countries/egypt-location.jpg",
     "mapAlt": "World map with Egypt location marker",
     "mapMarker": {
       "x": 45,

@@ -1,9 +1,9 @@
 {
   "id": "jamaica",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/jamaica-outline.png",
+    "outlineSrc": "/assets/images/countries/jamaica-outline.jpg",
     "outlineAlt": "Jamaica country outline",
-    "mapSrc": "/assets/images/countries/jamaica-location.png",
+    "mapSrc": "/assets/images/countries/jamaica-location.jpg",
     "mapAlt": "Jamaica location map",
     "mapMarker": {
       "x": 34,

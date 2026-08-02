@@ -1,9 +1,9 @@
 {
   "id": "tajikistan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/tajikistan-outline.png",
+    "outlineSrc": "/assets/images/countries/tajikistan-outline.jpg",
     "outlineAlt": "Tajikistan country outline",
-    "mapSrc": "/assets/images/countries/tajikistan-location.png",
+    "mapSrc": "/assets/images/countries/tajikistan-location.jpg",
     "mapAlt": "World map with Tajikistan location marker",
     "mapMarker": {
       "x": 61,

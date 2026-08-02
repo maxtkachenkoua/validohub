@@ -1,9 +1,9 @@
 {
   "id": "fiji",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/fiji-outline.png",
+    "outlineSrc": "/assets/images/countries/fiji-outline.jpg",
     "outlineAlt": "Fiji country outline",
-    "mapSrc": "/assets/images/countries/fiji-location.png",
+    "mapSrc": "/assets/images/countries/fiji-location.jpg",
     "mapAlt": "World map with Fiji location marker",
     "mapMarker": {
       "x": 84,

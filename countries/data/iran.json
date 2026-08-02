@@ -1,9 +1,9 @@
 {
   "id": "iran",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/iran-outline.png",
+    "outlineSrc": "/assets/images/countries/iran-outline.jpg",
     "outlineAlt": "Iran country outline",
-    "mapSrc": "/assets/images/countries/iran-location.png",
+    "mapSrc": "/assets/images/countries/iran-location.jpg",
     "mapAlt": "World map with Iran location marker",
     "mapMarker": {
       "x": 57,

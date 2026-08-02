@@ -1,9 +1,9 @@
 {
   "id": "ukraine",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/ukraine-outline.png",
+    "outlineSrc": "/assets/images/countries/ukraine-outline.jpg",
     "outlineAlt": "Ukraine country outline",
-    "mapSrc": "/assets/images/countries/ukraine-location.png",
+    "mapSrc": "/assets/images/countries/ukraine-location.jpg",
     "mapAlt": "World map with Ukraine location marker",
     "mapMarker": {
       "x": 58,

@@ -1,9 +1,9 @@
 {
   "id": "thailand",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/thailand-outline.png",
+    "outlineSrc": "/assets/images/countries/thailand-outline.jpg",
     "outlineAlt": "Thailand country outline",
-    "mapSrc": "/assets/images/countries/thailand-location.png",
+    "mapSrc": "/assets/images/countries/thailand-location.jpg",
     "mapAlt": "World map with Thailand location marker",
     "mapMarker": {
       "x": 67,

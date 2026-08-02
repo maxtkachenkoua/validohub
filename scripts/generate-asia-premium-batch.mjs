@@ -1036,9 +1036,9 @@ function countryData(country, tools) {
   return {
     id: country.slug,
     visualAssets: {
-      outlineSrc: `/assets/images/countries/${country.slug}-outline.png`,
+      outlineSrc: `/assets/images/countries/${country.slug}-outline.jpg`,
       outlineAlt: `${country.name} country outline`,
-      mapSrc: `/assets/images/countries/${country.slug}-location.png`,
+      mapSrc: `/assets/images/countries/${country.slug}-location.jpg`,
       mapAlt: `World map with ${country.name} location marker`,
       mapMarker: { ...country.marker, label: country.name },
       source: 'Premium raster country visual generated once for ValidoHub country navigation'

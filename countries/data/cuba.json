@@ -1,9 +1,9 @@
 {
   "id": "cuba",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cuba-outline.png",
+    "outlineSrc": "/assets/images/countries/cuba-outline.jpg",
     "outlineAlt": "Cuba country outline",
-    "mapSrc": "/assets/images/countries/cuba-location.png",
+    "mapSrc": "/assets/images/countries/cuba-location.jpg",
     "mapAlt": "Cuba location map",
     "mapMarker": {
       "x": 34,

@@ -1,9 +1,9 @@
 {
   "id": "lesotho",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/lesotho-outline.png",
+    "outlineSrc": "/assets/images/countries/lesotho-outline.jpg",
     "outlineAlt": "Lesotho country outline",
-    "mapSrc": "/assets/images/countries/lesotho-location.png",
+    "mapSrc": "/assets/images/countries/lesotho-location.jpg",
     "mapAlt": "World map with Lesotho location marker",
     "mapMarker": {
       "x": 45,

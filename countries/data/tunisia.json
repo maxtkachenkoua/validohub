@@ -1,9 +1,9 @@
 {
   "id": "tunisia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/tunisia-outline.png",
+    "outlineSrc": "/assets/images/countries/tunisia-outline.jpg",
     "outlineAlt": "Tunisia country outline",
-    "mapSrc": "/assets/images/countries/tunisia-location.png",
+    "mapSrc": "/assets/images/countries/tunisia-location.jpg",
     "mapAlt": "World map with Tunisia location marker",
     "mapMarker": {
       "x": 45,

@@ -1,9 +1,9 @@
 {
   "id": "oman",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/oman-outline.png",
+    "outlineSrc": "/assets/images/countries/oman-outline.jpg",
     "outlineAlt": "Oman country outline",
-    "mapSrc": "/assets/images/countries/oman-location.png",
+    "mapSrc": "/assets/images/countries/oman-location.jpg",
     "mapAlt": "World map with Oman location marker",
     "mapMarker": {
       "x": 59,

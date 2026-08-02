@@ -3,11 +3,15 @@ import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile, writeFile, readdir, rm, access, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { transform as esbuildTransform } from 'esbuild';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from './build-countries-portal.mjs';
 import { compileIdentifiers } from './build-identifiers.mjs';
 import { compileReferenceGuides } from './build-reference-guides.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
+import { updateBundleAssetLinks } from './dev-asset-links.mjs';
+import { materializeIndexNowKey } from './indexnow.mjs';
+import { applyGoogleAnalyticsToGeneratedSite } from './apply-google-analytics.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
@@ -17,12 +21,20 @@ const locale = 'en';
 function parseBuildCliOptions(argv) {
   const timeoutOption = argv.indexOf('--timeout-minutes');
   const progressOption = argv.indexOf('--progress-seconds');
+  const archiveFormatOption = argv.indexOf('--archive-format');
+  const archiveDirOption = argv.indexOf('--archive-dir');
+  const archiveReleaseIdOption = argv.indexOf('--archive-release-id');
   const timeoutMinutes = timeoutOption >= 0 ? Number(argv[timeoutOption + 1]) : Number(process.env.VALIDOHUB_FULL_BUILD_TIMEOUT_MINUTES || 180);
   const progressSeconds = progressOption >= 0 ? Number(argv[progressOption + 1]) : Number(process.env.VALIDOHUB_BUILD_PROGRESS_SECONDS || 60);
   return {
     timeoutMs: argv.includes('--no-timeout') ? 0 : Math.max(0, Number.isFinite(timeoutMinutes) ? timeoutMinutes : 180) * 60 * 1000,
     progressMs: Math.max(10, Number.isFinite(progressSeconds) ? progressSeconds : 60) * 1000,
-    skipJavaPublisher: argv.includes('--skip-java-publisher') || process.env.VALIDOHUB_SKIP_JAVA_PUBLISHER === '1'
+    progressSnapshots: !argv.includes('--no-progress-snapshot') && process.env.VALIDOHUB_BUILD_PROGRESS_SNAPSHOT !== '0',
+    skipJavaPublisher: argv.includes('--skip-java-publisher') || process.env.VALIDOHUB_SKIP_JAVA_PUBLISHER === '1',
+    archive: argv.includes('--archive') || process.env.VALIDOHUB_BUILD_ARCHIVE === '1',
+    archiveFormat: archiveFormatOption >= 0 ? argv[archiveFormatOption + 1] : (process.env.VALIDOHUB_ARCHIVE_FORMAT || 'tar.gz'),
+    archiveDir: archiveDirOption >= 0 ? argv[archiveDirOption + 1] : process.env.VALIDOHUB_ARCHIVE_DIR,
+    archiveReleaseId: archiveReleaseIdOption >= 0 ? argv[archiveReleaseIdOption + 1] : process.env.VALIDOHUB_ARCHIVE_RELEASE_ID,
   };
 }
 
@@ -34,6 +46,44 @@ function formatDuration(ms) {
   const seconds = totalSeconds % 60;
   if (minutes === 0) return `${seconds}s`;
   return `${minutes}m ${seconds}s`;
+}
+
+function shellArg(value) {
+  return `'${String(value).replace(/'/g, `'\\''`)}'`;
+}
+
+function collectProcessOutput(command, args, options = {}) {
+  return new Promise((resolvePromise) => {
+    const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'], ...options });
+    let stdout = '';
+    let stderr = '';
+    let settled = false;
+    const finish = (value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolvePromise(value);
+    };
+    const timer = setTimeout(() => {
+      child.kill('SIGKILL');
+      finish('');
+    }, options.timeoutMs || 5000);
+    child.stdout.on('data', chunk => { stdout += chunk; });
+    child.stderr.on('data', chunk => { stderr += chunk; });
+    child.on('error', () => finish(''));
+    child.on('close', () => finish((stdout || stderr).trim()));
+  });
+}
+
+async function collectBuildProgressSnapshot(child, command) {
+  const psOutput = await collectProcessOutput('ps', ['-p', String(child.pid), '-o', 'pid=,etime=,%cpu=,%mem=,state=']);
+  const parts = [];
+  if (psOutput) parts.push(`child pid/etime/cpu/mem/state: ${psOutput.replace(/\s+/g, ' ').trim()}`);
+  if (command.includes('EngineMain') || command.startsWith('mvn ')) {
+    const duOutput = await collectProcessOutput('du', ['-sh', siteRoot, join(siteRoot, 'en'), join(siteRoot, 'assets')], { timeoutMs: 8000 });
+    if (duOutput) parts.push(`generated size: ${duOutput.split('\n').map(line => line.replace(/\s+/g, ' ').trim()).join('; ')}`);
+  }
+  return parts.join(' | ');
 }
 
 async function runBuildPhase(label, action) {
@@ -60,11 +110,22 @@ async function runCommand(command, cwd) {
       shell: true,
       stdio: ['ignore', 'pipe', 'pipe']
     });
+    let progressSnapshotRunning = false;
 
     const progressTimer = setInterval(() => {
       const elapsed = Date.now() - startedAt;
       const silent = Date.now() - lastOutputAt;
       console.log(`[build] Still running after ${formatDuration(elapsed)}; no output for ${formatDuration(silent)}.`);
+      if (buildCliOptions.progressSnapshots && !progressSnapshotRunning) {
+        progressSnapshotRunning = true;
+        collectBuildProgressSnapshot(child, command)
+          .then(snapshot => {
+            if (snapshot) console.log(`[build] ${snapshot}`);
+          })
+          .finally(() => {
+            progressSnapshotRunning = false;
+          });
+      }
     }, buildCliOptions.progressMs);
 
     const timeoutTimer = buildCliOptions.timeoutMs > 0 ? setTimeout(() => {
@@ -154,6 +215,21 @@ async function runWithConcurrencyProgress(items, label, worker, concurrency = bu
   return { checked: completed, changed };
 }
 
+async function minifyAssetContent(content, loader) {
+  let next = content;
+  for (let pass = 0; pass < 3; pass += 1) {
+    const result = await esbuildTransform(next, {
+      loader,
+      minify: true,
+      target: loader === 'css' ? 'chrome100' : 'es2020',
+      legalComments: 'none',
+    });
+    if (result.code === next) break;
+    next = result.code;
+  }
+  return next;
+}
+
 // 1. Build and fingerprinted assets compiler
 async function compileAssets() {
   const cssSourceFiles = [
@@ -184,9 +260,11 @@ async function compileAssets() {
     cssContent += `/* --- ${filename} --- */\n${cleanContent}\n`;
   }
 
+  cssContent = await minifyAssetContent(cssContent, 'css');
+
   // Read JS bundle
   const jsSourcePath = resolve(projectRoot, 'assets', 'js', 'bundle.js');
-  const jsContent = await readFile(jsSourcePath, 'utf8');
+  const jsContent = await minifyAssetContent(await readFile(jsSourcePath, 'utf8'), 'js');
 
   // Compute 6-character SHA-256 hashes
   const cssHash = createHash('sha256').update(cssContent).digest('hex').substring(0, 6);
@@ -1458,6 +1536,21 @@ async function getConfiguredLocales() {
   return values.length > 0 ? values : ['en'];
 }
 
+function parseLocaleList(value) {
+  return String(value || '')
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function getSeoIndexableLocales(configuredLocales) {
+  const configured = new Set(configuredLocales);
+  const requested = parseLocaleList(process.env.VALIDOHUB_SEO_LOCALES || 'en')
+    .filter(localeCode => configured.has(localeCode));
+  if (!requested.includes('en') && configured.has('en')) requested.unshift('en');
+  return new Set(requested.length > 0 ? requested : ['en']);
+}
+
 async function pruneGeneratedLocaleDirectories(configuredLocales) {
   if (!(await pathExists(siteRoot))) return;
   const keep = new Set(configuredLocales);
@@ -1546,6 +1639,16 @@ function injectAlternateLinks(content, currentPath, routeRegistry, locales) {
 
   // Keep the document language attribute in sync with route locale.
   next = next.replace(/<html\s+lang="[^"]+">/i, `<html lang="${currentLocale}">`);
+  return next;
+}
+
+function normalizeSeoIndexabilityMeta(content, routePath, indexableLocales) {
+  const { locale: routeLocale } = splitRouteLocale(routePath);
+  const shouldIndex = indexableLocales.has(routeLocale);
+  let next = content.replace(/<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*>\s*/gi, '');
+  if (!shouldIndex) {
+    next = next.replace(/<\/head>/i, '  <meta name="robots" content="noindex, follow">\n</head>');
+  }
   return next;
 }
 
@@ -1920,6 +2023,7 @@ function applyUiLocaleTranslations(content, localeCode) {
     ['>Workbench<', `>${t.workbench}<`],
     ['>Find a country tool<', `>${t.findCountryTool}<`],
     ['>Clear country tool search<', `>${t.clearCountryToolSearch}<`],
+    ['aria-label="Home"', `aria-label="${t.home}"`],
     ['aria-label="Main navigation"', `aria-label="${t.mainNavigation}"`],
     ['aria-label="Breadcrumb"', `aria-label="${t.breadcrumb}"`]
   ];
@@ -1984,7 +2088,7 @@ function localizeSeoUrls(content, localeCode) {
     .replace(/content="\/en\//g, `content="/${locale}/`);
 }
 
-async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
+async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest, indexableLocales) {
   const locales = await getConfiguredLocales();
   const allRoutes = routeRegistry.getAll();
   const englishRoutes = allRoutes.filter(route => route.path.startsWith('/en/'));
@@ -2053,13 +2157,130 @@ async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
     content = repairLocalizedTechnicalAttributes(content);
     content = repairInternalRouteLinks(content);
     content = normalizeGeneratedChrome(content, routeLocale, route.path);
-    content = injectAlternateLinks(content, route.path, routeRegistry, locales);
+    content = injectAlternateLinks(content, route.path, routeRegistry, indexableLocales);
+    content = normalizeSeoIndexabilityMeta(content, route.path, indexableLocales);
     if (content !== original) {
       await writeFile(route.outputPath, content, 'utf8');
       return true;
     }
     return false;
   });
+}
+
+function escapeJsonScript(value) {
+  return String(value || '')
+    .replace(/&/g, '\\u0026')
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e');
+}
+
+function countryToolRouteParts(route) {
+  const parts = String(route.path || '').split('/').filter(Boolean);
+  if (parts.length !== 3 || parts[0] !== 'en') return null;
+  if (['tools', 'countries', 'categories', 'identifiers'].includes(parts[1])) return null;
+  return { countrySlug: parts[1], toolSlug: parts[2] };
+}
+
+function scriptTagsForAlgorithmId(algorithmId) {
+  const mapped = TOOL_SCRIPT_BY_ALGORITHM[algorithmId];
+  const scripts = Array.isArray(mapped) ? mapped : mapped ? [mapped] : ['generic-suite.js'];
+  return scripts
+    .map(script => `<script src="/assets/js/tools/${script}?v=${versionForWorkbenchScript(script)}"></script>`)
+    .join('\n');
+}
+
+async function renderCountryToolShell(route, assetsManifest) {
+  const parts = countryToolRouteParts(route);
+  if (!parts) return '';
+  const dataPath = resolve(projectRoot, 'countries', 'data', `${parts.countrySlug}.json`);
+  if (!(await pathExists(dataPath))) return '';
+
+  const data = JSON.parse(await readFile(dataPath, 'utf8'));
+  const sourceRoute = (data.hub?.routes || []).find(item => item.href === route.path) || {};
+  const countryName = data.catalog?.name || parts.countrySlug.replace(/-/g, ' ');
+  const title = sourceRoute.title || route.title || `${countryName} Workbench`;
+  const summary = sourceRoute.text || sourceRoute.summary || route.metadata?.summary || `Browser-only ${countryName} developer workbench.`;
+  const category = sourceRoute.category || route.metadata?.category || 'country';
+  const algorithmId = route.metadata?.algorithmId || `validohub.${parts.countrySlug}-suite`;
+  const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: title,
+    description: summary,
+    url: `https://validohub.com${route.path}`,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'All',
+    inLanguage: 'en'
+  };
+
+  const headHtml = `
+    <title>${escapeHtml(title)} | ValidoHub</title>
+    <meta name="description" content="${escapeAttribute(summary)}">
+    <link rel="canonical" href="https://validohub.com${escapeAttribute(route.path)}">
+    <link rel="stylesheet" href="${escapeAttribute(assetsManifest.css)}">
+  `;
+  const headerHtml = `
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/" aria-label="Home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/tools/">Tools</a>
+          <a href="/en/countries/" class="is-active" aria-current="page">Countries</a>
+          <a href="/en/categories/national-identifiers/">Identifiers</a>
+        </nav>
+      </div>
+    </header>`;
+  const breadcrumbsHtml = `<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/${escapeAttribute(parts.countrySlug)}/">${escapeHtml(countryName)}</a></li>
+      <li><a href="/en/categories/${escapeAttribute(category)}/">${escapeHtml(category.replace(/-/g, ' '))}</a></li>
+      <li><span>${escapeHtml(title)}</span></li>
+    </ol>
+  </nav>`;
+  const contentHtml = `
+        <header class="page-intro">
+          <span class="eyebrow">${escapeHtml(countryName)} workbench</span>
+          <h1>${escapeHtml(title)}</h1>
+          <p>${escapeHtml(summary)}</p>
+        </header>
+
+        <section class="workbench-card csf-static-host" aria-label="Premium country workbench" data-algorithm-id="${escapeAttribute(algorithmId)}"></section>`;
+
+  return layoutTemplate
+    .replaceAll('{{ HEAD }}', () => headHtml)
+    .replaceAll('{{ HEADER }}', () => headerHtml)
+    .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
+    .replaceAll('{{ HERO }}', () => '')
+    .replaceAll('{{ CONTENT }}', () => contentHtml)
+    .replaceAll('{{ FOOTER }}', () => '')
+    .replaceAll('{{ JSON_LD }}', () => `<script type="application/ld+json">${escapeJsonScript(JSON.stringify(jsonLd))}</script>`)
+    .replaceAll('{{ SCRIPTS }}', () => `<script src="${escapeAttribute(assetsManifest.js)}" defer></script>\n${scriptTagsForAlgorithmId(algorithmId)}`);
+}
+
+async function repairEmptyCountryToolPages(routeRegistry, assetsManifest) {
+  const candidates = routeRegistry.getAll()
+    .filter(route => route.path.startsWith('/en/') && route.type === 'validator' && countryToolRouteParts(route));
+
+  const result = await runWithConcurrencyProgress(candidates, 'repair empty country tool pages', async (route) => {
+    if (await pathHasRenderableHtml(route.outputPath)) return false;
+    const html = await renderCountryToolShell(route, assetsManifest);
+    if (!html || html.includes('{{')) {
+      throw new Error(`FATAL: Could not render fallback country tool shell for ${route.path}`);
+    }
+    await mkdir(dirname(route.outputPath), { recursive: true });
+    await writeFile(route.outputPath, html, 'utf8');
+    return true;
+  });
+
+  if (result.changed > 0) {
+    console.log(`✓ Repaired ${result.changed} empty or malformed country tool page(s)`);
+  }
 }
 
 function pageTitleForDocumentation(content, route) {
@@ -2428,7 +2649,23 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       let title = route.title || 'ValidoHub';
       let description = 'Validation, generation, parsing, encoding, and conversion tools.';
       
-      if (route.path.includes('/tools/') || route.path.includes('validator')) {
+      const guidePageMatch = route.path.match(/^\/[^/]+\/guides\/[^/]+\/$/);
+      if (route.type === 'guide' || guidePageMatch) {
+        type = 'TechArticle';
+        const guideHeading = stripHtml(content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
+        const guideDescription = stripHtml(
+          content.match(/<meta\s+property="og:description"\s+content="([^"]*)"/i)?.[1]
+          || content.match(/<meta\s+name="description"\s+content="([^"]*)"/i)?.[1]
+          || ''
+        );
+        const guideTitle = guideHeading || route.metadata?.title || route.title || 'Reference Guide';
+        title = /\|\s*ValidoHub\s*$/i.test(guideTitle) ? guideTitle : `${guideTitle} | ValidoHub`;
+        description = guideDescription || route.metadata?.summary || 'Tool-first ValidoHub reference guide for browser-only developer data checks, safe fixtures, parser evidence, and production boundaries.';
+      } else if (route.type === 'guides' || route.path.includes('/guides/')) {
+        type = 'CollectionPage';
+        title = route.title || 'Reference Guides | ValidoHub';
+        description = 'Practical ValidoHub guides for browser-only developer tools, local identifiers, banking formats, payments, fixtures, and production boundaries.';
+      } else if (route.path.includes('/tools/') || route.path.includes('validator')) {
         type = 'SoftwareApplication';
         const toolName = route.path.split('/').filter(Boolean).pop();
         title = toolName.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -2437,7 +2674,7 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
         type = 'CollectionPage';
         const catName = route.path.split('/').filter(Boolean).pop();
         title = catName.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' Tools';
-        description = `Explore utility tools for ${title.toLowerCase()}.`;
+        description = `Browse browser-only ${title.toLowerCase()} for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.`;
       }
 
       content = normalizeSeoHead(content, route, title, description);
@@ -2486,9 +2723,40 @@ async function normalizeGeneratedChromeFiles(routeRegistry) {
   if (result.changed > 0) console.log(`✓ Normalized chrome on ${result.changed} generated pages`);
 }
 
+async function normalizeGeneratedBundleAssetLinks(routeRegistry, assetsManifest) {
+  const result = await runWithConcurrencyProgress(routeRegistry.getAll(), 'normalize generated bundle asset links', async (route) => {
+    if (!(await pathExists(route.outputPath))) return false;
+    const content = await readFile(route.outputPath, 'utf8');
+    const next = updateBundleAssetLinks(content, assetsManifest);
+    if (next !== content) {
+      await writeFile(route.outputPath, next, 'utf8');
+      return true;
+    }
+    return false;
+  });
+  if (result.changed > 0) console.log(`✓ Normalized bundle asset links on ${result.changed} generated pages`);
+}
+
+async function normalizeGeneratedSeoIndexability(routeRegistry, indexableLocales) {
+  const result = await runWithConcurrencyProgress(routeRegistry.getAll(), 'normalize SEO indexability', async (route) => {
+    if (!(await pathExists(route.outputPath))) return false;
+    const content = await readFile(route.outputPath, 'utf8');
+    let next = injectAlternateLinks(content, route.path, routeRegistry, indexableLocales);
+    next = normalizeSeoIndexabilityMeta(next, route.path, indexableLocales);
+    if (next !== content) {
+      await writeFile(route.outputPath, next, 'utf8');
+      return true;
+    }
+    return false;
+  });
+  if (result.changed > 0) console.log(`✓ Normalized SEO indexability on ${result.changed} generated pages`);
+}
+
 // 3. Write final sitemap index and locale shards
-async function writeSitemap(routeRegistry) {
-  const routes = routeRegistry.getAll().sort((a, b) => a.path.localeCompare(b.path));
+async function writeSitemap(routeRegistry, indexableLocales) {
+  const routes = routeRegistry.getAll()
+    .filter(route => indexableLocales.has(splitRouteLocale(route.path).locale))
+    .sort((a, b) => a.path.localeCompare(b.path));
   const groups = new Map();
   for (const route of routes) {
     const { locale: routeLocale } = splitRouteLocale(route.path);
@@ -2511,6 +2779,14 @@ ${urls}
     sitemapFiles.push(shardName);
   }
 
+  const expectedSitemapShards = new Set(sitemapFiles);
+  for (const entry of await readdir(siteRoot, { withFileTypes: true })) {
+    if (!entry.isFile() || !/^sitemap-[a-z]{2}(?:-[A-Z]{2})?\.xml$/.test(entry.name)) continue;
+    if (!expectedSitemapShards.has(entry.name)) {
+      await rm(resolve(siteRoot, entry.name), { force: true });
+    }
+  }
+
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapFiles.map(file => `<sitemap><loc>https://validohub.com/${file}</loc></sitemap>`).join('\n')}
@@ -2518,7 +2794,7 @@ ${sitemapFiles.map(file => `<sitemap><loc>https://validohub.com/${file}</loc></s
 `;
 
   await writeFile(resolve(siteRoot, 'sitemap.xml'), sitemapContent, 'utf8');
-  console.log(`✓ Wrote sitemap.xml index with ${routes.length} routes across ${sitemapFiles.length} shard(s)`);
+  console.log(`✓ Wrote sitemap.xml index with ${routes.length} indexable routes across ${sitemapFiles.length} shard(s)`);
 }
 
 // 4. Recursive folder scanner
@@ -2900,6 +3176,8 @@ async function main() {
     console.log('\n[Step 2/5] Compiling Design-System Hashed Assets...');
     const assetsManifest = await runBuildPhase('Compile hashed assets', () => compileAssets());
     const configuredLocales = await runBuildPhase('Load configured locales', () => getConfiguredLocales());
+    const indexableLocales = getSeoIndexableLocales(configuredLocales);
+    console.log(`SEO-indexable locale(s): ${[...indexableLocales].join(', ')}`);
     await runBuildPhase('Validate locale switcher', () => validateConfiguredLocaleSwitcher(configuredLocales));
     await runBuildPhase('Prune generated locale directories', () => pruneGeneratedLocaleDirectories(configuredLocales));
 
@@ -2909,6 +3187,7 @@ async function main() {
     if (buildCliOptions.skipJavaPublisher) {
       console.warn('[build] Skipping Java publisher (--skip-java-publisher). Reusing existing generated Java-owned routes.');
     } else {
+      await runBuildPhase('Prepare Java publisher classpath', () => runCommand('mvn -pl valido-cli -am -DskipTests install', engineDir));
       await runBuildPhase('Run Java publisher', () => runCommand('mvn -pl valido-cli exec:java -Dexec.mainClass="com.validoengine.cli.EngineMain" -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"', engineDir));
     }
 
@@ -2928,18 +3207,26 @@ async function main() {
     await runBuildPhase('Compile countries portal', () => compileCountriesPortal(routeRegistry, assetsManifest));
     await runBuildPhase('Compile identifiers', () => compileIdentifiers(routeRegistry, assetsManifest));
     await runBuildPhase('Compile reference guides', () => compileReferenceGuides(routeRegistry, assetsManifest));
-    await runBuildPhase('Ensure localized route fallbacks', () => ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest));
+    await runBuildPhase('Repair empty country tool pages', () => repairEmptyCountryToolPages(routeRegistry, assetsManifest));
+    await runBuildPhase('Ensure localized route fallbacks', () => ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest, indexableLocales));
     await runBuildPhase('Post-process Java pages', () => postProcessJavaPages(routeRegistry, assetsManifest));
     await runBuildPhase('Apply final localization pass', () => applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales));
     await runBuildPhase('Normalize generated chrome files', () => normalizeGeneratedChromeFiles(routeRegistry));
+    await runBuildPhase('Normalize generated bundle asset links', () => normalizeGeneratedBundleAssetLinks(routeRegistry, assetsManifest));
+    await runBuildPhase('Normalize SEO indexability', () => normalizeGeneratedSeoIndexability(routeRegistry, indexableLocales));
     await runBuildPhase('Prune country tool related links', () => pruneCountrySuiteRelatedLinksToCountry());
     await runBuildPhase('Normalize workbench script versions', () => normalizeWorkbenchScriptVersions());
     await runBuildPhase('Ensure generated tool scripts', () => ensureGeneratedToolScripts());
+    await runBuildPhase('Repair premium tool shells', () => runCommand('node scripts/repair-generic-country-tools-premium.mjs', projectRoot));
+    await runBuildPhase('Optimize generated country images', () => runCommand('node scripts/optimize-country-images.mjs --generated --prune-generated-png', projectRoot));
+    await runBuildPhase('Minify generated CSS/JS assets', () => runCommand('node scripts/minify-generated-assets.mjs', projectRoot));
     const compactedSearchIndex = await runBuildPhase('Compact generated search index', () => compactGeneratedSearchIndex());
     if (compactedSearchIndex.count) {
       console.log(`✓ Compacted search-index.json for ${compactedSearchIndex.count} tools: ${compactedSearchIndex.before} -> ${compactedSearchIndex.after} bytes`);
     }
-    await runBuildPhase('Write sitemap', () => writeSitemap(routeRegistry));
+    await runBuildPhase('Write sitemap', () => writeSitemap(routeRegistry, indexableLocales));
+    await runBuildPhase('Materialize IndexNow key', () => materializeIndexNowKey({ siteDir: siteRoot }));
+    await runBuildPhase('Apply Google Analytics tag', () => applyGoogleAnalyticsToGeneratedSite({ siteDir: siteRoot }));
 
     // 6. Site Integrity Verification & Metrics
     const metrics = await runBuildPhase('Validate generated site output', () => validateSiteOutput(routeRegistry, assetsManifest));
@@ -2992,6 +3279,13 @@ async function main() {
       buildDuration
     };
     await writeFile(resolve(siteRoot, 'build-report.json'), JSON.stringify(reportData, null, 2), 'utf8');
+
+    if (buildCliOptions.archive) {
+      const archiveArgs = ['node scripts/package-generated-site.mjs', '--format', shellArg(buildCliOptions.archiveFormat)];
+      if (buildCliOptions.archiveDir) archiveArgs.push('--out-dir', shellArg(buildCliOptions.archiveDir));
+      if (buildCliOptions.archiveReleaseId) archiveArgs.push('--release-id', shellArg(buildCliOptions.archiveReleaseId));
+      await runBuildPhase('Package generated site archive', () => runCommand(archiveArgs.join(' '), projectRoot));
+    }
 
   } catch (error) {
     console.error('\n!!! BUILD PIPELINE FAILED !!!');

@@ -1,9 +1,9 @@
 {
   "id": "maldives",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/maldives-outline.png",
+    "outlineSrc": "/assets/images/countries/maldives-outline.jpg",
     "outlineAlt": "Maldives country outline",
-    "mapSrc": "/assets/images/countries/maldives-location.png",
+    "mapSrc": "/assets/images/countries/maldives-location.jpg",
     "mapAlt": "World map with Maldives location marker",
     "mapMarker": {
       "x": 65,

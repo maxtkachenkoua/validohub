@@ -1,9 +1,9 @@
 {
   "id": "samoa",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/samoa-outline.png",
+    "outlineSrc": "/assets/images/countries/samoa-outline.jpg",
     "outlineAlt": "Samoa country outline",
-    "mapSrc": "/assets/images/countries/samoa-location.png",
+    "mapSrc": "/assets/images/countries/samoa-location.jpg",
     "mapAlt": "World map with Samoa location marker",
     "mapMarker": {
       "x": 88,

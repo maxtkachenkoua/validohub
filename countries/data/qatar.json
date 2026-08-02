@@ -1,9 +1,9 @@
 {
   "id": "qatar",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/qatar-outline.png",
+    "outlineSrc": "/assets/images/countries/qatar-outline.jpg",
     "outlineAlt": "Qatar country outline",
-    "mapSrc": "/assets/images/countries/qatar-location.png",
+    "mapSrc": "/assets/images/countries/qatar-location.jpg",
     "mapAlt": "World map with Qatar location marker",
     "mapMarker": {
       "x": 58,

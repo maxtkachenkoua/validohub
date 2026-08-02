@@ -1,9 +1,9 @@
 {
   "id": "jordan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/jordan-outline.png",
+    "outlineSrc": "/assets/images/countries/jordan-outline.jpg",
     "outlineAlt": "Jordan country outline",
-    "mapSrc": "/assets/images/countries/jordan-location.png",
+    "mapSrc": "/assets/images/countries/jordan-location.jpg",
     "mapAlt": "World map with Jordan location marker",
     "mapMarker": {
       "x": 56,

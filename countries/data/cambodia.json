@@ -1,9 +1,9 @@
 {
   "id": "cambodia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cambodia-outline.png",
+    "outlineSrc": "/assets/images/countries/cambodia-outline.jpg",
     "outlineAlt": "Cambodia country outline",
-    "mapSrc": "/assets/images/countries/cambodia-location.png",
+    "mapSrc": "/assets/images/countries/cambodia-location.jpg",
     "mapAlt": "World map with Cambodia location marker",
     "mapMarker": {
       "x": 68,

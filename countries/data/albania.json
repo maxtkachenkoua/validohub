@@ -1,9 +1,9 @@
 {
   "id": "albania",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/albania-outline.png",
+    "outlineSrc": "/assets/images/countries/albania-outline.jpg",
     "outlineAlt": "Albania country outline",
-    "mapSrc": "/assets/images/countries/albania-location.png",
+    "mapSrc": "/assets/images/countries/albania-location.jpg",
     "mapAlt": "World map with Albania location marker",
     "mapMarker": {
       "x": 53,

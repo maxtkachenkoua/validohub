@@ -1,9 +1,9 @@
 {
   "id": "belgium",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/belgium-outline.png",
+    "outlineSrc": "/assets/images/countries/belgium-outline.jpg",
     "outlineAlt": "Belgium country outline",
-    "mapSrc": "/assets/images/countries/belgium-location.png",
+    "mapSrc": "/assets/images/countries/belgium-location.jpg",
     "mapAlt": "World map with Belgium location marker",
     "mapMarker": {
       "x": 47,

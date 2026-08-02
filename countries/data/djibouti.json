@@ -1,9 +1,9 @@
 {
   "id": "djibouti",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/djibouti-outline.png",
+    "outlineSrc": "/assets/images/countries/djibouti-outline.jpg",
     "outlineAlt": "Djibouti country outline",
-    "mapSrc": "/assets/images/countries/djibouti-location.png",
+    "mapSrc": "/assets/images/countries/djibouti-location.jpg",
     "mapAlt": "World map with Djibouti location marker",
     "mapMarker": {
       "x": 45,

@@ -1,9 +1,9 @@
 {
   "id": "iraq",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/iraq-outline.png",
+    "outlineSrc": "/assets/images/countries/iraq-outline.jpg",
     "outlineAlt": "Iraq country outline",
-    "mapSrc": "/assets/images/countries/iraq-location.png",
+    "mapSrc": "/assets/images/countries/iraq-location.jpg",
     "mapAlt": "World map with Iraq location marker",
     "mapMarker": {
       "x": 56,

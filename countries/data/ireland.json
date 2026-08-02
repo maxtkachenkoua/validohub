@@ -1,9 +1,9 @@
 {
   "id": "ireland",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/ireland-outline.png",
+    "outlineSrc": "/assets/images/countries/ireland-outline.jpg",
     "outlineAlt": "Ireland country outline",
-    "mapSrc": "/assets/images/countries/ireland-location.png",
+    "mapSrc": "/assets/images/countries/ireland-location.jpg",
     "mapAlt": "World map with Ireland location marker",
     "mapMarker": {
       "x": 42,

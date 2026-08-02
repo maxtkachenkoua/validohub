@@ -296,7 +296,9 @@ function renderHomeToolCards(routeRegistry, items, cardClass = '') {
     const route = findRouteByPath(routeRegistry, item.path);
     if (!route && item.requireRoute !== false) return '';
     const title = route?.title || item.title || 'Developer Workbench';
-    const cleanTitle = title.replace(/\s*\|\s*ValidoHub\s*$/i, '');
+    const cleanTitle = title
+      .replace(/^en:\s*/i, '')
+      .replace(/\s*\|\s*ValidoHub\s*$/i, '');
     const search = [
       cleanTitle,
       item.kicker,
@@ -410,7 +412,7 @@ function buildHomeMapCountry(route) {
     identifiers,
     payments,
     colors,
-    outlineSrc: data.hero?.outlineSrc || data.hub?.hero?.outlineSrc || `/assets/images/countries/${data.id}-outline.png`,
+    outlineSrc: data.hero?.outlineSrc || data.hub?.hero?.outlineSrc || `/assets/images/countries/${data.id}-outline.jpg`,
     coordinates: data.catalog.coordinates || { x: 50, y: 50 }
   };
 }
@@ -822,6 +824,7 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
 
 function cleanToolTitle(route) {
   return String(route.title || 'Developer Tool')
+    .replace(/^en:\s*/i, '')
     .replace(/\s*\|\s*ValidoHub\s*$/i, '')
     .replace(/\s*-\s*ValidoHub\s*$/i, '')
     .trim();

@@ -1,9 +1,9 @@
 {
   "id": "luxembourg",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/luxembourg-outline.png",
+    "outlineSrc": "/assets/images/countries/luxembourg-outline.jpg",
     "outlineAlt": "Luxembourg country outline",
-    "mapSrc": "/assets/images/countries/luxembourg-location.png",
+    "mapSrc": "/assets/images/countries/luxembourg-location.jpg",
     "mapAlt": "World map with Luxembourg location marker",
     "mapMarker": {
       "x": 47,

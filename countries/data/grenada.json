@@ -1,9 +1,9 @@
 {
   "id": "grenada",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/grenada-outline.png",
+    "outlineSrc": "/assets/images/countries/grenada-outline.jpg",
     "outlineAlt": "Grenada country outline",
-    "mapSrc": "/assets/images/countries/grenada-location.png",
+    "mapSrc": "/assets/images/countries/grenada-location.jpg",
     "mapAlt": "Grenada location map",
     "mapMarker": {
       "x": 34,

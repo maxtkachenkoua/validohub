@@ -1,9 +1,9 @@
 {
   "id": "nepal",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/nepal-outline.png",
+    "outlineSrc": "/assets/images/countries/nepal-outline.jpg",
     "outlineAlt": "Nepal country outline",
-    "mapSrc": "/assets/images/countries/nepal-location.png",
+    "mapSrc": "/assets/images/countries/nepal-location.jpg",
     "mapAlt": "World map with Nepal location marker",
     "mapMarker": {
       "x": 65,

@@ -1,9 +1,9 @@
 {
   "id": "cyprus",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cyprus-outline.png",
+    "outlineSrc": "/assets/images/countries/cyprus-outline.jpg",
     "outlineAlt": "Cyprus country outline",
-    "mapSrc": "/assets/images/countries/cyprus-location.png",
+    "mapSrc": "/assets/images/countries/cyprus-location.jpg",
     "mapAlt": "World map with Cyprus location marker",
     "mapMarker": {
       "x": 60,

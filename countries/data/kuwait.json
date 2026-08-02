@@ -1,9 +1,9 @@
 {
   "id": "kuwait",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/kuwait-outline.png",
+    "outlineSrc": "/assets/images/countries/kuwait-outline.jpg",
     "outlineAlt": "Kuwait country outline",
-    "mapSrc": "/assets/images/countries/kuwait-location.png",
+    "mapSrc": "/assets/images/countries/kuwait-location.jpg",
     "mapAlt": "World map with Kuwait location marker",
     "mapMarker": {
       "x": 58,

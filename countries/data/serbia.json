@@ -1,9 +1,9 @@
 {
   "id": "serbia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/serbia-outline.png",
+    "outlineSrc": "/assets/images/countries/serbia-outline.jpg",
     "outlineAlt": "Serbia country outline",
-    "mapSrc": "/assets/images/countries/serbia-location.png",
+    "mapSrc": "/assets/images/countries/serbia-location.jpg",
     "mapAlt": "World map with Serbia location marker",
     "mapMarker": {
       "x": 54,

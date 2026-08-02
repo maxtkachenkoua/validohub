@@ -1,9 +1,9 @@
 {
   "id": "bulgaria",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bulgaria-outline.png",
+    "outlineSrc": "/assets/images/countries/bulgaria-outline.jpg",
     "outlineAlt": "Bulgaria country outline",
-    "mapSrc": "/assets/images/countries/bulgaria-location.png",
+    "mapSrc": "/assets/images/countries/bulgaria-location.jpg",
     "mapAlt": "World map with Bulgaria location marker",
     "mapMarker": {
       "x": 56,

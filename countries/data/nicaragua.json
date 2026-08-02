@@ -1,9 +1,9 @@
 {
   "id": "nicaragua",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/nicaragua-outline.png",
+    "outlineSrc": "/assets/images/countries/nicaragua-outline.jpg",
     "outlineAlt": "Nicaragua country outline",
-    "mapSrc": "/assets/images/countries/nicaragua-location.png",
+    "mapSrc": "/assets/images/countries/nicaragua-location.jpg",
     "mapAlt": "Nicaragua location map",
     "mapMarker": {
       "x": 34,

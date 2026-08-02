@@ -1,9 +1,9 @@
 {
   "id": "slovakia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/slovakia-outline.png",
+    "outlineSrc": "/assets/images/countries/slovakia-outline.jpg",
     "outlineAlt": "Slovakia country outline",
-    "mapSrc": "/assets/images/countries/slovakia-location.png",
+    "mapSrc": "/assets/images/countries/slovakia-location.jpg",
     "mapAlt": "World map with Slovakia location marker",
     "mapMarker": {
       "x": 53,

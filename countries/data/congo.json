@@ -1,9 +1,9 @@
 {
   "id": "congo",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/congo-outline.png",
+    "outlineSrc": "/assets/images/countries/congo-outline.jpg",
     "outlineAlt": "Republic of the Congo country outline",
-    "mapSrc": "/assets/images/countries/congo-location.png",
+    "mapSrc": "/assets/images/countries/congo-location.jpg",
     "mapAlt": "World map with Republic of the Congo location marker",
     "mapMarker": {
       "x": 45,

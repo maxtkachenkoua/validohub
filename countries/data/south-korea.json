@@ -1,9 +1,9 @@
 {
   "id": "south-korea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/south-korea-outline.png",
+    "outlineSrc": "/assets/images/countries/south-korea-outline.jpg",
     "outlineAlt": "South Korea country outline",
-    "mapSrc": "/assets/images/countries/south-korea-location.png",
+    "mapSrc": "/assets/images/countries/south-korea-location.jpg",
     "mapAlt": "World map with South Korea location marker",
     "mapMarker": {
       "x": 71,

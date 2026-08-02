@@ -1,9 +1,9 @@
 {
   "id": "yemen",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/yemen-outline.png",
+    "outlineSrc": "/assets/images/countries/yemen-outline.jpg",
     "outlineAlt": "Yemen country outline",
-    "mapSrc": "/assets/images/countries/yemen-location.png",
+    "mapSrc": "/assets/images/countries/yemen-location.jpg",
     "mapAlt": "World map with Yemen location marker",
     "mapMarker": {
       "x": 58,

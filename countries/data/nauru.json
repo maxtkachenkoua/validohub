@@ -1,9 +1,9 @@
 {
   "id": "nauru",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/nauru-outline.png",
+    "outlineSrc": "/assets/images/countries/nauru-outline.jpg",
     "outlineAlt": "Nauru country outline",
-    "mapSrc": "/assets/images/countries/nauru-location.png",
+    "mapSrc": "/assets/images/countries/nauru-location.jpg",
     "mapAlt": "World map with Nauru location marker",
     "mapMarker": {
       "x": 88,

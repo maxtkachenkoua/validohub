@@ -1,9 +1,9 @@
 {
   "id": "eritrea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/eritrea-outline.png",
+    "outlineSrc": "/assets/images/countries/eritrea-outline.jpg",
     "outlineAlt": "Eritrea country outline",
-    "mapSrc": "/assets/images/countries/eritrea-location.png",
+    "mapSrc": "/assets/images/countries/eritrea-location.jpg",
     "mapAlt": "World map with Eritrea location marker",
     "mapMarker": {
       "x": 45,

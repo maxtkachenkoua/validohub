@@ -1,9 +1,9 @@
 {
   "id": "malawi",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/malawi-outline.png",
+    "outlineSrc": "/assets/images/countries/malawi-outline.jpg",
     "outlineAlt": "Malawi country outline",
-    "mapSrc": "/assets/images/countries/malawi-location.png",
+    "mapSrc": "/assets/images/countries/malawi-location.jpg",
     "mapAlt": "World map with Malawi location marker",
     "mapMarker": {
       "x": 45,

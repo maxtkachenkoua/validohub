@@ -1,9 +1,9 @@
 {
   "id": "turkey",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/turkey-outline.png",
+    "outlineSrc": "/assets/images/countries/turkey-outline.jpg",
     "outlineAlt": "Turkey country outline",
-    "mapSrc": "/assets/images/countries/turkey-location.png",
+    "mapSrc": "/assets/images/countries/turkey-location.jpg",
     "mapAlt": "World map with Turkey location marker",
     "mapMarker": {
       "x": 54,

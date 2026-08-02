@@ -1,9 +1,9 @@
 {
   "id": "poland",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/poland-outline.png",
+    "outlineSrc": "/assets/images/countries/poland-outline.jpg",
     "outlineAlt": "Poland country outline",
-    "mapSrc": "/assets/images/countries/poland-location.png",
+    "mapSrc": "/assets/images/countries/poland-location.jpg",
     "mapAlt": "World map with Poland location marker",
     "mapMarker": {
       "x": 46,

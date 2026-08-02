@@ -1,9 +1,9 @@
 {
   "id": "saudi-arabia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/saudi-arabia-outline.png",
+    "outlineSrc": "/assets/images/countries/saudi-arabia-outline.jpg",
     "outlineAlt": "Saudi Arabia country outline",
-    "mapSrc": "/assets/images/countries/saudi-arabia-location.png",
+    "mapSrc": "/assets/images/countries/saudi-arabia-location.jpg",
     "mapAlt": "World map with Saudi Arabia location marker",
     "mapMarker": {
       "x": 58,

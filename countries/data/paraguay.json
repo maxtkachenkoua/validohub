@@ -1,9 +1,9 @@
 {
   "id": "paraguay",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/paraguay-outline.png",
+    "outlineSrc": "/assets/images/countries/paraguay-outline.jpg",
     "outlineAlt": "Paraguay country outline",
-    "mapSrc": "/assets/images/countries/paraguay-location.png",
+    "mapSrc": "/assets/images/countries/paraguay-location.jpg",
     "mapAlt": "World map with Paraguay location marker",
     "mapMarker": {
       "x": 54,

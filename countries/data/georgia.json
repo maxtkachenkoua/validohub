@@ -1,9 +1,9 @@
 {
   "id": "georgia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/georgia-outline.png",
+    "outlineSrc": "/assets/images/countries/georgia-outline.jpg",
     "outlineAlt": "Georgia country outline",
-    "mapSrc": "/assets/images/countries/georgia-location.png",
+    "mapSrc": "/assets/images/countries/georgia-location.jpg",
     "mapAlt": "World map with Georgia location marker",
     "mapMarker": {
       "x": 55,

@@ -1,9 +1,9 @@
 {
   "id": "gabon",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/gabon-outline.png",
+    "outlineSrc": "/assets/images/countries/gabon-outline.jpg",
     "outlineAlt": "Gabon country outline",
-    "mapSrc": "/assets/images/countries/gabon-location.png",
+    "mapSrc": "/assets/images/countries/gabon-location.jpg",
     "mapAlt": "World map with Gabon location marker",
     "mapMarker": {
       "x": 45,

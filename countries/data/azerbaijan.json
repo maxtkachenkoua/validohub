@@ -1,9 +1,9 @@
 {
   "id": "azerbaijan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/azerbaijan-outline.png",
+    "outlineSrc": "/assets/images/countries/azerbaijan-outline.jpg",
     "outlineAlt": "Azerbaijan country outline",
-    "mapSrc": "/assets/images/countries/azerbaijan-location.png",
+    "mapSrc": "/assets/images/countries/azerbaijan-location.jpg",
     "mapAlt": "World map with Azerbaijan location marker",
     "mapMarker": {
       "x": 56,

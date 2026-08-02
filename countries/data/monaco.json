@@ -1,9 +1,9 @@
 {
   "id": "monaco",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/monaco-outline.png",
+    "outlineSrc": "/assets/images/countries/monaco-outline.jpg",
     "outlineAlt": "Monaco country outline",
-    "mapSrc": "/assets/images/countries/monaco-location.png",
+    "mapSrc": "/assets/images/countries/monaco-location.jpg",
     "mapAlt": "World map with Monaco location marker",
     "mapMarker": {
       "x": 48,

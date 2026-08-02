@@ -1,9 +1,9 @@
 {
   "id": "canada",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/canada-outline.png",
+    "outlineSrc": "/assets/images/countries/canada-outline.jpg",
     "outlineAlt": "Canada country outline",
-    "mapSrc": "/assets/images/countries/canada-location.png",
+    "mapSrc": "/assets/images/countries/canada-location.jpg",
     "mapAlt": "Canada location map",
     "mapMarker": {
       "x": 38,

@@ -1,9 +1,9 @@
 {
   "id": "solomon-islands",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/solomon-islands-outline.png",
+    "outlineSrc": "/assets/images/countries/solomon-islands-outline.jpg",
     "outlineAlt": "Solomon Islands country outline",
-    "mapSrc": "/assets/images/countries/solomon-islands-location.png",
+    "mapSrc": "/assets/images/countries/solomon-islands-location.jpg",
     "mapAlt": "World map with Solomon Islands location marker",
     "mapMarker": {
       "x": 82,

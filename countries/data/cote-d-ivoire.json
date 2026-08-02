@@ -1,9 +1,9 @@
 {
   "id": "cote-d-ivoire",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cote-d-ivoire-outline.png",
+    "outlineSrc": "/assets/images/countries/cote-d-ivoire-outline.jpg",
     "outlineAlt": "Cote dIvoire country outline",
-    "mapSrc": "/assets/images/countries/cote-d-ivoire-location.png",
+    "mapSrc": "/assets/images/countries/cote-d-ivoire-location.jpg",
     "mapAlt": "World map with Cote dIvoire location marker",
     "mapMarker": {
       "x": 45,

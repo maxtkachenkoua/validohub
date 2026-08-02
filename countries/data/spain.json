@@ -1,9 +1,9 @@
 {
   "id": "spain",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/spain-outline.png",
+    "outlineSrc": "/assets/images/countries/spain-outline.jpg",
     "outlineAlt": "Spain country outline",
-    "mapSrc": "/assets/images/countries/spain-location.png",
+    "mapSrc": "/assets/images/countries/spain-location.jpg",
     "mapAlt": "World map with Spain location marker",
     "mapMarker": {
       "x": 41,

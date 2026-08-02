@@ -1,9 +1,9 @@
 {
   "id": "madagascar",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/madagascar-outline.png",
+    "outlineSrc": "/assets/images/countries/madagascar-outline.jpg",
     "outlineAlt": "Madagascar country outline",
-    "mapSrc": "/assets/images/countries/madagascar-location.png",
+    "mapSrc": "/assets/images/countries/madagascar-location.jpg",
     "mapAlt": "World map with Madagascar location marker",
     "mapMarker": {
       "x": 45,

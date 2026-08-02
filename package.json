@@ -13,6 +13,7 @@
     "build:tools": "node scripts/build-tools-dev.mjs",
     "build:full": "node scripts/build-all.mjs --timeout-minutes 180",
     "build:release": "node scripts/build-all.mjs --timeout-minutes 180",
+    "build:release:archive": "node scripts/build-all.mjs --timeout-minutes 180 --archive",
     "build:release:node": "node scripts/build-all.mjs --skip-java-publisher --timeout-minutes 180",
     "build:release:incremental": "node scripts/build-release-incremental.mjs",
     "build:release:plan": "node scripts/build-release-incremental.mjs --plan",
@@ -24,10 +25,26 @@
     "audit:search": "node scripts/audit-search-relevance.mjs",
     "audit:generated-premium": "node scripts/audit-generated-premium-contract.mjs",
     "audit:visual-premium": "node scripts/audit-visual-premium.mjs",
+    "optimize:country-images": "node scripts/optimize-country-images.mjs",
+    "minify:generated-assets": "node scripts/minify-generated-assets.mjs",
+    "package:site": "node scripts/package-generated-site.mjs",
+    "analytics:apply": "node scripts/apply-google-analytics.mjs",
+    "analytics:dry-run": "node scripts/apply-google-analytics.mjs --dry-run",
+    "indexnow:prepare": "node scripts/indexnow.mjs prepare",
+    "indexnow:submit": "node scripts/indexnow.mjs submit",
+    "indexnow:dry-run": "node scripts/indexnow.mjs submit --dry-run",
+    "deploy:vps": "node scripts/deploy-vps-site.mjs deploy",
+    "rollback:vps": "node scripts/deploy-vps-site.mjs rollback",
+    "status:vps": "node scripts/deploy-vps-site.mjs status",
+    "list:vps-releases": "node scripts/deploy-vps-site.mjs list",
+    "loadtest:vps": "node scripts/load-test-static-site.mjs --base-url http://137.74.173.107",
     "repair:localization": "node scripts/repair-generated-localization.mjs",
     "audit:full": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs && node scripts/audit-global-tools-premium.mjs && node scripts/audit-performance-budget.mjs && node scripts/audit-search-relevance.mjs && node scripts/audit-generated-premium-contract.mjs"
   },
   "dependencies": {
     "playwright": "^1.61.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
   }
 }

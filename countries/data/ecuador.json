@@ -1,9 +1,9 @@
 {
   "id": "ecuador",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/ecuador-outline.png",
+    "outlineSrc": "/assets/images/countries/ecuador-outline.jpg",
     "outlineAlt": "Ecuador country outline",
-    "mapSrc": "/assets/images/countries/ecuador-location.png",
+    "mapSrc": "/assets/images/countries/ecuador-location.jpg",
     "mapAlt": "World map with Ecuador location marker",
     "mapMarker": {
       "x": 40,

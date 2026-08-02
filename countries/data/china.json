@@ -1,9 +1,9 @@
 {
   "id": "china",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/china-outline.png",
+    "outlineSrc": "/assets/images/countries/china-outline.jpg",
     "outlineAlt": "China country outline",
-    "mapSrc": "/assets/images/countries/china-location.png",
+    "mapSrc": "/assets/images/countries/china-location.jpg",
     "mapAlt": "World map with China location marker",
     "mapMarker": {
       "x": 68,

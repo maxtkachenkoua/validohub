@@ -1,9 +1,9 @@
 {
   "id": "myanmar",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/myanmar-outline.png",
+    "outlineSrc": "/assets/images/countries/myanmar-outline.jpg",
     "outlineAlt": "Myanmar country outline",
-    "mapSrc": "/assets/images/countries/myanmar-location.png",
+    "mapSrc": "/assets/images/countries/myanmar-location.jpg",
     "mapAlt": "World map with Myanmar location marker",
     "mapMarker": {
       "x": 66,

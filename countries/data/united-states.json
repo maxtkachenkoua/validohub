@@ -1,9 +1,9 @@
 {
   "id": "united-states",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/united-states-outline.png",
+    "outlineSrc": "/assets/images/countries/united-states-outline.jpg",
     "outlineAlt": "United States country outline",
-    "mapSrc": "/assets/images/countries/united-states-location.png",
+    "mapSrc": "/assets/images/countries/united-states-location.jpg",
     "mapAlt": "United States location map",
     "mapMarker": {
       "x": 32,

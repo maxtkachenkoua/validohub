@@ -7,6 +7,22 @@ const siteRoot = resolve(projectRoot, 'generated', 'validohub');
 const productionLocales = new Set(['en', 'es', 'pt-BR', 'de', 'fr', 'pl', 'uk']);
 const productionOrigin = 'https://validohub.com';
 
+function parseLocaleList(value) {
+  return String(value || '')
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function getSeoIndexableLocales() {
+  const requested = parseLocaleList(process.env.VALIDOHUB_SEO_LOCALES || 'en')
+    .filter(localeCode => productionLocales.has(localeCode));
+  if (!requested.includes('en')) requested.unshift('en');
+  return new Set(requested.length > 0 ? requested : ['en']);
+}
+
+const indexableLocales = getSeoIndexableLocales();
+
 function parseArgs(argv) {
   const args = { paths: [], strictLocalization: false };
   for (let index = 0; index < argv.length; index += 1) {
@@ -104,7 +120,10 @@ async function auditSiteArtifacts() {
     const urls = await sitemapUrlsFromXml(sitemap, 'sitemap.xml');
     if (urls.length < 1000) failures.push(`/ sitemap.xml looks too small (${urls.length} URLs)`);
     if (!urls.some(url => url.includes('/en/'))) failures.push('/ sitemap.xml missing English URLs');
-    if (!urls.some(url => url.includes('/uk/'))) warnings.push('/ sitemap.xml missing Ukrainian URLs');
+    const nonIndexableUrls = urls.filter(url => !indexableLocales.has(localeFromRoute(url.replace(productionOrigin, ''))));
+    if (nonIndexableUrls.length) {
+      failures.push(`/ sitemap.xml contains ${nonIndexableUrls.length} non-indexable locale URL(s); first: ${nonIndexableUrls[0]}`);
+    }
   }
 
   return { failures, warnings };
@@ -122,10 +141,13 @@ async function auditFile(file, options) {
   const jsonLdCount = (html.match(/<script\s+type="application\/ld\+json"/gi) || []).length;
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   const alternateCount = (html.match(/<link\s+rel="alternate"\s+hreflang=/gi) || []).length;
+  const alternateLocales = [...html.matchAll(/<link\s+rel="alternate"\s+hreflang="([^"]+)"/gi)].map(match => match[1]);
   const hasCurrentAlternate = new RegExp(`<link\\s+rel="alternate"\\s+hreflang="${locale}"`, 'i').test(html);
   const hasXDefault = /<link\s+rel="alternate"\s+hreflang="x-default"/i.test(html);
   const canonicalRoute = canonical.startsWith(productionOrigin) ? canonical.slice(productionOrigin.length) : '';
   const canonicalLocale = localeFromRoute(canonicalRoute);
+  const isIndexable = indexableLocales.has(locale);
+  const hasNoindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
   const hasSocialTitle = /<meta\s+(?:property|name)="(?:og:title|twitter:title)"\s+content="[^"]{8,}"/i.test(html);
   const hasSocialDescription = /<meta\s+(?:property|name)="(?:og:description|twitter:description)"\s+content="[^"]{35,}"/i.test(html);
 
@@ -134,9 +156,11 @@ async function auditFile(file, options) {
   failIf(!description || description.length < 45, failures, file, 'missing or thin meta description');
   failIf(!canonical || !canonical.startsWith(`${productionOrigin}/`), failures, file, 'missing or malformed canonical');
   failIf(Boolean(canonicalRoute) && canonicalLocale !== locale, failures, file, `canonical locale ${canonicalLocale} does not match html locale ${locale}`);
-  failIf(/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html), failures, file, 'has noindex robots meta');
+  failIf(isIndexable && hasNoindex, failures, file, 'indexable locale has noindex robots meta');
+  failIf(!isIndexable && !/<meta\s+name="robots"\s+content="noindex,\s*follow"/i.test(html), failures, file, 'non-indexable locale missing noindex, follow robots meta');
   failIf(h1Count !== 1, failures, file, `expected exactly one h1, found ${h1Count}`);
-  failIf(alternateCount > 0 && !hasCurrentAlternate, failures, file, `missing current-locale hreflang ${locale}`);
+  failIf(isIndexable && alternateCount > 0 && !hasCurrentAlternate, failures, file, `missing current-locale hreflang ${locale}`);
+  failIf(alternateLocales.some(alternateLocale => alternateLocale !== 'x-default' && !indexableLocales.has(alternateLocale)), failures, file, 'contains hreflang for non-indexable locale');
   warnIf(alternateCount > 1 && !hasXDefault, warnings, file, 'missing x-default hreflang');
   warnIf(jsonLdCount === 0, warnings, file, 'missing structured data JSON-LD');
   warnIf(!hasSocialTitle || !hasSocialDescription, warnings, file, 'missing Open Graph/Twitter title or description');

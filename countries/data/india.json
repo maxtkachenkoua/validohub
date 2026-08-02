@@ -1,9 +1,9 @@
 {
   "id": "india",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/india-outline.png",
+    "outlineSrc": "/assets/images/countries/india-outline.jpg",
     "outlineAlt": "India country outline",
-    "mapSrc": "/assets/images/countries/india-location.png",
+    "mapSrc": "/assets/images/countries/india-location.jpg",
     "mapAlt": "World map with India location marker",
     "mapMarker": {
       "x": 66,

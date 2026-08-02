@@ -1,9 +1,9 @@
 {
   "id": "north-korea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/north-korea-outline.png",
+    "outlineSrc": "/assets/images/countries/north-korea-outline.jpg",
     "outlineAlt": "North Korea country outline",
-    "mapSrc": "/assets/images/countries/north-korea-location.png",
+    "mapSrc": "/assets/images/countries/north-korea-location.jpg",
     "mapAlt": "World map with North Korea location marker",
     "mapMarker": {
       "x": 70,

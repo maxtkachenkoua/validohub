@@ -1,9 +1,9 @@
 {
   "id": "barbados",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/barbados-outline.png",
+    "outlineSrc": "/assets/images/countries/barbados-outline.jpg",
     "outlineAlt": "Barbados country outline",
-    "mapSrc": "/assets/images/countries/barbados-location.png",
+    "mapSrc": "/assets/images/countries/barbados-location.jpg",
     "mapAlt": "Barbados location map",
     "mapMarker": {
       "x": 34,

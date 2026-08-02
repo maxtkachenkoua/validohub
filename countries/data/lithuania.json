@@ -1,9 +1,9 @@
 {
   "id": "lithuania",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/lithuania-outline.png",
+    "outlineSrc": "/assets/images/countries/lithuania-outline.jpg",
     "outlineAlt": "Lithuania country outline",
-    "mapSrc": "/assets/images/countries/lithuania-location.png",
+    "mapSrc": "/assets/images/countries/lithuania-location.jpg",
     "mapAlt": "World map with Lithuania location marker",
     "mapMarker": {
       "x": 55,

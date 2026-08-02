@@ -1,9 +1,9 @@
 {
   "id": "timor-leste",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/timor-leste-outline.png",
+    "outlineSrc": "/assets/images/countries/timor-leste-outline.jpg",
     "outlineAlt": "Timor-Leste country outline",
-    "mapSrc": "/assets/images/countries/timor-leste-location.png",
+    "mapSrc": "/assets/images/countries/timor-leste-location.jpg",
     "mapAlt": "World map with Timor-Leste location marker",
     "mapMarker": {
       "x": 70,

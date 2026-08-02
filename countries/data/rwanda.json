@@ -1,9 +1,9 @@
 {
   "id": "rwanda",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/rwanda-outline.png",
+    "outlineSrc": "/assets/images/countries/rwanda-outline.jpg",
     "outlineAlt": "Rwanda country outline",
-    "mapSrc": "/assets/images/countries/rwanda-location.png",
+    "mapSrc": "/assets/images/countries/rwanda-location.jpg",
     "mapAlt": "World map with Rwanda location marker",
     "mapMarker": {
       "x": 45,

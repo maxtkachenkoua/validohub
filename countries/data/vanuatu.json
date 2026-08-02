@@ -1,9 +1,9 @@
 {
   "id": "vanuatu",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/vanuatu-outline.png",
+    "outlineSrc": "/assets/images/countries/vanuatu-outline.jpg",
     "outlineAlt": "Vanuatu country outline",
-    "mapSrc": "/assets/images/countries/vanuatu-location.png",
+    "mapSrc": "/assets/images/countries/vanuatu-location.jpg",
     "mapAlt": "World map with Vanuatu location marker",
     "mapMarker": {
       "x": 83,

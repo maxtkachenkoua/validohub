@@ -1,9 +1,9 @@
 {
   "id": "new-zealand",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/new-zealand-outline.png",
+    "outlineSrc": "/assets/images/countries/new-zealand-outline.jpg",
     "outlineAlt": "New Zealand country outline",
-    "mapSrc": "/assets/images/countries/new-zealand-location.png",
+    "mapSrc": "/assets/images/countries/new-zealand-location.jpg",
     "mapAlt": "World map with New Zealand location marker",
     "mapMarker": {
       "x": 84,

@@ -1,9 +1,9 @@
 {
   "id": "suriname",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/suriname-outline.png",
+    "outlineSrc": "/assets/images/countries/suriname-outline.jpg",
     "outlineAlt": "Suriname country outline",
-    "mapSrc": "/assets/images/countries/suriname-location.png",
+    "mapSrc": "/assets/images/countries/suriname-location.jpg",
     "mapAlt": "World map with Suriname location marker",
     "mapMarker": {
       "x": 51,

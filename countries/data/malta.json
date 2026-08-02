@@ -1,9 +1,9 @@
 {
   "id": "malta",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/malta-outline.png",
+    "outlineSrc": "/assets/images/countries/malta-outline.jpg",
     "outlineAlt": "Malta country outline",
-    "mapSrc": "/assets/images/countries/malta-location.png",
+    "mapSrc": "/assets/images/countries/malta-location.jpg",
     "mapAlt": "World map with Malta location marker",
     "mapMarker": {
       "x": 52,

@@ -1,9 +1,9 @@
 {
   "id": "uzbekistan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/uzbekistan-outline.png",
+    "outlineSrc": "/assets/images/countries/uzbekistan-outline.jpg",
     "outlineAlt": "Uzbekistan country outline",
-    "mapSrc": "/assets/images/countries/uzbekistan-location.png",
+    "mapSrc": "/assets/images/countries/uzbekistan-location.jpg",
     "mapAlt": "World map with Uzbekistan location marker",
     "mapMarker": {
       "x": 58,

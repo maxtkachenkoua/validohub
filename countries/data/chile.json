@@ -1,9 +1,9 @@
 {
   "id": "chile",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/chile-outline.png",
+    "outlineSrc": "/assets/images/countries/chile-outline.jpg",
     "outlineAlt": "Chile country outline",
-    "mapSrc": "/assets/images/countries/chile-location.png",
+    "mapSrc": "/assets/images/countries/chile-location.jpg",
     "mapAlt": "World map with Chile location marker",
     "mapMarker": {
       "x": 49,

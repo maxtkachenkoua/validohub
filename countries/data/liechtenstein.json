@@ -1,9 +1,9 @@
 {
   "id": "liechtenstein",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/liechtenstein-outline.png",
+    "outlineSrc": "/assets/images/countries/liechtenstein-outline.jpg",
     "outlineAlt": "Liechtenstein country outline",
-    "mapSrc": "/assets/images/countries/liechtenstein-location.png",
+    "mapSrc": "/assets/images/countries/liechtenstein-location.jpg",
     "mapAlt": "World map with Liechtenstein location marker",
     "mapMarker": {
       "x": 49,

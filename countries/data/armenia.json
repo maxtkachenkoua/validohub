@@ -1,9 +1,9 @@
 {
   "id": "armenia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/armenia-outline.png",
+    "outlineSrc": "/assets/images/countries/armenia-outline.jpg",
     "outlineAlt": "Armenia country outline",
-    "mapSrc": "/assets/images/countries/armenia-location.png",
+    "mapSrc": "/assets/images/countries/armenia-location.jpg",
     "mapAlt": "World map with Armenia location marker",
     "mapMarker": {
       "x": 55,

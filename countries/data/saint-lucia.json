@@ -1,9 +1,9 @@
 {
   "id": "saint-lucia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/saint-lucia-outline.png",
+    "outlineSrc": "/assets/images/countries/saint-lucia-outline.jpg",
     "outlineAlt": "Saint Lucia country outline",
-    "mapSrc": "/assets/images/countries/saint-lucia-location.png",
+    "mapSrc": "/assets/images/countries/saint-lucia-location.jpg",
     "mapAlt": "Saint Lucia location map",
     "mapMarker": {
       "x": 34,

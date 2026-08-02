@@ -1,9 +1,9 @@
 {
   "id": "japan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/japan-outline.png",
+    "outlineSrc": "/assets/images/countries/japan-outline.jpg",
     "outlineAlt": "Japan country outline",
-    "mapSrc": "/assets/images/countries/japan-location.png",
+    "mapSrc": "/assets/images/countries/japan-location.jpg",
     "mapAlt": "World map with Japan location marker",
     "mapMarker": {
       "x": 73,

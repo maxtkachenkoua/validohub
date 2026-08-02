@@ -1,9 +1,9 @@
 {
   "id": "equatorial-guinea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/equatorial-guinea-outline.png",
+    "outlineSrc": "/assets/images/countries/equatorial-guinea-outline.jpg",
     "outlineAlt": "Equatorial Guinea country outline",
-    "mapSrc": "/assets/images/countries/equatorial-guinea-location.png",
+    "mapSrc": "/assets/images/countries/equatorial-guinea-location.jpg",
     "mapAlt": "World map with Equatorial Guinea location marker",
     "mapMarker": {
       "x": 45,

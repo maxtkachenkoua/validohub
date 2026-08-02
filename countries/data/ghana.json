@@ -1,9 +1,9 @@
 {
   "id": "ghana",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/ghana-outline.png",
+    "outlineSrc": "/assets/images/countries/ghana-outline.jpg",
     "outlineAlt": "Ghana country outline",
-    "mapSrc": "/assets/images/countries/ghana-location.png",
+    "mapSrc": "/assets/images/countries/ghana-location.jpg",
     "mapAlt": "World map with Ghana location marker",
     "mapMarker": {
       "x": 45,

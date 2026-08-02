@@ -1,9 +1,9 @@
 {
   "id": "argentina",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/argentina-outline.png",
+    "outlineSrc": "/assets/images/countries/argentina-outline.jpg",
     "outlineAlt": "Argentina country outline",
-    "mapSrc": "/assets/images/countries/argentina-location.png",
+    "mapSrc": "/assets/images/countries/argentina-location.jpg",
     "mapAlt": "World map with Argentina location marker",
     "mapMarker": {
       "x": 55,

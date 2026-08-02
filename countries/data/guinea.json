@@ -1,9 +1,9 @@
 {
   "id": "guinea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/guinea-outline.png",
+    "outlineSrc": "/assets/images/countries/guinea-outline.jpg",
     "outlineAlt": "Guinea country outline",
-    "mapSrc": "/assets/images/countries/guinea-location.png",
+    "mapSrc": "/assets/images/countries/guinea-location.jpg",
     "mapAlt": "World map with Guinea location marker",
     "mapMarker": {
       "x": 45,

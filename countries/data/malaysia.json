@@ -1,9 +1,9 @@
 {
   "id": "malaysia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/malaysia-outline.png",
+    "outlineSrc": "/assets/images/countries/malaysia-outline.jpg",
     "outlineAlt": "Malaysia country outline",
-    "mapSrc": "/assets/images/countries/malaysia-location.png",
+    "mapSrc": "/assets/images/countries/malaysia-location.jpg",
     "mapAlt": "World map with Malaysia location marker",
     "mapMarker": {
       "x": 67,

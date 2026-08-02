@@ -1,9 +1,9 @@
 {
   "id": "sierra-leone",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/sierra-leone-outline.png",
+    "outlineSrc": "/assets/images/countries/sierra-leone-outline.jpg",
     "outlineAlt": "Sierra Leone country outline",
-    "mapSrc": "/assets/images/countries/sierra-leone-location.png",
+    "mapSrc": "/assets/images/countries/sierra-leone-location.jpg",
     "mapAlt": "World map with Sierra Leone location marker",
     "mapMarker": {
       "x": 45,

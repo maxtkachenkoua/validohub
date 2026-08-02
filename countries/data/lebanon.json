@@ -1,9 +1,9 @@
 {
   "id": "lebanon",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/lebanon-outline.png",
+    "outlineSrc": "/assets/images/countries/lebanon-outline.jpg",
     "outlineAlt": "Lebanon country outline",
-    "mapSrc": "/assets/images/countries/lebanon-location.png",
+    "mapSrc": "/assets/images/countries/lebanon-location.jpg",
     "mapAlt": "World map with Lebanon location marker",
     "mapMarker": {
       "x": 55,

@@ -1,9 +1,9 @@
 {
   "id": "south-africa",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/south-africa-outline.png",
+    "outlineSrc": "/assets/images/countries/south-africa-outline.jpg",
     "outlineAlt": "South Africa country outline",
-    "mapSrc": "/assets/images/countries/south-africa-location.png",
+    "mapSrc": "/assets/images/countries/south-africa-location.jpg",
     "mapAlt": "World map with South Africa location marker",
     "mapMarker": {
       "x": 45,

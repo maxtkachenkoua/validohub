@@ -1,9 +1,9 @@
 {
   "id": "guyana",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/guyana-outline.png",
+    "outlineSrc": "/assets/images/countries/guyana-outline.jpg",
     "outlineAlt": "Guyana country outline",
-    "mapSrc": "/assets/images/countries/guyana-location.png",
+    "mapSrc": "/assets/images/countries/guyana-location.jpg",
     "mapAlt": "World map with Guyana location marker",
     "mapMarker": {
       "x": 49,

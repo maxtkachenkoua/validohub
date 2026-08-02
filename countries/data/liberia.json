@@ -1,9 +1,9 @@
 {
   "id": "liberia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/liberia-outline.png",
+    "outlineSrc": "/assets/images/countries/liberia-outline.jpg",
     "outlineAlt": "Liberia country outline",
-    "mapSrc": "/assets/images/countries/liberia-location.png",
+    "mapSrc": "/assets/images/countries/liberia-location.jpg",
     "mapAlt": "World map with Liberia location marker",
     "mapMarker": {
       "x": 45,

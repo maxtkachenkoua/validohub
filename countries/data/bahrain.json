@@ -1,9 +1,9 @@
 {
   "id": "bahrain",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bahrain-outline.png",
+    "outlineSrc": "/assets/images/countries/bahrain-outline.jpg",
     "outlineAlt": "Bahrain country outline",
-    "mapSrc": "/assets/images/countries/bahrain-location.png",
+    "mapSrc": "/assets/images/countries/bahrain-location.jpg",
     "mapAlt": "World map with Bahrain location marker",
     "mapMarker": {
       "x": 58,

@@ -1,9 +1,9 @@
 {
   "id": "senegal",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/senegal-outline.png",
+    "outlineSrc": "/assets/images/countries/senegal-outline.jpg",
     "outlineAlt": "Senegal country outline",
-    "mapSrc": "/assets/images/countries/senegal-location.png",
+    "mapSrc": "/assets/images/countries/senegal-location.jpg",
     "mapAlt": "World map with Senegal location marker",
     "mapMarker": {
       "x": 45,

@@ -1,9 +1,9 @@
 {
   "id": "cabo-verde",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/cabo-verde-outline.png",
+    "outlineSrc": "/assets/images/countries/cabo-verde-outline.jpg",
     "outlineAlt": "Cabo Verde country outline",
-    "mapSrc": "/assets/images/countries/cabo-verde-location.png",
+    "mapSrc": "/assets/images/countries/cabo-verde-location.jpg",
     "mapAlt": "World map with Cabo Verde location marker",
     "mapMarker": {
       "x": 45,

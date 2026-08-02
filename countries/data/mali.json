@@ -1,9 +1,9 @@
 {
   "id": "mali",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mali-outline.png",
+    "outlineSrc": "/assets/images/countries/mali-outline.jpg",
     "outlineAlt": "Mali country outline",
-    "mapSrc": "/assets/images/countries/mali-location.png",
+    "mapSrc": "/assets/images/countries/mali-location.jpg",
     "mapAlt": "World map with Mali location marker",
     "mapMarker": {
       "x": 45,

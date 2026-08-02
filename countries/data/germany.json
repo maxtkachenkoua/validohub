@@ -1,9 +1,9 @@
 {
   "id": "germany",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/germany-outline.png",
+    "outlineSrc": "/assets/images/countries/germany-outline.jpg",
     "outlineAlt": "Germany country outline",
-    "mapSrc": "/assets/images/countries/germany-location.png",
+    "mapSrc": "/assets/images/countries/germany-location.jpg",
     "mapAlt": "World map with Germany location marker",
     "mapMarker": {
       "x": 50,

@@ -1,9 +1,9 @@
 {
   "id": "sweden",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/sweden-outline.png",
+    "outlineSrc": "/assets/images/countries/sweden-outline.jpg",
     "outlineAlt": "Sweden country outline",
-    "mapSrc": "/assets/images/countries/sweden-location.png",
+    "mapSrc": "/assets/images/countries/sweden-location.jpg",
     "mapAlt": "World map with Sweden location marker",
     "mapMarker": {
       "x": 55,

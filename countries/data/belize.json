@@ -1,9 +1,9 @@
 {
   "id": "belize",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/belize-outline.png",
+    "outlineSrc": "/assets/images/countries/belize-outline.jpg",
     "outlineAlt": "Belize country outline",
-    "mapSrc": "/assets/images/countries/belize-location.png",
+    "mapSrc": "/assets/images/countries/belize-location.jpg",
     "mapAlt": "Belize location map",
     "mapMarker": {
       "x": 34,

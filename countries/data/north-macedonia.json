@@ -1,9 +1,9 @@
 {
   "id": "north-macedonia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/north-macedonia-outline.png",
+    "outlineSrc": "/assets/images/countries/north-macedonia-outline.jpg",
     "outlineAlt": "North Macedonia country outline",
-    "mapSrc": "/assets/images/countries/north-macedonia-location.png",
+    "mapSrc": "/assets/images/countries/north-macedonia-location.jpg",
     "mapAlt": "World map with North Macedonia location marker",
     "mapMarker": {
       "x": 55,

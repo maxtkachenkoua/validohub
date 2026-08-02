@@ -1,9 +1,9 @@
 {
   "id": "ethiopia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/ethiopia-outline.png",
+    "outlineSrc": "/assets/images/countries/ethiopia-outline.jpg",
     "outlineAlt": "Ethiopia country outline",
-    "mapSrc": "/assets/images/countries/ethiopia-location.png",
+    "mapSrc": "/assets/images/countries/ethiopia-location.jpg",
     "mapAlt": "World map with Ethiopia location marker",
     "mapMarker": {
       "x": 45,

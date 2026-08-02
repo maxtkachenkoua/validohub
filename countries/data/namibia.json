@@ -1,9 +1,9 @@
 {
   "id": "namibia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/namibia-outline.png",
+    "outlineSrc": "/assets/images/countries/namibia-outline.jpg",
     "outlineAlt": "Namibia country outline",
-    "mapSrc": "/assets/images/countries/namibia-location.png",
+    "mapSrc": "/assets/images/countries/namibia-location.jpg",
     "mapAlt": "World map with Namibia location marker",
     "mapMarker": {
       "x": 45,

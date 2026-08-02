@@ -1,9 +1,9 @@
 {
   "id": "laos",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/laos-outline.png",
+    "outlineSrc": "/assets/images/countries/laos-outline.jpg",
     "outlineAlt": "Laos country outline",
-    "mapSrc": "/assets/images/countries/laos-location.png",
+    "mapSrc": "/assets/images/countries/laos-location.jpg",
     "mapAlt": "World map with Laos location marker",
     "mapMarker": {
       "x": 67,

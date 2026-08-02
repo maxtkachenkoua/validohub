@@ -1,9 +1,9 @@
 {
   "id": "haiti",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/haiti-outline.png",
+    "outlineSrc": "/assets/images/countries/haiti-outline.jpg",
     "outlineAlt": "Haiti country outline",
-    "mapSrc": "/assets/images/countries/haiti-location.png",
+    "mapSrc": "/assets/images/countries/haiti-location.jpg",
     "mapAlt": "Haiti location map",
     "mapMarker": {
       "x": 34,

@@ -1,9 +1,9 @@
 {
   "id": "mongolia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mongolia-outline.png",
+    "outlineSrc": "/assets/images/countries/mongolia-outline.jpg",
     "outlineAlt": "Mongolia country outline",
-    "mapSrc": "/assets/images/countries/mongolia-location.png",
+    "mapSrc": "/assets/images/countries/mongolia-location.jpg",
     "mapAlt": "World map with Mongolia location marker",
     "mapMarker": {
       "x": 66,

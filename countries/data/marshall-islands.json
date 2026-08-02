@@ -1,9 +1,9 @@
 {
   "id": "marshall-islands",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/marshall-islands-outline.png",
+    "outlineSrc": "/assets/images/countries/marshall-islands-outline.jpg",
     "outlineAlt": "Marshall Islands country outline",
-    "mapSrc": "/assets/images/countries/marshall-islands-location.png",
+    "mapSrc": "/assets/images/countries/marshall-islands-location.jpg",
     "mapAlt": "World map with Marshall Islands location marker",
     "mapMarker": {
       "x": 91,

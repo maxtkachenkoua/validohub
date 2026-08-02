@@ -1,9 +1,9 @@
 {
   "id": "mauritius",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mauritius-outline.png",
+    "outlineSrc": "/assets/images/countries/mauritius-outline.jpg",
     "outlineAlt": "Mauritius country outline",
-    "mapSrc": "/assets/images/countries/mauritius-location.png",
+    "mapSrc": "/assets/images/countries/mauritius-location.jpg",
     "mapAlt": "World map with Mauritius location marker",
     "mapMarker": {
       "x": 45,

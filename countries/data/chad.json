@@ -1,9 +1,9 @@
 {
   "id": "chad",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/chad-outline.png",
+    "outlineSrc": "/assets/images/countries/chad-outline.jpg",
     "outlineAlt": "Chad country outline",
-    "mapSrc": "/assets/images/countries/chad-location.png",
+    "mapSrc": "/assets/images/countries/chad-location.jpg",
     "mapAlt": "World map with Chad location marker",
     "mapMarker": {
       "x": 45,

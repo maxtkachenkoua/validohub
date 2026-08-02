@@ -1,9 +1,9 @@
 {
   "id": "estonia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/estonia-outline.png",
+    "outlineSrc": "/assets/images/countries/estonia-outline.jpg",
     "outlineAlt": "Estonia country outline",
-    "mapSrc": "/assets/images/countries/estonia-location.png",
+    "mapSrc": "/assets/images/countries/estonia-location.jpg",
     "mapAlt": "World map with Estonia location marker",
     "mapMarker": {
       "x": 56,

@@ -1,9 +1,9 @@
 {
   "id": "uruguay",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/uruguay-outline.png",
+    "outlineSrc": "/assets/images/countries/uruguay-outline.jpg",
     "outlineAlt": "Uruguay country outline",
-    "mapSrc": "/assets/images/countries/uruguay-location.png",
+    "mapSrc": "/assets/images/countries/uruguay-location.jpg",
     "mapAlt": "World map with Uruguay location marker",
     "mapMarker": {
       "x": 58,

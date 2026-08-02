@@ -62,6 +62,7 @@ const hardNeedles = [
   'Czech Rodne cislo',
   'Ukrainian RNOKPP',
   'Italian Codice Fiscale',
+  'Company Suffix',
   'IBAN generator for structural fixtures',
   'Generate Polish IBAN',
   'Generate French IBAN',
@@ -75,6 +76,12 @@ const hardNeedles = [
   'identifier families indexed',
   'Each full-premium country',
   'Open all 194 country hubs',
+  'National Identifiers Tools',
+  'Explore utility tools for national identifiers tools.',
+  'Available tools',
+  'Tools for postal codes, addresses, phone formats, municipalities, and regional data.',
+  'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.',
+  'Home',
   'Banking fixtures',
   'Privacy boundary',
   'Runs locally',
@@ -88,6 +95,12 @@ const hardNeedles = [
   'Валіднийator',
   'Poprawnyate',
   'Poprawnyator',
+  'GültigoHub',
+  'Gültigate',
+  'Gültigator',
+  'ValideeeoHub',
+  'Valideeeate',
+  'Valideeeator',
   'INTELIGENCJA DEVELOPERSKA TYLKO W PRZEGLĄDARCE',
   'ІНТЕЛЕКТ ДЛЯ РОЗРОБНИКІВ ЛИШЕ В БРАУЗЕРІ'
 ];
@@ -167,6 +180,21 @@ const softNeedles = [
   'Find the workbench',
   'Primary workbench',
   'Reference workflow'
+];
+
+const htmlHardNeedles = [
+  'aria-label="Home"'
+];
+
+const seoHardNeedles = [
+  'Company Suffix',
+  'Validation, generation, parsing, encoding, and conversion tools.',
+  'Browse browser-only national identifiers tools',
+  'Explore browser-only national identifiers tools',
+  'browser-only national identifiers tools',
+  'National Identifiants',
+  'Tools fur nationale Kennungen',
+  ' Normalizer'
 ];
 
 function parseArgs(argv) {
@@ -284,9 +312,14 @@ async function main() {
       ...hardNeedles,
       ...(localeHardNeedles[locale] || [])
     ].filter(needle => needleHit(text, needle));
-    const seoHits = (localeSeoHardNeedles[locale] || []).filter(needle => needleHit(`${seo} ${structuredData}`, needle));
+    const htmlHardHits = htmlHardNeedles.filter(needle => html.includes(needle));
+    const seoHits = [
+      ...seoHardNeedles,
+      ...(localeSeoHardNeedles[locale] || [])
+    ].filter(needle => needleHit(`${seo} ${structuredData}`, needle));
     const softHits = softNeedles.filter(needle => needleHit(text, needle));
     if (hardHits.length) failures.push(`${route} untranslated high-signal UI: ${hardHits.join(', ')}`);
+    if (htmlHardHits.length) failures.push(`${route} untranslated HTML chrome: ${htmlHardHits.join(', ')}`);
     if (seoHits.length) failures.push(`${route} untranslated SEO shell: ${seoHits.join(', ')}`);
     if (softHits.length) warnings.push(`${route} possible English UI/domain text: ${softHits.join(', ')}`);
   }

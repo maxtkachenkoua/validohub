@@ -1,9 +1,9 @@
 {
   "id": "niger",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/niger-outline.png",
+    "outlineSrc": "/assets/images/countries/niger-outline.jpg",
     "outlineAlt": "Niger country outline",
-    "mapSrc": "/assets/images/countries/niger-location.png",
+    "mapSrc": "/assets/images/countries/niger-location.jpg",
     "mapAlt": "World map with Niger location marker",
     "mapMarker": {
       "x": 45,

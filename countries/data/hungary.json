@@ -1,9 +1,9 @@
 {
   "id": "hungary",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/hungary-outline.png",
+    "outlineSrc": "/assets/images/countries/hungary-outline.jpg",
     "outlineAlt": "Hungary country outline",
-    "mapSrc": "/assets/images/countries/hungary-location.png",
+    "mapSrc": "/assets/images/countries/hungary-location.jpg",
     "mapAlt": "World map with Hungary location marker",
     "mapMarker": {
       "x": 53,

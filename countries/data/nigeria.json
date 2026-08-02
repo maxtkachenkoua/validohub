@@ -1,9 +1,9 @@
 {
   "id": "nigeria",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/nigeria-outline.png",
+    "outlineSrc": "/assets/images/countries/nigeria-outline.jpg",
     "outlineAlt": "Nigeria country outline",
-    "mapSrc": "/assets/images/countries/nigeria-location.png",
+    "mapSrc": "/assets/images/countries/nigeria-location.jpg",
     "mapAlt": "World map with Nigeria location marker",
     "mapMarker": {
       "x": 45,

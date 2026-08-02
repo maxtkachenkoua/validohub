@@ -17,9 +17,9 @@
 
   const COUNTRY_VISUAL_ASSETS = {
     "afghanistan": {
-      "outlineSrc": "/assets/images/countries/afghanistan-outline.png",
+      "outlineSrc": "/assets/images/countries/afghanistan-outline.jpg",
       "outlineAlt": "Afghanistan country outline",
-      "mapSrc": "/assets/images/countries/afghanistan-location.png",
+      "mapSrc": "/assets/images/countries/afghanistan-location.jpg",
       "mapAlt": "World map with Afghanistan location marker",
       "mapMarker": {
         "x": 61,
@@ -29,9 +29,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "albania": {
-      "outlineSrc": "/assets/images/countries/albania-outline.png",
+      "outlineSrc": "/assets/images/countries/albania-outline.jpg",
       "outlineAlt": "Albania country outline",
-      "mapSrc": "/assets/images/countries/albania-location.png",
+      "mapSrc": "/assets/images/countries/albania-location.jpg",
       "mapAlt": "World map with Albania location marker",
       "mapMarker": {
         "x": 53,
@@ -41,9 +41,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "algeria": {
-      "outlineSrc": "/assets/images/countries/algeria-outline.png",
+      "outlineSrc": "/assets/images/countries/algeria-outline.jpg",
       "outlineAlt": "Algeria country outline",
-      "mapSrc": "/assets/images/countries/algeria-location.png",
+      "mapSrc": "/assets/images/countries/algeria-location.jpg",
       "mapAlt": "World map with Algeria location marker",
       "mapMarker": {
         "x": 45,
@@ -53,9 +53,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "andorra": {
-      "outlineSrc": "/assets/images/countries/andorra-outline.png",
+      "outlineSrc": "/assets/images/countries/andorra-outline.jpg",
       "outlineAlt": "Andorra country outline",
-      "mapSrc": "/assets/images/countries/andorra-location.png",
+      "mapSrc": "/assets/images/countries/andorra-location.jpg",
       "mapAlt": "World map with Andorra location marker",
       "mapMarker": {
         "x": 45,
@@ -65,9 +65,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "angola": {
-      "outlineSrc": "/assets/images/countries/angola-outline.png",
+      "outlineSrc": "/assets/images/countries/angola-outline.jpg",
       "outlineAlt": "Angola country outline",
-      "mapSrc": "/assets/images/countries/angola-location.png",
+      "mapSrc": "/assets/images/countries/angola-location.jpg",
       "mapAlt": "World map with Angola location marker",
       "mapMarker": {
         "x": 45,
@@ -77,9 +77,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "antigua-and-barbuda": {
-      "outlineSrc": "/assets/images/countries/antigua-and-barbuda-outline.png",
+      "outlineSrc": "/assets/images/countries/antigua-and-barbuda-outline.jpg",
       "outlineAlt": "Antigua and Barbuda country outline",
-      "mapSrc": "/assets/images/countries/antigua-and-barbuda-location.png",
+      "mapSrc": "/assets/images/countries/antigua-and-barbuda-location.jpg",
       "mapAlt": "Antigua and Barbuda location map",
       "mapMarker": {
         "x": 34,
@@ -89,9 +89,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "argentina": {
-      "outlineSrc": "/assets/images/countries/argentina-outline.png",
+      "outlineSrc": "/assets/images/countries/argentina-outline.jpg",
       "outlineAlt": "Argentina country outline",
-      "mapSrc": "/assets/images/countries/argentina-location.png",
+      "mapSrc": "/assets/images/countries/argentina-location.jpg",
       "mapAlt": "World map with Argentina location marker",
       "mapMarker": {
         "x": 55,
@@ -101,9 +101,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "armenia": {
-      "outlineSrc": "/assets/images/countries/armenia-outline.png",
+      "outlineSrc": "/assets/images/countries/armenia-outline.jpg",
       "outlineAlt": "Armenia country outline",
-      "mapSrc": "/assets/images/countries/armenia-location.png",
+      "mapSrc": "/assets/images/countries/armenia-location.jpg",
       "mapAlt": "World map with Armenia location marker",
       "mapMarker": {
         "x": 55,
@@ -113,9 +113,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "australia": {
-      "outlineSrc": "/assets/images/countries/australia-outline.png",
+      "outlineSrc": "/assets/images/countries/australia-outline.jpg",
       "outlineAlt": "Australia country outline",
-      "mapSrc": "/assets/images/countries/australia-location.png",
+      "mapSrc": "/assets/images/countries/australia-location.jpg",
       "mapAlt": "World map with Australia location marker",
       "mapMarker": {
         "x": 77,
@@ -125,9 +125,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "austria": {
-      "outlineSrc": "/assets/images/countries/austria-outline.png",
+      "outlineSrc": "/assets/images/countries/austria-outline.jpg",
       "outlineAlt": "Austria country outline",
-      "mapSrc": "/assets/images/countries/austria-location.png",
+      "mapSrc": "/assets/images/countries/austria-location.jpg",
       "mapAlt": "World map with Austria location marker",
       "mapMarker": {
         "x": 50,
@@ -137,9 +137,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "azerbaijan": {
-      "outlineSrc": "/assets/images/countries/azerbaijan-outline.png",
+      "outlineSrc": "/assets/images/countries/azerbaijan-outline.jpg",
       "outlineAlt": "Azerbaijan country outline",
-      "mapSrc": "/assets/images/countries/azerbaijan-location.png",
+      "mapSrc": "/assets/images/countries/azerbaijan-location.jpg",
       "mapAlt": "World map with Azerbaijan location marker",
       "mapMarker": {
         "x": 56,
@@ -149,9 +149,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bahamas": {
-      "outlineSrc": "/assets/images/countries/bahamas-outline.png",
+      "outlineSrc": "/assets/images/countries/bahamas-outline.jpg",
       "outlineAlt": "Bahamas country outline",
-      "mapSrc": "/assets/images/countries/bahamas-location.png",
+      "mapSrc": "/assets/images/countries/bahamas-location.jpg",
       "mapAlt": "Bahamas location map",
       "mapMarker": {
         "x": 34,
@@ -161,9 +161,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bahrain": {
-      "outlineSrc": "/assets/images/countries/bahrain-outline.png",
+      "outlineSrc": "/assets/images/countries/bahrain-outline.jpg",
       "outlineAlt": "Bahrain country outline",
-      "mapSrc": "/assets/images/countries/bahrain-location.png",
+      "mapSrc": "/assets/images/countries/bahrain-location.jpg",
       "mapAlt": "World map with Bahrain location marker",
       "mapMarker": {
         "x": 58,
@@ -173,9 +173,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bangladesh": {
-      "outlineSrc": "/assets/images/countries/bangladesh-outline.png",
+      "outlineSrc": "/assets/images/countries/bangladesh-outline.jpg",
       "outlineAlt": "Bangladesh country outline",
-      "mapSrc": "/assets/images/countries/bangladesh-location.png",
+      "mapSrc": "/assets/images/countries/bangladesh-location.jpg",
       "mapAlt": "World map with Bangladesh location marker",
       "mapMarker": {
         "x": 68,
@@ -185,9 +185,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "barbados": {
-      "outlineSrc": "/assets/images/countries/barbados-outline.png",
+      "outlineSrc": "/assets/images/countries/barbados-outline.jpg",
       "outlineAlt": "Barbados country outline",
-      "mapSrc": "/assets/images/countries/barbados-location.png",
+      "mapSrc": "/assets/images/countries/barbados-location.jpg",
       "mapAlt": "Barbados location map",
       "mapMarker": {
         "x": 34,
@@ -197,9 +197,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "belgium": {
-      "outlineSrc": "/assets/images/countries/belgium-outline.png",
+      "outlineSrc": "/assets/images/countries/belgium-outline.jpg",
       "outlineAlt": "Belgium country outline",
-      "mapSrc": "/assets/images/countries/belgium-location.png",
+      "mapSrc": "/assets/images/countries/belgium-location.jpg",
       "mapAlt": "World map with Belgium location marker",
       "mapMarker": {
         "x": 47,
@@ -209,9 +209,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "belize": {
-      "outlineSrc": "/assets/images/countries/belize-outline.png",
+      "outlineSrc": "/assets/images/countries/belize-outline.jpg",
       "outlineAlt": "Belize country outline",
-      "mapSrc": "/assets/images/countries/belize-location.png",
+      "mapSrc": "/assets/images/countries/belize-location.jpg",
       "mapAlt": "Belize location map",
       "mapMarker": {
         "x": 34,
@@ -221,9 +221,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "benin": {
-      "outlineSrc": "/assets/images/countries/benin-outline.png",
+      "outlineSrc": "/assets/images/countries/benin-outline.jpg",
       "outlineAlt": "Benin country outline",
-      "mapSrc": "/assets/images/countries/benin-location.png",
+      "mapSrc": "/assets/images/countries/benin-location.jpg",
       "mapAlt": "World map with Benin location marker",
       "mapMarker": {
         "x": 45,
@@ -233,9 +233,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bhutan": {
-      "outlineSrc": "/assets/images/countries/bhutan-outline.png",
+      "outlineSrc": "/assets/images/countries/bhutan-outline.jpg",
       "outlineAlt": "Bhutan country outline",
-      "mapSrc": "/assets/images/countries/bhutan-location.png",
+      "mapSrc": "/assets/images/countries/bhutan-location.jpg",
       "mapAlt": "World map with Bhutan location marker",
       "mapMarker": {
         "x": 66,
@@ -245,9 +245,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bolivia": {
-      "outlineSrc": "/assets/images/countries/bolivia-outline.png",
+      "outlineSrc": "/assets/images/countries/bolivia-outline.jpg",
       "outlineAlt": "Bolivia country outline",
-      "mapSrc": "/assets/images/countries/bolivia-location.png",
+      "mapSrc": "/assets/images/countries/bolivia-location.jpg",
       "mapAlt": "World map with Bolivia location marker",
       "mapMarker": {
         "x": 51,
@@ -257,9 +257,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "bosnia-and-herzegovina": {
-      "outlineSrc": "/assets/images/countries/bosnia-and-herzegovina-outline.png",
+      "outlineSrc": "/assets/images/countries/bosnia-and-herzegovina-outline.jpg",
       "outlineAlt": "Bosnia and Herzegovina country outline",
-      "mapSrc": "/assets/images/countries/bosnia-and-herzegovina-location.png",
+      "mapSrc": "/assets/images/countries/bosnia-and-herzegovina-location.jpg",
       "mapAlt": "World map with Bosnia and Herzegovina location marker",
       "mapMarker": {
         "x": 52,
@@ -269,9 +269,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "botswana": {
-      "outlineSrc": "/assets/images/countries/botswana-outline.png",
+      "outlineSrc": "/assets/images/countries/botswana-outline.jpg",
       "outlineAlt": "Botswana country outline",
-      "mapSrc": "/assets/images/countries/botswana-location.png",
+      "mapSrc": "/assets/images/countries/botswana-location.jpg",
       "mapAlt": "World map with Botswana location marker",
       "mapMarker": {
         "x": 45,
@@ -281,9 +281,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "brazil": {
-      "outlineSrc": "/assets/images/countries/brazil-outline.png",
+      "outlineSrc": "/assets/images/countries/brazil-outline.jpg",
       "outlineAlt": "Brazil country outline",
-      "mapSrc": "/assets/images/countries/brazil-location.png",
+      "mapSrc": "/assets/images/countries/brazil-location.jpg",
       "mapAlt": "World map with Brazil location marker",
       "mapMarker": {
         "x": 49,
@@ -293,9 +293,9 @@
       "source": "Natural Earth geometry"
     },
     "brunei": {
-      "outlineSrc": "/assets/images/countries/brunei-outline.png",
+      "outlineSrc": "/assets/images/countries/brunei-outline.jpg",
       "outlineAlt": "Brunei country outline",
-      "mapSrc": "/assets/images/countries/brunei-location.png",
+      "mapSrc": "/assets/images/countries/brunei-location.jpg",
       "mapAlt": "World map with Brunei location marker",
       "mapMarker": {
         "x": 69,
@@ -305,9 +305,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "bulgaria": {
-      "outlineSrc": "/assets/images/countries/bulgaria-outline.png",
+      "outlineSrc": "/assets/images/countries/bulgaria-outline.jpg",
       "outlineAlt": "Bulgaria country outline",
-      "mapSrc": "/assets/images/countries/bulgaria-location.png",
+      "mapSrc": "/assets/images/countries/bulgaria-location.jpg",
       "mapAlt": "World map with Bulgaria location marker",
       "mapMarker": {
         "x": 56,
@@ -317,9 +317,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "burkina-faso": {
-      "outlineSrc": "/assets/images/countries/burkina-faso-outline.png",
+      "outlineSrc": "/assets/images/countries/burkina-faso-outline.jpg",
       "outlineAlt": "Burkina Faso country outline",
-      "mapSrc": "/assets/images/countries/burkina-faso-location.png",
+      "mapSrc": "/assets/images/countries/burkina-faso-location.jpg",
       "mapAlt": "World map with Burkina Faso location marker",
       "mapMarker": {
         "x": 45,
@@ -329,9 +329,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "burundi": {
-      "outlineSrc": "/assets/images/countries/burundi-outline.png",
+      "outlineSrc": "/assets/images/countries/burundi-outline.jpg",
       "outlineAlt": "Burundi country outline",
-      "mapSrc": "/assets/images/countries/burundi-location.png",
+      "mapSrc": "/assets/images/countries/burundi-location.jpg",
       "mapAlt": "World map with Burundi location marker",
       "mapMarker": {
         "x": 45,
@@ -341,9 +341,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "cabo-verde": {
-      "outlineSrc": "/assets/images/countries/cabo-verde-outline.png",
+      "outlineSrc": "/assets/images/countries/cabo-verde-outline.jpg",
       "outlineAlt": "Cabo Verde country outline",
-      "mapSrc": "/assets/images/countries/cabo-verde-location.png",
+      "mapSrc": "/assets/images/countries/cabo-verde-location.jpg",
       "mapAlt": "World map with Cabo Verde location marker",
       "mapMarker": {
         "x": 45,
@@ -353,9 +353,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "cambodia": {
-      "outlineSrc": "/assets/images/countries/cambodia-outline.png",
+      "outlineSrc": "/assets/images/countries/cambodia-outline.jpg",
       "outlineAlt": "Cambodia country outline",
-      "mapSrc": "/assets/images/countries/cambodia-location.png",
+      "mapSrc": "/assets/images/countries/cambodia-location.jpg",
       "mapAlt": "World map with Cambodia location marker",
       "mapMarker": {
         "x": 68,
@@ -365,9 +365,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "cameroon": {
-      "outlineSrc": "/assets/images/countries/cameroon-outline.png",
+      "outlineSrc": "/assets/images/countries/cameroon-outline.jpg",
       "outlineAlt": "Cameroon country outline",
-      "mapSrc": "/assets/images/countries/cameroon-location.png",
+      "mapSrc": "/assets/images/countries/cameroon-location.jpg",
       "mapAlt": "World map with Cameroon location marker",
       "mapMarker": {
         "x": 45,
@@ -377,9 +377,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "canada": {
-      "outlineSrc": "/assets/images/countries/canada-outline.png",
+      "outlineSrc": "/assets/images/countries/canada-outline.jpg",
       "outlineAlt": "Canada country outline",
-      "mapSrc": "/assets/images/countries/canada-location.png",
+      "mapSrc": "/assets/images/countries/canada-location.jpg",
       "mapAlt": "Canada location map",
       "mapMarker": {
         "x": 38,
@@ -389,9 +389,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "central-african-republic": {
-      "outlineSrc": "/assets/images/countries/central-african-republic-outline.png",
+      "outlineSrc": "/assets/images/countries/central-african-republic-outline.jpg",
       "outlineAlt": "Central African Republic country outline",
-      "mapSrc": "/assets/images/countries/central-african-republic-location.png",
+      "mapSrc": "/assets/images/countries/central-african-republic-location.jpg",
       "mapAlt": "World map with Central African Republic location marker",
       "mapMarker": {
         "x": 45,
@@ -401,9 +401,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "chad": {
-      "outlineSrc": "/assets/images/countries/chad-outline.png",
+      "outlineSrc": "/assets/images/countries/chad-outline.jpg",
       "outlineAlt": "Chad country outline",
-      "mapSrc": "/assets/images/countries/chad-location.png",
+      "mapSrc": "/assets/images/countries/chad-location.jpg",
       "mapAlt": "World map with Chad location marker",
       "mapMarker": {
         "x": 45,
@@ -413,9 +413,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "chile": {
-      "outlineSrc": "/assets/images/countries/chile-outline.png",
+      "outlineSrc": "/assets/images/countries/chile-outline.jpg",
       "outlineAlt": "Chile country outline",
-      "mapSrc": "/assets/images/countries/chile-location.png",
+      "mapSrc": "/assets/images/countries/chile-location.jpg",
       "mapAlt": "World map with Chile location marker",
       "mapMarker": {
         "x": 49,
@@ -425,9 +425,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "china": {
-      "outlineSrc": "/assets/images/countries/china-outline.png",
+      "outlineSrc": "/assets/images/countries/china-outline.jpg",
       "outlineAlt": "China country outline",
-      "mapSrc": "/assets/images/countries/china-location.png",
+      "mapSrc": "/assets/images/countries/china-location.jpg",
       "mapAlt": "World map with China location marker",
       "mapMarker": {
         "x": 68,
@@ -437,9 +437,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "colombia": {
-      "outlineSrc": "/assets/images/countries/colombia-outline.png",
+      "outlineSrc": "/assets/images/countries/colombia-outline.jpg",
       "outlineAlt": "Colombia country outline",
-      "mapSrc": "/assets/images/countries/colombia-location.png",
+      "mapSrc": "/assets/images/countries/colombia-location.jpg",
       "mapAlt": "World map with Colombia location marker",
       "mapMarker": {
         "x": 43,
@@ -449,9 +449,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "comoros": {
-      "outlineSrc": "/assets/images/countries/comoros-outline.png",
+      "outlineSrc": "/assets/images/countries/comoros-outline.jpg",
       "outlineAlt": "Comoros country outline",
-      "mapSrc": "/assets/images/countries/comoros-location.png",
+      "mapSrc": "/assets/images/countries/comoros-location.jpg",
       "mapAlt": "World map with Comoros location marker",
       "mapMarker": {
         "x": 45,
@@ -461,9 +461,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "congo": {
-      "outlineSrc": "/assets/images/countries/congo-outline.png",
+      "outlineSrc": "/assets/images/countries/congo-outline.jpg",
       "outlineAlt": "Republic of the Congo country outline",
-      "mapSrc": "/assets/images/countries/congo-location.png",
+      "mapSrc": "/assets/images/countries/congo-location.jpg",
       "mapAlt": "World map with Republic of the Congo location marker",
       "mapMarker": {
         "x": 45,
@@ -473,9 +473,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "costa-rica": {
-      "outlineSrc": "/assets/images/countries/costa-rica-outline.png",
+      "outlineSrc": "/assets/images/countries/costa-rica-outline.jpg",
       "outlineAlt": "Costa Rica country outline",
-      "mapSrc": "/assets/images/countries/costa-rica-location.png",
+      "mapSrc": "/assets/images/countries/costa-rica-location.jpg",
       "mapAlt": "Costa Rica location map",
       "mapMarker": {
         "x": 34,
@@ -485,9 +485,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "cote-d-ivoire": {
-      "outlineSrc": "/assets/images/countries/cote-d-ivoire-outline.png",
+      "outlineSrc": "/assets/images/countries/cote-d-ivoire-outline.jpg",
       "outlineAlt": "Cote dIvoire country outline",
-      "mapSrc": "/assets/images/countries/cote-d-ivoire-location.png",
+      "mapSrc": "/assets/images/countries/cote-d-ivoire-location.jpg",
       "mapAlt": "World map with Cote dIvoire location marker",
       "mapMarker": {
         "x": 45,
@@ -497,9 +497,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "croatia": {
-      "outlineSrc": "/assets/images/countries/croatia-outline.png",
+      "outlineSrc": "/assets/images/countries/croatia-outline.jpg",
       "outlineAlt": "Croatia country outline",
-      "mapSrc": "/assets/images/countries/croatia-location.png",
+      "mapSrc": "/assets/images/countries/croatia-location.jpg",
       "mapAlt": "World map with Croatia location marker",
       "mapMarker": {
         "x": 51,
@@ -509,9 +509,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "cuba": {
-      "outlineSrc": "/assets/images/countries/cuba-outline.png",
+      "outlineSrc": "/assets/images/countries/cuba-outline.jpg",
       "outlineAlt": "Cuba country outline",
-      "mapSrc": "/assets/images/countries/cuba-location.png",
+      "mapSrc": "/assets/images/countries/cuba-location.jpg",
       "mapAlt": "Cuba location map",
       "mapMarker": {
         "x": 34,
@@ -521,9 +521,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "cyprus": {
-      "outlineSrc": "/assets/images/countries/cyprus-outline.png",
+      "outlineSrc": "/assets/images/countries/cyprus-outline.jpg",
       "outlineAlt": "Cyprus country outline",
-      "mapSrc": "/assets/images/countries/cyprus-location.png",
+      "mapSrc": "/assets/images/countries/cyprus-location.jpg",
       "mapAlt": "World map with Cyprus location marker",
       "mapMarker": {
         "x": 60,
@@ -533,9 +533,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "czechia": {
-      "outlineSrc": "/assets/images/countries/czechia-outline.png",
+      "outlineSrc": "/assets/images/countries/czechia-outline.jpg",
       "outlineAlt": "Czechia country outline",
-      "mapSrc": "/assets/images/countries/czechia-location.png",
+      "mapSrc": "/assets/images/countries/czechia-location.jpg",
       "mapAlt": "World map with Czechia location marker",
       "mapMarker": {
         "x": 51,
@@ -545,9 +545,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "democratic-republic-of-the-congo": {
-      "outlineSrc": "/assets/images/countries/democratic-republic-of-the-congo-outline.png",
+      "outlineSrc": "/assets/images/countries/democratic-republic-of-the-congo-outline.jpg",
       "outlineAlt": "Democratic Republic of the Congo country outline",
-      "mapSrc": "/assets/images/countries/democratic-republic-of-the-congo-location.png",
+      "mapSrc": "/assets/images/countries/democratic-republic-of-the-congo-location.jpg",
       "mapAlt": "World map with Democratic Republic of the Congo location marker",
       "mapMarker": {
         "x": 45,
@@ -557,9 +557,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "denmark": {
-      "outlineSrc": "/assets/images/countries/denmark-outline.png",
+      "outlineSrc": "/assets/images/countries/denmark-outline.jpg",
       "outlineAlt": "Denmark country outline",
-      "mapSrc": "/assets/images/countries/denmark-location.png",
+      "mapSrc": "/assets/images/countries/denmark-location.jpg",
       "mapAlt": "World map with Denmark location marker",
       "mapMarker": {
         "x": 51,
@@ -569,9 +569,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "djibouti": {
-      "outlineSrc": "/assets/images/countries/djibouti-outline.png",
+      "outlineSrc": "/assets/images/countries/djibouti-outline.jpg",
       "outlineAlt": "Djibouti country outline",
-      "mapSrc": "/assets/images/countries/djibouti-location.png",
+      "mapSrc": "/assets/images/countries/djibouti-location.jpg",
       "mapAlt": "World map with Djibouti location marker",
       "mapMarker": {
         "x": 45,
@@ -581,9 +581,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "dominica": {
-      "outlineSrc": "/assets/images/countries/dominica-outline.png",
+      "outlineSrc": "/assets/images/countries/dominica-outline.jpg",
       "outlineAlt": "Dominica country outline",
-      "mapSrc": "/assets/images/countries/dominica-location.png",
+      "mapSrc": "/assets/images/countries/dominica-location.jpg",
       "mapAlt": "Dominica location map",
       "mapMarker": {
         "x": 34,
@@ -593,9 +593,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "dominican-republic": {
-      "outlineSrc": "/assets/images/countries/dominican-republic-outline.png",
+      "outlineSrc": "/assets/images/countries/dominican-republic-outline.jpg",
       "outlineAlt": "Dominican Republic country outline",
-      "mapSrc": "/assets/images/countries/dominican-republic-location.png",
+      "mapSrc": "/assets/images/countries/dominican-republic-location.jpg",
       "mapAlt": "Dominican Republic location map",
       "mapMarker": {
         "x": 34,
@@ -605,9 +605,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "ecuador": {
-      "outlineSrc": "/assets/images/countries/ecuador-outline.png",
+      "outlineSrc": "/assets/images/countries/ecuador-outline.jpg",
       "outlineAlt": "Ecuador country outline",
-      "mapSrc": "/assets/images/countries/ecuador-location.png",
+      "mapSrc": "/assets/images/countries/ecuador-location.jpg",
       "mapAlt": "World map with Ecuador location marker",
       "mapMarker": {
         "x": 40,
@@ -617,9 +617,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "egypt": {
-      "outlineSrc": "/assets/images/countries/egypt-outline.png",
+      "outlineSrc": "/assets/images/countries/egypt-outline.jpg",
       "outlineAlt": "Egypt country outline",
-      "mapSrc": "/assets/images/countries/egypt-location.png",
+      "mapSrc": "/assets/images/countries/egypt-location.jpg",
       "mapAlt": "World map with Egypt location marker",
       "mapMarker": {
         "x": 45,
@@ -629,9 +629,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "el-salvador": {
-      "outlineSrc": "/assets/images/countries/el-salvador-outline.png",
+      "outlineSrc": "/assets/images/countries/el-salvador-outline.jpg",
       "outlineAlt": "El Salvador country outline",
-      "mapSrc": "/assets/images/countries/el-salvador-location.png",
+      "mapSrc": "/assets/images/countries/el-salvador-location.jpg",
       "mapAlt": "El Salvador location map",
       "mapMarker": {
         "x": 34,
@@ -641,9 +641,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "equatorial-guinea": {
-      "outlineSrc": "/assets/images/countries/equatorial-guinea-outline.png",
+      "outlineSrc": "/assets/images/countries/equatorial-guinea-outline.jpg",
       "outlineAlt": "Equatorial Guinea country outline",
-      "mapSrc": "/assets/images/countries/equatorial-guinea-location.png",
+      "mapSrc": "/assets/images/countries/equatorial-guinea-location.jpg",
       "mapAlt": "World map with Equatorial Guinea location marker",
       "mapMarker": {
         "x": 45,
@@ -653,9 +653,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "eritrea": {
-      "outlineSrc": "/assets/images/countries/eritrea-outline.png",
+      "outlineSrc": "/assets/images/countries/eritrea-outline.jpg",
       "outlineAlt": "Eritrea country outline",
-      "mapSrc": "/assets/images/countries/eritrea-location.png",
+      "mapSrc": "/assets/images/countries/eritrea-location.jpg",
       "mapAlt": "World map with Eritrea location marker",
       "mapMarker": {
         "x": 45,
@@ -665,9 +665,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "estonia": {
-      "outlineSrc": "/assets/images/countries/estonia-outline.png",
+      "outlineSrc": "/assets/images/countries/estonia-outline.jpg",
       "outlineAlt": "Estonia country outline",
-      "mapSrc": "/assets/images/countries/estonia-location.png",
+      "mapSrc": "/assets/images/countries/estonia-location.jpg",
       "mapAlt": "World map with Estonia location marker",
       "mapMarker": {
         "x": 56,
@@ -677,9 +677,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "eswatini": {
-      "outlineSrc": "/assets/images/countries/eswatini-outline.png",
+      "outlineSrc": "/assets/images/countries/eswatini-outline.jpg",
       "outlineAlt": "Eswatini country outline",
-      "mapSrc": "/assets/images/countries/eswatini-location.png",
+      "mapSrc": "/assets/images/countries/eswatini-location.jpg",
       "mapAlt": "World map with Eswatini location marker",
       "mapMarker": {
         "x": 45,
@@ -689,9 +689,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "ethiopia": {
-      "outlineSrc": "/assets/images/countries/ethiopia-outline.png",
+      "outlineSrc": "/assets/images/countries/ethiopia-outline.jpg",
       "outlineAlt": "Ethiopia country outline",
-      "mapSrc": "/assets/images/countries/ethiopia-location.png",
+      "mapSrc": "/assets/images/countries/ethiopia-location.jpg",
       "mapAlt": "World map with Ethiopia location marker",
       "mapMarker": {
         "x": 45,
@@ -701,9 +701,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "fiji": {
-      "outlineSrc": "/assets/images/countries/fiji-outline.png",
+      "outlineSrc": "/assets/images/countries/fiji-outline.jpg",
       "outlineAlt": "Fiji country outline",
-      "mapSrc": "/assets/images/countries/fiji-location.png",
+      "mapSrc": "/assets/images/countries/fiji-location.jpg",
       "mapAlt": "World map with Fiji location marker",
       "mapMarker": {
         "x": 84,
@@ -713,9 +713,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "finland": {
-      "outlineSrc": "/assets/images/countries/finland-outline.png",
+      "outlineSrc": "/assets/images/countries/finland-outline.jpg",
       "outlineAlt": "Finland country outline",
-      "mapSrc": "/assets/images/countries/finland-location.png",
+      "mapSrc": "/assets/images/countries/finland-location.jpg",
       "mapAlt": "World map with Finland location marker",
       "mapMarker": {
         "x": 58,
@@ -725,9 +725,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "france": {
-      "outlineSrc": "/assets/images/countries/france-outline.png",
+      "outlineSrc": "/assets/images/countries/france-outline.jpg",
       "outlineAlt": "France country outline",
-      "mapSrc": "/assets/images/countries/france-location.png",
+      "mapSrc": "/assets/images/countries/france-location.jpg",
       "mapAlt": "World map with France location marker",
       "mapMarker": {
         "x": 48,
@@ -737,9 +737,9 @@
       "source": "Simplified public-domain geographic reference"
     },
     "gabon": {
-      "outlineSrc": "/assets/images/countries/gabon-outline.png",
+      "outlineSrc": "/assets/images/countries/gabon-outline.jpg",
       "outlineAlt": "Gabon country outline",
-      "mapSrc": "/assets/images/countries/gabon-location.png",
+      "mapSrc": "/assets/images/countries/gabon-location.jpg",
       "mapAlt": "World map with Gabon location marker",
       "mapMarker": {
         "x": 45,
@@ -749,9 +749,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "gambia": {
-      "outlineSrc": "/assets/images/countries/gambia-outline.png",
+      "outlineSrc": "/assets/images/countries/gambia-outline.jpg",
       "outlineAlt": "Gambia country outline",
-      "mapSrc": "/assets/images/countries/gambia-location.png",
+      "mapSrc": "/assets/images/countries/gambia-location.jpg",
       "mapAlt": "World map with Gambia location marker",
       "mapMarker": {
         "x": 45,
@@ -761,9 +761,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "georgia": {
-      "outlineSrc": "/assets/images/countries/georgia-outline.png",
+      "outlineSrc": "/assets/images/countries/georgia-outline.jpg",
       "outlineAlt": "Georgia country outline",
-      "mapSrc": "/assets/images/countries/georgia-location.png",
+      "mapSrc": "/assets/images/countries/georgia-location.jpg",
       "mapAlt": "World map with Georgia location marker",
       "mapMarker": {
         "x": 55,
@@ -773,9 +773,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "germany": {
-      "outlineSrc": "/assets/images/countries/germany-outline.png",
+      "outlineSrc": "/assets/images/countries/germany-outline.jpg",
       "outlineAlt": "Germany country outline",
-      "mapSrc": "/assets/images/countries/germany-location.png",
+      "mapSrc": "/assets/images/countries/germany-location.jpg",
       "mapAlt": "World map with Germany location marker",
       "mapMarker": {
         "x": 50,
@@ -785,9 +785,9 @@
       "source": "Natural Earth geometry"
     },
     "ghana": {
-      "outlineSrc": "/assets/images/countries/ghana-outline.png",
+      "outlineSrc": "/assets/images/countries/ghana-outline.jpg",
       "outlineAlt": "Ghana country outline",
-      "mapSrc": "/assets/images/countries/ghana-location.png",
+      "mapSrc": "/assets/images/countries/ghana-location.jpg",
       "mapAlt": "World map with Ghana location marker",
       "mapMarker": {
         "x": 45,
@@ -797,9 +797,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "greece": {
-      "outlineSrc": "/assets/images/countries/greece-outline.png",
+      "outlineSrc": "/assets/images/countries/greece-outline.jpg",
       "outlineAlt": "Greece country outline",
-      "mapSrc": "/assets/images/countries/greece-location.png",
+      "mapSrc": "/assets/images/countries/greece-location.jpg",
       "mapAlt": "World map with Greece location marker",
       "mapMarker": {
         "x": 56,
@@ -809,9 +809,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "grenada": {
-      "outlineSrc": "/assets/images/countries/grenada-outline.png",
+      "outlineSrc": "/assets/images/countries/grenada-outline.jpg",
       "outlineAlt": "Grenada country outline",
-      "mapSrc": "/assets/images/countries/grenada-location.png",
+      "mapSrc": "/assets/images/countries/grenada-location.jpg",
       "mapAlt": "Grenada location map",
       "mapMarker": {
         "x": 34,
@@ -821,9 +821,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "guatemala": {
-      "outlineSrc": "/assets/images/countries/guatemala-outline.png",
+      "outlineSrc": "/assets/images/countries/guatemala-outline.jpg",
       "outlineAlt": "Guatemala country outline",
-      "mapSrc": "/assets/images/countries/guatemala-location.png",
+      "mapSrc": "/assets/images/countries/guatemala-location.jpg",
       "mapAlt": "Guatemala location map",
       "mapMarker": {
         "x": 34,
@@ -833,9 +833,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "guinea-bissau": {
-      "outlineSrc": "/assets/images/countries/guinea-bissau-outline.png",
+      "outlineSrc": "/assets/images/countries/guinea-bissau-outline.jpg",
       "outlineAlt": "Guinea-Bissau country outline",
-      "mapSrc": "/assets/images/countries/guinea-bissau-location.png",
+      "mapSrc": "/assets/images/countries/guinea-bissau-location.jpg",
       "mapAlt": "World map with Guinea-Bissau location marker",
       "mapMarker": {
         "x": 45,
@@ -845,9 +845,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "guinea": {
-      "outlineSrc": "/assets/images/countries/guinea-outline.png",
+      "outlineSrc": "/assets/images/countries/guinea-outline.jpg",
       "outlineAlt": "Guinea country outline",
-      "mapSrc": "/assets/images/countries/guinea-location.png",
+      "mapSrc": "/assets/images/countries/guinea-location.jpg",
       "mapAlt": "World map with Guinea location marker",
       "mapMarker": {
         "x": 45,
@@ -857,9 +857,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "guyana": {
-      "outlineSrc": "/assets/images/countries/guyana-outline.png",
+      "outlineSrc": "/assets/images/countries/guyana-outline.jpg",
       "outlineAlt": "Guyana country outline",
-      "mapSrc": "/assets/images/countries/guyana-location.png",
+      "mapSrc": "/assets/images/countries/guyana-location.jpg",
       "mapAlt": "World map with Guyana location marker",
       "mapMarker": {
         "x": 49,
@@ -869,9 +869,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "haiti": {
-      "outlineSrc": "/assets/images/countries/haiti-outline.png",
+      "outlineSrc": "/assets/images/countries/haiti-outline.jpg",
       "outlineAlt": "Haiti country outline",
-      "mapSrc": "/assets/images/countries/haiti-location.png",
+      "mapSrc": "/assets/images/countries/haiti-location.jpg",
       "mapAlt": "Haiti location map",
       "mapMarker": {
         "x": 34,
@@ -881,9 +881,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "honduras": {
-      "outlineSrc": "/assets/images/countries/honduras-outline.png",
+      "outlineSrc": "/assets/images/countries/honduras-outline.jpg",
       "outlineAlt": "Honduras country outline",
-      "mapSrc": "/assets/images/countries/honduras-location.png",
+      "mapSrc": "/assets/images/countries/honduras-location.jpg",
       "mapAlt": "Honduras location map",
       "mapMarker": {
         "x": 34,
@@ -893,9 +893,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "hungary": {
-      "outlineSrc": "/assets/images/countries/hungary-outline.png",
+      "outlineSrc": "/assets/images/countries/hungary-outline.jpg",
       "outlineAlt": "Hungary country outline",
-      "mapSrc": "/assets/images/countries/hungary-location.png",
+      "mapSrc": "/assets/images/countries/hungary-location.jpg",
       "mapAlt": "World map with Hungary location marker",
       "mapMarker": {
         "x": 53,
@@ -905,9 +905,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "iceland": {
-      "outlineSrc": "/assets/images/countries/iceland-outline.png",
+      "outlineSrc": "/assets/images/countries/iceland-outline.jpg",
       "outlineAlt": "Iceland country outline",
-      "mapSrc": "/assets/images/countries/iceland-location.png",
+      "mapSrc": "/assets/images/countries/iceland-location.jpg",
       "mapAlt": "World map with Iceland location marker",
       "mapMarker": {
         "x": 39,
@@ -917,9 +917,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "india": {
-      "outlineSrc": "/assets/images/countries/india-outline.png",
+      "outlineSrc": "/assets/images/countries/india-outline.jpg",
       "outlineAlt": "India country outline",
-      "mapSrc": "/assets/images/countries/india-location.png",
+      "mapSrc": "/assets/images/countries/india-location.jpg",
       "mapAlt": "World map with India location marker",
       "mapMarker": {
         "x": 66,
@@ -929,9 +929,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "indonesia": {
-      "outlineSrc": "/assets/images/countries/indonesia-outline.png",
+      "outlineSrc": "/assets/images/countries/indonesia-outline.jpg",
       "outlineAlt": "Indonesia country outline",
-      "mapSrc": "/assets/images/countries/indonesia-location.png",
+      "mapSrc": "/assets/images/countries/indonesia-location.jpg",
       "mapAlt": "World map with Indonesia location marker",
       "mapMarker": {
         "x": 69,
@@ -941,9 +941,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "iran": {
-      "outlineSrc": "/assets/images/countries/iran-outline.png",
+      "outlineSrc": "/assets/images/countries/iran-outline.jpg",
       "outlineAlt": "Iran country outline",
-      "mapSrc": "/assets/images/countries/iran-location.png",
+      "mapSrc": "/assets/images/countries/iran-location.jpg",
       "mapAlt": "World map with Iran location marker",
       "mapMarker": {
         "x": 57,
@@ -953,9 +953,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "iraq": {
-      "outlineSrc": "/assets/images/countries/iraq-outline.png",
+      "outlineSrc": "/assets/images/countries/iraq-outline.jpg",
       "outlineAlt": "Iraq country outline",
-      "mapSrc": "/assets/images/countries/iraq-location.png",
+      "mapSrc": "/assets/images/countries/iraq-location.jpg",
       "mapAlt": "World map with Iraq location marker",
       "mapMarker": {
         "x": 56,
@@ -965,9 +965,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "ireland": {
-      "outlineSrc": "/assets/images/countries/ireland-outline.png",
+      "outlineSrc": "/assets/images/countries/ireland-outline.jpg",
       "outlineAlt": "Ireland country outline",
-      "mapSrc": "/assets/images/countries/ireland-location.png",
+      "mapSrc": "/assets/images/countries/ireland-location.jpg",
       "mapAlt": "World map with Ireland location marker",
       "mapMarker": {
         "x": 42,
@@ -977,9 +977,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "israel": {
-      "outlineSrc": "/assets/images/countries/israel-outline.png",
+      "outlineSrc": "/assets/images/countries/israel-outline.jpg",
       "outlineAlt": "Israel country outline",
-      "mapSrc": "/assets/images/countries/israel-location.png",
+      "mapSrc": "/assets/images/countries/israel-location.jpg",
       "mapAlt": "World map with Israel location marker",
       "mapMarker": {
         "x": 56,
@@ -989,9 +989,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "italy": {
-      "outlineSrc": "/assets/images/countries/italy-outline.png",
+      "outlineSrc": "/assets/images/countries/italy-outline.jpg",
       "outlineAlt": "Italy country outline",
-      "mapSrc": "/assets/images/countries/italy-location.png",
+      "mapSrc": "/assets/images/countries/italy-location.jpg",
       "mapAlt": "World map with Italy location marker",
       "mapMarker": {
         "x": 50,
@@ -1001,9 +1001,9 @@
       "source": "Natural Earth geometry via ValidoHub world-map source"
     },
     "jamaica": {
-      "outlineSrc": "/assets/images/countries/jamaica-outline.png",
+      "outlineSrc": "/assets/images/countries/jamaica-outline.jpg",
       "outlineAlt": "Jamaica country outline",
-      "mapSrc": "/assets/images/countries/jamaica-location.png",
+      "mapSrc": "/assets/images/countries/jamaica-location.jpg",
       "mapAlt": "Jamaica location map",
       "mapMarker": {
         "x": 34,
@@ -1013,9 +1013,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "japan": {
-      "outlineSrc": "/assets/images/countries/japan-outline.png",
+      "outlineSrc": "/assets/images/countries/japan-outline.jpg",
       "outlineAlt": "Japan country outline",
-      "mapSrc": "/assets/images/countries/japan-location.png",
+      "mapSrc": "/assets/images/countries/japan-location.jpg",
       "mapAlt": "World map with Japan location marker",
       "mapMarker": {
         "x": 73,
@@ -1025,9 +1025,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "jordan": {
-      "outlineSrc": "/assets/images/countries/jordan-outline.png",
+      "outlineSrc": "/assets/images/countries/jordan-outline.jpg",
       "outlineAlt": "Jordan country outline",
-      "mapSrc": "/assets/images/countries/jordan-location.png",
+      "mapSrc": "/assets/images/countries/jordan-location.jpg",
       "mapAlt": "World map with Jordan location marker",
       "mapMarker": {
         "x": 56,
@@ -1037,9 +1037,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "kazakhstan": {
-      "outlineSrc": "/assets/images/countries/kazakhstan-outline.png",
+      "outlineSrc": "/assets/images/countries/kazakhstan-outline.jpg",
       "outlineAlt": "Kazakhstan country outline",
-      "mapSrc": "/assets/images/countries/kazakhstan-location.png",
+      "mapSrc": "/assets/images/countries/kazakhstan-location.jpg",
       "mapAlt": "World map with Kazakhstan location marker",
       "mapMarker": {
         "x": 59,
@@ -1049,9 +1049,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "kenya": {
-      "outlineSrc": "/assets/images/countries/kenya-outline.png",
+      "outlineSrc": "/assets/images/countries/kenya-outline.jpg",
       "outlineAlt": "Kenya country outline",
-      "mapSrc": "/assets/images/countries/kenya-location.png",
+      "mapSrc": "/assets/images/countries/kenya-location.jpg",
       "mapAlt": "World map with Kenya location marker",
       "mapMarker": {
         "x": 45,
@@ -1061,9 +1061,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "kiribati": {
-      "outlineSrc": "/assets/images/countries/kiribati-outline.png",
+      "outlineSrc": "/assets/images/countries/kiribati-outline.jpg",
       "outlineAlt": "Kiribati country outline",
-      "mapSrc": "/assets/images/countries/kiribati-location.png",
+      "mapSrc": "/assets/images/countries/kiribati-location.jpg",
       "mapAlt": "World map with Kiribati location marker",
       "mapMarker": {
         "x": 92,
@@ -1073,9 +1073,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "kuwait": {
-      "outlineSrc": "/assets/images/countries/kuwait-outline.png",
+      "outlineSrc": "/assets/images/countries/kuwait-outline.jpg",
       "outlineAlt": "Kuwait country outline",
-      "mapSrc": "/assets/images/countries/kuwait-location.png",
+      "mapSrc": "/assets/images/countries/kuwait-location.jpg",
       "mapAlt": "World map with Kuwait location marker",
       "mapMarker": {
         "x": 58,
@@ -1085,9 +1085,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "kyrgyzstan": {
-      "outlineSrc": "/assets/images/countries/kyrgyzstan-outline.png",
+      "outlineSrc": "/assets/images/countries/kyrgyzstan-outline.jpg",
       "outlineAlt": "Kyrgyzstan country outline",
-      "mapSrc": "/assets/images/countries/kyrgyzstan-location.png",
+      "mapSrc": "/assets/images/countries/kyrgyzstan-location.jpg",
       "mapAlt": "World map with Kyrgyzstan location marker",
       "mapMarker": {
         "x": 61,
@@ -1097,9 +1097,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "laos": {
-      "outlineSrc": "/assets/images/countries/laos-outline.png",
+      "outlineSrc": "/assets/images/countries/laos-outline.jpg",
       "outlineAlt": "Laos country outline",
-      "mapSrc": "/assets/images/countries/laos-location.png",
+      "mapSrc": "/assets/images/countries/laos-location.jpg",
       "mapAlt": "World map with Laos location marker",
       "mapMarker": {
         "x": 67,
@@ -1109,9 +1109,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "latvia": {
-      "outlineSrc": "/assets/images/countries/latvia-outline.png",
+      "outlineSrc": "/assets/images/countries/latvia-outline.jpg",
       "outlineAlt": "Latvia country outline",
-      "mapSrc": "/assets/images/countries/latvia-location.png",
+      "mapSrc": "/assets/images/countries/latvia-location.jpg",
       "mapAlt": "World map with Latvia location marker",
       "mapMarker": {
         "x": 55,
@@ -1121,9 +1121,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "lebanon": {
-      "outlineSrc": "/assets/images/countries/lebanon-outline.png",
+      "outlineSrc": "/assets/images/countries/lebanon-outline.jpg",
       "outlineAlt": "Lebanon country outline",
-      "mapSrc": "/assets/images/countries/lebanon-location.png",
+      "mapSrc": "/assets/images/countries/lebanon-location.jpg",
       "mapAlt": "World map with Lebanon location marker",
       "mapMarker": {
         "x": 55,
@@ -1133,9 +1133,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "lesotho": {
-      "outlineSrc": "/assets/images/countries/lesotho-outline.png",
+      "outlineSrc": "/assets/images/countries/lesotho-outline.jpg",
       "outlineAlt": "Lesotho country outline",
-      "mapSrc": "/assets/images/countries/lesotho-location.png",
+      "mapSrc": "/assets/images/countries/lesotho-location.jpg",
       "mapAlt": "World map with Lesotho location marker",
       "mapMarker": {
         "x": 45,
@@ -1145,9 +1145,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "liberia": {
-      "outlineSrc": "/assets/images/countries/liberia-outline.png",
+      "outlineSrc": "/assets/images/countries/liberia-outline.jpg",
       "outlineAlt": "Liberia country outline",
-      "mapSrc": "/assets/images/countries/liberia-location.png",
+      "mapSrc": "/assets/images/countries/liberia-location.jpg",
       "mapAlt": "World map with Liberia location marker",
       "mapMarker": {
         "x": 45,
@@ -1157,9 +1157,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "libya": {
-      "outlineSrc": "/assets/images/countries/libya-outline.png",
+      "outlineSrc": "/assets/images/countries/libya-outline.jpg",
       "outlineAlt": "Libya country outline",
-      "mapSrc": "/assets/images/countries/libya-location.png",
+      "mapSrc": "/assets/images/countries/libya-location.jpg",
       "mapAlt": "World map with Libya location marker",
       "mapMarker": {
         "x": 45,
@@ -1169,9 +1169,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "liechtenstein": {
-      "outlineSrc": "/assets/images/countries/liechtenstein-outline.png",
+      "outlineSrc": "/assets/images/countries/liechtenstein-outline.jpg",
       "outlineAlt": "Liechtenstein country outline",
-      "mapSrc": "/assets/images/countries/liechtenstein-location.png",
+      "mapSrc": "/assets/images/countries/liechtenstein-location.jpg",
       "mapAlt": "World map with Liechtenstein location marker",
       "mapMarker": {
         "x": 49,
@@ -1181,9 +1181,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "lithuania": {
-      "outlineSrc": "/assets/images/countries/lithuania-outline.png",
+      "outlineSrc": "/assets/images/countries/lithuania-outline.jpg",
       "outlineAlt": "Lithuania country outline",
-      "mapSrc": "/assets/images/countries/lithuania-location.png",
+      "mapSrc": "/assets/images/countries/lithuania-location.jpg",
       "mapAlt": "World map with Lithuania location marker",
       "mapMarker": {
         "x": 55,
@@ -1193,9 +1193,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "luxembourg": {
-      "outlineSrc": "/assets/images/countries/luxembourg-outline.png",
+      "outlineSrc": "/assets/images/countries/luxembourg-outline.jpg",
       "outlineAlt": "Luxembourg country outline",
-      "mapSrc": "/assets/images/countries/luxembourg-location.png",
+      "mapSrc": "/assets/images/countries/luxembourg-location.jpg",
       "mapAlt": "World map with Luxembourg location marker",
       "mapMarker": {
         "x": 47,
@@ -1205,9 +1205,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "madagascar": {
-      "outlineSrc": "/assets/images/countries/madagascar-outline.png",
+      "outlineSrc": "/assets/images/countries/madagascar-outline.jpg",
       "outlineAlt": "Madagascar country outline",
-      "mapSrc": "/assets/images/countries/madagascar-location.png",
+      "mapSrc": "/assets/images/countries/madagascar-location.jpg",
       "mapAlt": "World map with Madagascar location marker",
       "mapMarker": {
         "x": 45,
@@ -1217,9 +1217,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "malawi": {
-      "outlineSrc": "/assets/images/countries/malawi-outline.png",
+      "outlineSrc": "/assets/images/countries/malawi-outline.jpg",
       "outlineAlt": "Malawi country outline",
-      "mapSrc": "/assets/images/countries/malawi-location.png",
+      "mapSrc": "/assets/images/countries/malawi-location.jpg",
       "mapAlt": "World map with Malawi location marker",
       "mapMarker": {
         "x": 45,
@@ -1229,9 +1229,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "malaysia": {
-      "outlineSrc": "/assets/images/countries/malaysia-outline.png",
+      "outlineSrc": "/assets/images/countries/malaysia-outline.jpg",
       "outlineAlt": "Malaysia country outline",
-      "mapSrc": "/assets/images/countries/malaysia-location.png",
+      "mapSrc": "/assets/images/countries/malaysia-location.jpg",
       "mapAlt": "World map with Malaysia location marker",
       "mapMarker": {
         "x": 67,
@@ -1241,9 +1241,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "maldives": {
-      "outlineSrc": "/assets/images/countries/maldives-outline.png",
+      "outlineSrc": "/assets/images/countries/maldives-outline.jpg",
       "outlineAlt": "Maldives country outline",
-      "mapSrc": "/assets/images/countries/maldives-location.png",
+      "mapSrc": "/assets/images/countries/maldives-location.jpg",
       "mapAlt": "World map with Maldives location marker",
       "mapMarker": {
         "x": 65,
@@ -1253,9 +1253,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "mali": {
-      "outlineSrc": "/assets/images/countries/mali-outline.png",
+      "outlineSrc": "/assets/images/countries/mali-outline.jpg",
       "outlineAlt": "Mali country outline",
-      "mapSrc": "/assets/images/countries/mali-location.png",
+      "mapSrc": "/assets/images/countries/mali-location.jpg",
       "mapAlt": "World map with Mali location marker",
       "mapMarker": {
         "x": 45,
@@ -1265,9 +1265,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "malta": {
-      "outlineSrc": "/assets/images/countries/malta-outline.png",
+      "outlineSrc": "/assets/images/countries/malta-outline.jpg",
       "outlineAlt": "Malta country outline",
-      "mapSrc": "/assets/images/countries/malta-location.png",
+      "mapSrc": "/assets/images/countries/malta-location.jpg",
       "mapAlt": "World map with Malta location marker",
       "mapMarker": {
         "x": 52,
@@ -1277,9 +1277,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "marshall-islands": {
-      "outlineSrc": "/assets/images/countries/marshall-islands-outline.png",
+      "outlineSrc": "/assets/images/countries/marshall-islands-outline.jpg",
       "outlineAlt": "Marshall Islands country outline",
-      "mapSrc": "/assets/images/countries/marshall-islands-location.png",
+      "mapSrc": "/assets/images/countries/marshall-islands-location.jpg",
       "mapAlt": "World map with Marshall Islands location marker",
       "mapMarker": {
         "x": 91,
@@ -1289,9 +1289,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "mauritania": {
-      "outlineSrc": "/assets/images/countries/mauritania-outline.png",
+      "outlineSrc": "/assets/images/countries/mauritania-outline.jpg",
       "outlineAlt": "Mauritania country outline",
-      "mapSrc": "/assets/images/countries/mauritania-location.png",
+      "mapSrc": "/assets/images/countries/mauritania-location.jpg",
       "mapAlt": "World map with Mauritania location marker",
       "mapMarker": {
         "x": 45,
@@ -1301,9 +1301,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "mauritius": {
-      "outlineSrc": "/assets/images/countries/mauritius-outline.png",
+      "outlineSrc": "/assets/images/countries/mauritius-outline.jpg",
       "outlineAlt": "Mauritius country outline",
-      "mapSrc": "/assets/images/countries/mauritius-location.png",
+      "mapSrc": "/assets/images/countries/mauritius-location.jpg",
       "mapAlt": "World map with Mauritius location marker",
       "mapMarker": {
         "x": 45,
@@ -1313,9 +1313,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "mexico": {
-      "outlineSrc": "/assets/images/countries/mexico-outline.png",
+      "outlineSrc": "/assets/images/countries/mexico-outline.jpg",
       "outlineAlt": "Mexico country outline",
-      "mapSrc": "/assets/images/countries/mexico-location.png",
+      "mapSrc": "/assets/images/countries/mexico-location.jpg",
       "mapAlt": "Mexico location map",
       "mapMarker": {
         "x": 31,
@@ -1325,9 +1325,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "micronesia": {
-      "outlineSrc": "/assets/images/countries/micronesia-outline.png",
+      "outlineSrc": "/assets/images/countries/micronesia-outline.jpg",
       "outlineAlt": "Micronesia country outline",
-      "mapSrc": "/assets/images/countries/micronesia-location.png",
+      "mapSrc": "/assets/images/countries/micronesia-location.jpg",
       "mapAlt": "World map with Micronesia location marker",
       "mapMarker": {
         "x": 88,
@@ -1337,9 +1337,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "moldova": {
-      "outlineSrc": "/assets/images/countries/moldova-outline.png",
+      "outlineSrc": "/assets/images/countries/moldova-outline.jpg",
       "outlineAlt": "Moldova country outline",
-      "mapSrc": "/assets/images/countries/moldova-location.png",
+      "mapSrc": "/assets/images/countries/moldova-location.jpg",
       "mapAlt": "World map with Moldova location marker",
       "mapMarker": {
         "x": 59,
@@ -1349,9 +1349,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "monaco": {
-      "outlineSrc": "/assets/images/countries/monaco-outline.png",
+      "outlineSrc": "/assets/images/countries/monaco-outline.jpg",
       "outlineAlt": "Monaco country outline",
-      "mapSrc": "/assets/images/countries/monaco-location.png",
+      "mapSrc": "/assets/images/countries/monaco-location.jpg",
       "mapAlt": "World map with Monaco location marker",
       "mapMarker": {
         "x": 48,
@@ -1361,9 +1361,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "mongolia": {
-      "outlineSrc": "/assets/images/countries/mongolia-outline.png",
+      "outlineSrc": "/assets/images/countries/mongolia-outline.jpg",
       "outlineAlt": "Mongolia country outline",
-      "mapSrc": "/assets/images/countries/mongolia-location.png",
+      "mapSrc": "/assets/images/countries/mongolia-location.jpg",
       "mapAlt": "World map with Mongolia location marker",
       "mapMarker": {
         "x": 66,
@@ -1373,9 +1373,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "montenegro": {
-      "outlineSrc": "/assets/images/countries/montenegro-outline.png",
+      "outlineSrc": "/assets/images/countries/montenegro-outline.jpg",
       "outlineAlt": "Montenegro country outline",
-      "mapSrc": "/assets/images/countries/montenegro-location.png",
+      "mapSrc": "/assets/images/countries/montenegro-location.jpg",
       "mapAlt": "World map with Montenegro location marker",
       "mapMarker": {
         "x": 53,
@@ -1385,9 +1385,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "morocco": {
-      "outlineSrc": "/assets/images/countries/morocco-outline.png",
+      "outlineSrc": "/assets/images/countries/morocco-outline.jpg",
       "outlineAlt": "Morocco country outline",
-      "mapSrc": "/assets/images/countries/morocco-location.png",
+      "mapSrc": "/assets/images/countries/morocco-location.jpg",
       "mapAlt": "World map with Morocco location marker",
       "mapMarker": {
         "x": 45,
@@ -1397,9 +1397,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "mozambique": {
-      "outlineSrc": "/assets/images/countries/mozambique-outline.png",
+      "outlineSrc": "/assets/images/countries/mozambique-outline.jpg",
       "outlineAlt": "Mozambique country outline",
-      "mapSrc": "/assets/images/countries/mozambique-location.png",
+      "mapSrc": "/assets/images/countries/mozambique-location.jpg",
       "mapAlt": "World map with Mozambique location marker",
       "mapMarker": {
         "x": 45,
@@ -1409,9 +1409,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "myanmar": {
-      "outlineSrc": "/assets/images/countries/myanmar-outline.png",
+      "outlineSrc": "/assets/images/countries/myanmar-outline.jpg",
       "outlineAlt": "Myanmar country outline",
-      "mapSrc": "/assets/images/countries/myanmar-location.png",
+      "mapSrc": "/assets/images/countries/myanmar-location.jpg",
       "mapAlt": "World map with Myanmar location marker",
       "mapMarker": {
         "x": 66,
@@ -1421,9 +1421,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "namibia": {
-      "outlineSrc": "/assets/images/countries/namibia-outline.png",
+      "outlineSrc": "/assets/images/countries/namibia-outline.jpg",
       "outlineAlt": "Namibia country outline",
-      "mapSrc": "/assets/images/countries/namibia-location.png",
+      "mapSrc": "/assets/images/countries/namibia-location.jpg",
       "mapAlt": "World map with Namibia location marker",
       "mapMarker": {
         "x": 45,
@@ -1433,9 +1433,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "nauru": {
-      "outlineSrc": "/assets/images/countries/nauru-outline.png",
+      "outlineSrc": "/assets/images/countries/nauru-outline.jpg",
       "outlineAlt": "Nauru country outline",
-      "mapSrc": "/assets/images/countries/nauru-location.png",
+      "mapSrc": "/assets/images/countries/nauru-location.jpg",
       "mapAlt": "World map with Nauru location marker",
       "mapMarker": {
         "x": 88,
@@ -1445,9 +1445,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "nepal": {
-      "outlineSrc": "/assets/images/countries/nepal-outline.png",
+      "outlineSrc": "/assets/images/countries/nepal-outline.jpg",
       "outlineAlt": "Nepal country outline",
-      "mapSrc": "/assets/images/countries/nepal-location.png",
+      "mapSrc": "/assets/images/countries/nepal-location.jpg",
       "mapAlt": "World map with Nepal location marker",
       "mapMarker": {
         "x": 65,
@@ -1457,9 +1457,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "netherlands": {
-      "outlineSrc": "/assets/images/countries/netherlands-outline.png",
+      "outlineSrc": "/assets/images/countries/netherlands-outline.jpg",
       "outlineAlt": "Netherlands country outline",
-      "mapSrc": "/assets/images/countries/netherlands-location.png",
+      "mapSrc": "/assets/images/countries/netherlands-location.jpg",
       "mapAlt": "World map with Netherlands location marker",
       "mapMarker": {
         "x": 49,
@@ -1469,9 +1469,9 @@
       "source": "Simplified public-domain geographic reference"
     },
     "new-zealand": {
-      "outlineSrc": "/assets/images/countries/new-zealand-outline.png",
+      "outlineSrc": "/assets/images/countries/new-zealand-outline.jpg",
       "outlineAlt": "New Zealand country outline",
-      "mapSrc": "/assets/images/countries/new-zealand-location.png",
+      "mapSrc": "/assets/images/countries/new-zealand-location.jpg",
       "mapAlt": "World map with New Zealand location marker",
       "mapMarker": {
         "x": 84,
@@ -1481,9 +1481,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "nicaragua": {
-      "outlineSrc": "/assets/images/countries/nicaragua-outline.png",
+      "outlineSrc": "/assets/images/countries/nicaragua-outline.jpg",
       "outlineAlt": "Nicaragua country outline",
-      "mapSrc": "/assets/images/countries/nicaragua-location.png",
+      "mapSrc": "/assets/images/countries/nicaragua-location.jpg",
       "mapAlt": "Nicaragua location map",
       "mapMarker": {
         "x": 34,
@@ -1493,9 +1493,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "niger": {
-      "outlineSrc": "/assets/images/countries/niger-outline.png",
+      "outlineSrc": "/assets/images/countries/niger-outline.jpg",
       "outlineAlt": "Niger country outline",
-      "mapSrc": "/assets/images/countries/niger-location.png",
+      "mapSrc": "/assets/images/countries/niger-location.jpg",
       "mapAlt": "World map with Niger location marker",
       "mapMarker": {
         "x": 45,
@@ -1505,9 +1505,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "nigeria": {
-      "outlineSrc": "/assets/images/countries/nigeria-outline.png",
+      "outlineSrc": "/assets/images/countries/nigeria-outline.jpg",
       "outlineAlt": "Nigeria country outline",
-      "mapSrc": "/assets/images/countries/nigeria-location.png",
+      "mapSrc": "/assets/images/countries/nigeria-location.jpg",
       "mapAlt": "World map with Nigeria location marker",
       "mapMarker": {
         "x": 45,
@@ -1517,9 +1517,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "north-korea": {
-      "outlineSrc": "/assets/images/countries/north-korea-outline.png",
+      "outlineSrc": "/assets/images/countries/north-korea-outline.jpg",
       "outlineAlt": "North Korea country outline",
-      "mapSrc": "/assets/images/countries/north-korea-location.png",
+      "mapSrc": "/assets/images/countries/north-korea-location.jpg",
       "mapAlt": "World map with North Korea location marker",
       "mapMarker": {
         "x": 70,
@@ -1529,9 +1529,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "north-macedonia": {
-      "outlineSrc": "/assets/images/countries/north-macedonia-outline.png",
+      "outlineSrc": "/assets/images/countries/north-macedonia-outline.jpg",
       "outlineAlt": "North Macedonia country outline",
-      "mapSrc": "/assets/images/countries/north-macedonia-location.png",
+      "mapSrc": "/assets/images/countries/north-macedonia-location.jpg",
       "mapAlt": "World map with North Macedonia location marker",
       "mapMarker": {
         "x": 55,
@@ -1541,9 +1541,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "norway": {
-      "outlineSrc": "/assets/images/countries/norway-outline.png",
+      "outlineSrc": "/assets/images/countries/norway-outline.jpg",
       "outlineAlt": "Norway country outline",
-      "mapSrc": "/assets/images/countries/norway-location.png",
+      "mapSrc": "/assets/images/countries/norway-location.jpg",
       "mapAlt": "World map with Norway location marker",
       "mapMarker": {
         "x": 52,
@@ -1553,9 +1553,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "oman": {
-      "outlineSrc": "/assets/images/countries/oman-outline.png",
+      "outlineSrc": "/assets/images/countries/oman-outline.jpg",
       "outlineAlt": "Oman country outline",
-      "mapSrc": "/assets/images/countries/oman-location.png",
+      "mapSrc": "/assets/images/countries/oman-location.jpg",
       "mapAlt": "World map with Oman location marker",
       "mapMarker": {
         "x": 59,
@@ -1565,9 +1565,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "pakistan": {
-      "outlineSrc": "/assets/images/countries/pakistan-outline.png",
+      "outlineSrc": "/assets/images/countries/pakistan-outline.jpg",
       "outlineAlt": "Pakistan country outline",
-      "mapSrc": "/assets/images/countries/pakistan-location.png",
+      "mapSrc": "/assets/images/countries/pakistan-location.jpg",
       "mapAlt": "World map with Pakistan location marker",
       "mapMarker": {
         "x": 62,
@@ -1577,9 +1577,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "palau": {
-      "outlineSrc": "/assets/images/countries/palau-outline.png",
+      "outlineSrc": "/assets/images/countries/palau-outline.jpg",
       "outlineAlt": "Palau country outline",
-      "mapSrc": "/assets/images/countries/palau-location.png",
+      "mapSrc": "/assets/images/countries/palau-location.jpg",
       "mapAlt": "World map with Palau location marker",
       "mapMarker": {
         "x": 82,
@@ -1589,9 +1589,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "palestine": {
-      "outlineSrc": "/assets/images/countries/palestine-outline.png",
+      "outlineSrc": "/assets/images/countries/palestine-outline.jpg",
       "outlineAlt": "Palestine country outline",
-      "mapSrc": "/assets/images/countries/palestine-location.png",
+      "mapSrc": "/assets/images/countries/palestine-location.jpg",
       "mapAlt": "World map with Palestine location marker",
       "mapMarker": {
         "x": 55,
@@ -1601,9 +1601,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "panama": {
-      "outlineSrc": "/assets/images/countries/panama-outline.png",
+      "outlineSrc": "/assets/images/countries/panama-outline.jpg",
       "outlineAlt": "Panama country outline",
-      "mapSrc": "/assets/images/countries/panama-location.png",
+      "mapSrc": "/assets/images/countries/panama-location.jpg",
       "mapAlt": "Panama location map",
       "mapMarker": {
         "x": 34,
@@ -1613,9 +1613,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "papua-new-guinea": {
-      "outlineSrc": "/assets/images/countries/papua-new-guinea-outline.png",
+      "outlineSrc": "/assets/images/countries/papua-new-guinea-outline.jpg",
       "outlineAlt": "Papua New Guinea country outline",
-      "mapSrc": "/assets/images/countries/papua-new-guinea-location.png",
+      "mapSrc": "/assets/images/countries/papua-new-guinea-location.jpg",
       "mapAlt": "World map with Papua New Guinea location marker",
       "mapMarker": {
         "x": 79,
@@ -1625,9 +1625,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "paraguay": {
-      "outlineSrc": "/assets/images/countries/paraguay-outline.png",
+      "outlineSrc": "/assets/images/countries/paraguay-outline.jpg",
       "outlineAlt": "Paraguay country outline",
-      "mapSrc": "/assets/images/countries/paraguay-location.png",
+      "mapSrc": "/assets/images/countries/paraguay-location.jpg",
       "mapAlt": "World map with Paraguay location marker",
       "mapMarker": {
         "x": 54,
@@ -1637,9 +1637,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "peru": {
-      "outlineSrc": "/assets/images/countries/peru-outline.png",
+      "outlineSrc": "/assets/images/countries/peru-outline.jpg",
       "outlineAlt": "Peru country outline",
-      "mapSrc": "/assets/images/countries/peru-location.png",
+      "mapSrc": "/assets/images/countries/peru-location.jpg",
       "mapAlt": "World map with Peru location marker",
       "mapMarker": {
         "x": 43,
@@ -1649,9 +1649,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "philippines": {
-      "outlineSrc": "/assets/images/countries/philippines-outline.png",
+      "outlineSrc": "/assets/images/countries/philippines-outline.jpg",
       "outlineAlt": "Philippines country outline",
-      "mapSrc": "/assets/images/countries/philippines-location.png",
+      "mapSrc": "/assets/images/countries/philippines-location.jpg",
       "mapAlt": "World map with Philippines location marker",
       "mapMarker": {
         "x": 72,
@@ -1661,9 +1661,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "poland": {
-      "outlineSrc": "/assets/images/countries/poland-outline.png",
+      "outlineSrc": "/assets/images/countries/poland-outline.jpg",
       "outlineAlt": "Poland country outline",
-      "mapSrc": "/assets/images/countries/poland-location.png",
+      "mapSrc": "/assets/images/countries/poland-location.jpg",
       "mapAlt": "World map with Poland location marker",
       "mapMarker": {
         "x": 46,
@@ -1673,9 +1673,9 @@
       "source": "Natural Earth geometry"
     },
     "portugal": {
-      "outlineSrc": "/assets/images/countries/portugal-outline.png",
+      "outlineSrc": "/assets/images/countries/portugal-outline.jpg",
       "outlineAlt": "Portugal country outline",
-      "mapSrc": "/assets/images/countries/portugal-location.png",
+      "mapSrc": "/assets/images/countries/portugal-location.jpg",
       "mapAlt": "World map with Portugal location marker",
       "mapMarker": {
         "x": 38,
@@ -1685,9 +1685,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "qatar": {
-      "outlineSrc": "/assets/images/countries/qatar-outline.png",
+      "outlineSrc": "/assets/images/countries/qatar-outline.jpg",
       "outlineAlt": "Qatar country outline",
-      "mapSrc": "/assets/images/countries/qatar-location.png",
+      "mapSrc": "/assets/images/countries/qatar-location.jpg",
       "mapAlt": "World map with Qatar location marker",
       "mapMarker": {
         "x": 58,
@@ -1697,9 +1697,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "romania": {
-      "outlineSrc": "/assets/images/countries/romania-outline.png",
+      "outlineSrc": "/assets/images/countries/romania-outline.jpg",
       "outlineAlt": "Romania country outline",
-      "mapSrc": "/assets/images/countries/romania-location.png",
+      "mapSrc": "/assets/images/countries/romania-location.jpg",
       "mapAlt": "World map with Romania location marker",
       "mapMarker": {
         "x": 58,
@@ -1709,9 +1709,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "rwanda": {
-      "outlineSrc": "/assets/images/countries/rwanda-outline.png",
+      "outlineSrc": "/assets/images/countries/rwanda-outline.jpg",
       "outlineAlt": "Rwanda country outline",
-      "mapSrc": "/assets/images/countries/rwanda-location.png",
+      "mapSrc": "/assets/images/countries/rwanda-location.jpg",
       "mapAlt": "World map with Rwanda location marker",
       "mapMarker": {
         "x": 45,
@@ -1721,9 +1721,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "saint-kitts-and-nevis": {
-      "outlineSrc": "/assets/images/countries/saint-kitts-and-nevis-outline.png",
+      "outlineSrc": "/assets/images/countries/saint-kitts-and-nevis-outline.jpg",
       "outlineAlt": "Saint Kitts and Nevis country outline",
-      "mapSrc": "/assets/images/countries/saint-kitts-and-nevis-location.png",
+      "mapSrc": "/assets/images/countries/saint-kitts-and-nevis-location.jpg",
       "mapAlt": "Saint Kitts and Nevis location map",
       "mapMarker": {
         "x": 34,
@@ -1733,9 +1733,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "saint-lucia": {
-      "outlineSrc": "/assets/images/countries/saint-lucia-outline.png",
+      "outlineSrc": "/assets/images/countries/saint-lucia-outline.jpg",
       "outlineAlt": "Saint Lucia country outline",
-      "mapSrc": "/assets/images/countries/saint-lucia-location.png",
+      "mapSrc": "/assets/images/countries/saint-lucia-location.jpg",
       "mapAlt": "Saint Lucia location map",
       "mapMarker": {
         "x": 34,
@@ -1745,9 +1745,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "saint-vincent-and-the-grenadines": {
-      "outlineSrc": "/assets/images/countries/saint-vincent-and-the-grenadines-outline.png",
+      "outlineSrc": "/assets/images/countries/saint-vincent-and-the-grenadines-outline.jpg",
       "outlineAlt": "Saint Vincent and the Grenadines country outline",
-      "mapSrc": "/assets/images/countries/saint-vincent-and-the-grenadines-location.png",
+      "mapSrc": "/assets/images/countries/saint-vincent-and-the-grenadines-location.jpg",
       "mapAlt": "Saint Vincent and the Grenadines location map",
       "mapMarker": {
         "x": 34,
@@ -1757,9 +1757,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "samoa": {
-      "outlineSrc": "/assets/images/countries/samoa-outline.png",
+      "outlineSrc": "/assets/images/countries/samoa-outline.jpg",
       "outlineAlt": "Samoa country outline",
-      "mapSrc": "/assets/images/countries/samoa-location.png",
+      "mapSrc": "/assets/images/countries/samoa-location.jpg",
       "mapAlt": "World map with Samoa location marker",
       "mapMarker": {
         "x": 88,
@@ -1769,9 +1769,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "san-marino": {
-      "outlineSrc": "/assets/images/countries/san-marino-outline.png",
+      "outlineSrc": "/assets/images/countries/san-marino-outline.jpg",
       "outlineAlt": "San Marino country outline",
-      "mapSrc": "/assets/images/countries/san-marino-location.png",
+      "mapSrc": "/assets/images/countries/san-marino-location.jpg",
       "mapAlt": "World map with San Marino location marker",
       "mapMarker": {
         "x": 51,
@@ -1781,9 +1781,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "sao-tome-and-principe": {
-      "outlineSrc": "/assets/images/countries/sao-tome-and-principe-outline.png",
+      "outlineSrc": "/assets/images/countries/sao-tome-and-principe-outline.jpg",
       "outlineAlt": "Sao Tome and Principe country outline",
-      "mapSrc": "/assets/images/countries/sao-tome-and-principe-location.png",
+      "mapSrc": "/assets/images/countries/sao-tome-and-principe-location.jpg",
       "mapAlt": "World map with Sao Tome and Principe location marker",
       "mapMarker": {
         "x": 45,
@@ -1793,9 +1793,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "saudi-arabia": {
-      "outlineSrc": "/assets/images/countries/saudi-arabia-outline.png",
+      "outlineSrc": "/assets/images/countries/saudi-arabia-outline.jpg",
       "outlineAlt": "Saudi Arabia country outline",
-      "mapSrc": "/assets/images/countries/saudi-arabia-location.png",
+      "mapSrc": "/assets/images/countries/saudi-arabia-location.jpg",
       "mapAlt": "World map with Saudi Arabia location marker",
       "mapMarker": {
         "x": 58,
@@ -1805,9 +1805,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "senegal": {
-      "outlineSrc": "/assets/images/countries/senegal-outline.png",
+      "outlineSrc": "/assets/images/countries/senegal-outline.jpg",
       "outlineAlt": "Senegal country outline",
-      "mapSrc": "/assets/images/countries/senegal-location.png",
+      "mapSrc": "/assets/images/countries/senegal-location.jpg",
       "mapAlt": "World map with Senegal location marker",
       "mapMarker": {
         "x": 45,
@@ -1817,9 +1817,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "serbia": {
-      "outlineSrc": "/assets/images/countries/serbia-outline.png",
+      "outlineSrc": "/assets/images/countries/serbia-outline.jpg",
       "outlineAlt": "Serbia country outline",
-      "mapSrc": "/assets/images/countries/serbia-location.png",
+      "mapSrc": "/assets/images/countries/serbia-location.jpg",
       "mapAlt": "World map with Serbia location marker",
       "mapMarker": {
         "x": 54,
@@ -1829,9 +1829,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "seychelles": {
-      "outlineSrc": "/assets/images/countries/seychelles-outline.png",
+      "outlineSrc": "/assets/images/countries/seychelles-outline.jpg",
       "outlineAlt": "Seychelles country outline",
-      "mapSrc": "/assets/images/countries/seychelles-location.png",
+      "mapSrc": "/assets/images/countries/seychelles-location.jpg",
       "mapAlt": "World map with Seychelles location marker",
       "mapMarker": {
         "x": 45,
@@ -1841,9 +1841,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "sierra-leone": {
-      "outlineSrc": "/assets/images/countries/sierra-leone-outline.png",
+      "outlineSrc": "/assets/images/countries/sierra-leone-outline.jpg",
       "outlineAlt": "Sierra Leone country outline",
-      "mapSrc": "/assets/images/countries/sierra-leone-location.png",
+      "mapSrc": "/assets/images/countries/sierra-leone-location.jpg",
       "mapAlt": "World map with Sierra Leone location marker",
       "mapMarker": {
         "x": 45,
@@ -1853,9 +1853,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "singapore": {
-      "outlineSrc": "/assets/images/countries/singapore-outline.png",
+      "outlineSrc": "/assets/images/countries/singapore-outline.jpg",
       "outlineAlt": "Singapore country outline",
-      "mapSrc": "/assets/images/countries/singapore-location.png",
+      "mapSrc": "/assets/images/countries/singapore-location.jpg",
       "mapAlt": "World map with Singapore location marker",
       "mapMarker": {
         "x": 68,
@@ -1865,9 +1865,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "slovakia": {
-      "outlineSrc": "/assets/images/countries/slovakia-outline.png",
+      "outlineSrc": "/assets/images/countries/slovakia-outline.jpg",
       "outlineAlt": "Slovakia country outline",
-      "mapSrc": "/assets/images/countries/slovakia-location.png",
+      "mapSrc": "/assets/images/countries/slovakia-location.jpg",
       "mapAlt": "World map with Slovakia location marker",
       "mapMarker": {
         "x": 53,
@@ -1877,9 +1877,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "slovenia": {
-      "outlineSrc": "/assets/images/countries/slovenia-outline.png",
+      "outlineSrc": "/assets/images/countries/slovenia-outline.jpg",
       "outlineAlt": "Slovenia country outline",
-      "mapSrc": "/assets/images/countries/slovenia-location.png",
+      "mapSrc": "/assets/images/countries/slovenia-location.jpg",
       "mapAlt": "World map with Slovenia location marker",
       "mapMarker": {
         "x": 51,
@@ -1889,9 +1889,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "solomon-islands": {
-      "outlineSrc": "/assets/images/countries/solomon-islands-outline.png",
+      "outlineSrc": "/assets/images/countries/solomon-islands-outline.jpg",
       "outlineAlt": "Solomon Islands country outline",
-      "mapSrc": "/assets/images/countries/solomon-islands-location.png",
+      "mapSrc": "/assets/images/countries/solomon-islands-location.jpg",
       "mapAlt": "World map with Solomon Islands location marker",
       "mapMarker": {
         "x": 82,
@@ -1901,9 +1901,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "somalia": {
-      "outlineSrc": "/assets/images/countries/somalia-outline.png",
+      "outlineSrc": "/assets/images/countries/somalia-outline.jpg",
       "outlineAlt": "Somalia country outline",
-      "mapSrc": "/assets/images/countries/somalia-location.png",
+      "mapSrc": "/assets/images/countries/somalia-location.jpg",
       "mapAlt": "World map with Somalia location marker",
       "mapMarker": {
         "x": 45,
@@ -1913,9 +1913,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "south-africa": {
-      "outlineSrc": "/assets/images/countries/south-africa-outline.png",
+      "outlineSrc": "/assets/images/countries/south-africa-outline.jpg",
       "outlineAlt": "South Africa country outline",
-      "mapSrc": "/assets/images/countries/south-africa-location.png",
+      "mapSrc": "/assets/images/countries/south-africa-location.jpg",
       "mapAlt": "World map with South Africa location marker",
       "mapMarker": {
         "x": 45,
@@ -1925,9 +1925,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "south-korea": {
-      "outlineSrc": "/assets/images/countries/south-korea-outline.png",
+      "outlineSrc": "/assets/images/countries/south-korea-outline.jpg",
       "outlineAlt": "South Korea country outline",
-      "mapSrc": "/assets/images/countries/south-korea-location.png",
+      "mapSrc": "/assets/images/countries/south-korea-location.jpg",
       "mapAlt": "World map with South Korea location marker",
       "mapMarker": {
         "x": 71,
@@ -1937,9 +1937,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "south-sudan": {
-      "outlineSrc": "/assets/images/countries/south-sudan-outline.png",
+      "outlineSrc": "/assets/images/countries/south-sudan-outline.jpg",
       "outlineAlt": "South Sudan country outline",
-      "mapSrc": "/assets/images/countries/south-sudan-location.png",
+      "mapSrc": "/assets/images/countries/south-sudan-location.jpg",
       "mapAlt": "World map with South Sudan location marker",
       "mapMarker": {
         "x": 45,
@@ -1949,9 +1949,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "spain": {
-      "outlineSrc": "/assets/images/countries/spain-outline.png",
+      "outlineSrc": "/assets/images/countries/spain-outline.jpg",
       "outlineAlt": "Spain country outline",
-      "mapSrc": "/assets/images/countries/spain-location.png",
+      "mapSrc": "/assets/images/countries/spain-location.jpg",
       "mapAlt": "World map with Spain location marker",
       "mapMarker": {
         "x": 41,
@@ -1961,9 +1961,9 @@
       "source": "Simplified public-domain geographic reference"
     },
     "sri-lanka": {
-      "outlineSrc": "/assets/images/countries/sri-lanka-outline.png",
+      "outlineSrc": "/assets/images/countries/sri-lanka-outline.jpg",
       "outlineAlt": "Sri Lanka country outline",
-      "mapSrc": "/assets/images/countries/sri-lanka-location.png",
+      "mapSrc": "/assets/images/countries/sri-lanka-location.jpg",
       "mapAlt": "World map with Sri Lanka location marker",
       "mapMarker": {
         "x": 66,
@@ -1973,9 +1973,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "sudan": {
-      "outlineSrc": "/assets/images/countries/sudan-outline.png",
+      "outlineSrc": "/assets/images/countries/sudan-outline.jpg",
       "outlineAlt": "Sudan country outline",
-      "mapSrc": "/assets/images/countries/sudan-location.png",
+      "mapSrc": "/assets/images/countries/sudan-location.jpg",
       "mapAlt": "World map with Sudan location marker",
       "mapMarker": {
         "x": 45,
@@ -1985,9 +1985,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "suriname": {
-      "outlineSrc": "/assets/images/countries/suriname-outline.png",
+      "outlineSrc": "/assets/images/countries/suriname-outline.jpg",
       "outlineAlt": "Suriname country outline",
-      "mapSrc": "/assets/images/countries/suriname-location.png",
+      "mapSrc": "/assets/images/countries/suriname-location.jpg",
       "mapAlt": "World map with Suriname location marker",
       "mapMarker": {
         "x": 51,
@@ -1997,9 +1997,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "sweden": {
-      "outlineSrc": "/assets/images/countries/sweden-outline.png",
+      "outlineSrc": "/assets/images/countries/sweden-outline.jpg",
       "outlineAlt": "Sweden country outline",
-      "mapSrc": "/assets/images/countries/sweden-location.png",
+      "mapSrc": "/assets/images/countries/sweden-location.jpg",
       "mapAlt": "World map with Sweden location marker",
       "mapMarker": {
         "x": 55,
@@ -2009,9 +2009,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "switzerland": {
-      "outlineSrc": "/assets/images/countries/switzerland-outline.png",
+      "outlineSrc": "/assets/images/countries/switzerland-outline.jpg",
       "outlineAlt": "Switzerland country outline",
-      "mapSrc": "/assets/images/countries/switzerland-location.png",
+      "mapSrc": "/assets/images/countries/switzerland-location.jpg",
       "mapAlt": "World map with Switzerland location marker",
       "mapMarker": {
         "x": 50,
@@ -2021,9 +2021,9 @@
       "source": "Simplified public-domain geographic reference"
     },
     "syria": {
-      "outlineSrc": "/assets/images/countries/syria-outline.png",
+      "outlineSrc": "/assets/images/countries/syria-outline.jpg",
       "outlineAlt": "Syria country outline",
-      "mapSrc": "/assets/images/countries/syria-location.png",
+      "mapSrc": "/assets/images/countries/syria-location.jpg",
       "mapAlt": "World map with Syria location marker",
       "mapMarker": {
         "x": 55,
@@ -2033,9 +2033,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "taiwan": {
-      "outlineSrc": "/assets/images/countries/taiwan-outline.png",
+      "outlineSrc": "/assets/images/countries/taiwan-outline.jpg",
       "outlineAlt": "Taiwan country outline",
-      "mapSrc": "/assets/images/countries/taiwan-location.png",
+      "mapSrc": "/assets/images/countries/taiwan-location.jpg",
       "mapAlt": "World map with Taiwan location marker",
       "mapMarker": {
         "x": 72,
@@ -2045,9 +2045,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "tajikistan": {
-      "outlineSrc": "/assets/images/countries/tajikistan-outline.png",
+      "outlineSrc": "/assets/images/countries/tajikistan-outline.jpg",
       "outlineAlt": "Tajikistan country outline",
-      "mapSrc": "/assets/images/countries/tajikistan-location.png",
+      "mapSrc": "/assets/images/countries/tajikistan-location.jpg",
       "mapAlt": "World map with Tajikistan location marker",
       "mapMarker": {
         "x": 61,
@@ -2057,9 +2057,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "tanzania": {
-      "outlineSrc": "/assets/images/countries/tanzania-outline.png",
+      "outlineSrc": "/assets/images/countries/tanzania-outline.jpg",
       "outlineAlt": "Tanzania country outline",
-      "mapSrc": "/assets/images/countries/tanzania-location.png",
+      "mapSrc": "/assets/images/countries/tanzania-location.jpg",
       "mapAlt": "World map with Tanzania location marker",
       "mapMarker": {
         "x": 45,
@@ -2069,9 +2069,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "thailand": {
-      "outlineSrc": "/assets/images/countries/thailand-outline.png",
+      "outlineSrc": "/assets/images/countries/thailand-outline.jpg",
       "outlineAlt": "Thailand country outline",
-      "mapSrc": "/assets/images/countries/thailand-location.png",
+      "mapSrc": "/assets/images/countries/thailand-location.jpg",
       "mapAlt": "World map with Thailand location marker",
       "mapMarker": {
         "x": 67,
@@ -2081,9 +2081,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "timor-leste": {
-      "outlineSrc": "/assets/images/countries/timor-leste-outline.png",
+      "outlineSrc": "/assets/images/countries/timor-leste-outline.jpg",
       "outlineAlt": "Timor-Leste country outline",
-      "mapSrc": "/assets/images/countries/timor-leste-location.png",
+      "mapSrc": "/assets/images/countries/timor-leste-location.jpg",
       "mapAlt": "World map with Timor-Leste location marker",
       "mapMarker": {
         "x": 70,
@@ -2093,9 +2093,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "togo": {
-      "outlineSrc": "/assets/images/countries/togo-outline.png",
+      "outlineSrc": "/assets/images/countries/togo-outline.jpg",
       "outlineAlt": "Togo country outline",
-      "mapSrc": "/assets/images/countries/togo-location.png",
+      "mapSrc": "/assets/images/countries/togo-location.jpg",
       "mapAlt": "World map with Togo location marker",
       "mapMarker": {
         "x": 45,
@@ -2105,9 +2105,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "tonga": {
-      "outlineSrc": "/assets/images/countries/tonga-outline.png",
+      "outlineSrc": "/assets/images/countries/tonga-outline.jpg",
       "outlineAlt": "Tonga country outline",
-      "mapSrc": "/assets/images/countries/tonga-location.png",
+      "mapSrc": "/assets/images/countries/tonga-location.jpg",
       "mapAlt": "World map with Tonga location marker",
       "mapMarker": {
         "x": 87,
@@ -2117,9 +2117,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "trinidad-and-tobago": {
-      "outlineSrc": "/assets/images/countries/trinidad-and-tobago-outline.png",
+      "outlineSrc": "/assets/images/countries/trinidad-and-tobago-outline.jpg",
       "outlineAlt": "Trinidad and Tobago country outline",
-      "mapSrc": "/assets/images/countries/trinidad-and-tobago-location.png",
+      "mapSrc": "/assets/images/countries/trinidad-and-tobago-location.jpg",
       "mapAlt": "Trinidad and Tobago location map",
       "mapMarker": {
         "x": 34,
@@ -2129,9 +2129,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "tunisia": {
-      "outlineSrc": "/assets/images/countries/tunisia-outline.png",
+      "outlineSrc": "/assets/images/countries/tunisia-outline.jpg",
       "outlineAlt": "Tunisia country outline",
-      "mapSrc": "/assets/images/countries/tunisia-location.png",
+      "mapSrc": "/assets/images/countries/tunisia-location.jpg",
       "mapAlt": "World map with Tunisia location marker",
       "mapMarker": {
         "x": 45,
@@ -2141,9 +2141,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "turkey": {
-      "outlineSrc": "/assets/images/countries/turkey-outline.png",
+      "outlineSrc": "/assets/images/countries/turkey-outline.jpg",
       "outlineAlt": "Turkey country outline",
-      "mapSrc": "/assets/images/countries/turkey-location.png",
+      "mapSrc": "/assets/images/countries/turkey-location.jpg",
       "mapAlt": "World map with Turkey location marker",
       "mapMarker": {
         "x": 54,
@@ -2153,9 +2153,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "turkmenistan": {
-      "outlineSrc": "/assets/images/countries/turkmenistan-outline.png",
+      "outlineSrc": "/assets/images/countries/turkmenistan-outline.jpg",
       "outlineAlt": "Turkmenistan country outline",
-      "mapSrc": "/assets/images/countries/turkmenistan-location.png",
+      "mapSrc": "/assets/images/countries/turkmenistan-location.jpg",
       "mapAlt": "World map with Turkmenistan location marker",
       "mapMarker": {
         "x": 57,
@@ -2165,9 +2165,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "tuvalu": {
-      "outlineSrc": "/assets/images/countries/tuvalu-outline.png",
+      "outlineSrc": "/assets/images/countries/tuvalu-outline.jpg",
       "outlineAlt": "Tuvalu country outline",
-      "mapSrc": "/assets/images/countries/tuvalu-location.png",
+      "mapSrc": "/assets/images/countries/tuvalu-location.jpg",
       "mapAlt": "World map with Tuvalu location marker",
       "mapMarker": {
         "x": 91,
@@ -2177,9 +2177,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "uganda": {
-      "outlineSrc": "/assets/images/countries/uganda-outline.png",
+      "outlineSrc": "/assets/images/countries/uganda-outline.jpg",
       "outlineAlt": "Uganda country outline",
-      "mapSrc": "/assets/images/countries/uganda-location.png",
+      "mapSrc": "/assets/images/countries/uganda-location.jpg",
       "mapAlt": "World map with Uganda location marker",
       "mapMarker": {
         "x": 45,
@@ -2189,9 +2189,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "ukraine": {
-      "outlineSrc": "/assets/images/countries/ukraine-outline.png",
+      "outlineSrc": "/assets/images/countries/ukraine-outline.jpg",
       "outlineAlt": "Ukraine country outline",
-      "mapSrc": "/assets/images/countries/ukraine-location.png",
+      "mapSrc": "/assets/images/countries/ukraine-location.jpg",
       "mapAlt": "World map with Ukraine location marker",
       "mapMarker": {
         "x": 58,
@@ -2201,9 +2201,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "united-arab-emirates": {
-      "outlineSrc": "/assets/images/countries/united-arab-emirates-outline.png",
+      "outlineSrc": "/assets/images/countries/united-arab-emirates-outline.jpg",
       "outlineAlt": "United Arab Emirates country outline",
-      "mapSrc": "/assets/images/countries/united-arab-emirates-location.png",
+      "mapSrc": "/assets/images/countries/united-arab-emirates-location.jpg",
       "mapAlt": "World map with United Arab Emirates location marker",
       "mapMarker": {
         "x": 60,
@@ -2213,9 +2213,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "united-kingdom": {
-      "outlineSrc": "/assets/images/countries/united-kingdom-outline.png",
+      "outlineSrc": "/assets/images/countries/united-kingdom-outline.jpg",
       "outlineAlt": "United Kingdom country outline",
-      "mapSrc": "/assets/images/countries/united-kingdom-location.png",
+      "mapSrc": "/assets/images/countries/united-kingdom-location.jpg",
       "mapAlt": "World map with United Kingdom location marker",
       "mapMarker": {
         "x": 43,
@@ -2225,9 +2225,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "united-states": {
-      "outlineSrc": "/assets/images/countries/united-states-outline.png",
+      "outlineSrc": "/assets/images/countries/united-states-outline.jpg",
       "outlineAlt": "United States country outline",
-      "mapSrc": "/assets/images/countries/united-states-location.png",
+      "mapSrc": "/assets/images/countries/united-states-location.jpg",
       "mapAlt": "United States location map",
       "mapMarker": {
         "x": 32,
@@ -2237,9 +2237,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "uruguay": {
-      "outlineSrc": "/assets/images/countries/uruguay-outline.png",
+      "outlineSrc": "/assets/images/countries/uruguay-outline.jpg",
       "outlineAlt": "Uruguay country outline",
-      "mapSrc": "/assets/images/countries/uruguay-location.png",
+      "mapSrc": "/assets/images/countries/uruguay-location.jpg",
       "mapAlt": "World map with Uruguay location marker",
       "mapMarker": {
         "x": 58,
@@ -2249,9 +2249,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "uzbekistan": {
-      "outlineSrc": "/assets/images/countries/uzbekistan-outline.png",
+      "outlineSrc": "/assets/images/countries/uzbekistan-outline.jpg",
       "outlineAlt": "Uzbekistan country outline",
-      "mapSrc": "/assets/images/countries/uzbekistan-location.png",
+      "mapSrc": "/assets/images/countries/uzbekistan-location.jpg",
       "mapAlt": "World map with Uzbekistan location marker",
       "mapMarker": {
         "x": 58,
@@ -2261,9 +2261,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "vanuatu": {
-      "outlineSrc": "/assets/images/countries/vanuatu-outline.png",
+      "outlineSrc": "/assets/images/countries/vanuatu-outline.jpg",
       "outlineAlt": "Vanuatu country outline",
-      "mapSrc": "/assets/images/countries/vanuatu-location.png",
+      "mapSrc": "/assets/images/countries/vanuatu-location.jpg",
       "mapAlt": "World map with Vanuatu location marker",
       "mapMarker": {
         "x": 83,
@@ -2273,9 +2273,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "vatican-city": {
-      "outlineSrc": "/assets/images/countries/vatican-city-outline.png",
+      "outlineSrc": "/assets/images/countries/vatican-city-outline.jpg",
       "outlineAlt": "Vatican City country outline",
-      "mapSrc": "/assets/images/countries/vatican-city-location.png",
+      "mapSrc": "/assets/images/countries/vatican-city-location.jpg",
       "mapAlt": "World map with Vatican City location marker",
       "mapMarker": {
         "x": 51,
@@ -2285,9 +2285,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "venezuela": {
-      "outlineSrc": "/assets/images/countries/venezuela-outline.png",
+      "outlineSrc": "/assets/images/countries/venezuela-outline.jpg",
       "outlineAlt": "Venezuela country outline",
-      "mapSrc": "/assets/images/countries/venezuela-location.png",
+      "mapSrc": "/assets/images/countries/venezuela-location.jpg",
       "mapAlt": "World map with Venezuela location marker",
       "mapMarker": {
         "x": 48,
@@ -2297,9 +2297,9 @@
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
     "vietnam": {
-      "outlineSrc": "/assets/images/countries/vietnam-outline.png",
+      "outlineSrc": "/assets/images/countries/vietnam-outline.jpg",
       "outlineAlt": "Vietnam country outline",
-      "mapSrc": "/assets/images/countries/vietnam-location.png",
+      "mapSrc": "/assets/images/countries/vietnam-location.jpg",
       "mapAlt": "World map with Vietnam location marker",
       "mapMarker": {
         "x": 69,
@@ -2309,9 +2309,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "yemen": {
-      "outlineSrc": "/assets/images/countries/yemen-outline.png",
+      "outlineSrc": "/assets/images/countries/yemen-outline.jpg",
       "outlineAlt": "Yemen country outline",
-      "mapSrc": "/assets/images/countries/yemen-location.png",
+      "mapSrc": "/assets/images/countries/yemen-location.jpg",
       "mapAlt": "World map with Yemen location marker",
       "mapMarker": {
         "x": 58,
@@ -2321,9 +2321,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "zambia": {
-      "outlineSrc": "/assets/images/countries/zambia-outline.png",
+      "outlineSrc": "/assets/images/countries/zambia-outline.jpg",
       "outlineAlt": "Zambia country outline",
-      "mapSrc": "/assets/images/countries/zambia-location.png",
+      "mapSrc": "/assets/images/countries/zambia-location.jpg",
       "mapAlt": "World map with Zambia location marker",
       "mapMarker": {
         "x": 45,
@@ -2333,9 +2333,9 @@
       "source": "Premium raster country visual generated once for ValidoHub country navigation"
     },
     "zimbabwe": {
-      "outlineSrc": "/assets/images/countries/zimbabwe-outline.png",
+      "outlineSrc": "/assets/images/countries/zimbabwe-outline.jpg",
       "outlineAlt": "Zimbabwe country outline",
-      "mapSrc": "/assets/images/countries/zimbabwe-location.png",
+      "mapSrc": "/assets/images/countries/zimbabwe-location.jpg",
       "mapAlt": "World map with Zimbabwe location marker",
       "mapMarker": {
         "x": 45,
@@ -47889,8 +47889,8 @@
         "accent": "#008C45",
         "accent2": "#CD212A",
         "accent3": "#F4F5F0",
-        "outline": "/assets/images/countries/italy-outline.png",
-        "map": "/assets/images/countries/italy-location.png",
+        "outline": "/assets/images/countries/italy-outline.jpg",
+        "map": "/assets/images/countries/italy-location.jpg",
         "note": "Italy hub uses ValidoHub country visual assets and Italy flag colors for local identity.",
         "tags": [
           "identity",

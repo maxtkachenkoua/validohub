@@ -1,9 +1,9 @@
 {
   "id": "afghanistan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/afghanistan-outline.png",
+    "outlineSrc": "/assets/images/countries/afghanistan-outline.jpg",
     "outlineAlt": "Afghanistan country outline",
-    "mapSrc": "/assets/images/countries/afghanistan-location.png",
+    "mapSrc": "/assets/images/countries/afghanistan-location.jpg",
     "mapAlt": "World map with Afghanistan location marker",
     "mapMarker": {
       "x": 61,

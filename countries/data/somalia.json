@@ -1,9 +1,9 @@
 {
   "id": "somalia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/somalia-outline.png",
+    "outlineSrc": "/assets/images/countries/somalia-outline.jpg",
     "outlineAlt": "Somalia country outline",
-    "mapSrc": "/assets/images/countries/somalia-location.png",
+    "mapSrc": "/assets/images/countries/somalia-location.jpg",
     "mapAlt": "World map with Somalia location marker",
     "mapMarker": {
       "x": 45,

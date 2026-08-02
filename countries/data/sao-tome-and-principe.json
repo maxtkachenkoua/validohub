@@ -1,9 +1,9 @@
 {
   "id": "sao-tome-and-principe",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/sao-tome-and-principe-outline.png",
+    "outlineSrc": "/assets/images/countries/sao-tome-and-principe-outline.jpg",
     "outlineAlt": "Sao Tome and Principe country outline",
-    "mapSrc": "/assets/images/countries/sao-tome-and-principe-location.png",
+    "mapSrc": "/assets/images/countries/sao-tome-and-principe-location.jpg",
     "mapAlt": "World map with Sao Tome and Principe location marker",
     "mapMarker": {
       "x": 45,

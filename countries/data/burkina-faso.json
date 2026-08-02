@@ -1,9 +1,9 @@
 {
   "id": "burkina-faso",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/burkina-faso-outline.png",
+    "outlineSrc": "/assets/images/countries/burkina-faso-outline.jpg",
     "outlineAlt": "Burkina Faso country outline",
-    "mapSrc": "/assets/images/countries/burkina-faso-location.png",
+    "mapSrc": "/assets/images/countries/burkina-faso-location.jpg",
     "mapAlt": "World map with Burkina Faso location marker",
     "mapMarker": {
       "x": 45,

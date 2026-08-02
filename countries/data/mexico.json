@@ -1,9 +1,9 @@
 {
   "id": "mexico",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mexico-outline.png",
+    "outlineSrc": "/assets/images/countries/mexico-outline.jpg",
     "outlineAlt": "Mexico country outline",
-    "mapSrc": "/assets/images/countries/mexico-location.png",
+    "mapSrc": "/assets/images/countries/mexico-location.jpg",
     "mapAlt": "Mexico location map",
     "mapMarker": {
       "x": 31,

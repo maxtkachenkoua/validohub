@@ -1,9 +1,9 @@
 {
   "id": "gambia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/gambia-outline.png",
+    "outlineSrc": "/assets/images/countries/gambia-outline.jpg",
     "outlineAlt": "Gambia country outline",
-    "mapSrc": "/assets/images/countries/gambia-location.png",
+    "mapSrc": "/assets/images/countries/gambia-location.jpg",
     "mapAlt": "World map with Gambia location marker",
     "mapMarker": {
       "x": 45,

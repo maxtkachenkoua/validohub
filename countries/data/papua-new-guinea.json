@@ -1,9 +1,9 @@
 {
   "id": "papua-new-guinea",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/papua-new-guinea-outline.png",
+    "outlineSrc": "/assets/images/countries/papua-new-guinea-outline.jpg",
     "outlineAlt": "Papua New Guinea country outline",
-    "mapSrc": "/assets/images/countries/papua-new-guinea-location.png",
+    "mapSrc": "/assets/images/countries/papua-new-guinea-location.jpg",
     "mapAlt": "World map with Papua New Guinea location marker",
     "mapMarker": {
       "x": 79,

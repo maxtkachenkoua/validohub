@@ -1,9 +1,9 @@
 {
   "id": "kazakhstan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/kazakhstan-outline.png",
+    "outlineSrc": "/assets/images/countries/kazakhstan-outline.jpg",
     "outlineAlt": "Kazakhstan country outline",
-    "mapSrc": "/assets/images/countries/kazakhstan-location.png",
+    "mapSrc": "/assets/images/countries/kazakhstan-location.jpg",
     "mapAlt": "World map with Kazakhstan location marker",
     "mapMarker": {
       "x": 59,

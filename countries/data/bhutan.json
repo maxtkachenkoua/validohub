@@ -1,9 +1,9 @@
 {
   "id": "bhutan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bhutan-outline.png",
+    "outlineSrc": "/assets/images/countries/bhutan-outline.jpg",
     "outlineAlt": "Bhutan country outline",
-    "mapSrc": "/assets/images/countries/bhutan-location.png",
+    "mapSrc": "/assets/images/countries/bhutan-location.jpg",
     "mapAlt": "World map with Bhutan location marker",
     "mapMarker": {
       "x": 66,

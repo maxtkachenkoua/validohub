@@ -1,9 +1,9 @@
 {
   "id": "turkmenistan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/turkmenistan-outline.png",
+    "outlineSrc": "/assets/images/countries/turkmenistan-outline.jpg",
     "outlineAlt": "Turkmenistan country outline",
-    "mapSrc": "/assets/images/countries/turkmenistan-location.png",
+    "mapSrc": "/assets/images/countries/turkmenistan-location.jpg",
     "mapAlt": "World map with Turkmenistan location marker",
     "mapMarker": {
       "x": 57,

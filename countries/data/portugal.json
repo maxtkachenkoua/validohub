@@ -1,9 +1,9 @@
 {
   "id": "portugal",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/portugal-outline.png",
+    "outlineSrc": "/assets/images/countries/portugal-outline.jpg",
     "outlineAlt": "Portugal country outline",
-    "mapSrc": "/assets/images/countries/portugal-location.png",
+    "mapSrc": "/assets/images/countries/portugal-location.jpg",
     "mapAlt": "World map with Portugal location marker",
     "mapMarker": {
       "x": 38,

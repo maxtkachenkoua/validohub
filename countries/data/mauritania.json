@@ -1,9 +1,9 @@
 {
   "id": "mauritania",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mauritania-outline.png",
+    "outlineSrc": "/assets/images/countries/mauritania-outline.jpg",
     "outlineAlt": "Mauritania country outline",
-    "mapSrc": "/assets/images/countries/mauritania-location.png",
+    "mapSrc": "/assets/images/countries/mauritania-location.jpg",
     "mapAlt": "World map with Mauritania location marker",
     "mapMarker": {
       "x": 45,

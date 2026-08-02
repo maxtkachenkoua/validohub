@@ -1,9 +1,9 @@
 {
   "id": "venezuela",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/venezuela-outline.png",
+    "outlineSrc": "/assets/images/countries/venezuela-outline.jpg",
     "outlineAlt": "Venezuela country outline",
-    "mapSrc": "/assets/images/countries/venezuela-location.png",
+    "mapSrc": "/assets/images/countries/venezuela-location.jpg",
     "mapAlt": "World map with Venezuela location marker",
     "mapMarker": {
       "x": 48,

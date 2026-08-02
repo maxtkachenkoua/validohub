@@ -1,9 +1,9 @@
 {
   "id": "burundi",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/burundi-outline.png",
+    "outlineSrc": "/assets/images/countries/burundi-outline.jpg",
     "outlineAlt": "Burundi country outline",
-    "mapSrc": "/assets/images/countries/burundi-location.png",
+    "mapSrc": "/assets/images/countries/burundi-location.jpg",
     "mapAlt": "World map with Burundi location marker",
     "mapMarker": {
       "x": 45,

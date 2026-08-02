@@ -1,9 +1,9 @@
 {
   "id": "vietnam",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/vietnam-outline.png",
+    "outlineSrc": "/assets/images/countries/vietnam-outline.jpg",
     "outlineAlt": "Vietnam country outline",
-    "mapSrc": "/assets/images/countries/vietnam-location.png",
+    "mapSrc": "/assets/images/countries/vietnam-location.jpg",
     "mapAlt": "World map with Vietnam location marker",
     "mapMarker": {
       "x": 69,

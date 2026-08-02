@@ -1,9 +1,9 @@
 {
   "id": "israel",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/israel-outline.png",
+    "outlineSrc": "/assets/images/countries/israel-outline.jpg",
     "outlineAlt": "Israel country outline",
-    "mapSrc": "/assets/images/countries/israel-location.png",
+    "mapSrc": "/assets/images/countries/israel-location.jpg",
     "mapAlt": "World map with Israel location marker",
     "mapMarker": {
       "x": 56,

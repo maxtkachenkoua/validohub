@@ -323,10 +323,19 @@ export async function buildRouteRegistry() {
 
     // Determine type
     let type = 'validator';
+    let sourceOwner = 'java';
     if (routePath === '/en/') {
       type = 'home';
+      sourceOwner = 'node';
+    } else if (routePath === '/en/guides/') {
+      type = 'guides';
+      sourceOwner = 'node';
+    } else if (routePath.includes('/guides/')) {
+      type = 'guide';
+      sourceOwner = 'node';
     } else if (routePath.includes('/categories/')) {
       type = 'category';
+      sourceOwner = 'node';
     } else if (routePath.includes('/tools/')) {
       type = 'validator';
     } else {
@@ -340,7 +349,7 @@ export async function buildRouteRegistry() {
     registry.register(routePath, {
       type,
       title: await discoverGeneratedTitle(routePath),
-      sourceOwner: 'java'
+      sourceOwner
     });
   }
 

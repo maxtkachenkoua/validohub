@@ -1,9 +1,9 @@
 {
   "id": "syria",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/syria-outline.png",
+    "outlineSrc": "/assets/images/countries/syria-outline.jpg",
     "outlineAlt": "Syria country outline",
-    "mapSrc": "/assets/images/countries/syria-location.png",
+    "mapSrc": "/assets/images/countries/syria-location.jpg",
     "mapAlt": "World map with Syria location marker",
     "mapMarker": {
       "x": 55,

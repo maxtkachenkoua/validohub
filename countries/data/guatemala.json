@@ -1,9 +1,9 @@
 {
   "id": "guatemala",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/guatemala-outline.png",
+    "outlineSrc": "/assets/images/countries/guatemala-outline.jpg",
     "outlineAlt": "Guatemala country outline",
-    "mapSrc": "/assets/images/countries/guatemala-location.png",
+    "mapSrc": "/assets/images/countries/guatemala-location.jpg",
     "mapAlt": "Guatemala location map",
     "mapMarker": {
       "x": 34,

@@ -1,9 +1,9 @@
 {
   "id": "singapore",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/singapore-outline.png",
+    "outlineSrc": "/assets/images/countries/singapore-outline.jpg",
     "outlineAlt": "Singapore country outline",
-    "mapSrc": "/assets/images/countries/singapore-location.png",
+    "mapSrc": "/assets/images/countries/singapore-location.jpg",
     "mapAlt": "World map with Singapore location marker",
     "mapMarker": {
       "x": 68,

@@ -1,9 +1,9 @@
 {
   "id": "zimbabwe",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/zimbabwe-outline.png",
+    "outlineSrc": "/assets/images/countries/zimbabwe-outline.jpg",
     "outlineAlt": "Zimbabwe country outline",
-    "mapSrc": "/assets/images/countries/zimbabwe-location.png",
+    "mapSrc": "/assets/images/countries/zimbabwe-location.jpg",
     "mapAlt": "World map with Zimbabwe location marker",
     "mapMarker": {
       "x": 45,

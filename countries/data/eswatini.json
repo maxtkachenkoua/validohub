@@ -1,9 +1,9 @@
 {
   "id": "eswatini",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/eswatini-outline.png",
+    "outlineSrc": "/assets/images/countries/eswatini-outline.jpg",
     "outlineAlt": "Eswatini country outline",
-    "mapSrc": "/assets/images/countries/eswatini-location.png",
+    "mapSrc": "/assets/images/countries/eswatini-location.jpg",
     "mapAlt": "World map with Eswatini location marker",
     "mapMarker": {
       "x": 45,

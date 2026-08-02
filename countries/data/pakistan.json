@@ -1,9 +1,9 @@
 {
   "id": "pakistan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/pakistan-outline.png",
+    "outlineSrc": "/assets/images/countries/pakistan-outline.jpg",
     "outlineAlt": "Pakistan country outline",
-    "mapSrc": "/assets/images/countries/pakistan-location.png",
+    "mapSrc": "/assets/images/countries/pakistan-location.jpg",
     "mapAlt": "World map with Pakistan location marker",
     "mapMarker": {
       "x": 62,

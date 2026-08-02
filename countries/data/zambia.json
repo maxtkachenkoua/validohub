@@ -1,9 +1,9 @@
 {
   "id": "zambia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/zambia-outline.png",
+    "outlineSrc": "/assets/images/countries/zambia-outline.jpg",
     "outlineAlt": "Zambia country outline",
-    "mapSrc": "/assets/images/countries/zambia-location.png",
+    "mapSrc": "/assets/images/countries/zambia-location.jpg",
     "mapAlt": "World map with Zambia location marker",
     "mapMarker": {
       "x": 45,

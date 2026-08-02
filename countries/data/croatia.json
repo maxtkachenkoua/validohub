@@ -1,9 +1,9 @@
 {
   "id": "croatia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/croatia-outline.png",
+    "outlineSrc": "/assets/images/countries/croatia-outline.jpg",
     "outlineAlt": "Croatia country outline",
-    "mapSrc": "/assets/images/countries/croatia-location.png",
+    "mapSrc": "/assets/images/countries/croatia-location.jpg",
     "mapAlt": "World map with Croatia location marker",
     "mapMarker": {
       "x": 51,

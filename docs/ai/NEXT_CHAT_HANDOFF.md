@@ -8,6 +8,23 @@ ValidoHub is a premium browser-only developer intelligence platform. The user wa
 
 The product goal is not only validation. Where the domain supports it, tools must also generate safe fixtures, explain structure, show debug internals, expose developer handoff data, and guide the user visually through what can be checked, generated, copied, or exported.
 
+## 2026-08-02 Live Release / Fresh Pipeline / Country Image Optimization / IndexNow / Analytics
+
+- ValidoHub is live at `https://validohub.com/` on the VPS. GoDaddy DNS points `validohub.com` to `137.74.173.107`; `www` redirects to apex through Caddy.
+- Current deployed release after adding Google Analytics: `/srv/validohub/releases/20260802-173659`; `current` symlink points there. Previous rollback target is `/srv/validohub/releases/20260802-171627`; rollback is available through `npm run rollback:vps -- --release-id <release>`.
+- Final archive for that release: `generated/releases/validohub-20260802-173659.tar.gz`, 98,419,432 bytes, sha256 `94e7b628ce3c670cba0969a06a52043644d098378f5ef150f29fc86bbbc52cc9`.
+- Google Analytics is wired in with GA4 Measurement ID `G-QH4SZME9KW`: `config/google-analytics-measurement-id.txt` stores the public ID, `scripts/apply-google-analytics.mjs` applies an idempotent marked snippet to generated HTML, package scripts expose `analytics:apply` and `analytics:dry-run`, and the release pipeline runs it after sitemap writing / IndexNow key materialization. Live `https://validohub.com/en/` contains the `googletagmanager.com/gtag/js?id=G-QH4SZME9KW` script.
+- IndexNow is wired in: `config/indexnow-key.txt` stores the public key, `scripts/indexnow.mjs` supports `prepare` and `submit`, package scripts expose `indexnow:prepare`, `indexnow:dry-run`, and `indexnow:submit`, and the release pipeline writes `<key>.txt` into the generated site root after sitemap writing.
+- Live IndexNow verification file: `https://validohub.com/67952aa5-e375-4253-9942-7d7ae0c560f2.txt`. Full `npm run indexnow:submit` completed for 12,376 English indexable URLs in 2 batches with `HTTP 200` after adding explicit `keyLocation` to the payload.
+- Country shape/location PNGs were converted to 720px JPEGs for generated output. `generated/validohub/assets/images/countries` is now about `40M` instead of `860M`; old live `*-outline.png` and `*-location.png` URLs return 404.
+- `scripts/optimize-country-images.mjs` and `npm run optimize:country-images` exist for this step. The full release pipeline runs `node scripts/optimize-country-images.mjs --generated --prune-generated-png` after premium shell repair and before JS/CSS minification.
+- The language selector now orders Ukrainian before Polish. `site.yaml`, `assets/js/bundle.js`, and the standalone SEO indexability normalizer use the same production-locale ordering.
+- Fresh `npm run build:release:node -- --archive --progress-seconds 30` passed end to end with `Build Duration: 1281484 ms` (about 21m21s), then packaged `20260802-164620` in `39s`. The long section was `Apply final localization pass` at `17m02s`; slow-route diagnostics showed the heavy pages were localized country hubs, not an infinite stall.
+- `scripts/localization-pass.mjs` now strips volatile bundle/CSS hashes and alternate tags from the localization cache key, and logs slow localization routes when a batch crosses the slow threshold. This should reduce unnecessary cache invalidation on future asset-hash-only rebuilds and makes abnormal localization stalls actionable.
+- Latest gates passed before deploy: `npm run audit:seo` (with known localized country hub OG/Twitter warnings), `npm run audit:performance`, `npm run audit:generated-premium`, generated PNG-reference greps, and live HTTPS smoke for the new bundle/language order/JPEG sizes.
+- Important build rule: after any standalone `applyFinalLocalizationPass` over generated pages, run `node scripts/normalize-generated-seo-indexability.mjs` before SEO audit/repack. The normal full pipeline already has this post-step; standalone repairs need it manually.
+- Localization is now a default requirement, not a follow-up. `AGENTS.md` documents that all new user-visible/generated/runtime/SEO content must ship localized for production locales `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`.
+
 ## 2026-07-31 Incremental Release Build Safety
 
 - User is understandably avoiding the monolithic full build because a previous full run lasted 8+ hours and never reached a useful finish. Do not answer that by blindly rerunning `npm run build:full`.

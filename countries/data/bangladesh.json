@@ -1,9 +1,9 @@
 {
   "id": "bangladesh",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bangladesh-outline.png",
+    "outlineSrc": "/assets/images/countries/bangladesh-outline.jpg",
     "outlineAlt": "Bangladesh country outline",
-    "mapSrc": "/assets/images/countries/bangladesh-location.png",
+    "mapSrc": "/assets/images/countries/bangladesh-location.jpg",
     "mapAlt": "World map with Bangladesh location marker",
     "mapMarker": {
       "x": 68,

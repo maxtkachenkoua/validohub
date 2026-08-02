@@ -1,9 +1,9 @@
 {
   "id": "peru",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/peru-outline.png",
+    "outlineSrc": "/assets/images/countries/peru-outline.jpg",
     "outlineAlt": "Peru country outline",
-    "mapSrc": "/assets/images/countries/peru-location.png",
+    "mapSrc": "/assets/images/countries/peru-location.jpg",
     "mapAlt": "World map with Peru location marker",
     "mapMarker": {
       "x": 43,

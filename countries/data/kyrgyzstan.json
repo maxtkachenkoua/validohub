@@ -1,9 +1,9 @@
 {
   "id": "kyrgyzstan",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/kyrgyzstan-outline.png",
+    "outlineSrc": "/assets/images/countries/kyrgyzstan-outline.jpg",
     "outlineAlt": "Kyrgyzstan country outline",
-    "mapSrc": "/assets/images/countries/kyrgyzstan-location.png",
+    "mapSrc": "/assets/images/countries/kyrgyzstan-location.jpg",
     "mapAlt": "World map with Kyrgyzstan location marker",
     "mapMarker": {
       "x": 61,

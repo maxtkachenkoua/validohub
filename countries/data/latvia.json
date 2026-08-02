@@ -1,9 +1,9 @@
 {
   "id": "latvia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/latvia-outline.png",
+    "outlineSrc": "/assets/images/countries/latvia-outline.jpg",
     "outlineAlt": "Latvia country outline",
-    "mapSrc": "/assets/images/countries/latvia-location.png",
+    "mapSrc": "/assets/images/countries/latvia-location.jpg",
     "mapAlt": "World map with Latvia location marker",
     "mapMarker": {
       "x": 55,

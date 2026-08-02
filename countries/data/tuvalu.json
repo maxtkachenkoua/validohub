@@ -1,9 +1,9 @@
 {
   "id": "tuvalu",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/tuvalu-outline.png",
+    "outlineSrc": "/assets/images/countries/tuvalu-outline.jpg",
     "outlineAlt": "Tuvalu country outline",
-    "mapSrc": "/assets/images/countries/tuvalu-location.png",
+    "mapSrc": "/assets/images/countries/tuvalu-location.jpg",
     "mapAlt": "World map with Tuvalu location marker",
     "mapMarker": {
       "x": 91,

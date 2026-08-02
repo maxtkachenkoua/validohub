@@ -1,9 +1,9 @@
 {
   "id": "libya",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/libya-outline.png",
+    "outlineSrc": "/assets/images/countries/libya-outline.jpg",
     "outlineAlt": "Libya country outline",
-    "mapSrc": "/assets/images/countries/libya-location.png",
+    "mapSrc": "/assets/images/countries/libya-location.jpg",
     "mapAlt": "World map with Libya location marker",
     "mapMarker": {
       "x": 45,

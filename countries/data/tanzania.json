@@ -1,9 +1,9 @@
 {
   "id": "tanzania",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/tanzania-outline.png",
+    "outlineSrc": "/assets/images/countries/tanzania-outline.jpg",
     "outlineAlt": "Tanzania country outline",
-    "mapSrc": "/assets/images/countries/tanzania-location.png",
+    "mapSrc": "/assets/images/countries/tanzania-location.jpg",
     "mapAlt": "World map with Tanzania location marker",
     "mapMarker": {
       "x": 45,

@@ -1,9 +1,9 @@
 {
   "id": "australia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/australia-outline.png",
+    "outlineSrc": "/assets/images/countries/australia-outline.jpg",
     "outlineAlt": "Australia country outline",
-    "mapSrc": "/assets/images/countries/australia-location.png",
+    "mapSrc": "/assets/images/countries/australia-location.jpg",
     "mapAlt": "World map with Australia location marker",
     "mapMarker": {
       "x": 77,

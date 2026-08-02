@@ -1,9 +1,9 @@
 {
   "id": "kiribati",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/kiribati-outline.png",
+    "outlineSrc": "/assets/images/countries/kiribati-outline.jpg",
     "outlineAlt": "Kiribati country outline",
-    "mapSrc": "/assets/images/countries/kiribati-location.png",
+    "mapSrc": "/assets/images/countries/kiribati-location.jpg",
     "mapAlt": "World map with Kiribati location marker",
     "mapMarker": {
       "x": 92,

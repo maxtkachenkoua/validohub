@@ -1,9 +1,9 @@
 {
   "id": "panama",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/panama-outline.png",
+    "outlineSrc": "/assets/images/countries/panama-outline.jpg",
     "outlineAlt": "Panama country outline",
-    "mapSrc": "/assets/images/countries/panama-location.png",
+    "mapSrc": "/assets/images/countries/panama-location.jpg",
     "mapAlt": "Panama location map",
     "mapMarker": {
       "x": 34,

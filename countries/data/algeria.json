@@ -1,9 +1,9 @@
 {
   "id": "algeria",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/algeria-outline.png",
+    "outlineSrc": "/assets/images/countries/algeria-outline.jpg",
     "outlineAlt": "Algeria country outline",
-    "mapSrc": "/assets/images/countries/algeria-location.png",
+    "mapSrc": "/assets/images/countries/algeria-location.jpg",
     "mapAlt": "World map with Algeria location marker",
     "mapMarker": {
       "x": 45,

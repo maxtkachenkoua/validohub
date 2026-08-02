@@ -1,9 +1,9 @@
 {
   "id": "seychelles",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/seychelles-outline.png",
+    "outlineSrc": "/assets/images/countries/seychelles-outline.jpg",
     "outlineAlt": "Seychelles country outline",
-    "mapSrc": "/assets/images/countries/seychelles-location.png",
+    "mapSrc": "/assets/images/countries/seychelles-location.jpg",
     "mapAlt": "World map with Seychelles location marker",
     "mapMarker": {
       "x": 45,

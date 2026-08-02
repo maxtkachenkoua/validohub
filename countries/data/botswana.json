@@ -1,9 +1,9 @@
 {
   "id": "botswana",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/botswana-outline.png",
+    "outlineSrc": "/assets/images/countries/botswana-outline.jpg",
     "outlineAlt": "Botswana country outline",
-    "mapSrc": "/assets/images/countries/botswana-location.png",
+    "mapSrc": "/assets/images/countries/botswana-location.jpg",
     "mapAlt": "World map with Botswana location marker",
     "mapMarker": {
       "x": 45,

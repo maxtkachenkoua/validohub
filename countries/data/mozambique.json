@@ -1,9 +1,9 @@
 {
   "id": "mozambique",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/mozambique-outline.png",
+    "outlineSrc": "/assets/images/countries/mozambique-outline.jpg",
     "outlineAlt": "Mozambique country outline",
-    "mapSrc": "/assets/images/countries/mozambique-location.png",
+    "mapSrc": "/assets/images/countries/mozambique-location.jpg",
     "mapAlt": "World map with Mozambique location marker",
     "mapMarker": {
       "x": 45,

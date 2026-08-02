@@ -1,9 +1,9 @@
 {
   "id": "el-salvador",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/el-salvador-outline.png",
+    "outlineSrc": "/assets/images/countries/el-salvador-outline.jpg",
     "outlineAlt": "El Salvador country outline",
-    "mapSrc": "/assets/images/countries/el-salvador-location.png",
+    "mapSrc": "/assets/images/countries/el-salvador-location.jpg",
     "mapAlt": "El Salvador location map",
     "mapMarker": {
       "x": 34,

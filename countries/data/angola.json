@@ -1,9 +1,9 @@
 {
   "id": "angola",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/angola-outline.png",
+    "outlineSrc": "/assets/images/countries/angola-outline.jpg",
     "outlineAlt": "Angola country outline",
-    "mapSrc": "/assets/images/countries/angola-location.png",
+    "mapSrc": "/assets/images/countries/angola-location.jpg",
     "mapAlt": "World map with Angola location marker",
     "mapMarker": {
       "x": 45,

@@ -54,6 +54,10 @@ const COUNTRY_NAMES = {
   'pt-BR': { Poland: 'Polônia', Brazil: 'Brasil', Spain: 'Espanha', Germany: 'Alemanha', Europe: 'Europa', 'South America': 'América do Sul' }
 };
 
+const COUNTRY_WORKBENCH_TITLE_PREFIXES = new Map();
+const COUNTRY_WORKBENCH_TITLES = new Map();
+let COUNTRY_WORKBENCH_TITLE_PREFIX_PATTERN = null;
+
 const UI = {
   pl: {
     language: 'Język', selectLanguage: 'Wybierz język', official: 'Urzędowy', home: 'Start', countries: 'Kraje', identifiers: 'Identyfikatory', developerTools: 'Narzędzia deweloperskie', encoding: 'Kodowanie', finance: 'Finanse', hash: 'Hash', text: 'Tekst', nationalIdentifiers: 'Identyfikatory krajowe', tool: 'Narzędzie', workbench: 'Workbench', countryHub: 'Centrum kraju', countryShape: 'Kształt kraju', location: 'Położenie', findCountryTool: 'Znajdź narzędzie kraju', clearCountryToolSearch: 'Wyczyść wyszukiwanie', searchCountryWorkbenches: 'Przeszukaj workbenche kraju', staticCompiled: 'Statycznie skompilowane V2', developerPortal: 'Portal deweloperski', developerIntelligence: 'Informacje dla deweloperów o lokalnych identyfikatorach, regionalnych protokołach płatności, danych routingu bankowego i konwencjach lokalnych.', officialAdministrativeOutline: 'Oficjalny zarys administracyjny', geographicPosition: 'Położenie geograficzne', inTheWorld: 'na świecie', shapeOutline: 'zarys kraju', mapHighlight: 'wyróżnienie na mapie', copy: 'Kopiuj', copied: 'Skopiowano', available: 'dostępne', ready: 'gotowe', planned: 'planowane', reference: 'referencja', runTool: 'Uruchom narzędzie', pasteInput: 'Wklej dane, wybierz akcję i skopiuj wynik bezpośrednio w przeglądarce.', relatedTools: 'Powiązane narzędzia', continueWithRelated: 'Kontynuuj z powiązanymi narzędziami', validate: 'Sprawdź', copyResult: 'Kopiuj wynik', downloadResult: 'Pobierz wynik', clear: 'Wyczyść', output: 'Wynik', waitingForInput: 'Oczekiwanie na dane', advancedAnalysis: 'Analiza zaawansowana', documentation: 'Dokumentacja', guide: 'Przewodnik', faq: 'FAQ', references: 'Źródła', examples: 'Przykłady', developerExamples: 'Przykłady dla deweloperów', explanation: 'Wyjaśnienie', practicalExamples: 'Praktyczne przykłady', questionsAndEdgeCases: 'pytania i przypadki brzegowe', referencesAndLimits: 'źródła i ograniczenia', expandAll: 'Rozwiń wszystko', collapseAll: 'Zwiń wszystko', mainNavigation: 'Główna nawigacja', breadcrumb: 'Ścieżka nawigacji'
@@ -3039,6 +3043,14 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Evidence before trust': 'Evidencia antes de confiar',
     'Try signals': 'Prueba señales',
     'Global Tools': 'Herramientas globales',
+    'Address Tools': 'Herramientas de direcciones',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explora herramientas de direcciones solo en navegador para validación, parsing, generación de fixtures, diagnósticos de desarrollo y handoff seguro a producción.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Ejecuta comprobaciones, ejemplos y diagnósticos de herramientas de direcciones solo en navegador en ValidoHub.',
+    'National Identifiers Tools': 'Herramientas de identificadores nacionales',
+    'Explore utility tools for national identifiers tools.': 'Explora herramientas para identificadores nacionales.',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explora herramientas de identificadores nacionales solo en navegador para validación, parsing, generación de fixtures, diagnósticos de desarrollo y handoff seguro a producción.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explora herramientas de identificadores nacionales solo en navegador para validación, parsing, generación de fixtures, diagnósticos de desarrollo y handoff seguro a producción.',
+    'Explorar browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explora herramientas de identificadores nacionales solo en navegador para validación, parsing, generación de fixtures, diagnósticos de desarrollo y handoff seguro a producción.',
     'Fast utilities that are not tied to one country.': 'Utilidades rápidas que no dependen de un país.',
     'Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.': 'Abre workbenches universales para payloads, codificación, tokens, identificadores, regex e IBAN entre países.',
     'Local Instruments': 'Instrumentos locales',
@@ -3169,6 +3181,14 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Name the boundary': 'Nomear o limite',
     'A quiet atlas for local developer work.': 'Um atlas discreto para trabalho local de desenvolvedores.',
     'Global Developer Tools': 'Ferramentas globais para desenvolvedores',
+    'Address Tools': 'Ferramentas de endereço',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explore ferramentas de endereço só no navegador para validação, parsing, geração de fixtures, diagnósticos de desenvolvimento e handoff seguro para produção.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Execute verificações, exemplos e diagnósticos de ferramentas de endereço só no navegador no ValidoHub.',
+    'National Identifiers Tools': 'Ferramentas de identificadores nacionais',
+    'Explore utility tools for national identifiers tools.': 'Explore ferramentas para identificadores nacionais.',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explore ferramentas de identificadores nacionais só no navegador para validação, parsing, geração de fixtures, diagnósticos de desenvolvimento e handoff seguro para produção.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explore ferramentas de identificadores nacionais só no navegador para validação, parsing, geração de fixtures, diagnósticos de desenvolvimento e handoff seguro para produção.',
+    'Explorar browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explore ferramentas de identificadores nacionais só no navegador para validação, parsing, geração de fixtures, diagnósticos de desenvolvimento e handoff seguro para produção.',
     'Browser labs for developer data.': 'Labs de navegador para dados de desenvolvedores.',
     'global tools': 'ferramentas globais',
     'families': 'famílias',
@@ -3249,6 +3269,7 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Try signals': 'Signale testen',
     'Global Tools': 'Globale Tools',
     'Fast utilities that are not tied to one country.': 'Schnelle Utilities ohne Länderbindung.',
+    'Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.': 'Öffne universelle Workbenches für Payloads, Encoding, Tokens, Kennungen, Regex und länderübergreifende IBAN-Workflows.',
     'Local Instruments': 'Lokale Instrumente',
     'Premium country tools with real debugging depth.': 'Premium-Ländertools mit echter Debug-Tiefe.',
     'Generate fixtures when validation is not enough.': 'Testdaten generieren, wenn Validierung nicht reicht.',
@@ -3262,6 +3283,14 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Name the boundary': 'Grenze benennen',
     'A quiet atlas for local developer work.': 'Ein ruhiger Atlas für lokale Entwicklerarbeit.',
     'Global Developer Tools': 'Globale Entwicklertools',
+    'Address Tools': 'Adress-Tools',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Durchsuche browserbasierte Adress-Tools für Validierung, Parsing, Fixture-Erzeugung, Entwicklerdiagnosen und produktionssichere Handoffs.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Führe browserbasierte Adress-Tool-Prüfungen, Beispiele und Entwicklerdiagnosen auf ValidoHub aus.',
+    'National Identifiers Tools': 'Tools für nationale Kennungen',
+    'Explore utility tools for national identifiers tools.': 'Erkunde Tools für nationale Kennungen.',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Durchsuche browserbasierte Tools für nationale Kennungen für Validierung, Parsing, Fixture-Erzeugung, Entwicklerdiagnosen und produktionssichere Handoffs.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Erkunde browserbasierte Tools für nationale Kennungen für Validierung, Parsing, Fixture-Erzeugung, Entwicklerdiagnosen und produktionssichere Handoffs.',
+    'Durchsuchen browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Durchsuche browserbasierte Tools für nationale Kennungen für Validierung, Parsing, Fixture-Erzeugung, Entwicklerdiagnosen und produktionssichere Handoffs.',
     'Browser labs for developer data.': 'Browser-Labs für Entwicklerdaten.',
     'global tools': 'globale Tools',
     'families': 'Familien',
@@ -3364,6 +3393,15 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'A quiet atlas for local developer work.': 'Un atlas calme pour le travail développeur local.',
     'All 194 country hubs are reachable from one neutral map surface. Hover for a shape preview and integration snapshot; click to open the local developer portal.': 'Les 194 hubs pays sont accessibles depuis une carte neutre. Survolez pour voir la forme et le résumé d’intégration ; cliquez pour ouvrir le portail local.',
     'Global Developer Tools': 'Outils développeur globaux',
+    'Address Tools': 'Outils d’adresse',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explorez des outils d’adresse uniquement dans le navigateur pour validation, parsing, génération de fixtures, diagnostics développeur et handoff sûr vers la production.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Exécutez des vérifications, exemples et diagnostics d’outils d’adresse uniquement dans le navigateur sur ValidoHub.',
+    'National Identifiers Tools': 'Outils pour identifiants nationaux',
+    'Explore utility tools for national identifiers tools.': 'Explorez les outils pour identifiants nationaux.',
+    'National Identifiants': 'Identifiants nationaux',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Parcourez les outils d’identifiants nationaux uniquement dans le navigateur pour validation, parsing, génération de fixtures, diagnostics développeur et handoff sûr vers la production.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explorez les outils d’identifiants nationaux uniquement dans le navigateur pour validation, parsing, génération de fixtures, diagnostics développeur et handoff sûr vers la production.',
+    'Explorer browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Explorez les outils d’identifiants nationaux uniquement dans le navigateur pour validation, parsing, génération de fixtures, diagnostics développeur et handoff sûr vers la production.',
     'Browser labs for developer data.': 'Labs navigateur pour données développeur.',
     'Compact registry of validators, generators, parsers, security checks, and fixture labs. Private by default, useful before production handoff.': 'Registre compact de validateurs, générateurs, parsers, contrôles sécurité et labs de fixtures. Privé par défaut, utile avant le passage en production.',
     'global tools': 'outils globaux',
@@ -3460,6 +3498,14 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Name the boundary': 'Nazwij granicę',
     'A quiet atlas for local developer work.': 'Spokojny atlas do lokalnej pracy deweloperskiej.',
     'Global Developer Tools': 'Globalne narzędzia deweloperskie',
+    'Address Tools': 'Narzędzia adresowe',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Przeglądaj narzędzia adresowe w przeglądarce do walidacji, parsowania, generowania danych testowych, diagnostyki deweloperskiej i bezpiecznego handoffu produkcyjnego.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Uruchamiaj w ValidoHub przeglądarkowe testy, przykłady i diagnostykę narzędzi adresowych.',
+    'National Identifiers Tools': 'Narzędzia identyfikatorów krajowych',
+    'Explore utility tools for national identifiers tools.': 'Przeglądaj narzędzia dla identyfikatorów krajowych.',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Przeglądaj przeglądarkowe narzędzia identyfikatorów krajowych do walidacji, parsowania, generowania fixture’ów, diagnostyki deweloperskiej i bezpiecznego handoffu produkcyjnego.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Przeglądaj przeglądarkowe narzędzia identyfikatorów krajowych do walidacji, parsowania, generowania fixture’ów, diagnostyki deweloperskiej i bezpiecznego handoffu produkcyjnego.',
+    'Przeglądaj browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Przeglądaj przeglądarkowe narzędzia identyfikatorów krajowych do walidacji, parsowania, generowania fixture’ów, diagnostyki deweloperskiej i bezpiecznego handoffu produkcyjnego.',
     'Browser labs for developer data.': 'Laboratoria przeglądarkowe dla danych deweloperskich.',
     'Find the workbench.': 'Znajdź workbench.',
     'High-signal starting points.': 'Punkty startowe o wysokim sygnale.',
@@ -3518,6 +3564,14 @@ const PRODUCTION_LOCALE_REPLACEMENTS = {
     'Name the boundary': 'Назвати межу',
     'A quiet atlas for local developer work.': 'Спокійний атлас для локальної роботи розробників.',
     'Global Developer Tools': 'Глобальні інструменти розробника',
+    'Address Tools': 'Адресні інструменти',
+    'Browse browser-only address tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Переглядайте браузерні адресні інструменти для валідації, парсингу, генерації фікстур, діагностики розробника й безпечного продакшн-handoff.',
+    'Run browser-only Address Tools checks, examples, and developer diagnostics on ValidoHub.': 'Запускайте у ValidoHub браузерні перевірки, приклади й діагностику адресних інструментів.',
+    'National Identifiers Tools': 'Інструменти національних ідентифікаторів',
+    'Explore utility tools for national identifiers tools.': 'Переглядайте інструменти для національних ідентифікаторів.',
+    'Browse browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Переглядайте браузерні інструменти національних ідентифікаторів для валідації, парсингу, генерації фікстур, діагностики розробника й безпечного передавання в продакшен.',
+    'Explore browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Переглядайте браузерні інструменти національних ідентифікаторів для валідації, парсингу, генерації фікстур, діагностики розробника й безпечного передавання в продакшен.',
+    'Переглянути browser-only national identifiers tools for validation, parsing, fixture generation, developer diagnostics, and production-safe handoff notes.': 'Переглядайте браузерні інструменти національних ідентифікаторів для валідації, парсингу, генерації фікстур, діагностики розробника й безпечного передавання в продакшен.',
     'Browser labs for developer data.': 'Браузерні лабораторії для даних розробника.',
     'global tools': 'глобальних інструментів',
     'families': 'сімей',
@@ -3603,6 +3657,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches de navegador para formatos globales',
     'Browser-only developer workbenches for global formats': 'Workbenches de navegador para formatos globales',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Valida, inspecciona, genera y depura en el navegador identificadores, pagos, formatos bancarios, datos locales y fixtures para desarrolladores.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Herramientas de validación, generación, análisis, codificación y conversión.',
     'Global Developer Tools | ValidoHub': 'Herramientas globales para desarrolladores | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Explora validadores, generadores, parsers, ayudas de seguridad, fixtures locales y depuradores de payloads globales de ValidoHub, solo en navegador.',
     'Countries | ValidoHub': 'Países | ValidoHub',
@@ -3614,6 +3669,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches de navegador para formatos globais',
     'Browser-only developer workbenches for global formats': 'Workbenches de navegador para formatos globais',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Valide, inspecione, gere e depure no navegador identificadores, pagamentos, formatos bancários, dados locais e fixtures para desenvolvedores.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Ferramentas de validação, geração, parsing, codificação e conversão.',
     'Global Developer Tools | ValidoHub': 'Ferramentas globais para desenvolvedores | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Explore validadores, geradores, parsers, auxiliares de segurança, fixtures locais e depuradores de payloads globais da ValidoHub, só no navegador.',
     'Countries | ValidoHub': 'Países | ValidoHub',
@@ -3625,6 +3681,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Browser-Workbenches für globale Formate',
     'Browser-only developer workbenches for global formats': 'Browser-Workbenches für globale Formate',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Kennungen, Zahlungen, Bankformate, Locale-Daten und Entwickler-Testdaten direkt im Browser validieren, inspizieren, generieren und debuggen.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Werkzeuge für Validierung, Generierung, Parsing, Kodierung und Konvertierung.',
     'Global Developer Tools | ValidoHub': 'Globale Entwicklertools | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'ValidoHubs globale, browserbasierte Validatoren, Generatoren, Parser, Sicherheitshelfer, Locale-Testdaten und Payload-Debugger durchsuchen.',
     'Countries | ValidoHub': 'Länder | ValidoHub',
@@ -3636,6 +3693,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenches navigateur pour formats globaux',
     'Browser-only developer workbenches for global formats': 'Workbenches navigateur pour formats globaux',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Validez, inspectez, générez et déboguez dans le navigateur les identifiants, paiements, formats bancaires, données locales et fixtures développeur par pays.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Outils de validation, génération, parsing, encodage et conversion.',
     'Global Developer Tools | ValidoHub': 'Outils développeur globaux | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Parcourez les validateurs, générateurs, parsers, aides sécurité, fixtures locales et débogueurs de payloads globaux de ValidoHub, uniquement dans le navigateur.',
     'Countries | ValidoHub': 'Pays | ValidoHub',
@@ -3647,6 +3705,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Workbenche przeglądarkowe dla formatów globalnych',
     'Browser-only developer workbenches for global formats': 'Workbenche przeglądarkowe dla formatów globalnych',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Waliduj, sprawdzaj, generuj i debuguj w przeglądarce identyfikatory, płatności, formaty bankowe, dane lokalne i fixture’y deweloperskie.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Narzędzia do walidacji, generowania, parsowania, kodowania i konwersji.',
     'Global Developer Tools | ValidoHub': 'Globalne narzędzia deweloperskie | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Przeglądaj globalne walidatory, generatory, parsery, narzędzia bezpieczeństwa, fixture’y locale i debuggery payloadów ValidoHub działające w przeglądarce.',
     'Countries | ValidoHub': 'Kraje | ValidoHub',
@@ -3658,6 +3717,7 @@ const PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS = {
     'ValidoHub | Browser-only developer workbenches for global formats': 'ValidoHub | Браузерні воркбенчі для глобальних форматів',
     'Browser-only developer workbenches for global formats': 'Браузерні воркбенчі для глобальних форматів',
     'Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.': 'Перевіряйте, інспектуйте, генеруйте й дебажте в браузері ідентифікатори, платежі, банківські формати, локальні дані та фікстури розробника за країнами.',
+    'Validation, generation, parsing, encoding, and conversion tools.': 'Інструменти для валідації, генерації, парсингу, кодування та конвертації.',
     'Global Developer Tools | ValidoHub': 'Глобальні інструменти розробника | ValidoHub',
     'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.': 'Переглядайте глобальні браузерні валідатори, генератори, парсери, безпекові помічники, локальні фікстури й дебагери payload у ValidoHub.',
     'Countries | ValidoHub': 'Країни | ValidoHub',
@@ -4174,8 +4234,71 @@ function applyProductionLocalePacks() {
   }
 }
 
+function commonWordPrefix(values) {
+  const lists = values
+    .map(value => String(value || '').trim().split(/\s+/).filter(Boolean))
+    .filter(words => words.length >= 2);
+  if (!lists.length) return '';
+  const prefix = [];
+  const maxWords = Math.min(4, ...lists.map(words => words.length - 1));
+  for (let index = 0; index < maxWords; index += 1) {
+    const word = lists[0][index];
+    if (!word || !lists.every(words => words[index] === word)) break;
+    prefix.push(word);
+  }
+  return prefix.join(' ');
+}
+
+function countryWorkbenchTitleAnchors() {
+  const anchors = new Set(['Company Suffix']);
+  for (const map of Object.values(TOOL_TITLE_TERM_TRANSLATIONS || {})) {
+    for (const key of Object.keys(map || {})) anchors.add(key);
+  }
+  return [...anchors].sort((a, b) => b.length - a.length);
+}
+
+function inferCountryWorkbenchTitlePrefix(title, countryName, commonPrefix) {
+  const normalizedTitle = String(title || '').trim();
+  const candidates = [commonPrefix, countryName].filter(Boolean);
+  for (const candidate of candidates) {
+    if (normalizedTitle.startsWith(`${candidate} `)) return candidate;
+  }
+  for (const anchor of countryWorkbenchTitleAnchors()) {
+    const index = normalizedTitle.indexOf(anchor);
+    if (index > 0) {
+      return normalizedTitle.slice(0, index).replace(/[—:-]+$/g, '').trim();
+    }
+  }
+  return '';
+}
+
+function rebuildCountryWorkbenchTitlePrefixPattern() {
+  const prefixes = [...new Set(COUNTRY_WORKBENCH_TITLE_PREFIXES.keys())]
+    .map(prefix => String(prefix || '').trim())
+    .filter(prefix => prefix.length >= 2)
+    .sort((a, b) => b.length - a.length);
+  COUNTRY_WORKBENCH_TITLE_PREFIX_PATTERN = prefixes.length
+    ? new RegExp(`<(?:title|h1\\b[^>]*)>\\s*(?:${prefixes.map(escapeRegExp).join('|')})\\b`, 'i')
+    : null;
+}
+
 function hydrateCountryNamesFromRegistry(routeRegistry, locales) {
   const countries = routeRegistry.getAll().filter(route => route.type === 'country' && route.metadata?.catalog?.iso2);
+  COUNTRY_WORKBENCH_TITLE_PREFIXES.clear();
+  COUNTRY_WORKBENCH_TITLES.clear();
+  COUNTRY_WORKBENCH_TITLE_PREFIX_PATTERN = null;
+  for (const route of countries) {
+    const catalog = route.metadata.catalog || {};
+    const titles = Array.isArray(catalog.availableWorkbenches) ? catalog.availableWorkbenches : [];
+    const prefix = commonWordPrefix(titles);
+    if (prefix && prefix !== catalog.name) COUNTRY_WORKBENCH_TITLE_PREFIXES.set(prefix, catalog.name);
+    for (const title of titles) {
+      const titlePrefix = inferCountryWorkbenchTitlePrefix(title, catalog.name, prefix);
+      if (titlePrefix && titlePrefix !== catalog.name) COUNTRY_WORKBENCH_TITLE_PREFIXES.set(titlePrefix, catalog.name);
+      COUNTRY_WORKBENCH_TITLES.set(title, { countryName: catalog.name, prefix: titlePrefix || prefix || catalog.name });
+    }
+  }
+  rebuildCountryWorkbenchTitlePrefixPattern();
   for (const locale of locales || []) {
     if (locale === 'en') continue;
     let regionNames = null;
@@ -4217,8 +4340,262 @@ export function ensureLocalizedRoutes(routeRegistry, siteRoot, locales) {
   }
 }
 
+const CATEGORY_SHELL_REPLACEMENTS = {
+  es: {
+    'Browse': 'Explorar',
+    'Available tools': 'Herramientas disponibles',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Herramientas para códigos postales, direcciones, formatos telefónicos, municipios y datos regionales.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Herramientas para códigos postales, direcciones, formatos telefónicos, municipios y datos regionales.'
+  },
+  'pt-BR': {
+    'Browse': 'Explorar',
+    'Available tools': 'Ferramentas disponíveis',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Ferramentas para códigos postais, endereços, formatos telefônicos, municípios e dados regionais.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Ferramentas para códigos postais, endereços, formatos telefônicos, municípios e dados regionais.'
+  },
+  de: {
+    'Browse': 'Durchsuchen',
+    'Available tools': 'Verfügbare Tools',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Tools für Postleitzahlen, Adressen, Telefonformate, Gemeinden und regionale Daten.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Tools für Postleitzahlen, Adressen, Telefonformate, Gemeinden und regionale Daten.'
+  },
+  fr: {
+    'Browse': 'Explorer',
+    'Available tools': 'Outils disponibles',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Outils pour codes postaux, adresses, formats téléphoniques, communes et données régionales.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Outils pour codes postaux, adresses, formats téléphoniques, communes et données régionales.'
+  },
+  pl: {
+    'Browse': 'Przeglądaj',
+    'Available tools': 'Dostępne narzędzia',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Narzędzia do kodów pocztowych, adresów, formatów telefonicznych, gmin i danych regionalnych.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Narzędzia do kodów pocztowych, adresów, formatów telefonicznych, gmin i danych regionalnych.'
+  },
+  uk: {
+    'Browse': 'Переглянути',
+    'Available tools': 'Доступні інструменти',
+    'Tools for postal codes, addresses, phone formats, municipalities, and regional data.': 'Інструменти для поштових індексів, адрес, телефонних форматів, муніципалітетів і регіональних даних.',
+    'Tools for postal codes, addresses, telefon formats, municipalities, and regional data.': 'Інструменти для поштових індексів, адрес, телефонних форматів, муніципалітетів і регіональних даних.'
+  }
+};
+
 function applyProductionLocaleReplacements(content, locale) {
-  return applyLiteralMap(applyLiteralMap(applyLiteralMap(content, PRODUCTION_LOCALE_REPLACEMENTS[locale]), PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS[locale]), PRODUCTION_WORKBENCH_REPLACEMENTS[locale]);
+  return applyLiteralMap(content, {
+    ...(PORTAL_CARD_SUMMARY_REPLACEMENTS[locale] || {}),
+    ...(CATEGORY_SHELL_REPLACEMENTS[locale] || {}),
+    ...(PRODUCTION_WORKBENCH_REPLACEMENTS[locale] || {}),
+    ...(PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS[locale] || {}),
+    ...(PRODUCTION_LOCALE_REPLACEMENTS[locale] || {})
+  });
+}
+
+const PORTAL_CARD_SUMMARY_REPLACEMENTS = {
+  es: {
+    'Validate global ISO 13616 shape and MOD-97.': 'Valida la estructura ISO 13616 global y MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Genera fixtures IBAN ucranianos.',
+    'Generate locale-aware test values.': 'Genera valores de prueba sensibles al idioma.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Genera o verifica fixtures de firma webhook y compara payload, secreto y evidencia de cabeceras.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Genera fixtures IBAN estructurales con digitos MOD-97 y agrupacion lista para copiar.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Valida estructura IBAN, perfil de pais, longitud y evidencia MOD-97 en el navegador.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Valida o genera muestras de codigos postales manteniendo explicitos los limites de consulta de entrega.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Genera fixtures JSON o CSV localizados para QA por pais y pruebas de formularios.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Genera y valida fixtures UUID con version, variante y soporte por lote.',
+    'Generate Dutch IBAN fixtures.': 'Genera fixtures IBAN neerlandeses.',
+    'Generate Spanish IBAN fixtures.': 'Genera fixtures IBAN espanoles.',
+    'Generate Italian IBAN fixtures.': 'Genera fixtures IBAN italianos.',
+    'Generate Swiss IBAN fixtures.': 'Genera fixtures IBAN suizos.',
+    'Generate Pix QR payload fixtures.': 'Genera fixtures de payload Pix QR.',
+    'Generate Brazilian local test records.': 'Genera registros de prueba locales de Brasil.',
+    'Generate Polish local test fixtures.': 'Genera fixtures de prueba locales de Polonia.',
+    'Generate French personal-data fixtures.': 'Genera fixtures franceses de datos personales.',
+    'Generate German personal-data fixtures.': 'Genera fixtures alemanes de datos personales.'
+  },
+  'pt-BR': {
+    'Validate global ISO 13616 shape and MOD-97.': 'Valide a estrutura ISO 13616 global e MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Gere fixtures IBAN ucranianas.',
+    'Generate locale-aware test values.': 'Gere valores de teste sensiveis a localidade.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Gere ou verifique fixtures de assinatura webhook e compare payload, segredo e evidencia de headers.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Gere fixtures IBAN estruturais com digitos MOD-97 e agrupamento pronto para copiar.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Valide estrutura IBAN, perfil do pais, comprimento e evidencia MOD-97 no navegador.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Valide ou gere amostras de codigos postais mantendo explicitos os limites de consulta de entrega.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Gere fixtures JSON ou CSV localizadas para QA por pais e testes de formularios.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Gere e valide fixtures UUID com versao, variante e suporte em lote.',
+    'Generate Dutch IBAN fixtures.': 'Gere fixtures IBAN neerlandesas.',
+    'Generate Spanish IBAN fixtures.': 'Gere fixtures IBAN espanholas.',
+    'Generate Italian IBAN fixtures.': 'Gere fixtures IBAN italianas.',
+    'Generate Swiss IBAN fixtures.': 'Gere fixtures IBAN suicas.',
+    'Generate Pix QR payload fixtures.': 'Gere fixtures de payload Pix QR.',
+    'Generate Brazilian local test records.': 'Gere registros de teste locais do Brasil.',
+    'Generate Polish local test fixtures.': 'Gere fixtures de teste locais da Polonia.',
+    'Generate French personal-data fixtures.': 'Gere fixtures francesas de dados pessoais.',
+    'Generate German personal-data fixtures.': 'Gere fixtures alemas de dados pessoais.'
+  },
+  de: {
+    'Validate global ISO 13616 shape and MOD-97.': 'Validiere globale ISO-13616-Struktur und MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Generiere ukrainische IBAN-Testdaten.',
+    'Generate locale-aware test values.': 'Generiere locale-sensitive Testwerte.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Generiere oder prüfe Webhook-Signatur-Testdaten und vergleiche Payload-, Secret- und Header-Evidenz.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Generiere strukturierte IBAN-Testdaten mit MOD-97-Prüfziffern und kopierfertiger Gruppierung.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Validiere IBAN-Struktur, Länderprofil, Länge und MOD-97-Evidenz im Browser.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Validiere oder generiere Postleitzahl-Beispiele und halte Zustellbarkeitsgrenzen klar.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Generiere lokalisierte JSON- oder CSV-Testdaten für länderspezifische QA und Formulartests.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Generiere und validiere UUID-Testdaten mit Version, Variante und Batch-Support.',
+    'Generate Dutch IBAN fixtures.': 'Generiere niederländische IBAN-Testdaten.',
+    'Generate Spanish IBAN fixtures.': 'Generiere spanische IBAN-Testdaten.',
+    'Generate Italian IBAN fixtures.': 'Generiere italienische IBAN-Testdaten.',
+    'Generate Swiss IBAN fixtures.': 'Generiere Schweizer IBAN-Testdaten.',
+    'Generate Pix QR payload fixtures.': 'Generiere Pix-QR-Payload-Testdaten.',
+    'Generate Brazilian local test records.': 'Generiere brasilianische lokale Testdatensätze.',
+    'Generate Polish local test fixtures.': 'Generiere polnische lokale Testdaten.',
+    'Generate French personal-data fixtures.': 'Generiere französische Personendaten-Testdaten.',
+    'Generate German personal-data fixtures.': 'Generiere deutsche Personendaten-Testdaten.'
+  },
+  fr: {
+    'Validate global ISO 13616 shape and MOD-97.': 'Validez la structure ISO 13616 globale et MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Générez des fixtures IBAN ukrainiennes.',
+    'Generate locale-aware test values.': 'Générez des valeurs de test adaptées à la locale.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Générez ou vérifiez des fixtures de signature webhook et comparez payload, secret et preuves d’en-têtes.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Générez des fixtures IBAN structurées avec chiffres MOD-97 et groupement prêt à copier.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Validez la structure IBAN, le profil pays, la longueur et les preuves MOD-97 dans le navigateur.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Validez ou générez des exemples de codes postaux en gardant les limites de délivrabilité explicites.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Générez des fixtures JSON ou CSV localisées pour QA par pays et tests de formulaires.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Générez et validez des fixtures UUID avec version, variante et support batch.',
+    'Generate Dutch IBAN fixtures.': 'Générez des fixtures IBAN néerlandaises.',
+    'Generate Spanish IBAN fixtures.': 'Générez des fixtures IBAN espagnoles.',
+    'Generate Italian IBAN fixtures.': 'Générez des fixtures IBAN italiennes.',
+    'Generate Swiss IBAN fixtures.': 'Générez des fixtures IBAN suisses.',
+    'Generate Pix QR payload fixtures.': 'Générez des fixtures de payload Pix QR.',
+    'Generate Brazilian local test records.': 'Générez des enregistrements de test locaux brésiliens.',
+    'Generate Polish local test fixtures.': 'Générez des fixtures de test locales polonaises.',
+    'Generate French personal-data fixtures.': 'Générez des fixtures françaises de données personnelles.',
+    'Generate German personal-data fixtures.': 'Générez des fixtures allemandes de données personnelles.'
+  },
+  pl: {
+    'Validate global ISO 13616 shape and MOD-97.': 'Waliduj globalną strukturę ISO 13616 i MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Generuj ukraińskie fixture’y IBAN.',
+    'Generate locale-aware test values.': 'Generuj wartości testowe zależne od locale.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Generuj lub weryfikuj fixture’y podpisu webhook i porównuj payload, sekret oraz dowody z nagłówków.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Generuj strukturalne fixture’y IBAN z cyframi MOD-97 i grupowaniem do skopiowania.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Waliduj strukturę IBAN, profil kraju, długość i dowody MOD-97 w przeglądarce.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Waliduj lub generuj przykłady kodów pocztowych z jawnymi granicami sprawdzania doręczalności.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Generuj lokalizowane fixture’y JSON lub CSV do QA krajowego i testów formularzy.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Generuj i waliduj fixture’y UUID z obsługą wersji, wariantu i batchy.',
+    'Generate Dutch IBAN fixtures.': 'Generuj niderlandzkie fixture’y IBAN.',
+    'Generate Spanish IBAN fixtures.': 'Generuj hiszpańskie fixture’y IBAN.',
+    'Generate Italian IBAN fixtures.': 'Generuj włoskie fixture’y IBAN.',
+    'Generate Swiss IBAN fixtures.': 'Generuj szwajcarskie fixture’y IBAN.',
+    'Generate Pix QR payload fixtures.': 'Generuj fixture’y payloadu Pix QR.',
+    'Generate Brazilian local test records.': 'Generuj brazylijskie lokalne rekordy testowe.',
+    'Generate Polish local test fixtures.': 'Generuj polskie lokalne fixture’y testowe.',
+    'Generate French personal-data fixtures.': 'Generuj francuskie fixture’y danych osobowych.',
+    'Generate German personal-data fixtures.': 'Generuj niemieckie fixture’y danych osobowych.'
+  },
+  uk: {
+    'Validate global ISO 13616 shape and MOD-97.': 'Перевіряйте глобальну структуру ISO 13616 і MOD-97.',
+    'Generate Ukrainian IBAN fixtures.': 'Генеруйте українські IBAN-фікстури.',
+    'Generate locale-aware test values.': 'Генеруйте тестові значення з урахуванням locale.',
+    'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.': 'Генеруйте або перевіряйте фікстури webhook-підпису та порівнюйте payload, secret і header-докази.',
+    'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.': 'Генеруйте структурні IBAN-фікстури з MOD-97 цифрами та групуванням для копіювання.',
+    'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.': 'Перевіряйте структуру IBAN, профіль країни, довжину та MOD-97 докази в браузері.',
+    'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.': 'Перевіряйте або генеруйте приклади поштових кодів із явними межами deliverability lookup.',
+    'Generate localized JSON or CSV fixtures for country-aware QA and form testing.': 'Генеруйте локалізовані JSON або CSV фікстури для country-aware QA та тестування форм.',
+    'Generate and validate UUID fixtures with version, variant, and batch support.': 'Генеруйте й перевіряйте UUID-фікстури з версією, варіантом і batch-підтримкою.',
+    'Generate Dutch IBAN fixtures.': 'Генеруйте нідерландські IBAN-фікстури.',
+    'Generate Spanish IBAN fixtures.': 'Генеруйте іспанські IBAN-фікстури.',
+    'Generate Italian IBAN fixtures.': 'Генеруйте італійські IBAN-фікстури.',
+    'Generate Swiss IBAN fixtures.': 'Генеруйте швейцарські IBAN-фікстури.',
+    'Generate Pix QR payload fixtures.': 'Генеруйте фікстури Pix QR payload.',
+    'Generate Brazilian local test records.': 'Генеруйте бразильські локальні тестові записи.',
+    'Generate Polish local test fixtures.': 'Генеруйте польські локальні тестові фікстури.',
+    'Generate French personal-data fixtures.': 'Генеруйте французькі фікстури персональних даних.',
+    'Generate German personal-data fixtures.': 'Генеруйте німецькі фікстури персональних даних.'
+  }
+};
+
+function localizeStructuredDataValues(content, locale) {
+  const maps = [
+    PRODUCTION_LOCALE_REPLACEMENTS[locale],
+    PRODUCTION_SEO_AND_PORTAL_REPLACEMENTS[locale],
+    PRODUCTION_WORKBENCH_REPLACEMENTS[locale],
+    IDENTIFIER_REFERENCE_REPLACEMENTS[locale],
+    GUIDE_REFERENCE_REPLACEMENTS[locale]
+  ].filter(Boolean);
+  if (!maps.length) return content;
+  return String(content || '').replace(/(<script\b[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/gi, (match, open, body, close) => {
+    let translated = body;
+    for (const map of maps) translated = applyLiteralMap(translated, map);
+    translated = applyCountryTitleTranslations(translated, locale);
+    translated = applyToolTitleTermTranslations(translated, locale);
+    translated = applyStructuredDataRoleTranslations(translated, locale);
+    translated = localizeCountryNames(translated, locale);
+    return `${open}${translated}${close}`;
+  });
+}
+
+function applyStructuredDataRoleTranslations(content, locale) {
+  const roles = {
+    es: {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Herramientas de validación, generación, análisis, codificación y conversión.',
+      Normalizer: 'normalizador',
+      Validator: 'validador',
+      Generator: 'generador',
+      Inspector: 'inspector',
+      Parser: 'analizador',
+      Helper: 'asistente',
+      Formatter: 'formateador'
+    },
+    'pt-BR': {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Ferramentas de validação, geração, parsing, codificação e conversão.',
+      Normalizer: 'normalizador',
+      Validator: 'validador',
+      Generator: 'gerador',
+      Inspector: 'inspetor',
+      Parser: 'parser',
+      Helper: 'auxiliar',
+      Formatter: 'formatador'
+    },
+    de: {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Werkzeuge für Validierung, Generierung, Parsing, Kodierung und Konvertierung.',
+      Normalizer: 'Normalisierer',
+      Validator: 'Validator',
+      Generator: 'Generator',
+      Inspector: 'Inspektor',
+      Parser: 'Parser',
+      Helper: 'Helfer',
+      Formatter: 'Formatierer'
+    },
+    fr: {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Outils de validation, génération, parsing, encodage et conversion.',
+      Normalizer: 'normalisateur',
+      Validator: 'validateur',
+      Generator: 'générateur',
+      Inspector: 'inspecteur',
+      Parser: 'parseur',
+      Helper: 'assistant',
+      Formatter: 'formateur'
+    },
+    pl: {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Narzędzia do walidacji, generowania, parsowania, kodowania i konwersji.',
+      Normalizer: 'normalizator',
+      Validator: 'walidator',
+      Generator: 'generator',
+      Inspector: 'inspektor',
+      Parser: 'parser',
+      Helper: 'pomocnik',
+      Formatter: 'formater'
+    },
+    uk: {
+      'Validation, generation, parsing, encoding, and conversion tools.': 'Інструменти для валідації, генерації, парсингу, кодування та конвертації.',
+      Normalizer: 'нормалізатор',
+      Validator: 'валідатор',
+      Generator: 'генератор',
+      Inspector: 'інспектор',
+      Parser: 'парсер',
+      Helper: 'помічник',
+      Formatter: 'форматер'
+    }
+  };
+  return applyLiteralMap(content, roles[locale]);
 }
 
 const IDENTIFIER_REFERENCE_REPLACEMENTS = {
@@ -6216,7 +6593,14 @@ function literalMapRegex(map) {
   if (literalMapRegexCache.has(map)) return literalMapRegexCache.get(map);
 
   const keys = Object.keys(map).filter(Boolean).sort((left, right) => right.length - left.length);
-  const regex = keys.length ? new RegExp(keys.map(escapeRegExp).join('|'), 'g') : null;
+  const regexParts = keys.map(key => {
+    const escaped = escapeRegExp(key);
+    if (/^[A-Za-z0-9]+(?: [A-Za-z0-9]+)*$/.test(key)) {
+      return `(?<![A-Za-z0-9])${escaped}(?![A-Za-z0-9])`;
+    }
+    return escaped;
+  });
+  const regex = regexParts.length ? new RegExp(regexParts.join('|'), 'g') : null;
   literalMapRegexCache.set(map, regex);
   return regex;
 }
@@ -6805,6 +7189,7 @@ function applyCommonUiTranslations(content, locale) {
     '>Country Hub<': `>${t.countryHub}<`,
     '>Country Shape<': `>${t.countryShape}<`,
     '>Location<': `>${t.location}<`,
+    'aria-label="Home"': `aria-label="${t.home}"`,
     '>Find a country tool<': `>${t.findCountryTool}<`,
     '>Clear country tool search<': `>${t.clearCountryToolSearch}<`,
     '>Static V2 Compiled<': `>${t.staticCompiled}<`,
@@ -7046,6 +7431,9 @@ function repairBrandAndLocalizationArtifacts(content, locale) {
     .replace(/Poprawny[oо]?Hub/g, 'ValidoHub')
     .replace(/<span class="brand-text">[^<]*Hub<\/span>/g, '<span class="brand-text">ValidoHub</span>');
   next = applyLiteralMap(next, LOCALIZATION_ARTIFACT_REPAIRS[locale]);
+  if (locale === 'fr') {
+    next = next.replace(/National Identifiants/g, 'Identifiants nationaux');
+  }
   if (locale === 'pl') {
     next = next
       .replace(/Developer Tools \\u0026 Identifiers/g, 'narzędzia deweloperskie i identyfikatory')
@@ -7099,6 +7487,13 @@ function applyCountryTitleTranslations(content, locale) {
   const t = UI[locale];
   if (!t) return content;
   let next = content;
+  for (const [englishTitle, titleInfo] of COUNTRY_WORKBENCH_TITLES.entries()) {
+    const localizedName = names[titleInfo.countryName];
+    if (!localizedName || !titleInfo.prefix || !englishTitle.startsWith(`${titleInfo.prefix} `)) continue;
+    const toolTitle = englishTitle.slice(titleInfo.prefix.length).trim();
+    const localizedTitle = applyToolTitleTermTranslations(`${localizedName} — ${toolTitle}`, locale);
+    next = replaceAllLiteral(next, englishTitle, localizedTitle);
+  }
   for (const [englishName, localizedName] of Object.entries(names)) {
     if (englishName === 'Europe' || englishName === 'South America') continue;
     next = next.replace(new RegExp(`${escapeRegExp(englishName)} Developer Portal`, 'g'), locale === 'de'
@@ -7295,6 +7690,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'RNOKPP ucraniano',
     'Italian Codice Fiscale': 'Codice Fiscale italiano',
     'Brazilian Pix': 'Pix brasileño',
+    'Company Suffix': 'Sufijo de empresa',
     'Address Transliteration': 'Transliteración de dirección',
     'Address': 'Dirección',
     'Date Locale': 'Fecha local',
@@ -7376,6 +7772,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'RNOKPP ucraniano',
     'Italian Codice Fiscale': 'Codice Fiscale italiano',
     'Brazilian Pix': 'Pix brasileiro',
+    'Company Suffix': 'Sufixo empresarial',
     'Address Transliteration': 'Transliteração de endereço',
     'Address': 'Endereço',
     'Date Locale': 'Data local',
@@ -7457,6 +7854,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'Ukrainische RNOKPP',
     'Italian Codice Fiscale': 'Italienischer Codice Fiscale',
     'Brazilian Pix': 'Brasilianischer Pix',
+    'Company Suffix': 'Unternehmenssuffix',
     'Address Transliteration': 'Adress-Transliteration',
     'Address': 'Adresse',
     'Date Locale': 'Lokales Datum',
@@ -7538,6 +7936,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'RNOKPP ukrainien',
     'Italian Codice Fiscale': 'Codice Fiscale italien',
     'Brazilian Pix': 'Pix brésilien',
+    'Company Suffix': 'Suffixe d’entreprise',
     'Address Transliteration': 'Translittération d’adresse',
     'Address': 'Adresse',
     'Date Locale': 'Date locale',
@@ -7619,6 +8018,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'Ukraiński RNOKPP',
     'Italian Codice Fiscale': 'Włoski Codice Fiscale',
     'Brazilian Pix': 'Brazylijski Pix',
+    'Company Suffix': 'Sufiks firmy',
     'Address Transliteration': 'Transliteracja adresu',
     'Address': 'Adres',
     'Date Locale': 'Lokalna data',
@@ -7700,6 +8100,7 @@ const TOOL_TITLE_TERM_TRANSLATIONS = {
     'Ukrainian RNOKPP': 'Український РНОКПП',
     'Italian Codice Fiscale': 'Італійський Codice Fiscale',
     'Brazilian Pix': 'Бразильський Pix',
+    'Company Suffix': 'Суфікс компанії',
     'Address Transliteration': 'Транслітерація адреси',
     'Address': 'Адреса',
     'Date Locale': 'Локальна дата',
@@ -7847,7 +8248,7 @@ function localizeSeoAndStructuredData(content, locale, routePath) {
   if (routePath) {
     next = next.replace(/"url":"https:\/\/validohub\.com[^"]+"/g, `"url":"https://validohub.com${routePath}"`);
   }
-  return next;
+  return localizeStructuredDataValues(next, locale);
 }
 
 function repairStructuredDataKeys(content) {
@@ -7887,8 +8288,17 @@ function injectAlternateLinks(content, currentPath, routeRegistry, locales) {
   return next;
 }
 
-const LOCALIZATION_CACHE_VERSION = '2026-08-01-url-protect-v2';
+const LOCALIZATION_CACHE_VERSION = '2026-08-02-visible-shell-and-home-label-localization-v1';
 const LOCALIZATION_CACHE_PATTERN = /\s*<!-- vh-localization-cache:[a-f0-9]+ -->\s*/i;
+const BROKEN_LOCALIZATION_ARTIFACT_PATTERN = /Gültig(?:ate|ator)|Valideee(?:ate|ator|oHub)|Company Suffix|Validation, generation, parsing, encoding, and conversion tools\.|browser-only national identifiers tools|National Identifiants|Tools fur nationale Kennungen| Normalizer|>Home<|aria-label="Home"|>Related tools<|>Continue with related tools</i;
+
+function normalizeLocalizationCacheSource(content) {
+  return String(content || '')
+    .replace(LOCALIZATION_CACHE_PATTERN, '\n')
+    .replace(/<link rel="alternate" hreflang="[^"]+" href="[^"]+">\s*/gi, '')
+    .replace(/\/assets\/js\/bundle\.[a-f0-9]+\.js/g, '/assets/js/bundle.__HASH__.js')
+    .replace(/\/assets\/css\/bundle\.[a-f0-9]+\.css/g, '/assets/css/bundle.__HASH__.css');
+}
 
 function localizationCacheKey(locale, routePath, englishContent) {
   return createHash('sha256')
@@ -7898,7 +8308,7 @@ function localizationCacheKey(locale, routePath, englishContent) {
     .update('\0')
     .update(String(routePath || ''))
     .update('\0')
-    .update(String(englishContent || ''))
+    .update(normalizeLocalizationCacheSource(englishContent))
     .digest('hex')
     .slice(0, 24);
 }
@@ -7909,6 +8319,13 @@ function localizationCacheMarker(cacheKey) {
 
 function hasLocalizationCacheMarker(content, cacheKey) {
   return String(content || '').includes(localizationCacheMarker(cacheKey));
+}
+
+function hasBrokenLocalizationArtifact(content) {
+  const html = String(content || '');
+  if (BROKEN_LOCALIZATION_ARTIFACT_PATTERN.test(html)) return true;
+  if (COUNTRY_WORKBENCH_TITLE_PREFIX_PATTERN?.test(html)) return true;
+  return false;
 }
 
 function injectLocalizationCacheMarker(content, cacheKey) {
@@ -7933,27 +8350,55 @@ function formatDuration(ms) {
   return `${minutes}m ${remainder}s`;
 }
 
+function describeLocalizationItem(item) {
+  if (!item) return '<unknown>';
+  return item.path || item.outputPath || item.href || String(item);
+}
+
 async function runWithLocalizationProgress(items, label, worker, concurrency = buildConcurrency()) {
   const total = items.length;
   let completed = 0;
   let changed = 0;
   const startedAt = Date.now();
   const progressEvery = Math.max(100, Number(process.env.VALIDOHUB_BUILD_PROGRESS_ITEMS || 1000));
+  const slowBatchMs = Math.max(0, Number(process.env.VALIDOHUB_LOCALIZATION_SLOW_BATCH_MS || 10_000));
+  const slowItemMs = Math.max(0, Number(process.env.VALIDOHUB_LOCALIZATION_SLOW_ITEM_MS || 2_000));
 
   for (let index = 0; index < total; index += concurrency) {
+    const batchItems = items.slice(index, index + concurrency);
     if (index === 0 || index % progressEvery < concurrency) {
-      const end = Math.min(total, index + concurrency);
+      const end = Math.min(total, index + batchItems.length);
       console.log(`[build] ${label}: starting ${index + 1}-${end}/${total}.`);
     }
     const batchStartedAt = Date.now();
-    const results = await Promise.all(items.slice(index, index + concurrency).map(worker));
+    const results = await Promise.all(batchItems.map(async (item) => {
+      const itemStartedAt = Date.now();
+      const result = await worker(item);
+      return {
+        item,
+        result,
+        durationMs: Date.now() - itemStartedAt
+      };
+    }));
     for (const result of results) {
       completed += 1;
-      if (result) changed += 1;
+      if (result.result) changed += 1;
     }
     const batchDuration = Date.now() - batchStartedAt;
-    if (completed === total || completed % progressEvery < concurrency || batchDuration > 10_000) {
+    if (completed === total || completed % progressEvery < concurrency || (slowBatchMs && batchDuration > slowBatchMs)) {
       console.log(`[build] ${label}: ${completed}/${total} checked, ${changed} changed, batch ${formatDuration(batchDuration)}, elapsed ${formatDuration(Date.now() - startedAt)}.`);
+    }
+    if (slowBatchMs && batchDuration > slowBatchMs) {
+      const slowItems = results
+        .filter(result => !slowItemMs || result.durationMs >= slowItemMs)
+        .sort((left, right) => right.durationMs - left.durationMs)
+        .slice(0, 5);
+      if (slowItems.length) {
+        const details = slowItems
+          .map(result => `${describeLocalizationItem(result.item)} (${formatDuration(result.durationMs)})`)
+          .join(', ');
+        console.log(`[build] ${label}: slow routes: ${details}`);
+      }
     }
   }
 
@@ -7965,11 +8410,12 @@ export function translateVisibleHtml(content, locale) {
   if (normalized === 'en') return content;
   const { protectedHtml, blocks } = protectBlocks(content);
   let next = protectedHtml;
+  next = applyProductionLocaleReplacements(next, normalized);
   next = applyCommonUiTranslations(next, normalized);
+  next = applyCountryTitleTranslations(next, normalized);
   next = applyLiteralMap(next, IDENTIFIER_REFERENCE_REPLACEMENTS[normalized]);
   next = applyLiteralMap(next, GUIDE_REFERENCE_REPLACEMENTS[normalized]);
   next = applyCategoryNavTranslations(next, normalized);
-  next = applyProductionLocaleReplacements(next, normalized);
   next = applySemanticCopyTranslations(next, normalized);
   next = applyGeneratedToolTitleTranslations(next, normalized);
   next = applyCountryToolSummaryPatterns(next, normalized);
@@ -8030,14 +8476,18 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     const englishRoute = routeRegistry.get(englishPath);
     if (!englishRoute || !(await pathExists(englishRoute.outputPath))) return false;
 
+    const routeOutputExists = await pathExists(route.outputPath);
     const shouldRefreshFromNodeSource = englishRoute.sourceOwner === 'node' || ['country', 'countries'].includes(englishRoute.type);
-    if ((await pathExists(route.outputPath)) && !shouldRefreshFromNodeSource && !forceRefresh) return false;
+    if (routeOutputExists && !shouldRefreshFromNodeSource && !forceRefresh) {
+      const existing = await readFile(route.outputPath, 'utf8');
+      if (!hasBrokenLocalizationArtifact(existing)) return false;
+    }
 
     let content = await readFile(englishRoute.outputPath, 'utf8');
     const cacheKey = localizationCacheKey(locale, route.path, content);
-    if (!forceRefresh && await pathExists(route.outputPath)) {
+    if (!forceRefresh && routeOutputExists) {
       const existing = await readFile(route.outputPath, 'utf8');
-      if (hasLocalizationCacheMarker(existing, cacheKey)) {
+      if (!hasBrokenLocalizationArtifact(existing) && hasLocalizationCacheMarker(existing, cacheKey)) {
         refreshedPaths.add(route.path);
         return false;
       }

@@ -1,9 +1,9 @@
 {
   "id": "colombia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/colombia-outline.png",
+    "outlineSrc": "/assets/images/countries/colombia-outline.jpg",
     "outlineAlt": "Colombia country outline",
-    "mapSrc": "/assets/images/countries/colombia-location.png",
+    "mapSrc": "/assets/images/countries/colombia-location.jpg",
     "mapAlt": "World map with Colombia location marker",
     "mapMarker": {
       "x": 43,

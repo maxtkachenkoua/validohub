@@ -1,9 +1,9 @@
 {
   "id": "kenya",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/kenya-outline.png",
+    "outlineSrc": "/assets/images/countries/kenya-outline.jpg",
     "outlineAlt": "Kenya country outline",
-    "mapSrc": "/assets/images/countries/kenya-location.png",
+    "mapSrc": "/assets/images/countries/kenya-location.jpg",
     "mapAlt": "World map with Kenya location marker",
     "mapMarker": {
       "x": 45,

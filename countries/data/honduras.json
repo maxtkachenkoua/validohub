@@ -1,9 +1,9 @@
 {
   "id": "honduras",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/honduras-outline.png",
+    "outlineSrc": "/assets/images/countries/honduras-outline.jpg",
     "outlineAlt": "Honduras country outline",
-    "mapSrc": "/assets/images/countries/honduras-location.png",
+    "mapSrc": "/assets/images/countries/honduras-location.jpg",
     "mapAlt": "Honduras location map",
     "mapMarker": {
       "x": 34,

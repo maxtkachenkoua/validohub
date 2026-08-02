@@ -1,9 +1,9 @@
 {
   "id": "togo",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/togo-outline.png",
+    "outlineSrc": "/assets/images/countries/togo-outline.jpg",
     "outlineAlt": "Togo country outline",
-    "mapSrc": "/assets/images/countries/togo-location.png",
+    "mapSrc": "/assets/images/countries/togo-location.jpg",
     "mapAlt": "World map with Togo location marker",
     "mapMarker": {
       "x": 45,

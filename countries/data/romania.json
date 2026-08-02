@@ -1,9 +1,9 @@
 {
   "id": "romania",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/romania-outline.png",
+    "outlineSrc": "/assets/images/countries/romania-outline.jpg",
     "outlineAlt": "Romania country outline",
-    "mapSrc": "/assets/images/countries/romania-location.png",
+    "mapSrc": "/assets/images/countries/romania-location.jpg",
     "mapAlt": "World map with Romania location marker",
     "mapMarker": {
       "x": 58,

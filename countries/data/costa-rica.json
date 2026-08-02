@@ -1,9 +1,9 @@
 {
   "id": "costa-rica",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/costa-rica-outline.png",
+    "outlineSrc": "/assets/images/countries/costa-rica-outline.jpg",
     "outlineAlt": "Costa Rica country outline",
-    "mapSrc": "/assets/images/countries/costa-rica-location.png",
+    "mapSrc": "/assets/images/countries/costa-rica-location.jpg",
     "mapAlt": "Costa Rica location map",
     "mapMarker": {
       "x": 34,

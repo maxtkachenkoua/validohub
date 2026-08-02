@@ -1,9 +1,9 @@
 {
   "id": "uganda",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/uganda-outline.png",
+    "outlineSrc": "/assets/images/countries/uganda-outline.jpg",
     "outlineAlt": "Uganda country outline",
-    "mapSrc": "/assets/images/countries/uganda-location.png",
+    "mapSrc": "/assets/images/countries/uganda-location.jpg",
     "mapAlt": "World map with Uganda location marker",
     "mapMarker": {
       "x": 45,

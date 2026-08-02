@@ -1,9 +1,9 @@
 {
   "id": "palau",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/palau-outline.png",
+    "outlineSrc": "/assets/images/countries/palau-outline.jpg",
     "outlineAlt": "Palau country outline",
-    "mapSrc": "/assets/images/countries/palau-location.png",
+    "mapSrc": "/assets/images/countries/palau-location.jpg",
     "mapAlt": "World map with Palau location marker",
     "mapMarker": {
       "x": 82,

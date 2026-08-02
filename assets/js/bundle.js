@@ -678,6 +678,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const localeMatch = window.location.pathname.match(/^\/(en|es|de|fr|pl|uk|pt-BR)(?:\/|$)/);
     const locale = localeMatch?.[1] || 'en';
     const href = (path) => `/${locale}${path}`;
+    const megaText = (value) => localizeMegaNavigationText(locale, value);
+    const megaCountryName = (label, path) => localizeMegaCountryName(locale, label, path);
     const navLinks = Array.from(nav.querySelectorAll('a'));
     const linkFor = (key) => navLinks.find((link) => {
       const url = link.getAttribute('href') || '';
@@ -871,18 +873,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!data) return;
       activeKey = key;
       menu.innerHTML = `
-        <div class="vh-mega-shell" role="dialog" aria-label="${escapeHtml(data.title)}">
+        <div class="vh-mega-shell" role="dialog" aria-label="${escapeHtml(megaText(data.title))}">
           <div class="vh-mega-head">
-            <span>${escapeHtml(data.kicker)}</span>
-            <strong>${escapeHtml(data.title)}</strong>
+            <span>${escapeHtml(megaText(data.kicker))}</span>
+            <strong>${escapeHtml(megaText(data.title))}</strong>
           </div>
           <div class="vh-mega-grid">
             ${data.columns.map((column) => `
               <section class="vh-mega-column">
-                <h3>${escapeHtml(column.title)}</h3>
+                <h3>${escapeHtml(megaText(column.title))}</h3>
                 <div class="${column.countries ? 'vh-mega-country-list' : 'vh-mega-link-list'}">
                   ${(column.countries || column.links).map((item) => {
-                    const label = column.countries ? item[1] : item[0];
+                    const label = column.countries ? megaCountryName(item[1], item[2]) : megaText(item[0]);
                     const icon = column.countries ? `<span class="vh-mega-flag">${item[0]}</span>` : '<span class="vh-mega-dot"></span>';
                     const path = column.countries ? item[2] : item[1];
                     return `<a class="vh-mega-item" href="${href(path)}">${icon}<span>${escapeHtml(label)}</span></a>`;
@@ -890,15 +892,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 ${column.allLabel && column.allPath ? `
                   <div class="vh-mega-column-foot">
-                    <span>${escapeHtml(column.preview || 'Preview')}</span>
-                    <a href="${href(column.allPath)}">${escapeHtml(column.allLabel)}</a>
+                    <span>${escapeHtml(megaText(column.preview || 'Preview'))}</span>
+                    <a href="${href(column.allPath)}">${escapeHtml(megaText(column.allLabel))}</a>
                   </div>
                 ` : ''}
               </section>
             `).join('')}
           </div>
           <div class="vh-mega-actions">
-            ${data.actions.map(([label, path]) => `<a href="${href(path)}">${escapeHtml(label)}</a>`).join('')}
+            ${data.actions.map(([label, path]) => `<a href="${href(path)}">${escapeHtml(megaText(label))}</a>`).join('')}
           </div>
         </div>`;
     };
@@ -954,6 +956,507 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('pointerdown', (event) => {
       if (!menu.hidden && !header.contains(event.target)) close();
     });
+  }
+
+  function localizeMegaNavigationText(locale, value) {
+    const text = String(value || '');
+    const dictionaries = {
+      es: {
+        'Global Tools': 'Herramientas globales',
+        'Browser utilities by workflow': 'Utilidades de navegador por flujo',
+        'Payloads & APIs': 'Payloads y APIs',
+        'See all Payloads & APIs': 'Ver Payloads y APIs',
+        'Security & Web': 'Seguridad y web',
+        'See all Security & Web': 'Ver seguridad y web',
+        'Encoding & Text': 'Codificacion y texto',
+        'See all Encoding & Text': 'Ver codificacion y texto',
+        'Banking & Test Data': 'Banca y datos de prueba',
+        'See all Banking & Test Data': 'Ver banca y datos de prueba',
+        'Open all global tools': 'Abrir todas las herramientas globales',
+        'IBAN generator': 'Generador IBAN',
+        'Countries': 'Paises',
+        'Coverage by continent': 'Cobertura por continente',
+        'Americas': 'Americas',
+        'Europe': 'Europa',
+        'Asia Pacific': 'Asia Pacifico',
+        'Africa & Middle East': 'Africa y Oriente Medio',
+        'See all Americas': 'Ver Americas',
+        'See all Europe': 'Ver Europa',
+        'See all Asia Pacific': 'Ver Asia Pacifico',
+        'See all Africa & Middle East': 'Ver Africa y Oriente Medio',
+        'Open country directory': 'Abrir directorio de paises',
+        'Brazil hub': 'Hub de Brasil',
+        'Poland hub': 'Hub de Polonia',
+        'Identifiers': 'Identificadores',
+        'Local ID systems worth checking first': 'Sistemas de ID locales que conviene revisar primero',
+        'Personal IDs': 'IDs personales',
+        'Business & Tax': 'Empresa e impuestos',
+        'Payments & Banking': 'Pagos y banca',
+        'Documents & Mobility': 'Documentos y movilidad',
+        'See all personal identifiers': 'Ver identificadores personales',
+        'See all business IDs': 'Ver IDs de empresa',
+        'See all payment IDs': 'Ver IDs de pago',
+        'See all document tools': 'Ver herramientas de documentos',
+        'Open identifier library': 'Abrir biblioteca de identificadores',
+        'PESEL guide': 'Guia PESEL',
+        'JSON Formatter': 'Formateador JSON',
+        'JSON Validator': 'Validador JSON',
+        'JSON Schema Workbench': 'Workbench JSON Schema',
+        'OpenAPI / Swagger Inspector': 'Inspector OpenAPI / Swagger',
+        'GraphQL Workbench': 'Workbench GraphQL',
+        'HTTP Security Headers': 'Cabeceras de seguridad HTTP',
+        'Webhook Signature Verifier': 'Verificador de firmas webhook',
+        'Secret & PII Redactor': 'Redactor de secretos y PII',
+        'CSP Builder / Auditor': 'Constructor/auditor CSP',
+        'CORS Policy Workbench': 'Workbench de politica CORS',
+        'Base64 Encoder': 'Codificador Base64',
+        'Base64 Decoder': 'Decodificador Base64',
+        'URL Encoder': 'Codificador URL',
+        'Regex Tester': 'Probador regex',
+        'Text Diff': 'Diff de texto',
+        'IBAN Generator': 'Generador IBAN',
+        'IBAN Validator': 'Validador IBAN',
+        'SWIFT / BIC Workbench': 'Workbench SWIFT / BIC',
+        'UUID Generator': 'Generador UUID',
+        'Locale Test Data Generator': 'Generador de datos de prueba locales',
+        'Brazil CPF': 'CPF de Brasil',
+        'France NIR': 'NIR de Francia',
+        'Netherlands BSN': 'BSN de Paises Bajos',
+        'Brazil CNPJ': 'CNPJ de Brasil',
+        'France SIRET': 'SIRET de Francia',
+        'EU VAT Number': 'Numero IVA UE',
+        'Poland REGON': 'REGON de Polonia',
+        'EORI Inspector': 'Inspector EORI',
+        'Brazil Pix': 'Pix de Brasil',
+        'Boleto Barcode': 'Codigo de barras Boleto',
+        'MRZ Passport Workbench': 'Workbench pasaporte MRZ',
+        'VIN Validator': 'Validador VIN',
+        'License Plate Inspector': 'Inspector de matriculas',
+        'ID Card Validator': 'Validador de documento ID'
+      },
+      'pt-BR': {
+        'Global Tools': 'Ferramentas globais',
+        'Browser utilities by workflow': 'Utilitarios de navegador por fluxo',
+        'Payloads & APIs': 'Payloads e APIs',
+        'See all Payloads & APIs': 'Ver Payloads e APIs',
+        'Security & Web': 'Seguranca e web',
+        'See all Security & Web': 'Ver seguranca e web',
+        'Encoding & Text': 'Codificacao e texto',
+        'See all Encoding & Text': 'Ver codificacao e texto',
+        'Banking & Test Data': 'Bancos e dados de teste',
+        'See all Banking & Test Data': 'Ver bancos e dados de teste',
+        'Open all global tools': 'Abrir todas as ferramentas globais',
+        'IBAN generator': 'Gerador IBAN',
+        'Countries': 'Paises',
+        'Coverage by continent': 'Cobertura por continente',
+        'Americas': 'Americas',
+        'Europe': 'Europa',
+        'Asia Pacific': 'Asia Pacifico',
+        'Africa & Middle East': 'Africa e Oriente Medio',
+        'See all Americas': 'Ver Americas',
+        'See all Europe': 'Ver Europa',
+        'See all Asia Pacific': 'Ver Asia Pacifico',
+        'See all Africa & Middle East': 'Ver Africa e Oriente Medio',
+        'Open country directory': 'Abrir diretorio de paises',
+        'Brazil hub': 'Hub do Brasil',
+        'Poland hub': 'Hub da Polonia',
+        'Identifiers': 'Identificadores',
+        'Local ID systems worth checking first': 'Sistemas de ID locais para verificar primeiro',
+        'Personal IDs': 'IDs pessoais',
+        'Business & Tax': 'Empresas e impostos',
+        'Payments & Banking': 'Pagamentos e bancos',
+        'Documents & Mobility': 'Documentos e mobilidade',
+        'See all personal identifiers': 'Ver identificadores pessoais',
+        'See all business IDs': 'Ver IDs empresariais',
+        'See all payment IDs': 'Ver IDs de pagamento',
+        'See all document tools': 'Ver ferramentas de documentos',
+        'Open identifier library': 'Abrir biblioteca de identificadores',
+        'PESEL guide': 'Guia PESEL',
+        'JSON Formatter': 'Formatador JSON',
+        'JSON Validator': 'Validador JSON',
+        'JSON Schema Workbench': 'Workbench JSON Schema',
+        'OpenAPI / Swagger Inspector': 'Inspetor OpenAPI / Swagger',
+        'GraphQL Workbench': 'Workbench GraphQL',
+        'HTTP Security Headers': 'Cabecalhos de seguranca HTTP',
+        'Webhook Signature Verifier': 'Verificador de assinatura webhook',
+        'Secret & PII Redactor': 'Redator de segredos e PII',
+        'CSP Builder / Auditor': 'Construtor/auditor CSP',
+        'CORS Policy Workbench': 'Workbench de politica CORS',
+        'Base64 Encoder': 'Codificador Base64',
+        'Base64 Decoder': 'Decodificador Base64',
+        'URL Encoder': 'Codificador URL',
+        'Regex Tester': 'Testador regex',
+        'Text Diff': 'Diff de texto',
+        'IBAN Generator': 'Gerador IBAN',
+        'IBAN Validator': 'Validador IBAN',
+        'SWIFT / BIC Workbench': 'Workbench SWIFT / BIC',
+        'UUID Generator': 'Gerador UUID',
+        'Locale Test Data Generator': 'Gerador de dados de teste locais',
+        'Brazil CPF': 'CPF do Brasil',
+        'France NIR': 'NIR da Franca',
+        'Netherlands BSN': 'BSN dos Paises Baixos',
+        'Brazil CNPJ': 'CNPJ do Brasil',
+        'France SIRET': 'SIRET da Franca',
+        'EU VAT Number': 'Numero de IVA da UE',
+        'Poland REGON': 'REGON da Polonia',
+        'EORI Inspector': 'Inspetor EORI',
+        'Brazil Pix': 'Pix do Brasil',
+        'Boleto Barcode': 'Codigo de barras Boleto',
+        'MRZ Passport Workbench': 'Workbench de passaporte MRZ',
+        'VIN Validator': 'Validador VIN',
+        'License Plate Inspector': 'Inspetor de placas',
+        'ID Card Validator': 'Validador de documento ID'
+      },
+      de: {
+        'Global Tools': 'Globale Tools',
+        'Browser utilities by workflow': 'Browser-Utilities nach Workflow',
+        'Payloads & APIs': 'Payloads und APIs',
+        'See all Payloads & APIs': 'Alle Payloads und APIs anzeigen',
+        'Security & Web': 'Sicherheit und Web',
+        'See all Security & Web': 'Alle Sicherheits- und Webtools anzeigen',
+        'Encoding & Text': 'Kodierung und Text',
+        'See all Encoding & Text': 'Alle Kodierungs- und Texttools anzeigen',
+        'Banking & Test Data': 'Banking und Testdaten',
+        'See all Banking & Test Data': 'Alle Banking- und Testdaten-Tools anzeigen',
+        'Open all global tools': 'Alle globalen Tools offnen',
+        'IBAN generator': 'IBAN-Generator',
+        'Countries': 'Lander',
+        'Coverage by continent': 'Abdeckung nach Kontinent',
+        'Americas': 'Amerika',
+        'Europe': 'Europa',
+        'Asia Pacific': 'Asien-Pazifik',
+        'Africa & Middle East': 'Afrika und Naher Osten',
+        'See all Americas': 'Alle Amerika-Lander anzeigen',
+        'See all Europe': 'Alle Europa-Lander anzeigen',
+        'See all Asia Pacific': 'Alle Asien-Pazifik-Lander anzeigen',
+        'See all Africa & Middle East': 'Alle Afrika- und Nahost-Lander anzeigen',
+        'Open country directory': 'Landerverzeichnis offnen',
+        'Brazil hub': 'Brasilien-Hub',
+        'Poland hub': 'Polen-Hub',
+        'Identifiers': 'Kennungen',
+        'Local ID systems worth checking first': 'Lokale ID-Systeme, die zuerst gepruft werden sollten',
+        'Personal IDs': 'Personenkennungen',
+        'Business & Tax': 'Unternehmen und Steuern',
+        'Payments & Banking': 'Zahlungen und Banking',
+        'Documents & Mobility': 'Dokumente und Mobilitat',
+        'See all personal identifiers': 'Alle Personenkennungen anzeigen',
+        'See all business IDs': 'Alle Unternehmenskennungen anzeigen',
+        'See all payment IDs': 'Alle Zahlungskennungen anzeigen',
+        'See all document tools': 'Alle Dokumenttools anzeigen',
+        'Open identifier library': 'Kennungsbibliothek offnen',
+        'PESEL guide': 'PESEL-Leitfaden',
+        'JSON Formatter': 'JSON-Formatierer',
+        'JSON Validator': 'JSON-Validator',
+        'JSON Schema Workbench': 'JSON-Schema-Workbench',
+        'OpenAPI / Swagger Inspector': 'OpenAPI-/Swagger-Inspektor',
+        'GraphQL Workbench': 'GraphQL-Workbench',
+        'HTTP Security Headers': 'HTTP-Sicherheitsheader',
+        'Webhook Signature Verifier': 'Webhook-Signaturprufer',
+        'Secret & PII Redactor': 'Secret- und PII-Redaktor',
+        'CSP Builder / Auditor': 'CSP-Builder/Auditor',
+        'CORS Policy Workbench': 'CORS-Policy-Workbench',
+        'Base64 Encoder': 'Base64-Encoder',
+        'Base64 Decoder': 'Base64-Decoder',
+        'URL Encoder': 'URL-Encoder',
+        'Regex Tester': 'Regex-Tester',
+        'Text Diff': 'Text-Diff',
+        'IBAN Generator': 'IBAN-Generator',
+        'IBAN Validator': 'IBAN-Validator',
+        'SWIFT / BIC Workbench': 'SWIFT-/BIC-Workbench',
+        'UUID Generator': 'UUID-Generator',
+        'Locale Test Data Generator': 'Generator fur Locale-Testdaten',
+        'Brazil CPF': 'Brasilianische CPF',
+        'France NIR': 'Franzosische NIR',
+        'Netherlands BSN': 'Niederlandische BSN',
+        'Brazil CNPJ': 'Brasilianische CNPJ',
+        'France SIRET': 'Franzosische SIRET',
+        'EU VAT Number': 'EU-USt-IdNr.',
+        'Poland REGON': 'Polnische REGON',
+        'EORI Inspector': 'EORI-Inspektor',
+        'Brazil Pix': 'Brasilianisches Pix',
+        'Boleto Barcode': 'Boleto-Barcode',
+        'MRZ Passport Workbench': 'MRZ-Pass-Workbench',
+        'VIN Validator': 'VIN-Validator',
+        'License Plate Inspector': 'Kennzeichen-Inspektor',
+        'ID Card Validator': 'Ausweis-Validator'
+      },
+      fr: {
+        'Global Tools': 'Outils globaux',
+        'Browser utilities by workflow': 'Utilitaires navigateur par workflow',
+        'Payloads & APIs': 'Payloads et API',
+        'See all Payloads & APIs': 'Voir tous les payloads et API',
+        'Security & Web': 'Securite et web',
+        'See all Security & Web': 'Voir securite et web',
+        'Encoding & Text': 'Encodage et texte',
+        'See all Encoding & Text': 'Voir encodage et texte',
+        'Banking & Test Data': 'Banque et donnees de test',
+        'See all Banking & Test Data': 'Voir banque et donnees de test',
+        'Open all global tools': 'Ouvrir tous les outils globaux',
+        'IBAN generator': 'Generateur IBAN',
+        'Countries': 'Pays',
+        'Coverage by continent': 'Couverture par continent',
+        'Americas': 'Ameriques',
+        'Europe': 'Europe',
+        'Asia Pacific': 'Asie-Pacifique',
+        'Africa & Middle East': 'Afrique et Moyen-Orient',
+        'See all Americas': 'Voir toutes les Ameriques',
+        'See all Europe': 'Voir toute l Europe',
+        'See all Asia Pacific': 'Voir Asie-Pacifique',
+        'See all Africa & Middle East': 'Voir Afrique et Moyen-Orient',
+        'Open country directory': 'Ouvrir le repertoire des pays',
+        'Brazil hub': 'Hub Bresil',
+        'Poland hub': 'Hub Pologne',
+        'Identifiers': 'Identifiants',
+        'Local ID systems worth checking first': 'Systemes ID locaux a verifier en premier',
+        'Personal IDs': 'IDs personnels',
+        'Business & Tax': 'Entreprise et fiscalite',
+        'Payments & Banking': 'Paiements et banque',
+        'Documents & Mobility': 'Documents et mobilite',
+        'See all personal identifiers': 'Voir les identifiants personnels',
+        'See all business IDs': 'Voir les IDs entreprise',
+        'See all payment IDs': 'Voir les IDs de paiement',
+        'See all document tools': 'Voir les outils documentaires',
+        'Open identifier library': 'Ouvrir la bibliotheque d identifiants',
+        'PESEL guide': 'Guide PESEL',
+        'JSON Formatter': 'Formateur JSON',
+        'JSON Validator': 'Validateur JSON',
+        'JSON Schema Workbench': 'Workbench JSON Schema',
+        'OpenAPI / Swagger Inspector': 'Inspecteur OpenAPI / Swagger',
+        'GraphQL Workbench': 'Workbench GraphQL',
+        'HTTP Security Headers': 'En-tetes de securite HTTP',
+        'Webhook Signature Verifier': 'Verificateur de signature webhook',
+        'Secret & PII Redactor': 'Redacteur secrets et PII',
+        'CSP Builder / Auditor': 'Constructeur/auditeur CSP',
+        'CORS Policy Workbench': 'Workbench de politique CORS',
+        'Base64 Encoder': 'Encodeur Base64',
+        'Base64 Decoder': 'Decodeur Base64',
+        'URL Encoder': 'Encodeur URL',
+        'Regex Tester': 'Testeur regex',
+        'Text Diff': 'Diff texte',
+        'IBAN Generator': 'Generateur IBAN',
+        'IBAN Validator': 'Validateur IBAN',
+        'SWIFT / BIC Workbench': 'Workbench SWIFT / BIC',
+        'UUID Generator': 'Generateur UUID',
+        'Locale Test Data Generator': 'Generateur de donnees de test locales',
+        'Brazil CPF': 'CPF Bresil',
+        'France NIR': 'NIR France',
+        'Netherlands BSN': 'BSN Pays-Bas',
+        'Brazil CNPJ': 'CNPJ Bresil',
+        'France SIRET': 'SIRET France',
+        'EU VAT Number': 'Numero TVA UE',
+        'Poland REGON': 'REGON Pologne',
+        'EORI Inspector': 'Inspecteur EORI',
+        'Brazil Pix': 'Pix Bresil',
+        'Boleto Barcode': 'Code-barres Boleto',
+        'MRZ Passport Workbench': 'Workbench passeport MRZ',
+        'VIN Validator': 'Validateur VIN',
+        'License Plate Inspector': 'Inspecteur de plaques',
+        'ID Card Validator': 'Validateur de carte ID'
+      },
+      pl: {
+        'Global Tools': 'Globalne narzedzia',
+        'Browser utilities by workflow': 'Narzedzia przegladarkowe wedlug workflow',
+        'Payloads & APIs': 'Payloady i API',
+        'See all Payloads & APIs': 'Zobacz payloady i API',
+        'Security & Web': 'Bezpieczenstwo i web',
+        'See all Security & Web': 'Zobacz bezpieczenstwo i web',
+        'Encoding & Text': 'Kodowanie i tekst',
+        'See all Encoding & Text': 'Zobacz kodowanie i tekst',
+        'Banking & Test Data': 'Bankowosc i dane testowe',
+        'See all Banking & Test Data': 'Zobacz bankowosc i dane testowe',
+        'Open all global tools': 'Otworz wszystkie globalne narzedzia',
+        'IBAN generator': 'Generator IBAN',
+        'Countries': 'Kraje',
+        'Coverage by continent': 'Pokrycie wedlug kontynentu',
+        'Americas': 'Ameryki',
+        'Europe': 'Europa',
+        'Asia Pacific': 'Azja i Pacyfik',
+        'Africa & Middle East': 'Afryka i Bliski Wschod',
+        'See all Americas': 'Zobacz Ameryki',
+        'See all Europe': 'Zobacz Europe',
+        'See all Asia Pacific': 'Zobacz Azje i Pacyfik',
+        'See all Africa & Middle East': 'Zobacz Afryke i Bliski Wschod',
+        'Open country directory': 'Otworz katalog krajow',
+        'Brazil hub': 'Hub Brazylii',
+        'Poland hub': 'Hub Polski',
+        'Identifiers': 'Identyfikatory',
+        'Local ID systems worth checking first': 'Lokalne systemy ID warte sprawdzenia najpierw',
+        'Personal IDs': 'Identyfikatory osobiste',
+        'Business & Tax': 'Firmy i podatki',
+        'Payments & Banking': 'Platnosci i bankowosc',
+        'Documents & Mobility': 'Dokumenty i mobilnosc',
+        'See all personal identifiers': 'Zobacz identyfikatory osobiste',
+        'See all business IDs': 'Zobacz identyfikatory firmowe',
+        'See all payment IDs': 'Zobacz identyfikatory platnosci',
+        'See all document tools': 'Zobacz narzedzia dokumentow',
+        'Open identifier library': 'Otworz biblioteke identyfikatorow',
+        'PESEL guide': 'Przewodnik PESEL',
+        'JSON Formatter': 'Formatter JSON',
+        'JSON Validator': 'Walidator JSON',
+        'JSON Schema Workbench': 'Workbench JSON Schema',
+        'OpenAPI / Swagger Inspector': 'Inspektor OpenAPI / Swagger',
+        'GraphQL Workbench': 'Workbench GraphQL',
+        'HTTP Security Headers': 'Naglowki bezpieczenstwa HTTP',
+        'Webhook Signature Verifier': 'Weryfikator podpisu webhook',
+        'Secret & PII Redactor': 'Redaktor sekretow i PII',
+        'CSP Builder / Auditor': 'Builder/audytor CSP',
+        'CORS Policy Workbench': 'Workbench polityki CORS',
+        'Base64 Encoder': 'Enkoder Base64',
+        'Base64 Decoder': 'Dekoder Base64',
+        'URL Encoder': 'Enkoder URL',
+        'Regex Tester': 'Tester regex',
+        'Text Diff': 'Diff tekstu',
+        'IBAN Generator': 'Generator IBAN',
+        'IBAN Validator': 'Walidator IBAN',
+        'SWIFT / BIC Workbench': 'Workbench SWIFT / BIC',
+        'UUID Generator': 'Generator UUID',
+        'Locale Test Data Generator': 'Generator lokalnych danych testowych',
+        'Brazil CPF': 'CPF Brazylii',
+        'France NIR': 'NIR Francji',
+        'Netherlands BSN': 'BSN Holandii',
+        'Brazil CNPJ': 'CNPJ Brazylii',
+        'France SIRET': 'SIRET Francji',
+        'EU VAT Number': 'Numer VAT UE',
+        'Poland REGON': 'REGON Polski',
+        'EORI Inspector': 'Inspektor EORI',
+        'Brazil Pix': 'Pix Brazylii',
+        'Boleto Barcode': 'Kod kreskowy Boleto',
+        'MRZ Passport Workbench': 'Workbench paszportu MRZ',
+        'VIN Validator': 'Walidator VIN',
+        'License Plate Inspector': 'Inspektor tablic rejestracyjnych',
+        'ID Card Validator': 'Walidator dowodu ID'
+      },
+      uk: {
+        'Global Tools': 'Глобальні інструменти',
+        'Browser utilities by workflow': 'Браузерні утиліти за workflow',
+        'Payloads & APIs': 'Payloads та API',
+        'See all Payloads & APIs': 'Усі Payloads та API',
+        'Security & Web': 'Безпека та web',
+        'See all Security & Web': 'Усі інструменти безпеки та web',
+        'Encoding & Text': 'Кодування і текст',
+        'See all Encoding & Text': 'Усі інструменти кодування і тексту',
+        'Banking & Test Data': 'Банкінг і тестові дані',
+        'See all Banking & Test Data': 'Усі інструменти банкінгу і тестових даних',
+        'Open all global tools': 'Відкрити всі глобальні інструменти',
+        'IBAN generator': 'Генератор IBAN',
+        'Countries': 'Країни',
+        'Coverage by continent': 'Покриття за континентами',
+        'Americas': 'Америки',
+        'Europe': 'Європа',
+        'Asia Pacific': 'Азійсько-Тихоокеанський регіон',
+        'Africa & Middle East': 'Африка та Близький Схід',
+        'See all Americas': 'Усі країни Америк',
+        'See all Europe': 'Уся Європа',
+        'See all Asia Pacific': 'Увесь Азійсько-Тихоокеанський регіон',
+        'See all Africa & Middle East': 'Уся Африка та Близький Схід',
+        'Open country directory': 'Відкрити каталог країн',
+        'Brazil hub': 'Хаб Бразилії',
+        'Poland hub': 'Хаб Польщі',
+        'Identifiers': 'Ідентифікатори',
+        'Local ID systems worth checking first': 'Локальні ID-системи, які варто перевірити першими',
+        'Personal IDs': 'Персональні ID',
+        'Business & Tax': 'Бізнес і податки',
+        'Payments & Banking': 'Платежі та банкінг',
+        'Documents & Mobility': 'Документи й мобільність',
+        'See all personal identifiers': 'Усі персональні ідентифікатори',
+        'See all business IDs': 'Усі бізнес-ID',
+        'See all payment IDs': 'Усі платіжні ID',
+        'See all document tools': 'Усі інструменти документів',
+        'Open identifier library': 'Відкрити бібліотеку ідентифікаторів',
+        'PESEL guide': 'Гайд PESEL',
+        'JSON Formatter': 'Форматер JSON',
+        'JSON Validator': 'Валідатор JSON',
+        'JSON Schema Workbench': 'Workbench JSON Schema',
+        'OpenAPI / Swagger Inspector': 'Інспектор OpenAPI / Swagger',
+        'GraphQL Workbench': 'Workbench GraphQL',
+        'HTTP Security Headers': 'HTTP security headers',
+        'Webhook Signature Verifier': 'Перевірка webhook-підпису',
+        'Secret & PII Redactor': 'Редактор секретів і PII',
+        'CSP Builder / Auditor': 'CSP builder/auditor',
+        'CORS Policy Workbench': 'Workbench CORS policy',
+        'Base64 Encoder': 'Base64 encoder',
+        'Base64 Decoder': 'Base64 decoder',
+        'URL Encoder': 'URL encoder',
+        'Regex Tester': 'Regex tester',
+        'Text Diff': 'Text diff',
+        'IBAN Generator': 'Генератор IBAN',
+        'IBAN Validator': 'Валідатор IBAN',
+        'SWIFT / BIC Workbench': 'Workbench SWIFT / BIC',
+        'UUID Generator': 'Генератор UUID',
+        'Locale Test Data Generator': 'Генератор локальних тестових даних',
+        'Brazil CPF': 'CPF Бразилії',
+        'France NIR': 'NIR Франції',
+        'Netherlands BSN': 'BSN Нідерландів',
+        'Brazil CNPJ': 'CNPJ Бразилії',
+        'France SIRET': 'SIRET Франції',
+        'EU VAT Number': 'VAT номер ЄС',
+        'Poland REGON': 'REGON Польщі',
+        'EORI Inspector': 'Інспектор EORI',
+        'Brazil Pix': 'Pix Бразилії',
+        'Boleto Barcode': 'Boleto barcode',
+        'MRZ Passport Workbench': 'Workbench MRZ паспорта',
+        'VIN Validator': 'Валідатор VIN',
+        'License Plate Inspector': 'Інспектор номерних знаків',
+        'ID Card Validator': 'Валідатор ID-картки'
+      }
+    };
+    const translated = dictionaries[locale]?.[text];
+    if (translated) return translated;
+    const shown = text.match(/^(\d+) shown$/i);
+    if (shown) {
+      const count = shown[1];
+      if (locale === 'es') return `${count} visibles`;
+      if (locale === 'pt-BR') return `${count} exibidos`;
+      if (locale === 'de') return `${count} angezeigt`;
+      if (locale === 'fr') return `${count} affiches`;
+      if (locale === 'pl') return `${count} pokazanych`;
+      if (locale === 'uk') return `${count} показано`;
+    }
+    return text;
+  }
+
+  function localizeMegaCountryName(locale, label, path) {
+    const countryCodes = {
+      '/brazil/': 'BR',
+      '/argentina/': 'AR',
+      '/chile/': 'CL',
+      '/colombia/': 'CO',
+      '/mexico/': 'MX',
+      '/united-states/': 'US',
+      '/canada/': 'CA',
+      '/peru/': 'PE',
+      '/poland/': 'PL',
+      '/france/': 'FR',
+      '/germany/': 'DE',
+      '/netherlands/': 'NL',
+      '/spain/': 'ES',
+      '/italy/': 'IT',
+      '/switzerland/': 'CH',
+      '/czechia/': 'CZ',
+      '/japan/': 'JP',
+      '/india/': 'IN',
+      '/singapore/': 'SG',
+      '/australia/': 'AU',
+      '/indonesia/': 'ID',
+      '/philippines/': 'PH',
+      '/turkey/': 'TR',
+      '/kazakhstan/': 'KZ',
+      '/south-africa/': 'ZA',
+      '/egypt/': 'EG',
+      '/nigeria/': 'NG',
+      '/kenya/': 'KE',
+      '/morocco/': 'MA',
+      '/israel/': 'IL',
+      '/united-arab-emirates/': 'AE'
+    };
+    const code = countryCodes[path];
+    if (!code || locale === 'en') return label;
+    try {
+      const localized = new Intl.DisplayNames([locale], { type: 'region' }).of(code);
+      return localized || label;
+    } catch {
+      return label;
+    }
   }
 
   function initCountryClocks() {
@@ -1019,8 +1522,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { code: 'pt-BR', label: 'Portuguese (Brazil)', icon: 'BR' },
       { code: 'de', label: 'German', icon: 'DE' },
       { code: 'fr', label: 'French', icon: 'FR' },
-      { code: 'pl', label: 'Polish', icon: 'PL' },
-      { code: 'uk', label: 'Ukrainian', icon: 'UA' }
+      { code: 'uk', label: 'Ukrainian', icon: 'UA' },
+      { code: 'pl', label: 'Polish', icon: 'PL' }
     ];
 
     const alternates = collectAlternateLocaleLinks();
@@ -1258,7 +1761,31 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
 
+    const routeHref = buildLocaleRouteHref(state, normalizedRequested);
+    if (routeHref) {
+      const targetHref = attachCurrentQueryAndHash(routeHref);
+      if (isSameLocation(targetHref)) return false;
+      window.location.href = targetHref;
+      return true;
+    }
+
     return false;
+  }
+
+  function buildLocaleRouteHref(state, requestedLocale) {
+    const normalizedRequested = normalizeLocaleTag(requestedLocale);
+    const supported = new Set((state.supportedLocales || []).map(item => normalizeLocaleTag(item.code)));
+    if (!supported.has(normalizedRequested)) return '';
+
+    const pathname = String(window.location.pathname || '/');
+    const parts = pathname.split('/').filter(Boolean);
+    const first = normalizeLocaleTag(parts[0] || '');
+    const suffixParts = supported.has(first) ? parts.slice(1) : parts;
+    if (!suffixParts.length) return `/${normalizedRequested}/`;
+
+    const suffix = suffixParts.join('/');
+    const trailingSlash = pathname.endsWith('/') ? '/' : '';
+    return `/${normalizedRequested}/${suffix}${trailingSlash}`;
   }
 
   function attachCurrentQueryAndHash(href) {

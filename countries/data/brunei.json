@@ -1,9 +1,9 @@
 {
   "id": "brunei",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/brunei-outline.png",
+    "outlineSrc": "/assets/images/countries/brunei-outline.jpg",
     "outlineAlt": "Brunei country outline",
-    "mapSrc": "/assets/images/countries/brunei-location.png",
+    "mapSrc": "/assets/images/countries/brunei-location.jpg",
     "mapAlt": "World map with Brunei location marker",
     "mapMarker": {
       "x": 69,

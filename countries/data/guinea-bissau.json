@@ -1,9 +1,9 @@
 {
   "id": "guinea-bissau",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/guinea-bissau-outline.png",
+    "outlineSrc": "/assets/images/countries/guinea-bissau-outline.jpg",
     "outlineAlt": "Guinea-Bissau country outline",
-    "mapSrc": "/assets/images/countries/guinea-bissau-location.png",
+    "mapSrc": "/assets/images/countries/guinea-bissau-location.jpg",
     "mapAlt": "World map with Guinea-Bissau location marker",
     "mapMarker": {
       "x": 45,

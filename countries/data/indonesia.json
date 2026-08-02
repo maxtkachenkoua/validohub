@@ -1,9 +1,9 @@
 {
   "id": "indonesia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/indonesia-outline.png",
+    "outlineSrc": "/assets/images/countries/indonesia-outline.jpg",
     "outlineAlt": "Indonesia country outline",
-    "mapSrc": "/assets/images/countries/indonesia-location.png",
+    "mapSrc": "/assets/images/countries/indonesia-location.jpg",
     "mapAlt": "World map with Indonesia location marker",
     "mapMarker": {
       "x": 69,

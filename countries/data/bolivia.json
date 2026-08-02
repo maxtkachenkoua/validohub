@@ -1,9 +1,9 @@
 {
   "id": "bolivia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bolivia-outline.png",
+    "outlineSrc": "/assets/images/countries/bolivia-outline.jpg",
     "outlineAlt": "Bolivia country outline",
-    "mapSrc": "/assets/images/countries/bolivia-location.png",
+    "mapSrc": "/assets/images/countries/bolivia-location.jpg",
     "mapAlt": "World map with Bolivia location marker",
     "mapMarker": {
       "x": 51,

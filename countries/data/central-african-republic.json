@@ -1,9 +1,9 @@
 {
   "id": "central-african-republic",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/central-african-republic-outline.png",
+    "outlineSrc": "/assets/images/countries/central-african-republic-outline.jpg",
     "outlineAlt": "Central African Republic country outline",
-    "mapSrc": "/assets/images/countries/central-african-republic-location.png",
+    "mapSrc": "/assets/images/countries/central-african-republic-location.jpg",
     "mapAlt": "World map with Central African Republic location marker",
     "mapMarker": {
       "x": 45,

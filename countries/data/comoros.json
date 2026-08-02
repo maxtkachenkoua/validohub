@@ -1,9 +1,9 @@
 {
   "id": "comoros",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/comoros-outline.png",
+    "outlineSrc": "/assets/images/countries/comoros-outline.jpg",
     "outlineAlt": "Comoros country outline",
-    "mapSrc": "/assets/images/countries/comoros-location.png",
+    "mapSrc": "/assets/images/countries/comoros-location.jpg",
     "mapAlt": "World map with Comoros location marker",
     "mapMarker": {
       "x": 45,

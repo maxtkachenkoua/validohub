@@ -1,9 +1,9 @@
 {
   "id": "sri-lanka",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/sri-lanka-outline.png",
+    "outlineSrc": "/assets/images/countries/sri-lanka-outline.jpg",
     "outlineAlt": "Sri Lanka country outline",
-    "mapSrc": "/assets/images/countries/sri-lanka-location.png",
+    "mapSrc": "/assets/images/countries/sri-lanka-location.jpg",
     "mapAlt": "World map with Sri Lanka location marker",
     "mapMarker": {
       "x": 66,

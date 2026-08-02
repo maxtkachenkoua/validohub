@@ -1,9 +1,9 @@
 {
   "id": "tonga",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/tonga-outline.png",
+    "outlineSrc": "/assets/images/countries/tonga-outline.jpg",
     "outlineAlt": "Tonga country outline",
-    "mapSrc": "/assets/images/countries/tonga-location.png",
+    "mapSrc": "/assets/images/countries/tonga-location.jpg",
     "mapAlt": "World map with Tonga location marker",
     "mapMarker": {
       "x": 87,

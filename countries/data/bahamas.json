@@ -1,9 +1,9 @@
 {
   "id": "bahamas",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bahamas-outline.png",
+    "outlineSrc": "/assets/images/countries/bahamas-outline.jpg",
     "outlineAlt": "Bahamas country outline",
-    "mapSrc": "/assets/images/countries/bahamas-location.png",
+    "mapSrc": "/assets/images/countries/bahamas-location.jpg",
     "mapAlt": "Bahamas location map",
     "mapMarker": {
       "x": 34,
